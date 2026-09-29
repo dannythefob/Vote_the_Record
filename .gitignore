@@ -27,3 +27,7 @@ Thumbs.db
 # Site build output
 site/dist/
 site/dist-demo/
+
+# Wrangler / Node local files
+.wrangler/
+node_modules/

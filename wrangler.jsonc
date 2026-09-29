@@ -1,0 +1,14 @@
+// Cloudflare Workers deployment for the static site. Deploy command: npx wrangler deploy
+// The build (python src/build/build.py) must run first; it writes site/dist.
+// tests/test_wrangler.py checks that these settings match what the build produces.
+{
+  "name": "vote-the-record",
+  "compatibility_date": "2026-09-29",
+  "assets": {
+    "directory": "./site/dist",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+  "workers_dev": true,
+  "preview_urls": true
+}

@@ -47,6 +47,6 @@
 <span class="source-line">
   <a href="{{ item.source_url }}" rel="noopener noreferrer">Source: {{ item.source_title }}</a>
   {% if item.archive_url %}· <a href="{{ item.archive_url }}" rel="noopener noreferrer">Archived copy</a>{% endif %}
-  {% if item.retrieved %}· Retrieved {{ item.retrieved | longdate }}{% endif %}
+  {% if item.retrieved %} · Retrieved {{ item.retrieved | longdate }}{% endif %}
 </span>
 {%- endmacro %}

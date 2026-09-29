@@ -1,12 +1,12 @@
-# Fallback deploy: build here and upload to Cloudflare Pages, for use only if
-# Cloudflare's own build environment can't run the build.
+# Fallback deploy: build here and upload to Cloudflare Workers, for use only if
+# Cloudflare's own build (Workers Builds, connected to this repo) can't run the build.
+# Settings come from wrangler.jsonc, the same file Cloudflare's build uses.
 #
 # Setup (one time):
-#   1. In Cloudflare, create a Pages project with "Direct Upload" named vote-the-record.
-#      A Git-connected project can't be switched to Direct Upload; create a new one.
-#   2. In GitHub repo settings, add secrets CLOUDFLARE_API_TOKEN (Pages: Edit) and
-#      CLOUDFLARE_ACCOUNT_ID. Never commit these.
-#   3. To deploy on every push to main, set the repo variable DEPLOY_VIA_ACTIONS=true.
+#   1. In GitHub repo settings, add secrets CLOUDFLARE_API_TOKEN (permission:
+#      Workers Scripts: Edit) and CLOUDFLARE_ACCOUNT_ID. Never commit these.
+#   2. To deploy on every push to main, set the repo variable DEPLOY_VIA_ACTIONS=true
+#      and turn off automatic builds in the Cloudflare dashboard so the two don't race.
 #      Otherwise run this workflow by hand from the Actions tab.
 name: deploy (fallback)
 
@@ -17,7 +17,6 @@ on:
 
 permissions:
   contents: read
-  deployments: write
 
 concurrency:
   group: deploy
@@ -44,4 +43,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy site/dist --project-name=vote-the-record --branch=main
+          command: deploy

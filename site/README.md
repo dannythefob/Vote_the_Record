@@ -33,18 +33,26 @@ locally if the tool is missing and are required in CI.
 The build stops, writing nothing, if the validator finds any error. Note: `http.server` ignores `_headers`, but every page also carries
 the CSP in a `<meta>` tag, so violations still show in the browser console.
 
-## Deploy on Cloudflare Pages
+## Deploy on Cloudflare Workers
+
+The site deploys as an assets-only Worker (static files, no server code), configured by
+`wrangler.jsonc` at the repo root. Live address: https://vote-the-record.dannythefob.workers.dev
+
+Cloudflare dashboard, Workers project settings (Settings → Build):
 
 | Setting | Value |
 |---|---|
-| Framework preset | None |
 | Build command | `pip install -r requirements.txt && python src/build/build.py` |
-| Build output directory | `site/dist` |
+| Deploy command | `npx wrangler deploy` |
 | Root directory | *(blank)* |
-| Environment variable | `PYTHON_VERSION` = `3.12` |
-| Build system version | v3 |
+
+`wrangler.jsonc` sets the assets folder (`site/dist`), serves `404.html` for missing
+pages, and keeps the workers.dev address and preview URLs on. `_headers` in the build
+output applies the security headers; `.assetsignore` keeps the build marker off the site.
+`tests/test_wrangler.py` checks that these agree with the build.
 
 Keep Cloudflare Web Analytics turned off: it injects a third-party script.
 
 If Cloudflare's build can't run, use the fallback workflow in
-`.github/workflows/deploy.yml`, which builds on GitHub Actions and uploads with Wrangler.
+`.github/workflows/deploy.yml`, which builds on GitHub Actions and deploys with the same
+`wrangler.jsonc`.
