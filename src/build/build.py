@@ -71,7 +71,7 @@ def make_env(config: dict, demo: bool) -> Environment:
 
 
 LABELS = {"official_record": "Official record", "news_report": "News report",
-          "candidate_claim": "Candidate's claim"}
+          "candidate_claim": "Candidate's claim", "organization_statement": "Organization's statement"}
 STATUSES = {"documented": "Documented", "allegation": "Allegation", "disputed": "Disputed",
             "contradicted": "Contradicted"}
 RECORD_TYPES = {"vote": "Vote", "sponsored": "Sponsored measure", "promise_kept": "Promise kept",

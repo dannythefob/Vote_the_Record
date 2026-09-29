@@ -25,7 +25,13 @@
       "type": "array",
       "items": {
         "allOf": [{ "$ref": "urn:vtr:schema:fact" }],
-        "required": ["record_type"]
+        "required": ["record_type"],
+        "properties": {
+          "label": {
+            "description": "Organization statements are display-only and never scored.",
+            "enum": ["official_record", "news_report", "candidate_claim"]
+          }
+        }
       }
     },
     "funding": { "$ref": "#/$defs/facts" },

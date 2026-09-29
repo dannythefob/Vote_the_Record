@@ -65,7 +65,39 @@ funding:
       correction to this report was listed in the clerk's search on 2026-09-29. Archived on
       2026-09-29 at the owner's request; the archived copy has the same SHA-256 as the
       downloaded file.
-endorsements: []
+endorsements:
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#E-01
+    statement: >-
+      The campaign website lists 23 endorsements: HISD Trustee Bridget Wade; State
+      Representative Mano DeAyala; State Representative Charles Cunningham; Harris County
+      Commissioner Pct 3 Tom Ramsey; Harris County Constable Phil Sandlin; City of Pasadena
+      Mayor Thomas Schoenbein; Former Harris County Constable Chris Diaz; Baytown City Council
+      Member James Franco; Houston City Council Member At-Large Willie Davis; Houston City
+      Council Member Amy Peck; Houston City Council Member Fred Flickinger; Houston City Council
+      Member Mary Nan Huffman; Former Houston City Council Member Michael Yarborough; Former
+      Houston City Council Member Dr. Martha Wong; Former Houston City Council Member Mike Knox;
+      Brandon Lunsford, La Porte Councilperson; Former Justice of the Peace George Risner;
+      Former County Judge Candidate Oscar Gonzales; Chris Daniel, Candidate for Harris County
+      District Clerk; Former Houston City Council Member Richard Nguyen; Former Houston City
+      Council Member Bert Keller; Courtney Anderson, Spring Branch ISD Trustee; Justin Ray,
+      Cy-Fair ISD Trustee & Former Jersey Village Mayor.
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://orlandosanchez.com/
+    source_title: "Orlando Sanchez for Harris County Judge: home page, Endorsements section (campaign website)"
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260929222008/https://orlandosanchez.com/
+    event_date: "2026-09-29"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: >-
+      Names and titles as the campaign lists them. The site's separate Endorsements page
+      (https://orlandosanchez.com/endorsements/) did not include Bridget Wade or Justin Ray on
+      2026-09-29, so the home page is cited. event_date is the date the page was read.
 running_on:
   policy_proposals:
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#O-01

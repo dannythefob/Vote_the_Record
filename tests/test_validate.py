@@ -264,3 +264,11 @@ def test_scenario_may_cite_a_state_override_power(tmp_path):
             "id": "P-STATE-ONLY", "description": "A Texas-only power.", "statute": "Test Code § 1",
             "source_url": "https://example.gov/law"}]})
     assert validate(tmp_path).errors == []
+
+
+def test_organization_statement_allowed_on_endorsements_not_records(tmp_path):
+    endorsement = {**FACT, "id": f"{PREFIX}#E-001", "label": "organization_statement"}
+    endorsement.pop("record_type")
+    assert build(tmp_path / "ok", candidate(endorsements=[endorsement])) == []
+    errors = build(tmp_path / "bad", with_fact(label="organization_statement"))
+    assert any("label" in e or "organization_statement" in e for e in errors)

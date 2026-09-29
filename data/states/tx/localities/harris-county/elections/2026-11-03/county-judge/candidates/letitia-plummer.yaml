@@ -113,7 +113,73 @@ funding:
       "45,001" in outstanding loans. The affidavit states the report was amended after a
       review and reconciliation of the campaign's records. Archived on 2026-09-29 at the
       owner's request; the archived copy has the same SHA-256 as the downloaded file.
-endorsements: []
+endorsements:
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#E-01
+    statement: Endorsed by the Harris County Young Democrats, according to a January 25, 2026 post on the campaign website.
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.drletitiaplummer.com/news/harris-county-young-democrats-endorsement
+    source_title: "Letitia Plummer for Harris County Judge: Harris County Young Democrats Endorsement (campaign website)"
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260929222032/https://www.drletitiaplummer.com/news/harris-county-young-democrats-endorsement
+    event_date: "2026-01-25"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#E-02
+    statement: Endorsed by the Houston Progressive Caucus, according to a January 25, 2026 post on the campaign website.
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.drletitiaplummer.com/news/houston-progressive-caucus-endorsement
+    source_title: "Letitia Plummer for Harris County Judge: Houston Progressive Caucus Endorsement (campaign website)"
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260929222054/https://www.drletitiaplummer.com/news/houston-progressive-caucus-endorsement
+    event_date: "2026-01-25"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#E-03
+    statement: Endorsed by Progress Texas for the Democratic primary runoff for Harris County Judge, in a May 14, 2026 announcement by Progress Texas.
+    label: organization_statement
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://progresstexas.org/blog/progress-texas-endorsements-may-primary-runoffs
+    source_title: "Progress Texas: Progress Texas Endorsements for May Primary Runoffs"
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260929222119/https://progresstexas.org/blog/progress-texas-endorsements-may-primary-runoffs
+    event_date: "2026-05-14"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#E-04
+    statement: Endorsed by EMILYs List for Harris County Judge, in a September 14, 2026 announcement by EMILYs List.
+    label: organization_statement
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://emilyslist.org/news/emilys-list-endorses-dr-letitia-plummer-for-harris-county-judge/
+    source_title: "EMILYs List: EMILYs List Endorses Dr. Letitia Plummer for Harris County Judge"
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260929222142/https://emilyslist.org/news/emilys-list-endorses-dr-letitia-plummer-for-harris-county-judge/
+    event_date: "2026-09-14"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: >-
+      The announcement also contains the endorser's criticism of Orlando Sanchez. That is the
+      endorser's statement, not the candidate's, so it is not recorded as attack messaging.
 running_on:
   policy_proposals:
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#O-01
