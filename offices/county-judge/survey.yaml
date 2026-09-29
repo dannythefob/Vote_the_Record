@@ -1,3 +1,70 @@
+# Hypothetical scenarios for a county judge. Every scenario cites the powers it rests on;
+# for Texas those are in data/states/tx/office-overrides/county-judge.yaml.
 office_type: county-judge
-tags: []   # controlled list of approach tags; never name or imply a party
-scenarios: []   # {id: S-01, powers: [P-XXX], scenario, options: [{id: A, text, tags: [...]}]}
+tags:
+  - raise-revenue
+  - cut-spending
+  - use-reserves
+  - evacuate-early
+  - declare-hold-evacuation
+  - warn-first
+  - fast-contracting
+  - competitive-bidding
+  - split-contracting
+  - extend-as-recommended
+  - extend-with-review
+  - end-declaration
+  - fewer-precincts
+  - more-precincts
+  - keep-precincts
+  - approve-full
+  - pilot-first
+  - decline
+scenarios:
+  - id: S-01
+    powers: [P-BUDGET, P-TAX-RATE]
+    scenario: Mid-year, county revenue comes in well below projections, leaving a gap in next year's budget. Which would you push for first?
+    options:
+      - {id: A, text: Raise the property tax rate to close the gap, tags: [raise-revenue]}
+      - {id: B, text: Cut spending across county departments, tags: [cut-spending]}
+      - {id: C, text: Draw on reserves for one year and revisit next year, tags: [use-reserves]}
+
+  - id: S-02
+    powers: [P-DISASTER, P-EVACUATION, P-EMERGENCY-DIRECTOR]
+    scenario: A major storm may reach the county in three days. Acting early frees up resources and gives people more time, but costs money and disruption if the storm shifts. What do you do?
+    options:
+      - {id: A, text: Declare a local disaster now and order evacuation of the most vulnerable areas, tags: [evacuate-early]}
+      - {id: B, text: "Declare a local disaster now, but hold evacuation orders until forecasts firm up", tags: [declare-hold-evacuation]}
+      - {id: C, text: Issue public warnings and hold the declaration until forecasts firm up, tags: [warn-first]}
+
+  - id: S-03
+    powers: [P-CONTRACTS, P-DISASTER]
+    scenario: After a disaster, the county needs debris removal and repairs worth tens of millions of dollars. The law lets the court skip competitive bidding in a public calamity. Which approach do you support?
+    options:
+      - {id: A, text: "Use the exemption and sign contracts within days, then audit afterward", tags: [fast-contracting]}
+      - {id: B, text: "Bid the work competitively, even if it takes weeks", tags: [competitive-bidding]}
+      - {id: C, text: "Use the exemption only for urgent work, and bid everything else", tags: [split-contracting]}
+
+  - id: S-04
+    powers: [P-DISASTER]
+    scenario: A disaster declaration you issued will expire in seven days unless the Commissioners Court consents to continue it. Recovery is under way but uneven. What do you ask the court to do?
+    options:
+      - {id: A, text: Continue it for as long as emergency officials recommend, tags: [extend-as-recommended]}
+      - {id: B, text: "Continue it, with a public review and a fresh vote every few weeks", tags: [extend-with-review]}
+      - {id: C, text: "Let it end and rely on the county's normal authority", tags: [end-declaration]}
+
+  - id: S-05
+    powers: [P-PRECINCTS]
+    scenario: Population growth means the county's election precincts must be redrawn. Which goal should guide the new lines?
+    options:
+      - {id: A, text: "Fewer, larger precincts, to lower election costs", tags: [fewer-precincts]}
+      - {id: B, text: "More, smaller precincts, to shorten distances to polling places", tags: [more-precincts]}
+      - {id: C, text: "Keep the current lines, changing them only where the law requires", tags: [keep-precincts]}
+
+  - id: S-06
+    powers: [P-CONTRACTS]
+    scenario: The sheriff's office asks the court to approve a five-year, multimillion-dollar detection technology contract. Early results from other places are mixed. What do you do?
+    options:
+      - {id: A, text: Approve the full five-year contract, tags: [approve-full]}
+      - {id: B, text: Approve a one-year pilot with a public review before renewing, tags: [pilot-first]}
+      - {id: C, text: Decline the contract, tags: [decline]}

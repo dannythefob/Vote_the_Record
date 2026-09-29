@@ -252,3 +252,15 @@ def test_voter_essentials_need_path_based_ids(tmp_path):
             "verification": "unverified", "verified_on": None, "reviewer": None}]})
     errors = validate(tmp_path).errors
     assert any("path-based" in e for e in errors)
+
+
+def test_scenario_may_cite_a_state_override_power(tmp_path):
+    # data/ is read before offices/, so the office's own powers.yaml must not erase override powers.
+    survey = copy.deepcopy(SURVEY)
+    survey["scenarios"][0]["powers"] = ["P-STATE-ONLY"]
+    build(tmp_path, survey=survey)
+    write(tmp_path, "data/states/tx/office-overrides/test-office.yaml", {
+        "office_type": "test-office", "state": "TX", "powers": [{
+            "id": "P-STATE-ONLY", "description": "A Texas-only power.", "statute": "Test Code § 1",
+            "source_url": "https://example.gov/law"}]})
+    assert validate(tmp_path).errors == []

@@ -164,7 +164,10 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
         if kind in ("powers", "survey") and doc.get("office_type") != office:
             report.error(rel, f"office_type must be '{office}' to match its folder")
         if kind == "powers":
-            powers[office] = {p.get("id") for p in doc.get("powers") or [] if isinstance(p, dict)}
+            # Merge, don't assign: state overrides (under data/) may already be loaded.
+            powers.setdefault(office, set()).update(
+                p.get("id") for p in doc.get("powers") or [] if isinstance(p, dict)
+            )
         elif kind == "survey":
             surveys[office] = doc
         elif kind == "office_override":

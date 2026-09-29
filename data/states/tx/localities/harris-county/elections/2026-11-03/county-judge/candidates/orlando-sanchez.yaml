@@ -1,0 +1,122 @@
+# Unverified; written by an AI assistant from official records. Owner review required.
+id: orlando-sanchez
+name: Orlando Sanchez
+incumbent: false
+ballot_party: Republican Party
+summary:
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#B-01
+    statement: Listed on the November 3, 2026 general election ballot for Harris County Judge.
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: "https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D"
+    source_title: "Harris County Clerk: Sample Ballot, November 3, 2026 General and Special Elections"
+    source_kind: document
+    sha256: 0b35cb063ef0cb82001e2fb79141e259b95c330cd0d10ad7b2575e34d611e1ed
+    archive_url: "https://web.archive.org/web/20260921224207/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D"
+    event_date: "2026-11-03"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The archived copy has the same SHA-256 as the downloaded file.
+
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#B-02
+    statement: Won the Republican primary runoff for Harris County Judge on May 26, 2026 with 85,304 votes (63.34%) to Warren A. Howell's 49,367 (36.66%).
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://appfiles.harrisvotes.com/harrisvotes/prd/Data/0526/rep-cumulative.pdf
+    source_title: "Harris County Clerk: Republican Party Primary Runoff Elections, May 26, 2026, Official Results"
+    source_kind: document
+    sha256: cdc83359d348891a5d7caaca1f67dcafaca5686535faaaf5f71022aa9525ada2
+    archive_url: https://web.archive.org/web/20260929175757/https://appfiles.harrisvotes.com/harrisvotes/prd/Data/0526/rep-cumulative.pdf
+    event_date: "2026-05-26"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: >-
+      Archived on 2026-09-29 at the owner's request; the archived copy has the same SHA-256
+      as the downloaded file. Older snapshots from May 27, 2026 hold the unofficial count
+      (85,132 to 49,288) and should not be used.
+records: []
+funding:
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#M-01
+    statement: >-
+      Campaign finance report for May 17 - June 30, 2026: $181,126.00 in total political
+      contributions, $66,343.55 in total political expenditures, $132,680.24 in contributions
+      on hand at the end of the period, and $234,513.25 in outstanding loans.
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: "https://ethics.harrisvotes.com/Document.aspx?ID=8clm5/UZ7yw9/6Sqmckox1Bosm2JYMQ3zpemq5GQGoo8CIl0E34y0mdNX+Lkhcd7f0HeNeh5aX+aGSL7UqdUt8dEKSOTdHipexk16hqiMOh/YyynyZBdxzdz5GgMFfJy"
+    source_title: "Harris County Clerk: Orlando Sanchez, July 15, 2026 Campaign Finance Report (File No. 2026393)"
+    source_kind: document
+    sha256: 89deb4ac850214b6baf417401ad2b423181c65755bdfad9013e3a6dc1e7b7a79
+    archive_url: "https://web.archive.org/web/20260929212602/https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox1Bosm2JYMQ3zpemq5GQGoo8CIl0E34y0mdNX+Lkhcd7f0HeNeh5aX+aGSL7UqdUt8dEKSOTdHipexk16hqiMOh%2FYyynyZBdxzdz5GgMFfJy"
+    event_date: "2026-06-30"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: >-
+      Figures from Form C/OH Cover Sheet Pg 2 (scanned; read from the page image). No
+      correction to this report was listed in the clerk's search on 2026-09-29. Archived on
+      2026-09-29 at the owner's request; the archived copy has the same SHA-256 as the
+      downloaded file.
+endorsements: []
+running_on:
+  policy_proposals:
+    - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#O-01
+      statement: >-
+        Campaign platform, Property Tax Relief: "Prioritize public safety, flood control,
+        infrastructure, courts, and emergency management"; require quarterly public
+        performance reviews; publish "a plain-English Taxpayer Impact Statement before major
+        budget votes"; require every new program to identify funding, measurable results, and
+        a sunset review; "Require a public savings review before considering any tax increase."
+      <<: &sanchez_platform
+        label: candidate_claim
+        claim_status: documented
+        contradicted_by: []
+        source_url: https://orlandosanchez.com/issues/
+        source_title: "Orlando Sanchez for Harris County Judge: Issues (campaign website)"
+        source_kind: page
+        sha256: null
+        archive_url: https://web.archive.org/web/20260823072158/https://orlandosanchez.com/issues/
+        event_date: "2026-09-29"
+        retrieved: "2026-09-29"
+        verification: unverified
+        verified_on: null
+        reviewer: null
+        notes: >-
+          The campaign's own platform. event_date is the date the page was read, not the date
+          it was first posted. The August 23, 2026 archived copy contains the same text.
+
+    - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#O-02
+      statement: >-
+        Campaign platform, Responsible Government: "measurable performance, open contracting and
+        competitive bidding, responsible budgeting"; results-based budgeting; public contract
+        transparency; independent audits; quarterly accountability hearings.
+      <<: *sanchez_platform
+
+    - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#O-03
+      statement: >-
+        Campaign platform, Flood Protection: independent review of flood projects; protect
+        federal and state funding; public project deadlines; regional coordination with Fort
+        Bend, Montgomery, Brazoria, Galveston, and Liberty Counties; "Finish the projects voters
+        already funded."
+      <<: *sanchez_platform
+
+    - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#O-04
+      statement: >-
+        Campaign platform, Public Safety: "Fully support the Sheriff's Office, Constables,
+        prosecutors, and courts"; improve staffing, response times, and case processing;
+        "Expand technology that improves investigations and accountability"; coordinate law
+        enforcement, courts, schools, and emergency responders; publish public safety
+        performance measures.
+      <<: *sanchez_platform
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []
