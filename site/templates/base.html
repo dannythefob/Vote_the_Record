@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>{% block title %}{% endblock %} · {{ config.site_name }}</title>
+<meta name="description" content="{% block description %}Nonpartisan, source-linked information about the offices on your ballot and what candidates have actually done.{% endblock %}">
+<link rel="stylesheet" href="/static/css/site.css">
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">{{ config.site_name }}</a>
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        {% for href, label, key in [("/", "Home", "home"), ("/methodology/", "Methodology", "methodology"), ("/corrections/", "Corrections", "corrections"), ("/about/", "About", "about")] %}
+        <li><a href="{{ href }}"{% if page == key %} aria-current="page"{% endif %}>{{ label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+{% if demo %}
+<div class="banner banner-demo" role="note">
+  <div class="wrap"><strong>Demonstration only.</strong> Every name and record in this build is fictional test data. Do not use it to make voting decisions.</div>
+</div>
+{% endif %}
+{% if config.beta %}
+<div class="banner" role="note">
+  <div class="wrap"><strong>Beta.</strong> This site is new and still being checked. Items marked <span class="badge badge-unverified">Unverified</span> have not yet been reviewed against their sources, and match results appear only once enough verified records exist.</div>
+</div>
+{% endif %}
+<main id="main" class="wrap" tabindex="-1">
+{% block content %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Nonpartisan. Party is shown only as it appears on the ballot. Every fact links to its source.</p>
+    <p>
+      {% if form_url() %}<a href="{{ form_url() }}" rel="noopener noreferrer">Report a problem</a>{% else %}{{ coming_soon }}{% endif %}
+      · <a href="/methodology/">How it works</a>
+      {% if config.source_code_url %}· <a href="{{ config.source_code_url }}" rel="noopener noreferrer">Source code</a>{% endif %}
+    </p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block content %}
+<h1>About {{ config.site_name }}</h1>
+<p class="lead">A nonpartisan voter information project. It starts with Harris County, Texas, and is built to grow to every state.</p>
+
+<h2>What we publish</h2>
+<ul>
+  <li><strong>What each office can do</strong>, from the laws and official sources that define it.</li>
+  <li><strong>What candidates have done</strong>: votes, sponsored measures, promises, and statements. Official government records come first: council and commissioners court minutes, legislative roll calls, election filings, and campaign finance reports.</li>
+  <li><strong>What candidates are running on</strong>, sorted into policy proposals, attack messaging, and contested claims, with the same test applied to every candidate.</li>
+</ul>
+
+<h2>Our rules</h2>
+<ul>
+  <li>Every fact links to its source and is labeled as an official record, a news report, or a candidate's own claim.</li>
+  <li>No claim appears without a source.</li>
+  <li>Survey scenarios are hypothetical and limited to what the office can actually do.</li>
+  <li>Party is shown only as it appears on the ballot. It is never used to sort, score, or color anything.</li>
+  <li>Candidates always appear in alphabetical order, never ranked by score.</li>
+</ul>
+
+<h2>How information is checked</h2>
+<p>Records are gathered by automated tools and research assistants, some of them AI. Everything starts as <span class="badge badge-unverified">Unverified</span>. A human reviewer checks each item against its source and an archived copy before marking it verified. Only verified records count toward match results.</p>
+
+<h2>Privacy</h2>
+<p>This site uses no cookies, no analytics, no tracking, and no third-party scripts or fonts. The survey runs entirely in your browser; your answers are never sent anywhere or saved.</p>
+
+<h2>Mistakes</h2>
+<p>If something is wrong, see <a href="/corrections/">Corrections</a>. Every accepted correction is logged publicly.</p>
+{% if config.source_code_url %}
+<p>The code and data are public: <a href="{{ config.source_code_url }}" rel="noopener noreferrer">view the source</a>.</p>
+{% endif %}
+{% endblock %}

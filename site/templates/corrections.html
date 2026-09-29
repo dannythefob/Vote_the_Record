@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Corrections{% endblock %}
+{% block description %}The public log of every correction made to this site.{% endblock %}
+{% block content %}
+<h1>Corrections</h1>
+<p class="lead">We fix mistakes in public. Every accepted correction is listed here with what changed, why, and who reviewed it. Entries are never deleted.</p>
+
+<section aria-labelledby="report-h">
+  <h2 id="report-h">Report a problem</h2>
+  {% if form_url() %}
+  <p><a class="button" href="{{ form_url() }}" rel="noopener noreferrer">Open the corrections form</a></p>
+  {% else %}
+  <p>{{ coming_soon }}.</p>
+  {% endif %}
+  <p>Every fact on the site has its own "Report a problem" link, which fills in that item's ID for you. A human reviews each report against the sources before anything changes.</p>
+</section>
+
+<section aria-labelledby="log-h">
+  <h2 id="log-h">Correction log</h2>
+  {% if site.corrections %}
+  <ol class="item-list corrections-log" reversed>
+    {% for entry in site.corrections %}
+    <li class="card">
+      <p class="item-main"><strong>{{ entry.date | longdate }}</strong></p>
+      <dl class="pairs">
+        <dt>Item</dt><dd><code>{{ entry.target }}</code></dd>
+        <dt>What changed</dt><dd>{{ entry.change }}</dd>
+        <dt>Why</dt><dd>{{ entry.reason }}</dd>
+        <dt>Evidence</dt><dd><a href="{{ entry.source_url }}" rel="noopener noreferrer">{{ entry.source_url }}</a></dd>
+        <dt>Reviewed by</dt><dd>{{ entry.reviewer }}</dd>
+      </dl>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p class="empty">No corrections have been published yet.</p>
+  {% endif %}
+</section>
+{% endblock %}

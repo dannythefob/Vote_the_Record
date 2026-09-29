@@ -1,0 +1,52 @@
+{% macro verification_badge(item) -%}
+{% if item.verification == "verified" -%}
+<span class="badge badge-verified">Verified {{ item.verified_on | longdate }}</span>
+{%- else -%}
+<span class="badge badge-unverified">Unverified</span>
+{%- endif %}
+{%- endmacro %}
+
+{% macro report_link(item_id) -%}
+{% if form_url(item_id) -%}
+<a class="report" href="{{ form_url(item_id) }}" rel="noopener noreferrer">Report a problem<span class="visually-hidden"> with this item</span></a>
+{%- else -%}
+<span class="report">{{ coming_soon }}</span>
+{%- endif %}
+{%- endmacro %}
+
+{% macro fact_card(fact, facts={}) -%}
+<li class="card item fact" id="{{ fact.id | anchor }}">
+  <p class="item-main">{% if fact.get('record_type') %}<strong>{{ RECORD_TYPES[fact.record_type] }}:</strong> {% endif %}{{ fact.statement }}</p>
+  <p class="item-meta">
+    <span class="chip">{{ LABELS[fact.label] }}</span>
+    <span class="chip">{{ STATUSES[fact.claim_status] }}</span>
+    {{ verification_badge(fact) }}
+    · {{ source_line(fact) }} · {{ report_link(fact.id) }}
+  </p>
+  {% if fact.get('contradicted_by') %}
+  <p class="item-meta">Contradicted by:
+    {% for ref in fact.contradicted_by %}
+    {% if ref in facts %}<a href="#{{ ref | anchor }}">{{ facts[ref].statement | truncate(80) }}</a>{% else %}<code>{{ ref }}</code>{% endif %}{% if not loop.last %}; {% endif %}
+    {% endfor %}
+  </p>
+  {% endif %}
+</li>
+{%- endmacro %}
+
+{% macro fact_list(items, facts={}, empty="Not found in the sources reviewed.") -%}
+{% if items %}
+<ul class="item-list">
+  {% for fact in items %}{{ fact_card(fact, facts) }}{% endfor %}
+</ul>
+{% else %}
+<p class="empty">{{ empty }}</p>
+{% endif %}
+{%- endmacro %}
+
+{% macro source_line(item) -%}
+<span class="source-line">
+  <a href="{{ item.source_url }}" rel="noopener noreferrer">Source: {{ item.source_title }}</a>
+  {% if item.archive_url %}· <a href="{{ item.archive_url }}" rel="noopener noreferrer">Archived copy</a>{% endif %}
+  {% if item.retrieved %}· Retrieved {{ item.retrieved | longdate }}{% endif %}
+</span>
+{%- endmacro %}

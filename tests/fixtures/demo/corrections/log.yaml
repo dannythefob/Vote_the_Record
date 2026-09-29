@@ -1,0 +1,6 @@
+- date: "2026-09-01"
+  target: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-01
+  change: "Corrected the meeting date from 2025-03-11 to 2025-03-12."
+  reason: The minutes list the vote on the second day of the meeting.
+  source_url: https://example.org/demo-county/minutes/2025-03-12
+  reviewer: Demo Reviewer

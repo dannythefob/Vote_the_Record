@@ -23,3 +23,7 @@ cache/
 Thumbs.db
 .vscode/
 .idea/
+
+# Site build output
+site/dist/
+site/dist-demo/

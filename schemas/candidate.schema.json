@@ -16,6 +16,10 @@
       "description": "Display only, exactly as printed on the ballot. Never used for sorting or scoring.",
       "type": ["string", "null"]
     },
+    "summary": {
+      "description": "Biographical facts shown in the candidate card. Optional.",
+      "$ref": "#/$defs/facts"
+    },
     "records": {
       "description": "Scorable facts. Each needs a record_type.",
       "type": "array",

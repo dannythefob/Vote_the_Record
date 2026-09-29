@@ -1,0 +1,30 @@
+# FICTIONAL demo candidate. No mapped records: "No record on file for this candidate."
+id: casey-placeholder
+name: Casey Placeholder
+incumbent: false
+ballot_party: Other Sample Party
+summary:
+  - id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/01-casey-placeholder#B-01
+    statement: First-time candidate; owns a small business in the precinct.
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://example.org/casey/about
+    source_title: Casey Placeholder campaign site
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: "2026-05-01"
+    retrieved: "2026-09-01"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+records: []
+funding: []
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

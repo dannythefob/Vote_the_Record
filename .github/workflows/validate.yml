@@ -15,6 +15,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -r requirements.txt
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: pip install -r requirements-dev.txt
       - run: python src/validate/validate.py
-      - run: python -m pytest tests -q
+      - name: Tests (Python, JS scoring, headless Chrome)
+        run: python -m pytest tests -q
+        env:
+          REQUIRE_NODE: "1"
+          REQUIRE_BROWSER: "1"
+      - name: Build site (fails if the validator fails)
+        run: python src/build/build.py

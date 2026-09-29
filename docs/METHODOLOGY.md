@@ -72,8 +72,10 @@ record weight = type weight × evidence factor
 Several records can describe the same event: for example, the official minutes of a vote,
 a news story about that vote, and the candidate's own statement explaining it. Records
 that describe the same event share a `same_event` group. When more than one record from
-a group maps to the same question, only the one with the highest weight is scored. This
-keeps a single vote from being counted several times just because it was widely reported.
+a group maps to the same question, only the one with the highest weight is scored. If two
+records in a group tie on weight, the one whose ID comes first alphabetically is scored, so
+the result never depends on the order records were entered. This keeps a single vote from
+being counted several times just because it was widely reported.
 
 **Step 3 — Score each question**
 

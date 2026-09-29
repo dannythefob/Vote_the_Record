@@ -3,6 +3,19 @@
   "$id": "urn:vtr:schema:other",
   "title": "Race, actions, office, survey, locality, and corrections files",
   "$defs": {
+    "why_it_matters": {
+      "description": "Sourced reasons the office matters. The most specific level (race > locality > office) wins.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text", "source_url"],
+        "properties": {
+          "text": { "type": "string", "minLength": 1 },
+          "source_url": { "$ref": "urn:vtr:schema:fact#/$defs/url" }
+        }
+      }
+    },
     "race": {
       "type": "object",
       "additionalProperties": false,
@@ -12,8 +25,65 @@
         "office_type": { "$ref": "urn:vtr:schema:fact#/$defs/slug" },
         "election_date": { "$ref": "urn:vtr:schema:fact#/$defs/date" },
         "seats": { "type": "integer", "minimum": 1 },
+        "why_it_matters": { "$ref": "#/$defs/why_it_matters" },
         "notes": { "type": "string" }
       }
+    },
+    "voter_essentials": {
+      "description": "Official voting dates for one election in one state.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "election_date", "items"],
+      "properties": {
+        "state": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "election_date": { "$ref": "urn:vtr:schema:fact#/$defs/date" },
+        "items": { "type": "array", "items": { "$ref": "#/$defs/essential" } }
+      }
+    },
+    "essential": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "name", "source_url", "source_title", "source_kind", "sha256",
+        "archive_url", "retrieved", "verification", "verified_on", "reviewer"
+      ],
+      "properties": {
+        "id": { "$ref": "urn:vtr:schema:fact#/$defs/fact_id" },
+        "name": { "type": "string", "minLength": 1 },
+        "date": { "$ref": "urn:vtr:schema:fact#/$defs/date" },
+        "start": { "$ref": "urn:vtr:schema:fact#/$defs/date" },
+        "end": { "$ref": "urn:vtr:schema:fact#/$defs/date" },
+        "detail": { "type": "string" },
+        "source_url": { "$ref": "urn:vtr:schema:fact#/$defs/url" },
+        "source_title": { "type": "string", "minLength": 1 },
+        "source_kind": { "enum": ["document", "page"] },
+        "sha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+        "archive_url": { "anyOf": [{ "$ref": "urn:vtr:schema:fact#/$defs/url" }, { "type": "null" }] },
+        "retrieved": { "$ref": "urn:vtr:schema:fact#/$defs/date" },
+        "verification": { "enum": ["unverified", "verified"] },
+        "verified_on": { "anyOf": [{ "$ref": "urn:vtr:schema:fact#/$defs/date" }, { "type": "null" }] },
+        "reviewer": { "type": ["string", "null"] },
+        "notes": { "type": "string" }
+      },
+      "oneOf": [
+        { "required": ["date"], "not": { "anyOf": [{ "required": ["start"] }, { "required": ["end"] }] } },
+        { "required": ["start", "end"], "not": { "required": ["date"] } }
+      ],
+      "allOf": [
+        { "$ref": "urn:vtr:schema:fact#/$defs/verification_rules" },
+        {
+          "if": { "properties": { "source_kind": { "const": "page" } } },
+          "then": { "properties": { "sha256": { "type": "null" } } }
+        },
+        {
+          "if": { "properties": { "verification": { "const": "verified" } } },
+          "then": { "properties": { "archive_url": { "type": "string" } } }
+        },
+        {
+          "if": { "properties": { "verification": { "const": "verified" }, "source_kind": { "const": "document" } } },
+          "then": { "properties": { "sha256": { "type": "string" } } }
+        }
+      ]
     },
     "actions": {
       "description": "Official actions taken at one meeting of a governing body.",
@@ -43,7 +113,8 @@
       "required": ["office_type", "powers"],
       "properties": {
         "office_type": { "$ref": "urn:vtr:schema:fact#/$defs/slug" },
-        "powers": { "type": "array", "items": { "$ref": "#/$defs/power" } }
+        "powers": { "type": "array", "items": { "$ref": "#/$defs/power" } },
+        "why_it_matters": { "$ref": "#/$defs/why_it_matters" }
       }
     },
     "office_override": {
@@ -124,7 +195,8 @@
         "type": { "enum": ["county", "city", "school-district", "special-district", "other"] },
         "state": { "type": "string", "pattern": "^[A-Z]{2}$" },
         "counties": { "type": "array", "items": { "$ref": "urn:vtr:schema:fact#/$defs/slug" } },
-        "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } }
+        "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
+        "why_it_matters": { "$ref": "#/$defs/why_it_matters" }
       }
     },
     "corrections": {
