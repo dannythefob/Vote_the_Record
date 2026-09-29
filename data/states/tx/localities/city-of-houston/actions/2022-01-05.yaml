@@ -22,9 +22,9 @@ facts:
     archive_url: https://web.archive.org/web/20251223005915/https://houstontx.gov/citysec/agenda/2022/20220105.pdf
     event_date: "2022-01-05"
     retrieved: "2026-09-28"
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-29"
+    reviewer: "D"
     notes: >-
       Citation supplied by the project owner; text checked against the PDF on
       2026-09-28. The city server returns the PDF only to browser-like requests.

@@ -10,5 +10,8 @@
     "html_handling": "auto-trailing-slash"
   },
   "workers_dev": true,
-  "preview_urls": true
+  "preview_urls": true,
+  // Required by `npx wrangler preview`, which Cloudflare runs for non-main branches.
+  // May stay empty: assets and compatibility settings are inherited from the top level.
+  "previews": {}
 }

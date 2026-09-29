@@ -16,9 +16,9 @@ summary:
     archive_url: "https://web.archive.org/web/20260921224207/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D"
     event_date: "2026-11-03"
     retrieved: "2026-09-29"
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-29"
+    reviewer: "D"
     notes: The archived copy has the same SHA-256 as the downloaded file.
 
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#B-02
@@ -184,53 +184,76 @@ running_on:
   policy_proposals:
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#O-01
       statement: >-
-        Campaign platform, Emergency Preparedness: support the Harris County Flood Control
-        District "by funding an additional reservoir and new flood planes for control"; prepare
-        for winter weather "by supporting Centerpoint Energy's infrastructure weatherization
-        initiatives"; expand the City of Houston's "Lily Pads" program and "create community
-        resilience hubs" across Harris County; expand disaster education in multiple languages
-        and accessible to the hearing impaired, and increase Harris Alerts registrants.
-      <<: &plummer_platform
-        label: candidate_claim
-        claim_status: documented
-        contradicted_by: []
-        source_url: https://www.drletitiaplummer.com/agenda
-        source_title: "Letitia Plummer for Harris County Judge: Agenda (campaign website)"
-        source_kind: page
-        sha256: null
-        archive_url: https://web.archive.org/web/20260929220308/https://www.drletitiaplummer.com/agenda
-        event_date: "2026-09-29"
-        retrieved: "2026-09-29"
-        verification: unverified
-        verified_on: null
-        reviewer: null
-        notes: The campaign's own platform. event_date is the date the page was read, not the date it was first posted.
-
+        Campaign platform, Emergency Preparedness: support the Harris County Flood Control District "by funding an additional reservoir and new flood planes for control"; prepare for winter weather "by supporting Centerpoint Energy's infrastructure weatherization initiatives"; expand the City of Houston's "Lily Pads" program and "create community resilience hubs" across Harris County; expand disaster education in multiple languages and accessible to the hearing impaired, and increase Harris Alerts registrants.
+      label: candidate_claim
+      claim_status: documented
+      contradicted_by: &id001 []
+      source_url: https://www.drletitiaplummer.com/agenda
+      source_title: 'Letitia Plummer for Harris County Judge: Agenda (campaign website)'
+      source_kind: page
+      sha256: null
+      archive_url: https://web.archive.org/web/20260929220308/https://www.drletitiaplummer.com/agenda
+      event_date: '2026-09-29'
+      retrieved: '2026-09-29'
+      verification: unverified
+      verified_on: null
+      reviewer: null
+      notes: >-
+        The campaign's own platform. event_date is the date the page was read, not the date it was first posted.
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#O-02
       statement: >-
-        Campaign platform, Affordability: "Stop county property tax increases by focusing on
-        revenue from appraisal costs"; increase financial support for first-time home buyers,
-        including financial literacy training; support small businesses through microlender
-        partnerships; cut wait times and clear backlogs for county business permits.
-      <<: *plummer_platform
-
+        Campaign platform, Affordability: "Stop county property tax increases by focusing on revenue from appraisal costs"; increase financial support for first-time home buyers, including financial literacy training; support small businesses through microlender partnerships; cut wait times and clear backlogs for county business permits.
+      label: candidate_claim
+      claim_status: documented
+      contradicted_by: *id001
+      source_url: https://www.drletitiaplummer.com/agenda
+      source_title: 'Letitia Plummer for Harris County Judge: Agenda (campaign website)'
+      source_kind: page
+      sha256: null
+      archive_url: https://web.archive.org/web/20260929220308/https://www.drletitiaplummer.com/agenda
+      event_date: '2026-09-29'
+      retrieved: '2026-09-29'
+      verification: unverified
+      verified_on: null
+      reviewer: null
+      notes: >-
+        The campaign's own platform. event_date is the date the page was read, not the date it was first posted.
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#O-03
       statement: >-
-        Campaign platform, Healthcare: establish a Preventive Healthcare Technology Partnership
-        Initiative with Harris Health, the Harris County Health Department Foundation, Texas
-        Medical Center, local hospitals, city health departments, and health insurers; launch
-        youth mental health partnerships with schools and family support programs for
-        addiction and mental health; create a countywide chronic-illness education program;
-        improve environmental health standards.
-      <<: *plummer_platform
-
+        Campaign platform, Healthcare: establish a Preventive Healthcare Technology Partnership Initiative with Harris Health, the Harris County Health Department Foundation, Texas Medical Center, local hospitals, city health departments, and health insurers; launch youth mental health partnerships with schools and family support programs for addiction and mental health; create a countywide chronic-illness education program; improve environmental health standards.
+      label: candidate_claim
+      claim_status: documented
+      contradicted_by: *id001
+      source_url: https://www.drletitiaplummer.com/agenda
+      source_title: 'Letitia Plummer for Harris County Judge: Agenda (campaign website)'
+      source_kind: page
+      sha256: null
+      archive_url: https://web.archive.org/web/20260929220308/https://www.drletitiaplummer.com/agenda
+      event_date: '2026-09-29'
+      retrieved: '2026-09-29'
+      verification: unverified
+      verified_on: null
+      reviewer: null
+      notes: >-
+        The campaign's own platform. event_date is the date the page was read, not the date it was first posted.
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#O-04
       statement: >-
-        Campaign platform, Public Safety: introduce a "Justice to Workforce" model for the
-        county jails to reduce recidivism; prepare county funding for crisis response teams
-        (MCOT and CIRT); "defend immigrant rights" and "advocate for transparency in the use of
-        local resources for the enforcement of federal immigration laws."
-      <<: *plummer_platform
+        Campaign platform, Public Safety: introduce a "Justice to Workforce" model for the county jails to reduce recidivism; prepare county funding for crisis response teams (MCOT and CIRT); "defend immigrant rights" and "advocate for transparency in the use of local resources for the enforcement of federal immigration laws."
+      label: candidate_claim
+      claim_status: documented
+      contradicted_by: *id001
+      source_url: https://www.drletitiaplummer.com/agenda
+      source_title: 'Letitia Plummer for Harris County Judge: Agenda (campaign website)'
+      source_kind: page
+      sha256: null
+      archive_url: https://web.archive.org/web/20260929220308/https://www.drletitiaplummer.com/agenda
+      event_date: '2026-09-29'
+      retrieved: '2026-09-29'
+      verification: unverified
+      verified_on: null
+      reviewer: null
+      notes: >-
+        The campaign's own platform. event_date is the date the page was read, not the date it was first posted.
   attack_messaging: []
   contested_claims: []
 mappings:

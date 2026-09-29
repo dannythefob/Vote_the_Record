@@ -119,6 +119,7 @@ votes and filings as they are recorded.
 - Demo race pages (fictional data, never deploy): `python src/build/build.py --root tests/fixtures/demo --out site/dist-demo --demo`
 - JS scoring tests alone: `node --test "tests/js/*.test.mjs"` (also run by pytest via tests/test_js.py)
 - Site settings and deploy details: `site/README.md`
+- Owner's review page (verify facts with one click; owner only, never run by Claude): `python src/review/review.py` — see `docs/REVIEWING.md`
 
 ## Site rules
 - No inline styles, inline scripts, or event-handler attributes: the CSP forbids them.

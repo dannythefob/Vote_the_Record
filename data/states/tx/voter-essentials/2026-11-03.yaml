@@ -12,9 +12,9 @@ items:
     sha256: null
     archive_url: https://web.archive.org/web/20260926001641/https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml
     retrieved: "2026-09-28"
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-29"
+    reviewer: "D"
     notes: 'Page text: "Last Day to Register to Vote — Monday, October 5, 2026".'
 
   - id: tx/voter-essentials/2026-11-03#early-voting
@@ -27,9 +27,9 @@ items:
     sha256: null
     archive_url: https://web.archive.org/web/20260926001641/https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml
     retrieved: "2026-09-28"
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-29"
+    reviewer: "D"
     notes: 'Page text: "First Day of Early Voting by Personal Appearance — Monday, October 19, 2026"; "Last Day of Early Voting by Personal Appearance — Friday, October 30, 2026".'
 
   - id: tx/voter-essentials/2026-11-03#mail-ballot-application-deadline
@@ -42,9 +42,9 @@ items:
     sha256: null
     archive_url: https://web.archive.org/web/20260926001641/https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml
     retrieved: "2026-09-28"
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-29"
+    reviewer: "D"
     notes: 'Page text: "Last Day to Apply for Ballot by Mail (Received, not Postmarked) — Friday, October 23, 2026".'
 
   - id: tx/voter-essentials/2026-11-03#election-day
@@ -56,7 +56,7 @@ items:
     sha256: null
     archive_url: https://web.archive.org/web/20260926001641/https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml
     retrieved: "2026-09-28"
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-29"
+    reviewer: "D"
     notes: 'Page text: "Tuesday, November 3, 2026 - Uniform Election Date".'
