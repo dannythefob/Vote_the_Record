@@ -31,3 +31,6 @@ site/dist-demo/
 # Wrangler / Node local files
 .wrangler/
 node_modules/
+
+# Local reviewer name for src/review/review.py
+.reviewer

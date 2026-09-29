@@ -102,52 +102,76 @@ running_on:
   policy_proposals:
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#O-01
       statement: >-
-        Campaign platform, Property Tax Relief: "Prioritize public safety, flood control,
-        infrastructure, courts, and emergency management"; require quarterly public
-        performance reviews; publish "a plain-English Taxpayer Impact Statement before major
-        budget votes"; require every new program to identify funding, measurable results, and
-        a sunset review; "Require a public savings review before considering any tax increase."
-      <<: &sanchez_platform
-        label: candidate_claim
-        claim_status: documented
-        contradicted_by: []
-        source_url: https://orlandosanchez.com/issues/
-        source_title: "Orlando Sanchez for Harris County Judge: Issues (campaign website)"
-        source_kind: page
-        sha256: null
-        archive_url: https://web.archive.org/web/20260823072158/https://orlandosanchez.com/issues/
-        event_date: "2026-09-29"
-        retrieved: "2026-09-29"
-        verification: unverified
-        verified_on: null
-        reviewer: null
-        notes: >-
-          The campaign's own platform. event_date is the date the page was read, not the date
-          it was first posted. The August 23, 2026 archived copy contains the same text.
-
+        Campaign platform, Property Tax Relief: "Prioritize public safety, flood control, infrastructure, courts, and emergency management"; require quarterly public performance reviews; publish "a plain-English Taxpayer Impact Statement before major budget votes"; require every new program to identify funding, measurable results, and a sunset review; "Require a public savings review before considering any tax increase."
+      label: candidate_claim
+      claim_status: documented
+      contradicted_by: &id001 []
+      source_url: https://orlandosanchez.com/issues/
+      source_title: 'Orlando Sanchez for Harris County Judge: Issues (campaign website)'
+      source_kind: page
+      sha256: null
+      archive_url: https://web.archive.org/web/20260823072158/https://orlandosanchez.com/issues/
+      event_date: '2026-09-29'
+      retrieved: '2026-09-29'
+      verification: unverified
+      verified_on: null
+      reviewer: null
+      notes: >-
+        The campaign's own platform. event_date is the date the page was read, not the date it was first posted. The August 23, 2026 archived copy contains the same text.
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#O-02
       statement: >-
-        Campaign platform, Responsible Government: "measurable performance, open contracting and
-        competitive bidding, responsible budgeting"; results-based budgeting; public contract
-        transparency; independent audits; quarterly accountability hearings.
-      <<: *sanchez_platform
-
+        Campaign platform, Responsible Government: "measurable performance, open contracting and competitive bidding, responsible budgeting"; results-based budgeting; public contract transparency; independent audits; quarterly accountability hearings.
+      label: candidate_claim
+      claim_status: documented
+      contradicted_by: *id001
+      source_url: https://orlandosanchez.com/issues/
+      source_title: 'Orlando Sanchez for Harris County Judge: Issues (campaign website)'
+      source_kind: page
+      sha256: null
+      archive_url: https://web.archive.org/web/20260823072158/https://orlandosanchez.com/issues/
+      event_date: '2026-09-29'
+      retrieved: '2026-09-29'
+      verification: unverified
+      verified_on: null
+      reviewer: null
+      notes: >-
+        The campaign's own platform. event_date is the date the page was read, not the date it was first posted. The August 23, 2026 archived copy contains the same text.
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#O-03
       statement: >-
-        Campaign platform, Flood Protection: independent review of flood projects; protect
-        federal and state funding; public project deadlines; regional coordination with Fort
-        Bend, Montgomery, Brazoria, Galveston, and Liberty Counties; "Finish the projects voters
-        already funded."
-      <<: *sanchez_platform
-
+        Campaign platform, Flood Protection: independent review of flood projects; protect federal and state funding; public project deadlines; regional coordination with Fort Bend, Montgomery, Brazoria, Galveston, and Liberty Counties; "Finish the projects voters already funded."
+      label: candidate_claim
+      claim_status: documented
+      contradicted_by: *id001
+      source_url: https://orlandosanchez.com/issues/
+      source_title: 'Orlando Sanchez for Harris County Judge: Issues (campaign website)'
+      source_kind: page
+      sha256: null
+      archive_url: https://web.archive.org/web/20260823072158/https://orlandosanchez.com/issues/
+      event_date: '2026-09-29'
+      retrieved: '2026-09-29'
+      verification: unverified
+      verified_on: null
+      reviewer: null
+      notes: >-
+        The campaign's own platform. event_date is the date the page was read, not the date it was first posted. The August 23, 2026 archived copy contains the same text.
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#O-04
       statement: >-
-        Campaign platform, Public Safety: "Fully support the Sheriff's Office, Constables,
-        prosecutors, and courts"; improve staffing, response times, and case processing;
-        "Expand technology that improves investigations and accountability"; coordinate law
-        enforcement, courts, schools, and emergency responders; publish public safety
-        performance measures.
-      <<: *sanchez_platform
+        Campaign platform, Public Safety: "Fully support the Sheriff's Office, Constables, prosecutors, and courts"; improve staffing, response times, and case processing; "Expand technology that improves investigations and accountability"; coordinate law enforcement, courts, schools, and emergency responders; publish public safety performance measures.
+      label: candidate_claim
+      claim_status: documented
+      contradicted_by: *id001
+      source_url: https://orlandosanchez.com/issues/
+      source_title: 'Orlando Sanchez for Harris County Judge: Issues (campaign website)'
+      source_kind: page
+      sha256: null
+      archive_url: https://web.archive.org/web/20260823072158/https://orlandosanchez.com/issues/
+      event_date: '2026-09-29'
+      retrieved: '2026-09-29'
+      verification: unverified
+      verified_on: null
+      reviewer: null
+      notes: >-
+        The campaign's own platform. event_date is the date the page was read, not the date it was first posted. The August 23, 2026 archived copy contains the same text.
   attack_messaging: []
   contested_claims: []
 mappings: []
