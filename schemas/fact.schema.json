@@ -15,7 +15,7 @@
     "record_type": { "enum": ["vote", "sponsored", "promise_kept", "promise_broken", "statement"] },
     "same_event": { "$ref": "#/$defs/event_id" },
     "statement": { "type": "string", "minLength": 1 },
-    "label": { "enum": ["official_record", "news_report", "candidate_claim"] },
+    "label": { "enum": ["official_record", "news_report", "candidate_claim", "organization_statement"] },
     "claim_status": { "enum": ["documented", "allegation", "disputed", "contradicted"] },
     "contradicted_by": { "type": "array", "items": { "$ref": "#/$defs/fact_id" } },
     "source_url": { "$ref": "#/$defs/url" },

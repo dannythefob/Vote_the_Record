@@ -74,11 +74,17 @@ def test_real_repo_builds_all_stage1_pages(real_site):
         assert (real_site / page).is_file(), page
 
 
-def test_home_has_beta_banner_links_and_empty_race_state(real_site):
+def test_home_has_beta_banner_official_links_and_race_list(real_site):
     home = read(real_site, "index.html")
     assert "<strong>Beta.</strong>" in home
     assert 'href="https://www.votetexas.gov/"' in home
-    assert "No races published yet" in home
+    assert 'href="/races/tx/harris-county/2026-11-03/county-judge/"' in home
+
+
+def test_empty_repo_shows_no_races_state(tmp_path):
+    out = tmp_path / "dist"
+    assert build(make_repo(tmp_path, {}), out, today=TODAY) == 0
+    assert "No races published yet" in read(out, "index.html")
 
 
 def test_beta_banner_is_sitewide(real_site):

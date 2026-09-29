@@ -3,7 +3,8 @@
 // inline styles, stores nothing, and makes no network requests.
 import { scoreCandidate, recordWeight } from "./score.js";
 
-const LABELS = { official_record: "Official record", news_report: "News report", candidate_claim: "Candidate's claim" };
+const LABELS = { official_record: "Official record", news_report: "News report", candidate_claim: "Candidate's claim",
+                 organization_statement: "Organization's statement" };
 const RECORD_TYPES = { vote: "Vote", sponsored: "Sponsored measure", promise_kept: "Promise kept",
                        promise_broken: "Promise broken", statement: "Statement" };
 const IMPORTANCE = { 1: "A little", 2: "Somewhat", 3: "A lot" };

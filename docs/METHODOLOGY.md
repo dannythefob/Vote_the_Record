@@ -13,12 +13,16 @@ Every fact shows:
 
 | Field | Meaning |
 |---|---|
-| Label | Official record, news report, or candidate claim |
+| Label | Official record, news report, candidate claim, or organization statement |
 | Status | Documented, allegation, disputed, or contradicted |
 | Source | Link to the original |
 | Archive | Permanent copy, usually on the Wayback Machine |
 | Fingerprint | For downloadable documents such as PDFs: a SHA-256 hash of the file we reviewed, so anyone can confirm it hasn't changed. Web pages don't get a fingerprint; the archived copy serves that purpose. |
 | Verification | Verified (with date and reviewer) or Unverified |
+
+An **organization statement** is an organization speaking for itself on its own website, for
+example a group announcing that it endorses a candidate. These are shown for information and
+never count toward match results.
 
 **Status definitions**
 - **Documented** — the source directly shows it.

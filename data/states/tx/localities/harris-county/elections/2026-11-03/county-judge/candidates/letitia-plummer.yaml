@@ -1,0 +1,248 @@
+# Unverified; written by an AI assistant from official records. Owner review required.
+id: letitia-plummer
+name: Letitia Plummer
+incumbent: false
+ballot_party: Democratic Party
+summary:
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#B-01
+    statement: Listed on the November 3, 2026 general election ballot for Harris County Judge.
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: "https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D"
+    source_title: "Harris County Clerk: Sample Ballot, November 3, 2026 General and Special Elections"
+    source_kind: document
+    sha256: 0b35cb063ef0cb82001e2fb79141e259b95c330cd0d10ad7b2575e34d611e1ed
+    archive_url: "https://web.archive.org/web/20260921224207/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D"
+    event_date: "2026-11-03"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The archived copy has the same SHA-256 as the downloaded file.
+
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#B-02
+    statement: Won the Democratic primary runoff for Harris County Judge on May 26, 2026 with 57,893 votes (51.10%) to Annise Parker's 55,395 (48.90%).
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://appfiles.harrisvotes.com/harrisvotes/prd/Data/0526/dem-cumulative.pdf
+    source_title: "Harris County Clerk: Democratic Party Primary Runoff Elections, May 26, 2026, Official Results"
+    source_kind: document
+    sha256: cde75dd68cfa97bdf91ba2fe079b70b6112c3cac4c90aab2940263aed2ccb563
+    archive_url: https://web.archive.org/web/20260830102704/https://appfiles.harrisvotes.com/harrisvotes/prd/Data/0526/dem-cumulative.pdf
+    event_date: "2026-05-26"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The archived copy has the same SHA-256 as the downloaded file.
+records:
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-01
+    record_type: vote
+    same_event: tx/localities/city-of-houston/actions/2022-01-05#item-32
+    statement: >-
+      As a Houston City Council member, voted no on Item 32, Ordinance No. 2022-0020, a
+      five-year contract with ShotSpotter, Inc. for gunshot detection services for the
+      Houston Police Department ($3,500,000.00 maximum contract amount in the item caption).
+      The minutes record "Council Member Plummer voting no, balance voting aye."
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.houstontx.gov/citysec/agenda/2022/20220105.pdf
+    source_title: Houston City Council Minutes, January 5, 2022 (page 13, Item 32)
+    source_kind: document
+    sha256: 92a398f1cdfcd47fcaa18ab085ead208e013ee96ea6f2e0364f4bd8435902491
+    archive_url: https://web.archive.org/web/20251223005915/https://houstontx.gov/citysec/agenda/2022/20220105.pdf
+    event_date: "2022-01-05"
+    retrieved: "2026-09-28"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-02
+    record_type: vote
+    statement: >-
+      As a Houston City Council member, voted no on Item 44 (June 25, 2024), an ordinance
+      appropriating $23,000,000.00 out of the Budget Stabilization Fund, transferring it to the
+      Disaster Recovery Fund for expenses related to the May 2024 storms, and declaring the
+      City's intent to seek reimbursement from FEMA. The minutes record "Council members
+      Thomas, Castillo, Martinez, Pollard, Castex-Tatum, Plummer and Alcorn voting no." The
+      ordinance was adopted (Ordinance 2024-0495).
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.houstontx.gov/citysec/agenda/2024/20240625.pdf
+    source_title: Houston City Council Minutes, June 25-26, 2024 (page 13, Item 44)
+    source_kind: document
+    sha256: bab38e4b3d8c502484e8c794ec02b6364e9ba07318f772265423076c70aa93a4
+    archive_url: https://web.archive.org/web/20251223005041/https://houstontx.gov/citysec/agenda/2024/20240625.pdf
+    event_date: "2024-06-25"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: >-
+      The archived copy's content digest matches the downloaded file. Not mapped to a survey
+      question: a "no" vote does not show which alternative she preferred, and the minutes do
+      not record her reasons.
+funding:
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#M-01
+    statement: >-
+      Campaign finance report for May 17 - June 30, 2026, as corrected on September 4, 2026:
+      $129,725.04 in total political contributions, $65,742.26 in total political expenditures,
+      $47,264.00 in contributions on hand at the end of the period, and $30,375.00 in
+      outstanding loans.
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: "https://ethics.harrisvotes.com/Document.aspx?ID=8clm5/UZ7yw9/6Sqmckox6xnXSBLSN95kfn9hZwYTdS1AhvEuNXqPy6DXM9rGh6reVh07nkEhRVHZShJxOCsN8XDmZth1m0S9xG5+z3lbnuAYeFc683ZlljuNzx30Ux+"
+    source_title: "Harris County Clerk: Letitia Plummer, Correction/Amendment Affidavit with corrected July 15, 2026 Campaign Finance Report (File No. 2026482), filed September 4, 2026"
+    source_kind: document
+    sha256: cd78e8a5cfe56425f0fcc8581275ce51af46548411964606a81879a24ba589d6
+    archive_url: "https://web.archive.org/web/20260929212540/https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox6xnXSBLSN95kfn9hZwYTdS1AhvEuNXqPy6DXM9rGh6reVh07nkEhRVHZShJxOCsN8XDmZth1m0S9xG5+z3lbnuAYeFc683ZlljuNzx30Ux+"
+    event_date: "2026-06-30"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: >-
+      Figures from Form C/OH Cover Sheet Pg 2 of the corrected report (scanned; read from the
+      page image). This corrects the original July 15, 2026 report (File No. 2026427), which
+      listed $145,881.04 in contributions, $70,492.26 in expenditures, $70,161.86 on hand, and
+      "45,001" in outstanding loans. The affidavit states the report was amended after a
+      review and reconciliation of the campaign's records. Archived on 2026-09-29 at the
+      owner's request; the archived copy has the same SHA-256 as the downloaded file.
+endorsements:
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#E-01
+    statement: Endorsed by the Harris County Young Democrats, according to a January 25, 2026 post on the campaign website.
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.drletitiaplummer.com/news/harris-county-young-democrats-endorsement
+    source_title: "Letitia Plummer for Harris County Judge: Harris County Young Democrats Endorsement (campaign website)"
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260929222032/https://www.drletitiaplummer.com/news/harris-county-young-democrats-endorsement
+    event_date: "2026-01-25"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#E-02
+    statement: Endorsed by the Houston Progressive Caucus, according to a January 25, 2026 post on the campaign website.
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.drletitiaplummer.com/news/houston-progressive-caucus-endorsement
+    source_title: "Letitia Plummer for Harris County Judge: Houston Progressive Caucus Endorsement (campaign website)"
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260929222054/https://www.drletitiaplummer.com/news/houston-progressive-caucus-endorsement
+    event_date: "2026-01-25"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#E-03
+    statement: Endorsed by Progress Texas for the Democratic primary runoff for Harris County Judge, in a May 14, 2026 announcement by Progress Texas.
+    label: organization_statement
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://progresstexas.org/blog/progress-texas-endorsements-may-primary-runoffs
+    source_title: "Progress Texas: Progress Texas Endorsements for May Primary Runoffs"
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260929222119/https://progresstexas.org/blog/progress-texas-endorsements-may-primary-runoffs
+    event_date: "2026-05-14"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#E-04
+    statement: Endorsed by EMILYs List for Harris County Judge, in a September 14, 2026 announcement by EMILYs List.
+    label: organization_statement
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://emilyslist.org/news/emilys-list-endorses-dr-letitia-plummer-for-harris-county-judge/
+    source_title: "EMILYs List: EMILYs List Endorses Dr. Letitia Plummer for Harris County Judge"
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260929222142/https://emilyslist.org/news/emilys-list-endorses-dr-letitia-plummer-for-harris-county-judge/
+    event_date: "2026-09-14"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: >-
+      The announcement also contains the endorser's criticism of Orlando Sanchez. That is the
+      endorser's statement, not the candidate's, so it is not recorded as attack messaging.
+running_on:
+  policy_proposals:
+    - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#O-01
+      statement: >-
+        Campaign platform, Emergency Preparedness: support the Harris County Flood Control
+        District "by funding an additional reservoir and new flood planes for control"; prepare
+        for winter weather "by supporting Centerpoint Energy's infrastructure weatherization
+        initiatives"; expand the City of Houston's "Lily Pads" program and "create community
+        resilience hubs" across Harris County; expand disaster education in multiple languages
+        and accessible to the hearing impaired, and increase Harris Alerts registrants.
+      <<: &plummer_platform
+        label: candidate_claim
+        claim_status: documented
+        contradicted_by: []
+        source_url: https://www.drletitiaplummer.com/agenda
+        source_title: "Letitia Plummer for Harris County Judge: Agenda (campaign website)"
+        source_kind: page
+        sha256: null
+        archive_url: https://web.archive.org/web/20260929220308/https://www.drletitiaplummer.com/agenda
+        event_date: "2026-09-29"
+        retrieved: "2026-09-29"
+        verification: unverified
+        verified_on: null
+        reviewer: null
+        notes: The campaign's own platform. event_date is the date the page was read, not the date it was first posted.
+
+    - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#O-02
+      statement: >-
+        Campaign platform, Affordability: "Stop county property tax increases by focusing on
+        revenue from appraisal costs"; increase financial support for first-time home buyers,
+        including financial literacy training; support small businesses through microlender
+        partnerships; cut wait times and clear backlogs for county business permits.
+      <<: *plummer_platform
+
+    - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#O-03
+      statement: >-
+        Campaign platform, Healthcare: establish a Preventive Healthcare Technology Partnership
+        Initiative with Harris Health, the Harris County Health Department Foundation, Texas
+        Medical Center, local hospitals, city health departments, and health insurers; launch
+        youth mental health partnerships with schools and family support programs for
+        addiction and mental health; create a countywide chronic-illness education program;
+        improve environmental health standards.
+      <<: *plummer_platform
+
+    - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#O-04
+      statement: >-
+        Campaign platform, Public Safety: introduce a "Justice to Workforce" model for the
+        county jails to reduce recidivism; prepare county funding for crisis response teams
+        (MCOT and CIRT); "defend immigrant rights" and "advocate for transparency in the use of
+        local resources for the enforcement of federal immigration laws."
+      <<: *plummer_platform
+  attack_messaging: []
+  contested_claims: []
+mappings:
+  - record: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-01
+    question: county-judge/S-06
+    options: [B, C]
+    rationale: >-
+      As a Houston City Council member, voted against a five-year, multimillion-dollar
+      gunshot-detection contract for the police department. The minutes do not record her
+      reasons, so the vote is consistent with declining the contract or with preferring a
+      shorter trial before a multi-year commitment.
+    verification: unverified
+    verified_on: null
+    reviewer: null
+promise_tracker: []

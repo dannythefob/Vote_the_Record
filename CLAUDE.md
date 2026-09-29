@@ -19,7 +19,9 @@ Every fact carries:
   `.yaml`, plus `#` and a local ID. Example:
   `tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2/candidates/jane-doe#F-001`
   IDs never change once published. The validator checks that the prefix matches the file's location.
-- `label` — `official_record`, `news_report`, or `candidate_claim`
+- `label` — `official_record`, `news_report`, `candidate_claim`, or `organization_statement`
+  (an organization speaking for itself on its own site, e.g. an endorsement announcement;
+  display-only, never allowed on scorable `records`)
 - `claim_status` — `documented`, `allegation`, `disputed`, or `contradicted`.
   `contradicted` requires a non-empty `contradicted_by` list of fact IDs.
 - `source_url`, `source_title`, `event_date`, `retrieved`
