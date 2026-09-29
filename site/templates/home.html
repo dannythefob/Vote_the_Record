@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% from "partials/macros.html" import verification_badge, report_link, source_line %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1>Know the office. Check the record.</h1>
+<p class="lead">Nonpartisan, source-linked information about the offices on your ballot and what the candidates have actually done in them or in past roles.</p>
+
+<section aria-labelledby="essentials-h">
+  <h2 id="essentials-h">Voter essentials</h2>
+  {% for election in site.essentials %}
+  <h3>{{ election.state_name }}: election of {{ election.election_date | longdate }}</h3>
+  <ul class="item-list">
+    {% for item in election.entries %}
+    <li class="card item">
+      <p class="item-main">
+        <strong>{{ item.name }}:</strong>
+        {% if item.get('date') %}{{ item.date | longdate }}{% else %}{{ item.start | longdate }} to {{ item.end | longdate }}{% endif %}
+        {% if item.get('detail') %}<span class="detail">{{ item.detail }}</span>{% endif %}
+      </p>
+      <p class="item-meta">{{ verification_badge(item) }} {{ source_line(item) }} · {{ report_link(item.id) }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+  {% for state, links in (config.official_links or {}).items() %}
+  <h3>Official sources{% if site.essentials %} for {{ state }}{% endif %}</h3>
+  <ul class="link-list">
+    {% for link in links %}
+    <li><a href="{{ link.url }}" rel="noopener noreferrer">{{ link.name }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+  <p class="note">Always confirm dates, polling places, and ID rules with your county elections office or the state's official site.</p>
+</section>
+
+<section aria-labelledby="how-h">
+  <h2 id="how-h">How it works</h2>
+  <ol class="steps">
+    <li><strong>Learn what the office can do.</strong> Each race page starts with the office's legal powers, so you know what the job does and doesn't cover.</li>
+    <li><strong>See the record.</strong> Votes, sponsored measures, promises, and statements, each labeled as an official record, a news report, or a candidate's own claim, with a link to the source.</li>
+    <li><strong>Answer scenarios.</strong> Hypothetical situations the office could actually face. Party is never mentioned.</li>
+    <li><strong>Compare.</strong> Your answers are matched against verified records in your browser. Nothing is sent anywhere or saved.</li>
+  </ol>
+  <p><a href="/methodology/">Read the full methodology</a></p>
+</section>
+
+<section aria-labelledby="races-h">
+  <h2 id="races-h">Races</h2>
+  {% if site.races %}
+  {% for state_name, state_races in site.races | groupby("state_name") %}
+  <h3>{{ state_name }}</h3>
+  {% for locality_name, loc_races in state_races | groupby("locality_name") %}
+  <h4>{{ locality_name }}</h4>
+  <ul class="link-list">
+    {% for race in loc_races | sort(attribute="name") %}
+    <li><a href="{{ race.url }}">{{ race.name }}</a> <span class="muted">· {{ race.election_date | longdate }}</span></li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+  {% endfor %}
+  {% else %}
+  <p class="empty">No races published yet. Race pages appear here once their records have been gathered and checked.</p>
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,89 @@
+# FICTIONAL demo candidate. Verified record on only 2 questions: beta breakdown, no percentage.
+id: blake-sample
+name: Blake Sample
+incumbent: false
+ballot_party: null
+summary:
+  - <<: &verified
+      label: official_record
+      claim_status: documented
+      contradicted_by: []
+      source_kind: page
+      sha256: null
+      archive_url: https://web.archive.org/web/2026/https://example.org/demo
+      retrieved: "2026-09-01"
+      verification: verified
+      verified_on: "2026-09-02"
+      reviewer: Demo Reviewer
+    id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/03-blake-sample#B-01
+    statement: Served on the Demo City council from 2019 to 2025.
+    source_url: https://example.org/demo-city/council-history
+    source_title: Demo City council history
+    event_date: "2019-01-01"
+records:
+  - <<: *verified
+    id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/03-blake-sample#R-01
+    record_type: vote
+    statement: Voted against a city spending cut and for a small fee increase.
+    source_url: https://example.org/demo-city/minutes/2024-05-01
+    source_title: Demo City Council minutes, May 1, 2024
+    event_date: "2024-05-01"
+  - <<: *verified
+    id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/03-blake-sample#R-02
+    record_type: vote
+    label: news_report
+    claim_status: disputed
+    statement: A news report says Blake backed a no-bid repair contract; the minutes record an abstention.
+    source_url: https://example.org/demo-news/no-bid
+    source_title: Demo News, "No-bid contract"
+    event_date: "2024-09-01"
+  - <<: *verified
+    id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/03-blake-sample#R-03
+    record_type: sponsored
+    statement: Sponsored a one-year pilot for a camera system with a council review.
+    source_url: https://example.org/demo-city/minutes/2023-02-15
+    source_title: Demo City Council minutes, February 15, 2023
+    event_date: "2023-02-15"
+funding: []
+endorsements:
+  - <<: *verified
+    id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/03-blake-sample#E-01
+    label: news_report
+    statement: Endorsed by the Demo Neighborhood Association.
+    source_url: https://example.org/demo-news/endorsements
+    source_title: Demo News, "Endorsements"
+    event_date: "2026-08-01"
+running_on:
+  policy_proposals: []
+  attack_messaging:
+    - <<: *verified
+      id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/03-blake-sample#O-01
+      label: candidate_claim
+      statement: Called the incumbent "asleep at the wheel" without naming a vote or policy.
+      source_url: https://example.org/blake/ad
+      source_title: Blake Sample campaign ad
+      event_date: "2026-08-20"
+  contested_claims: []
+mappings:
+  - record: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/03-blake-sample#R-01
+    question: county-commissioner/S-01
+    options: [A]
+    rationale: Voted for a fee increase over spending cuts.
+    verification: verified
+    verified_on: "2026-09-02"
+    reviewer: Demo Reviewer
+  - record: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/03-blake-sample#R-02
+    question: county-commissioner/S-03
+    options: [A]
+    rationale: Reported support for a no-bid contract.
+    verification: verified
+    verified_on: "2026-09-02"
+    reviewer: Demo Reviewer
+  - record: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/03-blake-sample#R-03
+    question: county-commissioner/S-05
+    options: [B]
+    rationale: Sponsored a one-year pilot with review.
+    verification: verified
+    verified_on: "2026-09-02"
+    reviewer: Demo Reviewer
+promise_tracker: []

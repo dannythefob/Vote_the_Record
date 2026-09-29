@@ -1,0 +1,157 @@
+# FICTIONAL demo candidate. Enough verified record on 3 questions to show a percentage.
+id: avery-example
+name: Avery Example
+incumbent: true
+ballot_party: Sample Party
+summary:
+  - <<: &verified
+      label: official_record
+      claim_status: documented
+      contradicted_by: []
+      source_kind: page
+      sha256: null
+      archive_url: https://web.archive.org/web/2026/https://example.org/demo
+      retrieved: "2026-09-01"
+      verification: verified
+      verified_on: "2026-09-02"
+      reviewer: Demo Reviewer
+    id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#B-01
+    statement: Has served as Precinct 9 commissioner since 2023.
+    source_url: https://example.org/demo-county/officials
+    source_title: Demo County officials directory
+    event_date: "2023-01-01"
+records:
+  - <<: *verified
+    id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-01
+    record_type: vote
+    same_event: tx/localities/demo-county/actions/2025-03-12#item-4
+    statement: Voted for a budget amendment cutting department spending by 3 percent.
+    source_url: https://example.org/demo-county/minutes/2025-03-12
+    source_title: Demo County Commissioners Court minutes, March 12, 2025
+    event_date: "2025-03-12"
+  - <<: *verified
+    id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-02
+    record_type: vote
+    label: news_report
+    same_event: tx/localities/demo-county/actions/2025-03-12#item-4
+    statement: A news report described the same budget vote.
+    source_url: https://example.org/demo-news/budget-vote
+    source_title: Demo News, "Court trims budget"
+    event_date: "2025-03-12"
+  - <<: *verified
+    id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-03
+    record_type: statement
+    label: candidate_claim
+    statement: Said in a campaign mailer that a small tax increase may be needed.
+    source_url: https://example.org/avery/mailer
+    source_title: Avery Example campaign mailer
+    event_date: "2026-08-15"
+  - <<: *verified
+    id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-04
+    record_type: vote
+    statement: Voted to require competitive bids on a storm-debris contract.
+    source_url: https://example.org/demo-county/minutes/2025-06-04
+    source_title: Demo County Commissioners Court minutes, June 4, 2025
+    event_date: "2025-06-04"
+  - <<: *verified
+    id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-05
+    record_type: sponsored
+    statement: Sponsored a road plan that splits funds between repairs and new roads, repairs first.
+    source_url: https://example.org/demo-county/minutes/2025-09-10
+    source_title: Demo County Commissioners Court minutes, September 10, 2025
+    event_date: "2025-09-10"
+  - <<: &unverified
+      label: official_record
+      claim_status: documented
+      contradicted_by: []
+      source_kind: page
+      sha256: null
+      archive_url: null
+      retrieved: "2026-09-01"
+      verification: unverified
+      verified_on: null
+      reviewer: null
+    id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-06
+    record_type: vote
+    statement: Voted to declare a disaster two days before a forecast storm.
+    source_url: https://example.org/demo-county/minutes/2025-08-20
+    source_title: Demo County Commissioners Court minutes, August 20, 2025
+    event_date: "2025-08-20"
+funding:
+  - <<: *unverified
+    id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#M-01
+    statement: Reported raising $48,000 in the first half of 2026.
+    source_url: https://example.org/demo-county/finance/avery-2026-07
+    source_title: Demo County campaign finance report, July 2026
+    event_date: "2026-07-15"
+endorsements: []
+running_on:
+  policy_proposals:
+    - <<: *unverified
+      id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#O-01
+      label: candidate_claim
+      statement: Proposes publishing every county contract over $50,000 online.
+      source_url: https://example.org/avery/platform
+      source_title: Avery Example campaign platform
+      event_date: "2026-06-01"
+  attack_messaging: []
+  contested_claims:
+    - <<: *verified
+      id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#O-02
+      label: news_report
+      claim_status: disputed
+      statement: Says the road plan cut repair backlogs in half; county engineers' figures differ.
+      source_url: https://example.org/demo-news/road-backlog
+      source_title: Demo News, "Road backlog claims"
+      event_date: "2026-07-01"
+mappings:
+  - record: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-01
+    question: county-commissioner/S-01
+    options: [B]
+    rationale: Voted to cut department spending.
+    verification: verified
+    verified_on: "2026-09-02"
+    reviewer: Demo Reviewer
+  - record: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-02
+    question: county-commissioner/S-01
+    options: [B]
+    rationale: Reports the same vote to cut spending.
+    verification: verified
+    verified_on: "2026-09-02"
+    reviewer: Demo Reviewer
+  - record: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-03
+    question: county-commissioner/S-01
+    options: [A]
+    rationale: Said a tax increase may be needed.
+    verification: verified
+    verified_on: "2026-09-02"
+    reviewer: Demo Reviewer
+  - record: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-04
+    question: county-commissioner/S-03
+    options: [B]
+    rationale: Voted to require competitive bids after a disaster.
+    verification: verified
+    verified_on: "2026-09-02"
+    reviewer: Demo Reviewer
+  - record: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-05
+    question: county-commissioner/S-04
+    options: [A, C]
+    rationale: The plan splits funds but puts repairs first.
+    verification: verified
+    verified_on: "2026-09-02"
+    reviewer: Demo Reviewer
+  - record: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-06
+    question: county-commissioner/S-02
+    options: [A]
+    rationale: Voted to declare early.
+    verification: unverified
+    verified_on: null
+    reviewer: null
+promise_tracker:
+  - promise: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#O-01
+    status: pending
+    evidence: []
+  - promise: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-03
+    status: kept
+    evidence:
+      - tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-05

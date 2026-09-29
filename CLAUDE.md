@@ -109,6 +109,17 @@ votes and filings as they are recorded.
 - `corrections/` — public corrections log (`log.yaml`, owner-edited) and policy.
 
 ## Commands
-- Install: `python -m venv .venv` then `.venv/Scripts/pip install -r requirements.txt`
+- Install: `python -m venv .venv` then `.venv/Scripts/pip install -r requirements-dev.txt`
 - Validate all data: `python src/validate/validate.py`
 - Tests: `python -m pytest tests`
+- Build the site: `python src/build/build.py` (stops without writing if validation fails)
+- Preview: `python -m http.server 8000 -d site/dist`, then open http://localhost:8000
+- Demo race pages (fictional data, never deploy): `python src/build/build.py --root tests/fixtures/demo --out site/dist-demo --demo`
+- JS scoring tests alone: `node --test "tests/js/*.test.mjs"` (also run by pytest via tests/test_js.py)
+- Site settings and deploy details: `site/README.md`
+
+## Site rules
+- No inline styles, inline scripts, or event-handler attributes: the CSP forbids them.
+- No third-party scripts, fonts, analytics, cookies, or storage.
+- Candidates always render in alphabetical order, never by score.
+- Every unverified item shows an "Unverified" badge.

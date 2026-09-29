@@ -1,0 +1,40 @@
+office_type: county-commissioner
+tags: [raise-revenue, cut-spending, use-reserves, act-early, wait-for-data, warn-first,
+       fast-contracting, competitive-bidding, capped-fast-contracting, repair-first,
+       expand-first, split-funding, approve-full, pilot-first, decline]
+scenarios:
+  - id: S-01
+    powers: [P-BUDGET]
+    scenario: Revenue comes in well below projections mid-year and the county faces a budget gap. Which would you push for first?
+    options:
+      - {id: A, text: Raise the tax rate, tags: [raise-revenue]}
+      - {id: B, text: Cut spending across departments, tags: [cut-spending]}
+      - {id: C, text: Use reserves for one year and revisit, tags: [use-reserves]}
+  - id: S-02
+    powers: [P-EMERGENCY]
+    scenario: A major storm may arrive in three days. Declaring a disaster now speeds up resources but may be costly if the storm shifts. What do you do?
+    options:
+      - {id: A, text: Declare early, tags: [act-early]}
+      - {id: B, text: Wait for updated forecasts, tags: [wait-for-data]}
+      - {id: C, text: Issue warnings but hold the declaration, tags: [warn-first]}
+  - id: S-03
+    powers: [P-CONTRACTS, P-EMERGENCY]
+    scenario: After a disaster, the court can sign a large repair contract in days without competitive bidding, or take weeks to bid it publicly. Which do you support?
+    options:
+      - {id: A, text: Sign quickly and audit afterward, tags: [fast-contracting]}
+      - {id: B, text: Competitive bidding even if slower, tags: [competitive-bidding]}
+      - {id: C, text: Sign quickly only up to a set dollar cap, tags: [capped-fast-contracting]}
+  - id: S-04
+    powers: [P-ROADS, P-BUDGET]
+    scenario: The road budget can fix existing roads or build new ones in growing areas, but not both fully. Where should it go?
+    options:
+      - {id: A, text: Repair existing roads first, tags: [repair-first]}
+      - {id: B, text: Build new roads first, tags: [expand-first]}
+      - {id: C, text: Split the money evenly, tags: [split-funding]}
+  - id: S-05
+    powers: [P-CONTRACTS]
+    scenario: The sheriff's office asks the court to approve a five-year technology contract. Early data on it is mixed. What do you do?
+    options:
+      - {id: A, text: Approve in full, tags: [approve-full]}
+      - {id: B, text: Approve a one-year pilot with a review, tags: [pilot-first]}
+      - {id: C, text: Decline, tags: [decline]}

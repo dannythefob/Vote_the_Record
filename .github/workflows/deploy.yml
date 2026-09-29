@@ -1,0 +1,47 @@
+# Fallback deploy: build here and upload to Cloudflare Pages, for use only if
+# Cloudflare's own build environment can't run the build.
+#
+# Setup (one time):
+#   1. In Cloudflare, create a Pages project with "Direct Upload" named vote-the-record.
+#      A Git-connected project can't be switched to Direct Upload; create a new one.
+#   2. In GitHub repo settings, add secrets CLOUDFLARE_API_TOKEN (Pages: Edit) and
+#      CLOUDFLARE_ACCOUNT_ID. Never commit these.
+#   3. To deploy on every push to main, set the repo variable DEPLOY_VIA_ACTIONS=true.
+#      Otherwise run this workflow by hand from the Actions tab.
+name: deploy (fallback)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.event_name == 'workflow_dispatch' || vars.DEPLOY_VIA_ACTIONS == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: pip install -r requirements-dev.txt
+      - run: python -m pytest tests -q
+        env:
+          REQUIRE_NODE: "1"
+      - run: python src/build/build.py
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy site/dist --project-name=vote-the-record --branch=main

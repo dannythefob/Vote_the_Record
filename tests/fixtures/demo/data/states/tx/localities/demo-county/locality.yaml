@@ -1,0 +1,7 @@
+locality: demo-county
+type: county
+state: TX
+sources: []
+why_it_matters:
+  - text: LOCALITY-LEVEL reason (should be overridden by the race-level reason).
+    source_url: https://example.org/locality-reason

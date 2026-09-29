@@ -200,3 +200,55 @@ def test_option_tag_must_be_listed(tmp_path):
     survey["scenarios"][0]["options"][0]["tags"] = ["unlisted"]
     errors = build(tmp_path, survey=survey)
     assert any("unlisted" in e for e in errors)
+
+
+def test_candidate_summary_facts_are_validated(tmp_path):
+    good = {**FACT, "id": f"{PREFIX}#B-001"}
+    good.pop("record_type")
+    assert build(tmp_path, candidate(summary=[good])) == []
+
+
+def test_candidate_summary_fact_without_source_fails(tmp_path):
+    bad = {k: v for k, v in FACT.items() if k not in ("record_type", "source_url")}
+    bad["id"] = f"{PREFIX}#B-001"
+    errors = build(tmp_path, candidate(summary=[bad]))
+    assert any("source_url" in e for e in errors)
+
+
+def write(tmp_path, rel, doc):
+    path = tmp_path / rel
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(yaml.safe_dump(doc, sort_keys=False), encoding="utf-8")
+
+
+def test_why_it_matters_requires_a_source(tmp_path):
+    build(tmp_path)
+    write(tmp_path, f"{RACE_DIR}/race.yaml", {
+        "name": "Test Race", "office_type": "test-office", "election_date": "2026-11-03",
+        "why_it_matters": [{"text": "It sets the budget."}]})
+    errors = validate(tmp_path).errors
+    assert any("source_url" in e for e in errors)
+
+
+def test_why_it_matters_allowed_on_office_locality_and_race(tmp_path):
+    reason = [{"text": "It sets the budget.", "source_url": "https://example.gov/law"}]
+    build(tmp_path)
+    write(tmp_path, "offices/test-office/powers.yaml", {"office_type": "test-office", "why_it_matters": reason,
+          "powers": [{"id": "P-BUDGET", "description": "Adopts the budget.", "source_url": "https://example.gov/law"}]})
+    write(tmp_path, "data/states/tx/localities/test-county/locality.yaml", {
+        "locality": "test-county", "type": "county", "state": "TX", "sources": [], "why_it_matters": reason})
+    write(tmp_path, f"{RACE_DIR}/race.yaml", {"name": "Test Race", "office_type": "test-office",
+          "election_date": "2026-11-03", "why_it_matters": reason})
+    assert validate(tmp_path).errors == []
+
+
+def test_voter_essentials_need_path_based_ids(tmp_path):
+    build(tmp_path)
+    write(tmp_path, "data/states/tx/voter-essentials/2026-11-03.yaml", {
+        "state": "TX", "election_date": "2026-11-03", "items": [{
+            "id": "tx/elsewhere#reg", "name": "Register", "date": "2026-10-05",
+            "source_url": "https://example.gov", "source_title": "Dates", "source_kind": "page",
+            "sha256": None, "archive_url": None, "retrieved": "2026-09-28",
+            "verification": "unverified", "verified_on": None, "reviewer": None}]})
+    errors = validate(tmp_path).errors
+    assert any("path-based" in e for e in errors)

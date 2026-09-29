@@ -1,0 +1,26 @@
+# Site settings for src/build/build.py.
+site_name: Vote the Record
+
+# Shows the sitewide beta banner.
+beta: true
+
+# Corrections form. Use an https:// URL with an {id} slot, which is replaced by the
+# URL-encoded item ID, e.g. https://forms.example.org/vtr?item={id}
+# Leave null until the form exists; pages then say "Corrections form coming soon".
+corrections_form_url: null
+
+source_code_url: https://github.com/dannythefob/Vote_the_Record
+
+# Official voter information, by state. Shown on the home page.
+official_links:
+  TX:
+    - name: VoteTexas.gov, the official Texas voter information site
+      url: https://www.votetexas.gov/
+    - name: How to register to vote
+      url: https://www.votetexas.gov/register-to-vote/
+    - name: Early voting in person
+      url: https://www.votetexas.gov/faq/early-voting.html
+    - name: Voting by mail
+      url: https://www.votetexas.gov/voting-by-mail/
+    - name: Important election dates (Texas Secretary of State)
+      url: https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml

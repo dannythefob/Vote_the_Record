@@ -1,0 +1,62 @@
+# Texas voter essentials for the November 3, 2026 election.
+# Unverified; written by an AI assistant from the Texas Secretary of State's page. Owner review required.
+state: TX
+election_date: "2026-11-03"
+items:
+  - id: tx/voter-essentials/2026-11-03#registration-deadline
+    name: Last day to register to vote
+    date: "2026-10-05"
+    source_url: https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml
+    source_title: "Texas Secretary of State: Important 2026 Election Dates"
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260926001641/https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml
+    retrieved: "2026-09-28"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: 'Page text: "Last Day to Register to Vote — Monday, October 5, 2026".'
+
+  - id: tx/voter-essentials/2026-11-03#early-voting
+    name: Early voting in person
+    start: "2026-10-19"
+    end: "2026-10-30"
+    source_url: https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml
+    source_title: "Texas Secretary of State: Important 2026 Election Dates"
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260926001641/https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml
+    retrieved: "2026-09-28"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: 'Page text: "First Day of Early Voting by Personal Appearance — Monday, October 19, 2026"; "Last Day of Early Voting by Personal Appearance — Friday, October 30, 2026".'
+
+  - id: tx/voter-essentials/2026-11-03#mail-ballot-application-deadline
+    name: Last day for your application to vote by mail to be received
+    date: "2026-10-23"
+    detail: Received, not postmarked, by this date.
+    source_url: https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml
+    source_title: "Texas Secretary of State: Important 2026 Election Dates"
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260926001641/https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml
+    retrieved: "2026-09-28"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: 'Page text: "Last Day to Apply for Ballot by Mail (Received, not Postmarked) — Friday, October 23, 2026".'
+
+  - id: tx/voter-essentials/2026-11-03#election-day
+    name: Election Day
+    date: "2026-11-03"
+    source_url: https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml
+    source_title: "Texas Secretary of State: Important 2026 Election Dates"
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260926001641/https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml
+    retrieved: "2026-09-28"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: 'Page text: "Tuesday, November 3, 2026 - Uniform Election Date".'

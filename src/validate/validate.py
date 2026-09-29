@@ -34,6 +34,7 @@ FILE_KINDS = [
     (re.compile(r"^offices/[^/]+/survey\.yaml$"), "survey"),
     (re.compile(r"^data/states/[a-z]{2}/state\.yaml$"), "state"),
     (re.compile(r"^data/states/[a-z]{2}/office-overrides/[^/]+\.yaml$"), "office_override"),
+    (re.compile(r"^data/states/[a-z]{2}/voter-essentials/\d{4}-\d{2}-\d{2}\.yaml$"), "voter_essentials"),
     (re.compile(r"^data/states/[a-z]{2}/localities/[^/]+/locality\.yaml$"), "locality"),
     (re.compile(r"^data/states/[a-z]{2}/localities/[^/]+/actions/\d{4}-\d{2}-\d{2}\.yaml$"), "actions"),
     (re.compile(r"^data/states/[a-z]{2}/(statewide|localities/[^/]+)/elections/\d{4}-\d{2}-\d{2}/[^/]+/race\.yaml$"), "race"),
@@ -60,9 +61,9 @@ class Report:
         self.errors.append(f"{path}: {message}")
 
 
-def load_validators(root: Path) -> dict[str, Draft202012Validator]:
+def load_validators(schemas_dir: Path) -> dict[str, Draft202012Validator]:
     schemas = {}
-    for schema_file in (root / "schemas").glob("*.schema.json"):
+    for schema_file in schemas_dir.glob("*.schema.json"):
         schema = json.loads(schema_file.read_text(encoding="utf-8"))
         schemas[schema["$id"]] = schema
     registry = Registry().with_resources(
@@ -77,7 +78,7 @@ def load_validators(root: Path) -> dict[str, Draft202012Validator]:
         **{
             kind: for_ref(f"urn:vtr:schema:other#/$defs/{kind}")
             for kind in ("race", "actions", "powers", "office_override", "survey",
-                         "state", "locality", "corrections")
+                         "state", "locality", "corrections", "voter_essentials")
         },
     }
 
@@ -95,12 +96,15 @@ def id_prefix(rel: str) -> str:
 
 
 def iter_facts(kind: str, doc: dict):
-    """Yield (section, fact) for every fact in a candidate or actions file."""
+    """Yield (section, fact) for every fact-like item that carries a path-based ID."""
     if kind == "actions":
-        for fact in doc.get("facts", []):
+        for fact in doc.get("facts") or []:
             yield "facts", fact
+    elif kind == "voter_essentials":
+        for item in doc.get("items") or []:
+            yield "items", item
     elif kind == "candidate":
-        for section in ("records", "funding", "endorsements"):
+        for section in ("summary", "records", "funding", "endorsements"):
             for fact in doc.get(section, []):
                 yield section, fact
         for section, facts in (doc.get("running_on") or {}).items():
@@ -121,9 +125,12 @@ def find_party_keys(node, path: str = ""):
             yield from find_party_keys(item, f"{path}[{i}]")
 
 
-def validate(root: Path) -> Report:
+def validate(root: Path, schemas_dir: Path | None = None) -> Report:
+    """Validate the data repo at root. schemas_dir defaults to root/schemas, else this repo's."""
     report = Report()
-    validators = load_validators(root)
+    if schemas_dir is None:
+        schemas_dir = root / "schemas" if (root / "schemas").is_dir() else REPO_ROOT / "schemas"
+    validators = load_validators(schemas_dir)
 
     docs: dict[str, tuple[str, object]] = {}
     for base in ("data", "offices", "corrections"):
