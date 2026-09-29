@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtr:schema:candidate",
+  "title": "Candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "name", "incumbent", "ballot_party", "records", "funding",
+    "endorsements", "running_on", "mappings", "promise_tracker"
+  ],
+  "properties": {
+    "id": { "$ref": "urn:vtr:schema:fact#/$defs/slug" },
+    "name": { "type": "string", "minLength": 1 },
+    "incumbent": { "type": "boolean" },
+    "ballot_party": {
+      "description": "Display only, exactly as printed on the ballot. Never used for sorting or scoring.",
+      "type": ["string", "null"]
+    },
+    "records": {
+      "description": "Scorable facts. Each needs a record_type.",
+      "type": "array",
+      "items": {
+        "allOf": [{ "$ref": "urn:vtr:schema:fact" }],
+        "required": ["record_type"]
+      }
+    },
+    "funding": { "$ref": "#/$defs/facts" },
+    "endorsements": { "$ref": "#/$defs/facts" },
+    "running_on": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy_proposals", "attack_messaging", "contested_claims"],
+      "properties": {
+        "policy_proposals": { "$ref": "#/$defs/facts" },
+        "attack_messaging": { "$ref": "#/$defs/facts" },
+        "contested_claims": { "$ref": "#/$defs/facts" }
+      }
+    },
+    "mappings": { "type": "array", "items": { "$ref": "#/$defs/mapping" } },
+    "promise_tracker": {
+      "description": "Display only; never scored.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/promise" }
+    }
+  },
+  "$defs": {
+    "facts": { "type": "array", "items": { "$ref": "urn:vtr:schema:fact" } },
+    "mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record", "question", "options", "rationale", "verification", "verified_on", "reviewer"],
+      "properties": {
+        "record": { "$ref": "urn:vtr:schema:fact#/$defs/fact_id" },
+        "question": { "$ref": "urn:vtr:schema:fact#/$defs/question_id" },
+        "options": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[A-Z]$" }
+        },
+        "rationale": { "type": "string", "minLength": 1 },
+        "verification": { "enum": ["unverified", "verified"] },
+        "verified_on": { "anyOf": [{ "$ref": "urn:vtr:schema:fact#/$defs/date" }, { "type": "null" }] },
+        "reviewer": { "type": ["string", "null"] }
+      },
+      "allOf": [{ "$ref": "urn:vtr:schema:fact#/$defs/verification_rules" }]
+    },
+    "promise": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["promise", "status", "evidence"],
+      "properties": {
+        "promise": { "$ref": "urn:vtr:schema:fact#/$defs/fact_id" },
+        "status": { "enum": ["kept", "broken", "pending"] },
+        "evidence": { "type": "array", "items": { "$ref": "urn:vtr:schema:fact#/$defs/fact_id" } }
+      },
+      "if": { "properties": { "status": { "enum": ["kept", "broken"] } } },
+      "then": { "properties": { "evidence": { "minItems": 1 } } }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:vtr:schema:fact",
+  "title": "Fact",
+  "description": "One sourced fact. Rules: CLAUDE.md sections 2, 3, 3a.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "statement", "label", "claim_status", "source_url", "source_title",
+    "source_kind", "sha256", "archive_url", "event_date", "retrieved",
+    "verification", "verified_on", "reviewer"
+  ],
+  "properties": {
+    "id": { "$ref": "#/$defs/fact_id" },
+    "record_type": { "enum": ["vote", "sponsored", "promise_kept", "promise_broken", "statement"] },
+    "same_event": { "$ref": "#/$defs/event_id" },
+    "statement": { "type": "string", "minLength": 1 },
+    "label": { "enum": ["official_record", "news_report", "candidate_claim"] },
+    "claim_status": { "enum": ["documented", "allegation", "disputed", "contradicted"] },
+    "contradicted_by": { "type": "array", "items": { "$ref": "#/$defs/fact_id" } },
+    "source_url": { "$ref": "#/$defs/url" },
+    "source_title": { "type": "string", "minLength": 1 },
+    "source_kind": { "enum": ["document", "page"] },
+    "sha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+    "archive_url": { "anyOf": [{ "$ref": "#/$defs/url" }, { "type": "null" }] },
+    "event_date": { "$ref": "#/$defs/date" },
+    "retrieved": { "anyOf": [{ "$ref": "#/$defs/date" }, { "type": "null" }] },
+    "verification": { "enum": ["unverified", "verified"] },
+    "verified_on": { "anyOf": [{ "$ref": "#/$defs/date" }, { "type": "null" }] },
+    "reviewer": { "type": ["string", "null"] },
+    "notes": { "type": "string" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "claim_status": { "const": "contradicted" } } },
+      "then": {
+        "required": ["contradicted_by"],
+        "properties": { "contradicted_by": { "minItems": 1 } }
+      }
+    },
+    {
+      "if": { "properties": { "source_kind": { "const": "page" } } },
+      "then": { "properties": { "sha256": { "type": "null" } } }
+    },
+    { "$ref": "#/$defs/verification_rules" },
+    {
+      "if": {
+        "properties": {
+          "verification": { "const": "verified" },
+          "source_kind": { "const": "document" }
+        }
+      },
+      "then": { "properties": { "sha256": { "type": "string" } } }
+    },
+    {
+      "if": { "properties": { "verification": { "const": "verified" } } },
+      "then": {
+        "properties": {
+          "archive_url": { "type": "string" },
+          "retrieved": { "type": "string" }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "url": { "type": "string", "pattern": "^https?://\\S+$" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "fact_id": {
+      "description": "Path under data/states/ without .yaml, then # and a local ID.",
+      "type": "string",
+      "pattern": "^[a-z]{2}(/[a-z0-9][a-z0-9._-]*)+#[A-Za-z0-9-]+$"
+    },
+    "event_id": {
+      "description": "Groups records describing the same event. Same format as a fact ID.",
+      "type": "string",
+      "pattern": "^[a-z]{2}(/[a-z0-9][a-z0-9._-]*)+#[A-Za-z0-9-]+$"
+    },
+    "question_id": { "type": "string", "pattern": "^[a-z0-9-]+/S-\\d{2,}$" },
+    "verification_rules": {
+      "description": "Unverified items carry no reviewer data; verified items must have it.",
+      "if": { "properties": { "verification": { "const": "verified" } } },
+      "then": {
+        "properties": {
+          "verified_on": { "type": "string" },
+          "reviewer": { "type": "string", "minLength": 1 }
+        }
+      },
+      "else": {
+        "properties": {
+          "verified_on": { "type": "null" },
+          "reviewer": { "type": "null" }
+        }
+      }
+    }
+  }
+}

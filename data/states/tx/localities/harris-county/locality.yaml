@@ -1,0 +1,4 @@
+locality: harris-county
+type: county
+state: TX
+sources: []   # minutes portal, election office, campaign finance portal: {name, url, covers}

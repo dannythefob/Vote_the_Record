@@ -1,0 +1,114 @@
+# Vote the Record — Project Rules
+
+A nonpartisan U.S. voter information project. It starts with Harris County, Texas and is
+built to scale to every state. These rules apply to all code, data, and content.
+
+## 1. Official records first
+Use primary government sources before anything else:
+- Local: city council minutes/votes, commissioners court minutes/votes, agendas
+- State: legislature journals and roll-call votes (e.g., Texas Legislature Online)
+- Federal: congressional roll calls (Congress.gov, House Clerk, Senate)
+- Elections: secretary of state and county election filings, candidate lists
+- Campaign finance: FEC, state ethics commissions (e.g., Texas Ethics Commission), local filings
+
+Use news reports only when no official record covers the fact, or to add context to one.
+
+## 2. Every fact is labeled, linked, and tracked
+Every fact carries:
+- `id` — globally unique and path-based: the file's path under `data/states/` without
+  `.yaml`, plus `#` and a local ID. Example:
+  `tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2/candidates/jane-doe#F-001`
+  IDs never change once published. The validator checks that the prefix matches the file's location.
+- `label` — `official_record`, `news_report`, or `candidate_claim`
+- `claim_status` — `documented`, `allegation`, `disputed`, or `contradicted`.
+  `contradicted` requires a non-empty `contradicted_by` list of fact IDs.
+- `source_url`, `source_title`, `event_date`, `retrieved`
+- `source_kind` — `document` (a static file such as a PDF) or `page` (a web page)
+- `sha256` — hash of the downloaded file, for `document` sources only; always null for `page`
+  sources, which rely on `archive_url` instead
+- `archive_url` — Wayback Machine preferred (archive.today only if Wayback fails)
+- `verification` — `unverified` or `verified`
+- `verified_on`, `reviewer` — null until verified
+
+A verified fact must have `archive_url`, `retrieved`, `verified_on`, and `reviewer`, plus
+`sha256` if it is a document, and `verified_on` may not be earlier than `retrieved`.
+The validator enforces this.
+
+## 3. No claim without a source
+No fact, summary, or characterization gets published without a source. Unsourced items
+don't get merged; the validator rejects them. Don't infer or extrapolate past what the
+source says. If a source can't be retrieved, record that in `notes` and leave the fact
+unverified; never fill in details from memory.
+
+## 3a. Only the project owner verifies
+Collectors, scripts, and AI assistants (including Claude) may only write
+`verification: unverified` with `verified_on: null` and `reviewer: null`. Only the project
+owner sets `verified`, `verified_on`, and `reviewer`, on facts and on mappings alike.
+Never change these fields on an existing entry. The site shows an "Unverified" badge on
+every unverified item.
+
+Every edit under `data/` requires the owner's approval. `.claude/settings.json` enforces
+this with an `ask` rule and a PreToolUse hook. Don't work around it.
+
+## 4. Survey questions are hypotheticals tied to the office's powers
+Survey questions are hypothetical scenarios that the office could actually face. Each one
+must cite the specific power ID(s) it rests on, from that office type's `powers.yaml`.
+No questions about matters the office has no authority over, and no questions built from
+party platforms or hot-button issues outside the office's scope.
+
+Every survey option carries `tags` from the office type's tag list; tags never name or
+imply a party. Each mapping links one record to one question and lists the `options` it
+supports (one or more), with a written `rationale`. Mappings carry their own
+`verification`, `verified_on`, and `reviewer`.
+
+## 5. Party is ballot information only
+Show party only as it appears on the ballot ("Listed on ballot as: ___"), stored in the
+nullable `ballot_party` field. Never use it to sort, score, rank, color-code, or describe
+candidates, and never mention it in scenarios.
+
+## 6. Never commit secrets
+Never commit API keys, tokens, or credentials. Keep them in a local `.env` (gitignored)
+and list only the variable names in `.env.example`. Check staged files before every commit.
+
+## 7. Scoring follows docs/METHODOLOGY.md exactly
+Weights: vote 3, sponsored 2, promise kept/broken 2, statement 1; multiplied by user
+importance (1–3) and evidence factor (official 1.0, news 0.7, claim 0.4). Only facts that
+are both verified and documented, and mapped through verified mappings, are scored.
+Records sharing a `same_event` group that map to the same question count once: only
+the highest-weight one is scored. Questions with no scorable record are excluded, never
+scored zero. Results always show "Based on X of Y questions." A match percentage appears
+only when at least 3 answered questions have scorable records. Otherwise the site is in
+beta mode for that candidate: it shows a per-question breakdown with verification
+badges and no overall percentage. The promise tracker is display-only and never affects
+the score. Any change to weights or formula requires updating METHODOLOGY.md.
+
+## 8. Corrections are public and owner-maintained
+The public submits corrections through the corrections form. The project owner reviews
+them and adds entries to `corrections/log.yaml` by hand. Collectors and AI assistants
+never write to the corrections log. Entries are never deleted.
+
+## Neutral language
+Use the same wording and structure for every candidate. Avoid loaded adjectives. Report
+votes and filings as they are recorded.
+
+## Repository layout
+- `src/` — code only (collectors, validator, build). Python.
+- `schemas/` — JSON Schema definitions (fact, candidate, race, actions, office powers,
+  survey, locality, corrections).
+- `offices/<office-type>/` — reusable, state-agnostic `powers.yaml` + `survey.yaml`.
+- `data/states/<st>/` — data only, in YAML.
+  - `office-overrides/<office-type>.yaml` — state-specific powers, each citing the statute.
+  - `statewide/elections/<YYYY-MM-DD>/<race>/`
+  - `localities/<locality>/elections/<YYYY-MM-DD>/<race>/race.yaml` + `candidates/<slug>.yaml`
+  - `localities/<locality>/actions/<YYYY-MM-DD>.yaml` — official body actions from one
+    meeting (what passed), which candidate vote records point to via `same_event`.
+  - Localities are flat under the state (a city can span several counties).
+- `docs/` — METHODOLOGY.md (public explanation of sourcing and scoring).
+- `site/` — the public front end.
+- `.github/workflows/` — CI: runs the validator on every push and PR.
+- `corrections/` — public corrections log (`log.yaml`, owner-edited) and policy.
+
+## Commands
+- Install: `python -m venv .venv` then `.venv/Scripts/pip install -r requirements.txt`
+- Validate all data: `python src/validate/validate.py`
+- Tests: `python -m pytest tests`
