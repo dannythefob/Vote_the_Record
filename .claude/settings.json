@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "ask": [
+      "Edit(/data/**)",
+      "Edit(data/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|NotebookEdit|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/guard_data.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
