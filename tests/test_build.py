@@ -381,12 +381,27 @@ def test_record_block_leads_the_card_newest_first_with_results(demo_site):
     card = html[start:html.index("</article>", start)]
     assert card.index('class="on-record"') < card.index('class="glance"')  # record comes first
     block = card[card.index('class="on-record"'):card.index('class="glance"')]
-    years = re.findall(r'<span class="kind">[^<]*· (\d{4})</span>', block)
-    assert years == sorted(years, reverse=True) and len(years) == 3  # newest first, three shown
-    assert "more in" in block  # Avery has 6 records, 3 shown
-    # R-04 is the 4th-newest, so its result and follow-up show in the details list
-    assert "DEMO RESULT passed 4-1" in card and "DEMO RESULT" not in block
-    assert "What happened next:" in card and "Sponsored a road plan" in card
+    shown = re.findall(r'<span class="kind">([^<·]*?)\s*· (\d{4}-?\d*)</span>', block)
+    assert len(shown) == 3 and "more in" in block  # Avery has 6 records, 3 shown
+    assert all(kind == "Vote" for kind, _ in shown)  # votes come before other actions
+    assert "DEMO RESULT passed 4-1" in block  # R-04 is a vote, so it is on the card
+    assert "What happened next:" in block and "Sponsored a road plan" in block
+
+
+def test_record_order_votes_first_then_newest(demo_site):
+    import sys
+    sys.path.insert(0, str(REPO / "src" / "build"))
+    from model import record_top
+    recs = [{"id": "a", "record_type": "statement", "event_date": "2026-01-01", "statement": "s"},
+            {"id": "b", "record_type": "vote", "event_date": "2020-01-01", "statement": "old vote"},
+            {"id": "c", "record_type": "vote", "event_date": "2024-01-01", "statement": "new vote"},
+            {"id": "d", "record_type": "sponsored", "event_date": "2025-01-01", "statement": "sp"}]
+    order = [i["fact"]["id"] for i in record_top({"records": recs}, {})["items"]]
+    assert order == ["c", "b", "a"]  # votes newest-first, then the newest other action
+
+
+def test_avatar_shows_initials_without_a_photo(demo_site):
+    html = read(demo_site, RACE_PAGE)
     card_start = html.rindex("<article", 0, html.index('id="cand-avery-example"'))
     avery_card = html[card_start:html.index("</article>", card_start)]
     assert 'class="avatar avatar-initials"' in avery_card and ">AE<" in avery_card

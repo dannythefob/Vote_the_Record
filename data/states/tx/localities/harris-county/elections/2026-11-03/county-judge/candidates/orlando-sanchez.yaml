@@ -54,7 +54,170 @@ summary:
       Archived on 2026-09-29 at the owner's request; the archived copy has the same SHA-256
       as the downloaded file. Older snapshots from May 27, 2026 hold the unofficial count
       (85,132 to 49,288) and should not be used.
-records: []
+records:
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#R-01
+    record_type: vote
+    headline: Voted no on the city's 2000 property tax rate ordinance
+    statement: >-
+      As a Houston City Council member, voted no in a roll call on Item 40a, the ordinance "providing for the Assessment, Levying and Collection of Ad Valorem Taxes for the City of Houston, Texas for the Year 2000."
+    result: Failed 7-8 (Ordinance 2000-813).
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.houstontx.gov/citysec/agenda/2000/20000912.pdf
+    source_title: Houston City Council Minutes, September 12-13, 2000 (pages 50-51, Item 40a)
+    source_kind: document
+    sha256: 8043bfe76d5bc006c06863dc6f66c4b048bbf1bc0e422a20f4dfbc60ec1e1668
+    archive_url: https://web.archive.org/web/20260930095500/https://www.houstontx.gov/citysec/agenda/2000/20000912.pdf
+    event_date: '2000-09-12'
+    retrieved: '2026-09-30'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#R-02
+    record_type: vote
+    headline: Voted to lower the rate in the city's 2000 tax ordinance
+    statement: >-
+      At a special meeting, voted aye in a roll call on Council Member Tatro's motion to amend the Tax Levy Ordinance to change the rate in Section 2 from .4668 to .45853.
+    result: Failed 7-8 (Motion 2000-1244).
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.houstontx.gov/citysec/agenda/2000/20001009.pdf
+    source_title: >-
+      Houston City Council Minutes, Special Meeting, October 9, 2000 (pages 29-30, Motion 2000-1244)
+    source_kind: document
+    sha256: c59fb08f7be62a4d2eabc8f023075c6d50d0439efb840cf3e4dd391203925b41
+    archive_url: https://web.archive.org/web/20260930095546/https://www.houstontx.gov/citysec/agenda/2000/20001009.pdf
+    event_date: '2000-10-09'
+    retrieved: '2026-09-30'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#R-03
+    record_type: vote
+    headline: Voted no on the city's 2000 tax rate ordinance, which passed
+    statement: At the same special meeting, voted no in a roll call on the tax levy ordinance.
+    result: Adopted 8-7 (Ordinance 2000-888).
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.houstontx.gov/citysec/agenda/2000/20001009.pdf
+    source_title: >-
+      Houston City Council Minutes, Special Meeting, October 9, 2000 (page 33, Ordinance 2000-888)
+    source_kind: document
+    sha256: c59fb08f7be62a4d2eabc8f023075c6d50d0439efb840cf3e4dd391203925b41
+    archive_url: https://web.archive.org/web/20260930095546/https://www.houstontx.gov/citysec/agenda/2000/20001009.pdf
+    event_date: '2000-10-09'
+    retrieved: '2026-09-30'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#R-04
+    record_type: vote
+    headline: Voted no on an amendment to a 2001 flood cleanup contract
+    statement: >-
+      On Item 30, an ordinance "relating to Disaster Recovery Services" approving a contract with Legacee Environmental, Inc. funded from the Disaster Recovery Fund, voted no on a motion to amend the item. In the debate, Council Member Castillo's amendment was described as giving a one-year contract while the City would "go out immediately for a full RFP."
+    result: >-
+      Adopted; the minutes record "Council Member Sanchez voting no, balance voting aye" (Motion 2001-0780).
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.houstontx.gov/citysec/agenda/2001/20010710.pdf
+    source_title: Houston City Council Minutes, July 10-11, 2001 (pages 17-18, Item 30, Motion 2001-0780)
+    source_kind: document
+    sha256: eb54a5b0e544b6f797598bfb77e9a570a340914bf264636ccb89c5857ded2e6f
+    archive_url: null
+    event_date: '2001-07-10'
+    retrieved: '2026-09-30'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: >-
+      The Wayback Machine returned 404 when asked to save this file on 2026-09-30; archive_url must be added before this can be verified.
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#R-05
+    record_type: vote
+    headline: Voted no on a 2001 flood cleanup contract for hazardous waste
+    statement: >-
+      Voted no on Item 30 as amended, an ordinance approving a contract with Legacee Environmental, Inc. for "Hazardous, Toxic and Radioactive Waste Collection, Characterization, Packaging, Transportation and Disposal," funded from the Disaster Recovery Fund. Before the vote, in answer to his questions, a witness (Mr. Buchanan) stated that the company "had not cleaned up after a disaster."
+    result: >-
+      Adopted; the minutes record "Council Members Tatro and Sanchez voting no, balance voting aye" (Ordinance 2001-0659).
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.houstontx.gov/citysec/agenda/2001/20010710.pdf
+    source_title: Houston City Council Minutes, July 10-11, 2001 (pages 18-19, Item 30, Ordinance 2001-0659)
+    source_kind: document
+    sha256: eb54a5b0e544b6f797598bfb77e9a570a340914bf264636ccb89c5857ded2e6f
+    archive_url: null
+    event_date: '2001-07-10'
+    retrieved: '2026-09-30'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: >-
+      The Wayback Machine returned 404 when asked to save this file on 2026-09-30; archive_url must be added before this can be verified.
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#R-06
+    record_type: sponsored
+    headline: As treasurer, asked the county to hire an outside review of its derivative deals
+    statement: >-
+      As Harris County Treasurer, placed on the Commissioners Court agenda a "Request for approval of a proposal from Saber Partners, LLC, to provide an independent review of derivative transactions entered into by the county and others at the total cost of $28,500, including travel costs not to exceed $6,000."
+    result: >-
+      Not in the online record: the agenda lists the request, and the court's minutes for this period are not online.
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://agenda.harriscountytx.gov/Portals/agenda/Documents/Meeting-Archive/2014/06-10-14.pdf
+    source_title: Harris County Commissioners Court Agenda, June 10, 2014 (pages 19-20, Treasurer item)
+    source_kind: document
+    sha256: 203dc8fd829b751c303af6e338063291a076c75208055e6bfe976360105be6b4
+    archive_url: https://web.archive.org/web/20260930095727/https://agenda.harriscountytx.gov/Portals/agenda/Documents/Meeting-Archive/2014/06-10-14.pdf
+    event_date: '2014-06-10'
+    retrieved: '2026-09-30'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#R-07
+    record_type: sponsored
+    headline: As treasurer, asked for an outside review of the county's payment controls
+    statement: >-
+      As Harris County Treasurer, placed on the Commissioners Court agenda a "Request that the County Judge execute an agreement with Briggs & Veselka Co., for services to review the county's payment processes and controls."
+    result: >-
+      Not in the online record: the agenda lists the request, and the court's minutes for this period are not online.
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://agenda.harriscountytx.gov/Portals/agenda/Documents/Meeting-Archive/2018/01-09-18.pdf
+    source_title: Harris County Commissioners Court Agenda, January 9, 2018 (page 15, Treasurer item 1)
+    source_kind: document
+    sha256: 1108fd006e3258b28f5bf999ebd2b3506a16f21819afb99e81d5def6c6686c39
+    archive_url: null
+    event_date: '2018-01-09'
+    retrieved: '2026-09-30'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: >-
+      The Wayback Machine returned 404 when asked to save this file on 2026-09-30; archive_url must be added before this can be verified.
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#R-08
+    record_type: statement
+    headline: Said the county needed a fuller look at its weak spots after a near $888K phishing loss
+    statement: >-
+      A news report said that after a phishing attempt nearly led the county to deposit $888,000 into a fraudulent bank account, Sanchez, "the Harris County treasurer, who writes the actual checks for the county, said he would like to see a more comprehensive analysis of the county's vulnerabilities," and that on Jan. 9 he "sought to hire an outside forensic financial investigation firm Briggs and Veselka."
+    label: news_report
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.govtech.com/budget-finance/Phishing-Attackers-Almost-Steals-888K-from-Harris-County-Texas-Prompting-Cybersecurity-Review.html
+    source_title: >-
+      GovTech (republished from the Houston Chronicle): Phishing Attackers Almost Steal $888K from Harris County, Texas, Prompting Cybersecurity Review
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260930100238/https://www.govtech.com/budget-finance/Phishing-Attackers-Almost-Steals-888K-from-Harris-County-Texas-Prompting-Cybersecurity-Review.html
+    event_date: '2018-01-26'
+    retrieved: '2026-09-30'
+    verification: unverified
+    verified_on: null
+    reviewer: null
 funding:
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#M-01
     headline: Raised $181,126 and had $132,680 on hand (May 17 - June 30, 2026)

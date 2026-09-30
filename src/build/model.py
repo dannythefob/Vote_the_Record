@@ -165,11 +165,14 @@ RECORD_ON_CARD = 3
 
 
 def record_top(cand: dict, facts: dict) -> dict:
-    """The record block that leads each card: most recent actions first, with results.
+    """The record block that leads each card, with results.
 
-    Every item is a fact on file; follow-ups are resolved to their own sourced facts.
+    Order (same rule for every candidate): recorded votes first, then other actions;
+    newest first within each group. Every item is a fact on file; follow-ups are
+    resolved to their own sourced facts.
     """
     records = sorted(cand.get("records") or [], key=lambda r: r.get("event_date") or "", reverse=True)
+    records.sort(key=lambda r: r["record_type"] != "vote")  # stable: keeps newest-first within groups
     items = []
     for r in records[:RECORD_ON_CARD]:
         items.append({

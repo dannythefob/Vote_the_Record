@@ -125,4 +125,6 @@ votes and filings as they are recorded.
 - No inline styles, inline scripts, or event-handler attributes: the CSP forbids them.
 - No third-party scripts, fonts, analytics, cookies, or storage.
 - Candidates always render in alphabetical order, never by score.
+- Each candidate card leads with "On the record": recorded votes first, then other actions,
+  newest first within each group; the same rule for every candidate.
 - Every unverified item shows an "Unverified" badge.
