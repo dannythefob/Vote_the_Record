@@ -218,6 +218,26 @@ records:
     verification: verified
     verified_on: "2026-09-30"
     reviewer: "D"
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#R-09
+    record_type: statement
+    headline: 'Campaign platform: "open contracting and competitive bidding"'
+    statement: >-
+      Campaign platform, Responsible Government: "Orlando Sanchez will insist on measurable performance, open contracting and competitive bidding, responsible budgeting, and clear consequences when projects fail to deliver."
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://orlandosanchez.com/issues/
+    source_title: 'Orlando Sanchez for Harris County Judge: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260823072158/https://orlandosanchez.com/issues/
+    event_date: '2026-09-30'
+    retrieved: '2026-09-30'
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
+    notes: >-
+      The campaign's own platform (also summarized in O-02). This record quotes only the sentence mapped to a survey question. event_date is the date the page was read. The sentence appears on the live page and in the August 23, 2026 archived copy.
 funding:
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#M-01
     headline: Raised $181,126 and had $132,680 on hand (May 17 - June 30, 2026)
@@ -357,5 +377,26 @@ running_on:
         The campaign's own platform. event_date is the date the page was read, not the date it was first posted. The August 23, 2026 archived copy contains the same text.
   attack_messaging: []
   contested_claims: []
-mappings: []
+mappings:
+  - record: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#R-02
+    question: county-judge/S-01
+    options: [B, C]
+    rationale: >-
+      As a Houston City Council member, voted for a motion to amend the city's 2000 tax
+      ordinance to a lower rate (.4668 to .45853). A vote to lower the rate runs against
+      raising it (A). The minutes do not say whether he would prefer spending cuts or
+      reserves, so both B and C are listed.
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
+  - record: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#R-09
+    question: county-judge/S-03
+    options: [B]
+    rationale: >-
+      His campaign platform says he "will insist on" open contracting and competitive
+      bidding, which matches bidding the work competitively (B). This is a campaign claim,
+      so it counts at the lowest evidence weight.
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
 promise_tracker: []

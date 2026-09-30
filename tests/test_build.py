@@ -344,7 +344,14 @@ def test_promise_tracker_resolves_promises_and_evidence(demo_site):
     html = read(demo_site, RACE_PAGE)
     promises = html[html.index('id="promises-h"'):html.index('id="how-h"')]
     assert '<span class="status status-kept">Kept</span>' in promises
-    assert '<span class="status status-pending">Pending</span>' in promises
+    assert '<span class="status status-pending">Still open</span>' in promises
+    # the still-open promise is unverified, so only the kept one is counted
+    assert "Made 1 promise:" in promises
+    assert "1 kept · 0 not kept · 0 did the opposite · 0 still open" in promises
+    assert "1 more not counted yet" in promises
+    assert "A kept rate appears once at least 3 checked promises are decided." in promises
+    # only incumbents get a card
+    assert 'id="prom-' in promises and promises.count('<article class="card"') == 1
     assert "Evidence: Sponsored a road plan" in promises
 
 
@@ -430,3 +437,10 @@ def test_avatar_shows_initials_without_a_photo(demo_site):
     card_start = html.rindex("<article", 0, html.index('id="cand-avery-example"'))
     avery_card = html[card_start:html.index("</article>", card_start)]
     assert 'class="avatar avatar-initials"' in avery_card and ">AE<" in avery_card
+
+
+def test_race_without_an_incumbent_has_no_promise_tracker(real_site):
+    page = real_site / "races/tx/harris-county/2026-11-03/county-judge/index.html"
+    html = page.read_text(encoding="utf-8")
+    assert 'id="candidates-h"' in html
+    assert 'id="promises-h"' not in html

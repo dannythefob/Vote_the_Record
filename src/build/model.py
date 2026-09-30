@@ -204,6 +204,36 @@ def record_count_text(records: list[dict]) -> str:
     return ", ".join(parts) + " on record"
 
 
+PROMISE_MIN_DECIDED = 3  # same bar as the quiz: fewer decided promises show counts only
+DECIDED = ("kept", "broken", "opposite")
+
+
+def checked(fact: dict | None) -> bool:
+    return bool(fact) and fact.get("verification") == "verified" and fact.get("claim_status") == "documented"
+
+
+def promise_score(promises: list[dict]) -> dict:
+    """Counts and kept rate for an incumbent's promise tracker (docs/METHODOLOGY.md).
+
+    A promise counts only if the promise itself is verified and documented and, when it
+    is decided, every piece of evidence is too. The rate is kept / decided, shown only
+    once PROMISE_MIN_DECIDED promises are decided. Display-only: never affects the quiz.
+    """
+    counts = {s: 0 for s in (*DECIDED, "pending")}
+    unchecked = 0
+    for p in promises:
+        ok = checked(p["promise_fact"]) and (
+            p["status"] == "pending" or all(checked(e) for e in p["evidence_facts"]))
+        if ok:
+            counts[p["status"]] += 1
+        else:
+            unchecked += 1
+    decided = sum(counts[s] for s in DECIDED)
+    rate = round(100 * counts["kept"] / decided) if decided >= PROMISE_MIN_DECIDED else None
+    return {"counts": counts, "made": decided + counts["pending"], "decided": decided,
+            "rate": rate, "unchecked": unchecked}
+
+
 def pick_why_it_matters(race_doc: dict, locality_doc: dict | None, office_doc: dict | None) -> list:
     """The most specific level wins: race, then locality, then office type."""
     for doc in (race_doc, locality_doc, office_doc):
@@ -241,6 +271,7 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
              "evidence_facts": [facts.get(e) for e in entry.get("evidence") or []]}
             for entry in cand.get("promise_tracker") or []
         ]
+        cand["promise_card"] = promise_score(cand["promises"]) if cand.get("incumbent") else None
 
     questions = [
         {"id": f"{office}/{s['id']}", "title": s.get("title") or s["id"], "text": s["scenario"], "powers": s["powers"],
@@ -274,6 +305,7 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
         "state_powers": (override_doc or {}).get("powers") or [],
         "why_it_matters": pick_why_it_matters(race_doc, locality_doc, office_doc),
         "candidates": candidates,
+        "incumbents": [c for c in candidates if c.get("incumbent")],
         "questions": questions,
         "payload": payload,
         "facts": facts,

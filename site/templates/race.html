@@ -174,14 +174,26 @@
   </div>
 </section>
 
+{% if race.incumbents %}
 <section id="promises" aria-labelledby="promises-h">
   <h2 id="promises-h">Promise tracker</h2>
-  <p class="muted">Did they do what they said they would? Just for your information: this doesn't change quiz results.</p>
+  <p class="muted">For the current officeholder: did they do what they said they would? Just for your information: this doesn't change quiz results.</p>
   <div class="cand-grid">
-  {% for c in race.candidates %}
+  {% for c in race.incumbents %}
+  {% set pc = c.promise_card %}
   <article class="card" aria-labelledby="prom-{{ c.id }}">
     <h3 id="prom-{{ c.id }}">{{ c.name }}</h3>
     {% if c.promises %}
+    <p class="promise-count">Made {{ pc.made }} promise{{ "" if pc.made == 1 else "s" }}:
+      {{ pc.counts.kept }} kept · {{ pc.counts.broken }} not kept · {{ pc.counts.opposite }} did the opposite · {{ pc.counts.pending }} still open</p>
+    {% if pc.rate is not none %}
+    <p class="promise-rate"><strong>Kept {{ pc.counts.kept }} of {{ pc.decided }} decided promises ({{ pc.rate }}%)</strong></p>
+    {% else %}
+    <p class="muted">A kept rate appears once at least 3 checked promises are decided.</p>
+    {% endif %}
+    {% if pc.unchecked %}
+    <p class="muted">{{ pc.unchecked }} more not counted yet: the promise or its evidence is not verified.</p>
+    {% endif %}
     <ul class="item-list">
       {% for p in c.promises %}
       <li class="promise">
@@ -206,6 +218,7 @@
   {% endfor %}
   </div>
 </section>
+{% endif %}
 
 <section id="how" aria-labelledby="how-h">
   <h2 id="how-h">How quiz results work</h2>

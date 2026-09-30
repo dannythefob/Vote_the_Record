@@ -78,7 +78,7 @@ STATUSES = {"documented": "Documented", "allegation": "Allegation", "disputed": 
             "contradicted": "Contradicted"}
 RECORD_TYPES = {"vote": "Vote", "sponsored": "Sponsored measure", "promise_kept": "Promise kept",
                 "promise_broken": "Promise broken", "statement": "Statement"}
-PROMISE_STATUSES = {"kept": "Kept", "broken": "Broken", "pending": "Pending"}
+PROMISE_STATUSES = {"kept": "Kept", "broken": "Not kept", "opposite": "Did the opposite", "pending": "Still open"}
 
 
 def anchor(fact_id: str) -> str:
@@ -124,9 +124,14 @@ def replace_dir(tmp: Path, out: Path) -> None:
     if out.exists():
         if not (out / MARKER).exists() and any(out.iterdir()):
             raise SystemExit(f"refusing to replace {out}: it was not created by this build")
-        shutil.rmtree(out)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    shutil.move(str(tmp), str(out))
+        # Empty the folder rather than deleting it: on Windows an open terminal or
+        # Explorer window (e.g. a preview server) locks the folder itself.
+        for child in out.iterdir():
+            shutil.rmtree(child) if child.is_dir() else child.unlink()
+    out.mkdir(parents=True, exist_ok=True)
+    for child in tmp.iterdir():
+        shutil.move(str(child), str(out / child.name))
+    tmp.rmdir()
 
 
 def build(root: Path, out: Path, *, demo: bool = False, config_path: Path | None = None,

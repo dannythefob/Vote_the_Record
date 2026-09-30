@@ -137,9 +137,30 @@ Once a candidate has scorable records on at least 3 of your answered questions, 
 percentage appears, with the same breakdown available underneath.
 
 ## Promise tracker
-Each candidate page lists promises they made and whether each was **kept**, **broken**,
-or is **pending**. Each entry links the source of the promise and the evidence for its
-status. The tracker is for information only and does not change the match percentage.
+For now, only the **current officeholder** (the incumbent) has a promise tracker. It
+lists promises they made and the status of each:
+
+| Status | Meaning |
+|---|---|
+| Kept | They did what they promised. |
+| Not kept | They didn't do it. |
+| Did the opposite | They acted against what they promised. |
+| Still open | It can't be judged yet. |
+
+Every status except "still open" must link evidence, and official records come first.
+
+**Counts and kept rate.** The tracker shows how many promises were made and how many
+are in each status, for example "Made 6 promises: 3 kept · 1 not kept · 1 did the
+opposite · 1 still open." Kept, not kept, and did the opposite are *decided* promises.
+The kept rate is kept ÷ decided ("Kept 3 of 5 decided promises (60%)"). Still-open
+promises are left out of the rate, not counted against anyone. The rate appears only
+once at least 3 promises are decided; before that, only the counts show.
+
+Only checked promises count: the promise must be verified and documented, and so must
+every piece of evidence for a decided promise. Unchecked ones are listed with an
+"Unverified" badge and a note that they aren't counted yet. There are no letter grades.
+
+The tracker is for information only and does not change the match percentage.
 
 ## Corrections
 Found an error? [Submit a correction](CORRECTIONS_FORM_URL). Every reviewed correction is

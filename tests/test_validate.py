@@ -295,3 +295,15 @@ def test_candidate_photo_needs_file_and_rights(tmp_path):
     assert build(tmp_path / "b", candidate(photo=photo)) == []
     no_license = {k: v for k, v in photo.items() if k != "license"}
     assert any("license" in e for e in build(tmp_path / "c", candidate(photo=no_license)))
+
+
+def test_promise_tracker_is_for_incumbents_only(tmp_path):
+    entry = {"promise": FACT["id"], "status": "pending", "evidence": []}
+    errors = build(tmp_path, candidate(incumbent=False, promise_tracker=[entry]))
+    assert any("only incumbents" in e for e in errors)
+
+
+def test_did_the_opposite_needs_evidence(tmp_path):
+    entry = {"promise": FACT["id"], "status": "opposite", "evidence": []}
+    errors = build(tmp_path, candidate(incumbent=True, promise_tracker=[entry]))
+    assert any("promise_tracker" in e for e in errors)

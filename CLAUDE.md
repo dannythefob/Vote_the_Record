@@ -82,7 +82,9 @@ scored zero. Results always show "Based on X of Y questions." A match percentage
 only when at least 3 answered questions have scorable records. Otherwise the site is in
 beta mode for that candidate: it shows a per-question breakdown with verification
 badges and no overall percentage. The promise tracker is display-only and never affects
-the score. Any change to weights or formula requires updating METHODOLOGY.md.
+the score. For now it applies to incumbents only (the validator rejects it on others); it
+shows counts by status and a kept rate (kept ÷ decided, once at least 3 are decided), and
+no letter grade. Any change to weights or formula requires updating METHODOLOGY.md.
 
 ## 8. Corrections are public and owner-maintained
 The public submits corrections through the corrections form (`/report/`, stored privately

@@ -284,6 +284,8 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
                 if option not in option_ids:
                     report.error(rel, f"{where}: option '{option}' is not in {question}")
 
+        if doc.get("promise_tracker") and doc.get("incumbent") is not True:
+            report.error(rel, "promise_tracker: only incumbents have a promise tracker (for now)")
         for i, entry in enumerate(doc.get("promise_tracker") or []):
             if not isinstance(entry, dict):
                 continue

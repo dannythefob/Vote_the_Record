@@ -345,3 +345,7 @@ details.more[open] > summary { margin-bottom: 8px; }
 .report-form button { justify-self: start; margin-top: 14px; }
 .required { color: var(--warn-ink); font-weight: 400; }
 .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+/* Promise tracker counts */
+.promise-count { margin: 0 0 4px; }
+.promise-rate { margin: 0 0 8px; font-size: 1.05rem; }
