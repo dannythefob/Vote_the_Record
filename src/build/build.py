@@ -39,8 +39,8 @@ def load_config(path: Path) -> tuple[dict, list[str]]:
     config = load_yaml(path) or {}
     errors = []
     form = config.get("corrections_form_url")
-    if form is not None and not (isinstance(form, str) and form.startswith("https://") and "{id}" in form):
-        errors.append(f"{path.name}: corrections_form_url must be null or an https:// URL containing {{id}}")
+    if form is not None and not (isinstance(form, str) and form.startswith(("https://", "/")) and "{id}" in form):
+        errors.append(f"{path.name}: corrections_form_url must be null, or an https:// URL or /path containing {{id}}")
     for state, links in (config.get("official_links") or {}).items():
         for link in links:
             if not str(link.get("url", "")).startswith("https://"):
@@ -149,6 +149,9 @@ def build(root: Path, out: Path, *, demo: bool = False, config_path: Path | None
             body=render_methodology(config), page="methodology"),
         "/corrections/": env.get_template("corrections.html").render(site=site, page="corrections"),
         "/about/": env.get_template("about.html").render(page="about"),
+        "/report/": env.get_template("report.html").render(page="report"),
+        "/report/thanks/": env.get_template("report_done.html").render(page="report", ok=True),
+        "/report/error/": env.get_template("report_done.html").render(page="report", ok=False),
     }
     race_template = env.get_template("race.html")
     for race in site["races"]:

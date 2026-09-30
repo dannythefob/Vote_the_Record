@@ -2,16 +2,33 @@
 // The build (python src/build/build.py) must run first; it writes site/dist.
 // tests/test_wrangler.py checks that these settings match what the build produces.
 {
-  "name": "vote-the-record",
-  "compatibility_date": "2026-09-29",
-  "assets": {
-    "directory": "./site/dist",
-    "not_found_handling": "404-page",
-    "html_handling": "auto-trailing-slash"
-  },
-  "workers_dev": true,
-  "preview_urls": true,
-  // Required by `npx wrangler preview`, which Cloudflare runs for non-main branches.
-  // May stay empty: assets and compatibility settings are inherited from the top level.
-  "previews": {}
+	"name": "vote-the-record",
+	"compatibility_date": "2026-09-29",
+	// The only server code: it receives "Report a problem" forms (POST /api/report) and
+	// stores them privately in KV. Every other request is served straight from the assets.
+	"main": "src/worker/index.js",
+	"assets": {
+		"directory": "./site/dist",
+		"binding": "ASSETS",
+		"not_found_handling": "404-page",
+		"html_handling": "auto-trailing-slash",
+		"run_worker_first": [
+			"/api/*"
+		]
+	},
+	// Private report storage (created with: npx wrangler kv namespace create REPORTS).
+	// The id is an identifier, not a secret; access needs your Cloudflare login.
+	// "remote": true makes `wrangler dev` use this real namespace too.
+	"kv_namespaces": [
+		{
+			"binding": "REPORTS",
+			"id": "a2f458bbbf8243e5aef454e7a01ded74",
+			"remote": true
+		}
+	],
+	"workers_dev": true,
+	"preview_urls": true,
+	// Required by `npx wrangler preview`, which Cloudflare runs for non-main branches.
+	// May stay empty: assets and compatibility settings are inherited from the top level.
+	"previews": {}
 }

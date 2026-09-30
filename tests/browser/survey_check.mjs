@@ -135,6 +135,9 @@ async function main() {
       meters: cards.map(c => c.querySelector('meter')?.value ?? null),
       unverifiedBadgesInResults: document.querySelectorAll('#results .badge-unverified').length,
       betaBreakdownOpen: cards.map(c => c.querySelector('details')?.open ?? null),
+      gridHead: [...document.querySelectorAll('#results .compare-grid thead th')].map(th => th.textContent.trim()),
+      gridRows: [...document.querySelectorAll('#results .compare-grid tbody tr')].map(tr =>
+        [tr.querySelector('th').firstChild.textContent.trim(), ...[...tr.querySelectorAll('td')].map(td => td.innerText.trim())]),
     };
   })()`);
 

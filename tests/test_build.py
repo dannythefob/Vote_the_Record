@@ -98,7 +98,7 @@ def test_headers_file_has_csp_and_privacy_headers(real_site):
     text = headers.read_text(encoding="utf-8")
     assert ("Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; "
             "font-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; "
-            "frame-ancestors 'none'; base-uri 'none'; form-action 'none'") in text
+            "frame-ancestors 'none'; base-uri 'none'; form-action 'self'") in text
     assert "Referrer-Policy: no-referrer" in text
     assert "Permissions-Policy:" in text
 
@@ -151,7 +151,7 @@ def test_voter_essentials_render_sorted_with_badges_and_sources(tmp_path):
     assert "Monday" in grid
     assert home.count('class="badge badge-unverified"') >= 3 + 1  # items + banner
     assert home.count('href="https://example.gov/dates"') == 3
-    assert "Corrections form coming soon" in home
+    assert 'href="/report/?item=tx%2Fvoter-essentials%2F2026-11-03%23election-day"' in home
 
 
 def test_past_elections_are_not_listed(tmp_path):
@@ -163,8 +163,9 @@ def test_past_elections_are_not_listed(tmp_path):
 
 def test_unconfigured_form_renders_plain_text_not_links(tmp_path):
     root = make_repo(tmp_path, {ESS_REL: ESSENTIALS})
+    config = make_config(tmp_path, corrections_form_url=None)
     out = tmp_path / "dist"
-    assert build(root, out, today=TODAY) == 0
+    assert build(root, out, config_path=config, today=TODAY) == 0
     for page in ("index.html", "corrections/index.html", "methodology/index.html", "about/index.html"):
         html = read(out, page)
         assert "Corrections form coming soon" in html, page
@@ -181,6 +182,30 @@ def test_configured_form_links_carry_encoded_item_id(tmp_path):
             '%23registration-deadline"') in home
     assert "Corrections form coming soon" not in home
     assert 'href="https://forms.example.org/vtr?item="' in read(out, "corrections/index.html")
+
+
+def test_report_pages_post_to_the_worker_with_a_honeypot(real_site):
+    form = read(real_site, "report/index.html")
+    assert '<form class="card report-form" method="post" action="/api/report">' in form
+    for name in ("item", "problem", "source", "contact", "website"):
+        assert f'name="{name}"' in form, name
+    assert 'tabindex="-1"' in form  # honeypot is skipped by keyboard users
+    assert '<script src="/static/js/report.js" defer></script>' in form
+    assert "no IP address" in form
+    assert "Thanks, we got it." in read(real_site, "report/thanks/index.html")
+    error = read(real_site, "report/error/index.html")
+    assert 'id="report-error"' in error and 'href="/report/"' in error
+
+
+def test_real_site_links_the_built_in_report_form(real_site):
+    assert 'href="/report/?item="' in read(real_site, "corrections/index.html")
+
+
+@pytest.mark.parametrize("url", ["http://forms.example.org/?item={id}", "/report/", "report/?item={id}"])
+def test_bad_form_urls_stop_the_build(tmp_path, url):
+    root = make_repo(tmp_path, {})
+    config = make_config(tmp_path, corrections_form_url=url)
+    assert build(root, tmp_path / "dist", config_path=config, today=TODAY) == 1
 
 
 def test_corrections_log_is_newest_first(tmp_path):
@@ -331,7 +356,7 @@ def test_embedded_race_data_is_safe_json_with_alphabetical_candidates(demo_site)
     data = json.loads(raw)
     assert [c["name"] for c in data["candidates"]] == ["Avery Example", "Blake Sample", "Casey Placeholder"]
     assert len(data["questions"]) == 5
-    assert data["corrections_form_url"] is None
+    assert data["corrections_form_url"] == "/report/?item={id}"
 
 
 def test_demo_pages_have_no_inline_code_or_third_party_assets(demo_site):

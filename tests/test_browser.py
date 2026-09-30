@@ -77,3 +77,14 @@ def test_dark_mode_reduced_motion_and_phone_width(report):
     assert report["light"] == "rgb(242, 245, 244)"
     assert report["scrollBehaviorReduced"] == "auto"
     assert report["phoneOverflow"] == 0
+
+
+def test_results_grid_compares_answers_with_each_record(report):
+    survey = report["survey"]
+    assert survey["gridHead"] == ["Question", "Avery Example", "Blake Sample", "Casey Placeholder"]
+    rows = {r[0]: r[1:] for r in survey["gridRows"]}
+    assert rows["Budget gap"] == ["◐ Mixed", "✗ Different", "— No record"]      # Avery 3.0 of 3.4 agrees
+    assert rows["Storm coming"] == ["· Record not counted", "— No record", "— No record"]  # unverified record
+    assert rows["Disaster repairs"] == ["✓ Same as you", "· Record not counted", "— No record"]  # Blake's is disputed
+    assert rows["Road money"] == ["✓ Same as you", "— No record", "— No record"]
+    assert list(rows) == ["Budget gap", "Storm coming", "Disaster repairs", "Road money"]  # only answered questions

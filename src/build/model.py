@@ -243,13 +243,13 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
         ]
 
     questions = [
-        {"id": f"{office}/{s['id']}", "text": s["scenario"], "powers": s["powers"],
+        {"id": f"{office}/{s['id']}", "title": s.get("title") or s["id"], "text": s["scenario"], "powers": s["powers"],
          "options": [{"id": o["id"], "text": o["text"]} for o in s["options"]]}
         for s in survey_doc.get("scenarios") or []
     ]
     payload = {
         "race": race["name"],
-        "questions": [{k: q[k] for k in ("id", "text", "options")} for q in questions],
+        "questions": [{k: q[k] for k in ("id", "title", "text", "options")} for q in questions],
         "candidates": [
             {
                 "id": c["id"],

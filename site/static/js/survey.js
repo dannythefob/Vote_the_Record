@@ -96,6 +96,40 @@ function renderBreakdown(result, questionsById, template) {
   return list;
 }
 
+// One cell of the at-a-glance grid: how a candidate's checked record compares with the answer.
+export function cellFor(q) {
+  if (!q || q.items.length === 0) return { state: "none", text: "No record" };
+  if (q.alignment === null) return { state: "unscored", text: "Record not counted" };
+  if (q.alignment === 1) return { state: "same", text: "Same as you" };
+  if (q.alignment === 0) return { state: "differ", text: "Different" };
+  return { state: "mixed", text: "Mixed" };
+}
+const CELL_MARK = { same: "✓", differ: "✗", mixed: "◐", none: "—", unscored: "·" };
+
+function renderGrid(data, results, questionsById) {
+  const answered = data.questions.filter((q) => results[0].result.questions.some((r) => r.id === q.id));
+  const table = el("table", { class: "compare-grid" },
+    el("caption", {}, "At a glance: your answers compared with each candidate's checked record"));
+  const head = el("tr", {}, el("th", { scope: "col", text: "Question" }),
+    ...results.map(({ candidate }) => el("th", { scope: "col", text: candidate.name })));
+  table.append(el("thead", {}, head));
+  const body = el("tbody");
+  for (const q of answered) {
+    const mine = results[0].result.questions.find((r) => r.id === q.id);
+    const row = el("tr", {}, el("th", { scope: "row" }, q.title || q.id,
+      el("span", { class: "you-chose", text: `You: ${optionText(questionsById.get(q.id), mine.choice).replace(/^[A-Z]\. /, "")}` })));
+    for (const { result } of results) {
+      const cell = cellFor(result.questions.find((r) => r.id === q.id));
+      row.append(el("td", { class: `cell cell-${cell.state}` },
+        el("span", { class: "mark", "aria-hidden": "true", text: CELL_MARK[cell.state] }), " ", cell.text));
+    }
+    body.append(row);
+  }
+  table.append(body);
+  return el("div", { class: "grid-wrap" }, table,
+    el("p", { class: "note", text: "Only records that have been checked against their source, and linked to a question, count here. \"Record not counted\" means a related record exists but hasn't been checked yet or is disputed. Details for each candidate are below." }));
+}
+
 function renderCandidate(candidate, result, questionsById, template) {
   const card = el("section", { class: "card result", "aria-labelledby": `result-${candidate.id}` },
     el("h3", { id: `result-${candidate.id}`, text: candidate.name }));
@@ -140,8 +174,10 @@ function init() {
     } else {
       output.append(el("p", { class: "muted",
         text: "How your answers line up with each candidate's verified record. Candidates are listed alphabetically. This is not a recommendation." }));
-      for (const candidate of data.candidates) {  // already alphabetical; never re-sorted by score
-        const result = scoreCandidate(candidate, data.questions, answers);
+      // already alphabetical; never re-sorted by score
+      const results = data.candidates.map((candidate) => ({ candidate, result: scoreCandidate(candidate, data.questions, answers) }));
+      output.append(renderGrid(data, results, questionsById));
+      for (const { candidate, result } of results) {
         output.append(renderCandidate(candidate, result, questionsById, data.corrections_form_url));
       }
     }
@@ -155,4 +191,4 @@ function init() {
   });
 }
 
-init();
+if (typeof document !== "undefined") init();

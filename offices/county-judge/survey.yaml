@@ -22,6 +22,7 @@ tags:
   - decline
 scenarios:
   - id: S-01
+    title: Budget shortfall
     powers: [P-BUDGET, P-TAX-RATE]
     scenario: Mid-year, county revenue comes in well below projections, leaving a gap in next year's budget. Which would you push for first?
     options:
@@ -30,6 +31,7 @@ scenarios:
       - {id: C, text: Draw on reserves for one year and revisit next year, tags: [use-reserves]}
 
   - id: S-02
+    title: Storm approaching
     powers: [P-DISASTER, P-EVACUATION, P-EMERGENCY-DIRECTOR]
     scenario: A major storm may reach the county in three days. Acting early frees up resources and gives people more time, but costs money and disruption if the storm shifts. What do you do?
     options:
@@ -38,6 +40,7 @@ scenarios:
       - {id: C, text: Issue public warnings and hold the declaration until forecasts firm up, tags: [warn-first]}
 
   - id: S-03
+    title: Emergency repair contract
     powers: [P-CONTRACTS, P-DISASTER]
     scenario: After a disaster, the county needs debris removal and repairs worth tens of millions of dollars. The law lets the court skip competitive bidding in a public calamity. Which approach do you support?
     options:
@@ -46,6 +49,7 @@ scenarios:
       - {id: C, text: "Use the exemption only for urgent work, and bid everything else", tags: [split-contracting]}
 
   - id: S-04
+    title: Extending a disaster declaration
     powers: [P-DISASTER]
     scenario: A disaster declaration you issued will expire in seven days unless the Commissioners Court consents to continue it. Recovery is under way but uneven. What do you ask the court to do?
     options:
@@ -54,6 +58,7 @@ scenarios:
       - {id: C, text: "Let it end and rely on the county's normal authority", tags: [end-declaration]}
 
   - id: S-05
+    title: Redrawing voting precincts
     powers: [P-PRECINCTS]
     scenario: Population growth means the county's election precincts must be redrawn. Which goal should guide the new lines?
     options:
@@ -62,6 +67,7 @@ scenarios:
       - {id: C, text: "Keep the current lines, changing them only where the law requires", tags: [keep-precincts]}
 
   - id: S-06
+    title: New public-safety technology
     powers: [P-CONTRACTS]
     scenario: The sheriff's office asks the court to approve a five-year, multimillion-dollar detection technology contract. Early results from other places are mixed. What do you do?
     options:

@@ -322,3 +322,26 @@ details.more[open] > summary { margin-bottom: 8px; }
 /* Keep the question text inside its card (legends otherwise sit on the border) */
 .question > legend { float: left; width: 100%; padding: 0; margin: 0 0 10px; }
 .question > legend + * { clear: both; }
+
+/* Quiz results: at-a-glance grid */
+.grid-wrap { overflow-x: auto; margin: 12px 0 20px; }
+.compare-grid { width: 100%; border-collapse: collapse; background: var(--surface); font-size: 0.95rem; }
+.compare-grid caption { text-align: left; font-weight: 600; padding: 0 0 8px; }
+.compare-grid th, .compare-grid td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+.compare-grid thead th { background: var(--bg); }
+.compare-grid tbody th { font-weight: 600; }
+.you-chose { display: block; font-weight: 400; font-size: 0.85rem; color: var(--muted); }
+.cell { white-space: nowrap; }
+.cell .mark { display: inline-block; width: 1.2em; font-weight: 700; }
+.cell-same .mark { color: var(--accent); }
+.cell-differ, .cell-none, .cell-unscored { color: var(--muted); }
+.cell-mixed .mark { color: var(--warn-ink); }
+
+/* Corrections form */
+.report-form { display: grid; gap: 6px; }
+.report-form label { font-weight: 600; margin-top: 10px; }
+.report-form input, .report-form textarea { font: inherit; color: var(--ink); background: var(--bg);
+  border: 1px solid var(--control); border-radius: 4px; padding: 8px 10px; width: 100%; }
+.report-form button { justify-self: start; margin-top: 14px; }
+.required { color: var(--warn-ink); font-weight: 400; }
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }

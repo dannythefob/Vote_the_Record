@@ -144,3 +144,6 @@ status. The tracker is for information only and does not change the match percen
 ## Corrections
 Found an error? [Submit a correction](CORRECTIONS_FORM_URL). Every reviewed correction is
 logged publicly with the date, what changed, why, and who reviewed it.
+
+Reports are private. Only the project owner reads them. We store only what you type and
+the time it arrived: no IP address, no cookies, no tracking. Contact details are optional.

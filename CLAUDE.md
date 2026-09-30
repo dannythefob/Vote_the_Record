@@ -85,7 +85,8 @@ badges and no overall percentage. The promise tracker is display-only and never 
 the score. Any change to weights or formula requires updating METHODOLOGY.md.
 
 ## 8. Corrections are public and owner-maintained
-The public submits corrections through the corrections form. The project owner reviews
+The public submits corrections through the corrections form (`/report/`, stored privately
+by the Worker in `src/worker/`; reports are never committed or published). The project owner reviews
 them and adds entries to `corrections/log.yaml` by hand. Collectors and AI assistants
 never write to the corrections log. Entries are never deleted.
 
@@ -117,6 +118,7 @@ votes and filings as they are recorded.
 - Build the site: `python src/build/build.py` (stops without writing if validation fails)
 - Preview: `python -m http.server 8000 -d site/dist`, then open http://localhost:8000
 - Demo race pages (fictional data, never deploy): `python src/build/build.py --root tests/fixtures/demo --out site/dist-demo --demo`
+- Read "Report a problem" submissions (owner only): `python src/review/reports.py`
 - JS scoring tests alone: `node --test "tests/js/*.test.mjs"` (also run by pytest via tests/test_js.py)
 - Site settings and deploy details: `site/README.md`
 - Owner's review page (verify facts with one click; owner only, never run by Claude): `python src/review/review.py` — see `docs/REVIEWING.md`

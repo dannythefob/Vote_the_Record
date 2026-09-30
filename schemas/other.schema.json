@@ -168,6 +168,7 @@
             "required": ["id", "powers", "scenario", "options"],
             "properties": {
               "id": { "type": "string", "pattern": "^S-\\d{2,}$" },
+              "title": { "description": "Short label (a few words) for results tables.", "type": "string", "minLength": 1, "maxLength": 40 },
               "powers": { "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^P-[A-Z0-9-]+$" } },
               "scenario": { "type": "string", "minLength": 1 },
               "options": {

@@ -4,10 +4,10 @@ site_name: Vote the Record
 # Shows the sitewide beta banner.
 beta: true
 
-# Corrections form. Use an https:// URL with an {id} slot, which is replaced by the
-# URL-encoded item ID, e.g. https://forms.example.org/vtr?item={id}
-# Leave null until the form exists; pages then say "Corrections form coming soon".
-corrections_form_url: null
+# Corrections form: the site's own /report/ page (handled privately by the Worker in
+# src/worker/). {id} is replaced by the URL-encoded item ID. Set to null to show
+# "Corrections form coming soon" instead of links.
+corrections_form_url: "/report/?item={id}"
 
 source_code_url: https://github.com/dannythefob/Vote_the_Record
 

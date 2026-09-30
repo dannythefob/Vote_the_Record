@@ -35,8 +35,9 @@ the CSP in a `<meta>` tag, so violations still show in the browser console.
 
 ## Deploy on Cloudflare Workers
 
-The site deploys as an assets-only Worker (static files, no server code), configured by
-`wrangler.jsonc` at the repo root. Live address: https://vote-the-record.dannythefob.workers.dev
+The site deploys as a Worker with static assets, configured by `wrangler.jsonc` at the
+repo root. Pages are plain files. The only server code is `src/worker/index.js`, which
+runs only for `/api/*` and receives the "Report a problem" form. Live address: https://vote-the-record.dannythefob.workers.dev
 
 Cloudflare dashboard, Workers project settings (Settings → Build):
 
@@ -50,6 +51,24 @@ Cloudflare dashboard, Workers project settings (Settings → Build):
 pages, and keeps the workers.dev address and preview URLs on. `_headers` in the build
 output applies the security headers; `.assetsignore` keeps the build marker off the site.
 `tests/test_wrangler.py` checks that these agree with the build.
+
+### Report a problem (private form)
+
+The form at `/report/` posts to `/api/report`. The Worker checks it and stores it in the
+`REPORTS` KV namespace, keeping only the fields typed in and the time received: no IP
+address, no user agent, no cookies. A hidden "website" field catches bots; those
+submissions are dropped.
+
+The namespace was created once with `npx wrangler kv namespace create REPORTS`; its id
+is in `wrangler.jsonc` (an identifier, not a secret). If a deploy runs without the binding,
+the form sends people to an "isn't switched on yet" page instead of failing.
+
+Read reports: `python src/review/reports.py`. After handling one:
+`python src/review/reports.py --done <key>`. Reports stay private. Accepted fixes go in
+`corrections/log.yaml` by hand.
+
+To use an outside form instead, set `corrections_form_url` in `site.yaml` to an
+`https://` URL containing `{id}`, or to `null` to show "Corrections form coming soon".
 
 Keep Cloudflare Web Analytics turned off: it injects a third-party script.
 
