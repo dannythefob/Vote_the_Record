@@ -71,9 +71,9 @@ records:
     archive_url: https://web.archive.org/web/20260930095500/https://www.houstontx.gov/citysec/agenda/2000/20000912.pdf
     event_date: '2000-09-12'
     retrieved: '2026-09-30'
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#R-02
     record_type: vote
     headline: Voted to lower the rate in the city's 2000 tax ordinance
@@ -91,9 +91,9 @@ records:
     archive_url: https://web.archive.org/web/20260930095546/https://www.houstontx.gov/citysec/agenda/2000/20001009.pdf
     event_date: '2000-10-09'
     retrieved: '2026-09-30'
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#R-03
     record_type: vote
     headline: Voted no on the city's 2000 tax rate ordinance, which passed
@@ -110,9 +110,9 @@ records:
     archive_url: https://web.archive.org/web/20260930095546/https://www.houstontx.gov/citysec/agenda/2000/20001009.pdf
     event_date: '2000-10-09'
     retrieved: '2026-09-30'
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#R-04
     record_type: vote
     headline: Voted no on an amendment to a 2001 flood cleanup contract
@@ -174,9 +174,9 @@ records:
     archive_url: https://web.archive.org/web/20260930095727/https://agenda.harriscountytx.gov/Portals/agenda/Documents/Meeting-Archive/2014/06-10-14.pdf
     event_date: '2014-06-10'
     retrieved: '2026-09-30'
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#R-07
     record_type: sponsored
     headline: As treasurer, asked for an outside review of the county's payment controls
@@ -215,9 +215,9 @@ records:
     archive_url: https://web.archive.org/web/20260930100238/https://www.govtech.com/budget-finance/Phishing-Attackers-Almost-Steals-888K-from-Harris-County-Texas-Prompting-Cybersecurity-Review.html
     event_date: '2018-01-26'
     retrieved: '2026-09-30'
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
 funding:
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#M-01
     headline: Raised $181,126 and had $132,680 on hand (May 17 - June 30, 2026)

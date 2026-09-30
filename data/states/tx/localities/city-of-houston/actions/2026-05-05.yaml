@@ -19,6 +19,6 @@ facts:
     archive_url: https://web.archive.org/web/20260930020455/https://www.houstontx.gov/citysec/agenda/2026/20260505.pdf
     event_date: "2026-05-05"
     retrieved: "2026-09-29"
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
