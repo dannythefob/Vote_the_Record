@@ -126,9 +126,9 @@ records:
     archive_url: https://web.archive.org/web/20251224081121/https://www.houstontx.gov/citysec/agenda/2022/20220601.pdf
     event_date: '2022-06-01'
     retrieved: '2026-09-29'
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
     notes: >-
       The follow-up is a later council action on the same subject, shown for context; the record does not say her amendment caused it.
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-04
@@ -148,9 +148,9 @@ records:
     archive_url: https://web.archive.org/web/20260604120637/https://www.houstontx.gov/citysec/agenda/2023/20230606.pdf
     event_date: '2023-06-06'
     retrieved: '2026-09-29'
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-05
     record_type: sponsored
     headline: Proposed an $800,000 generator for the Kashmere Gardens Resilience Hub
@@ -169,9 +169,9 @@ records:
     archive_url: https://web.archive.org/web/20251223010807/https://www.houstontx.gov/citysec/agenda/2024/20240611.pdf
     event_date: '2024-06-11'
     retrieved: '2026-09-29'
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
     notes: >-
       The substitute amendment's text was not reviewed. No later council action on the generator was found in the minutes through September 2026.
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-06
@@ -192,9 +192,9 @@ records:
     archive_url: https://web.archive.org/web/20260930015952/https://www.houstontx.gov/citysec/agenda/2025/20250603.pdf
     event_date: '2025-06-03'
     retrieved: '2026-09-29'
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-07
     record_type: sponsored
     headline: >-
@@ -214,9 +214,9 @@ records:
     archive_url: https://web.archive.org/web/20260930020149/https://www.houstontx.gov/citysec/agenda/2025/20251209.pdf
     event_date: '2025-12-09'
     retrieved: '2026-09-29'
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
 funding:
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#M-01
     headline: Raised $129,725 and had $47,264 on hand (May 17 - June 30, 2026, corrected report)
@@ -235,9 +235,9 @@ funding:
     archive_url: "https://web.archive.org/web/20260929212540/https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox6xnXSBLSN95kfn9hZwYTdS1AhvEuNXqPy6DXM9rGh6reVh07nkEhRVHZShJxOCsN8XDmZth1m0S9xG5+z3lbnuAYeFc683ZlljuNzx30Ux+"
     event_date: "2026-06-30"
     retrieved: "2026-09-29"
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
     notes: >-
       Figures from Form C/OH Cover Sheet Pg 2 of the corrected report (scanned; read from the
       page image). This corrects the original July 15, 2026 report (File No. 2026427), which
@@ -332,9 +332,9 @@ running_on:
       archive_url: https://web.archive.org/web/20260929220308/https://www.drletitiaplummer.com/agenda
       event_date: '2026-09-29'
       retrieved: '2026-09-29'
-      verification: unverified
-      verified_on: null
-      reviewer: null
+      verification: verified
+      verified_on: "2026-09-30"
+      reviewer: "D"
       notes: >-
         The campaign's own platform. event_date is the date the page was read, not the date it was first posted.
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#O-02
@@ -351,9 +351,9 @@ running_on:
       archive_url: https://web.archive.org/web/20260929220308/https://www.drletitiaplummer.com/agenda
       event_date: '2026-09-29'
       retrieved: '2026-09-29'
-      verification: unverified
-      verified_on: null
-      reviewer: null
+      verification: verified
+      verified_on: "2026-09-30"
+      reviewer: "D"
       notes: >-
         The campaign's own platform. event_date is the date the page was read, not the date it was first posted.
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#O-03
@@ -370,9 +370,9 @@ running_on:
       archive_url: https://web.archive.org/web/20260929220308/https://www.drletitiaplummer.com/agenda
       event_date: '2026-09-29'
       retrieved: '2026-09-29'
-      verification: unverified
-      verified_on: null
-      reviewer: null
+      verification: verified
+      verified_on: "2026-09-30"
+      reviewer: "D"
       notes: >-
         The campaign's own platform. event_date is the date the page was read, not the date it was first posted.
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#O-04
@@ -389,9 +389,9 @@ running_on:
       archive_url: https://web.archive.org/web/20260929220308/https://www.drletitiaplummer.com/agenda
       event_date: '2026-09-29'
       retrieved: '2026-09-29'
-      verification: unverified
-      verified_on: null
-      reviewer: null
+      verification: verified
+      verified_on: "2026-09-30"
+      reviewer: "D"
       notes: >-
         The campaign's own platform. event_date is the date the page was read, not the date it was first posted.
   attack_messaging: []
@@ -405,7 +405,7 @@ mappings:
       gunshot-detection contract for the police department. The minutes do not record her
       reasons, so the vote is consistent with declining the contract or with preferring a
       shorter trial before a multi-year commitment.
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
 promise_tracker: []

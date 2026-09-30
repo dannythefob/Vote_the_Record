@@ -20,7 +20,7 @@ facts:
     archive_url: https://web.archive.org/web/20251223010807/https://www.houstontx.gov/citysec/agenda/2024/20240611.pdf
     event_date: "2024-06-11"
     retrieved: "2026-09-29"
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
     notes: The minutes do not say whether the ShotSpotter contract was actually cancelled.
