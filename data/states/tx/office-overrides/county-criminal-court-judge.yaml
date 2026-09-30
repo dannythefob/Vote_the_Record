@@ -1,0 +1,27 @@
+# Powers of a judge of a Harris County Criminal Court at Law.
+# Text checked against the Government Code and Code of Criminal Procedure (statutes.capitol.texas.gov,
+# read through its document server tcss.legis.texas.gov) on 2026-09-30. Term of office not confirmed yet.
+office_type: county-criminal-court-judge
+state: TX
+powers:
+  - id: P-MISDEMEANORS
+    description: Hears misdemeanor cases that can bring a fine over $500. Lesser, fine-only cases go to Justices of the Peace.
+    statute: Code of Criminal Procedure art. 4.07; Government Code § 25.1033(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/CR/htm/CR.4.htm
+
+  - id: P-APPEALS
+    description: Hears appeals of criminal cases from Justice of the Peace and city municipal courts in the county.
+    statute: Government Code § 25.1033(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+
+plain_summary:
+  intro:
+    text: Hears misdemeanor criminal cases (more serious than a ticket, less serious than a felony).
+    powers: [P-MISDEMEANORS]
+  points:
+    - text: Hears misdemeanor criminal cases
+      icon: gavel
+      powers: [P-MISDEMEANORS]
+    - text: Hears appeals from Justice of the Peace and city courts
+      icon: court
+      powers: [P-APPEALS]

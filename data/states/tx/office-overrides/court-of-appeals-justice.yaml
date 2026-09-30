@@ -1,0 +1,40 @@
+# Powers of a Justice of a Texas Court of Appeals (including a Chief Justice).
+# Text checked against the Texas Constitution and Government Code (statutes.capitol.texas.gov,
+# read through its document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: court-of-appeals-justice
+state: TX
+powers:
+  - id: P-TERM
+    description: Elected by the voters of the court's district to a six-year term.
+    statute: Texas Constitution art. V, § 6(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+
+  - id: P-APPEALS
+    description: Hears appeals from district and county courts in its district, and decides them by majority vote of the justices sitting on the case.
+    statute: Texas Constitution art. V, § 6(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+
+  - id: P-HOUSTON-COURTS
+    description: The First and Fourteenth Courts of Appeals both cover the same 10 counties, including Harris, and each has a chief justice and eight justices.
+    statute: Government Code §§ 22.201(b), (o); 22.216
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.22.htm
+
+  - id: P-FIFTEENTH
+    description: The Fifteenth Court of Appeals covers the whole state and hears appeals in civil cases brought by or against the state and its agencies.
+    statute: Government Code §§ 22.201(p), 22.220(d)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.22.htm
+
+plain_summary:
+  intro:
+    text: Hears appeals from trial courts, the middle step before the state's highest courts. Harris County is covered by the First, Fourteenth, and Fifteenth Courts of Appeals.
+    powers: [P-APPEALS, P-HOUSTON-COURTS, P-FIFTEENTH]
+  points:
+    - text: Decides appeals from district and county courts
+      icon: court
+      powers: [P-APPEALS]
+    - text: The First and Fourteenth Courts cover Harris and nine nearby counties
+      icon: gavel
+      powers: [P-HOUSTON-COURTS]
+    - text: The Fifteenth Court hears civil appeals involving the state, from all of Texas
+      icon: shield
+      powers: [P-FIFTEENTH]

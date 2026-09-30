@@ -1,0 +1,27 @@
+# Powers of a Texas Railroad Commissioner.
+# Text checked against the Texas Constitution and statutes (statutes.capitol.texas.gov,
+# read through its document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: railroad-commissioner
+state: TX
+powers:
+  - id: P-TERM
+    description: One of three commissioners, each elected statewide to a six-year term. One seat is on the ballot every two years.
+    statute: Texas Constitution art. XVI, § 30(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.16.htm
+
+  - id: P-OIL-GAS
+    description: The commission has jurisdiction over oil and gas wells, pipelines, and the people and companies that operate them.
+    statute: Natural Resources Code § 81.051
+    source_url: https://statutes.capitol.texas.gov/Docs/NR/htm/NR.81.htm
+
+plain_summary:
+  intro:
+    text: Despite the name, it oversees Texas's oil and gas wells and pipelines.
+    powers: [P-OIL-GAS]
+  points:
+    - text: Oversees oil and gas wells, pipelines, and their operators
+      icon: shield
+      powers: [P-OIL-GAS]
+    - text: Three commissioners; one seat is up every two years
+      icon: vote
+      powers: [P-TERM]

@@ -1,0 +1,33 @@
+# Powers of the Texas Commissioner of Agriculture.
+# Text checked against the Agriculture Code (statutes.capitol.texas.gov, read through its
+# document server tcss.legis.texas.gov) on 2026-09-30. The term of office is not listed:
+# the statute setting it has not been confirmed yet.
+office_type: agriculture-commissioner
+state: TX
+powers:
+  - id: P-DEPARTMENT
+    description: Directs the Texas Department of Agriculture.
+    statute: Agriculture Code § 11.001
+    source_url: https://statutes.capitol.texas.gov/Docs/AG/htm/AG.11.htm
+
+  - id: P-PROMOTE
+    description: The department promotes farming, ranching, and other industries that grow, process, or produce products in Texas.
+    statute: Agriculture Code § 12.002
+    source_url: https://statutes.capitol.texas.gov/Docs/AG/htm/AG.12.htm
+
+  - id: P-SCALES
+    description: The department inspects and tests commercial weighing and measuring devices (for example, gas pumps and store scales) for accuracy.
+    statute: Agriculture Code § 13.101
+    source_url: https://statutes.capitol.texas.gov/Docs/AG/htm/AG.13.htm
+
+plain_summary:
+  intro:
+    text: Runs the state Department of Agriculture, which supports farming and ranching and checks that scales and gas pumps measure correctly.
+    powers: [P-DEPARTMENT, P-PROMOTE, P-SCALES]
+  points:
+    - text: Promotes Texas farming, ranching, and food businesses
+      icon: megaphone
+      powers: [P-PROMOTE]
+    - text: Checks that gas pumps and store scales measure correctly
+      icon: shield
+      powers: [P-SCALES]

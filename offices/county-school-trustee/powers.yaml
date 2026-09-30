@@ -1,0 +1,3 @@
+office_type: county-school-trustee
+level: county
+powers: []   # Texas powers: data/states/tx/office-overrides/county-school-trustee.yaml

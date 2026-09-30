@@ -1,0 +1,40 @@
+# Powers of a Texas state representative.
+# Text checked against the Texas Constitution (statutes.capitol.texas.gov, read through its
+# document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: state-representative
+state: TX
+powers:
+  - id: P-TERM
+    description: One of 150 representatives, elected to a two-year term.
+    statute: Texas Constitution art. III, §§ 2, 4
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.3.htm
+
+  - id: P-LAWS
+    description: Votes on bills. Laws can only be passed by bill, and a bill needs both chambers and the governor's signature (or a veto override).
+    statute: Texas Constitution art. III, § 30; art. IV, § 14
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.3.htm
+
+  - id: P-BUDGET
+    description: Votes on the state budget and tax bills. Tax bills must start in the House.
+    statute: Texas Constitution art. III, § 33
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.3.htm
+
+  - id: P-IMPEACH
+    description: Only the House can impeach (formally charge) state officials.
+    statute: Texas Constitution art. XV, § 1
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.15.htm
+
+plain_summary:
+  intro:
+    text: One of 150 state representatives. Votes on Texas laws, taxes, and the state budget.
+    powers: [P-TERM, P-LAWS, P-BUDGET]
+  points:
+    - text: Votes on Texas laws
+      icon: vote
+      powers: [P-LAWS]
+    - text: Votes on the state budget; tax bills start in the House
+      icon: budget
+      powers: [P-BUDGET]
+    - text: Can impeach (formally charge) state officials
+      icon: gavel
+      powers: [P-IMPEACH]

@@ -1,0 +1,48 @@
+# Powers of a Texas state senator.
+# Text checked against the Texas Constitution (statutes.capitol.texas.gov, read through its
+# document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: state-senator
+state: TX
+powers:
+  - id: P-TERM
+    description: One of 31 senators, elected to a four-year term.
+    statute: Texas Constitution art. III, §§ 2-3
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.3.htm
+
+  - id: P-LAWS
+    description: Votes on bills. Laws can only be passed by bill, and a bill needs both chambers and the governor's signature (or a veto override).
+    statute: Texas Constitution art. III, § 30; art. IV, § 14
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.3.htm
+
+  - id: P-BUDGET
+    description: Votes on the state budget and tax bills. Tax bills must start in the House.
+    statute: Texas Constitution art. III, § 33
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.3.htm
+
+  - id: P-CONFIRM
+    description: Votes on the governor's appointments. Two-thirds of the senators present must consent.
+    statute: Texas Constitution art. IV, § 12
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm
+
+  - id: P-IMPEACH-TRIAL
+    description: Acts as the court in impeachment trials of state officials and judges. Conviction needs two-thirds of the senators present.
+    statute: Texas Constitution art. XV, §§ 2-3
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.15.htm
+
+plain_summary:
+  intro:
+    text: One of 31 state senators. Votes on Texas laws and the state budget, and approves the governor's appointments.
+    powers: [P-TERM, P-LAWS, P-BUDGET, P-CONFIRM]
+  points:
+    - text: Votes on Texas laws
+      icon: vote
+      powers: [P-LAWS]
+    - text: Votes on the state budget and taxes
+      icon: budget
+      powers: [P-BUDGET]
+    - text: Approves or rejects the governor's appointments
+      icon: contract
+      powers: [P-CONFIRM]
+    - text: Acts as the jury in impeachment trials
+      icon: gavel
+      powers: [P-IMPEACH-TRIAL]

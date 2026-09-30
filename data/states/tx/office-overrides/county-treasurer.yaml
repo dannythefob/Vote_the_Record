@@ -1,0 +1,32 @@
+# Powers of a Texas county treasurer.
+# Text checked against the Texas Constitution and Local Government Code (statutes.capitol.texas.gov,
+# read through its document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: county-treasurer
+state: TX
+powers:
+  - id: P-TERM
+    description: Elected to a four-year term.
+    statute: Texas Constitution art. XVI, § 44(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.16.htm
+
+  - id: P-CUSTODIAN
+    description: The county's chief custodian of money. Keeps county funds in a designated depository and accounts for all money belonging to the county.
+    statute: Local Government Code § 113.001
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.113.htm
+
+  - id: P-ACCOUNTS
+    description: Keeps accounts of the county's receipts, spending, and debts.
+    statute: Local Government Code § 113.002
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.113.htm
+
+plain_summary:
+  intro:
+    text: Holds and accounts for the county's money.
+    powers: [P-CUSTODIAN, P-ACCOUNTS]
+  points:
+    - text: Keeps the county's money in a designated bank
+      icon: budget
+      powers: [P-CUSTODIAN]
+    - text: Keeps the books on what the county takes in, spends, and owes
+      icon: contract
+      powers: [P-ACCOUNTS]

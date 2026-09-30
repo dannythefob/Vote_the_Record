@@ -1,0 +1,35 @@
+# Powers of an elected director of a Texas appraisal district (counties of 75,000 or more).
+# Text checked against the Tax Code (statutes.capitol.texas.gov, read through its document
+# server tcss.legis.texas.gov) on 2026-09-30.
+office_type: appraisal-district-director
+state: TX
+powers:
+  - id: P-APPRAISE
+    description: The appraisal district is responsible for appraising property in the district for property tax purposes of each local taxing unit.
+    statute: Tax Code § 6.01(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/TX/htm/TX.6.htm
+
+  - id: P-BOARD
+    description: In counties of 75,000 or more people, the appraisal district has a nine-member board. Five are appointed by local taxing units, three are elected countywide, and the county tax assessor-collector serves ex officio.
+    statute: Tax Code § 6.0301(c)
+    source_url: https://statutes.capitol.texas.gov/Docs/TX/htm/TX.6.htm
+
+  - id: P-CHIEF-APPRAISER
+    description: The board appoints the chief appraiser, who serves at the board's pleasure.
+    statute: Tax Code § 6.05
+    source_url: https://statutes.capitol.texas.gov/Docs/TX/htm/TX.6.htm
+
+plain_summary:
+  intro:
+    text: Helps oversee the Harris Central Appraisal District, which sets the value of property for property taxes, and appoints its chief appraiser.
+    powers: [P-APPRAISE, P-BOARD, P-CHIEF-APPRAISER]
+  points:
+    - text: The district values property for property taxes
+      icon: budget
+      powers: [P-APPRAISE]
+    - text: One of three elected members on a nine-member board
+      icon: vote
+      powers: [P-BOARD]
+    - text: The board hires the chief appraiser
+      icon: contract
+      powers: [P-CHIEF-APPRAISER]

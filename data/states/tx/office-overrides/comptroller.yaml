@@ -1,0 +1,32 @@
+# Powers of the Texas Comptroller of Public Accounts.
+# Text checked against the Texas Constitution and statutes (statutes.capitol.texas.gov,
+# read through its document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: comptroller
+state: TX
+powers:
+  - id: P-TERM
+    description: Elected to a four-year term.
+    statute: Texas Constitution art. IV, § 23
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm
+
+  - id: P-ESTIMATE
+    description: Estimates how much money the state will take in. A bill that spends money can't be sent to the governor unless the comptroller certifies it fits within that estimate.
+    statute: Texas Constitution art. III, § 49a
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.3.htm
+
+  - id: P-TAXES
+    description: Collects state taxes and is the state's sole accounting officer.
+    statute: Government Code § 403.011
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.403.htm
+
+plain_summary:
+  intro:
+    text: The state's tax collector and accountant. Estimates how much money Texas will have, which limits what the Legislature can spend.
+    powers: [P-ESTIMATE, P-TAXES]
+  points:
+    - text: Estimates state revenue; budget bills must fit within the estimate
+      icon: budget
+      powers: [P-ESTIMATE]
+    - text: Collects state taxes and keeps the state's books
+      icon: contract
+      powers: [P-TAXES]

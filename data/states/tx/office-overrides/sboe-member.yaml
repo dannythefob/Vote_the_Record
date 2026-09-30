@@ -1,0 +1,40 @@
+# Powers of a member of the Texas State Board of Education.
+# Text checked against the Education Code (statutes.capitol.texas.gov, read through its
+# document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: sboe-member
+state: TX
+powers:
+  - id: P-TERM
+    description: One of 15 members elected from districts, for four-year staggered terms. The first term after redistricting can differ.
+    statute: Education Code §§ 7.101, 7.104
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.7.htm
+
+  - id: P-CURRICULUM
+    description: The board sets curriculum and graduation requirements for public schools.
+    statute: Education Code § 7.102(c)(4), (11)
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.7.htm
+
+  - id: P-MATERIALS
+    description: The board adopts the instructional materials (textbooks and similar) for public schools.
+    statute: Education Code § 7.102(c)(23)
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.7.htm
+
+  - id: P-PLAN
+    description: The board writes and updates the long-range plan for public education.
+    statute: Education Code § 7.102(c)(1)
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.7.htm
+
+plain_summary:
+  intro:
+    text: Sets what Texas public schools teach, the requirements to graduate, and which textbooks and materials schools can use.
+    powers: [P-CURRICULUM, P-MATERIALS]
+  points:
+    - text: Sets what public schools teach and what it takes to graduate
+      icon: gavel
+      powers: [P-CURRICULUM]
+    - text: Adopts textbooks and other instructional materials
+      icon: contract
+      powers: [P-MATERIALS]
+    - text: Writes the long-range plan for public education
+      icon: megaphone
+      powers: [P-PLAN]

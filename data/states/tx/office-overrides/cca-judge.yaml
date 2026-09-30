@@ -1,0 +1,32 @@
+# Powers of a Judge of the Texas Court of Criminal Appeals (including the Presiding Judge).
+# Text checked against the Texas Constitution (statutes.capitol.texas.gov, read through its
+# document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: cca-judge
+state: TX
+powers:
+  - id: P-TERM
+    description: One of nine judges (a presiding judge and eight judges), elected statewide to six-year terms.
+    statute: Texas Constitution art. V, § 4(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+
+  - id: P-CRIMINAL
+    description: The state's highest court for criminal cases. Its decisions are final.
+    statute: Texas Constitution art. V, § 5(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+
+  - id: P-DEATH-PENALTY
+    description: Every case in which the death penalty was given is appealed directly to this court.
+    statute: Texas Constitution art. V, § 5(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+
+plain_summary:
+  intro:
+    text: Texas's highest court for criminal cases, including every death penalty appeal. Its rulings are final.
+    powers: [P-CRIMINAL, P-DEATH-PENALTY]
+  points:
+    - text: Has the final word on criminal cases in Texas
+      icon: court
+      powers: [P-CRIMINAL]
+    - text: Hears every death penalty appeal directly
+      icon: gavel
+      powers: [P-DEATH-PENALTY]

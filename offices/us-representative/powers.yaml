@@ -1,2 +1,45 @@
+# Powers of a U.S. representative under the U.S. Constitution (the same in every state).
+# Wording checked against the National Archives transcript on 2026-09-30.
 office_type: us-representative
-powers: []   # {id: P-XXX, description, source_url}
+level: federal
+powers:
+  - id: P-TERM
+    description: Elected every two years.
+    statute: U.S. Constitution art. I, § 2, cl. 1
+    source_url: https://www.archives.gov/founding-docs/constitution-transcript
+
+  - id: P-LAWS
+    description: Votes on bills. A bill must pass both the House and the Senate before it goes to the President to sign or veto.
+    statute: U.S. Constitution art. I, § 7
+    source_url: https://www.archives.gov/founding-docs/constitution-transcript
+
+  - id: P-TAX-SPEND
+    description: Votes, as part of Congress, on federal taxes, borrowing, and spending. Bills to raise taxes must start in the House. No federal money may be spent unless a law provides for it.
+    statute: U.S. Constitution art. I, §§ 7-9
+    source_url: https://www.archives.gov/founding-docs/constitution-transcript
+
+  - id: P-POWERS
+    description: Votes on laws using Congress's other powers, including regulating trade among the states and with other nations, declaring war, and raising and paying for the armed forces.
+    statute: U.S. Constitution art. I, § 8
+    source_url: https://www.archives.gov/founding-docs/constitution-transcript
+
+  - id: P-IMPEACH
+    description: Only the House can impeach (formally charge) a federal official, including the President.
+    statute: U.S. Constitution art. I, § 2, cl. 5
+    source_url: https://www.archives.gov/founding-docs/constitution-transcript
+
+# Plain-language version shown first. Each line cites the powers it summarizes.
+plain_summary:
+  intro:
+    text: Represents your district in the U.S. House. Votes on federal laws, taxes, and spending.
+    powers: [P-TERM, P-LAWS, P-TAX-SPEND]
+  points:
+    - text: Votes on federal laws
+      icon: vote
+      powers: [P-LAWS, P-POWERS]
+    - text: Votes on federal taxes and spending; tax bills start in the House
+      icon: budget
+      powers: [P-TAX-SPEND]
+    - text: Can impeach (formally charge) federal officials
+      icon: gavel
+      powers: [P-IMPEACH]
