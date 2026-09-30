@@ -158,6 +158,9 @@ def build(root: Path, out: Path, *, demo: bool = False, config_path: Path | None
         "/report/thanks/": env.get_template("report_done.html").render(page="report", ok=True),
         "/report/error/": env.get_template("report_done.html").render(page="report", ok=False),
     }
+    ballot_template = env.get_template("ballot.html")
+    for ballot in site["ballots"]:
+        pages[ballot["url"]] = ballot_template.render(ballot=ballot, page="ballot")
     race_template = env.get_template("race.html")
     for race in site["races"]:
         payload = dict(race["payload"], corrections_form_url=config.get("corrections_form_url"))

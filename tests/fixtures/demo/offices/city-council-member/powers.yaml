@@ -1,0 +1,17 @@
+# FICTIONAL demo office for tests.
+office_type: city-council-member
+level: local
+powers:
+- id: P-MAIN
+  description: Votes on city ordinances and the city budget.
+  source_url: https://example.org/law/city-council-member
+plain_summary:
+  intro:
+    text: 'DEMO: Votes on city ordinances and the city budget.'
+    powers:
+    - P-MAIN
+  points:
+  - icon: gavel
+    text: Votes on city ordinances and the city budget.
+    powers:
+    - P-MAIN

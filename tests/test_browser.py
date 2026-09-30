@@ -88,3 +88,39 @@ def test_results_grid_compares_answers_with_each_record(report):
     assert rows["Disaster repairs"] == ["✓ Same as you", "· Record not counted", "— No record"]  # Blake's is disputed
     assert rows["Road money"] == ["✓ Same as you", "— No record", "— No record"]
     assert list(rows) == ["Budget gap", "Storm coming", "Disaster repairs", "Road money"]  # only answered questions
+
+
+ALL_DEMO_RACES = ["Demo City Council, Place 1", "Demo County Commissioner, Precinct 9",
+                  "Justice of the Peace, Precinct 1", "Justice of the Peace, Precinct 2", "Governor",
+                  "U.S. Representative, District 1", "U.S. Representative, District 2"]
+
+
+def test_ballot_starts_with_every_race_and_shows_the_zip_form(report):
+    initial = report["ballot"]["initial"]
+    assert initial["formShown"] is True
+    assert initial["races"] == ALL_DEMO_RACES
+    assert initial["split"] == []
+
+
+def test_zip_filters_races_and_flags_split_districts(report):
+    z = report["ballot"]["zip22222"]
+    assert z["races"] == ["Justice of the Peace, Precinct 2", "Governor",
+                          "U.S. Representative, District 1", "U.S. Representative, District 2"]
+    assert z["split"] == ["U.S. Representative, District 1", "U.S. Representative, District 2"]
+    assert z["groups"] == ["Your county", "Your state", "National"]  # empty "Closest to home" hidden
+    assert z["status"] == ("ZIP code 22222: 4 races on your ballot, closest to home first. "
+                           "2 races depend on your exact address.")
+    assert z["hash"] == "#zip=22222"
+    assert report["ballot"]["reset"]["races"] == ALL_DEMO_RACES
+
+
+def test_home_zip_box_opens_the_ballot_filtered(report):
+    z = report["ballot"]["fromHome11111"]
+    assert z["hash"] == "#zip=11111"
+    assert z["races"] == ["Demo City Council, Place 1", "Demo County Commissioner, Precinct 9",
+                          "Justice of the Peace, Precinct 1", "Governor", "U.S. Representative, District 1"]
+    assert "don't have ballot information for ZIP code 99999" in report["ballot"]["homeUnknown"]
+
+
+def test_ballot_fits_a_phone_screen(report):
+    assert report["phoneOverflowBallot"] <= 0

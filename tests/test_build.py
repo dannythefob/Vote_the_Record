@@ -1,5 +1,6 @@
 """Stage 1 site build tests: generator, validator gate, pages, headers, CSP hygiene."""
 
+import json
 import re
 import subprocess
 import sys
@@ -262,6 +263,7 @@ def test_pages_have_no_inline_code_or_third_party_assets(real_site):
 
 # ---- Stage 2: race pages from the fictional demo fixture ----
 DEMO = REPO / "tests" / "fixtures" / "demo"
+BALLOT_PAGE = "ballot/tx/demo-county/2026-11-03/index.html"
 RACE_PAGE = "races/tx/demo-county/2026-11-03/commissioner-precinct-9/index.html"
 
 
@@ -277,8 +279,9 @@ def test_demo_banner_on_every_page(demo_site):
         assert "Demonstration only." in page.read_text(encoding="utf-8"), page
 
 
-def test_home_links_the_race(demo_site):
-    assert 'href="/races/tx/demo-county/2026-11-03/commissioner-precinct-9/"' in read(demo_site, "index.html")
+def test_home_links_the_ballot_which_links_the_race(demo_site):
+    assert 'href="/ballot/tx/demo-county/2026-11-03/"' in read(demo_site, "index.html")
+    assert 'href="/races/tx/demo-county/2026-11-03/commissioner-precinct-9/"' in read(demo_site, BALLOT_PAGE)
 
 
 def test_race_sections_in_required_order(demo_site):
@@ -444,3 +447,66 @@ def test_race_without_an_incumbent_has_no_promise_tracker(real_site):
     html = page.read_text(encoding="utf-8")
     assert 'id="candidates-h"' in html
     assert 'id="promises-h"' not in html
+
+
+# --- Ballot pages, ZIP finder, basic race pages -----------------------------
+
+def test_ballot_is_ordered_closest_to_home_then_by_ballot_order(demo_site):
+    html = read(demo_site, BALLOT_PAGE)
+    levels = re.findall(r'<h2 id="lvl-([a-z]+)">', html)
+    assert levels == ["local", "county", "state", "federal"]
+    names = re.findall(r'<h3 class="ballot-race-name"><a href="[^"]+">([^<]+)</a></h3>', html)
+    assert names == ["Demo City Council, Place 1", "Demo County Commissioner, Precinct 9",
+                     "Justice of the Peace, Precinct 1", "Justice of the Peace, Precinct 2", "Governor",
+                     "U.S. Representative, District 1", "U.S. Representative, District 2"]
+    rows = re.findall(r'data-race="(\d+)"', html)
+    assert rows == [str(i) for i in range(7)]  # matches the embedded payload order
+
+
+def test_ballot_lists_candidates_a_to_z_with_ballot_labels_and_write_ins(demo_site):
+    html = read(demo_site, BALLOT_PAGE)
+    gov = html[html.index(">Governor</a>"):html.index("U.S. Representative, District 1")]
+    names = re.findall(r'<span class="cand-name">([^<]+)</span>', gov)
+    assert names == ["Dana Demo", "Evan Example", "Wren Writein"]
+    assert "Listed on ballot as: Sample Party" in gov
+    assert '<span class="chip">Write-in</span>' in gov
+
+
+def test_ballot_zip_tools_are_private_and_progressive(demo_site):
+    html = read(demo_site, BALLOT_PAGE)
+    assert '<form id="zip-form" class="zip-form" role="search" hidden>' in html  # shown by JS only
+    assert "nothing is sent or saved" in html
+    assert 'href="https://example.gov/whats-on-my-ballot"' in html
+    assert html.count('class="chip split-chip" hidden') == 7
+    raw = re.search(r'<script type="application/json" id="ballot-data">(.*?)</script>', html, re.S).group(1)
+    data = json.loads(raw)
+    assert data["implied"] == ["tx", "demo-county"]
+    assert data["zips"]["22222"] == [["us-house-1", "us-house-2"], "demo-county/jp-2"]
+    assert [r["area"] for r in data["races"]][:2] == ["demo-city", "demo-county/commissioner-9"]
+    assert "Unverified" in html  # ballot sources carry badges
+
+
+def test_home_zip_finder_maps_zips_to_ballots(demo_site):
+    html = read(demo_site, "index.html")
+    raw = re.search(r'<script type="application/json" id="zip-index">(.*?)</script>', html, re.S).group(1)
+    index = json.loads(raw)
+    assert sorted(index) == ["11111", "22222", "33333"]
+    assert index["11111"] == [{"name": "Demo County ballot", "url": "/ballot/tx/demo-county/2026-11-03/"}]
+    assert '<form id="zip-find" class="zip-form" role="search" hidden>' in html
+
+
+def test_basic_race_page_is_honest_about_what_is_missing(demo_site):
+    html = read(demo_site, "races/tx/statewide/2026-11-03/governor/index.html")
+    assert html.count("We haven't researched this candidate's record yet.") == 3
+    assert "Not found in the sources reviewed" not in html
+    for section in ('id="survey-h"', 'id="running-h"', 'id="promises-h"', 'id="how-h"', "survey.js"):
+        assert section not in html, section
+    assert 'id="coming-h"' in html
+    assert "Write-in candidate" in html
+    assert "Incumbent" not in html and "Not the incumbent" not in html  # incumbent: null = not checked
+    assert "Where this list of candidates comes from" in html
+
+
+def test_district_races_get_their_own_pages(demo_site):
+    html = read(demo_site, "races/tx/us-house-2/2026-11-03/us-representative/index.html")
+    assert "<h1>U.S. Representative, District 2</h1>" in html

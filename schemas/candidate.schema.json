@@ -11,7 +11,8 @@
   "properties": {
     "id": { "$ref": "urn:vtr:schema:fact#/$defs/slug" },
     "name": { "type": "string", "minLength": 1 },
-    "incumbent": { "type": "boolean" },
+    "incumbent": { "description": "null = not checked yet (basic race pages).", "type": ["boolean", "null"] },
+    "write_in": { "description": "A declared write-in candidate, not printed on the ballot.", "type": "boolean" },
     "photo": {
       "description": "Optional headshot stored next to the candidate file. Rights information is required.",
       "type": "object",

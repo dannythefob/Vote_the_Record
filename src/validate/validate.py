@@ -37,8 +37,10 @@ FILE_KINDS = [
     (re.compile(r"^data/states/[a-z]{2}/voter-essentials/\d{4}-\d{2}-\d{2}\.yaml$"), "voter_essentials"),
     (re.compile(r"^data/states/[a-z]{2}/localities/[^/]+/locality\.yaml$"), "locality"),
     (re.compile(r"^data/states/[a-z]{2}/localities/[^/]+/actions/\d{4}-\d{2}-\d{2}\.yaml$"), "actions"),
-    (re.compile(r"^data/states/[a-z]{2}/(statewide|localities/[^/]+)/elections/\d{4}-\d{2}-\d{2}/[^/]+/race\.yaml$"), "race"),
-    (re.compile(r"^data/states/[a-z]{2}/(statewide|localities/[^/]+)/elections/\d{4}-\d{2}-\d{2}/[^/]+/candidates/[^/]+\.yaml$"), "candidate"),
+    (re.compile(r"^data/states/[a-z]{2}/localities/[^/]+/elections/\d{4}-\d{2}-\d{2}/ballot\.yaml$"), "ballot"),
+    (re.compile(r"^data/states/[a-z]{2}/localities/[^/]+/elections/\d{4}-\d{2}-\d{2}/zips\.yaml$"), "zips"),
+    (re.compile(r"^data/states/[a-z]{2}/(statewide|districts/[^/]+|localities/[^/]+)/elections/\d{4}-\d{2}-\d{2}/[^/]+/race\.yaml$"), "race"),
+    (re.compile(r"^data/states/[a-z]{2}/(statewide|districts/[^/]+|localities/[^/]+)/elections/\d{4}-\d{2}-\d{2}/[^/]+/candidates/[^/]+\.yaml$"), "candidate"),
     (re.compile(r"^corrections/log\.yaml$"), "corrections"),
 ]
 
@@ -78,7 +80,7 @@ def load_validators(schemas_dir: Path) -> dict[str, Draft202012Validator]:
         **{
             kind: for_ref(f"urn:vtr:schema:other#/$defs/{kind}")
             for kind in ("race", "actions", "powers", "office_override", "survey",
-                         "state", "locality", "corrections", "voter_essentials")
+                         "state", "locality", "corrections", "voter_essentials", "ballot", "zips")
         },
     }
 
@@ -95,9 +97,34 @@ def id_prefix(rel: str) -> str:
     return rel.removeprefix("data/states/").removesuffix(".yaml")
 
 
+def race_parts(rel: str) -> dict:
+    """data/states/tx/<scope>/elections/<date>/<slug>/race.yaml -> its parts.
+
+    scope is "statewide", "districts/<district>", or "localities/<locality>". "place" is
+    the URL segment (statewide, the district, or the locality); "area" is the default
+    voting area (the state code, the district, or the locality).
+    """
+    parts = rel.split("/")
+    state = parts[2]
+    if parts[3] == "statewide":
+        place, area, rest = "statewide", state, parts[4:]
+    else:
+        place = area = parts[4]
+        rest = parts[5:]
+    return {"state": state, "scope": parts[3], "place": place, "default_area": area,
+            "election_date": rest[1], "slug": rest[2]}
+
+
+def race_area(rel: str, doc: dict) -> str:
+    return doc.get("area") or race_parts(rel)["default_area"]
+
+
 def iter_facts(kind: str, doc: dict):
     """Yield (section, fact) for every fact-like item that carries a path-based ID."""
-    if kind == "actions":
+    if kind in ("race", "ballot", "zips"):
+        for fact in doc.get("sources") or []:
+            yield "sources", fact
+    elif kind == "actions":
         for fact in doc.get("facts") or []:
             yield "facts", fact
     elif kind == "voter_essentials":
@@ -211,6 +238,63 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
             for text in texts:
                 if PARTY_TERMS.search(text or ""):
                     report.error(rel, f"{sid}: scenario text mentions a party (rule 5)")
+
+    # Ballots: contests exist, match the election, and can be ordered; ZIPs reach every area.
+    levels = {rel.split("/")[1]: doc.get("level") for rel, (kind, doc) in docs.items()
+              if kind == "powers" and isinstance(doc, dict)}
+    urls: dict[str, str] = {}
+    for rel, (kind, doc) in docs.items():
+        if kind == "race" and isinstance(doc, dict):
+            parts = race_parts(rel)
+            url = f"{parts['state']}/{parts['place']}/{parts['election_date']}/{parts['slug']}"
+            if url in urls:
+                report.error(rel, f"race page URL clashes with {urls[url]}")
+            urls[url] = rel
+    ballot_areas: dict[str, set[str]] = {}
+    for rel, (kind, doc) in docs.items():
+        if kind != "ballot" or not isinstance(doc, dict):
+            continue
+        folder_date = rel.split("/")[-2]
+        if doc.get("election_date") != folder_date:
+            report.error(rel, f"election_date must be {folder_date} to match its folder")
+        seen, areas = set(), set()
+        for contest in doc.get("contests") or []:
+            if contest in seen:
+                report.error(rel, f"contest '{contest}' is listed twice")
+            seen.add(contest)
+            race_rel = f"data/states/{contest}/race.yaml"
+            race_kind, race = docs.get(race_rel, (None, None))
+            if race_kind != "race" or not isinstance(race, dict):
+                report.error(rel, f"contest '{contest}' has no race.yaml")
+                continue
+            if race.get("election_date") != doc.get("election_date"):
+                report.error(rel, f"contest '{contest}' is for a different election")
+            if not (race.get("level") or levels.get(race.get("office_type"))):
+                report.error(rel, f"contest '{contest}': no level (set it in offices/{race.get('office_type')}/powers.yaml)")
+            areas.add(race_area(race_rel, race))
+        ballot_areas[rel.rsplit("/", 1)[0]] = areas
+    for rel, (kind, doc) in docs.items():
+        if kind != "zips" or not isinstance(doc, dict):
+            continue
+        folder = rel.rsplit("/", 1)[0]
+        if folder not in ballot_areas:
+            report.error(rel, "zips.yaml needs a ballot.yaml in the same folder")
+            continue
+        state, locality = folder.split("/")[2], folder.split("/")[4]
+        implied = {state, locality}
+        used = set()
+        for zip_code, entries in (doc.get("zips") or {}).items():
+            flat = [a for e in entries or [] for a in (e if isinstance(e, list) else [e])]
+            if len(flat) != len(set(flat)):
+                report.error(rel, f"{zip_code}: an area is listed more than once")
+            for area in flat:
+                used.add(area)
+                if area in implied:
+                    report.error(rel, f"{zip_code}: '{area}' is implied for every ZIP; leave it out")
+                elif area not in ballot_areas[folder]:
+                    report.error(rel, f"{zip_code}: area '{area}' is not the area of any contest on the ballot")
+        for area in sorted(ballot_areas[folder] - implied - used):
+            report.error(rel, f"area '{area}' is on the ballot but no ZIP code reaches it")
 
     # Facts: path-based IDs, uniqueness, date order.
     all_ids: dict[str, str] = {}

@@ -104,6 +104,11 @@ votes and filings as they are recorded.
 - `data/states/<st>/` — data only, in YAML.
   - `office-overrides/<office-type>.yaml` — state-specific powers, each citing the statute.
   - `statewide/elections/<YYYY-MM-DD>/<race>/`
+  - `districts/<district>/elections/<YYYY-MM-DD>/<race>/` — races by district (e.g.
+    `us-house-7`, `state-house-134`, `court-of-appeals-1`), which can cross counties.
+  - `localities/<county>/elections/<YYYY-MM-DD>/ballot.yaml` — every contest on that county's
+    ballot, in ballot order, citing the sample ballot; `zips.yaml` beside it maps ZIP codes
+    to voting areas (a nested list = the ZIP is split), citing its source.
   - `localities/<locality>/elections/<YYYY-MM-DD>/<race>/race.yaml` + `candidates/<slug>.yaml`
   - `localities/<locality>/actions/<YYYY-MM-DD>.yaml` — official body actions from one
     meeting (what passed), which candidate vote records point to via `same_event`.
@@ -132,3 +137,8 @@ votes and filings as they are recorded.
 - Each candidate card leads with "On the record": recorded votes first, then other actions,
   newest first within each group; the same rule for every candidate.
 - Every unverified item shows an "Unverified" badge.
+- Ballot pages order races by level of government, closest to home first (local, county,
+  state, federal; `level` in each office's `powers.yaml`), then by official ballot order.
+- The ZIP lookup runs in the browser only; never send or store a visitor's ZIP code.
+- A race with `detail: basic` says "We haven't researched this candidate's record yet",
+  never "Not found in the sources reviewed". `incumbent: null` means not checked yet.

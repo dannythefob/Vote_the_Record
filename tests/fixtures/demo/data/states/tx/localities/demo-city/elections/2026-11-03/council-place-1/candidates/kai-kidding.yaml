@@ -1,0 +1,14 @@
+# FICTIONAL demo candidate (basic race).
+id: kai-kidding
+name: Kai Kidding
+incumbent: null
+ballot_party: null
+records: []
+funding: []
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

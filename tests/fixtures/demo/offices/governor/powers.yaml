@@ -1,0 +1,17 @@
+# FICTIONAL demo office for tests.
+office_type: governor
+level: state
+powers:
+- id: P-MAIN
+  description: Leads the state's executive branch.
+  source_url: https://example.org/law/governor
+plain_summary:
+  intro:
+    text: 'DEMO: Leads the state''s executive branch.'
+    powers:
+    - P-MAIN
+  points:
+  - icon: gavel
+    text: Leads the state's executive branch.
+    powers:
+    - P-MAIN

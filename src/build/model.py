@@ -13,7 +13,7 @@ from pathlib import Path
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "validate"))
-from validate import _NoDateLoader, classify  # noqa: E402
+from validate import _NoDateLoader, classify, race_area, race_parts  # noqa: E402
 
 STATE_NAMES = {"TX": "Texas"}
 
@@ -38,14 +38,48 @@ def load_docs(root: Path) -> dict[str, tuple[str, object]]:
 
 
 def race_location(rel: str) -> dict:
-    """data/states/tx/localities/harris-county/elections/2026-11-03/x/race.yaml -> parts."""
-    parts = rel.split("/")
-    state = parts[2]
-    if parts[3] == "statewide":
-        locality, date, slug = "statewide", parts[5], parts[6]
-    else:
-        locality, date, slug = parts[4], parts[6], parts[7]
-    return {"state": state, "locality": locality, "election_date": date, "slug": slug}
+    """data/states/tx/<statewide|districts/x|localities/x>/elections/<date>/<slug>/race.yaml -> parts."""
+    p = race_parts(rel)
+    return {"state": p["state"], "scope": p["scope"], "locality": p["place"],
+            "election_date": p["election_date"], "slug": p["slug"]}
+
+
+# Ballot order, closest to home first (docs/METHODOLOGY.md, "How your ballot is ordered").
+LEVELS = [
+    ("local", "Closest to home", "City, school district, and neighborhood offices and questions."),
+    ("county", "Your county", "County government and the local courts."),
+    ("state", "Your state", "Texas government, lawmakers, and state courts."),
+    ("federal", "National", "Congress: your U.S. senators and representative."),
+]
+LEVEL_RANK = {key: i for i, (key, _, _) in enumerate(LEVELS)}
+
+
+def assemble_ballot(docs: dict, rel: str, doc: dict, races_by_path: dict) -> dict:
+    folder = rel.rsplit("/", 1)[0]
+    state, locality, date = folder.split("/")[2], folder.split("/")[4], folder.split("/")[6]
+    contests = [races_by_path[c] for c in doc["contests"]]
+    order = {c["path"]: i for i, c in enumerate(contests)}
+    ranked = sorted(contests, key=lambda r: (LEVEL_RANK[r["level"]], order[r["path"]]))
+    groups = []
+    for key, title, blurb in LEVELS:
+        members = [{"n": i, "race": r} for i, r in enumerate(ranked) if r["level"] == key]
+        if members:
+            groups.append({"level": key, "title": title, "blurb": blurb, "races": members})
+    zips_doc = docs.get(f"{folder}/zips.yaml", (None, None))[1]
+    payload = {
+        "name": doc["name"],
+        "implied": [state, locality],
+        "zips": (zips_doc or {}).get("zips") or {},
+        "races": [{"n": i, "area": r["area"], "office": r["office_type"]} for i, r in enumerate(ranked)],
+    }
+    return {
+        "name": doc["name"], "state": state, "locality": locality, "election_date": date,
+        "url": f"/ballot/{state}/{locality}/{date}/",
+        "lookup_url": doc.get("lookup_url"), "sources": doc["sources"],
+        "zip_sources": (zips_doc or {}).get("sources") or [],
+        "has_zips": bool(payload["zips"]), "groups": groups, "ranked": ranked,
+        "count": len(ranked), "payload": payload, "rel": rel,
+    }
 
 
 def load_site(root: Path, today: str) -> dict:
@@ -56,12 +90,18 @@ def load_site(root: Path, today: str) -> dict:
         if kind != "race":
             continue
         loc = race_location(rel)
+        office_doc = docs.get(f"offices/{doc['office_type']}/powers.yaml", (None, None))[1] or {}
         races.append({
             **loc,
             "name": doc["name"],
             "office_type": doc["office_type"],
+            "area": race_area(rel, doc),
+            "level": doc.get("level") or office_doc.get("level"),
+            "detail": doc.get("detail", "full"),
+            "path": rel.removeprefix("data/states/").removesuffix("/race.yaml"),
             "state_name": STATE_NAMES.get(loc["state"].upper(), loc["state"].upper()),
-            "locality_name": "Statewide" if loc["locality"] == "statewide" else title_from_slug(loc["locality"]),
+            "locality_name": {"statewide": "Statewide", "districts": "Districts"}.get(
+                loc["scope"], title_from_slug(loc["locality"])),
             "url": f"/races/{loc['state']}/{loc['locality']}/{loc['election_date']}/{loc['slug']}/",
             "rel": rel,
         })
@@ -88,7 +128,19 @@ def load_site(root: Path, today: str) -> dict:
     for race in races:
         race.update(assemble_race(docs, race, facts))
 
-    return {"races": races, "essentials": essentials, "corrections": corrections}
+    races_by_path = {r["path"]: r for r in races}
+    ballots = [assemble_ballot(docs, rel, doc, races_by_path)
+               for rel, (kind, doc) in docs.items() if kind == "ballot" and doc["election_date"] >= today]
+    ballots.sort(key=lambda b: (b["election_date"], b["state"], b["name"].casefold()))
+    on_ballot = {r["path"] for b in ballots for r in b["ranked"]}
+    zip_index: dict[str, list[dict]] = {}
+    for b in ballots:
+        for zip_code in b["payload"]["zips"]:
+            zip_index.setdefault(zip_code, []).append({"name": b["name"], "url": b["url"]})
+
+    return {"races": races, "essentials": essentials, "corrections": corrections,
+            "ballots": ballots, "other_races": [r for r in races if r["path"] not in on_ballot],
+            "zip_index": zip_index}
 
 
 FACT_SECTIONS = ("summary", "records", "funding", "endorsements")
@@ -249,7 +301,7 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
     survey_doc = docs.get(f"offices/{office}/survey.yaml", (None, None))[1] or {}
     override_doc = docs.get(f"data/states/{race['state']}/office-overrides/{office}.yaml", (None, None))[1]
     locality_doc = None
-    if race["locality"] != "statewide":
+    if race["scope"] == "localities":
         locality_doc = docs.get(
             f"data/states/{race['state']}/localities/{race['locality']}/locality.yaml", (None, None))[1]
 
@@ -304,6 +356,7 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
         "powers": (office_doc or {}).get("powers") or [],
         "state_powers": (override_doc or {}).get("powers") or [],
         "why_it_matters": pick_why_it_matters(race_doc, locality_doc, office_doc),
+        "sources": race_doc.get("sources") or [],
         "candidates": candidates,
         "incumbents": [c for c in candidates if c.get("incumbent")],
         "questions": questions,

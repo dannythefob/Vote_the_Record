@@ -1,0 +1,17 @@
+# FICTIONAL demo office for tests.
+office_type: justice-of-the-peace
+level: county
+powers:
+- id: P-MAIN
+  description: Hears small civil claims and minor criminal cases.
+  source_url: https://example.org/law/justice-of-the-peace
+plain_summary:
+  intro:
+    text: 'DEMO: Hears small civil claims and minor criminal cases.'
+    powers:
+    - P-MAIN
+  points:
+  - icon: gavel
+    text: Hears small civil claims and minor criminal cases.
+    powers:
+    - P-MAIN
