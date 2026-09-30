@@ -1,0 +1,22 @@
+# FICTIONAL demo voting precincts: each lists its voting areas exactly (no splits).
+sources:
+- id: tx/localities/demo-county/elections/2026-11-03/precincts#S-01
+  headline: 'DEMO: Voting precincts and their districts'
+  statement: 'DEMO: The county''s voting precinct layer lists each precinct''s districts.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://example.gov/precincts
+  source_title: 'DEMO County GIS: Voting Precincts'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-11-03'
+  retrieved: '2026-09-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+precincts:
+  '101': [us-house-1, demo-county/commissioner-9, demo-county/jp-1, demo-city]
+  '102': [us-house-2, demo-county/jp-2]
+  '103': [us-house-1, demo-county/jp-2]

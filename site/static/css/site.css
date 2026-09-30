@@ -371,3 +371,6 @@ details.more[open] > summary { margin-bottom: 8px; }
 .cand-name { font-weight: 600; }
 .split-chip { border-color: var(--warn-ink); color: var(--warn-ink); }
 .ballot-race .race-meta { margin: 8px 0 0; font-size: 0.92rem; }
+.notice-warn { background: var(--warn-bg); border-left-color: var(--warn-ink); color: var(--warn-ink); }
+.notice-warn a { color: inherit; }
+.zip-form .precinct-label { margin-top: 10px; }

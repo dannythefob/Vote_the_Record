@@ -1,6 +1,7 @@
 """Stage 1 site build tests: generator, validator gate, pages, headers, CSP hygiene."""
 
 import json
+import shutil
 import re
 import subprocess
 import sys
@@ -79,7 +80,9 @@ def test_home_has_beta_banner_official_links_and_race_list(real_site):
     home = read(real_site, "index.html")
     assert "<strong>Beta.</strong>" in home
     assert 'href="https://www.votetexas.gov/"' in home
-    assert 'href="/races/tx/harris-county/2026-11-03/county-judge/"' in home
+    assert 'href="/ballot/tx/harris-county/2026-11-03/"' in home
+    ballot = read(real_site, "ballot/tx/harris-county/2026-11-03/index.html")
+    assert 'href="/races/tx/harris-county/2026-11-03/county-judge/"' in ballot
 
 
 def test_empty_repo_shows_no_races_state(tmp_path):
@@ -510,3 +513,30 @@ def test_basic_race_page_is_honest_about_what_is_missing(demo_site):
 def test_district_races_get_their_own_pages(demo_site):
     html = read(demo_site, "races/tx/us-house-2/2026-11-03/us-representative/index.html")
     assert "<h1>U.S. Representative, District 2</h1>" in html
+
+
+def test_partial_ballot_says_races_are_still_being_added(tmp_path):
+    src = REPO / "tests" / "fixtures" / "demo"
+    root = tmp_path / "demo"
+    shutil.copytree(src, root)
+    ballot = root / "data/states/tx/localities/demo-county/elections/2026-11-03/ballot.yaml"
+    ballot.write_text(ballot.read_text(encoding="utf-8") + "complete: false\n", encoding="utf-8")
+    out = tmp_path / "dist"
+    assert build(root, out, demo=True, today="2026-09-29") == 0
+    html = read(out, BALLOT_PAGE)
+    assert "We're still adding races to this page." in html
+    assert 'href="https://example.gov/demo-sample-ballot.pdf"' in html
+    assert "7 races added so far." in html
+    assert "Every race on this ballot" not in html
+    assert "7 races so far" in read(out, "index.html")
+
+
+def test_ballot_payload_packs_precincts_as_area_indexes(demo_site):
+    html = read(demo_site, BALLOT_PAGE)
+    raw = re.search(r'<script type="application/json" id="ballot-data">(.*?)</script>', html, re.S).group(1)
+    data = json.loads(raw)
+    assert data["areas"] == ["demo-city", "demo-county/commissioner-9", "demo-county/jp-1", "demo-county/jp-2",
+                             "us-house-1", "us-house-2"]
+    assert data["precincts"]["102"] == [5, 3]
+    assert '<input id="precinct" name="precinct"' in html
+    assert "on your voter registration card" in html

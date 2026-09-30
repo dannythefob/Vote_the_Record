@@ -65,19 +65,29 @@ def assemble_ballot(docs: dict, rel: str, doc: dict, races_by_path: dict) -> dic
         members = [{"n": i, "race": r} for i, r in enumerate(ranked) if r["level"] == key]
         if members:
             groups.append({"level": key, "title": title, "blurb": blurb, "races": members})
-    zips_doc = docs.get(f"{folder}/zips.yaml", (None, None))[1]
+    zips_doc = docs.get(f"{folder}/zips.yaml", (None, None))[1] or {}
+    pct_doc = docs.get(f"{folder}/precincts.yaml", (None, None))[1] or {}
+    # Precincts are sent as indexes into one area list, to keep the page small.
+    area_list = sorted({a for areas in (pct_doc.get("precincts") or {}).values() for a in areas})
+    area_index = {a: i for i, a in enumerate(area_list)}
     payload = {
         "name": doc["name"],
         "implied": [state, locality],
-        "zips": (zips_doc or {}).get("zips") or {},
+        "zips": zips_doc.get("zips") or {},
+        "zipEverywhere": zips_doc.get("everywhere") or [],
+        "areas": area_list,
+        "precincts": {k: [area_index[a] for a in v] for k, v in (pct_doc.get("precincts") or {}).items()},
+        "precinctEverywhere": pct_doc.get("everywhere") or [],
         "races": [{"n": i, "area": r["area"], "office": r["office_type"]} for i, r in enumerate(ranked)],
     }
     return {
         "name": doc["name"], "state": state, "locality": locality, "election_date": date,
         "url": f"/ballot/{state}/{locality}/{date}/",
         "lookup_url": doc.get("lookup_url"), "sources": doc["sources"],
-        "zip_sources": (zips_doc or {}).get("sources") or [],
-        "has_zips": bool(payload["zips"]), "groups": groups, "ranked": ranked,
+        "complete": doc.get("complete", True),
+        "zip_sources": zips_doc.get("sources") or [],
+        "precinct_sources": pct_doc.get("sources") or [],
+        "has_zips": bool(payload["zips"]), "has_precincts": bool(payload["precincts"]), "groups": groups, "ranked": ranked,
         "count": len(ranked), "payload": payload, "rel": rel,
     }
 

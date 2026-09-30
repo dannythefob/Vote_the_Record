@@ -391,3 +391,22 @@ def test_ballot_source_ids_are_path_based(tmp_path):
         f"{BALLOT_DIR}/ballot.yaml": {"name": "B", "election_date": "2026-11-03",
                                       "sources": [dict(SRC, id="tx/elsewhere#S-01")], "contests": [US9, JP1]}})
     assert any("must start with" in e for e in errors)
+
+
+def test_precincts_reach_every_area_and_everywhere_is_checked(tmp_path):
+    errors = ballot_repo(tmp_path, [US9, JP1], extra={
+        f"{BALLOT_DIR}/precincts.yaml": {
+            "sources": [dict(SRC, id="tx/localities/test-county/elections/2026-11-03/precincts#S-01")],
+            "everywhere": ["tx", "us-house-9"],
+            "precincts": {"12": ["us-house-9"], "13": []}}})
+    assert any("everywhere: 'tx' is already implied" in e for e in errors)
+    assert any("12: 'us-house-9' is implied for every precinct" in e for e in errors)
+    assert any("area 'test-county/jp-1' is on the ballot but no precinct reaches it" in e for e in errors)
+
+
+def test_precinct_numbers_are_digits_without_leading_zeros(tmp_path):
+    errors = ballot_repo(tmp_path, [US9, JP1], extra={
+        f"{BALLOT_DIR}/precincts.yaml": {
+            "sources": [dict(SRC, id="tx/localities/test-county/elections/2026-11-03/precincts#S-01")],
+            "precincts": {"0012": ["us-house-9", "test-county/jp-1"]}}})
+    assert any("precincts" in e and "0012" in e for e in errors)

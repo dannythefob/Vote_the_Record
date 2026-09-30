@@ -59,6 +59,25 @@
         "notes": { "type": "string" }
       }
     },
+    "everywhere": {
+      "description": "Areas that apply to every ZIP code or precinct in the file (e.g. a court of appeals district that covers the whole county).",
+      "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/area" }
+    },
+    "precincts": {
+      "description": "Voting areas for each voting precinct on one county's ballot (exact). Statewide and county-wide areas are implied.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sources", "precincts"],
+      "properties": {
+        "sources": { "type": "array", "minItems": 1, "items": { "$ref": "urn:vtr:schema:fact" } },
+        "everywhere": { "$ref": "#/$defs/everywhere" },
+        "precincts": {
+          "type": "object",
+          "propertyNames": { "pattern": "^[1-9][0-9]{0,5}$" },
+          "additionalProperties": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/area" } }
+        }
+      }
+    },
     "area": {
       "description": "Where a race is voted on: 'tx' (statewide), 'harris-county', 'us-house-7', 'harris-county/commissioner-4'.",
       "type": "string",
@@ -77,6 +96,7 @@
         "name": { "type": "string", "minLength": 1 },
         "election_date": { "$ref": "urn:vtr:schema:fact#/$defs/date" },
         "lookup_url": { "description": "Official look-up-your-exact-ballot page.", "$ref": "urn:vtr:schema:fact#/$defs/url" },
+        "complete": { "description": "false while races are still being added; the page then says so and links the official sample ballot.", "type": "boolean" },
         "sources": { "type": "array", "minItems": 1, "items": { "$ref": "urn:vtr:schema:fact" } },
         "contests": {
           "type": "array",
@@ -95,6 +115,7 @@
       "required": ["sources", "zips"],
       "properties": {
         "sources": { "type": "array", "minItems": 1, "items": { "$ref": "urn:vtr:schema:fact" } },
+        "everywhere": { "$ref": "#/$defs/everywhere" },
         "zips": {
           "type": "object",
           "propertyNames": { "pattern": "^\\d{5}$" },

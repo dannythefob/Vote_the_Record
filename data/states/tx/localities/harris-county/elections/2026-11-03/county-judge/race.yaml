@@ -6,3 +6,37 @@ notes: >-
   November 3, 2026. The current County Judge, Lina Hidalgo, is not on the ballot
   (Harris County Elected Officials page, https://www.harriscountytx.gov/Government/Elected-Officials,
   retrieved 2026-09-29; the Wayback Machine could not archive it).
+sources:
+- id: tx/localities/harris-county/elections/2026-11-03/county-judge/race#S-01
+  headline: Candidates as printed on the Harris County sample ballot
+  statement: 'The Harris County Clerk''s sample ballot for the November 3, 2026 general election lists "County Judge" on page 5, with these candidates: ORLANDO SANCHEZ (Republican Party); LETITIA PLUMMER (Democratic Party).'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  source_title: 'Harris County Clerk: Sample Ballot, November 3, 2026 General and Special Elections (page 5)'
+  source_kind: document
+  sha256: 0b35cb063ef0cb82001e2fb79141e259b95c330cd0d10ad7b2575e34d611e1ed
+  archive_url: https://web.archive.org/web/20260921224207/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  event_date: '2026-11-03'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/localities/harris-county/elections/2026-11-03/county-judge/race#S-02
+  headline: Declared write-in candidates on the County Clerk's list
+  statement: 'The Harris County Clerk''s List of Declared Write-In Candidates for November 3, 2026 lists these write-in candidates for County Judge: Vince Duncan, Marianne “Yan” Hess.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/Write-Ins/2026/1126_Write-In_for_BBM.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=azVo5pcm184KqQpeMxG5gOo%2BVcoJmZCswMsgHlausCE%3D
+  source_title: 'Harris County Clerk: List of Declared Write-In Candidates, November 3, 2026 General and Special Elections'
+  source_kind: document
+  sha256: 2056f6a21f8c89f769971bf5ccbc7373160d657f93971128e18fb30513e250a4
+  archive_url: null
+  event_date: '2026-11-03'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The Wayback Machine refused saves on 2026-09-30 (rate limit); archive_url must be added before this can be verified.

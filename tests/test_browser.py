@@ -109,7 +109,7 @@ def test_zip_filters_races_and_flags_split_districts(report):
     assert z["split"] == ["U.S. Representative, District 1", "U.S. Representative, District 2"]
     assert z["groups"] == ["Your county", "Your state", "National"]  # empty "Closest to home" hidden
     assert z["status"] == ("ZIP code 22222: 4 races on your ballot, closest to home first. "
-                           "2 races depend on your exact address.")
+                           "2 races depend on your exact address. Add your precinct number to be sure.")
     assert z["hash"] == "#zip=22222"
     assert report["ballot"]["reset"]["races"] == ALL_DEMO_RACES
 
@@ -124,3 +124,11 @@ def test_home_zip_box_opens_the_ballot_filtered(report):
 
 def test_ballot_fits_a_phone_screen(report):
     assert report["phoneOverflowBallot"] <= 0
+
+
+def test_precinct_number_gives_exact_races_and_wins_over_zip(report):
+    p = report["ballot"]["precinct102"]
+    assert p["races"] == ["Justice of the Peace, Precinct 2", "Governor", "U.S. Representative, District 2"]
+    assert p["split"] == []
+    assert p["status"] == "Precinct 102: 3 races on your ballot, closest to home first."
+    assert p["hash"] == "#precinct=102"

@@ -42,3 +42,31 @@ test("a split ZIP shows every possible race, flagged as depending on the address
 test("an unknown ZIP returns null so the page can show everything", () => {
   assert.equal(racesForZip(payload, "99999"), null);
 });
+
+import { cleanPrecinct, racesForPrecinct } from "../../site/static/js/ballot.js";
+
+const withPrecincts = {
+  ...payload,
+  zipEverywhere: ["coa-1"],
+  areas: ["demo-county/jp-1", "demo-county/jp-2", "us-house-1", "us-house-2"],
+  precincts: { "101": [2, 0], "102": [3, 1] },
+  precinctEverywhere: ["coa-1"],
+  races: [...payload.races, { n: 6, area: "coa-1", office: "court-of-appeals-justice" }],
+};
+
+test("cleanPrecinct strips leading zeros and rejects non-numbers", () => {
+  assert.equal(cleanPrecinct("0123"), "123");
+  assert.equal(cleanPrecinct(" 7 "), "7");
+  for (const bad of ["", "0", "12a", "1234567", null]) assert.equal(cleanPrecinct(bad), null, String(bad));
+});
+
+test("a precinct gets exactly its areas plus implied and everywhere areas, never split", () => {
+  assert.deepEqual(racesForPrecinct(withPrecincts, "102"), [
+    { n: 1, split: false }, { n: 2, split: false }, { n: 3, split: false }, { n: 5, split: false }, { n: 6, split: false },
+  ]);
+  assert.equal(racesForPrecinct(withPrecincts, "999"), null);
+});
+
+test("zipEverywhere areas are added to every ZIP", () => {
+  assert.ok(racesForZip(withPrecincts, "11111").some((r) => r.n === 6));
+});

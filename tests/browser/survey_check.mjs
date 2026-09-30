@@ -160,6 +160,15 @@ async function main() {
     await new Promise(r => setTimeout(r, 50));
     return ${visible};
   })()`);
+  report.ballot.precinct102 = await evaluate(`(async () => {
+    document.getElementById('zip').value = '22222';
+    document.getElementById('precinct').value = '0102';
+    document.querySelector('#zip-form button[type=submit]').click();
+    await new Promise(r => setTimeout(r, 50));
+    const out = ${visible};
+    document.getElementById('precinct').value = '';
+    return out;
+  })()`);
   report.ballot.reset = await evaluate(`(async () => {
     document.getElementById('zip-reset').click();
     await new Promise(r => setTimeout(r, 50));

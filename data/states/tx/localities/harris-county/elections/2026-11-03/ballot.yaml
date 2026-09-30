@@ -1,0 +1,172 @@
+# Contests on the Harris County ballot, in ballot order. complete: false until every batch is added.
+name: Harris County ballot
+election_date: '2026-11-03'
+lookup_url: https://www.harrisvotes.com/Voter/Whats-on-my-Ballot
+complete: false
+sources:
+- id: tx/localities/harris-county/elections/2026-11-03/ballot#S-01
+  headline: Every contest on the Harris County sample ballot
+  statement: The Harris County Clerk's combined sample ballot for the November 3, 2026 General and Special Elections (14 pages) lists every contest on Harris County ballots.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  source_title: 'Harris County Clerk: Sample Ballot, November 3, 2026 General and Special Elections'
+  source_kind: document
+  sha256: 0b35cb063ef0cb82001e2fb79141e259b95c330cd0d10ad7b2575e34d611e1ed
+  archive_url: https://web.archive.org/web/20260921224207/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  event_date: '2026-11-03'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+contests:
+- tx/statewide/elections/2026-11-03/us-senate
+- tx/districts/us-house-2/elections/2026-11-03/us-representative
+- tx/districts/us-house-7/elections/2026-11-03/us-representative
+- tx/districts/us-house-8/elections/2026-11-03/us-representative
+- tx/districts/us-house-9/elections/2026-11-03/us-representative
+- tx/districts/us-house-18/elections/2026-11-03/us-representative
+- tx/districts/us-house-22/elections/2026-11-03/us-representative
+- tx/districts/us-house-29/elections/2026-11-03/us-representative
+- tx/districts/us-house-36/elections/2026-11-03/us-representative
+- tx/districts/us-house-38/elections/2026-11-03/us-representative
+- tx/statewide/elections/2026-11-03/governor
+- tx/statewide/elections/2026-11-03/lieutenant-governor
+- tx/statewide/elections/2026-11-03/attorney-general
+- tx/statewide/elections/2026-11-03/comptroller
+- tx/statewide/elections/2026-11-03/land-commissioner
+- tx/statewide/elections/2026-11-03/agriculture-commissioner
+- tx/statewide/elections/2026-11-03/railroad-commissioner
+- tx/statewide/elections/2026-11-03/supreme-court-chief-justice
+- tx/statewide/elections/2026-11-03/supreme-court-place-2
+- tx/statewide/elections/2026-11-03/supreme-court-place-7
+- tx/statewide/elections/2026-11-03/supreme-court-place-8
+- tx/statewide/elections/2026-11-03/cca-place-3
+- tx/statewide/elections/2026-11-03/cca-place-4
+- tx/statewide/elections/2026-11-03/cca-place-9
+- tx/districts/sboe-4/elections/2026-11-03/sboe-member
+- tx/districts/sboe-6/elections/2026-11-03/sboe-member
+- tx/districts/sboe-7/elections/2026-11-03/sboe-member
+- tx/districts/sboe-8/elections/2026-11-03/sboe-member
+- tx/districts/state-senate-4/elections/2026-11-03/state-senator
+- tx/districts/state-senate-11/elections/2026-11-03/state-senator
+- tx/districts/state-senate-13/elections/2026-11-03/state-senator
+- tx/districts/state-senate-18/elections/2026-11-03/state-senator
+- tx/districts/state-house-126/elections/2026-11-03/state-representative
+- tx/districts/state-house-127/elections/2026-11-03/state-representative
+- tx/districts/state-house-128/elections/2026-11-03/state-representative
+- tx/districts/state-house-129/elections/2026-11-03/state-representative
+- tx/districts/state-house-130/elections/2026-11-03/state-representative
+- tx/districts/state-house-131/elections/2026-11-03/state-representative
+- tx/districts/state-house-132/elections/2026-11-03/state-representative
+- tx/districts/state-house-133/elections/2026-11-03/state-representative
+- tx/districts/state-house-134/elections/2026-11-03/state-representative
+- tx/districts/state-house-135/elections/2026-11-03/state-representative
+- tx/districts/state-house-137/elections/2026-11-03/state-representative
+- tx/districts/state-house-138/elections/2026-11-03/state-representative
+- tx/districts/state-house-139/elections/2026-11-03/state-representative
+- tx/districts/state-house-140/elections/2026-11-03/state-representative
+- tx/districts/state-house-141/elections/2026-11-03/state-representative
+- tx/districts/state-house-142/elections/2026-11-03/state-representative
+- tx/districts/state-house-143/elections/2026-11-03/state-representative
+- tx/districts/state-house-144/elections/2026-11-03/state-representative
+- tx/districts/state-house-145/elections/2026-11-03/state-representative
+- tx/districts/state-house-146/elections/2026-11-03/state-representative
+- tx/districts/state-house-147/elections/2026-11-03/state-representative
+- tx/districts/state-house-148/elections/2026-11-03/state-representative
+- tx/districts/state-house-149/elections/2026-11-03/state-representative
+- tx/districts/state-house-150/elections/2026-11-03/state-representative
+- tx/districts/court-of-appeals-15/elections/2026-11-03/chief-justice
+- tx/districts/court-of-appeals-15/elections/2026-11-03/place-2
+- tx/districts/court-of-appeals-15/elections/2026-11-03/place-3
+- tx/districts/court-of-appeals-14/elections/2026-11-03/chief-justice
+- tx/districts/court-of-appeals-14/elections/2026-11-03/place-7
+- tx/districts/court-of-appeals-1/elections/2026-11-03/place-3
+- tx/districts/court-of-appeals-1/elections/2026-11-03/place-4
+- tx/districts/court-of-appeals-1/elections/2026-11-03/place-5
+- tx/localities/harris-county/elections/2026-11-03/district-court-55
+- tx/localities/harris-county/elections/2026-11-03/district-court-113
+- tx/localities/harris-county/elections/2026-11-03/district-court-157
+- tx/localities/harris-county/elections/2026-11-03/district-court-189
+- tx/localities/harris-county/elections/2026-11-03/district-court-190
+- tx/localities/harris-county/elections/2026-11-03/district-court-234
+- tx/localities/harris-county/elections/2026-11-03/district-court-269
+- tx/localities/harris-county/elections/2026-11-03/district-court-270
+- tx/localities/harris-county/elections/2026-11-03/district-court-281
+- tx/localities/harris-county/elections/2026-11-03/district-court-295
+- tx/localities/harris-county/elections/2026-11-03/district-court-313
+- tx/localities/harris-county/elections/2026-11-03/district-court-314
+- tx/localities/harris-county/elections/2026-11-03/district-court-315
+- tx/localities/harris-county/elections/2026-11-03/district-court-180
+- tx/localities/harris-county/elections/2026-11-03/district-court-182
+- tx/localities/harris-county/elections/2026-11-03/district-court-183
+- tx/localities/harris-county/elections/2026-11-03/district-court-184
+- tx/localities/harris-county/elections/2026-11-03/district-court-185
+- tx/localities/harris-county/elections/2026-11-03/district-court-208
+- tx/localities/harris-county/elections/2026-11-03/district-court-209
+- tx/localities/harris-county/elections/2026-11-03/district-court-228
+- tx/localities/harris-county/elections/2026-11-03/district-court-230
+- tx/localities/harris-county/elections/2026-11-03/district-court-232
+- tx/localities/harris-county/elections/2026-11-03/district-court-248
+- tx/localities/harris-county/elections/2026-11-03/district-court-262
+- tx/localities/harris-county/elections/2026-11-03/district-court-263
+- tx/localities/harris-county/elections/2026-11-03/district-court-482
+- tx/localities/harris-county/elections/2026-11-03/district-court-486
+- tx/localities/harris-county/elections/2026-11-03/district-court-495
+- tx/localities/harris-county/elections/2026-11-03/district-court-496
+- tx/localities/harris-county/elections/2026-11-03/district-court-497
+- tx/localities/harris-county/elections/2026-11-03/district-court-245
+- tx/localities/harris-county/elections/2026-11-03/district-court-246
+- tx/localities/harris-county/elections/2026-11-03/district-court-247
+- tx/localities/harris-county/elections/2026-11-03/district-court-257
+- tx/localities/harris-county/elections/2026-11-03/district-court-280
+- tx/localities/harris-county/elections/2026-11-03/district-court-308
+- tx/localities/harris-county/elections/2026-11-03/district-court-309
+- tx/localities/harris-county/elections/2026-11-03/district-court-310
+- tx/localities/harris-county/elections/2026-11-03/district-court-311
+- tx/localities/harris-county/elections/2026-11-03/district-court-312
+- tx/localities/harris-county/elections/2026-11-03/county-judge
+- tx/localities/harris-county/elections/2026-11-03/county-civil-court-1
+- tx/localities/harris-county/elections/2026-11-03/county-civil-court-2
+- tx/localities/harris-county/elections/2026-11-03/county-civil-court-3
+- tx/localities/harris-county/elections/2026-11-03/county-civil-court-4
+- tx/localities/harris-county/elections/2026-11-03/county-civil-court-5
+- tx/localities/harris-county/elections/2026-11-03/county-criminal-court-1
+- tx/localities/harris-county/elections/2026-11-03/county-criminal-court-2
+- tx/localities/harris-county/elections/2026-11-03/county-criminal-court-3
+- tx/localities/harris-county/elections/2026-11-03/county-criminal-court-4
+- tx/localities/harris-county/elections/2026-11-03/county-criminal-court-5
+- tx/localities/harris-county/elections/2026-11-03/county-criminal-court-6
+- tx/localities/harris-county/elections/2026-11-03/county-criminal-court-7
+- tx/localities/harris-county/elections/2026-11-03/county-criminal-court-8
+- tx/localities/harris-county/elections/2026-11-03/county-criminal-court-9
+- tx/localities/harris-county/elections/2026-11-03/county-criminal-court-10
+- tx/localities/harris-county/elections/2026-11-03/county-criminal-court-11
+- tx/localities/harris-county/elections/2026-11-03/county-criminal-court-12
+- tx/localities/harris-county/elections/2026-11-03/county-criminal-court-13
+- tx/localities/harris-county/elections/2026-11-03/county-criminal-court-14
+- tx/localities/harris-county/elections/2026-11-03/county-criminal-court-15
+- tx/localities/harris-county/elections/2026-11-03/probate-court-1
+- tx/localities/harris-county/elections/2026-11-03/probate-court-2
+- tx/localities/harris-county/elections/2026-11-03/probate-court-3
+- tx/localities/harris-county/elections/2026-11-03/probate-court-4
+- tx/localities/harris-county/elections/2026-11-03/county-attorney
+- tx/localities/harris-county/elections/2026-11-03/district-clerk
+- tx/localities/harris-county/elections/2026-11-03/county-clerk
+- tx/localities/harris-county/elections/2026-11-03/county-treasurer
+- tx/localities/harris-county/elections/2026-11-03/county-school-trustee-5
+- tx/localities/harris-county/elections/2026-11-03/county-school-trustee-7
+- tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2
+- tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-4
+- tx/localities/harris-county/elections/2026-11-03/jp-precinct-1-place-2
+- tx/localities/harris-county/elections/2026-11-03/jp-precinct-2-place-2
+- tx/localities/harris-county/elections/2026-11-03/jp-precinct-3-place-2
+- tx/localities/harris-county/elections/2026-11-03/jp-precinct-4-place-2
+- tx/localities/harris-county/elections/2026-11-03/jp-precinct-5-place-2
+- tx/localities/harris-county/elections/2026-11-03/jp-precinct-6-place-2
+- tx/localities/harris-county/elections/2026-11-03/jp-precinct-7-place-2
+- tx/localities/harris-county/elections/2026-11-03/jp-precinct-8-place-2
+- tx/localities/harris-county/elections/2026-11-03/hcad-place-1
+- tx/localities/harris-county/elections/2026-11-03/hcad-place-2
+- tx/localities/harris-county/elections/2026-11-03/hcad-place-3

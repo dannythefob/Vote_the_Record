@@ -157,6 +157,17 @@ code list for each county cites where it comes from. A ZIP code can cross distri
 when it does, every race you might have is shown and marked "Depends on your address".
 For your exact ballot, use your county's official lookup, which each ballot page links.
 
+**Finding your races by precinct number (exact).** Your voting precinct number is printed
+on your voter registration card. Enter it to see exactly the races on your ballot. Each
+precinct's districts come from the county's official voting precinct map. Like the ZIP
+lookup, it runs in your browser and nothing is sent or saved.
+
+**How ZIP codes are matched.** ZIP codes aren't voting districts. We use the Census
+Bureau's ZIP Code Tabulation Areas, which approximate ZIP codes, and overlay them on the
+county's precinct map. A precinct counts for a ZIP code when it covers at least 1% of the
+ZIP code's area in the county. When those precincts are in different districts, each
+possible race is shown and marked "Depends on your address".
+
 **Basic race pages.** We're adding every race on the ballot first, with what the office
 does and the candidates as printed on the official sample ballot. A basic page says
 "We haven't researched this candidate's record yet", which is different from "not found

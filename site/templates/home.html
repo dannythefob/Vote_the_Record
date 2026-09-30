@@ -70,8 +70,8 @@
     {% for b in site.ballots %}
     <li><a class="race-card" href="{{ b.url }}">
       <span class="race-name">{{ b.name }}</span>
-      <span class="race-sum">Every race on the ballot, closest to home first.</span>
-      <span class="race-meta">{{ b.count }} races · Election {{ b.election_date | shortdate }} · See the ballot →</span>
+      <span class="race-sum">{% if b.complete %}Every race on the ballot{% else %}Races on the ballot (still adding more){% endif %}, closest to home first.</span>
+      <span class="race-meta">{{ b.count }} {{ "race" if b.count == 1 else "races" }}{% if not b.complete %} so far{% endif %} · Election {{ b.election_date | shortdate }} · See the ballot →</span>
     </a></li>
     {% endfor %}
   </ul>

@@ -15,7 +15,7 @@ export function cleanZip(text) {
 export function racesForZip(payload, zip) {
   const entries = payload.zips[zip];
   if (!entries) return null;
-  const sure = new Set(payload.implied);
+  const sure = new Set([...payload.implied, ...(payload.zipEverywhere || [])]);
   const maybe = new Set();
   for (const e of entries) {
     if (Array.isArray(e)) e.forEach((a) => maybe.add(a));
@@ -24,6 +24,20 @@ export function racesForZip(payload, zip) {
   return payload.races
     .filter((r) => sure.has(r.area) || maybe.has(r.area))
     .map((r) => ({ n: r.n, split: maybe.has(r.area) && !sure.has(r.area) }));
+}
+
+/** "0123", " 123 " -> "123"; anything that isn't 1-6 digits -> null. */
+export function cleanPrecinct(text) {
+  const m = /^\s*0*(\d{1,6})\s*$/.exec(text || "");
+  return m && m[1] !== "0" ? m[1] : null;
+}
+
+/** Races for a voting precinct (exact, never split), or null if the precinct isn't on this ballot. */
+export function racesForPrecinct(payload, precinct) {
+  const codes = (payload.precincts || {})[precinct];
+  if (!codes) return null;
+  const mine = new Set([...payload.implied, ...(payload.precinctEverywhere || []), ...codes.map((i) => payload.areas[i])]);
+  return payload.races.filter((r) => mine.has(r.area)).map((r) => ({ n: r.n, split: false }));
 }
 
 function plural(n, one, many) {
@@ -38,6 +52,7 @@ function readJson(id) {
 function initBallotPage(payload) {
   const form = document.getElementById("zip-form");
   const input = document.getElementById("zip");
+  const pctInput = document.getElementById("precinct");
   const status = document.getElementById("zip-status");
   const reset = document.getElementById("zip-reset");
   const rows = [...document.querySelectorAll("[data-race]")];
@@ -53,7 +68,18 @@ function initBallotPage(payload) {
     reset.hidden = true;
   }
 
-  function apply(zip, updateHash) {
+  function show(found) {
+    const byN = new Map(found.map((r) => [r.n, r]));
+    rows.forEach((row) => {
+      const hit = byN.get(Number(row.dataset.race));
+      row.hidden = !hit;
+      row.querySelector(".split-chip").hidden = !(hit && hit.split);
+    });
+    groups.forEach((g) => { g.hidden = !g.querySelector("[data-race]:not([hidden])"); });
+    reset.hidden = false;
+  }
+
+  function applyZip(zip, updateHash) {
     const clean = cleanZip(zip);
     if (!clean) {
       status.textContent = "Enter a 5-digit ZIP code.";
@@ -65,23 +91,34 @@ function initBallotPage(payload) {
       status.textContent = `ZIP code ${clean} isn't in our ${payload.name} data. Showing every race on this ballot.`;
       return;
     }
-    const byN = new Map(found.map((r) => [r.n, r]));
-    rows.forEach((row) => {
-      const hit = byN.get(Number(row.dataset.race));
-      row.hidden = !hit;
-      row.querySelector(".split-chip").hidden = !(hit && hit.split);
-    });
-    groups.forEach((g) => { g.hidden = !g.querySelector("[data-race]:not([hidden])"); });
+    show(found);
     const split = found.filter((r) => r.split).length;
     status.textContent = `ZIP code ${clean}: ${plural(found.length, "race", "races")} on your ballot, closest to home first.` +
-      (split ? ` ${plural(split, "race depends", "races depend")} on your exact address.` : "");
-    reset.hidden = false;
+      (split ? ` ${plural(split, "race depends", "races depend")} on your exact address. Add your precinct number to be sure.` : "");
     if (updateHash) history.replaceState(null, "", `#zip=${clean}`);
+  }
+
+  function applyPrecinct(text, updateHash) {
+    const clean = cleanPrecinct(text);
+    if (!clean) {
+      status.textContent = "Enter your precinct number (digits only), or leave it blank and use your ZIP code.";
+      return;
+    }
+    const found = racesForPrecinct(payload, clean);
+    if (!found) {
+      showAll();
+      status.textContent = `Precinct ${clean} isn't in our ${payload.name} data. Showing every race on this ballot.`;
+      return;
+    }
+    show(found);
+    status.textContent = `Precinct ${clean}: ${plural(found.length, "race", "races")} on your ballot, closest to home first.`;
+    if (updateHash) history.replaceState(null, "", `#precinct=${clean}`);
   }
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    apply(input.value, true);
+    if (pctInput && pctInput.value.trim()) applyPrecinct(pctInput.value, true);
+    else applyZip(input.value, true);
   });
   reset.addEventListener("click", () => {
     showAll();
@@ -89,10 +126,14 @@ function initBallotPage(payload) {
     history.replaceState(null, "", window.location.pathname);
     input.focus();
   });
-  const fromHash = /^#zip=(\d{5})$/.exec(window.location.hash);
-  if (fromHash) {
-    input.value = fromHash[1];
-    apply(fromHash[1], false);
+  const zipHash = /^#zip=(\d{5})$/.exec(window.location.hash);
+  const pctHash = /^#precinct=(\d{1,6})$/.exec(window.location.hash);
+  if (pctHash && pctInput) {
+    pctInput.value = pctHash[1];
+    applyPrecinct(pctHash[1], false);
+  } else if (zipHash) {
+    input.value = zipHash[1];
+    applyZip(zipHash[1], false);
   }
 }
 
