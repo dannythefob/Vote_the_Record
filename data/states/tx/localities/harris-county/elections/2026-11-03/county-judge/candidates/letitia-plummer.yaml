@@ -217,6 +217,26 @@ records:
     verification: verified
     verified_on: "2026-09-30"
     reviewer: "D"
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-08
+    record_type: statement
+    headline: 'Campaign platform: "Stop county property tax increases"'
+    statement: >-
+      Campaign platform, Affordability: "Stop county property tax increases by focusing on revenue from appraisal costs, saving home and property owners more and keeping our overall tax rate low."
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.drletitiaplummer.com/agenda
+    source_title: 'Letitia Plummer for Harris County Judge: Agenda (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: https://web.archive.org/web/20260929220308/https://www.drletitiaplummer.com/agenda
+    event_date: '2026-09-30'
+    retrieved: '2026-09-30'
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
+    notes: >-
+      The campaign's own platform (also summarized in O-02). This record quotes only the sentence mapped to a survey question. event_date is the date the page was read. The sentence appears on the live page and in the September 29, 2026 archived copy.
 funding:
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#M-01
     headline: Raised $129,725 and had $47,264 on hand (May 17 - June 30, 2026, corrected report)
@@ -405,6 +425,17 @@ mappings:
       gunshot-detection contract for the police department. The minutes do not record her
       reasons, so the vote is consistent with declining the contract or with preferring a
       shorter trial before a multi-year commitment.
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"
+  - record: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-08
+    question: county-judge/S-01
+    options: [B, C]
+    rationale: >-
+      Her campaign platform says to "stop county property tax increases" and keep the
+      overall rate low, which runs against raising the rate (A). It does not say whether she
+      would prefer spending cuts or reserves, so both B and C are listed. This is a campaign
+      claim, so it counts at the lowest evidence weight.
     verification: verified
     verified_on: "2026-09-30"
     reviewer: "D"

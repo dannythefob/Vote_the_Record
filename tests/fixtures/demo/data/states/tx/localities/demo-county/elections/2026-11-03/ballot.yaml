@@ -1,0 +1,29 @@
+# FICTIONAL demo ballot.
+name: Demo County ballot
+election_date: '2026-11-03'
+lookup_url: https://example.gov/whats-on-my-ballot
+sources:
+- id: tx/localities/demo-county/elections/2026-11-03/ballot#S-01
+  headline: 'DEMO: Every contest on the county''s combined sample ballot.'
+  statement: 'DEMO: Every contest on the county''s combined sample ballot.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://example.gov/demo-sample-ballot.pdf
+  source_title: 'DEMO County Clerk: Sample Ballot'
+  source_kind: document
+  sha256: '0000000000000000000000000000000000000000000000000000000000000000'
+  archive_url: null
+  event_date: '2026-11-03'
+  retrieved: '2026-09-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+contests:
+- tx/districts/us-house-1/elections/2026-11-03/us-representative
+- tx/districts/us-house-2/elections/2026-11-03/us-representative
+- tx/statewide/elections/2026-11-03/governor
+- tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9
+- tx/localities/demo-county/elections/2026-11-03/jp-precinct-1
+- tx/localities/demo-county/elections/2026-11-03/jp-precinct-2
+- tx/localities/demo-city/elections/2026-11-03/council-place-1

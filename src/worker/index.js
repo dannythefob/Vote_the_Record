@@ -1,0 +1,59 @@
+// Cloudflare Worker for Vote the Record.
+// Serves the static site (env.ASSETS) and handles one endpoint: POST /api/report, the
+// public corrections form. Reports are stored privately in the REPORTS KV namespace for
+// the project owner to review; nothing is published automatically (CLAUDE.md rule 8).
+//
+// Privacy: stores only what the person typed, plus the time received. No IP address,
+// user agent, cookies, or other identifiers are read or kept.
+
+export const LIMITS = { item: 200, problem: 3000, source: 500, contact: 200 };
+const MIN_PROBLEM = 10;
+const ITEM_PATTERN = /^[a-z]{2}(\/[a-z0-9][a-z0-9._-]*)+#[A-Za-z0-9-]+$/;
+
+const SECURITY_HEADERS = {
+  "Referrer-Policy": "no-referrer",
+  "X-Content-Type-Options": "nosniff",
+  "Cache-Control": "no-store",
+};
+
+function redirect(location) {
+  return new Response(null, { status: 303, headers: { Location: location, ...SECURITY_HEADERS } });
+}
+
+// Returns { report } on success or { error } with a short reason code.
+export function validate(form) {
+  const get = (k) => (form.get(k) ?? "").toString().trim();
+  if (get("website")) return { error: "spam" };  // honeypot: people never see this field
+  const report = { item: get("item"), problem: get("problem"), source: get("source"), contact: get("contact") };
+  for (const [k, max] of Object.entries(LIMITS)) if (report[k].length > max) return { error: "too-long" };
+  if (report.problem.length < MIN_PROBLEM) return { error: "missing-problem" };
+  if (report.item && !ITEM_PATTERN.test(report.item)) return { error: "bad-item" };
+  if (report.source && !/^https?:\/\/\S+$/.test(report.source)) return { error: "bad-source" };
+  return { report };
+}
+
+export async function handleReport(request, env, now = new Date()) {
+  if (!env.REPORTS) return redirect("/report/error/?reason=unavailable");  // storage not bound (e.g. a preview)
+  const type = request.headers.get("Content-Type") || "";
+  if (!type.startsWith("application/x-www-form-urlencoded")) return redirect("/report/error/?reason=format");
+  const length = Number(request.headers.get("Content-Length") || 0);
+  if (length > 8192) return redirect("/report/error/?reason=too-long");
+  const { report, error } = validate(await request.formData());
+  if (error === "spam") return redirect("/report/thanks/");  // don't tell bots they were caught
+  if (error) return redirect(`/report/error/?reason=${error}`);
+  const received = now.toISOString();
+  const key = `report:${received}:${crypto.randomUUID().slice(0, 8)}`;
+  await env.REPORTS.put(key, JSON.stringify({ received, ...report }));
+  return redirect("/report/thanks/");
+}
+
+export default {
+  async fetch(request, env) {
+    const url = new URL(request.url);
+    if (url.pathname === "/api/report") {
+      if (request.method !== "POST") return new Response("Method not allowed", { status: 405, headers: { Allow: "POST", ...SECURITY_HEADERS } });
+      return handleReport(request, env);
+    }
+    return env.ASSETS.fetch(request);
+  },
+};

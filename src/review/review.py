@@ -38,10 +38,11 @@ def load_items(root: Path) -> list[dict]:
     for file in sorted((root / "data").rglob("*.yaml")):
         rel = file.relative_to(root).as_posix()
         kind = classify(rel)
-        if kind not in ("candidate", "actions", "voter_essentials"):
+        if kind not in ("candidate", "actions", "voter_essentials", "race", "ballot", "zips", "precincts"):
             continue
         doc = yaml.load(file.read_text(encoding="utf-8"), Loader=_NoDateLoader) or {}
-        who = doc.get("name") or doc.get("body") or f"{doc.get('state', '')} voter essentials"
+        who = ({"zips": "ZIP codes", "precincts": "Voting precincts"}.get(kind)
+               or doc.get("name") or doc.get("body") or f"{doc.get('state', '')} voter essentials")
         records = {r["id"]: r for r in doc.get("records") or []}
         for section, fact in iter_facts(kind, doc):
             items.append({
@@ -174,6 +175,49 @@ def apply(root: Path, item_type: str, file: str, key: str, verified: bool, revie
     return None
 
 
+def apply_many(root: Path, changes: list[dict], reviewer: str) -> dict:
+    """Verify many facts at once: all or nothing.
+
+    Each change is {"file", "key"}. Only unverified facts that are ready (not blocked) are
+    changed; anything else is reported and skipped. The validator runs once over the whole
+    repo; if it rejects the batch, every file is restored.
+    """
+    if not reviewer:
+        return {"ok": False, "error": "Enter your name as reviewer first."}
+    by_key = {(i["file"], i["key"]): i for i in load_items(root) if i["type"] == "fact"}
+    todo, skipped = [], []
+    for change in changes:
+        item = by_key.get((change.get("file"), change.get("key")))
+        if item is None:
+            skipped.append(f"{change.get('key')}: not found")
+        elif item["verification"] == "verified":
+            skipped.append(f"{item['local_id']}: already verified")
+        elif item["blocked"]:
+            skipped.append(f"{item['local_id']}: {item['blocked']}")
+        else:
+            todo.append(item)
+    data_dir = (root / "data").resolve()
+    backups: dict[Path, str] = {}
+    try:
+        for item in todo:
+            path = (root / item["file"]).resolve()
+            if not path.is_relative_to(data_dir):
+                raise ValueError("Only files under data/ can be changed.")
+            backups.setdefault(path, path.read_text(encoding="utf-8"))
+            set_verification(path, "fact", item["key"], True, reviewer)
+    except (LookupError, ValueError) as exc:
+        for path, text in backups.items():
+            path.write_text(text, encoding="utf-8")
+        return {"ok": False, "error": f"Nothing was changed: {exc}"}
+    files = {item["file"] for item in todo}
+    errors = [e for e in validate(root).errors if any(e.startswith(f) for f in files)]
+    if errors:
+        for path, text in backups.items():
+            path.write_text(text, encoding="utf-8")
+        return {"ok": False, "error": "The checker rejected this batch, so nothing was changed:\n" + "\n".join(errors)}
+    return {"ok": True, "verified": len(todo), "skipped": skipped}
+
+
 # ---------- web page ----------
 
 PAGE = """<!doctype html><html lang="en"><head><meta charset="utf-8">
@@ -192,29 +236,48 @@ button:disabled{background:#c7d1cf;color:#4d5e63;cursor:not-allowed}
 .badge{font-size:.8rem;font-weight:600;border:1px solid currentColor;border-radius:3px;padding:0 6px}
 .u{color:#704800;background:#fff3d6}.v{color:#2e7d32}
 .bar{position:sticky;top:0;background:#f2f5f4;padding:8px 0;border-bottom:1px solid #c7d1cf}
+.ghead{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
 label{font-weight:600}input{font:inherit;padding:4px 8px}
 </style></head><body><main>
 <h1>Review and verify</h1>
 <div class="bar"><label>Your name as reviewer: <input id="name" value="__NAME__"></label>
  <button class="undo" id="savename">Save name</button> <span id="count" class="meta"></span>
- <label class="meta"><input type="checkbox" id="hide"> Hide verified</label></div>
+ <label class="meta"><input type="checkbox" id="hide"> Hide verified</label>
+ <label class="meta"><input type="checkbox" id="bysource"> Group by source</label></div>
 <div id="list"></div></main>
 <script>
 const TOKEN = "__TOKEN__";
-let items = [];
+let items = [], groups = [];
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 async function load(){ items = await (await fetch("/api/items")).json(); render(); }
 function render(){
   const hide = document.getElementById("hide").checked;
   const todo = items.filter(i => i.verification !== "verified").length;
   document.getElementById("count").textContent = `${todo} of ${items.length} still unverified`;
-  let out = "", last = "";
+  const bySource = document.getElementById("bysource").checked;
+  const keyOf = it => bySource ? (it.source_title || it.source_url || "(no source)")
+                               : it.who + " · " + it.file.split("/").slice(-1)[0];
+  const order = [], members = {};
   items.forEach((it, n) => {
+    const k = keyOf(it);
+    if (!members[k]) { members[k] = []; order.push(k); }
+    members[k].push(n);
+  });
+  groups = order.map(k => ({title: k, ns: members[k]}));
+  let out = "";
+  groups.forEach((g, gi) => {
+    const shown = g.ns.filter(n => !(hide && items[n].verification === "verified"));
+    if (!shown.length) return;
+    const ready = g.ns.filter(n => items[n].type === "fact" && items[n].verification !== "verified" && !items[n].blocked);
+    out += `<div class="ghead"><h2>${esc(g.title)}</h2>${ready.length
+      ? `<button class="ok" data-g="${gi}">✓ Verify all ${ready.length} ready in this group</button>` : ""}</div>`;
+    shown.forEach(n => { out += card(items[n], n); });
+  });
+  document.getElementById("list").innerHTML = out;
+}
+function card(it, n){
     const done = it.verification === "verified";
-    if (hide && done) return;
-    const group = it.who + " · " + it.file.split("/").slice(-1)[0];
-    if (group !== last) { out += `<h2>${esc(group)}</h2>`; last = group; }
-    out += `<div class="card ${done ? "verified" : ""}">
+    return `<div class="card ${done ? "verified" : ""}">
       <div class="meta">${esc(it.section)} · ${esc(it.local_id)} · ${done
         ? `<span class="badge v">Verified ${esc(it.verified_on)} by ${esc(it.reviewer)}</span>`
         : `<span class="badge u">Unverified</span>`}</div>
@@ -227,10 +290,10 @@ function render(){
         ${done ? `<button class="undo" data-n="${n}" data-v="0">Undo</button>`
                : `<button class="ok" data-n="${n}" data-v="1" ${it.blocked ? "disabled" : ""}>✓ Mark verified</button>`}
       </div>${!done && it.blocked ? `<p class="why">Can't verify yet: ${esc(it.blocked)}</p>` : ""}</div>`;
-  });
-  document.getElementById("list").innerHTML = out;
 }
 document.getElementById("list").addEventListener("click", async e => {
+  const gb = e.target.closest("button[data-g]");
+  if (gb) return verifyGroup(groups[+gb.dataset.g], gb);
   const b = e.target.closest("button[data-n]"); if (!b) return;
   const it = items[+b.dataset.n], verify = b.dataset.v === "1";
   const name = document.getElementById("name").value.trim();
@@ -246,12 +309,33 @@ document.getElementById("list").addEventListener("click", async e => {
   if (!res.ok) alert(res.error);
   await load();
 });
+async function verifyGroup(g, button){
+  const name = document.getElementById("name").value.trim();
+  if (!name) { alert("Enter your name as reviewer first."); return; }
+  const ready = g.ns.map(n => items[n]).filter(it => it.type === "fact" && it.verification !== "verified" && !it.blocked);
+  const sources = [...new Set(ready.map(it => it.source_title || it.source_url))];
+  const today = new Date().toLocaleDateString("en-CA");
+  const NL = String.fromCharCode(10);
+  const list = ready.slice(0, 25).map(it => `- ${it.local_id} (${it.who}): ${it.headline || it.text}`.slice(0, 160)).join(NL);
+  const more = ready.length > 25 ? `${NL}...and ${ready.length - 25} more` : "";
+  const msg = `Mark these ${ready.length} facts as verified by ${name} on ${today}?${NL}${NL}Source(s):${NL}` +
+    sources.map(s => `- ${s}`).join(NL) + `${NL}${NL}${list}${more}${NL}${NL}Only confirm if you checked EVERY one against its source.`;
+  if (!confirm(msg)) return;
+  button.disabled = true;
+  const r = await fetch("/api/verify-many", {method: "POST", headers: {"Content-Type": "application/json", "X-Review-Token": TOKEN},
+    body: JSON.stringify({reviewer: name, changes: ready.map(it => ({file: it.file, key: it.key}))})});
+  const res = await r.json();
+  if (!res.ok) alert(res.error);
+  else alert(`Verified ${res.verified}.` + (res.skipped.length ? `${NL}Skipped:${NL}${res.skipped.join(NL)}` : ""));
+  await load();
+}
 document.getElementById("savename").addEventListener("click", async () => {
   await fetch("/api/reviewer", {method: "POST", headers: {"Content-Type": "application/json", "X-Review-Token": TOKEN},
     body: JSON.stringify({reviewer: document.getElementById("name").value.trim()})});
   alert("Saved.");
 });
 document.getElementById("hide").addEventListener("change", render);
+document.getElementById("bysource").addEventListener("change", render);
 load();
 </script></body></html>"""
 
@@ -290,6 +374,12 @@ def make_handler(root: Path, token: str, name_file: Path):
             if self.path == "/api/reviewer":
                 name_file.write_text(body.get("reviewer", "").strip() + "\n", encoding="utf-8")
                 return self._send(200, b'{"ok":true}', "application/json")
+            if self.path == "/api/verify-many":
+                reviewer = (body.get("reviewer") or "").strip()
+                result = apply_many(root, body.get("changes") or [], reviewer)
+                if result.get("ok"):
+                    name_file.write_text(reviewer + "\n", encoding="utf-8")
+                return self._send(200, json.dumps(result).encode("utf-8"), "application/json")
             if self.path == "/api/set":
                 reviewer = (body.get("reviewer") or "").strip()
                 if body.get("verified") and not reviewer:

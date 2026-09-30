@@ -1,0 +1,28 @@
+# Powers of a Harris County school trustee (Harris County Department of Education board).
+# Education Code text checked on statutes.capitol.texas.gov (read through its document server
+# tcss.legis.texas.gov) on 2026-09-30. P-PROGRAMS cites the department's own official website
+# (a government agency describing its programs), read on 2026-09-30, not a statute.
+office_type: county-school-trustee
+state: TX
+powers:
+  - id: P-BOARD
+    description: Serves on the board of county school trustees. In a county of Harris County's size, the county board of education is treated as a school district and overseen by the Texas Education Agency.
+    statute: Education Code § 11.151(f)
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.11.htm
+
+  - id: P-PROGRAMS
+    description: The Harris County Department of Education runs Special Schools, Adult Education, CASE for Kids, Head Start, and School-Based Therapy Services (as listed on its official website).
+    statute: Harris County Department of Education website (not a statute)
+    source_url: https://www.hcde-texas.org/about/
+
+plain_summary:
+  intro:
+    text: Helps govern the Harris County Department of Education, which runs special schools, adult education, Head Start, and after-school and therapy programs.
+    powers: [P-BOARD, P-PROGRAMS]
+  points:
+    - text: Sits on the board of the Harris County Department of Education
+      icon: vote
+      powers: [P-BOARD]
+    - text: The department runs special schools, adult education, Head Start, and after-school and therapy programs
+      icon: megaphone
+      powers: [P-PROGRAMS]

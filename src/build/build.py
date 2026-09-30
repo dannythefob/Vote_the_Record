@@ -39,8 +39,8 @@ def load_config(path: Path) -> tuple[dict, list[str]]:
     config = load_yaml(path) or {}
     errors = []
     form = config.get("corrections_form_url")
-    if form is not None and not (isinstance(form, str) and form.startswith("https://") and "{id}" in form):
-        errors.append(f"{path.name}: corrections_form_url must be null or an https:// URL containing {{id}}")
+    if form is not None and not (isinstance(form, str) and form.startswith(("https://", "/")) and "{id}" in form):
+        errors.append(f"{path.name}: corrections_form_url must be null, or an https:// URL or /path containing {{id}}")
     for state, links in (config.get("official_links") or {}).items():
         for link in links:
             if not str(link.get("url", "")).startswith("https://"):
@@ -78,7 +78,7 @@ STATUSES = {"documented": "Documented", "allegation": "Allegation", "disputed": 
             "contradicted": "Contradicted"}
 RECORD_TYPES = {"vote": "Vote", "sponsored": "Sponsored measure", "promise_kept": "Promise kept",
                 "promise_broken": "Promise broken", "statement": "Statement"}
-PROMISE_STATUSES = {"kept": "Kept", "broken": "Broken", "pending": "Pending"}
+PROMISE_STATUSES = {"kept": "Kept", "broken": "Not kept", "opposite": "Did the opposite", "pending": "Still open"}
 
 
 def anchor(fact_id: str) -> str:
@@ -124,9 +124,14 @@ def replace_dir(tmp: Path, out: Path) -> None:
     if out.exists():
         if not (out / MARKER).exists() and any(out.iterdir()):
             raise SystemExit(f"refusing to replace {out}: it was not created by this build")
-        shutil.rmtree(out)
-    out.parent.mkdir(parents=True, exist_ok=True)
-    shutil.move(str(tmp), str(out))
+        # Empty the folder rather than deleting it: on Windows an open terminal or
+        # Explorer window (e.g. a preview server) locks the folder itself.
+        for child in out.iterdir():
+            shutil.rmtree(child) if child.is_dir() else child.unlink()
+    out.mkdir(parents=True, exist_ok=True)
+    for child in tmp.iterdir():
+        shutil.move(str(child), str(out / child.name))
+    tmp.rmdir()
 
 
 def build(root: Path, out: Path, *, demo: bool = False, config_path: Path | None = None,
@@ -149,7 +154,13 @@ def build(root: Path, out: Path, *, demo: bool = False, config_path: Path | None
             body=render_methodology(config), page="methodology"),
         "/corrections/": env.get_template("corrections.html").render(site=site, page="corrections"),
         "/about/": env.get_template("about.html").render(page="about"),
+        "/report/": env.get_template("report.html").render(page="report"),
+        "/report/thanks/": env.get_template("report_done.html").render(page="report", ok=True),
+        "/report/error/": env.get_template("report_done.html").render(page="report", ok=False),
     }
+    ballot_template = env.get_template("ballot.html")
+    for ballot in site["ballots"]:
+        pages[ballot["url"]] = ballot_template.render(ballot=ballot, page="ballot")
     race_template = env.get_template("race.html")
     for race in site["races"]:
         payload = dict(race["payload"], corrections_form_url=config.get("corrections_form_url"))

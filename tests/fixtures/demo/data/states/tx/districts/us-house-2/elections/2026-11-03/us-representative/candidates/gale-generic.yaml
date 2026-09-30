@@ -1,0 +1,14 @@
+# FICTIONAL demo candidate (basic race).
+id: gale-generic
+name: Gale Generic
+incumbent: null
+ballot_party: Other Sample Party
+records: []
+funding: []
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

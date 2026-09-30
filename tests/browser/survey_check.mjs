@@ -12,6 +12,7 @@ import { spawn } from "node:child_process";
 
 const [distDir, browserPath] = process.argv.slice(2);
 const RACE = "/races/tx/demo-county/2026-11-03/commissioner-precinct-9/";
+const BALLOT = "/ballot/tx/demo-county/2026-11-03/";
 const TYPES = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript",
                 ".woff2": "font/woff2", ".txt": "text/plain" };
 
@@ -135,8 +136,65 @@ async function main() {
       meters: cards.map(c => c.querySelector('meter')?.value ?? null),
       unverifiedBadgesInResults: document.querySelectorAll('#results .badge-unverified').length,
       betaBreakdownOpen: cards.map(c => c.querySelector('details')?.open ?? null),
+      gridHead: [...document.querySelectorAll('#results .compare-grid thead th')].map(th => th.textContent.trim()),
+      gridRows: [...document.querySelectorAll('#results .compare-grid tbody tr')].map(tr =>
+        [tr.querySelector('th').firstChild.textContent.trim(), ...[...tr.querySelectorAll('td')].map(td => td.innerText.trim())]),
     };
   })()`);
+
+  // Ballot page ZIP lookup (runs in the page; nothing is sent).
+  const visible = `(() => ({
+    races: [...document.querySelectorAll('[data-race]:not([hidden]) .ballot-race-name')].map(h => h.textContent.trim()),
+    split: [...document.querySelectorAll('[data-race]:not([hidden])')].filter(li => !li.querySelector('.split-chip').hidden)
+      .map(li => li.querySelector('.ballot-race-name').textContent.trim()),
+    groups: [...document.querySelectorAll('[data-group]:not([hidden]) h2')].map(h => h.textContent.trim()),
+    status: document.getElementById('zip-status').textContent,
+    formShown: !document.getElementById('zip-form').hidden,
+    hash: location.hash,
+  }))()`;
+  await load(BALLOT);
+  report.ballot = { initial: await evaluate(visible) };
+  report.ballot.zip22222 = await evaluate(`(async () => {
+    document.getElementById('zip').value = '22222';
+    document.querySelector('#zip-form button[type=submit]').click();
+    await new Promise(r => setTimeout(r, 50));
+    return ${visible};
+  })()`);
+  report.ballot.precinct102 = await evaluate(`(async () => {
+    document.getElementById('zip').value = '22222';
+    document.getElementById('precinct').value = '0102';
+    document.querySelector('#zip-form button[type=submit]').click();
+    await new Promise(r => setTimeout(r, 50));
+    const out = ${visible};
+    document.getElementById('precinct').value = '';
+    return out;
+  })()`);
+  report.ballot.reset = await evaluate(`(async () => {
+    document.getElementById('zip-reset').click();
+    await new Promise(r => setTimeout(r, 50));
+    return ${visible};
+  })()`);
+  await load("/");
+  await evaluate(`(() => {
+    document.getElementById('zip-home').value = '11111';
+    document.querySelector('#zip-find button[type=submit]').click();
+  })()`);
+  for (let i = 0; i < 100; i++) {
+    if (await evaluate("location.pathname === '" + BALLOT + "' && document.readyState === 'complete'")) break;
+    await new Promise((r) => setTimeout(r, 50));
+  }
+  await new Promise((r) => setTimeout(r, 100));
+  problems.cspViolations.push(...(await evaluate("window.__csp")).map((v) => `${BALLOT}: ${v}`));
+  report.ballot.fromHome11111 = await evaluate(visible);
+  report.ballot.homeUnknown = await (async () => {
+    await load("/");
+    return evaluate(`(async () => {
+      document.getElementById('zip-home').value = '99999';
+      document.querySelector('#zip-find button[type=submit]').click();
+      await new Promise(r => setTimeout(r, 50));
+      return document.getElementById('zip-home-status').textContent;
+    })()`);
+  })();
 
   await cdp.send("Emulation.setEmulatedMedia", { features: [
     { name: "prefers-color-scheme", value: "dark" }, { name: "prefers-reduced-motion", value: "reduce" }] });
@@ -149,6 +207,8 @@ async function main() {
   await cdp.send("Emulation.setDeviceMetricsOverride", { width: 375, height: 800, deviceScaleFactor: 2, mobile: true });
   await load(RACE);
   report.phoneOverflow = await evaluate("document.documentElement.scrollWidth - document.documentElement.clientWidth");
+  await load(BALLOT);
+  report.phoneOverflowBallot = await evaluate("document.documentElement.scrollWidth - document.documentElement.clientWidth");
 
   report.problems = problems;
   cdp.ws.close();

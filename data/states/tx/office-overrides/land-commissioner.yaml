@@ -1,0 +1,24 @@
+# Powers of the Texas Commissioner of the General Land Office.
+# Text checked against the Texas Constitution and statutes (statutes.capitol.texas.gov,
+# read through its document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: land-commissioner
+state: TX
+powers:
+  - id: P-TERM
+    description: Elected to a four-year term.
+    statute: Texas Constitution art. IV, § 23
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm
+
+  - id: P-LAND
+    description: Manages and oversees the state's public land and the state's rights in it.
+    statute: Natural Resources Code § 31.051
+    source_url: https://statutes.capitol.texas.gov/Docs/NR/htm/NR.31.htm
+
+plain_summary:
+  intro:
+    text: Manages the land the State of Texas owns.
+    powers: [P-LAND]
+  points:
+    - text: Manages state-owned public land
+      icon: contract
+      powers: [P-LAND]

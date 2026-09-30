@@ -1,4 +1,5 @@
 office_type: county-commissioner
+level: county
 powers:
   - id: P-BUDGET
     description: Votes on the county budget and the property tax rate as one member of the commissioners court.

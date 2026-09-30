@@ -1,0 +1,30 @@
+# Powers of a judge of a Harris County Probate Court.
+# Text checked against the Government Code (statutes.capitol.texas.gov, read through its
+# document server tcss.legis.texas.gov) on 2026-09-30. Term of office not confirmed yet.
+office_type: probate-judge
+state: TX
+powers:
+  - id: P-PROBATE
+    description: Handles probate (wills and estates), guardianship, mental health, and eminent domain cases.
+    statute: Government Code § 25.0021
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+
+  - id: P-MENTAL-HEALTH
+    description: In Harris County, Probate Court No. 3 has primary responsibility for mental illness cases, and Probate Court No. 4 has secondary responsibility.
+    statute: Government Code § 25.1034(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+
+plain_summary:
+  intro:
+    text: Handles wills and estates, guardianships for people who can't manage their own affairs, and mental health commitments.
+    powers: [P-PROBATE]
+  points:
+    - text: Handles wills and estates after someone dies
+      icon: contract
+      powers: [P-PROBATE]
+    - text: Appoints guardians for people who can't manage their own affairs
+      icon: shield
+      powers: [P-PROBATE]
+    - text: Hears mental health cases (Courts No. 3 and 4 in Harris County)
+      icon: court
+      powers: [P-MENTAL-HEALTH]

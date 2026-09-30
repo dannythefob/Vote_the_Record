@@ -1,0 +1,61 @@
+# Powers of the Governor of Texas.
+# Text checked against the Texas Constitution and statutes (statutes.capitol.texas.gov,
+# read through its document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: governor
+state: TX
+powers:
+  - id: P-TERM
+    description: Elected to a four-year term.
+    statute: Texas Constitution art. IV, § 4
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm
+
+  - id: P-VETO
+    description: Signs or vetoes bills passed by the Legislature. Overriding a veto takes two-thirds of each chamber. Can veto individual spending items in a budget bill.
+    statute: Texas Constitution art. IV, § 14
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm
+
+  - id: P-SPECIAL-SESSION
+    description: Can call the Legislature into a special session of up to 30 days, and decides which subjects it may take up.
+    statute: Texas Constitution art. IV, § 8; art. III, § 40
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm
+
+  - id: P-APPOINT
+    description: Fills vacancies in state and district offices, with the consent of two-thirds of the Senate when it is in session.
+    statute: Texas Constitution art. IV, § 12
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm
+
+  - id: P-MILITARY
+    description: Commander-in-chief of the state's military forces, except when they are called into federal service.
+    statute: Texas Constitution art. IV, § 7
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm
+
+  - id: P-PARDON
+    description: Can grant pardons and shorten sentences, but only on the written recommendation of the Board of Pardons and Paroles.
+    statute: Texas Constitution art. IV, § 11(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm
+
+  - id: P-DISASTER
+    description: Can declare a state of disaster.
+    statute: Government Code § 418.014
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.418.htm
+
+plain_summary:
+  intro:
+    text: Leads the state government. Signs or vetoes new laws and the state budget, and leads the response to disasters.
+    powers: [P-VETO, P-DISASTER]
+  points:
+    - text: Signs or vetoes new laws, and can cut items from the state budget
+      icon: vote
+      powers: [P-VETO]
+    - text: Can call the Legislature back for a special session and set its agenda
+      icon: megaphone
+      powers: [P-SPECIAL-SESSION]
+    - text: Fills open state offices, with the Senate's consent
+      icon: contract
+      powers: [P-APPOINT]
+    - text: Can declare a state of disaster and commands the state's military forces
+      icon: storm
+      powers: [P-DISASTER, P-MILITARY]
+    - text: Can grant pardons, only if the Board of Pardons and Paroles recommends it
+      icon: gavel
+      powers: [P-PARDON]

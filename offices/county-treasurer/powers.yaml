@@ -1,0 +1,3 @@
+office_type: county-treasurer
+level: county
+powers: []   # Texas powers: data/states/tx/office-overrides/county-treasurer.yaml

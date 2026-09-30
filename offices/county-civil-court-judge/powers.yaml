@@ -1,0 +1,3 @@
+office_type: county-civil-court-judge
+level: county
+powers: []   # Texas powers: data/states/tx/office-overrides/county-civil-court-judge.yaml

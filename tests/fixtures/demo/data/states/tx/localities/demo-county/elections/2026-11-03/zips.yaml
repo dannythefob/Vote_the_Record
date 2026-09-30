@@ -1,0 +1,32 @@
+# FICTIONAL demo ZIP codes. A nested list = the ZIP is split between those areas.
+sources:
+- id: tx/localities/demo-county/elections/2026-11-03/zips#S-01
+  headline: 'DEMO: ZIP codes by district.'
+  statement: 'DEMO: ZIP codes by district.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://example.gov/zips-by-district.pdf
+  source_title: 'DEMO Legislative Council: ZIP Codes by District'
+  source_kind: document
+  sha256: '0000000000000000000000000000000000000000000000000000000000000000'
+  archive_url: null
+  event_date: '2026-11-03'
+  retrieved: '2026-09-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+zips:
+  '11111':
+  - us-house-1
+  - demo-county/commissioner-9
+  - demo-county/jp-1
+  - demo-city
+  '22222':
+  - - us-house-1
+    - us-house-2
+  - demo-county/jp-2
+  '33333':
+  - us-house-2
+  - - demo-county/jp-1
+    - demo-county/jp-2

@@ -1,2 +1,61 @@
+# Powers of a U.S. senator under the U.S. Constitution (the same in every state).
+# Wording checked against the National Archives transcripts on 2026-09-30.
 office_type: us-senator
-powers: []   # {id: P-XXX, description, source_url}
+level: federal
+powers:
+  - id: P-TERM
+    description: Elected by the voters of the whole state to a six-year term. Each state has two senators.
+    statute: U.S. Constitution, Amendment XVII
+    source_url: https://www.archives.gov/founding-docs/amendments-11-27
+
+  - id: P-LAWS
+    description: Votes on bills. A bill must pass both the House and the Senate before it goes to the President to sign or veto.
+    statute: U.S. Constitution art. I, § 7
+    source_url: https://www.archives.gov/founding-docs/constitution-transcript
+
+  - id: P-TAX-SPEND
+    description: Votes, as part of Congress, on federal taxes, borrowing, and spending. No federal money may be spent unless a law provides for it.
+    statute: U.S. Constitution art. I, § 8; § 9, cl. 7
+    source_url: https://www.archives.gov/founding-docs/constitution-transcript
+
+  - id: P-POWERS
+    description: Votes on laws using Congress's other powers, including regulating trade among the states and with other nations, declaring war, and raising and paying for the armed forces.
+    statute: U.S. Constitution art. I, § 8
+    source_url: https://www.archives.gov/founding-docs/constitution-transcript
+
+  - id: P-CONFIRM
+    description: Votes to confirm or reject the President's nominees for federal judges (including Supreme Court justices), ambassadors, and other federal officers.
+    statute: U.S. Constitution art. II, § 2, cl. 2
+    source_url: https://www.archives.gov/founding-docs/constitution-transcript
+
+  - id: P-TREATIES
+    description: Votes on treaties. A treaty needs two-thirds of the senators present.
+    statute: U.S. Constitution art. II, § 2, cl. 2
+    source_url: https://www.archives.gov/founding-docs/constitution-transcript
+
+  - id: P-IMPEACH-TRIAL
+    description: Acts as the court in impeachment trials. Conviction needs two-thirds of the members present.
+    statute: U.S. Constitution art. I, § 3, cl. 6
+    source_url: https://www.archives.gov/founding-docs/constitution-transcript
+
+# Plain-language version shown first. Each line cites the powers it summarizes.
+plain_summary:
+  intro:
+    text: One of your state's two U.S. senators. Votes on federal laws, taxes, and spending, and on who becomes a federal judge.
+    powers: [P-TERM, P-LAWS, P-TAX-SPEND, P-CONFIRM]
+  points:
+    - text: Votes on federal laws
+      icon: vote
+      powers: [P-LAWS, P-POWERS]
+    - text: Votes on federal taxes and spending
+      icon: budget
+      powers: [P-TAX-SPEND]
+    - text: Votes to confirm federal judges and top officials
+      icon: court
+      powers: [P-CONFIRM]
+    - text: Votes on treaties and on declaring war
+      icon: shield
+      powers: [P-TREATIES, P-POWERS]
+    - text: Acts as the jury in impeachment trials
+      icon: gavel
+      powers: [P-IMPEACH-TRIAL]

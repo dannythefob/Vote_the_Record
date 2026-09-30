@@ -1,0 +1,14 @@
+# FICTIONAL demo candidate (basic race).
+id: harper-hypothetical
+name: Harper Hypothetical
+incumbent: null
+ballot_party: Sample Party
+records: []
+funding: []
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

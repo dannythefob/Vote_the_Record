@@ -1,5 +1,6 @@
 name: Demo County Commissioner, Precinct 9
 office_type: county-commissioner
+area: demo-county/commissioner-9
 election_date: "2026-11-03"
 why_it_matters:
   - text: The commissioners court sets the county tax rate and budget, so each member's vote shapes what residents pay and what services they get.

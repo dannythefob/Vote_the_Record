@@ -13,7 +13,7 @@ from pathlib import Path
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "validate"))
-from validate import _NoDateLoader, classify  # noqa: E402
+from validate import _NoDateLoader, classify, race_area, race_parts  # noqa: E402
 
 STATE_NAMES = {"TX": "Texas"}
 
@@ -38,14 +38,58 @@ def load_docs(root: Path) -> dict[str, tuple[str, object]]:
 
 
 def race_location(rel: str) -> dict:
-    """data/states/tx/localities/harris-county/elections/2026-11-03/x/race.yaml -> parts."""
-    parts = rel.split("/")
-    state = parts[2]
-    if parts[3] == "statewide":
-        locality, date, slug = "statewide", parts[5], parts[6]
-    else:
-        locality, date, slug = parts[4], parts[6], parts[7]
-    return {"state": state, "locality": locality, "election_date": date, "slug": slug}
+    """data/states/tx/<statewide|districts/x|localities/x>/elections/<date>/<slug>/race.yaml -> parts."""
+    p = race_parts(rel)
+    return {"state": p["state"], "scope": p["scope"], "locality": p["place"],
+            "election_date": p["election_date"], "slug": p["slug"]}
+
+
+# Ballot order, closest to home first (docs/METHODOLOGY.md, "How your ballot is ordered").
+LEVELS = [
+    ("local", "Closest to home", "City, school district, and neighborhood offices and questions."),
+    ("county", "Your county", "County government and the local courts."),
+    ("state", "Your state", "Texas government, lawmakers, and state courts."),
+    ("federal", "National", "Congress: your U.S. senators and representative."),
+]
+LEVEL_RANK = {key: i for i, (key, _, _) in enumerate(LEVELS)}
+
+
+def assemble_ballot(docs: dict, rel: str, doc: dict, races_by_path: dict) -> dict:
+    folder = rel.rsplit("/", 1)[0]
+    state, locality, date = folder.split("/")[2], folder.split("/")[4], folder.split("/")[6]
+    contests = [races_by_path[c] for c in doc["contests"]]
+    order = {c["path"]: i for i, c in enumerate(contests)}
+    ranked = sorted(contests, key=lambda r: (LEVEL_RANK[r["level"]], order[r["path"]]))
+    groups = []
+    for key, title, blurb in LEVELS:
+        members = [{"n": i, "race": r} for i, r in enumerate(ranked) if r["level"] == key]
+        if members:
+            groups.append({"level": key, "title": title, "blurb": blurb, "races": members})
+    zips_doc = docs.get(f"{folder}/zips.yaml", (None, None))[1] or {}
+    pct_doc = docs.get(f"{folder}/precincts.yaml", (None, None))[1] or {}
+    # Precincts are sent as indexes into one area list, to keep the page small.
+    area_list = sorted({a for areas in (pct_doc.get("precincts") or {}).values() for a in areas})
+    area_index = {a: i for i, a in enumerate(area_list)}
+    payload = {
+        "name": doc["name"],
+        "implied": [state, locality],
+        "zips": zips_doc.get("zips") or {},
+        "zipEverywhere": zips_doc.get("everywhere") or [],
+        "areas": area_list,
+        "precincts": {k: [area_index[a] for a in v] for k, v in (pct_doc.get("precincts") or {}).items()},
+        "precinctEverywhere": pct_doc.get("everywhere") or [],
+        "races": [{"n": i, "area": r["area"], "office": r["office_type"]} for i, r in enumerate(ranked)],
+    }
+    return {
+        "name": doc["name"], "state": state, "locality": locality, "election_date": date,
+        "url": f"/ballot/{state}/{locality}/{date}/",
+        "lookup_url": doc.get("lookup_url"), "sources": doc["sources"],
+        "complete": doc.get("complete", True),
+        "zip_sources": zips_doc.get("sources") or [],
+        "precinct_sources": pct_doc.get("sources") or [],
+        "has_zips": bool(payload["zips"]), "has_precincts": bool(payload["precincts"]), "groups": groups, "ranked": ranked,
+        "count": len(ranked), "payload": payload, "rel": rel,
+    }
 
 
 def load_site(root: Path, today: str) -> dict:
@@ -56,12 +100,18 @@ def load_site(root: Path, today: str) -> dict:
         if kind != "race":
             continue
         loc = race_location(rel)
+        office_doc = docs.get(f"offices/{doc['office_type']}/powers.yaml", (None, None))[1] or {}
         races.append({
             **loc,
             "name": doc["name"],
             "office_type": doc["office_type"],
+            "area": race_area(rel, doc),
+            "level": doc.get("level") or office_doc.get("level"),
+            "detail": doc.get("detail", "full"),
+            "path": rel.removeprefix("data/states/").removesuffix("/race.yaml"),
             "state_name": STATE_NAMES.get(loc["state"].upper(), loc["state"].upper()),
-            "locality_name": "Statewide" if loc["locality"] == "statewide" else title_from_slug(loc["locality"]),
+            "locality_name": {"statewide": "Statewide", "districts": "Districts"}.get(
+                loc["scope"], title_from_slug(loc["locality"])),
             "url": f"/races/{loc['state']}/{loc['locality']}/{loc['election_date']}/{loc['slug']}/",
             "rel": rel,
         })
@@ -88,7 +138,19 @@ def load_site(root: Path, today: str) -> dict:
     for race in races:
         race.update(assemble_race(docs, race, facts))
 
-    return {"races": races, "essentials": essentials, "corrections": corrections}
+    races_by_path = {r["path"]: r for r in races}
+    ballots = [assemble_ballot(docs, rel, doc, races_by_path)
+               for rel, (kind, doc) in docs.items() if kind == "ballot" and doc["election_date"] >= today]
+    ballots.sort(key=lambda b: (b["election_date"], b["state"], b["name"].casefold()))
+    on_ballot = {r["path"] for b in ballots for r in b["ranked"]}
+    zip_index: dict[str, list[dict]] = {}
+    for b in ballots:
+        for zip_code in b["payload"]["zips"]:
+            zip_index.setdefault(zip_code, []).append({"name": b["name"], "url": b["url"]})
+
+    return {"races": races, "essentials": essentials, "corrections": corrections,
+            "ballots": ballots, "other_races": [r for r in races if r["path"] not in on_ballot],
+            "zip_index": zip_index}
 
 
 FACT_SECTIONS = ("summary", "records", "funding", "endorsements")
@@ -204,6 +266,36 @@ def record_count_text(records: list[dict]) -> str:
     return ", ".join(parts) + " on record"
 
 
+PROMISE_MIN_DECIDED = 3  # same bar as the quiz: fewer decided promises show counts only
+DECIDED = ("kept", "broken", "opposite")
+
+
+def checked(fact: dict | None) -> bool:
+    return bool(fact) and fact.get("verification") == "verified" and fact.get("claim_status") == "documented"
+
+
+def promise_score(promises: list[dict]) -> dict:
+    """Counts and kept rate for an incumbent's promise tracker (docs/METHODOLOGY.md).
+
+    A promise counts only if the promise itself is verified and documented and, when it
+    is decided, every piece of evidence is too. The rate is kept / decided, shown only
+    once PROMISE_MIN_DECIDED promises are decided. Display-only: never affects the quiz.
+    """
+    counts = {s: 0 for s in (*DECIDED, "pending")}
+    unchecked = 0
+    for p in promises:
+        ok = checked(p["promise_fact"]) and (
+            p["status"] == "pending" or all(checked(e) for e in p["evidence_facts"]))
+        if ok:
+            counts[p["status"]] += 1
+        else:
+            unchecked += 1
+    decided = sum(counts[s] for s in DECIDED)
+    rate = round(100 * counts["kept"] / decided) if decided >= PROMISE_MIN_DECIDED else None
+    return {"counts": counts, "made": decided + counts["pending"], "decided": decided,
+            "rate": rate, "unchecked": unchecked}
+
+
 def pick_why_it_matters(race_doc: dict, locality_doc: dict | None, office_doc: dict | None) -> list:
     """The most specific level wins: race, then locality, then office type."""
     for doc in (race_doc, locality_doc, office_doc):
@@ -219,7 +311,7 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
     survey_doc = docs.get(f"offices/{office}/survey.yaml", (None, None))[1] or {}
     override_doc = docs.get(f"data/states/{race['state']}/office-overrides/{office}.yaml", (None, None))[1]
     locality_doc = None
-    if race["locality"] != "statewide":
+    if race["scope"] == "localities":
         locality_doc = docs.get(
             f"data/states/{race['state']}/localities/{race['locality']}/locality.yaml", (None, None))[1]
 
@@ -241,15 +333,16 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
              "evidence_facts": [facts.get(e) for e in entry.get("evidence") or []]}
             for entry in cand.get("promise_tracker") or []
         ]
+        cand["promise_card"] = promise_score(cand["promises"]) if cand.get("incumbent") else None
 
     questions = [
-        {"id": f"{office}/{s['id']}", "text": s["scenario"], "powers": s["powers"],
+        {"id": f"{office}/{s['id']}", "title": s.get("title") or s["id"], "text": s["scenario"], "powers": s["powers"],
          "options": [{"id": o["id"], "text": o["text"]} for o in s["options"]]}
         for s in survey_doc.get("scenarios") or []
     ]
     payload = {
         "race": race["name"],
-        "questions": [{k: q[k] for k in ("id", "text", "options")} for q in questions],
+        "questions": [{k: q[k] for k in ("id", "title", "text", "options")} for q in questions],
         "candidates": [
             {
                 "id": c["id"],
@@ -273,7 +366,9 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
         "powers": (office_doc or {}).get("powers") or [],
         "state_powers": (override_doc or {}).get("powers") or [],
         "why_it_matters": pick_why_it_matters(race_doc, locality_doc, office_doc),
+        "sources": race_doc.get("sources") or [],
         "candidates": candidates,
+        "incumbents": [c for c in candidates if c.get("incumbent")],
         "questions": questions,
         "payload": payload,
         "facts": facts,

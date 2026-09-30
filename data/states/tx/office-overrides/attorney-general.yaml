@@ -1,0 +1,40 @@
+# Powers of the Attorney General of Texas.
+# Text checked against the Texas Constitution and statutes (statutes.capitol.texas.gov,
+# read through its document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: attorney-general
+state: TX
+powers:
+  - id: P-TERM
+    description: Elected to a four-year term.
+    statute: Texas Constitution art. IV, § 23
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm
+
+  - id: P-REPRESENT
+    description: Represents the state in lawsuits before the Texas Supreme Court and the courts of appeals.
+    statute: Texas Constitution art. IV, § 22; Government Code § 402.021
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.402.htm
+
+  - id: P-OPINIONS
+    description: Gives written legal opinions to the governor and other officials when they ask.
+    statute: Texas Constitution art. IV, § 22; Government Code § 402.042
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.402.htm
+
+  - id: P-CHILD-SUPPORT
+    description: The attorney general's office runs the state's child support program (the state's "Title IV-D agency").
+    statute: Family Code § 231.001
+    source_url: https://statutes.capitol.texas.gov/Docs/FA/htm/FA.231.htm
+
+plain_summary:
+  intro:
+    text: The state's lawyer. Represents Texas in court, gives legal opinions to officials, and runs child support collection.
+    powers: [P-REPRESENT, P-OPINIONS, P-CHILD-SUPPORT]
+  points:
+    - text: Represents the State of Texas in court
+      icon: court
+      powers: [P-REPRESENT]
+    - text: Gives legal opinions to state and local officials who ask
+      icon: gavel
+      powers: [P-OPINIONS]
+    - text: Runs the state's child support program
+      icon: shield
+      powers: [P-CHILD-SUPPORT]

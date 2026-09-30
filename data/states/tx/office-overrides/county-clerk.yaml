@@ -1,0 +1,32 @@
+# Powers of a Texas county clerk.
+# Text checked against the Texas Constitution and Local Government Code (statutes.capitol.texas.gov,
+# read through its document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: county-clerk
+state: TX
+powers:
+  - id: P-TERM
+    description: Elected to a four-year term. Serves as clerk of the county courts and the Commissioners Court, and as the county's recorder.
+    statute: Texas Constitution art. V, § 20
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+
+  - id: P-RECORDS
+    description: Records documents filed for recording, and keeps the index of property records such as deeds and mortgages.
+    statute: Local Government Code §§ 193.001, 193.003
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.193.htm
+
+  - id: P-COMMISSIONERS
+    description: Keeps the Commissioners Court's books, papers, and records.
+    statute: Local Government Code § 81.003
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.81.htm
+
+plain_summary:
+  intro:
+    text: Keeps the county's official records, like property deeds, and the records of the Commissioners Court and county courts.
+    powers: [P-TERM, P-RECORDS, P-COMMISSIONERS]
+  points:
+    - text: Records property deeds, mortgages, and other official documents
+      icon: contract
+      powers: [P-RECORDS]
+    - text: Keeps the records of the Commissioners Court and county courts
+      icon: gavel
+      powers: [P-TERM, P-COMMISSIONERS]

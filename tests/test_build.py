@@ -1,5 +1,7 @@
 """Stage 1 site build tests: generator, validator gate, pages, headers, CSP hygiene."""
 
+import json
+import shutil
 import re
 import subprocess
 import sys
@@ -78,7 +80,9 @@ def test_home_has_beta_banner_official_links_and_race_list(real_site):
     home = read(real_site, "index.html")
     assert "<strong>Beta.</strong>" in home
     assert 'href="https://www.votetexas.gov/"' in home
-    assert 'href="/races/tx/harris-county/2026-11-03/county-judge/"' in home
+    assert 'href="/ballot/tx/harris-county/2026-11-03/"' in home
+    ballot = read(real_site, "ballot/tx/harris-county/2026-11-03/index.html")
+    assert 'href="/races/tx/harris-county/2026-11-03/county-judge/"' in ballot
 
 
 def test_empty_repo_shows_no_races_state(tmp_path):
@@ -98,7 +102,7 @@ def test_headers_file_has_csp_and_privacy_headers(real_site):
     text = headers.read_text(encoding="utf-8")
     assert ("Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; "
             "font-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; "
-            "frame-ancestors 'none'; base-uri 'none'; form-action 'none'") in text
+            "frame-ancestors 'none'; base-uri 'none'; form-action 'self'") in text
     assert "Referrer-Policy: no-referrer" in text
     assert "Permissions-Policy:" in text
 
@@ -151,7 +155,7 @@ def test_voter_essentials_render_sorted_with_badges_and_sources(tmp_path):
     assert "Monday" in grid
     assert home.count('class="badge badge-unverified"') >= 3 + 1  # items + banner
     assert home.count('href="https://example.gov/dates"') == 3
-    assert "Corrections form coming soon" in home
+    assert 'href="/report/?item=tx%2Fvoter-essentials%2F2026-11-03%23election-day"' in home
 
 
 def test_past_elections_are_not_listed(tmp_path):
@@ -163,8 +167,9 @@ def test_past_elections_are_not_listed(tmp_path):
 
 def test_unconfigured_form_renders_plain_text_not_links(tmp_path):
     root = make_repo(tmp_path, {ESS_REL: ESSENTIALS})
+    config = make_config(tmp_path, corrections_form_url=None)
     out = tmp_path / "dist"
-    assert build(root, out, today=TODAY) == 0
+    assert build(root, out, config_path=config, today=TODAY) == 0
     for page in ("index.html", "corrections/index.html", "methodology/index.html", "about/index.html"):
         html = read(out, page)
         assert "Corrections form coming soon" in html, page
@@ -181,6 +186,30 @@ def test_configured_form_links_carry_encoded_item_id(tmp_path):
             '%23registration-deadline"') in home
     assert "Corrections form coming soon" not in home
     assert 'href="https://forms.example.org/vtr?item="' in read(out, "corrections/index.html")
+
+
+def test_report_pages_post_to_the_worker_with_a_honeypot(real_site):
+    form = read(real_site, "report/index.html")
+    assert '<form class="card report-form" method="post" action="/api/report">' in form
+    for name in ("item", "problem", "source", "contact", "website"):
+        assert f'name="{name}"' in form, name
+    assert 'tabindex="-1"' in form  # honeypot is skipped by keyboard users
+    assert '<script src="/static/js/report.js" defer></script>' in form
+    assert "no IP address" in form
+    assert "Thanks, we got it." in read(real_site, "report/thanks/index.html")
+    error = read(real_site, "report/error/index.html")
+    assert 'id="report-error"' in error and 'href="/report/"' in error
+
+
+def test_real_site_links_the_built_in_report_form(real_site):
+    assert 'href="/report/?item="' in read(real_site, "corrections/index.html")
+
+
+@pytest.mark.parametrize("url", ["http://forms.example.org/?item={id}", "/report/", "report/?item={id}"])
+def test_bad_form_urls_stop_the_build(tmp_path, url):
+    root = make_repo(tmp_path, {})
+    config = make_config(tmp_path, corrections_form_url=url)
+    assert build(root, tmp_path / "dist", config_path=config, today=TODAY) == 1
 
 
 def test_corrections_log_is_newest_first(tmp_path):
@@ -237,6 +266,7 @@ def test_pages_have_no_inline_code_or_third_party_assets(real_site):
 
 # ---- Stage 2: race pages from the fictional demo fixture ----
 DEMO = REPO / "tests" / "fixtures" / "demo"
+BALLOT_PAGE = "ballot/tx/demo-county/2026-11-03/index.html"
 RACE_PAGE = "races/tx/demo-county/2026-11-03/commissioner-precinct-9/index.html"
 
 
@@ -252,8 +282,9 @@ def test_demo_banner_on_every_page(demo_site):
         assert "Demonstration only." in page.read_text(encoding="utf-8"), page
 
 
-def test_home_links_the_race(demo_site):
-    assert 'href="/races/tx/demo-county/2026-11-03/commissioner-precinct-9/"' in read(demo_site, "index.html")
+def test_home_links_the_ballot_which_links_the_race(demo_site):
+    assert 'href="/ballot/tx/demo-county/2026-11-03/"' in read(demo_site, "index.html")
+    assert 'href="/races/tx/demo-county/2026-11-03/commissioner-precinct-9/"' in read(demo_site, BALLOT_PAGE)
 
 
 def test_race_sections_in_required_order(demo_site):
@@ -319,7 +350,14 @@ def test_promise_tracker_resolves_promises_and_evidence(demo_site):
     html = read(demo_site, RACE_PAGE)
     promises = html[html.index('id="promises-h"'):html.index('id="how-h"')]
     assert '<span class="status status-kept">Kept</span>' in promises
-    assert '<span class="status status-pending">Pending</span>' in promises
+    assert '<span class="status status-pending">Still open</span>' in promises
+    # the still-open promise is unverified, so only the kept one is counted
+    assert "Made 1 promise:" in promises
+    assert "1 kept · 0 not kept · 0 did the opposite · 0 still open" in promises
+    assert "1 more not counted yet" in promises
+    assert "A kept rate appears once at least 3 checked promises are decided." in promises
+    # only incumbents get a card
+    assert 'id="prom-' in promises and promises.count('<article class="card"') == 1
     assert "Evidence: Sponsored a road plan" in promises
 
 
@@ -331,7 +369,7 @@ def test_embedded_race_data_is_safe_json_with_alphabetical_candidates(demo_site)
     data = json.loads(raw)
     assert [c["name"] for c in data["candidates"]] == ["Avery Example", "Blake Sample", "Casey Placeholder"]
     assert len(data["questions"]) == 5
-    assert data["corrections_form_url"] is None
+    assert data["corrections_form_url"] == "/report/?item={id}"
 
 
 def test_demo_pages_have_no_inline_code_or_third_party_assets(demo_site):
@@ -405,3 +443,100 @@ def test_avatar_shows_initials_without_a_photo(demo_site):
     card_start = html.rindex("<article", 0, html.index('id="cand-avery-example"'))
     avery_card = html[card_start:html.index("</article>", card_start)]
     assert 'class="avatar avatar-initials"' in avery_card and ">AE<" in avery_card
+
+
+def test_race_without_an_incumbent_has_no_promise_tracker(real_site):
+    page = real_site / "races/tx/harris-county/2026-11-03/county-judge/index.html"
+    html = page.read_text(encoding="utf-8")
+    assert 'id="candidates-h"' in html
+    assert 'id="promises-h"' not in html
+
+
+# --- Ballot pages, ZIP finder, basic race pages -----------------------------
+
+def test_ballot_is_ordered_closest_to_home_then_by_ballot_order(demo_site):
+    html = read(demo_site, BALLOT_PAGE)
+    levels = re.findall(r'<h2 id="lvl-([a-z]+)">', html)
+    assert levels == ["local", "county", "state", "federal"]
+    names = re.findall(r'<h3 class="ballot-race-name"><a href="[^"]+">([^<]+)</a></h3>', html)
+    assert names == ["Demo City Council, Place 1", "Demo County Commissioner, Precinct 9",
+                     "Justice of the Peace, Precinct 1", "Justice of the Peace, Precinct 2", "Governor",
+                     "U.S. Representative, District 1", "U.S. Representative, District 2"]
+    rows = re.findall(r'data-race="(\d+)"', html)
+    assert rows == [str(i) for i in range(7)]  # matches the embedded payload order
+
+
+def test_ballot_lists_candidates_a_to_z_with_ballot_labels_and_write_ins(demo_site):
+    html = read(demo_site, BALLOT_PAGE)
+    gov = html[html.index(">Governor</a>"):html.index("U.S. Representative, District 1")]
+    names = re.findall(r'<span class="cand-name">([^<]+)</span>', gov)
+    assert names == ["Dana Demo", "Evan Example", "Wren Writein"]
+    assert "Listed on ballot as: Sample Party" in gov
+    assert '<span class="chip">Write-in</span>' in gov
+
+
+def test_ballot_zip_tools_are_private_and_progressive(demo_site):
+    html = read(demo_site, BALLOT_PAGE)
+    assert '<form id="zip-form" class="zip-form" role="search" hidden>' in html  # shown by JS only
+    assert "nothing is sent or saved" in html
+    assert 'href="https://example.gov/whats-on-my-ballot"' in html
+    assert html.count('class="chip split-chip" hidden') == 7
+    raw = re.search(r'<script type="application/json" id="ballot-data">(.*?)</script>', html, re.S).group(1)
+    data = json.loads(raw)
+    assert data["implied"] == ["tx", "demo-county"]
+    assert data["zips"]["22222"] == [["us-house-1", "us-house-2"], "demo-county/jp-2"]
+    assert [r["area"] for r in data["races"]][:2] == ["demo-city", "demo-county/commissioner-9"]
+    assert "Unverified" in html  # ballot sources carry badges
+
+
+def test_home_zip_finder_maps_zips_to_ballots(demo_site):
+    html = read(demo_site, "index.html")
+    raw = re.search(r'<script type="application/json" id="zip-index">(.*?)</script>', html, re.S).group(1)
+    index = json.loads(raw)
+    assert sorted(index) == ["11111", "22222", "33333"]
+    assert index["11111"] == [{"name": "Demo County ballot", "url": "/ballot/tx/demo-county/2026-11-03/"}]
+    assert '<form id="zip-find" class="zip-form" role="search" hidden>' in html
+
+
+def test_basic_race_page_is_honest_about_what_is_missing(demo_site):
+    html = read(demo_site, "races/tx/statewide/2026-11-03/governor/index.html")
+    assert html.count("We haven't researched this candidate's record yet.") == 3
+    assert "Not found in the sources reviewed" not in html
+    for section in ('id="survey-h"', 'id="running-h"', 'id="promises-h"', 'id="how-h"', "survey.js"):
+        assert section not in html, section
+    assert 'id="coming-h"' in html
+    assert "Write-in candidate" in html
+    assert "Incumbent" not in html and "Not the incumbent" not in html  # incumbent: null = not checked
+    assert "Where this list of candidates comes from" in html
+
+
+def test_district_races_get_their_own_pages(demo_site):
+    html = read(demo_site, "races/tx/us-house-2/2026-11-03/us-representative/index.html")
+    assert "<h1>U.S. Representative, District 2</h1>" in html
+
+
+def test_partial_ballot_says_races_are_still_being_added(tmp_path):
+    src = REPO / "tests" / "fixtures" / "demo"
+    root = tmp_path / "demo"
+    shutil.copytree(src, root)
+    ballot = root / "data/states/tx/localities/demo-county/elections/2026-11-03/ballot.yaml"
+    ballot.write_text(ballot.read_text(encoding="utf-8") + "complete: false\n", encoding="utf-8")
+    out = tmp_path / "dist"
+    assert build(root, out, demo=True, today="2026-09-29") == 0
+    html = read(out, BALLOT_PAGE)
+    assert "We're still adding races to this page." in html
+    assert 'href="https://example.gov/demo-sample-ballot.pdf"' in html
+    assert "7 races added so far." in html
+    assert "Every race on this ballot" not in html
+    assert "7 races so far" in read(out, "index.html")
+
+
+def test_ballot_payload_packs_precincts_as_area_indexes(demo_site):
+    html = read(demo_site, BALLOT_PAGE)
+    raw = re.search(r'<script type="application/json" id="ballot-data">(.*?)</script>', html, re.S).group(1)
+    data = json.loads(raw)
+    assert data["areas"] == ["demo-city", "demo-county/commissioner-9", "demo-county/jp-1", "demo-county/jp-2",
+                             "us-house-1", "us-house-2"]
+    assert data["precincts"]["102"] == [5, 3]
+    assert '<input id="precinct" name="precinct"' in html
+    assert "on your voter registration card" in html

@@ -1,0 +1,32 @@
+# Powers of a Texas district clerk.
+# Text checked against the Texas Constitution and Government Code (statutes.capitol.texas.gov,
+# read through its document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: district-clerk
+state: TX
+powers:
+  - id: P-TERM
+    description: Elected to a four-year term.
+    statute: Texas Constitution art. V, § 9
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+
+  - id: P-RECORDS
+    description: Keeps the records of the district courts, records their proceedings, and enters their judgments.
+    statute: Government Code § 51.303(a)-(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.51.htm
+
+  - id: P-PROTECTIVE-ORDERS
+    description: Accepts applications for protective orders.
+    statute: Government Code § 51.303(b)(4)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.51.htm
+
+plain_summary:
+  intro:
+    text: Keeps the official records for the county's district courts, including case filings, judgments, and protective order applications.
+    powers: [P-RECORDS, P-PROTECTIVE-ORDERS]
+  points:
+    - text: Keeps district court records and enters the courts' judgments
+      icon: contract
+      powers: [P-RECORDS]
+    - text: Accepts applications for protective orders
+      icon: shield
+      powers: [P-PROTECTIVE-ORDERS]

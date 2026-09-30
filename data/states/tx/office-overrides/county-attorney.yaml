@@ -1,0 +1,27 @@
+# Powers of the Harris County Attorney.
+# Text checked against the Texas Constitution and Government Code (statutes.capitol.texas.gov,
+# read through its document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: county-attorney
+state: TX
+powers:
+  - id: P-TERM
+    description: Elected to a four-year term.
+    statute: Texas Constitution art. V, § 21
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+
+  - id: P-CIVIL
+    description: In Harris County, the County Attorney's primary duty is to represent the state, Harris County, and county officials in civil matters, and the office also represents the Harris County Flood Control District.
+    statute: Government Code § 45.201
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.45.htm
+
+plain_summary:
+  intro:
+    text: "The county's lawyer in civil cases: represents Harris County, its officials, and the Flood Control District in court."
+    powers: [P-CIVIL]
+  points:
+    - text: Represents Harris County and its officials in civil cases
+      icon: court
+      powers: [P-CIVIL]
+    - text: Represents the Harris County Flood Control District
+      icon: storm
+      powers: [P-CIVIL]

@@ -136,11 +136,72 @@ compare. For any candidate below the minimum, the site runs in **beta mode**:
 Once a candidate has scorable records on at least 3 of your answered questions, the match
 percentage appears, with the same breakdown available underneath.
 
+## How your ballot is ordered
+Each county ballot page lists every race, grouped by level of government, **closest to
+home first**:
+
+1. **Closest to home:** city, school district, and other local offices and questions
+2. **Your county:** county government and the courts that serve the county
+3. **Your state:** statewide offices, the legislature, and state courts
+4. **National:** U.S. Senate and U.S. House
+
+Local offices decide things that reach your daily life soonest (streets, schools, local
+courts, property taxes), and fewer people vote in those races, so each vote carries more
+weight. Within each level, races keep the order of the official ballot. The level of each
+office is set once, for the office type, and is the same for everyone. The order never
+depends on the candidates.
+
+**Finding your races by ZIP code.** Enter a ZIP code to see only the races on your ballot.
+The lookup runs in your browser: your ZIP code is not sent anywhere or saved. The ZIP
+code list for each county cites where it comes from. A ZIP code can cross district lines;
+when it does, every race you might have is shown and marked "Depends on your address".
+For your exact ballot, use your county's official lookup, which each ballot page links.
+
+**Finding your races by precinct number (exact).** Your voting precinct number is printed
+on your voter registration card. Enter it to see exactly the races on your ballot. Each
+precinct's districts come from the county's official voting precinct map. Like the ZIP
+lookup, it runs in your browser and nothing is sent or saved.
+
+**How ZIP codes are matched.** ZIP codes aren't voting districts. We use the Census
+Bureau's ZIP Code Tabulation Areas, which approximate ZIP codes, and overlay them on the
+county's precinct map. A precinct counts for a ZIP code when it covers at least 1% of the
+ZIP code's area in the county. When those precincts are in different districts, each
+possible race is shown and marked "Depends on your address".
+
+**Basic race pages.** We're adding every race on the ballot first, with what the office
+does and the candidates as printed on the official sample ballot. A basic page says
+"We haven't researched this candidate's record yet", which is different from "not found
+in the sources reviewed". Records, sources, and quizzes are added race by race.
+
 ## Promise tracker
-Each candidate page lists promises they made and whether each was **kept**, **broken**,
-or is **pending**. Each entry links the source of the promise and the evidence for its
-status. The tracker is for information only and does not change the match percentage.
+For now, only the **current officeholder** (the incumbent) has a promise tracker. It
+lists promises they made and the status of each:
+
+| Status | Meaning |
+|---|---|
+| Kept | They did what they promised. |
+| Not kept | They didn't do it. |
+| Did the opposite | They acted against what they promised. |
+| Still open | It can't be judged yet. |
+
+Every status except "still open" must link evidence, and official records come first.
+
+**Counts and kept rate.** The tracker shows how many promises were made and how many
+are in each status, for example "Made 6 promises: 3 kept · 1 not kept · 1 did the
+opposite · 1 still open." Kept, not kept, and did the opposite are *decided* promises.
+The kept rate is kept ÷ decided ("Kept 3 of 5 decided promises (60%)"). Still-open
+promises are left out of the rate, not counted against anyone. The rate appears only
+once at least 3 promises are decided; before that, only the counts show.
+
+Only checked promises count: the promise must be verified and documented, and so must
+every piece of evidence for a decided promise. Unchecked ones are listed with an
+"Unverified" badge and a note that they aren't counted yet. There are no letter grades.
+
+The tracker is for information only and does not change the match percentage.
 
 ## Corrections
 Found an error? [Submit a correction](CORRECTIONS_FORM_URL). Every reviewed correction is
 logged publicly with the date, what changed, why, and who reviewed it.
+
+Reports are private. Only the project owner reads them. We store only what you type and
+the time it arrived: no IP address, no cookies, no tracking. Contact details are optional.

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Report a problem{% endblock %}
+{% block description %}Tell us if something on Vote the Record is wrong. A person reviews every report.{% endblock %}
+{% block content %}
+<h1>Report a problem</h1>
+<p class="lead">Spotted something wrong or missing? Tell us. A person checks every report against the sources before anything changes, and accepted fixes are listed on the <a href="/corrections/">Corrections</a> page.</p>
+
+<form class="card report-form" method="post" action="/api/report">
+  <label for="item">Which item? <span class="muted">(filled in for you if you came from a "Report a problem" link)</span></label>
+  <input id="item" name="item" type="text" maxlength="200" autocomplete="off" spellcheck="false" placeholder="Leave blank if it's about the site in general">
+
+  <label for="problem">What's wrong? <span class="required">(required)</span></label>
+  <textarea id="problem" name="problem" rows="6" minlength="10" maxlength="3000" required></textarea>
+
+  <label for="source">Link to a source that shows the right information <span class="muted">(optional)</span></label>
+  <input id="source" name="source" type="url" maxlength="500" placeholder="https://">
+
+  <label for="contact">How can we reach you if we have a question? <span class="muted">(optional)</span></label>
+  <input id="contact" name="contact" type="text" maxlength="200" autocomplete="email">
+
+  <div class="hp" aria-hidden="true">
+    <label for="website">Leave this field empty</label>
+    <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+  </div>
+
+  <button type="submit">Send report</button>
+</form>
+
+<h2>Your privacy</h2>
+<ul>
+  <li>Only the project owner can read reports. They are never published as submitted.</li>
+  <li>We keep only what you type here and the time it arrived: no IP address, no cookies, no tracking.</li>
+  <li>Contact info is optional. Leave it blank to stay anonymous.</li>
+</ul>
+<script src="/static/js/report.js" defer></script>
+{% endblock %}

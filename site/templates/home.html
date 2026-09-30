@@ -6,7 +6,19 @@
 <header class="hero">
   <h1>Know who's on your ballot.</h1>
   <p class="lead">Straight facts about what each office does and what the candidates have actually done, with a source for everything. No spin, no party colors.</p>
-  {% if site.races %}<a class="button" href="#races">{{ icon("quiz") }} Find your races</a>{% endif %}
+  {% if site.zip_index %}
+  <form id="zip-find" class="zip-form" role="search" hidden>
+    <label for="zip-home">See what's on your ballot</label>
+    <div class="zip-row">
+      <input id="zip-home" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" pattern="\d{5}(-\d{4})?" placeholder="Your ZIP code">
+      <button type="submit">Show my races</button>
+    </div>
+    <p class="muted">Your ZIP code stays on your device: nothing is sent or saved.</p>
+    <p id="zip-home-status" class="zip-status" role="status" aria-live="polite"></p>
+    <ul id="zip-home-choices" class="link-list"></ul>
+  </form>
+  {% endif %}
+  {% if site.races %}<a class="button{% if site.zip_index %} button-secondary{% endif %}" href="#races">{{ icon("quiz") }} Browse all races</a>{% endif %}
 </header>
 
 <section aria-labelledby="essentials-h">
@@ -53,8 +65,19 @@
 
 <section id="races" aria-labelledby="races-h">
   <h2 id="races-h">Races</h2>
-  {% if site.races %}
-  {% for state_name, state_races in site.races | groupby("state_name") %}
+  {% if site.ballots %}
+  <ul class="race-grid">
+    {% for b in site.ballots %}
+    <li><a class="race-card" href="{{ b.url }}">
+      <span class="race-name">{{ b.name }}</span>
+      <span class="race-sum">{% if b.complete %}Every race on the ballot{% else %}Races on the ballot (still adding more){% endif %}, closest to home first.</span>
+      <span class="race-meta">{{ b.count }} {{ "race" if b.count == 1 else "races" }}{% if not b.complete %} so far{% endif %} · Election {{ b.election_date | shortdate }} · See the ballot →</span>
+    </a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% if site.other_races %}
+  {% for state_name, state_races in site.other_races | groupby("state_name") %}
   {% for locality_name, loc_races in state_races | groupby("locality_name") %}
   <h3>{{ locality_name }}, {{ state_name }}</h3>
   <ul class="race-grid">
@@ -62,13 +85,14 @@
     <li><a class="race-card" href="{{ race.url }}">
       <span class="race-name">{{ race.name }}</span>
       {% if race.plain_summary %}<span class="race-sum">{{ race.plain_summary.intro.text }}</span>{% endif %}
-      <span class="race-meta">{{ race.candidates | length }} candidates · Election {{ race.election_date | shortdate }} · Take the quiz →</span>
+      <span class="race-meta">{{ race.candidates | length }} candidates · Election {{ race.election_date | shortdate }}{% if race.questions %} · Take the quiz{% endif %} →</span>
     </a></li>
     {% endfor %}
   </ul>
   {% endfor %}
   {% endfor %}
-  {% else %}
+  {% endif %}
+  {% if not site.races %}
   <p class="empty">No races published yet. Race pages appear here once their records have been gathered and checked.</p>
   {% endif %}
 </section>
@@ -82,4 +106,8 @@
   </ol>
   <p><a href="/methodology/">How we do it, in full</a></p>
 </section>
+{% if site.zip_index %}
+<script type="application/json" id="zip-index">{{ site.zip_index | json_script }}</script>
+<script type="module" src="/static/js/ballot.js"></script>
+{% endif %}
 {% endblock %}

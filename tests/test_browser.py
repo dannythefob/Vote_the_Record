@@ -77,3 +77,58 @@ def test_dark_mode_reduced_motion_and_phone_width(report):
     assert report["light"] == "rgb(242, 245, 244)"
     assert report["scrollBehaviorReduced"] == "auto"
     assert report["phoneOverflow"] == 0
+
+
+def test_results_grid_compares_answers_with_each_record(report):
+    survey = report["survey"]
+    assert survey["gridHead"] == ["Question", "Avery Example", "Blake Sample", "Casey Placeholder"]
+    rows = {r[0]: r[1:] for r in survey["gridRows"]}
+    assert rows["Budget gap"] == ["◐ Mixed", "✗ Different", "— No record"]      # Avery 3.0 of 3.4 agrees
+    assert rows["Storm coming"] == ["· Record not counted", "— No record", "— No record"]  # unverified record
+    assert rows["Disaster repairs"] == ["✓ Same as you", "· Record not counted", "— No record"]  # Blake's is disputed
+    assert rows["Road money"] == ["✓ Same as you", "— No record", "— No record"]
+    assert list(rows) == ["Budget gap", "Storm coming", "Disaster repairs", "Road money"]  # only answered questions
+
+
+ALL_DEMO_RACES = ["Demo City Council, Place 1", "Demo County Commissioner, Precinct 9",
+                  "Justice of the Peace, Precinct 1", "Justice of the Peace, Precinct 2", "Governor",
+                  "U.S. Representative, District 1", "U.S. Representative, District 2"]
+
+
+def test_ballot_starts_with_every_race_and_shows_the_zip_form(report):
+    initial = report["ballot"]["initial"]
+    assert initial["formShown"] is True
+    assert initial["races"] == ALL_DEMO_RACES
+    assert initial["split"] == []
+
+
+def test_zip_filters_races_and_flags_split_districts(report):
+    z = report["ballot"]["zip22222"]
+    assert z["races"] == ["Justice of the Peace, Precinct 2", "Governor",
+                          "U.S. Representative, District 1", "U.S. Representative, District 2"]
+    assert z["split"] == ["U.S. Representative, District 1", "U.S. Representative, District 2"]
+    assert z["groups"] == ["Your county", "Your state", "National"]  # empty "Closest to home" hidden
+    assert z["status"] == ("ZIP code 22222: 4 races on your ballot, closest to home first. "
+                           "2 races depend on your exact address. Add your precinct number to be sure.")
+    assert z["hash"] == "#zip=22222"
+    assert report["ballot"]["reset"]["races"] == ALL_DEMO_RACES
+
+
+def test_home_zip_box_opens_the_ballot_filtered(report):
+    z = report["ballot"]["fromHome11111"]
+    assert z["hash"] == "#zip=11111"
+    assert z["races"] == ["Demo City Council, Place 1", "Demo County Commissioner, Precinct 9",
+                          "Justice of the Peace, Precinct 1", "Governor", "U.S. Representative, District 1"]
+    assert "don't have ballot information for ZIP code 99999" in report["ballot"]["homeUnknown"]
+
+
+def test_ballot_fits_a_phone_screen(report):
+    assert report["phoneOverflowBallot"] <= 0
+
+
+def test_precinct_number_gives_exact_races_and_wins_over_zip(report):
+    p = report["ballot"]["precinct102"]
+    assert p["races"] == ["Justice of the Peace, Precinct 2", "Governor", "U.S. Representative, District 2"]
+    assert p["split"] == []
+    assert p["status"] == "Precinct 102: 3 races on your ballot, closest to home first."
+    assert p["hash"] == "#precinct=102"

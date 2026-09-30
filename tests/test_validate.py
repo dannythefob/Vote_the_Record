@@ -295,3 +295,118 @@ def test_candidate_photo_needs_file_and_rights(tmp_path):
     assert build(tmp_path / "b", candidate(photo=photo)) == []
     no_license = {k: v for k, v in photo.items() if k != "license"}
     assert any("license" in e for e in build(tmp_path / "c", candidate(photo=no_license)))
+
+
+def test_promise_tracker_is_for_incumbents_only(tmp_path):
+    entry = {"promise": FACT["id"], "status": "pending", "evidence": []}
+    errors = build(tmp_path, candidate(incumbent=False, promise_tracker=[entry]))
+    assert any("only incumbents" in e for e in errors)
+
+
+def test_did_the_opposite_needs_evidence(tmp_path):
+    entry = {"promise": FACT["id"], "status": "opposite", "evidence": []}
+    errors = build(tmp_path, candidate(incumbent=True, promise_tracker=[entry]))
+    assert any("promise_tracker" in e for e in errors)
+
+
+# --- Ballots and ZIP codes -------------------------------------------------
+
+BALLOT_DIR = "data/states/tx/localities/test-county/elections/2026-11-03"
+SRC = {
+    "statement": "Sample ballot.", "label": "official_record", "claim_status": "documented",
+    "contradicted_by": [], "source_url": "https://example.gov/ballot.pdf", "source_title": "Sample ballot",
+    "source_kind": "document", "sha256": "0" * 64, "archive_url": None, "event_date": "2026-11-03",
+    "retrieved": "2026-09-01", "verification": "unverified", "verified_on": None, "reviewer": None,
+}
+
+
+def ballot_repo(tmp_path, contests, zips=None, level="county", extra=None):
+    shutil.copytree(REPO / "schemas", tmp_path / "schemas")
+    files = {
+        "offices/test-office/powers.yaml": {"office_type": "test-office", "powers": [], **({"level": level} if level else {})},
+        "data/states/tx/districts/us-house-9/elections/2026-11-03/us-rep/race.yaml":
+            {"name": "U.S. Representative, District 9", "office_type": "test-office", "election_date": "2026-11-03"},
+        f"{BALLOT_DIR}/jp-1/race.yaml": {"name": "JP 1", "office_type": "test-office",
+                                          "election_date": "2026-11-03", "area": "test-county/jp-1"},
+        f"{BALLOT_DIR}/ballot.yaml": {"name": "Test County ballot", "election_date": "2026-11-03",
+                                      "sources": [dict(SRC, id="tx/localities/test-county/elections/2026-11-03/ballot#S-01")],
+                                      "contests": contests},
+    }
+    if zips is not None:
+        files[f"{BALLOT_DIR}/zips.yaml"] = {"sources": [dict(SRC, id="tx/localities/test-county/elections/2026-11-03/zips#S-01")],
+                                            "zips": zips}
+    files.update(extra or {})
+    for rel, doc in files.items():
+        path = tmp_path / rel
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(yaml.safe_dump(doc, sort_keys=False), encoding="utf-8")
+    for base in ("data", "offices", "corrections"):
+        (tmp_path / base).mkdir(exist_ok=True)
+    return validate(tmp_path).errors
+
+
+US9 = "tx/districts/us-house-9/elections/2026-11-03/us-rep"
+JP1 = "tx/localities/test-county/elections/2026-11-03/jp-1"
+
+
+def test_valid_ballot_with_district_race_and_split_zip(tmp_path):
+    assert ballot_repo(tmp_path, [US9, JP1], {"77001": [["us-house-9", "test-county/jp-1"]]}) == []
+
+
+def test_ballot_contest_must_exist(tmp_path):
+    errors = ballot_repo(tmp_path, [US9, "tx/statewide/elections/2026-11-03/governor"], {"77001": ["us-house-9", "test-county/jp-1"]})
+    assert any("has no race.yaml" in e for e in errors)
+
+
+def test_ballot_contests_need_a_level(tmp_path):
+    errors = ballot_repo(tmp_path, [US9], level=None)
+    assert any("no level" in e for e in errors)
+
+
+def test_zip_areas_must_belong_to_ballot_races(tmp_path):
+    errors = ballot_repo(tmp_path, [US9, JP1], {"77001": ["us-house-9", "test-county/jp-1", "us-house-99"]})
+    assert any("'us-house-99' is not the area of any contest" in e for e in errors)
+
+
+def test_implied_areas_are_left_out_and_every_area_is_reachable(tmp_path):
+    errors = ballot_repo(tmp_path, [US9, JP1], {"77001": ["tx", "us-house-9"]})
+    assert any("'tx' is implied" in e for e in errors)
+    assert any("area 'test-county/jp-1' is on the ballot but no ZIP code reaches it" in e for e in errors)
+
+
+def test_zip_lists_an_area_once(tmp_path):
+    errors = ballot_repo(tmp_path, [US9, JP1], {"77001": ["us-house-9", ["us-house-9", "test-county/jp-1"]]})
+    assert any("listed more than once" in e for e in errors)
+
+
+def test_zips_need_a_ballot(tmp_path):
+    errors = ballot_repo(tmp_path, [US9], extra={
+        "data/states/tx/localities/other-county/elections/2026-11-03/zips.yaml":
+            {"sources": [dict(SRC, id="tx/localities/other-county/elections/2026-11-03/zips#S-01")], "zips": {}}})
+    assert any("needs a ballot.yaml" in e for e in errors)
+
+
+def test_ballot_source_ids_are_path_based(tmp_path):
+    errors = ballot_repo(tmp_path, [US9, JP1], {"77001": ["us-house-9", "test-county/jp-1"]}, extra={
+        f"{BALLOT_DIR}/ballot.yaml": {"name": "B", "election_date": "2026-11-03",
+                                      "sources": [dict(SRC, id="tx/elsewhere#S-01")], "contests": [US9, JP1]}})
+    assert any("must start with" in e for e in errors)
+
+
+def test_precincts_reach_every_area_and_everywhere_is_checked(tmp_path):
+    errors = ballot_repo(tmp_path, [US9, JP1], extra={
+        f"{BALLOT_DIR}/precincts.yaml": {
+            "sources": [dict(SRC, id="tx/localities/test-county/elections/2026-11-03/precincts#S-01")],
+            "everywhere": ["tx", "us-house-9"],
+            "precincts": {"12": ["us-house-9"], "13": []}}})
+    assert any("everywhere: 'tx' is already implied" in e for e in errors)
+    assert any("12: 'us-house-9' is implied for every precinct" in e for e in errors)
+    assert any("area 'test-county/jp-1' is on the ballot but no precinct reaches it" in e for e in errors)
+
+
+def test_precinct_numbers_are_digits_without_leading_zeros(tmp_path):
+    errors = ballot_repo(tmp_path, [US9, JP1], extra={
+        f"{BALLOT_DIR}/precincts.yaml": {
+            "sources": [dict(SRC, id="tx/localities/test-county/elections/2026-11-03/precincts#S-01")],
+            "precincts": {"0012": ["us-house-9", "test-county/jp-1"]}}})
+    assert any("precincts" in e and "0012" in e for e in errors)

@@ -38,9 +38,18 @@ def test_worker_name_and_compatibility_date(config):
     assert re.fullmatch(r"\d{4}-\d{2}-\d{2}", config["compatibility_date"])
 
 
-def test_assets_only_worker_has_no_script(config):
-    # The site is static: no server code runs, so nothing can collect visitor data.
-    assert "main" not in config
+def test_worker_script_only_runs_for_the_report_api(config):
+    # Pages are static; the Worker runs first only for /api/*, so page views never reach code.
+    assert config["main"] == "src/worker/index.js"
+    assert (REPO / config["main"]).is_file()
+    assert config["assets"]["binding"] == "ASSETS"
+    assert config["assets"]["run_worker_first"] == ["/api/*"]
+
+
+def test_reports_are_stored_in_the_REPORTS_kv_namespace(config):
+    [kv] = config["kv_namespaces"]
+    assert kv["binding"] == "REPORTS"
+    assert kv["id"]
 
 
 def test_missing_pages_use_the_site_404(config, dist):

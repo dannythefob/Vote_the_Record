@@ -1,0 +1,40 @@
+# Powers of the Lieutenant Governor of Texas.
+# Text checked against the Texas Constitution and statutes (statutes.capitol.texas.gov,
+# read through its document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: lieutenant-governor
+state: TX
+powers:
+  - id: P-TERM
+    description: Elected separately from the governor, for the same four-year term.
+    statute: Texas Constitution art. IV, § 16(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm
+
+  - id: P-SENATE
+    description: Presides over the Texas Senate as its president, and casts the deciding vote when the Senate is tied.
+    statute: Texas Constitution art. IV, § 16(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm
+
+  - id: P-BUDGET
+    description: Sits on the Legislative Budget Board, whose staff prepares the state budget bill for each regular session.
+    statute: Government Code §§ 322.001, 322.008
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.322.htm
+
+  - id: P-SUCCESSION
+    description: Becomes governor for the rest of the term if the office of governor becomes vacant.
+    statute: Texas Constitution art. IV, § 16(d)
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm
+
+plain_summary:
+  intro:
+    text: Runs the Texas Senate and helps write the state budget. Becomes governor if the office is vacant.
+    powers: [P-SENATE, P-BUDGET, P-SUCCESSION]
+  points:
+    - text: Presides over the Texas Senate and breaks tie votes
+      icon: gavel
+      powers: [P-SENATE]
+    - text: Sits on the board that prepares the state budget
+      icon: budget
+      powers: [P-BUDGET]
+    - text: Becomes governor if the governor's office is vacant
+      icon: shield
+      powers: [P-SUCCESSION]

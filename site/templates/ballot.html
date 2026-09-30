@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% from "partials/macros.html" import verification_badge, source_line, report_link %}
+{% block title %}{{ ballot.name }}{% endblock %}
+{% block description %}Everything on the {{ ballot.name }} for {{ ballot.election_date | longdate }}, closest to home first. Enter your ZIP code to see just your races.{% endblock %}
+{% block content %}
+<header class="race-hero">
+  <p class="eyebrow">Election Day {{ ballot.election_date | longdate }}</p>
+  <h1>{{ ballot.name }}</h1>
+  <p class="lead">{% if ballot.complete %}Every race on this ballot{% else %}Races on this ballot{% endif %}, starting with the ones closest to home. They shape your daily life soonest, and fewer people vote in them, so your vote counts for more.</p>
+  {% if ballot.has_zips %}
+  <form id="zip-form" class="zip-form" role="search" hidden>
+    <label for="zip">Your ZIP code</label>
+    <div class="zip-row">
+      <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" pattern="\d{5}(-\d{4})?" placeholder="77002">
+      <button type="submit">Show my races</button>
+      <button type="button" id="zip-reset" class="button-secondary" hidden>Show everything</button>
+    </div>
+    {% if ballot.has_precincts %}
+    <label for="precinct" class="precinct-label">Precinct number <span class="muted">(optional, exact)</span></label>
+    <div class="zip-row">
+      <input id="precinct" name="precinct" type="text" inputmode="numeric" autocomplete="off" maxlength="6" pattern="\d{1,6}" placeholder="e.g. 123">
+    </div>
+    <p class="muted">Your precinct number is on your voter registration card. With it, you see exactly your races.</p>
+    {% endif %}
+    <p class="muted">What you type stays on your device: nothing is sent or saved.</p>
+  </form>
+  <noscript><p class="muted">Turn on JavaScript to filter by ZIP code. Every race is listed below.</p></noscript>
+  {% endif %}
+  <p id="zip-status" class="zip-status" role="status" aria-live="polite">{{ ballot.count }} {{ "race" if ballot.count == 1 else "races" }} {{ "on this ballot" if ballot.complete else "added so far" }}.</p>
+</header>
+
+{% if not ballot.complete %}
+<aside class="notice notice-warn">
+  <p><strong>We're still adding races to this page.</strong> {{ ballot.count }} so far. Every contest is on the <a href="{{ ballot.sources[0].source_url }}" rel="noopener noreferrer">official sample ballot</a>.</p>
+</aside>
+{% endif %}
+<aside class="notice">
+  <p><strong>Your exact ballot depends on your street address.</strong> ZIP codes can cross district lines, so some races are marked "Depends on your address".{% if ballot.lookup_url %} <a href="{{ ballot.lookup_url }}" rel="noopener noreferrer">Check your exact ballot with the county</a>.{% endif %}</p>
+</aside>
+
+{% for group in ballot.groups %}
+<section class="ballot-group" data-group aria-labelledby="lvl-{{ group.level }}">
+  <h2 id="lvl-{{ group.level }}">{{ group.title }}</h2>
+  <p class="muted">{{ group.blurb }}</p>
+  <ul class="ballot-list">
+    {% for entry in group.races %}
+    {% set race = entry.race %}
+    <li class="card ballot-race" data-race="{{ entry.n }}">
+      <h3 class="ballot-race-name"><a href="{{ race.url }}">{{ race.name }}</a></h3>
+      <span class="chip split-chip" hidden>Depends on your address</span>
+      {% if race.plain_summary %}<p class="race-sum">{{ race.plain_summary.intro.text }}</p>{% endif %}
+      {% if race.candidates %}
+      <ul class="ballot-cands">
+        {% for c in race.candidates %}
+        <li><span class="cand-name">{{ c.name }}</span>{% if c.get('write_in') %} <span class="chip">Write-in</span>{% endif %}{% if c.ballot_party is not none %} <span class="muted">· Listed on ballot as: {{ c.ballot_party }}</span>{% endif %}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p class="empty">Candidates not added yet.</p>
+      {% endif %}
+      <p class="race-meta"><a href="{{ race.url }}">{% if race.detail == "basic" %}What this office does →{% else %}Records, sources{% if race.questions %} &amp; quiz{% endif %} →{% endif %}</a></p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
+
+<section aria-labelledby="order-h">
+  <h2 id="order-h">Why this order?</h2>
+  <p>We list races by level of government, closest to home first: local, then county, then state, then national. Within each level, races follow the order on the official ballot. The order is the same for everyone and never depends on the candidates. <a href="/methodology/#how-your-ballot-is-ordered">More about how we order the ballot</a>.</p>
+</section>
+
+<section aria-labelledby="ballot-sources-h">
+  <h2 id="ballot-sources-h">Sources</h2>
+  <ul class="item-list">
+    {% for fact in ballot.sources + ballot.zip_sources + ballot.precinct_sources %}
+    <li class="item-meta">{{ fact.get('headline') or fact.statement }} {{ verification_badge(fact) }} {{ source_line(fact) }} · {{ report_link(fact.id) }}</li>
+    {% endfor %}
+  </ul>
+</section>
+<script type="application/json" id="ballot-data">{{ ballot.payload | json_script }}</script>
+<script type="module" src="/static/js/ballot.js"></script>
+{% endblock %}

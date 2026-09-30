@@ -135,3 +135,66 @@ def test_finds_fact_whose_id_is_wrapped_onto_the_next_line(repo):
     path.write_text(text, encoding="utf-8")
     assert review.apply(repo, "fact", PLUMMER, B02, True, "Test Reviewer") is None
     assert next(i for i in review.load_items(repo) if i["key"] == B02)["verification"] == "verified"
+
+
+# --- Verify all in a group ---------------------------------------------------
+
+GOV = "data/states/tx/statewide/elections/2026-11-03/governor/race.yaml"
+GOV_S01 = "tx/statewide/elections/2026-11-03/governor/race#S-01"
+GOV_S02 = "tx/statewide/elections/2026-11-03/governor/race#S-02"  # write-in list: no archive yet
+AG = "data/states/tx/statewide/elections/2026-11-03/attorney-general/race.yaml"
+AG_S01 = "tx/statewide/elections/2026-11-03/attorney-general/race#S-01"
+
+
+def test_race_ballot_zip_and_precinct_sources_are_listed(repo):
+    files = {i["file"].rsplit("/", 1)[-1] for i in review.load_items(repo)}
+    assert {"race.yaml", "ballot.yaml", "zips.yaml", "precincts.yaml"} <= files
+    item = next(i for i in review.load_items(repo) if i["key"] == GOV_S01)
+    assert item["who"] == "Governor" and item["section"] == "sources"
+
+
+def test_verify_many_changes_only_ready_facts_and_their_three_lines(repo):
+    before = {f: (repo / f).read_text(encoding="utf-8") for f in (GOV, AG)}
+    result = review.apply_many(repo, [{"file": GOV, "key": GOV_S01}, {"file": GOV, "key": GOV_S02},
+                                      {"file": AG, "key": AG_S01}], "Test Reviewer")
+    assert result["ok"] and result["verified"] == 2
+    assert len(result["skipped"]) == 1 and "S-02" in result["skipped"][0] and "archived copy" in result["skipped"][0]
+    for f in (GOV, AG):
+        diff = changed_lines(before[f], (repo / f).read_text(encoding="utf-8"))
+        assert len(diff) == 6 and '+  reviewer: "Test Reviewer"' in diff
+    states = {i["key"]: i["verification"] for i in review.load_items(repo)}
+    assert states[GOV_S01] == states[AG_S01] == "verified" and states[GOV_S02] == "unverified"
+
+
+def test_verify_many_is_all_or_nothing(repo, monkeypatch):
+    before = {f: (repo / f).read_text(encoding="utf-8") for f in (GOV, AG)}
+
+    class Fail:
+        errors = [f"{AG}: pretend the checker found a problem"]
+    monkeypatch.setattr(review, "validate", lambda root: Fail)
+    result = review.apply_many(repo, [{"file": GOV, "key": GOV_S01}, {"file": AG, "key": AG_S01}], "Test Reviewer")
+    assert not result["ok"] and "nothing was changed" in result["error"]
+    for f in (GOV, AG):
+        assert (repo / f).read_text(encoding="utf-8") == before[f]
+
+
+def test_verify_many_needs_a_reviewer_and_skips_unknown_keys(repo):
+    assert not review.apply_many(repo, [{"file": GOV, "key": GOV_S01}], "")["ok"]
+    result = review.apply_many(repo, [{"file": GOV, "key": "tx/nope#X-1"}], "Test Reviewer")
+    assert result["ok"] and result["verified"] == 0 and "not found" in result["skipped"][0]
+
+
+def test_verify_many_endpoint_requires_token(repo, tmp_path):
+    server = ThreadingHTTPServer(("127.0.0.1", 0), review.make_handler(repo, "secret", tmp_path / ".reviewer"))
+    threading.Thread(target=server.serve_forever, daemon=True).start()
+    url = f"http://127.0.0.1:{server.server_port}/api/verify-many"
+    body = json.dumps({"reviewer": "Test Reviewer", "changes": [{"file": GOV, "key": GOV_S01}]}).encode()
+    try:
+        bad = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"})
+        with pytest.raises(urllib.error.HTTPError):
+            urllib.request.urlopen(bad)
+        good = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json", "X-Review-Token": "secret"})
+        result = json.loads(urllib.request.urlopen(good).read())
+        assert result["ok"] and result["verified"] == 1
+    finally:
+        server.shutdown()

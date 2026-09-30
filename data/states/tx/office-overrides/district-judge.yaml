@@ -1,0 +1,40 @@
+# Powers of a Texas district judge (civil, criminal, family, and juvenile district courts).
+# Text checked against the Texas Constitution, Government Code, and Code of Criminal Procedure
+# (statutes.capitol.texas.gov, read through its document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: district-judge
+state: TX
+powers:
+  - id: P-TERM
+    description: Elected to a four-year term.
+    statute: Texas Constitution art. V, § 7(c)
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+
+  - id: P-FELONY
+    description: District courts hear felony criminal cases.
+    statute: Code of Criminal Procedure art. 4.05
+    source_url: https://statutes.capitol.texas.gov/Docs/CR/htm/CR.4.htm
+
+  - id: P-CIVIL
+    description: District courts hear civil cases, including any case where more than $500 is at stake.
+    statute: Texas Constitution art. V, § 8; Government Code § 24.007
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.24.htm
+
+  - id: P-FAMILY
+    description: Family district courts have primary responsibility for family law cases, such as adoption, divorce, child custody, and child support.
+    statute: Government Code § 24.601
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.24.htm
+
+plain_summary:
+  intro:
+    text: "A trial judge for serious cases: felony crimes, bigger lawsuits, and family cases like divorce and custody. The court's name on the ballot says its focus: civil, criminal, family, or juvenile."
+    powers: [P-FELONY, P-CIVIL, P-FAMILY]
+  points:
+    - text: Hears felony criminal cases
+      icon: gavel
+      powers: [P-FELONY]
+    - text: Hears lawsuits where more than $500 is at stake
+      icon: court
+      powers: [P-CIVIL]
+    - text: Family courts handle divorce, custody, child support, and adoption
+      icon: shield
+      powers: [P-FAMILY]

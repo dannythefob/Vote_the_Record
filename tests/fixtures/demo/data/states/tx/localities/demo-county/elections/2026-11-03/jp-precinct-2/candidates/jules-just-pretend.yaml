@@ -1,0 +1,14 @@
+# FICTIONAL demo candidate (basic race).
+id: jules-just-pretend
+name: Jules Just-Pretend
+incumbent: null
+ballot_party: Other Sample Party
+records: []
+funding: []
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

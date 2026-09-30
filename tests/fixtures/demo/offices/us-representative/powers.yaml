@@ -1,0 +1,17 @@
+# FICTIONAL demo office for tests.
+office_type: us-representative
+level: federal
+powers:
+- id: P-MAIN
+  description: Votes on federal laws in the U.S. House.
+  source_url: https://example.org/law/us-representative
+plain_summary:
+  intro:
+    text: 'DEMO: Votes on federal laws in the U.S. House.'
+    powers:
+    - P-MAIN
+  points:
+  - icon: gavel
+    text: Votes on federal laws in the U.S. House.
+    powers:
+    - P-MAIN

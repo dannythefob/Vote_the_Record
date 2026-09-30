@@ -50,9 +50,9 @@ facts:
     source_title: "Coversheet: H31157.A1 - Gunshot Detection Solution Services (ShotSpotter, Inc.) - Ordinance, City Council meeting 1/31/2023"
     source_kind: page
     sha256: null
-    archive_url: null
+    archive_url: "https://web.archive.org/web/20250807173147/https://houston.novusagenda.com/agendapublic/CoverSheet.aspx?ItemID=27478&MeetingID=580"
     event_date: "2022-01-05"
     retrieved: "2026-09-28"
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-30"
+    reviewer: "D"

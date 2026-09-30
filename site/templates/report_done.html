@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ "Thanks for your report" if ok else "Report not sent" }}{% endblock %}
+{% block content %}
+{% if ok %}
+<h1>Thanks, we got it.</h1>
+<p class="lead">A person will check your report against the sources. If it's right, the fix will appear on the site and in the public <a href="/corrections/">corrections log</a>.</p>
+<p><a class="button" href="/">Back to the home page</a></p>
+{% else %}
+<h1>Your report wasn't sent</h1>
+<p class="lead" id="report-error">Something about the form didn't go through.</p>
+<p>Please go back and check that "What's wrong?" has at least a sentence, and that any link starts with https://. Nothing was saved.</p>
+<p><a class="button" href="/report/">Try again</a></p>
+<script src="/static/js/report.js" defer></script>
+{% endif %}
+{% endblock %}

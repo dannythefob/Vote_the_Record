@@ -1,0 +1,22 @@
+# FICTIONAL demo race (basic detail).
+name: U.S. Representative, District 2
+office_type: us-representative
+election_date: '2026-11-03'
+detail: basic
+sources:
+- id: tx/districts/us-house-2/elections/2026-11-03/us-representative/race#S-01
+  headline: 'DEMO: U.S. Representative, District 2 candidates as printed on the sample ballot.'
+  statement: 'DEMO: U.S. Representative, District 2 candidates as printed on the sample ballot.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://example.gov/demo-sample-ballot.pdf
+  source_title: 'DEMO County Clerk: Sample Ballot'
+  source_kind: document
+  sha256: '0000000000000000000000000000000000000000000000000000000000000000'
+  archive_url: null
+  event_date: '2026-11-03'
+  retrieved: '2026-09-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null

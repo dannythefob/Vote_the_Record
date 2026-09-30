@@ -1,0 +1,27 @@
+# Powers of a Justice of the Texas Supreme Court (including the Chief Justice).
+# Text checked against the Texas Constitution (statutes.capitol.texas.gov, read through its
+# document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: supreme-court-justice
+state: TX
+powers:
+  - id: P-TERM
+    description: One of nine members (a chief justice and eight justices), elected statewide to six-year terms. Three seats are up every two years.
+    statute: Texas Constitution art. V, § 2
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+
+  - id: P-CIVIL
+    description: The state's highest court for all cases except criminal cases. Its decisions are final.
+    statute: Texas Constitution art. V, § 3(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+
+plain_summary:
+  intro:
+    text: Texas's highest court for non-criminal cases, such as lawsuits, family, business, and government disputes. Its rulings are final.
+    powers: [P-CIVIL]
+  points:
+    - text: Has the final word on non-criminal cases in Texas
+      icon: court
+      powers: [P-CIVIL]
+    - text: Nine members with six-year terms; three seats are up every two years
+      icon: vote
+      powers: [P-TERM]

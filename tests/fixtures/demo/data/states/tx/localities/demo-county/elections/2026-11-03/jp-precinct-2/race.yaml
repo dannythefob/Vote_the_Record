@@ -1,0 +1,23 @@
+# FICTIONAL demo race (basic detail).
+name: Justice of the Peace, Precinct 2
+office_type: justice-of-the-peace
+election_date: '2026-11-03'
+detail: basic
+area: demo-county/jp-2
+sources:
+- id: tx/localities/demo-county/elections/2026-11-03/jp-precinct-2/race#S-01
+  headline: 'DEMO: Justice of the Peace, Precinct 2 candidates as printed on the sample ballot.'
+  statement: 'DEMO: Justice of the Peace, Precinct 2 candidates as printed on the sample ballot.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://example.gov/demo-sample-ballot.pdf
+  source_title: 'DEMO County Clerk: Sample Ballot'
+  source_kind: document
+  sha256: '0000000000000000000000000000000000000000000000000000000000000000'
+  archive_url: null
+  event_date: '2026-11-03'
+  retrieved: '2026-09-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null
