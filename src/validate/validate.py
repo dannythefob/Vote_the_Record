@@ -242,6 +242,9 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
             for ref in fact.get("contradicted_by") or []:
                 if ref not in all_ids:
                     report.error(rel, f"{fact.get('id')}: contradicted_by '{ref}' does not exist")
+            for ref in fact.get("followups") or []:
+                if ref not in all_ids:
+                    report.error(rel, f"{fact.get('id')}: followup '{ref}' does not exist")
         if kind != "candidate":
             continue
 

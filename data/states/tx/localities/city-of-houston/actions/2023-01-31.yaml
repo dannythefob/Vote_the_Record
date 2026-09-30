@@ -1,0 +1,26 @@
+# Houston City Council, meeting of January 31 - February 1, 2023.
+# Unverified; written by an AI assistant from the official minutes. Owner review required.
+body: Houston City Council
+meeting_date: "2023-01-31"
+facts:
+  - id: tx/localities/city-of-houston/actions/2023-01-31#F-001
+    headline: Council added $2.8M to the ShotSpotter contract
+    statement: >-
+      Houston City Council adopted Item 26, Ordinance 2023-0084, amending Ordinance No.
+      2022-0020 to increase the maximum contract amount for the contract with ShotSpotter, Inc.
+      for gunshot detection services for the Houston Police Department by $2,800,000.00
+      (General Fund). The minutes record "Council Member Knox voting no, balance voting aye"
+      and list Council Member Plummer as absent on personal business.
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.houstontx.gov/citysec/agenda/2023/20230131.pdf
+    source_title: Houston City Council Minutes, January 31 - February 1, 2023 (page 12, Item 26)
+    source_kind: document
+    sha256: 66fe7adcd295543461fd2bd04d5efec845bcde7f8257ccc6ce802fffdbdeb34e
+    archive_url: https://web.archive.org/web/20251223161455/https://www.houstontx.gov/citysec/agenda/2023/20230131.pdf
+    event_date: "2023-01-31"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null

@@ -23,7 +23,12 @@
         "license": { "type": "string", "minLength": 1 },
         "license_url": { "$ref": "urn:vtr:schema:fact#/$defs/url" },
         "credit": { "type": "string", "minLength": 1 },
-        "retrieved": { "$ref": "urn:vtr:schema:fact#/$defs/date" }
+        "retrieved": { "$ref": "urn:vtr:schema:fact#/$defs/date" },
+        "license_confirmed": {
+          "description": "true only if the license was confirmed at an independent source (e.g. the photographer's own page). Shown on the site when false.",
+          "type": "boolean"
+        },
+        "notes": { "type": "string" }
       }
     },
     "ballot_party": {

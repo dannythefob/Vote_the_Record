@@ -49,6 +49,9 @@ records:
   - <<: *verified
     id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-04
     headline: DEMO HEADLINE voted for competitive bids
+    result: DEMO RESULT passed 4-1
+    followups:
+      - tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-05
     record_type: vote
     statement: Voted to require competitive bids on a storm-debris contract.
     source_url: https://example.org/demo-county/minutes/2025-06-04

@@ -1,0 +1,26 @@
+# Houston City Council, meeting of June 11 - 12, 2024 (FY2025 budget).
+# Unverified; written by an AI assistant from the official minutes. Owner review required.
+body: Houston City Council
+meeting_date: "2024-06-11"
+facts:
+  - id: tx/localities/city-of-houston/actions/2024-06-11#F-001
+    headline: Budget amendment adopted to fund a police cadet class, first from cancelling the ShotSpotter contract
+    statement: >-
+      In the FY2025 budget, Council Member Ramirez's amendment 1.01, to "recruit for and
+      conduct a sixth cadet class for the Houston Police Department (HPD) in an amount not to
+      exceed $4,000,000," with funding to come "first, from cancellation of ShotSpotter
+      contract," is listed in the budget amendment matrix as "Motion 2024-0482 Adopt."
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.houstontx.gov/citysec/agenda/2024/20240611.pdf
+    source_title: Houston City Council Minutes, June 11 - 12, 2024 (budget amendment matrix, page 19, Amendment 1.01)
+    source_kind: document
+    sha256: 7803853adbf4e8522ec8c54101f627fdf1226383966b33dafaf5b0b5522e465f
+    archive_url: https://web.archive.org/web/20251223010807/https://www.houstontx.gov/citysec/agenda/2024/20240611.pdf
+    event_date: "2024-06-11"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The minutes do not say whether the ShotSpotter contract was actually cancelled.

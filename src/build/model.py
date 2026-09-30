@@ -158,9 +158,30 @@ def glance(cand: dict) -> list[dict]:
     if endorsements:
         lines.append({"icon": "megaphone", "label": "Endorsed by",
                       "text": " · ".join(card_text(f) for f in endorsements), "facts": endorsements})
-    records = cand.get("records") or []
-    lines.append({"icon": "document", "facts": records, "text": record_count_text(records)})
     return lines
+
+
+RECORD_ON_CARD = 3
+
+
+def record_top(cand: dict, facts: dict) -> dict:
+    """The record block that leads each card: most recent actions first, with results.
+
+    Every item is a fact on file; follow-ups are resolved to their own sourced facts.
+    """
+    records = sorted(cand.get("records") or [], key=lambda r: r.get("event_date") or "", reverse=True)
+    items = []
+    for r in records[:RECORD_ON_CARD]:
+        items.append({
+            "fact": r,
+            "kind": r["record_type"],
+            "text": card_text(r),
+            "year": (r.get("event_date") or "")[:4],
+            "result": r.get("result"),
+            "followups": [facts[f] for f in r.get("followups") or [] if f in facts],
+        })
+    return {"items": items, "total": len(records), "more": max(0, len(records) - RECORD_ON_CARD),
+            "summary": record_count_text(records)}
 
 
 RECORD_WORDS = {"vote": ("vote", "votes"), "sponsored": ("measure sponsored", "measures sponsored"),
@@ -207,6 +228,7 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
     for cand in candidates:
         cand.setdefault("summary", [])
         cand["glance"] = glance(cand)
+        cand["record_top"] = record_top(cand, facts)
         cand["initials"] = "".join(w[0] for w in cand["name"].split()[:2]).upper()
         photo = cand.get("photo")
         cand["photo_src"] = f"/media/{cand_dir.removeprefix('data/')}/{photo['file']}" if photo else None

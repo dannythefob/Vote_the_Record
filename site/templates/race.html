@@ -70,6 +70,25 @@
         </p>
       </div>
     </div>
+    <section class="on-record" aria-label="{{ c.name }}: on the record">
+      <h4 class="on-record-h">{{ icon("document") }} On the record</h4>
+      {% if c.record_top["items"] %}
+      <ol class="record-list">
+        {% for it in c.record_top["items"] %}
+        <li>
+          <span class="kind">{{ RECORD_TYPES[it.kind] }}{% if it.year %} · {{ it.year }}{% endif %}</span>
+          <span class="record-text">{{ it.text }}</span>{% if it.fact.verification != "verified" %} <span class="badge badge-unverified">Unverified</span>{% endif %}
+          {% if it.result %}<span class="result"><strong>Result:</strong> {{ it.result }}</span>{% endif %}
+          {% if it.followups %}<span class="next"><strong>What happened next:</strong>
+            {% for f in it.followups %}{{ f.get('headline') or f.statement }}{% if f.get('event_date') %} ({{ f.event_date[:4] }}){% endif %}{% if f.verification != "verified" %} <span class="badge badge-unverified">Unverified</span>{% endif %}{% if not loop.last %}; {% endif %}{% endfor %}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ol>
+      {% if c.record_top.more %}<p class="muted">+ {{ c.record_top.more }} more in "See details &amp; sources"</p>{% endif %}
+      {% else %}
+      <p class="empty">No record on file yet</p>
+      {% endif %}
+    </section>
     <ul class="glance">
       {% for line in c.glance %}
       <li>{{ icon(line.icon) }}<span>{% if line.get('label') %}<strong>{{ line.label }}:</strong> {% endif %}{{ line.text }}{% if line.facts and line.facts | selectattr("verification", "ne", "verified") | list %} <span class="badge badge-unverified">Unverified</span>{% endif %}</span></li>
@@ -77,16 +96,16 @@
     </ul>
     <details class="more">
       <summary>See details &amp; sources</summary>
+      <h4>Record</h4>
+      {{ fact_list(c.records, race.facts, "No record on file for this candidate.") }}
       <h4>Background</h4>
       {{ fact_list(c.summary, race.facts) }}
       <h4>Money</h4>
       {{ fact_list(c.funding, race.facts) }}
       <h4>Endorsements</h4>
       {{ fact_list(c.endorsements, race.facts) }}
-      <h4>Record</h4>
-      {{ fact_list(c.records, race.facts, "No record on file for this candidate.") }}
     </details>
-    {% if c.get('photo') %}<p class="credit">Photo: {{ c.photo.credit }}, <a href="{{ c.photo.get('license_url') or c.photo.source_url }}" rel="noopener noreferrer">{{ c.photo.license }}</a></p>{% endif %}
+    {% if c.get('photo') %}<p class="credit">Photo: {{ c.photo.credit }} · <a href="{{ c.photo.source_url }}" rel="noopener noreferrer">source</a> · <a href="{{ c.photo.get('license_url') or c.photo.source_url }}" rel="noopener noreferrer">{{ c.photo.license }}</a>{% if not c.photo.get('license_confirmed') %} (license not independently confirmed){% endif %}</p>{% endif %}
   </article>
   {% else %}
   <p class="empty">No candidates have been entered for this race yet.</p>

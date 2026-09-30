@@ -2,6 +2,18 @@
 id: orlando-sanchez
 name: Orlando Sanchez
 incumbent: false
+photo:
+  file: orlando-sanchez.png
+  source_url: "https://commons.wikimedia.org/wiki/File:Orlando_Sanchez,_Harris_County_Treasurer,_2014_headshot.png"
+  license: CC BY-SA 3.0, as stated on Wikimedia Commons
+  license_url: https://creativecommons.org/licenses/by-sa/3.0/
+  credit: Wikimedia Commons user Jgraves1952
+  retrieved: "2026-09-30"
+  license_confirmed: false
+  notes: >-
+    Uploaded 2016-04-12 as the uploader's own work, with no permission record; the Commons page
+    says it was previously published on the campaign's Facebook page. The photo used by the
+    candidate's Wikipedia article. Unmodified copy (350 px square).
 ballot_party: Republican Party
 summary:
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#B-01
