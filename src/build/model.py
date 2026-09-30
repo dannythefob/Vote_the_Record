@@ -6,6 +6,7 @@ arranges: it never repairs or guesses at data.
 
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 
@@ -108,6 +109,77 @@ def fact_index(docs: dict) -> dict[str, dict]:
     return index
 
 
+def short(fact: dict) -> str:
+    """The fact's headline if it has one, else its full statement."""
+    return fact.get("headline") or fact["statement"]
+
+
+def clip(text: str, limit: int = 110) -> str:
+    """Shorten at a word boundary for the at-a-glance card; the full text stays in the details."""
+    if len(text) <= limit:
+        return text
+    cut = text[:limit].rsplit(" ", 1)[0].rstrip(",;:-")
+    return cut + "…"
+
+
+def card_text(fact: dict) -> str:
+    """Card line: the headline, or else the statement shortened (never reworded)."""
+    return fact.get("headline") or clip(fact["statement"])
+
+
+def topic(fact: dict) -> str:
+    """Short topic for the Priorities line, taken from wording already in the fact.
+
+    'Affordability: stop tax increases' (headline) -> 'Affordability'
+    'Campaign platform, Flood Protection: ...' (statement) -> 'Flood Protection'
+    """
+    head = fact.get("headline")
+    if head and ":" in head:
+        return head.split(":", 1)[0].strip()
+    m = re.match(r"Campaign platform, ([^:]{1,40}):", fact["statement"])
+    return m.group(1).strip() if m else clip(short(fact), 40)
+
+
+def glance(cand: dict) -> list[dict]:
+    """At-a-glance lines for a candidate card, built only from facts already on file.
+
+    Each line links to the fact(s) it came from, so nothing on the card lacks a source.
+    """
+    lines = []
+    for fact in cand.get("summary") or []:
+        lines.append({"icon": "info", "text": card_text(fact), "facts": [fact]})
+    for fact in cand.get("funding") or []:
+        lines.append({"icon": "money", "text": card_text(fact), "facts": [fact]})
+    proposals = (cand.get("running_on") or {}).get("policy_proposals") or []
+    if proposals:
+        lines.append({"icon": "target", "label": "Priorities",
+                      "text": " · ".join(topic(f) for f in proposals), "facts": proposals})
+    endorsements = cand.get("endorsements") or []
+    if endorsements:
+        lines.append({"icon": "megaphone", "label": "Endorsed by",
+                      "text": " · ".join(card_text(f) for f in endorsements), "facts": endorsements})
+    records = cand.get("records") or []
+    lines.append({"icon": "document", "facts": records, "text": record_count_text(records)})
+    return lines
+
+
+RECORD_WORDS = {"vote": ("vote", "votes"), "sponsored": ("measure sponsored", "measures sponsored"),
+                "promise_kept": ("promise kept", "promises kept"),
+                "promise_broken": ("promise broken", "promises broken"),
+                "statement": ("statement", "statements")}
+
+
+def record_count_text(records: list[dict]) -> str:
+    """'2 votes, 1 statement on record' or 'No record on file yet'."""
+    if not records:
+        return "No record on file yet"
+    counts: dict[str, int] = {}
+    for r in records:
+        counts[r["record_type"]] = counts.get(r["record_type"], 0) + 1
+    parts = [f"{n} {RECORD_WORDS[t][0 if n == 1 else 1]}" for t, n in counts.items()]
+    return ", ".join(parts) + " on record"
+
+
 def pick_why_it_matters(race_doc: dict, locality_doc: dict | None, office_doc: dict | None) -> list:
     """The most specific level wins: race, then locality, then office type."""
     for doc in (race_doc, locality_doc, office_doc):
@@ -131,8 +203,14 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
     candidates = [doc for rel, (kind, doc) in docs.items()
                   if kind == "candidate" and rel.startswith(race_dir + "/candidates/")]
     candidates.sort(key=lambda c: (c["name"].casefold(), c["name"]))
+    cand_dir = race_dir + "/candidates"
     for cand in candidates:
         cand.setdefault("summary", [])
+        cand["glance"] = glance(cand)
+        cand["initials"] = "".join(w[0] for w in cand["name"].split()[:2]).upper()
+        photo = cand.get("photo")
+        cand["photo_src"] = f"/media/{cand_dir.removeprefix('data/')}/{photo['file']}" if photo else None
+        cand["photo_path"] = f"{cand_dir}/{photo['file']}" if photo else None
         cand["promises"] = [
             {**entry, "promise_fact": facts.get(entry["promise"]),
              "evidence_facts": [facts.get(e) for e in entry.get("evidence") or []]}
@@ -164,7 +242,9 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
             for c in candidates
         ],
     }
+    plain = (override_doc or {}).get("plain_summary") or (office_doc or {}).get("plain_summary")
     return {
+        "plain_summary": plain,
         "powers": (office_doc or {}).get("powers") or [],
         "state_powers": (override_doc or {}).get("powers") or [],
         "why_it_matters": pick_why_it_matters(race_doc, locality_doc, office_doc),

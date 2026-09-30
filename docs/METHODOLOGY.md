@@ -4,6 +4,17 @@ Vote the Record matches your answers to hypothetical scenarios with what candida
 actually done. This page explains where the information comes from, how it is checked,
 and how match results are calculated.
 
+## The short version
+
+- **Everything has a source.** Every fact links to where it came from, plus a saved copy in case the original changes.
+- **Official records count most.** A recorded vote beats a news story, and a news story beats a campaign's own claim.
+- **A person checks every fact.** Until they do, it's marked **Unverified**, and it can't affect your quiz results.
+- **The quiz is about the job.** Questions are what-ifs the office could really face. Party is never mentioned.
+- **No record means no penalty.** If a candidate has no record on a question, it's left out, not counted against them.
+- **Your answers stay with you.** The quiz runs in your browser. Nothing is saved or sent.
+
+The details are below.
+
 ## Sources
 Official government records come first: council and commissioners court minutes,
 legislative roll calls, election filings, and campaign finance reports. News reports and

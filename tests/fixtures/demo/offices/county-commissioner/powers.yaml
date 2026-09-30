@@ -15,3 +15,14 @@ powers:
 why_it_matters:
   - text: OFFICE-LEVEL reason (should be overridden by the race-level reason).
     source_url: https://example.org/office-reason
+plain_summary:
+  intro:
+    text: DEMO plain intro about the commissioners court.
+    powers: [P-BUDGET]
+  points:
+    - text: DEMO votes on the budget
+      icon: budget
+      powers: [P-BUDGET]
+    - text: DEMO votes on contracts
+      icon: contract
+      powers: [P-CONTRACTS]

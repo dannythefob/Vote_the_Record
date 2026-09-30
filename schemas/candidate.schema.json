@@ -12,6 +12,20 @@
     "id": { "$ref": "urn:vtr:schema:fact#/$defs/slug" },
     "name": { "type": "string", "minLength": 1 },
     "incumbent": { "type": "boolean" },
+    "photo": {
+      "description": "Optional headshot stored next to the candidate file. Rights information is required.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file", "source_url", "license", "credit", "retrieved"],
+      "properties": {
+        "file": { "type": "string", "pattern": "^[a-z0-9-]+[.](jpg|jpeg|png|webp)$" },
+        "source_url": { "$ref": "urn:vtr:schema:fact#/$defs/url" },
+        "license": { "type": "string", "minLength": 1 },
+        "license_url": { "$ref": "urn:vtr:schema:fact#/$defs/url" },
+        "credit": { "type": "string", "minLength": 1 },
+        "retrieved": { "$ref": "urn:vtr:schema:fact#/$defs/date" }
+      }
+    },
     "ballot_party": {
       "description": "Display only, exactly as printed on the ballot. Never used for sorting or scoring.",
       "type": ["string", "null"]

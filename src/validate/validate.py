@@ -175,6 +175,17 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
                 p.get("id") for p in doc.get("powers") or [] if isinstance(p, dict)
             )
 
+    # Plain-language summaries may only summarize powers that exist (rule 3).
+    for rel, (kind, doc) in docs.items():
+        if kind not in ("powers", "office_override") or not isinstance(doc, dict):
+            continue
+        summary = doc.get("plain_summary") or {}
+        office = doc.get("office_type")
+        for line in [summary.get("intro") or {}, *(summary.get("points") or [])]:
+            for pid in line.get("powers") or []:
+                if pid not in powers.get(office, set()):
+                    report.error(rel, f"plain_summary: power {pid} does not exist for office '{office}'")
+
     for office, survey in surveys.items():
         rel = f"offices/{office}/survey.yaml"
         tags = set(survey.get("tags") or [])
@@ -240,6 +251,11 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
         if race_kind != "race":
             report.error(rel, f"missing {race_rel}")
         record_ids = {r.get("id") for r in doc.get("records") or [] if isinstance(r, dict)}
+
+        photo = doc.get("photo")
+        if isinstance(photo, dict) and photo.get("file"):
+            if not (root / rel).parent.joinpath(photo["file"]).is_file():
+                report.error(rel, f"photo: file '{photo['file']}' not found next to the candidate file")
 
         for i, mapping in enumerate(doc.get("mappings") or []):
             if not isinstance(mapping, dict):

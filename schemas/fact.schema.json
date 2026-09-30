@@ -15,6 +15,10 @@
     "record_type": { "enum": ["vote", "sponsored", "promise_kept", "promise_broken", "statement"] },
     "same_event": { "$ref": "#/$defs/event_id" },
     "statement": { "type": "string", "minLength": 1 },
+    "headline": {
+      "description": "Optional one-line plain-language version of the statement, shown first. Must not add anything the statement does not say.",
+      "type": "string", "minLength": 1, "maxLength": 140
+    },
     "label": { "enum": ["official_record", "news_report", "candidate_claim", "organization_statement"] },
     "claim_status": { "enum": ["documented", "allegation", "disputed", "contradicted"] },
     "contradicted_by": { "type": "array", "items": { "$ref": "#/$defs/fact_id" } },

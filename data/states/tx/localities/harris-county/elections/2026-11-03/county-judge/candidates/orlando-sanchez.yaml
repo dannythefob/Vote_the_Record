@@ -5,6 +5,7 @@ incumbent: false
 ballot_party: Republican Party
 summary:
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#B-01
+    headline: On the Nov. 3 ballot for County Judge
     statement: Listed on the November 3, 2026 general election ballot for Harris County Judge.
     label: official_record
     claim_status: documented
@@ -16,12 +17,13 @@ summary:
     archive_url: "https://web.archive.org/web/20260921224207/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D"
     event_date: "2026-11-03"
     retrieved: "2026-09-29"
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-29"
+    reviewer: "D"
     notes: The archived copy has the same SHA-256 as the downloaded file.
 
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#B-02
+    headline: Won the Republican runoff 63.3% to 36.7% over Warren A. Howell (May 26, 2026)
     statement: Won the Republican primary runoff for Harris County Judge on May 26, 2026 with 85,304 votes (63.34%) to Warren A. Howell's 49,367 (36.66%).
     label: official_record
     claim_status: documented
@@ -33,9 +35,9 @@ summary:
     archive_url: https://web.archive.org/web/20260929175757/https://appfiles.harrisvotes.com/harrisvotes/prd/Data/0526/rep-cumulative.pdf
     event_date: "2026-05-26"
     retrieved: "2026-09-29"
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-29"
+    reviewer: "D"
     notes: >-
       Archived on 2026-09-29 at the owner's request; the archived copy has the same SHA-256
       as the downloaded file. Older snapshots from May 27, 2026 hold the unofficial count
@@ -43,6 +45,7 @@ summary:
 records: []
 funding:
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#M-01
+    headline: Raised $181,126 and had $132,680 on hand (May 17 - June 30, 2026)
     statement: >-
       Campaign finance report for May 17 - June 30, 2026: $181,126.00 in total political
       contributions, $66,343.55 in total political expenditures, $132,680.24 in contributions
@@ -57,9 +60,9 @@ funding:
     archive_url: "https://web.archive.org/web/20260929212602/https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox1Bosm2JYMQ3zpemq5GQGoo8CIl0E34y0mdNX+Lkhcd7f0HeNeh5aX+aGSL7UqdUt8dEKSOTdHipexk16hqiMOh%2FYyynyZBdxzdz5GgMFfJy"
     event_date: "2026-06-30"
     retrieved: "2026-09-29"
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-29"
+    reviewer: "D"
     notes: >-
       Figures from Form C/OH Cover Sheet Pg 2 (scanned; read from the page image). No
       correction to this report was listed in the clerk's search on 2026-09-29. Archived on
@@ -67,6 +70,7 @@ funding:
       downloaded file.
 endorsements:
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#E-01
+    headline: 23 current and former officials and candidates (campaign's list)
     statement: >-
       The campaign website lists 23 endorsements: HISD Trustee Bridget Wade; State
       Representative Mano DeAyala; State Representative Charles Cunningham; Harris County
@@ -91,9 +95,9 @@ endorsements:
     archive_url: https://web.archive.org/web/20260929222008/https://orlandosanchez.com/
     event_date: "2026-09-29"
     retrieved: "2026-09-29"
-    verification: unverified
-    verified_on: null
-    reviewer: null
+    verification: verified
+    verified_on: "2026-09-29"
+    reviewer: "D"
     notes: >-
       Names and titles as the campaign lists them. The site's separate Endorsements page
       (https://orlandosanchez.com/endorsements/) did not include Bridget Wade or Justin Ray on
@@ -101,6 +105,7 @@ endorsements:
 running_on:
   policy_proposals:
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#O-01
+      headline: 'Property taxes: focus on core services, savings review before any tax increase'
       statement: >-
         Campaign platform, Property Tax Relief: "Prioritize public safety, flood control, infrastructure, courts, and emergency management"; require quarterly public performance reviews; publish "a plain-English Taxpayer Impact Statement before major budget votes"; require every new program to identify funding, measurable results, and a sunset review; "Require a public savings review before considering any tax increase."
       label: candidate_claim
@@ -113,12 +118,13 @@ running_on:
       archive_url: https://web.archive.org/web/20260823072158/https://orlandosanchez.com/issues/
       event_date: '2026-09-29'
       retrieved: '2026-09-29'
-      verification: unverified
-      verified_on: null
-      reviewer: null
+      verification: verified
+      verified_on: "2026-09-29"
+      reviewer: "D"
       notes: >-
         The campaign's own platform. event_date is the date the page was read, not the date it was first posted. The August 23, 2026 archived copy contains the same text.
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#O-02
+      headline: 'Responsible government: results-based budgets, open contracting, independent audits'
       statement: >-
         Campaign platform, Responsible Government: "measurable performance, open contracting and competitive bidding, responsible budgeting"; results-based budgeting; public contract transparency; independent audits; quarterly accountability hearings.
       label: candidate_claim
@@ -131,12 +137,13 @@ running_on:
       archive_url: https://web.archive.org/web/20260823072158/https://orlandosanchez.com/issues/
       event_date: '2026-09-29'
       retrieved: '2026-09-29'
-      verification: unverified
-      verified_on: null
-      reviewer: null
+      verification: verified
+      verified_on: "2026-09-29"
+      reviewer: "D"
       notes: >-
         The campaign's own platform. event_date is the date the page was read, not the date it was first posted. The August 23, 2026 archived copy contains the same text.
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#O-03
+      headline: 'Flood protection: finish funded projects, regional coordination, public deadlines'
       statement: >-
         Campaign platform, Flood Protection: independent review of flood projects; protect federal and state funding; public project deadlines; regional coordination with Fort Bend, Montgomery, Brazoria, Galveston, and Liberty Counties; "Finish the projects voters already funded."
       label: candidate_claim
@@ -149,12 +156,13 @@ running_on:
       archive_url: https://web.archive.org/web/20260823072158/https://orlandosanchez.com/issues/
       event_date: '2026-09-29'
       retrieved: '2026-09-29'
-      verification: unverified
-      verified_on: null
-      reviewer: null
+      verification: verified
+      verified_on: "2026-09-29"
+      reviewer: "D"
       notes: >-
         The campaign's own platform. event_date is the date the page was read, not the date it was first posted. The August 23, 2026 archived copy contains the same text.
     - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/orlando-sanchez#O-04
+      headline: 'Public safety: support law enforcement and courts, faster response times, more technology'
       statement: >-
         Campaign platform, Public Safety: "Fully support the Sheriff's Office, Constables, prosecutors, and courts"; improve staffing, response times, and case processing; "Expand technology that improves investigations and accountability"; coordinate law enforcement, courts, schools, and emergency responders; publish public safety performance measures.
       label: candidate_claim
@@ -167,9 +175,9 @@ running_on:
       archive_url: https://web.archive.org/web/20260823072158/https://orlandosanchez.com/issues/
       event_date: '2026-09-29'
       retrieved: '2026-09-29'
-      verification: unverified
-      verified_on: null
-      reviewer: null
+      verification: verified
+      verified_on: "2026-09-29"
+      reviewer: "D"
       notes: >-
         The campaign's own platform. event_date is the date the page was read, not the date it was first posted. The August 23, 2026 archived copy contains the same text.
   attack_messaging: []

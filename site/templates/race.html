@@ -1,41 +1,39 @@
 {% extends "base.html" %}
-{% from "partials/macros.html" import fact_list, fact_card, verification_badge, source_line, report_link %}
+{% from "partials/macros.html" import fact_list, verification_badge, source_line, report_link %}
+{% from "partials/icons.html" import icon %}
 {% block title %}{{ race.name }}{% endblock %}
-{% block description %}What the {{ race.name }} office does, what the candidates have done, and a survey to compare your views with their record.{% endblock %}
+{% block description %}What the {{ race.name }} does, who's running, and a quick quiz to compare your views with their record.{% endblock %}
 {% block content %}
-<h1>{{ race.name }}</h1>
-<p class="muted">{{ race.locality_name }}, {{ race.state_name }} · Election {{ race.election_date | longdate }}</p>
-
-<nav class="toc" aria-label="On this page">
-  <ul>
-    <li><a href="#office">What the office does</a></li>
-    {% if race.why_it_matters %}<li><a href="#why">Why it matters</a></li>{% endif %}
-    <li><a href="#candidates">Candidates</a></li>
-    <li><a href="#survey">Survey</a></li>
-    <li><a href="#running-on">What they're running on</a></li>
-    <li><a href="#promises">Promise tracker</a></li>
-    <li><a href="#how">How results are calculated</a></li>
-  </ul>
-</nav>
+{% set plain = race.plain_summary %}
+<header class="race-hero">
+  <p class="eyebrow">{{ race.locality_name }}, {{ race.state_name }} · Election Day {{ race.election_date | longdate }}</p>
+  <h1>{{ race.name }}</h1>
+  {% if plain %}<p class="lead">{{ plain.intro.text }}</p>{% endif %}
+  <div class="hero-actions">
+    {% if race.questions %}<a class="button" href="#survey">{{ icon("quiz") }} Take the quiz</a>{% endif %}
+    <a class="button button-secondary" href="#candidates">Meet the candidates</a>
+  </div>
+</header>
 
 <section id="office" aria-labelledby="office-h">
-  <h2 id="office-h">What the office does</h2>
-  {% if race.powers or race.state_powers %}
-  <ul class="item-list">
-    {% for power in race.powers %}
-    <li class="card item"><p class="item-main">{{ power.description }}</p>
-      <p class="item-meta"><a href="{{ power.source_url }}" rel="noopener noreferrer">Source</a>{% if power.get('statute') %} · {{ power.statute }}{% endif %}</p></li>
-    {% endfor %}
-  </ul>
-  {% if race.state_powers %}
-  <h3>Under {{ race.state_name }} law</h3>
-  <ul class="item-list">
-    {% for power in race.state_powers %}
-    <li class="card item"><p class="item-main">{{ power.description }}</p>
-      <p class="item-meta">{{ power.statute }} · <a href="{{ power.source_url }}" rel="noopener noreferrer">Source</a></p></li>
+  <h2 id="office-h">What this job is</h2>
+  {% if plain %}
+  <ul class="plain-points">
+    {% for point in plain.points %}
+    <li>{{ icon(point.get('icon') or 'info') }}<span>{{ point.text }}</span></li>
     {% endfor %}
   </ul>
   {% endif %}
+  {% if race.powers or race.state_powers %}
+  <details class="more"{% if not plain %} open{% endif %}>
+    <summary>See the exact law &amp; sources</summary>
+    <ul class="item-list">
+      {% for power in race.powers + race.state_powers %}
+      <li class="card item"><p class="item-main">{{ power.description }}</p>
+        <p class="item-meta">{% if power.get('statute') %}{{ power.statute }} · {% endif %}<a href="{{ power.source_url }}" rel="noopener noreferrer">Read the law</a></p></li>
+      {% endfor %}
+    </ul>
+  </details>
   {% else %}
   <p class="empty">The powers of this office have not been documented yet.</p>
   {% endif %}
@@ -44,54 +42,72 @@
 {% if race.why_it_matters %}
 <section id="why" aria-labelledby="why-h">
   <h2 id="why-h">Why it matters</h2>
-  <ul>
+  <ul class="plain-points">
     {% for reason in race.why_it_matters %}
-    <li>{{ reason.text }} <a href="{{ reason.source_url }}" rel="noopener noreferrer">Source</a></li>
+    <li>{{ icon("info") }}<span>{{ reason.text }} <a href="{{ reason.source_url }}" rel="noopener noreferrer">Source</a></span></li>
     {% endfor %}
   </ul>
 </section>
 {% endif %}
 
 <section id="candidates" aria-labelledby="candidates-h">
-  <h2 id="candidates-h">Candidates</h2>
-  <p class="muted">Listed alphabetically.</p>
+  <h2 id="candidates-h">The candidates</h2>
+  <p class="muted">Listed A to Z. Tap "See details" for every fact and its source.</p>
+  <div class="cand-grid">
   {% for c in race.candidates %}
   <article class="card candidate" aria-labelledby="cand-{{ c.id }}">
-    <h3 id="cand-{{ c.id }}">{{ c.name }}</h3>
-    <p class="candidate-facts">
-      {% if c.ballot_party is not none %}<span>Listed on ballot as: {{ c.ballot_party }}</span>{% endif %}
-      <span>{{ "Incumbent" if c.incumbent else "Not the incumbent" }}</span>
-    </p>
-    <h4>Summary</h4>
-    {{ fact_list(c.summary, race.facts) }}
-    <h4>Funding</h4>
-    {{ fact_list(c.funding, race.facts) }}
-    <h4>Endorsements</h4>
-    {{ fact_list(c.endorsements, race.facts) }}
-    <details class="record">
-      <summary>Record on file ({{ c.records | length }})</summary>
+    <div class="cand-head">
+      {% if c.photo_src %}
+      <img class="avatar" src="{{ c.photo_src }}" alt="Photo of {{ c.name }}" width="72" height="72">
+      {% else %}
+      <span class="avatar avatar-initials" aria-hidden="true">{{ c.initials }}</span>
+      {% endif %}
+      <div>
+        <h3 id="cand-{{ c.id }}">{{ c.name }}</h3>
+        <p class="candidate-facts">
+          {% if c.ballot_party is not none %}<span class="chip">On the ballot as: {{ c.ballot_party }}</span>{% endif %}
+          <span class="chip">{{ "Incumbent" if c.incumbent else "Not the incumbent" }}</span>
+        </p>
+      </div>
+    </div>
+    <ul class="glance">
+      {% for line in c.glance %}
+      <li>{{ icon(line.icon) }}<span>{% if line.get('label') %}<strong>{{ line.label }}:</strong> {% endif %}{{ line.text }}{% if line.facts and line.facts | selectattr("verification", "ne", "verified") | list %} <span class="badge badge-unverified">Unverified</span>{% endif %}</span></li>
+      {% endfor %}
+    </ul>
+    <details class="more">
+      <summary>See details &amp; sources</summary>
+      <h4>Background</h4>
+      {{ fact_list(c.summary, race.facts) }}
+      <h4>Money</h4>
+      {{ fact_list(c.funding, race.facts) }}
+      <h4>Endorsements</h4>
+      {{ fact_list(c.endorsements, race.facts) }}
+      <h4>Record</h4>
       {{ fact_list(c.records, race.facts, "No record on file for this candidate.") }}
     </details>
+    {% if c.get('photo') %}<p class="credit">Photo: {{ c.photo.credit }}, <a href="{{ c.photo.get('license_url') or c.photo.source_url }}" rel="noopener noreferrer">{{ c.photo.license }}</a></p>{% endif %}
   </article>
   {% else %}
   <p class="empty">No candidates have been entered for this race yet.</p>
   {% endfor %}
+  </div>
 </section>
 
 <section id="survey" aria-labelledby="survey-h">
-  <h2 id="survey-h">Survey</h2>
+  <h2 id="survey-h">Quiz: what would you do?</h2>
   {% if race.questions %}
-  <p>Every scenario is hypothetical and limited to what this office can do. Choose what you would do, say how much it matters to you, and skip any question you like. Your answers stay in this page: nothing is sent or saved.</p>
-  <noscript><p class="banner-inline">The survey needs JavaScript to compare your answers. Everything else on this page works without it.</p></noscript>
+  <p>{{ race.questions | length }} quick what-if questions about this job. Pick an answer and say how much it matters to you, or skip. Nothing is saved or sent anywhere.</p>
+  <noscript><p class="banner-inline">The quiz needs JavaScript. Everything else on this page works without it.</p></noscript>
   <form id="survey-form" class="survey" novalidate>
     {% for q in race.questions %}
     <fieldset class="card question">
-      <legend><span class="q-number">Question {{ loop.index }}</span> {{ q.text }}</legend>
+      <legend><span class="q-number">Question {{ loop.index }} of {{ race.questions | length }}</span> {{ q.text }}</legend>
       <div class="options">
-        <label><input type="radio" name="answer-{{ q.id }}" value="" checked> Skip this question</label>
         {% for o in q.options %}
         <label><input type="radio" name="answer-{{ q.id }}" value="{{ o.id }}"> {{ o.text }}</label>
         {% endfor %}
+        <label class="skip"><input type="radio" name="answer-{{ q.id }}" value="" checked> Skip this one</label>
       </div>
       <fieldset class="importance">
         <legend>How much does this matter to you?</legend>
@@ -108,18 +124,23 @@
   </form>
   <div id="results" class="results" aria-live="polite" hidden></div>
   {% else %}
-  <p class="empty">The survey for this office hasn't been written yet.</p>
+  <p class="empty">The quiz for this office hasn't been written yet.</p>
   {% endif %}
 </section>
 
 <section id="running-on" aria-labelledby="running-h">
-  <h2 id="running-h">What each candidate is running on</h2>
-  <dl class="definitions">
-    <dt>Policy proposal</dt><dd>A specific action the candidate says they would take, with a source.</dd>
-    <dt>Attack messaging</dt><dd>Criticism of an opponent that names no policy and no record.</dd>
-    <dt>Contested claim</dt><dd>An assertion that is disputed, shown with what is documented. A claim is called contradicted only when an official record or independent fact-check shows otherwise, and that evidence is linked.</dd>
-  </dl>
-  <p class="note">The same test is applied to every candidate. Only sources reviewed so far are counted, so "Not found in the sources reviewed" means not found yet, not that it doesn't exist.</p>
+  <h2 id="running-h">What they're running on</h2>
+  <p class="muted">In their own words, from their campaigns.</p>
+  <details class="more">
+    <summary>How we sort what candidates say</summary>
+    <dl class="definitions">
+      <dt>Policy proposal</dt><dd>A specific thing the candidate says they would do, with a source.</dd>
+      <dt>Attack messaging</dt><dd>Criticism of an opponent that names no policy and no record.</dd>
+      <dt>Contested claim</dt><dd>A disputed claim, shown with what is documented. We call a claim contradicted only when an official record or independent fact-check shows otherwise, and we link that evidence.</dd>
+    </dl>
+    <p class="note">The same test is applied to every candidate. "Not found in the sources reviewed" means we haven't found one yet, not that none exists.</p>
+  </details>
+  <div class="cand-grid">
   {% for c in race.candidates %}
   <article class="card" aria-labelledby="run-{{ c.id }}">
     <h3 id="run-{{ c.id }}">{{ c.name }}</h3>
@@ -131,11 +152,13 @@
     {{ fact_list(c.running_on.contested_claims, race.facts) }}
   </article>
   {% endfor %}
+  </div>
 </section>
 
 <section id="promises" aria-labelledby="promises-h">
   <h2 id="promises-h">Promise tracker</h2>
-  <p class="note">For information only. The tracker does not change the match result.</p>
+  <p class="muted">Did they do what they said they would? Just for your information: this doesn't change quiz results.</p>
+  <div class="cand-grid">
   {% for c in race.candidates %}
   <article class="card" aria-labelledby="prom-{{ c.id }}">
     <h3 id="prom-{{ c.id }}">{{ c.name }}</h3>
@@ -144,11 +167,16 @@
       {% for p in c.promises %}
       <li class="promise">
         <p class="item-main"><span class="status status-{{ p.status }}">{{ PROMISE_STATUSES[p.status] }}</span>
-          {% if p.promise_fact %}{{ p.promise_fact.statement }}{% else %}<code>{{ p.promise }}</code>{% endif %}</p>
-        {% if p.promise_fact %}<p class="item-meta">Promise: {{ verification_badge(p.promise_fact) }} {{ source_line(p.promise_fact) }} · {{ report_link(p.promise) }}</p>{% endif %}
-        {% for ev in p.evidence_facts %}{% if ev %}
-        <p class="item-meta">Evidence: {{ ev.statement }} {{ verification_badge(ev) }} {{ source_line(ev) }}</p>
-        {% endif %}{% endfor %}
+          {% if p.promise_fact %}{{ p.promise_fact.get('headline') or p.promise_fact.statement }}{% else %}<code>{{ p.promise }}</code>{% endif %}</p>
+        {% if p.promise_fact %}
+        <details class="more">
+          <summary>Exact wording &amp; source</summary>
+          <p class="item-meta">Promise: {{ verification_badge(p.promise_fact) }} {{ source_line(p.promise_fact) }} · {{ report_link(p.promise) }}</p>
+          {% for ev in p.evidence_facts %}{% if ev %}
+          <p class="item-meta">Evidence: {{ ev.get('headline') or ev.statement }} {{ verification_badge(ev) }} {{ source_line(ev) }}</p>
+          {% endif %}{% endfor %}
+        </details>
+        {% endif %}
       </li>
       {% endfor %}
     </ul>
@@ -157,12 +185,13 @@
     {% endif %}
   </article>
   {% endfor %}
+  </div>
 </section>
 
 <section id="how" aria-labelledby="how-h">
-  <h2 id="how-h">How results are calculated</h2>
-  <p>Each answer is compared with the candidate's records on that question. Votes count 3, sponsored measures 2, promises kept or broken 2, and statements 1, multiplied by an evidence factor (official record 1.0, news report 0.7, candidate's own claim 0.4) and by how much the question matters to you. Only verified, documented records count, and several records of the same event count once.</p>
-  <p>Questions where a candidate has no record are left out, never scored as zero. A percentage appears only when at least 3 of your answered questions have verified records; otherwise you see what is on record for each answer. <a href="/methodology/">Read the full methodology</a>.</p>
+  <h2 id="how-h">How quiz results work</h2>
+  <p>We compare your answers with what each candidate has actually done. A vote counts more than a speech, and an official record counts more than a news story or a campaign claim. Only facts we've checked count.</p>
+  <p>If a candidate has no record on a question, it's left out, never counted against them. You'll only see a match percentage once there's enough checked record to compare. <a href="/methodology/">How it works, in full</a></p>
 </section>
 
 <script type="application/json" id="race-data">{{ payload | json_script }}</script>
