@@ -31,6 +31,22 @@ you see why.
 For a **question link**, also decide whether you agree with the options it supports and the
 "Why" reasoning. Verify it only if you do.
 
+## Verify many at once
+
+Many facts cite the same source. For example, every race on the Harris ballot cites a page of
+the County Clerk's sample ballot. To check them together:
+
+1. Tick **Group by source** at the top. Cards are now grouped by the document they cite.
+2. Open that source once, and check every card in the group against it.
+3. Click **✓ Verify all N ready in this group**. The confirmation box lists every item it
+   will change. Click **OK** only if you checked every one.
+
+Only unverified items that are ready (not grey) are changed. The checker runs once for the
+whole group; if it objects to anything, nothing is changed. Any single card can still be
+undone with **Undo**. Question links are never included; verify those one at a time.
+
+The same button appears on each file's group when **Group by source** is off.
+
 ## If something is wrong
 
 Don't verify it. Tell Claude which item (the code after the name, like `B-02`) and what
