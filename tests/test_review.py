@@ -27,6 +27,10 @@ def repo(tmp_path):
     root = tmp_path / "repo"
     for part in ("data", "offices", "corrections", "schemas"):
         shutil.copytree(REPO / part, root / part)
+    # Start from a known state: the owner may have verified these in the real data.
+    review.set_verification(root / PLUMMER, "fact", B02, False)
+    review.set_verification(root / PLUMMER, "fact", R01, False)
+    review.set_verification(root / PLUMMER, "mapping", f"{R01}|county-judge/S-06", False)
     return root
 
 

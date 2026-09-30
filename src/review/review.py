@@ -48,6 +48,7 @@ def load_items(root: Path) -> list[dict]:
                 "type": "fact", "file": rel, "who": who, "section": section, "key": fact["id"],
                 "local_id": fact["id"].split("#")[-1],
                 "text": fact.get("statement") or _essential_text(fact),
+                "headline": fact.get("headline"),
                 "label": fact.get("label"), "status": fact.get("claim_status"),
                 "source_url": fact.get("source_url"), "source_title": fact.get("source_title"),
                 "archive_url": fact.get("archive_url"),
@@ -217,6 +218,7 @@ function render(){
       <div class="meta">${esc(it.section)} · ${esc(it.local_id)} · ${done
         ? `<span class="badge v">Verified ${esc(it.verified_on)} by ${esc(it.reviewer)}</span>`
         : `<span class="badge u">Unverified</span>`}</div>
+      ${it.headline ? `<p><strong>Short version shown first:</strong> ${esc(it.headline)}</p><p class="meta">Full statement:</p>` : ""}
       <p>${it.type === "mapping" ? "<strong>Question link.</strong> " : ""}${esc(it.text)}</p>
       ${it.type === "mapping" ? `<p class="meta">Question ${esc(it.question)} · supports option(s) ${esc(it.options.join(", "))}<br>Why: ${esc(it.rationale)}</p>` : `<p class="meta">${esc(it.label)} · ${esc(it.status)}</p>`}
       <div class="row">

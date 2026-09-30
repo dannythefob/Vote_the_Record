@@ -48,6 +48,7 @@ records:
     event_date: "2026-08-15"
   - <<: *verified
     id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-04
+    headline: DEMO HEADLINE voted for competitive bids
     record_type: vote
     statement: Voted to require competitive bids on a storm-debris contract.
     source_url: https://example.org/demo-county/minutes/2025-06-04
@@ -89,6 +90,7 @@ running_on:
   policy_proposals:
     - <<: *unverified
       id: tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#O-01
+      headline: "Transparency: publish big contracts online"
       label: candidate_claim
       statement: Proposes publishing every county contract over $50,000 online.
       source_url: https://example.org/avery/platform

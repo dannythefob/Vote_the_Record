@@ -143,10 +143,12 @@ def test_voter_essentials_render_sorted_with_badges_and_sources(tmp_path):
     out = tmp_path / "dist"
     assert build(root, out, today=TODAY) == 0
     home = read(out, "index.html")
-    reg = home.index("Monday, October 5, 2026")
-    early = home.index("Monday, October 19, 2026 to Friday, October 30, 2026")
-    eday = home.index("Last day to register") and home.index("Election Day:")
-    assert reg < early < eday
+    grid = home[home.index('class="date-grid"'):home.index("</ul>", home.index('class="date-grid"'))]
+    reg, early, eday = grid.index("Last day to register"), grid.index("Early voting in person"), grid.index("Election Day")
+    assert reg < early < eday  # sorted by date
+    assert '<span class="date-big">Oct 5</span>' in grid
+    assert '<span class="date-big">Oct 19–30</span>' in grid
+    assert "Monday" in grid
     assert home.count('class="badge badge-unverified"') >= 3 + 1  # items + banner
     assert home.count('href="https://example.gov/dates"') == 3
     assert "Corrections form coming soon" in home
@@ -269,10 +271,10 @@ def test_candidates_alphabetical_not_file_order(demo_site):
 
 def test_ballot_party_only_when_not_null(demo_site):
     html = read(demo_site, RACE_PAGE)
-    assert "Listed on ballot as: Sample Party" in html
-    assert "Listed on ballot as: Other Sample Party" in html
+    assert "On the ballot as: Sample Party" in html
+    assert "On the ballot as: Other Sample Party" in html
     blake = html[html.index('id="cand-blake-sample"'):html.index('id="cand-casey-placeholder"')]
-    assert "Listed on ballot as" not in blake
+    assert "On the ballot as" not in blake
     assert "Not the incumbent" in blake
 
 
@@ -343,3 +345,35 @@ def test_survey_js_never_writes_html_or_inline_styles():
                       "setAttribute(\"style\"", "localStorage", "sessionStorage", "document.cookie",
                       "fetch(", "XMLHttpRequest", "sendBeacon"):
         assert forbidden not in js, forbidden
+
+
+def test_plain_job_summary_comes_first_with_law_one_click_away(demo_site):
+    html = read(demo_site, RACE_PAGE)
+    office = html[html.index('id="office-h"'):html.index('id="candidates-h"')]
+    assert "DEMO plain intro about the commissioners court." in html
+    assert office.index("DEMO votes on the budget") < office.index("See the exact law")
+    assert "<details" in office and "Votes on the county budget and the property tax rate" in office
+
+
+def test_fact_cards_lead_with_headline_and_fold_exact_wording(demo_site):
+    html = read(demo_site, RACE_PAGE)
+    anchor = "f-" + re.sub(r"[^A-Za-z0-9_-]+", "-",
+        "tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-04")
+    card = re.search(rf'<li class="card item fact" id="{anchor}">(.*?)</li>', html, re.S).group(1)
+    main, rest = card.split("<details", 1)
+    assert "DEMO HEADLINE voted for competitive bids" in main
+    assert "Voted to require competitive bids on a storm-debris contract." in rest
+
+
+def test_candidate_glance_is_built_from_facts_on_file(demo_site):
+    html = read(demo_site, RACE_PAGE)
+    avery = html[html.index('id="cand-avery-example"'):html.index('id="cand-blake-sample"')]
+    glance = avery[avery.index('class="glance"'):avery.index("</ul>", avery.index('class="glance"'))]
+    assert "<strong>Priorities:</strong> Transparency" in glance  # topic from the headline
+    assert "Has served as Precinct 9 commissioner since 2023." in glance  # summary fact
+    assert "5 votes" not in glance and "on record" in glance
+    casey = html[html.index('id="cand-casey-placeholder"'):]
+    assert "No record on file yet" in casey
+    card_start = html.rindex("<article", 0, html.index('id="cand-avery-example"'))
+    avery_card = html[card_start:html.index("</article>", card_start)]
+    assert 'class="avatar avatar-initials"' in avery_card and ">AE<" in avery_card

@@ -272,3 +272,26 @@ def test_organization_statement_allowed_on_endorsements_not_records(tmp_path):
     assert build(tmp_path / "ok", candidate(endorsements=[endorsement])) == []
     errors = build(tmp_path / "bad", with_fact(label="organization_statement"))
     assert any("label" in e or "organization_statement" in e for e in errors)
+
+
+def test_plain_summary_must_cite_existing_powers(tmp_path):
+    build(tmp_path)
+    write(tmp_path, "offices/test-office/powers.yaml", {"office_type": "test-office",
+          "powers": [{"id": "P-BUDGET", "description": "Adopts the budget.", "source_url": "https://example.gov/law"}],
+          "plain_summary": {"intro": {"text": "Runs the budget.", "powers": ["P-BUDGET"]},
+                            "points": [{"text": "Something else.", "powers": ["P-MISSING"]}]}})
+    errors = validate(tmp_path).errors
+    assert any("P-MISSING" in e for e in errors)
+    assert not any("P-BUDGET" in e for e in errors)
+
+
+def test_candidate_photo_needs_file_and_rights(tmp_path):
+    photo = {"file": "pat-doe.jpg", "source_url": "https://example.org/photo", "license": "CC BY 4.0",
+             "credit": "Example Photographer", "retrieved": "2026-09-30"}
+    errors = build(tmp_path / "a", candidate(photo=photo))
+    assert any("not found" in e for e in errors)
+    (tmp_path / "b" / CAND_REL).parent.mkdir(parents=True, exist_ok=True)
+    (tmp_path / "b" / CAND_REL).parent.joinpath("pat-doe.jpg").write_bytes(b"\xff\xd8\xff")
+    assert build(tmp_path / "b", candidate(photo=photo)) == []
+    no_license = {k: v for k, v in photo.items() if k != "license"}
+    assert any("license" in e for e in build(tmp_path / "c", candidate(photo=no_license)))

@@ -16,6 +16,26 @@
         }
       }
     },
+    "plain_summary": {
+      "description": "Short plain-language summary of the office. Every line cites the power IDs it summarizes.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["intro", "points"],
+      "properties": {
+        "intro": { "$ref": "#/$defs/plain_line" },
+        "points": { "type": "array", "minItems": 1, "maxItems": 8, "items": { "$ref": "#/$defs/plain_line" } }
+      }
+    },
+    "plain_line": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "powers"],
+      "properties": {
+        "text": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "icon": { "enum": ["gavel", "budget", "storm", "megaphone", "contract", "vote", "court", "shield"] },
+        "powers": { "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^P-[A-Z0-9-]+$" } }
+      }
+    },
     "race": {
       "type": "object",
       "additionalProperties": false,
@@ -114,7 +134,8 @@
       "properties": {
         "office_type": { "$ref": "urn:vtr:schema:fact#/$defs/slug" },
         "powers": { "type": "array", "items": { "$ref": "#/$defs/power" } },
-        "why_it_matters": { "$ref": "#/$defs/why_it_matters" }
+        "why_it_matters": { "$ref": "#/$defs/why_it_matters" },
+        "plain_summary": { "$ref": "#/$defs/plain_summary" }
       }
     },
     "office_override": {
@@ -128,7 +149,8 @@
         "powers": {
           "type": "array",
           "items": { "allOf": [{ "$ref": "#/$defs/power" }], "required": ["statute"] }
-        }
+        },
+        "plain_summary": { "$ref": "#/$defs/plain_summary" }
       }
     },
     "survey": {

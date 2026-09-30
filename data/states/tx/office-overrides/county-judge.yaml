@@ -48,3 +48,26 @@ powers:
     description: Is elected to a four-year term and presides over the County Court, with judicial functions as provided by law.
     statute: Texas Constitution art. V, §§ 15-16
     source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+
+# Plain-language version shown first on race pages. Each line cites the powers above it
+# summarizes; the full statute wording stays one click away.
+plain_summary:
+  intro:
+    text: Leads the Commissioners Court, the board that makes the county's big decisions, and is in charge of the county's emergency response.
+    powers: [P-PRESIDE, P-EMERGENCY-DIRECTOR]
+  points:
+    - text: Votes on the county budget and the property tax rate
+      icon: budget
+      powers: [P-BUDGET, P-TAX-RATE]
+    - text: Can declare a local disaster and order evacuations
+      icon: storm
+      powers: [P-DISASTER, P-EVACUATION]
+    - text: Leads emergency management for the whole county
+      icon: shield
+      powers: [P-EMERGENCY-DIRECTOR]
+    - text: Votes on big county contracts and purchases
+      icon: contract
+      powers: [P-CONTRACTS]
+    - text: Votes on how the county is divided into voting precincts
+      icon: vote
+      powers: [P-PRECINCTS]

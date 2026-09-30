@@ -1,6 +1,6 @@
 {% macro verification_badge(item) -%}
 {% if item.verification == "verified" -%}
-<span class="badge badge-verified">Verified {{ item.verified_on | longdate }}</span>
+<span class="badge badge-verified" title="Checked against the source on {{ item.verified_on | longdate }}">Verified</span>
 {%- else -%}
 <span class="badge badge-unverified">Unverified</span>
 {%- endif %}
@@ -16,13 +16,18 @@
 
 {% macro fact_card(fact, facts={}) -%}
 <li class="card item fact" id="{{ fact.id | anchor }}">
-  <p class="item-main">{% if fact.get('record_type') %}<strong>{{ RECORD_TYPES[fact.record_type] }}:</strong> {% endif %}{{ fact.statement }}</p>
+  <p class="item-main">{% if fact.get('record_type') %}<span class="kind">{{ RECORD_TYPES[fact.record_type] }}</span> {% endif %}{{ fact.get('headline') or fact.statement }}</p>
   <p class="item-meta">
     <span class="chip">{{ LABELS[fact.label] }}</span>
-    <span class="chip">{{ STATUSES[fact.claim_status] }}</span>
+    {% if fact.claim_status != "documented" %}<span class="chip chip-status">{{ STATUSES[fact.claim_status] }}</span>{% endif %}
     {{ verification_badge(fact) }}
-    · {{ source_line(fact) }} · {{ report_link(fact.id) }}
   </p>
+  <details class="more">
+    <summary>Exact wording &amp; source</summary>
+    {% if fact.get('headline') %}<p class="exact">{{ fact.statement }}</p>{% endif %}
+    <p class="item-meta">{{ source_line(fact) }}</p>
+    <p class="item-meta">Status: {{ STATUSES[fact.claim_status] }}{% if fact.verification == "verified" %} · Verified {{ fact.verified_on | longdate }} by {{ fact.reviewer }}{% endif %} · {{ report_link(fact.id) }}</p>
+  </details>
   {% if fact.get('contradicted_by') %}
   <p class="item-meta">Contradicted by:
     {% for ref in fact.contradicted_by %}

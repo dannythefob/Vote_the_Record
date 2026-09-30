@@ -1,59 +1,69 @@
 {% extends "base.html" %}
 {% from "partials/macros.html" import verification_badge, report_link, source_line %}
+{% from "partials/icons.html" import icon %}
 {% block title %}Home{% endblock %}
 {% block content %}
-<h1>Know the office. Check the record.</h1>
-<p class="lead">Nonpartisan, source-linked information about the offices on your ballot and what the candidates have actually done in them or in past roles.</p>
+<header class="hero">
+  <h1>Know who's on your ballot.</h1>
+  <p class="lead">Straight facts about what each office does and what the candidates have actually done, with a source for everything. No spin, no party colors.</p>
+  {% if site.races %}<a class="button" href="#races">{{ icon("quiz") }} Find your races</a>{% endif %}
+</header>
 
 <section aria-labelledby="essentials-h">
-  <h2 id="essentials-h">Voter essentials</h2>
+  <h2 id="essentials-h">Key dates</h2>
   {% for election in site.essentials %}
-  <h3>{{ election.state_name }}: election of {{ election.election_date | longdate }}</h3>
-  <ul class="item-list">
+  <p class="muted">{{ election.state_name }} · Election on {{ election.election_date | longdate }}</p>
+  <ul class="date-grid">
     {% for item in election.entries %}
-    <li class="card item">
-      <p class="item-main">
-        <strong>{{ item.name }}:</strong>
-        {% if item.get('date') %}{{ item.date | longdate }}{% else %}{{ item.start | longdate }} to {{ item.end | longdate }}{% endif %}
-        {% if item.get('detail') %}<span class="detail">{{ item.detail }}</span>{% endif %}
-      </p>
-      <p class="item-meta">{{ verification_badge(item) }} {{ source_line(item) }} · {{ report_link(item.id) }}</p>
+    <li class="date-card">
+      {% if item.get('date') %}
+      <span class="date-big">{{ item.date | shortdate }}</span>
+      <span class="date-day">{{ item.date | weekday }}</span>
+      {% else %}
+      <span class="date-big">{{ item.start | shortdate }}–{{ (item.end | shortdate).split(" ")[1] if (item.start[:7] == item.end[:7]) else (item.end | shortdate) }}</span>
+      <span class="date-day">{{ item.start | weekday }} to {{ item.end | weekday }}</span>
+      {% endif %}
+      <span class="date-label">{{ item.name }}</span>
+      {% if item.get('detail') %}<span class="date-detail">{{ item.detail }}</span>{% endif %}
+      {{ verification_badge(item) }}
     </li>
     {% endfor %}
   </ul>
+  <details class="more">
+    <summary>Sources for these dates</summary>
+    <ul class="item-list">
+      {% for item in election.entries %}
+      <li class="item-meta"><strong>{{ item.name }}:</strong> {{ source_line(item) }} · {{ report_link(item.id) }}</li>
+      {% endfor %}
+    </ul>
+  </details>
   {% endfor %}
   {% for state, links in (config.official_links or {}).items() %}
-  <h3>Official sources{% if site.essentials %} for {{ state }}{% endif %}</h3>
-  <ul class="link-list">
-    {% for link in links %}
-    <li><a href="{{ link.url }}" rel="noopener noreferrer">{{ link.name }}</a></li>
-    {% endfor %}
-  </ul>
+  <details class="more"{% if not site.essentials %} open{% endif %}>
+    <summary>Official voting info{% if site.essentials %} for {{ state }}{% endif %}: registering, early voting, mail ballots</summary>
+    <ul class="link-list">
+      {% for link in links %}
+      <li><a href="{{ link.url }}" rel="noopener noreferrer">{{ link.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </details>
   {% endfor %}
-  <p class="note">Always confirm dates, polling places, and ID rules with your county elections office or the state's official site.</p>
+  <p class="note">Always double-check dates, polling places, and ID rules with your county elections office.</p>
 </section>
 
-<section aria-labelledby="how-h">
-  <h2 id="how-h">How it works</h2>
-  <ol class="steps">
-    <li><strong>Learn what the office can do.</strong> Each race page starts with the office's legal powers, so you know what the job does and doesn't cover.</li>
-    <li><strong>See the record.</strong> Votes, sponsored measures, promises, and statements, each labeled as an official record, a news report, or a candidate's own claim, with a link to the source.</li>
-    <li><strong>Answer scenarios.</strong> Hypothetical situations the office could actually face. Party is never mentioned.</li>
-    <li><strong>Compare.</strong> Your answers are matched against verified records in your browser. Nothing is sent anywhere or saved.</li>
-  </ol>
-  <p><a href="/methodology/">Read the full methodology</a></p>
-</section>
-
-<section aria-labelledby="races-h">
+<section id="races" aria-labelledby="races-h">
   <h2 id="races-h">Races</h2>
   {% if site.races %}
   {% for state_name, state_races in site.races | groupby("state_name") %}
-  <h3>{{ state_name }}</h3>
   {% for locality_name, loc_races in state_races | groupby("locality_name") %}
-  <h4>{{ locality_name }}</h4>
-  <ul class="link-list">
+  <h3>{{ locality_name }}, {{ state_name }}</h3>
+  <ul class="race-grid">
     {% for race in loc_races | sort(attribute="name") %}
-    <li><a href="{{ race.url }}">{{ race.name }}</a> <span class="muted">· {{ race.election_date | longdate }}</span></li>
+    <li><a class="race-card" href="{{ race.url }}">
+      <span class="race-name">{{ race.name }}</span>
+      {% if race.plain_summary %}<span class="race-sum">{{ race.plain_summary.intro.text }}</span>{% endif %}
+      <span class="race-meta">{{ race.candidates | length }} candidates · Election {{ race.election_date | shortdate }} · Take the quiz →</span>
+    </a></li>
     {% endfor %}
   </ul>
   {% endfor %}
@@ -61,5 +71,15 @@
   {% else %}
   <p class="empty">No races published yet. Race pages appear here once their records have been gathered and checked.</p>
   {% endif %}
+</section>
+
+<section aria-labelledby="how-h">
+  <h2 id="how-h">How it works</h2>
+  <ol class="steps-grid">
+    <li>{{ icon("info") }}<strong>See what the job does.</strong> In plain words, with the actual law one click away.</li>
+    <li>{{ icon("document") }}<strong>Check the record.</strong> Votes, money, and promises, each with a link to where it came from.</li>
+    <li>{{ icon("quiz") }}<strong>Take the quiz.</strong> A few what-if questions. Your answers never leave your device.</li>
+  </ol>
+  <p><a href="/methodology/">How we do it, in full</a></p>
 </section>
 {% endblock %}
