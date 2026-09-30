@@ -101,7 +101,7 @@ def test_headers_file_has_csp_and_privacy_headers(real_site):
     assert headers.is_file()
     text = headers.read_text(encoding="utf-8")
     assert ("Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; "
-            "font-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; "
+            "font-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; "
             "frame-ancestors 'none'; base-uri 'none'; form-action 'self'") in text
     assert "Referrer-Policy: no-referrer" in text
     assert "Permissions-Policy:" in text
@@ -540,3 +540,24 @@ def test_ballot_payload_packs_precincts_as_area_indexes(demo_site):
     assert data["precincts"]["102"] == [5, 3]
     assert '<input id="precinct" name="precinct"' in html
     assert "on your voter registration card" in html
+
+
+
+def test_precinct_outlines_are_published_for_the_address_lookup(demo_site):
+    shapes = demo_site / "geo/tx/demo-county/2026-11-03/precinct-shapes.json"
+    assert shapes.is_file()
+    assert sorted(json.loads(shapes.read_text(encoding="utf-8"))["precincts"]) == ["101", "102", "103"]
+    html = read(demo_site, BALLOT_PAGE)
+    raw = re.search(r'<script type="application/json" id="ballot-data">(.*?)</script>', html, re.S).group(1)
+    data = json.loads(raw)
+    assert data["shapesUrl"] == "/geo/tx/demo-county/2026-11-03/precinct-shapes.json"
+    assert data["locality"] == "demo-county"
+    assert '<input id="address" name="address"' in html
+    assert "U.S. Census Bureau through our server and never stored" in html
+
+
+def test_home_address_box_maps_counties_to_ballots(demo_site):
+    html = read(demo_site, "index.html")
+    raw = re.search(r'<script type="application/json" id="county-index">(.*?)</script>', html, re.S).group(1)
+    assert json.loads(raw) == {"demo-county": [{"name": "Demo County ballot", "url": "/ballot/tx/demo-county/2026-11-03/"}]}
+    assert '<input id="address-home" name="address"' in html

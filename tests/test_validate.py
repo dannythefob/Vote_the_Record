@@ -410,3 +410,20 @@ def test_precinct_numbers_are_digits_without_leading_zeros(tmp_path):
             "sources": [dict(SRC, id="tx/localities/test-county/elections/2026-11-03/precincts#S-01")],
             "precincts": {"0012": ["us-house-9", "test-county/jp-1"]}}})
     assert any("precincts" in e and "0012" in e for e in errors)
+
+
+
+def test_precinct_shapes_must_match_precincts_and_cite_their_source(tmp_path):
+    import json as _json
+    pct = {"sources": [dict(SRC, id="tx/localities/test-county/elections/2026-11-03/precincts#S-01")],
+           "precincts": {"12": ["us-house-9", "test-county/jp-1"], "13": ["us-house-9"]}}
+    errors = ballot_repo(tmp_path, [US9, JP1], extra={f"{BALLOT_DIR}/precincts.yaml": pct})
+    assert errors == []
+    shapes = tmp_path / BALLOT_DIR / "precinct-shapes.json"
+    square = [[[0, 0], [1, 0], [1, 1], [0, 1], [0, 0]]]
+    shapes.write_text(_json.dumps({"source": "tx/elsewhere#S-01", "precincts": {"12": square, "99": square}}))
+    from validate import validate as _validate
+    errors = _validate(tmp_path).errors
+    assert any("source must be the ID" in e for e in errors)
+    assert any("precinct 13 has no outline" in e for e in errors)
+    assert any("precinct 99 has an outline but is not in precincts.yaml" in e for e in errors)

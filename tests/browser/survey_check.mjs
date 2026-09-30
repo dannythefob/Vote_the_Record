@@ -169,6 +169,14 @@ async function main() {
     document.getElementById('precinct').value = '';
     return out;
   })()`);
+  await load("/");
+  await cdp.send("Page.navigate", { url: origin + BALLOT + "#at=30.005000,-99.985000" });
+  for (let i = 0; i < 100; i++) {
+    if (await evaluate("location.hash === '#precinct=102'")) break;
+    await new Promise((r) => setTimeout(r, 50));
+  }
+  problems.cspViolations.push(...(await evaluate("window.__csp")).map((v) => `${BALLOT}#at: ${v}`));
+  report.ballot.fromLocation = await evaluate(`(() => ({ ...${visible}, precinctBox: document.getElementById('precinct').value }))()`);
   report.ballot.reset = await evaluate(`(async () => {
     document.getElementById('zip-reset').click();
     await new Promise(r => setTimeout(r, 50));

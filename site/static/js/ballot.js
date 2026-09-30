@@ -40,6 +40,58 @@ export function racesForPrecinct(payload, precinct) {
   return payload.races.filter((r) => mine.has(r.area)).map((r) => ({ n: r.n, split: false }));
 }
 
+/** Even-odd point-in-polygon over all of a precinct's rings (holes included). */
+export function pointInRings(rings, x, y) {
+  let inside = false;
+  for (const ring of rings) {
+    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      const [xi, yi] = ring[i];
+      const [xj, yj] = ring[j];
+      if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+    }
+  }
+  return inside;
+}
+
+/** The precinct whose outline contains the point, or null. */
+export function findPrecinct(shapes, lon, lat) {
+  for (const [id, rings] of Object.entries(shapes.precincts)) {
+    if (pointInRings(rings, lon, lat)) return id;
+  }
+  return null;
+}
+
+/** "Harris County" -> "harris-county" (matches locality folder names). */
+export function countySlug(name) {
+  return String(name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+
+export const LOCATE_ERRORS = {
+  "not-found": "We couldn't find that address. Check the house number and spelling, or use your ZIP code or precinct number.",
+  "bad-address": "Enter a street address with a house number, like 1001 Preston St, Houston.",
+  unavailable: "The address lookup isn't available right now. Use your ZIP code or precinct number instead.",
+};
+
+/** Ask our own Worker to find the address. Nothing is stored anywhere. */
+export async function locate(address, fetchFn = fetch) {
+  let res;
+  try {
+    res = await fetchFn("/api/locate", {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ address }),
+    });
+  } catch {
+    return { error: "unavailable" };
+  }
+  let data = {};
+  try {
+    data = await res.json();
+  } catch {
+    /* no body */
+  }
+  if (!res.ok) return { error: LOCATE_ERRORS[data.error] ? data.error : "unavailable" };
+  return data;
+}
+
 function plural(n, one, many) {
   return `${n} ${n === 1 ? one : many}`;
 }
@@ -53,6 +105,8 @@ function initBallotPage(payload) {
   const form = document.getElementById("zip-form");
   const input = document.getElementById("zip");
   const pctInput = document.getElementById("precinct");
+  const addrInput = document.getElementById("address");
+  let shapesPromise = null;
   const status = document.getElementById("zip-status");
   const reset = document.getElementById("zip-reset");
   const rows = [...document.querySelectorAll("[data-race]")];
@@ -98,7 +152,51 @@ function initBallotPage(payload) {
     if (updateHash) history.replaceState(null, "", `#zip=${clean}`);
   }
 
-  function applyPrecinct(text, updateHash) {
+  function loadShapes() {
+    if (!shapesPromise) {
+      shapesPromise = fetch(payload.shapesUrl).then((r) => {
+        if (!r.ok) throw new Error("shapes");
+        return r.json();
+      });
+    }
+    return shapesPromise;
+  }
+
+  async function placeAt(lat, lon, label) {
+    status.textContent = "Finding your precinct...";
+    let shapes;
+    try {
+      shapes = await loadShapes();
+    } catch {
+      shapesPromise = null;
+      status.textContent = "We couldn't load the precinct map. Use your ZIP code or precinct number instead.";
+      return;
+    }
+    const precinct = findPrecinct(shapes, lon, lat);
+    if (!precinct) {
+      showAll();
+      status.textContent = `${label}: that spot isn't inside a precinct in our ${payload.name} data. Showing every race.`;
+      return;
+    }
+    if (pctInput) pctInput.value = precinct;
+    applyPrecinct(precinct, true, label);
+  }
+
+  async function applyAddress(text) {
+    status.textContent = "Looking up your address...";
+    const found = await locate(text);
+    if (found.error) {
+      status.textContent = LOCATE_ERRORS[found.error];
+      return;
+    }
+    if (countySlug(found.county) !== payload.locality) {
+      status.textContent = `That address is in ${found.county || "another county"}, which isn't on this ballot.`;
+      return;
+    }
+    await placeAt(found.lat, found.lon, `Found ${found.matched}`);
+  }
+
+  function applyPrecinct(text, updateHash, label = "") {
     const clean = cleanPrecinct(text);
     if (!clean) {
       status.textContent = "Enter your precinct number (digits only), or leave it blank and use your ZIP code.";
@@ -111,13 +209,14 @@ function initBallotPage(payload) {
       return;
     }
     show(found);
-    status.textContent = `Precinct ${clean}: ${plural(found.length, "race", "races")} on your ballot, closest to home first.`;
+    status.textContent = `${label ? label + ". " : ""}Precinct ${clean}: ${plural(found.length, "race", "races")} on your ballot, closest to home first.`;
     if (updateHash) history.replaceState(null, "", `#precinct=${clean}`);
   }
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (pctInput && pctInput.value.trim()) applyPrecinct(pctInput.value, true);
+    if (addrInput && addrInput.value.trim()) applyAddress(addrInput.value);
+    else if (pctInput && pctInput.value.trim()) applyPrecinct(pctInput.value, true);
     else applyZip(input.value, true);
   });
   reset.addEventListener("click", () => {
@@ -128,7 +227,13 @@ function initBallotPage(payload) {
   });
   const zipHash = /^#zip=(\d{5})$/.exec(window.location.hash);
   const pctHash = /^#precinct=(\d{1,6})$/.exec(window.location.hash);
-  if (pctHash && pctInput) {
+  const atHash = /^#at=(-?\d{1,3}\.\d+),(-?\d{1,3}\.\d+)$/.exec(window.location.hash);
+  if (atHash && payload.shapesUrl) {
+    // From the home page's address box. The map location is dropped from the URL right
+    // away; placeAt then records only the precinct number.
+    history.replaceState(null, "", window.location.pathname);
+    placeAt(Number(atHash[1]), Number(atHash[2]), "Found your address");
+  } else if (pctHash && pctInput) {
     pctInput.value = pctHash[1];
     applyPrecinct(pctHash[1], false);
   } else if (zipHash) {
@@ -137,15 +242,37 @@ function initBallotPage(payload) {
   }
 }
 
-function initHomeFinder(index) {
+function initHomeFinder(index, counties) {
   const form = document.getElementById("zip-find");
   const input = document.getElementById("zip-home");
+  const addrInput = document.getElementById("address-home");
   const status = document.getElementById("zip-home-status");
   const choices = document.getElementById("zip-home-choices");
   form.hidden = false;
+
+  async function findByAddress(text) {
+    status.textContent = "Looking up your address...";
+    const found = await locate(text);
+    if (found.error) {
+      status.textContent = LOCATE_ERRORS[found.error];
+      return;
+    }
+    const ballots = counties[countySlug(found.county)] || [];
+    if (!ballots.length) {
+      status.textContent = `Found ${found.matched}, in ${found.county || "a county"} we don't cover yet. See the official voting info below.`;
+      return;
+    }
+    // The location goes in the # part of the link, which browsers never send to a server.
+    window.location.href = `${ballots[0].url}#at=${found.lat.toFixed(6)},${found.lon.toFixed(6)}`;
+  }
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     choices.replaceChildren();
+    if (addrInput && addrInput.value.trim()) {
+      findByAddress(addrInput.value);
+      return;
+    }
     const clean = cleanZip(input.value);
     if (!clean) {
       status.textContent = "Enter a 5-digit ZIP code.";
@@ -176,7 +303,7 @@ function init() {
   const ballot = readJson("ballot-data");
   if (ballot) initBallotPage(ballot);
   const index = readJson("zip-index");
-  if (index) initHomeFinder(index);
+  if (index) initHomeFinder(index, readJson("county-index") || {});
 }
 
 if (typeof document !== "undefined") init();

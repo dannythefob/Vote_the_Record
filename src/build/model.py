@@ -54,7 +54,7 @@ LEVELS = [
 LEVEL_RANK = {key: i for i, (key, _, _) in enumerate(LEVELS)}
 
 
-def assemble_ballot(docs: dict, rel: str, doc: dict, races_by_path: dict) -> dict:
+def assemble_ballot(docs: dict, rel: str, doc: dict, races_by_path: dict, root: Path | None = None) -> dict:
     folder = rel.rsplit("/", 1)[0]
     state, locality, date = folder.split("/")[2], folder.split("/")[4], folder.split("/")[6]
     contests = [races_by_path[c] for c in doc["contests"]]
@@ -66,6 +66,7 @@ def assemble_ballot(docs: dict, rel: str, doc: dict, races_by_path: dict) -> dic
         if members:
             groups.append({"level": key, "title": title, "blurb": blurb, "races": members})
     zips_doc = docs.get(f"{folder}/zips.yaml", (None, None))[1] or {}
+    has_shapes = bool(root) and (root / folder / "precinct-shapes.json").is_file()
     pct_doc = docs.get(f"{folder}/precincts.yaml", (None, None))[1] or {}
     # Precincts are sent as indexes into one area list, to keep the page small.
     area_list = sorted({a for areas in (pct_doc.get("precincts") or {}).values() for a in areas})
@@ -78,6 +79,8 @@ def assemble_ballot(docs: dict, rel: str, doc: dict, races_by_path: dict) -> dic
         "areas": area_list,
         "precincts": {k: [area_index[a] for a in v] for k, v in (pct_doc.get("precincts") or {}).items()},
         "precinctEverywhere": pct_doc.get("everywhere") or [],
+        "locality": locality,
+        "shapesUrl": f"/geo/{state}/{locality}/{date}/precinct-shapes.json" if has_shapes else None,
         "races": [{"n": i, "area": r["area"], "office": r["office_type"]} for i, r in enumerate(ranked)],
     }
     return {
@@ -89,6 +92,7 @@ def assemble_ballot(docs: dict, rel: str, doc: dict, races_by_path: dict) -> dic
         "precinct_sources": pct_doc.get("sources") or [],
         "has_zips": bool(payload["zips"]), "has_precincts": bool(payload["precincts"]), "groups": groups, "ranked": ranked,
         "count": len(ranked), "payload": payload, "rel": rel,
+        "shapes_src": (root / folder / "precinct-shapes.json") if has_shapes else None,
     }
 
 
@@ -139,10 +143,14 @@ def load_site(root: Path, today: str) -> dict:
         race.update(assemble_race(docs, race, facts))
 
     races_by_path = {r["path"]: r for r in races}
-    ballots = [assemble_ballot(docs, rel, doc, races_by_path)
+    ballots = [assemble_ballot(docs, rel, doc, races_by_path, root)
                for rel, (kind, doc) in docs.items() if kind == "ballot" and doc["election_date"] >= today]
     ballots.sort(key=lambda b: (b["election_date"], b["state"], b["name"].casefold()))
     on_ballot = {r["path"] for b in ballots for r in b["ranked"]}
+    county_index: dict[str, list[dict]] = {}
+    for b in ballots:
+        if b["payload"]["shapesUrl"]:
+            county_index.setdefault(b["locality"], []).append({"name": b["name"], "url": b["url"]})
     zip_index: dict[str, list[dict]] = {}
     for b in ballots:
         for zip_code in b["payload"]["zips"]:
@@ -150,7 +158,7 @@ def load_site(root: Path, today: str) -> dict:
 
     return {"races": races, "essentials": essentials, "corrections": corrections,
             "ballots": ballots, "other_races": [r for r in races if r["path"] not in on_ballot],
-            "zip_index": zip_index}
+            "zip_index": zip_index, "county_index": county_index}
 
 
 FACT_SECTIONS = ("summary", "records", "funding", "endorsements")

@@ -1,10 +1,12 @@
 // Cloudflare Worker for Vote the Record.
-// Serves the static site (env.ASSETS) and handles one endpoint: POST /api/report, the
-// public corrections form. Reports are stored privately in the REPORTS KV namespace for
-// the project owner to review; nothing is published automatically (CLAUDE.md rule 8).
-//
-// Privacy: stores only what the person typed, plus the time received. No IP address,
-// user agent, cookies, or other identifiers are read or kept.
+// Serves the static site (env.ASSETS) and handles two endpoints:
+// - POST /api/report: the public corrections form. Reports are stored privately in the
+//   REPORTS KV namespace for the project owner to review; nothing is published
+//   automatically (CLAUDE.md rule 8). Stores only what the person typed, plus the time
+//   received. No IP address, user agent, cookies, or other identifiers are read or kept.
+// - POST /api/locate: finds an address on the map for the ballot lookup. The address is
+//   passed to the U.S. Census Bureau geocoder and only the location and county come back.
+//   Nothing is stored or logged, and the visitor's IP address is not passed on.
 
 export const LIMITS = { item: 200, problem: 3000, source: 500, contact: 200 };
 const MIN_PROBLEM = 10;
@@ -47,12 +49,65 @@ export async function handleReport(request, env, now = new Date()) {
   return redirect("/report/thanks/");
 }
 
+const GEOCODER = "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress";
+const ADDRESS_MAX = 200;
+
+function json(body, status = 200) {
+  return new Response(JSON.stringify(body), {
+    status, headers: { "Content-Type": "application/json", ...SECURITY_HEADERS },
+  });
+}
+
+/** Clean a typed address, or return null if it can't be a street address. */
+export function cleanAddress(text) {
+  const address = String(text ?? "").replace(/\s+/g, " ").trim();
+  if (address.length < 5 || address.length > ADDRESS_MAX || !/\d/.test(address)) return null;
+  return address;
+}
+
+export async function handleLocate(request, fetchFn = fetch) {
+  if (!(request.headers.get("Content-Type") || "").startsWith("application/json")) return json({ error: "format" }, 400);
+  if (Number(request.headers.get("Content-Length") || 0) > 1024) return json({ error: "too-long" }, 400);
+  let address;
+  try {
+    address = cleanAddress((await request.json()).address);
+  } catch {
+    return json({ error: "format" }, 400);
+  }
+  if (!address) return json({ error: "bad-address" }, 400);
+  const url = `${GEOCODER}?${new URLSearchParams({
+    address, benchmark: "Public_AR_Current", vintage: "Current_Current", layers: "Counties", format: "json",
+  })}`;
+  let data;
+  try {
+    const res = await fetchFn(url, { headers: { Accept: "application/json" } });
+    if (!res.ok) return json({ error: "unavailable" }, 502);
+    data = await res.json();
+  } catch {
+    return json({ error: "unavailable" }, 502);
+  }
+  const match = data?.result?.addressMatches?.[0];
+  if (!match) return json({ error: "not-found" }, 404);
+  const county = match.geographies?.Counties?.[0] || {};
+  return json({
+    matched: match.matchedAddress,
+    lon: match.coordinates.x,
+    lat: match.coordinates.y,
+    county: county.NAME || null,
+    stateFips: county.STATE || null,
+  });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/api/report") {
       if (request.method !== "POST") return new Response("Method not allowed", { status: 405, headers: { Allow: "POST", ...SECURITY_HEADERS } });
       return handleReport(request, env);
+    }
+    if (url.pathname === "/api/locate") {
+      if (request.method !== "POST") return new Response("Method not allowed", { status: 405, headers: { Allow: "POST", ...SECURITY_HEADERS } });
+      return handleLocate(request);
     }
     return env.ASSETS.fetch(request);
   },

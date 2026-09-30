@@ -70,3 +70,46 @@ test("a precinct gets exactly its areas plus implied and everywhere areas, never
 test("zipEverywhere areas are added to every ZIP", () => {
   assert.ok(racesForZip(withPrecincts, "11111").some((r) => r.n === 6));
 });
+
+import { pointInRings, findPrecinct, countySlug, locate, LOCATE_ERRORS } from "../../site/static/js/ballot.js";
+
+const SHAPES = { precincts: {
+  "7": [[[0, 0], [10, 0], [10, 10], [0, 10], [0, 0]], [[4, 4], [6, 4], [6, 6], [4, 6], [4, 4]]],
+  "8": [[[4, 4], [6, 4], [6, 6], [4, 6], [4, 4]]],
+} };
+
+test("pointInRings respects holes", () => {
+  assert.equal(pointInRings(SHAPES.precincts["7"], 1, 1), true);
+  assert.equal(pointInRings(SHAPES.precincts["7"], 5, 5), false);
+  assert.equal(pointInRings(SHAPES.precincts["7"], 11, 5), false);
+});
+
+test("findPrecinct returns the precinct containing the point", () => {
+  assert.equal(findPrecinct(SHAPES, 5, 5), "8");
+  assert.equal(findPrecinct(SHAPES, 2, 8), "7");
+  assert.equal(findPrecinct(SHAPES, 20, 20), null);
+});
+
+test("countySlug matches locality folder names", () => {
+  assert.equal(countySlug("Harris County"), "harris-county");
+  assert.equal(countySlug("Fort Bend County"), "fort-bend-county");
+  assert.equal(countySlug(null), "");
+});
+
+test("locate posts only the address to our own Worker and maps errors", async () => {
+  let call;
+  const ok = await locate("1001 Preston St", async (url, init) => {
+    call = { url, init };
+    return new Response(JSON.stringify({ matched: "X", lat: 1, lon: 2, county: "Harris County" }), { status: 200 });
+  });
+  assert.equal(call.url, "/api/locate");
+  assert.deepEqual(JSON.parse(call.init.body), { address: "1001 Preston St" });
+  assert.equal(ok.county, "Harris County");
+  const nf = await locate("1 Nowhere", async () => new Response(JSON.stringify({ error: "not-found" }), { status: 404 }));
+  assert.deepEqual(nf, { error: "not-found" });
+  const odd = await locate("1 X", async () => new Response(JSON.stringify({ error: "weird" }), { status: 400 }));
+  assert.deepEqual(odd, { error: "unavailable" });
+  const down = await locate("1 X", async () => { throw new Error("offline"); });
+  assert.deepEqual(down, { error: "unavailable" });
+  assert.ok(LOCATE_ERRORS["not-found"].includes("couldn't find"));
+});

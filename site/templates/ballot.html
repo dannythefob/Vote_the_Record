@@ -9,6 +9,13 @@
   <p class="lead">{% if ballot.complete %}Every race on this ballot{% else %}Races on this ballot{% endif %}, starting with the ones closest to home. They shape your daily life soonest, and fewer people vote in them, so your vote counts for more.</p>
   {% if ballot.has_zips %}
   <form id="zip-form" class="zip-form" role="search" hidden>
+    {% if ballot.payload.shapesUrl %}
+    <label for="address">Your street address <span class="muted">(exact)</span></label>
+    <div class="zip-row">
+      <input id="address" name="address" type="text" autocomplete="street-address" maxlength="200" placeholder="1001 Preston St, Houston, TX">
+    </div>
+    <p class="muted">Your address is looked up by the U.S. Census Bureau through our server and never stored. Or use your ZIP code:</p>
+    {% endif %}
     <label for="zip">Your ZIP code</label>
     <div class="zip-row">
       <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" pattern="\d{5}(-\d{4})?" placeholder="77002">

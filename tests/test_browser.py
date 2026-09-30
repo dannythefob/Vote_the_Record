@@ -132,3 +132,11 @@ def test_precinct_number_gives_exact_races_and_wins_over_zip(report):
     assert p["split"] == []
     assert p["status"] == "Precinct 102: 3 races on your ballot, closest to home first."
     assert p["hash"] == "#precinct=102"
+
+
+def test_location_from_home_finds_the_precinct_and_drops_coordinates_from_the_url(report):
+    p = report["ballot"]["fromLocation"]
+    assert p["hash"] == "#precinct=102"  # the map location is not kept in the URL
+    assert p["precinctBox"] == "102"
+    assert p["races"] == ["Justice of the Peace, Precinct 2", "Governor", "U.S. Representative, District 2"]
+    assert p["status"].startswith("Found your address. Precinct 102: 3 races")

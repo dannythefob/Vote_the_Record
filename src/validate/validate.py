@@ -303,6 +303,21 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
                     report.error(rel, f"{key}: area '{area}' is not the area of any contest on the ballot")
         for area in sorted(ballot_areas[folder] - implied - used):
             report.error(rel, f"area '{area}' is on the ballot but no {noun} reaches it")
+        shapes_file = root / folder / "precinct-shapes.json"
+        if kind == "precincts" and shapes_file.is_file():
+            shapes_rel = f"{folder}/precinct-shapes.json"
+            try:
+                shapes = json.loads(shapes_file.read_text(encoding="utf-8"))
+            except ValueError as exc:
+                report.error(shapes_rel, f"not valid JSON: {exc}")
+                continue
+            if shapes.get("source") not in {s.get("id") for s in doc.get("sources") or []}:
+                report.error(shapes_rel, "source must be the ID of one of precincts.yaml's sources")
+            outlines, listed = set(shapes.get("precincts") or {}), set(doc.get("precincts") or {})
+            for key in sorted(listed - outlines, key=int)[:5]:
+                report.error(shapes_rel, f"precinct {key} has no outline")
+            for key in sorted(outlines - listed, key=int)[:5]:
+                report.error(shapes_rel, f"precinct {key} has an outline but is not in precincts.yaml")
 
     # Facts: path-based IDs, uniqueness, date order.
     all_ids: dict[str, str] = {}
