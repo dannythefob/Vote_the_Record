@@ -45,18 +45,31 @@ COUNTY_LAYER = "https://services.arcgis.com/su8ic9KbA7PYVxPS/arcgis/rest/service
 COUNTY_FIELDS = "VPCT,Comm__Cour,USCong_C2333,St_Rep_Dis,St_Sen_Dis,SBOE_E2106,JP_Constab"
 ZCTA_LAYER = "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer/2"
 SCOTUS_ORDER = "https://www.supremecourt.gov/opinions/25pdf/25a608_7khn.pdf"
-PLACE_LAYER = "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer/28"
-# Local areas: area slug -> Census GEOID. Only areas with a contest on the ballot are used.
+TIGER_SERVICE = "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer"
+PLACE_LAYER = TIGER_SERVICE + "/28"   # Incorporated Places (cities)
+SCHOOL_LAYER = TIGER_SERVICE + "/14"  # Unified School Districts
+# Local areas: area slug -> (Census layer, GEOID). Only areas with a contest on the ballot are used.
 LOCAL_AREAS = {
-    "city-of-houston": ("place", "4835000"),
-    "city-of-baytown": ("place", "4806128"),
-    "city-of-league-city": ("place", "4841980"),
+    "city-of-houston": (PLACE_LAYER, "4835000"),
+    "city-of-baytown": (PLACE_LAYER, "4806128"),
+    "city-of-league-city": (PLACE_LAYER, "4841980"),
+    "channelview-isd": (SCHOOL_LAYER, "4813590"),
+    "crosby-isd": (SCHOOL_LAYER, "4815750"),
+    "cypress-fairbanks-isd": (SCHOOL_LAYER, "4816110"),
+    "huffman-isd": (SCHOOL_LAYER, "4823820"),
+    "klein-isd": (SCHOOL_LAYER, "4825740"),
+    "la-porte-isd": (SCHOOL_LAYER, "4826190"),
+    "new-caney-isd": (SCHOOL_LAYER, "4832400"),
+    "sheldon-isd": (SCHOOL_LAYER, "4839990"),
+    "spring-isd": (SCHOOL_LAYER, "4841220"),
+    "tomball-isd": (SCHOOL_LAYER, "4842960"),
 }
 # Wayback Machine copies, checked when made (documents: same SHA-256 as the original).
 ARCHIVES = {
     SCOTUS_ORDER: "https://web.archive.org/web/20260930221333/https://www.supremecourt.gov/opinions/25pdf/25a608_7khn.pdf",
     ZCTA_LAYER: "https://web.archive.org/web/20260930221535/" + ZCTA_LAYER,
     PLACE_LAYER: "https://web.archive.org/web/20260930221613/" + PLACE_LAYER,
+    TIGER_SERVICE: "https://web.archive.org/web/20260930223321/" + TIGER_SERVICE,
 }
 SURE_SHARE = 0.99  # a precinct or ZIP at least this much inside an area is treated as fully inside
 STEP = 0.001      # grid step in degrees (~110 m north-south)
@@ -264,12 +277,12 @@ def main(argv=None) -> int:
 
     # Local areas (cities): rasterize each outline and measure how much of every precinct and
     # ZIP falls inside it. Mostly inside -> the area; partly inside -> a "maybe" entry.
-    local = {slug: geoid for slug, (_, geoid) in LOCAL_AREAS.items() if slug in on_ballot}
+    local = {slug: spec for slug, spec in LOCAL_AREAS.items() if slug in on_ballot}
     local_feats = {}
-    for slug, geoid in local.items():
-        feats = paged(PLACE_LAYER, {"where": f"GEOID='{geoid}'", "outFields": "GEOID,NAME", "returnGeometry": "true",
-                                    "outSR": 4326, "geometryPrecision": 6, "f": "geojson"}, args.cache, f"place-{geoid}", 10)
-        assert len(feats) == 1, f"expected one place for {geoid}"
+    for slug, (layer, geoid) in local.items():
+        feats = paged(layer, {"where": f"GEOID='{geoid}'", "outFields": "GEOID,NAME", "returnGeometry": "true",
+                              "outSR": 4326, "geometryPrecision": 6, "f": "geojson"}, args.cache, f"place-{geoid}", 10)
+        assert len(feats) == 1, f"expected one area for {geoid}"
         local_feats[slug] = feats[0]
     pct_cells: dict[int, int] = {}
     zip_cells: dict[str, int] = {}
@@ -358,15 +371,18 @@ def main(argv=None) -> int:
     zip_county = dict(county_src, id=f"{fid}/zips#S-02")
     raw_places = b"".join((args.cache / f).read_bytes() for f in sorted(p.name for p in args.cache.glob("place-*.json")))
     place_src = source(
-        f"{fid}/precincts#S-03", "Census city boundaries (incorporated places)",
-        "The U.S. Census Bureau's TIGERweb service publishes the boundaries of incorporated places (cities) as of "
-        "its current vintage.",
-        PLACE_LAYER, "U.S. Census Bureau TIGERweb: Incorporated Places", "page", None,
-        f"Read on {TODAY}; SHA-256 of the downloaded query responses: {sha(raw_places)}. Places used: "
-        + ", ".join(f"{slug} (GEOID {geoid})" for slug, geoid in sorted(local.items()))
+        f"{fid}/precincts#S-03", "Census boundaries of cities and school districts",
+        "The U.S. Census Bureau's TIGERweb service publishes the current boundaries of incorporated places (cities) "
+        "and unified school districts.",
+        TIGER_SERVICE, "U.S. Census Bureau TIGERweb: Incorporated Places (layer 28) and Unified School Districts (layer 14)",
+        "page", None,
+        f"Read on {TODAY}; SHA-256 of the downloaded query responses: {sha(raw_places)}. Areas used: "
+        + ", ".join(f"{slug} (layer {layer.rsplit('/', 1)[1]}, GEOID {geoid})" for slug, (layer, geoid) in sorted(local.items()))
         + f". A precinct or ZIP code at least {SURE_SHARE:.0%} inside a city counts as inside it; one at least "
         f"{MIN_SHARE:.0%} inside is marked as depending on the address. The address lookup uses the outlines directly.")
     zip_place = dict(place_src, id=f"{fid}/zips#S-03")
+    if len(local) != len({g for _, g in local.values()}):
+        raise SystemExit("two local areas share a GEOID")
 
     write(args.out / "precincts.yaml", "Each precinct's districts from the Harris County precinct layer; a nested "
           "list means the precinct is only partly in those areas (city lines).",

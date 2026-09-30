@@ -1,0 +1,5 @@
+# La Porte ISD, on the Harris County ballot. Boundaries come from the Census Bureau (see precincts.yaml).
+locality: la-porte-isd
+type: school-district
+state: TX
+sources: []

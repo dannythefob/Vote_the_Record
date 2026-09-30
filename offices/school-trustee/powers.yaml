@@ -1,0 +1,3 @@
+office_type: school-trustee
+level: local
+powers: []   # Texas powers: data/states/tx/office-overrides/school-trustee.yaml

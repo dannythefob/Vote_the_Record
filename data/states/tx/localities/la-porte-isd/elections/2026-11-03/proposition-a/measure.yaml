@@ -1,0 +1,42 @@
+# Proposition: exact wording and choices as printed on the Harris County sample ballot. Unverified.
+name: La Porte ISD, Proposition A
+election_date: '2026-11-03'
+kind: tax-rate
+ballot_text: THIS IS A TAX INCREASE Ratifying the ad valorem tax rate of $1.0673 in La Porte Independent School District for the current year, a rate that will result in an increase of 0.12 percent in maintenance and operations tax revenue for the district for the current year as compared to the preceding year, which is an additional $136,630.28.
+choices:
+- FOR
+- AGAINST
+explained:
+- id: tx/localities/la-porte-isd/elections/2026-11-03/proposition-a/measure#E-01
+  headline: Voters must approve this rate because it is above the district's voter-approval rate
+  statement: 'Tax Code § 26.08(a): "If the governing body of a school district adopts a tax rate that exceeds the district''s voter-approval tax rate, the registered voters of the district at an election held for that purpose must determine whether to approve the adopted tax rate."'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://tcss.legis.texas.gov/resources/TX/htm/TX.26.htm
+  source_title: Texas Tax Code § 26.08 (Texas Legislature, statutes)
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20260930223049/https://tcss.legis.texas.gov/resources/TX/htm/TX.26.htm
+  event_date: '2026-09-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+sources:
+- id: tx/localities/la-porte-isd/elections/2026-11-03/proposition-a/measure#S-01
+  headline: Proposition as printed on the Harris County sample ballot
+  statement: 'The Harris County Clerk''s sample ballot for the November 3, 2026 election prints "La Porte ISD, Proposition A" on page 10 with the choices FOR and AGAINST and this English wording: "THIS IS A TAX INCREASE Ratifying the ad valorem tax rate of $1.0673 in La Porte Independent School District for the current year, a rate that will result in an increase of 0.12 percent in maintenance and operations tax revenue for the district for the current year as compared to the preceding year, which is an additional $136,630.28."'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  source_title: 'Harris County Clerk: Sample Ballot, November 3, 2026 General and Special Elections (page 10)'
+  source_kind: document
+  sha256: 0b35cb063ef0cb82001e2fb79141e259b95c330cd0d10ad7b2575e34d611e1ed
+  archive_url: https://web.archive.org/web/20260921224207/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  event_date: '2026-11-03'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null

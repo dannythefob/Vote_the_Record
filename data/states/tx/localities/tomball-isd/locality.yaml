@@ -1,0 +1,5 @@
+# Tomball ISD, on the Harris County ballot. Boundaries come from the Census Bureau (see precincts.yaml).
+locality: tomball-isd
+type: school-district
+state: TX
+sources: []

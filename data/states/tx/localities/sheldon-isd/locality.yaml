@@ -1,0 +1,5 @@
+# Sheldon ISD, on the Harris County ballot. Boundaries come from the Census Bureau (see precincts.yaml).
+locality: sheldon-isd
+type: school-district
+state: TX
+sources: []

@@ -1,0 +1,42 @@
+# Proposition: exact wording and choices as printed on the Harris County sample ballot. Unverified.
+name: Cypress-Fairbanks ISD, Proposition D
+election_date: '2026-11-03'
+kind: bond
+ballot_text: THIS IS A PROPERTY TAX INCREASE The issuance of $60,800,000 of bonds for the improvement, capital renovation, repair and replacement, and equipment of existing District stadium facilities, and the levying of a tax sufficient to pay the principal of and interest on the bonds and the costs of any credit agreements executed or authorized in anticipation of, in relation to or in connection with the bonds.
+choices:
+- FOR
+- AGAINST
+explained:
+- id: tx/localities/cypress-fairbanks-isd/elections/2026-11-03/proposition-d/measure#E-01
+  headline: The district can't issue these bonds or levy the tax to repay them unless a majority of voters approve
+  statement: 'Education Code § 45.003(a): "Bonds described by Section 45.001 may not be issued and taxes described by Section 45.001 or 45.002 may not be levied unless authorized by a majority of the qualified voters of the district, voting at an election held for that purpose ..."'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://tcss.legis.texas.gov/resources/ED/htm/ED.45.htm
+  source_title: Texas Education Code § 45.003 (Texas Legislature, statutes)
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20260930223123/https://tcss.legis.texas.gov/resources/ED/htm/ED.45.htm
+  event_date: '2026-09-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+sources:
+- id: tx/localities/cypress-fairbanks-isd/elections/2026-11-03/proposition-d/measure#S-01
+  headline: Proposition as printed on the Harris County sample ballot
+  statement: 'The Harris County Clerk''s sample ballot for the November 3, 2026 election prints "Cypress-Fairbanks ISD, Proposition D" on page 9 with the choices FOR and AGAINST and this English wording: "THIS IS A PROPERTY TAX INCREASE The issuance of $60,800,000 of bonds for the improvement, capital renovation, repair and replacement, and equipment of existing District stadium facilities, and the levying of a tax sufficient to pay the principal of and interest on the bonds and the costs of any credit agreements executed or authorized in anticipation of, in relation to or in connection with the bonds."'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  source_title: 'Harris County Clerk: Sample Ballot, November 3, 2026 General and Special Elections (page 9)'
+  source_kind: document
+  sha256: 0b35cb063ef0cb82001e2fb79141e259b95c330cd0d10ad7b2575e34d611e1ed
+  archive_url: https://web.archive.org/web/20260921224207/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  event_date: '2026-11-03'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
