@@ -41,6 +41,7 @@ FILE_KINDS = [
     (re.compile(r"^data/states/[a-z]{2}/localities/[^/]+/elections/\d{4}-\d{2}-\d{2}/zips\.yaml$"), "zips"),
     (re.compile(r"^data/states/[a-z]{2}/localities/[^/]+/elections/\d{4}-\d{2}-\d{2}/precincts\.yaml$"), "precincts"),
     (re.compile(r"^data/states/[a-z]{2}/(statewide|districts/[^/]+|localities/[^/]+)/elections/\d{4}-\d{2}-\d{2}/[^/]+/race\.yaml$"), "race"),
+    (re.compile(r"^data/states/[a-z]{2}/(statewide|districts/[^/]+|localities/[^/]+)/elections/\d{4}-\d{2}-\d{2}/[^/]+/measure\.yaml$"), "measure"),
     (re.compile(r"^data/states/[a-z]{2}/(statewide|districts/[^/]+|localities/[^/]+)/elections/\d{4}-\d{2}-\d{2}/[^/]+/candidates/[^/]+\.yaml$"), "candidate"),
     (re.compile(r"^corrections/log\.yaml$"), "corrections"),
 ]
@@ -81,7 +82,7 @@ def load_validators(schemas_dir: Path) -> dict[str, Draft202012Validator]:
         **{
             kind: for_ref(f"urn:vtr:schema:other#/$defs/{kind}")
             for kind in ("race", "actions", "powers", "office_override", "survey",
-                         "state", "locality", "corrections", "voter_essentials", "ballot", "zips", "precincts")
+                         "state", "locality", "corrections", "voter_essentials", "ballot", "zips", "precincts", "measure")
         },
     }
 
@@ -120,11 +121,17 @@ def race_area(rel: str, doc: dict) -> str:
     return doc.get("area") or race_parts(rel)["default_area"]
 
 
+def measure_level(rel: str, doc: dict) -> str:
+    return doc.get("level") or ("state" if race_parts(rel)["scope"] == "statewide" else "local")
+
+
 def iter_facts(kind: str, doc: dict):
     """Yield (section, fact) for every fact-like item that carries a path-based ID."""
-    if kind in ("race", "ballot", "zips", "precincts"):
+    if kind in ("race", "ballot", "zips", "precincts", "measure"):
         for fact in doc.get("sources") or []:
             yield "sources", fact
+        for fact in doc.get("explained") or []:
+            yield "explained", fact
     elif kind == "actions":
         for fact in doc.get("facts") or []:
             yield "facts", fact
@@ -243,6 +250,9 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
     # Ballots: contests exist, match the election, and can be ordered; ZIPs reach every area.
     levels = {rel.split("/")[1]: doc.get("level") for rel, (kind, doc) in docs.items()
               if kind == "powers" and isinstance(doc, dict)}
+    for rel, (kind, doc) in docs.items():
+        if kind == "measure" and f"{rel.rsplit('/', 1)[0]}/race.yaml" in docs:
+            report.error(rel, "a contest folder holds either race.yaml or measure.yaml, not both")
     urls: dict[str, str] = {}
     for rel, (kind, doc) in docs.items():
         if kind == "race" and isinstance(doc, dict):
@@ -265,12 +275,15 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
             seen.add(contest)
             race_rel = f"data/states/{contest}/race.yaml"
             race_kind, race = docs.get(race_rel, (None, None))
-            if race_kind != "race" or not isinstance(race, dict):
-                report.error(rel, f"contest '{contest}' has no race.yaml")
+            if race_kind != "race":
+                race_rel = f"data/states/{contest}/measure.yaml"
+                race_kind, race = docs.get(race_rel, (None, None))
+            if race_kind not in ("race", "measure") or not isinstance(race, dict):
+                report.error(rel, f"contest '{contest}' has no race.yaml or measure.yaml")
                 continue
             if race.get("election_date") != doc.get("election_date"):
                 report.error(rel, f"contest '{contest}' is for a different election")
-            if not (race.get("level") or levels.get(race.get("office_type"))):
+            if race_kind == "race" and not (race.get("level") or levels.get(race.get("office_type"))):
                 report.error(rel, f"contest '{contest}': no level (set it in offices/{race.get('office_type')}/powers.yaml)")
             areas.add(race_area(race_rel, race))
         ballot_areas[rel.rsplit("/", 1)[0]] = areas
@@ -318,6 +331,19 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
                 report.error(shapes_rel, f"precinct {key} has no outline")
             for key in sorted(outlines - listed, key=int)[:5]:
                 report.error(shapes_rel, f"precinct {key} has an outline but is not in precincts.yaml")
+        area_file = root / folder / "area-shapes.json"
+        if kind == "precincts" and area_file.is_file():
+            area_rel = f"{folder}/area-shapes.json"
+            try:
+                area_shapes = json.loads(area_file.read_text(encoding="utf-8"))
+            except ValueError as exc:
+                report.error(area_rel, f"not valid JSON: {exc}")
+                continue
+            if area_shapes.get("source") not in {s.get("id") for s in doc.get("sources") or []}:
+                report.error(area_rel, "source must be the ID of one of precincts.yaml's sources")
+            for area in sorted(area_shapes.get("areas") or {}):
+                if area not in ballot_areas[folder]:
+                    report.error(area_rel, f"area '{area}' is not the area of any contest on the ballot")
 
     # Facts: path-based IDs, uniqueness, date order.
     all_ids: dict[str, str] = {}

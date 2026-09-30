@@ -427,3 +427,31 @@ def test_precinct_shapes_must_match_precincts_and_cite_their_source(tmp_path):
     assert any("source must be the ID" in e for e in errors)
     assert any("precinct 13 has no outline" in e for e in errors)
     assert any("precinct 99 has an outline but is not in precincts.yaml" in e for e in errors)
+
+
+
+MEASURE_SRC = dict(SRC, id="tx/localities/test-county/elections/2026-11-03/prop-a/measure#S-01")
+MEASURE = {"name": "Test County, Proposition A", "election_date": "2026-11-03", "ballot_text": "Shall the county...",
+           "choices": ["FOR", "AGAINST"], "sources": [MEASURE_SRC]}
+PROP = "tx/localities/test-county/elections/2026-11-03/prop-a"
+
+
+def test_ballot_can_list_a_measure(tmp_path):
+    errors = ballot_repo(tmp_path, [US9, JP1, PROP], {"77001": ["us-house-9", "test-county/jp-1"]},
+                         extra={f"{BALLOT_DIR}/prop-a/measure.yaml": MEASURE})
+    assert errors == []
+
+
+def test_contest_folder_cannot_hold_both_a_race_and_a_measure(tmp_path):
+    errors = ballot_repo(tmp_path, [US9, JP1], {"77001": ["us-house-9", "test-county/jp-1"]},
+                         extra={f"{BALLOT_DIR}/jp-1/measure.yaml": dict(MEASURE, sources=[
+                             dict(SRC, id="tx/localities/test-county/elections/2026-11-03/jp-1/measure#S-01")])})
+    assert any("either race.yaml or measure.yaml" in e for e in errors)
+
+
+def test_measure_needs_choices_and_exact_wording(tmp_path):
+    bad = {k: v for k, v in MEASURE.items() if k != "ballot_text"}
+    errors = ballot_repo(tmp_path, [US9, JP1], {"77001": ["us-house-9", "test-county/jp-1"]},
+                         extra={f"{BALLOT_DIR}/prop-a/measure.yaml": dict(bad, choices=["FOR"])})
+    assert any("ballot_text" in e for e in errors)
+    assert any("choices" in e for e in errors)

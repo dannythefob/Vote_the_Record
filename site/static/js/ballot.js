@@ -32,12 +32,44 @@ export function cleanPrecinct(text) {
   return m && m[1] !== "0" ? m[1] : null;
 }
 
-/** Races for a voting precinct (exact, never split), or null if the precinct isn't on this ballot. */
-export function racesForPrecinct(payload, precinct) {
+/**
+ * Races for a voting precinct, or null if the precinct isn't on this ballot. A nested entry
+ * means the precinct is split (or, with one item, only partly in that area): those races are
+ * flagged split, unless `atPoint` (the local areas containing the voter's exact location)
+ * settles them.
+ */
+export function racesForPrecinct(payload, precinct, atPoint = null) {
   const codes = (payload.precincts || {})[precinct];
   if (!codes) return null;
-  const mine = new Set([...payload.implied, ...(payload.precinctEverywhere || []), ...codes.map((i) => payload.areas[i])]);
-  return payload.races.filter((r) => mine.has(r.area)).map((r) => ({ n: r.n, split: false }));
+  const known = new Set(payload.localAreas || []);
+  const sure = new Set([...payload.implied, ...(payload.precinctEverywhere || [])]);
+  const maybe = new Set();
+  for (const code of codes) {
+    if (!Array.isArray(code)) {
+      sure.add(payload.areas[code]);
+      continue;
+    }
+    for (const i of code) {
+      const area = payload.areas[i];
+      if (atPoint && known.has(area)) {
+        if (atPoint.has(area)) sure.add(area);
+      } else {
+        maybe.add(area);
+      }
+    }
+  }
+  return payload.races
+    .filter((r) => sure.has(r.area) || maybe.has(r.area))
+    .map((r) => ({ n: r.n, split: maybe.has(r.area) && !sure.has(r.area) }));
+}
+
+/** Local areas (cities, districts) whose outlines contain the point. */
+export function areasAt(areaShapes, lon, lat) {
+  const inside = new Set();
+  for (const [area, rings] of Object.entries(areaShapes.areas || {})) {
+    if (pointInRings(rings, lon, lat)) inside.add(area);
+  }
+  return inside;
 }
 
 /** Even-odd point-in-polygon over all of a precinct's rings (holes included). */
@@ -107,6 +139,7 @@ function initBallotPage(payload) {
   const pctInput = document.getElementById("precinct");
   const addrInput = document.getElementById("address");
   let shapesPromise = null;
+  let areaShapesPromise = null;
   const status = document.getElementById("zip-status");
   const reset = document.getElementById("zip-reset");
   const rows = [...document.querySelectorAll("[data-race]")];
@@ -172,6 +205,15 @@ function initBallotPage(payload) {
       status.textContent = "We couldn't load the precinct map. Use your ZIP code or precinct number instead.";
       return;
     }
+    let atPoint = null;
+    if (payload.areaShapesUrl) {
+      try {
+        if (!areaShapesPromise) areaShapesPromise = fetch(payload.areaShapesUrl).then((r) => r.json());
+        atPoint = areasAt(await areaShapesPromise, lon, lat);
+      } catch {
+        areaShapesPromise = null;  // local races then show as "depends on your address"
+      }
+    }
     const precinct = findPrecinct(shapes, lon, lat);
     if (!precinct) {
       showAll();
@@ -179,7 +221,7 @@ function initBallotPage(payload) {
       return;
     }
     if (pctInput) pctInput.value = precinct;
-    applyPrecinct(precinct, true, label);
+    applyPrecinct(precinct, true, label, atPoint);
   }
 
   async function applyAddress(text) {
@@ -196,20 +238,22 @@ function initBallotPage(payload) {
     await placeAt(found.lat, found.lon, `Found ${found.matched}`);
   }
 
-  function applyPrecinct(text, updateHash, label = "") {
+  function applyPrecinct(text, updateHash, label = "", atPoint = null) {
     const clean = cleanPrecinct(text);
     if (!clean) {
       status.textContent = "Enter your precinct number (digits only), or leave it blank and use your ZIP code.";
       return;
     }
-    const found = racesForPrecinct(payload, clean);
+    const found = racesForPrecinct(payload, clean, atPoint);
     if (!found) {
       showAll();
       status.textContent = `Precinct ${clean} isn't in our ${payload.name} data. Showing every race on this ballot.`;
       return;
     }
     show(found);
-    status.textContent = `${label ? label + ". " : ""}Precinct ${clean}: ${plural(found.length, "race", "races")} on your ballot, closest to home first.`;
+    const split = found.filter((r) => r.split).length;
+    status.textContent = `${label ? label + ". " : ""}Precinct ${clean}: ${plural(found.length, "race", "races")} on your ballot, closest to home first.` +
+      (split ? ` ${plural(split, "race depends", "races depend")} on your exact address.` : "");
     if (updateHash) history.replaceState(null, "", `#precinct=${clean}`);
   }
 

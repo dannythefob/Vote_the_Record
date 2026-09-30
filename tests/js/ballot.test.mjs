@@ -113,3 +113,35 @@ test("locate posts only the address to our own Worker and maps errors", async ()
   assert.deepEqual(down, { error: "unavailable" });
   assert.ok(LOCATE_ERRORS["not-found"].includes("couldn't find"));
 });
+
+import { areasAt } from "../../site/static/js/ballot.js";
+
+const CITY = {
+  implied: ["tx", "demo-county"],
+  areas: ["city-a", "us-house-1"],
+  localAreas: ["city-a"],
+  precincts: { "5": [1, [0]], "6": [1, 0] },
+  zips: {},
+  races: [
+    { n: 0, area: "city-a", office: "measure" },
+    { n: 1, area: "us-house-1", office: "us-representative" },
+    { n: 2, area: "tx", office: "governor" },
+  ],
+};
+
+test("a precinct partly inside a city flags the city's contests as depending on the address", () => {
+  assert.deepEqual(racesForPrecinct(CITY, "5"), [
+    { n: 0, split: true }, { n: 1, split: false }, { n: 2, split: false }]);
+  assert.deepEqual(racesForPrecinct(CITY, "6")[0], { n: 0, split: false });
+});
+
+test("an exact location settles city contests: inside keeps them, outside drops them", () => {
+  assert.deepEqual(racesForPrecinct(CITY, "5", new Set(["city-a"])).map((r) => [r.n, r.split]), [[0, false], [1, false], [2, false]]);
+  assert.deepEqual(racesForPrecinct(CITY, "5", new Set()).map((r) => r.n), [1, 2]);
+});
+
+test("areasAt lists every local area whose outline contains the point", () => {
+  const shapes = { areas: { "city-a": [[[0, 0], [2, 0], [2, 2], [0, 2], [0, 0]]], "city-b": [[[5, 5], [6, 5], [6, 6], [5, 6], [5, 5]]] } };
+  assert.deepEqual([...areasAt(shapes, 1, 1)], ["city-a"]);
+  assert.deepEqual([...areasAt(shapes, 9, 9)], []);
+});

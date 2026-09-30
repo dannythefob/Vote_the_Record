@@ -171,6 +171,11 @@ on your voter registration card. Enter it to see exactly the races on your ballo
 precinct's districts come from the county's official voting precinct map. Like the ZIP
 lookup, it runs in your browser and nothing is sent or saved.
 
+**Cities and other local areas.** City limits come from the Census Bureau's official city
+boundaries. A precinct or ZIP code that is only partly inside a city shows that city's races
+and propositions as "Depends on your address"; the address lookup checks the city outline
+directly, so it gives the exact answer.
+
 **How ZIP codes are matched.** ZIP codes aren't voting districts. We use the Census
 Bureau's ZIP Code Tabulation Areas, which approximate ZIP codes, and overlay them on the
 county's precinct map. A precinct counts for a ZIP code when it covers at least 1% of the

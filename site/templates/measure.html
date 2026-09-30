@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% from "partials/macros.html" import fact_list, verification_badge, source_line, report_link %}
+{% block title %}{{ measure.name }}{% endblock %}
+{% block description %}The exact ballot wording of {{ measure.name }}, your choices, and what it means, with sources.{% endblock %}
+{% block content %}
+<header class="race-hero">
+  <p class="eyebrow">Proposition · {{ measure.locality_name }}, {{ measure.state_name }} · Election Day {{ measure.election_date | longdate }}</p>
+  <h1>{{ measure.name }}</h1>
+  <p class="lead">A question for voters, not a candidate race. Here's exactly what the ballot says, and what it means.</p>
+</header>
+
+<section id="wording" aria-labelledby="wording-h">
+  <h2 id="wording-h">What the ballot says</h2>
+  <p class="muted">Exact wording from the official ballot.</p>
+  <blockquote class="ballot-text">{{ measure.ballot_text }}</blockquote>
+  <h3>Your choices</h3>
+  <ul class="choice-list">
+    {% for choice in measure.choices %}<li>{{ choice }}</li>{% endfor %}
+  </ul>
+</section>
+
+<section id="meaning" aria-labelledby="meaning-h">
+  <h2 id="meaning-h">What it means</h2>
+  {{ fact_list(measure.explained, {}, "We haven't added a plain-language explanation yet. The exact wording above is what you'll vote on.") }}
+</section>
+
+<section id="sources" aria-labelledby="sources-h">
+  <h2 id="sources-h">Sources</h2>
+  <ul class="item-list">
+    {% for fact in measure.sources %}
+    <li class="item-meta">{{ fact.get('headline') or fact.statement }} {{ verification_badge(fact) }} {{ source_line(fact) }} · {{ report_link(fact.id) }}</li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

@@ -55,6 +55,12 @@
     <li class="card ballot-race" data-race="{{ entry.n }}">
       <h3 class="ballot-race-name"><a href="{{ race.url }}">{{ race.name }}</a></h3>
       <span class="chip split-chip" hidden>Depends on your address</span>
+      {% if race.kind == "measure" %}
+      <span class="chip chip-measure">Proposition</span>
+      <p class="race-sum">{% if race.explained %}{{ race.explained[0].get('headline') or race.explained[0].statement }}{% else %}{{ race.ballot_text | truncate(220) }}{% endif %}</p>
+      <p class="muted">Your choices: {{ race.choices | join(" · ") }}</p>
+      <p class="race-meta"><a href="{{ race.url }}">Read the exact wording →</a></p>
+      {% else %}
       {% if race.plain_summary %}<p class="race-sum">{{ race.plain_summary.intro.text }}</p>{% endif %}
       {% if race.candidates %}
       <ul class="ballot-cands">
@@ -66,6 +72,7 @@
       <p class="empty">Candidates not added yet.</p>
       {% endif %}
       <p class="race-meta"><a href="{{ race.url }}">{% if race.detail == "basic" %}What this office does →{% else %}Records, sources{% if race.questions %} &amp; quiz{% endif %} →{% endif %}</a></p>
+      {% endif %}
     </li>
     {% endfor %}
   </ul>

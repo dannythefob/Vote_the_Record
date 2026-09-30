@@ -374,3 +374,9 @@ details.more[open] > summary { margin-bottom: 8px; }
 .notice-warn { background: var(--warn-bg); border-left-color: var(--warn-ink); color: var(--warn-ink); }
 .notice-warn a { color: inherit; }
 .zip-form .precinct-label { margin-top: 10px; }
+
+/* Propositions */
+.chip-measure { border-color: var(--accent); color: var(--accent); }
+.ballot-text { background: var(--surface); border-left: 4px solid var(--line); margin: 0; padding: 12px 16px; white-space: pre-line; }
+.choice-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; }
+.choice-list li { border: 1px solid var(--control); border-radius: 4px; padding: 4px 12px; font-weight: 600; }

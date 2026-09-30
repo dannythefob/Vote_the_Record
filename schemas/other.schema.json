@@ -59,12 +59,30 @@
         "notes": { "type": "string" }
       }
     },
+    "measure": {
+      "description": "A ballot proposition (no candidates): the exact ballot wording, the choices as printed, and sourced plain-language explanation.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "election_date", "ballot_text", "choices", "sources"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "election_date": { "$ref": "urn:vtr:schema:fact#/$defs/date" },
+        "kind": { "enum": ["bond", "tax-rate", "charter-amendment", "constitutional-amendment", "district-confirmation", "other"] },
+        "area": { "$ref": "#/$defs/area" },
+        "level": { "$ref": "#/$defs/level", "description": "Defaults to state for statewide measures, local otherwise." },
+        "ballot_text": { "description": "Exact English wording as printed on the official ballot.", "type": "string", "minLength": 1 },
+        "choices": { "description": "The choices exactly as printed, e.g. FOR / AGAINST.", "type": "array", "minItems": 2, "items": { "type": "string", "minLength": 1 } },
+        "explained": { "description": "Plain-language facts about what the measure does, each sourced.", "type": "array", "items": { "$ref": "urn:vtr:schema:fact" } },
+        "sources": { "type": "array", "minItems": 1, "items": { "$ref": "urn:vtr:schema:fact" } },
+        "notes": { "type": "string" }
+      }
+    },
     "everywhere": {
       "description": "Areas that apply to every ZIP code or precinct in the file (e.g. a court of appeals district that covers the whole county).",
       "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/area" }
     },
     "precincts": {
-      "description": "Voting areas for each voting precinct on one county's ballot (exact). Statewide and county-wide areas are implied.",
+      "description": "Voting areas for each voting precinct on one county's ballot. Statewide and county-wide areas are implied. A nested list means the precinct is split: voters there have one of those areas (or, for a single-item list, maybe that area), depending on their address.",
       "type": "object",
       "additionalProperties": false,
       "required": ["sources", "precincts"],
@@ -74,7 +92,15 @@
         "precincts": {
           "type": "object",
           "propertyNames": { "pattern": "^[1-9][0-9]{0,5}$" },
-          "additionalProperties": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/area" } }
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                { "$ref": "#/$defs/area" },
+                { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/area" } }
+              ]
+            }
+          }
         }
       }
     },
@@ -124,7 +150,7 @@
             "items": {
               "anyOf": [
                 { "$ref": "#/$defs/area" },
-                { "type": "array", "minItems": 2, "uniqueItems": true, "items": { "$ref": "#/$defs/area" } }
+                { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/area" } }
               ]
             }
           }

@@ -1,2 +1,3 @@
 office_type: mayor
-powers: []   # {id: P-XXX, description, source_url}
+level: local
+powers: []   # Texas powers: data/states/tx/office-overrides/mayor.yaml

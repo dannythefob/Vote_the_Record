@@ -1,0 +1,40 @@
+# FICTIONAL demo proposition for tests.
+name: Demo City, Proposition A
+election_date: "2026-11-03"
+kind: bond
+ballot_text: "DEMO CITY, PROPOSITION A. THIS IS A PROPERTY TAX INCREASE. The issuance of $10,000,000 of bonds for park improvements, and the levying of a tax sufficient to pay the bonds."
+choices: [FOR, AGAINST]
+explained:
+  - id: tx/localities/demo-city/elections/2026-11-03/prop-a/measure#E-01
+    headline: Lets the city borrow up to $10 million for parks, repaid with property taxes
+    statement: "DEMO: The city's voter information document says the bonds total $10,000,000 for park improvements, repaid from property taxes."
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://example.gov/demo-voter-information-document.pdf
+    source_title: "DEMO City: Voter Information Document, Proposition A"
+    source_kind: document
+    sha256: "1111111111111111111111111111111111111111111111111111111111111111"
+    archive_url: null
+    event_date: "2026-11-03"
+    retrieved: "2026-09-01"
+    verification: unverified
+    verified_on: null
+    reviewer: null
+sources:
+  - id: tx/localities/demo-city/elections/2026-11-03/prop-a/measure#S-01
+    headline: "DEMO: Proposition A as printed on the sample ballot"
+    statement: "DEMO: The sample ballot prints Proposition A with the choices FOR and AGAINST."
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://example.gov/demo-sample-ballot.pdf
+    source_title: "DEMO County Clerk: Sample Ballot"
+    source_kind: document
+    sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+    archive_url: null
+    event_date: "2026-11-03"
+    retrieved: "2026-09-01"
+    verification: unverified
+    verified_on: null
+    reviewer: null

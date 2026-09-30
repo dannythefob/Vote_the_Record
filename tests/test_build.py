@@ -459,11 +459,11 @@ def test_ballot_is_ordered_closest_to_home_then_by_ballot_order(demo_site):
     levels = re.findall(r'<h2 id="lvl-([a-z]+)">', html)
     assert levels == ["local", "county", "state", "federal"]
     names = re.findall(r'<h3 class="ballot-race-name"><a href="[^"]+">([^<]+)</a></h3>', html)
-    assert names == ["Demo City Council, Place 1", "Demo County Commissioner, Precinct 9",
+    assert names == ["Demo City Council, Place 1", "Demo City, Proposition A", "Demo County Commissioner, Precinct 9",
                      "Justice of the Peace, Precinct 1", "Justice of the Peace, Precinct 2", "Governor",
                      "U.S. Representative, District 1", "U.S. Representative, District 2"]
     rows = re.findall(r'data-race="(\d+)"', html)
-    assert rows == [str(i) for i in range(7)]  # matches the embedded payload order
+    assert rows == [str(i) for i in range(8)]  # matches the embedded payload order
 
 
 def test_ballot_lists_candidates_a_to_z_with_ballot_labels_and_write_ins(demo_site):
@@ -480,12 +480,12 @@ def test_ballot_zip_tools_are_private_and_progressive(demo_site):
     assert '<form id="zip-form" class="zip-form" role="search" hidden>' in html  # shown by JS only
     assert "nothing is sent or saved" in html
     assert 'href="https://example.gov/whats-on-my-ballot"' in html
-    assert html.count('class="chip split-chip" hidden') == 7
+    assert html.count('class="chip split-chip" hidden') == 8
     raw = re.search(r'<script type="application/json" id="ballot-data">(.*?)</script>', html, re.S).group(1)
     data = json.loads(raw)
     assert data["implied"] == ["tx", "demo-county"]
     assert data["zips"]["22222"] == [["us-house-1", "us-house-2"], "demo-county/jp-2"]
-    assert [r["area"] for r in data["races"]][:2] == ["demo-city", "demo-county/commissioner-9"]
+    assert [r["area"] for r in data["races"]][:3] == ["demo-city", "demo-city", "demo-county/commissioner-9"]
     assert "Unverified" in html  # ballot sources carry badges
 
 
@@ -526,9 +526,9 @@ def test_partial_ballot_says_races_are_still_being_added(tmp_path):
     html = read(out, BALLOT_PAGE)
     assert "We're still adding races to this page." in html
     assert 'href="https://example.gov/demo-sample-ballot.pdf"' in html
-    assert "7 races added so far." in html
+    assert "8 races added so far." in html
     assert "Every race on this ballot" not in html
-    assert "7 races so far" in read(out, "index.html")
+    assert "8 races so far" in read(out, "index.html")
 
 
 def test_ballot_payload_packs_precincts_as_area_indexes(demo_site):
@@ -561,3 +561,24 @@ def test_home_address_box_maps_counties_to_ballots(demo_site):
     raw = re.search(r'<script type="application/json" id="county-index">(.*?)</script>', html, re.S).group(1)
     assert json.loads(raw) == {"demo-county": [{"name": "Demo County ballot", "url": "/ballot/tx/demo-county/2026-11-03/"}]}
     assert '<input id="address-home" name="address"' in html
+
+
+
+def test_proposition_is_listed_closest_to_home_with_its_choices(demo_site):
+    html = read(demo_site, BALLOT_PAGE)
+    local = html[html.index('id="lvl-local"'):html.index('id="lvl-county"')]
+    assert '<span class="chip chip-measure">Proposition</span>' in local
+    assert "Lets the city borrow up to $10 million for parks" in local
+    assert "Your choices: FOR · AGAINST" in local
+    assert 'href="/measures/tx/demo-city/2026-11-03/prop-a/"' in local
+
+
+def test_proposition_page_shows_exact_wording_choices_meaning_and_sources(demo_site):
+    html = read(demo_site, "measures/tx/demo-city/2026-11-03/prop-a/index.html")
+    assert "<h1>Demo City, Proposition A</h1>" in html
+    assert '<blockquote class="ballot-text">DEMO CITY, PROPOSITION A. THIS IS A PROPERTY TAX INCREASE.' in html
+    assert "<li>FOR</li>" in html and "<li>AGAINST</li>" in html
+    meaning = html[html.index('id="meaning-h"'):html.index('id="sources-h"')]
+    assert "Lets the city borrow up to $10 million for parks" in meaning
+    assert 'badge badge-unverified' in meaning
+    assert "DEMO County Clerk: Sample Ballot" in html

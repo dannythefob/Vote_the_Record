@@ -1,0 +1,40 @@
+# Powers of a Texas city council member (state laws that apply to every Texas city).
+# Each city's charter or ordinances set the rest. Text checked against statutes.capitol.texas.gov
+# (read through its document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: city-council-member
+state: TX
+powers:
+  - id: P-BUDGET
+    description: Votes, as a member of the city's governing body, on adopting the city budget. The vote must be a record vote, and a budget that will raise more property tax revenue than the year before needs a separate vote.
+    statute: Local Government Code § 102.007
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.102.htm
+
+  - id: P-TAX-RATE
+    description: Votes, as a member of the city's governing body, on adopting the city's property tax rate.
+    statute: Tax Code § 26.05(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/TX/htm/TX.26.htm
+
+  - id: P-ORDINANCES
+    description: Votes on city ordinances, rules, and police regulations.
+    statute: Local Government Code § 51.001
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.51.htm
+
+  - id: P-HOME-RULE
+    description: A home-rule city has full power of local self-government; its charter sets how the city government works.
+    statute: Local Government Code § 51.072
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.51.htm
+
+plain_summary:
+  intro:
+    text: Votes on the city budget, the property tax rate, and city laws (ordinances).
+    powers: [P-BUDGET, P-TAX-RATE, P-ORDINANCES]
+  points:
+    - text: Votes on the city budget
+      icon: budget
+      powers: [P-BUDGET]
+    - text: Votes on the city property tax rate
+      icon: budget
+      powers: [P-TAX-RATE]
+    - text: Votes on city laws (ordinances)
+      icon: gavel
+      powers: [P-ORDINANCES]

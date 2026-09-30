@@ -90,7 +90,7 @@ def test_results_grid_compares_answers_with_each_record(report):
     assert list(rows) == ["Budget gap", "Storm coming", "Disaster repairs", "Road money"]  # only answered questions
 
 
-ALL_DEMO_RACES = ["Demo City Council, Place 1", "Demo County Commissioner, Precinct 9",
+ALL_DEMO_RACES = ["Demo City Council, Place 1", "Demo City, Proposition A", "Demo County Commissioner, Precinct 9",
                   "Justice of the Peace, Precinct 1", "Justice of the Peace, Precinct 2", "Governor",
                   "U.S. Representative, District 1", "U.S. Representative, District 2"]
 
@@ -117,7 +117,7 @@ def test_zip_filters_races_and_flags_split_districts(report):
 def test_home_zip_box_opens_the_ballot_filtered(report):
     z = report["ballot"]["fromHome11111"]
     assert z["hash"] == "#zip=11111"
-    assert z["races"] == ["Demo City Council, Place 1", "Demo County Commissioner, Precinct 9",
+    assert z["races"] == ["Demo City Council, Place 1", "Demo City, Proposition A", "Demo County Commissioner, Precinct 9",
                           "Justice of the Peace, Precinct 1", "Governor", "U.S. Representative, District 1"]
     assert "don't have ballot information for ZIP code 99999" in report["ballot"]["homeUnknown"]
 
