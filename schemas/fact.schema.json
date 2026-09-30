@@ -15,6 +15,14 @@
     "record_type": { "enum": ["vote", "sponsored", "promise_kept", "promise_broken", "statement"] },
     "same_event": { "$ref": "#/$defs/event_id" },
     "statement": { "type": "string", "minLength": 1 },
+    "result": {
+      "description": "What happened in the same action, from the same source (e.g. 'Passed 16-1; she was the only no vote').",
+      "type": "string", "minLength": 1, "maxLength": 200
+    },
+    "followups": {
+      "description": "Later official actions on the same matter, as IDs of their own sourced facts.",
+      "type": "array", "items": { "$ref": "#/$defs/fact_id" }
+    },
     "headline": {
       "description": "Optional one-line plain-language version of the statement, shown first. Must not add anything the statement does not say.",
       "type": "string", "minLength": 1, "maxLength": 140

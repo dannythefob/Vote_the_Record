@@ -371,9 +371,22 @@ def test_candidate_glance_is_built_from_facts_on_file(demo_site):
     glance = avery[avery.index('class="glance"'):avery.index("</ul>", avery.index('class="glance"'))]
     assert "<strong>Priorities:</strong> Transparency" in glance  # topic from the headline
     assert "Has served as Precinct 9 commissioner since 2023." in glance  # summary fact
-    assert "5 votes" not in glance and "on record" in glance
     casey = html[html.index('id="cand-casey-placeholder"'):]
     assert "No record on file yet" in casey
+
+
+def test_record_block_leads_the_card_newest_first_with_results(demo_site):
+    html = read(demo_site, RACE_PAGE)
+    start = html.rindex("<article", 0, html.index('id="cand-avery-example"'))
+    card = html[start:html.index("</article>", start)]
+    assert card.index('class="on-record"') < card.index('class="glance"')  # record comes first
+    block = card[card.index('class="on-record"'):card.index('class="glance"')]
+    years = re.findall(r'<span class="kind">[^<]*· (\d{4})</span>', block)
+    assert years == sorted(years, reverse=True) and len(years) == 3  # newest first, three shown
+    assert "more in" in block  # Avery has 6 records, 3 shown
+    # R-04 is the 4th-newest, so its result and follow-up show in the details list
+    assert "DEMO RESULT passed 4-1" in card and "DEMO RESULT" not in block
+    assert "What happened next:" in card and "Sponsored a road plan" in card
     card_start = html.rindex("<article", 0, html.index('id="cand-avery-example"'))
     avery_card = html[card_start:html.index("</article>", card_start)]
     assert 'class="avatar avatar-initials"' in avery_card and ">AE<" in avery_card

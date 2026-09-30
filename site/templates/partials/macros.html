@@ -22,6 +22,9 @@
     {% if fact.claim_status != "documented" %}<span class="chip chip-status">{{ STATUSES[fact.claim_status] }}</span>{% endif %}
     {{ verification_badge(fact) }}
   </p>
+  {% if fact.get('result') %}<p class="result"><strong>Result:</strong> {{ fact.result }}</p>{% endif %}
+  {% if fact.get('followups') %}<p class="next"><strong>What happened next:</strong>
+    {% for ref in fact.followups %}{% if ref in facts %}{{ facts[ref].get('headline') or facts[ref].statement }}{% if facts[ref].get('event_date') %} ({{ facts[ref].event_date[:4] }}){% endif %} {{ verification_badge(facts[ref]) }} <a href="{{ facts[ref].source_url }}" rel="noopener noreferrer">source</a>{% endif %}{% if not loop.last %}; {% endif %}{% endfor %}</p>{% endif %}
   <details class="more">
     <summary>Exact wording &amp; source</summary>
     {% if fact.get('headline') %}<p class="exact">{{ fact.statement }}</p>{% endif %}

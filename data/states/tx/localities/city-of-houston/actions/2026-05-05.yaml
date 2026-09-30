@@ -1,0 +1,24 @@
+# Houston City Council, meeting of May 5, 2026.
+# Unverified; written by an AI assistant from the official minutes. Owner review required.
+body: Houston City Council
+meeting_date: "2026-05-05"
+facts:
+  - id: tx/localities/city-of-houston/actions/2026-05-05#F-001
+    headline: Council adopted a High-Risk Apartment Inspection Program, unanimously
+    statement: >-
+      Houston City Council adopted Item 21, Ordinance 2026-0388, amending Article IV, Chapter
+      10 of the Code of Ordinances relating to multi-family rental buildings and establishing a
+      High-Risk Apartment Inspection Program. The minutes record "all voting aye, nays none."
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.houstontx.gov/citysec/agenda/2026/20260505.pdf
+    source_title: Houston City Council Minutes, May 5, 2026 (page 9, Item 21)
+    source_kind: document
+    sha256: 152ab12b6a52f72b19817f6000c1cae6ec96d76bd9c6eb87359235084460a8f7
+    archive_url: https://web.archive.org/web/20260930020455/https://www.houstontx.gov/citysec/agenda/2026/20260505.pdf
+    event_date: "2026-05-05"
+    retrieved: "2026-09-29"
+    verification: unverified
+    verified_on: null
+    reviewer: null

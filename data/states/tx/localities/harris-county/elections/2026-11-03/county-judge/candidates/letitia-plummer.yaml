@@ -2,6 +2,17 @@
 id: letitia-plummer
 name: Letitia Plummer
 incumbent: false
+photo:
+  file: letitia-plummer.png
+  source_url: "https://commons.wikimedia.org/wiki/File:Plummer,_Letitia_-_Headshot_(1).png"
+  license: CC0 1.0 (public domain dedication), as stated on Wikimedia Commons
+  license_url: https://creativecommons.org/publicdomain/zero/1.0/
+  credit: Wikimedia Commons user Jonathanhildner
+  retrieved: "2026-09-30"
+  license_confirmed: false
+  notes: >-
+    Uploaded 2026-06-06 as the uploader's own work, with no permission record. The photo used
+    by the candidate's Wikipedia article. Web-size copy (500 px wide) of the Commons file.
 ballot_party: Democratic Party
 summary:
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#B-01
@@ -42,6 +53,10 @@ summary:
 records:
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-01
     headline: Voted no on a 5-year ShotSpotter gunshot-detection contract, $3.5M max (Jan. 2022)
+    result: "Passed; the minutes list her as the only no vote (Ordinance 2022-0020)."
+    followups:
+      - tx/localities/city-of-houston/actions/2023-01-31#F-001
+      - tx/localities/city-of-houston/actions/2024-06-11#F-001
     record_type: vote
     same_event: tx/localities/city-of-houston/actions/2022-01-05#item-32
     statement: >-
@@ -65,6 +80,7 @@ records:
 
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-02
     headline: Voted no on moving $23M from the Budget Stabilization Fund to storm recovery (June 2024)
+    result: "Passed 9-7; the mayor and eight council members voted yes (Ordinance 2024-0495)."
     record_type: vote
     statement: >-
       As a Houston City Council member, voted no on Item 44 (June 25, 2024), an ordinance
@@ -90,6 +106,117 @@ records:
       The archived copy's content digest matches the downloaded file. Not mapped to a survey
       question: a "no" vote does not show which alternative she preferred, and the minutes do
       not record her reasons.
+
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-03
+    record_type: sponsored
+    headline: Proposed funding 8 apartment habitability inspectors
+    statement: >-
+      Proposed FY2023 budget amendment 4.02 (substitute): "Habitability/Health Inspectors: The City shall consider hiring and funding the salaries of eight Habitability Inspectors in the first year of the Apartment Inspection Reform program. Thereafter, the High Impact program fee shall fund the salaries of each inspector specifically for apartment code violations."
+    result: >-
+      Adopted (Motion 2022-0284); Council Members Martin and Knox voted no, Council Member Kubosh was absent.
+    followups:
+    - tx/localities/city-of-houston/actions/2026-05-05#F-001
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.houstontx.gov/citysec/agenda/2022/20220601.pdf
+    source_title: Houston City Council Minutes, June 1, 2022 (page 13, Amendment 4.02)
+    source_kind: document
+    sha256: 59a6b186f20ee7ed3200bcb3dfc00a19520d578ca812c4630fce64caeb06e896
+    archive_url: https://web.archive.org/web/20251224081121/https://www.houstontx.gov/citysec/agenda/2022/20220601.pdf
+    event_date: '2022-06-01'
+    retrieved: '2026-09-29'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: >-
+      The follow-up is a later council action on the same subject, shown for context; the record does not say her amendment caused it.
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-04
+    record_type: sponsored
+    headline: Proposed needs-based, equitable funding for drainage and street projects
+    statement: >-
+      Proposed FY2024 budget amendment 4.01: "The City shall ensure an equitable distribution of funding for the Storm Drainage System and Street and Traffic Control projects within Capital Improvement Plans (CIP), prioritizing areas with the most pressing needs," based on factors including historical flooding, infrastructure conditions, future flood risks, and socioeconomic considerations.
+    result: Withdrawn (budget amendment matrix).
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.houstontx.gov/citysec/agenda/2023/20230606.pdf
+    source_title: >-
+      Houston City Council Minutes, June 6, 2023 (budget amendment matrix, page 11, Amendment 4.01)
+    source_kind: document
+    sha256: ca6ae084504e19a428a332ec6e9d5d0959f23b2af7db849142eacc3aff1520f8
+    archive_url: https://web.archive.org/web/20260604120637/https://www.houstontx.gov/citysec/agenda/2023/20230606.pdf
+    event_date: '2023-06-06'
+    retrieved: '2026-09-29'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-05
+    record_type: sponsored
+    headline: Proposed an $800,000 generator for the Kashmere Gardens Resilience Hub
+    statement: >-
+      Proposed FY2025 budget amendment 4.01: "the City of Houston shall provide a generator for the Kashmere Gardens Resilience Hub to ensure continuous operation during" extreme weather events, at a listed cost of $800,000 from the General Fund ending fund balance. The Administration responded: "Request Withdrawal - This is a CIP amendment and Administration requests it be re-submitted when CIP is considered."
+    result: >-
+      Listed in the amendment matrix as "Motion 2024-0486 Adopt substitute motion" (substitute amendment attached to the minutes).
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.houstontx.gov/citysec/agenda/2024/20240611.pdf
+    source_title: >-
+      Houston City Council Minutes, June 11 - 12, 2024 (budget amendment matrix, page 21, Amendment 4.01)
+    source_kind: document
+    sha256: 7803853adbf4e8522ec8c54101f627fdf1226383966b33dafaf5b0b5522e465f
+    archive_url: https://web.archive.org/web/20251223010807/https://www.houstontx.gov/citysec/agenda/2024/20240611.pdf
+    event_date: '2024-06-11'
+    retrieved: '2026-09-29'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: >-
+      The substitute amendment's text was not reviewed. No later council action on the generator was found in the minutes through September 2026.
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-06
+    record_type: sponsored
+    headline: >-
+      Proposed adding a police liaison officer through the African American Police Officers League
+    statement: >-
+      Proposed FY2026 budget amendment 4.01: "The City shall consider the addition of one full-time classified officer, up to the rank of sergeant, who will serve as a dedicated liaison through the African American Police Officers League (AAPOL)," focused on community engagement, access to victim services, and public trust.
+    result: Withdrawn (budget amendment matrix).
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.houstontx.gov/citysec/agenda/2025/20250603.pdf
+    source_title: >-
+      Houston City Council Minutes, June 3 - 4, 2025 (budget amendment matrix, page 13, Amendment 4.01)
+    source_kind: document
+    sha256: 1db28b1669dd1b56ece274fbb2f0e896c865340a84b5d01f71489613175f4a47
+    archive_url: https://web.archive.org/web/20260930015952/https://www.houstontx.gov/citysec/agenda/2025/20250603.pdf
+    event_date: '2025-06-03'
+    retrieved: '2026-09-29'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+  - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#R-07
+    record_type: sponsored
+    headline: >-
+      Moved to send the apartment inspection ordinance to a joint committee, back to Council 30 days after
+    statement: >-
+      On Item 50, an ordinance establishing a High-Risk Apartment Inspection Program, moved "to have Item 50 come back to Council thirty (30) days after it comes from the joint committee and to call the question on Item 50," seconded by Council Member Martinez.
+    result: Adopted, all voting aye (Motion 2025-0853).
+    followups:
+    - tx/localities/city-of-houston/actions/2026-05-05#F-001
+    label: official_record
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.houstontx.gov/citysec/agenda/2025/20251209.pdf
+    source_title: Houston City Council Minutes, December 9 - 10, 2025 (page 11, Item 50)
+    source_kind: document
+    sha256: 717cbb5f5af9e6784404bb849c4585d12a216975e939a15fb54a0ff795533836
+    archive_url: https://web.archive.org/web/20260930020149/https://www.houstontx.gov/citysec/agenda/2025/20251209.pdf
+    event_date: '2025-12-09'
+    retrieved: '2026-09-29'
+    verification: unverified
+    verified_on: null
+    reviewer: null
 funding:
   - id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/letitia-plummer#M-01
     headline: Raised $129,725 and had $47,264 on hand (May 17 - June 30, 2026, corrected report)
