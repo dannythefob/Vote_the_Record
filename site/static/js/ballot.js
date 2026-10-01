@@ -1,5 +1,8 @@
-// ZIP code lookup for ballot pages and the home page. Runs entirely in the browser:
-// the ZIP code is never sent anywhere (the page data is embedded; no network requests).
+// Ballot pages and the home page: ZIP/precinct/address lookup, topics, and the ballot-wide quiz.
+// ZIP codes, precincts, topics, and quiz answers never leave the browser. Only the address
+// lookup calls our own Worker (see locate below).
+import { parseHash, buildHash, encodeAnswers, decodeAnswers, topicMatches, scoreBallot, coverageText } from "./quiz.js";
+import { el, readAnswers, renderGrid, renderCandidate, comparisonNote } from "./survey.js";
 
 /** "77002", " 77002-1234 " -> "77002"; anything else -> null. */
 export function cleanZip(text) {
@@ -145,28 +148,68 @@ function initBallotPage(payload) {
   const rows = [...document.querySelectorAll("[data-race]")];
   const unmappedBox = document.getElementById("unmapped-box");
   const groups = [...document.querySelectorAll("[data-group]")];
-  form.hidden = false;
+  const picker = document.getElementById("topic-picker");
+  const topicOnly = document.getElementById("topic-only");
+  const topicStatus = document.getElementById("topic-status");
+  const quizForm = document.getElementById("ballot-quiz-form");
+  const quizOut = document.getElementById("ballot-results");
+  const quizNone = document.getElementById("quiz-none");
+  const quizBlocks = [...document.querySelectorAll("[data-quiz-race]")];
+  const labels = payload.topicLabels || {};
+  const quizRaces = payload.quiz || [];
+  // Where the visitor is (null = whole ballot), and their topics. Kept in page memory only.
+  const state = { found: null, zip: null, precinct: null, topics: [] };
+  if (form) form.hidden = false;
+  if (picker) picker.hidden = false;
+  if (quizForm) quizForm.hidden = false;
+
+  function render() {
+    const matches = topicMatches(payload.races, state.topics);
+    rows.forEach((row) => {
+      const n = Number(row.dataset.race);
+      const hit = state.found ? state.found.get(n) : null;
+      const onBallot = !state.found || Boolean(hit);
+      const topicHit = matches.get(n);
+      row.hidden = !onBallot || (Boolean(topicOnly && topicOnly.checked) && state.topics.length > 0 && !topicHit);
+      row.querySelector(".split-chip").hidden = !(hit && hit.split);
+      row.classList.toggle("topic-hit", Boolean(topicHit));
+      const chip = row.querySelector(".topic-chip");
+      chip.hidden = !topicHit;
+      chip.textContent = topicHit ? `Matches: ${topicHit.map((t) => labels[t] || t).join(", ")}` : "";
+    });
+    groups.forEach((g) => { g.hidden = !g.querySelector("[data-race]:not([hidden])"); });
+    reset.hidden = !state.found;
+    if (unmappedBox) unmappedBox.hidden = !state.found;
+    if (topicStatus) {
+      const onBallot = payload.races.filter((r) => !state.found || state.found.has(r.n));
+      const count = onBallot.filter((r) => matches.has(r.n)).length;
+      topicStatus.textContent = state.topics.length
+        ? `${plural(count, "race", "races")} ${state.found ? "on your ballot " : ""}${count === 1 ? "deals" : "deal"} with ${state.topics.length === 1 ? "this topic" : "these topics"}.`
+        : "";
+    }
+    // The quiz covers the races on your ballot (topics never hide quiz questions).
+    let shown = 0;
+    quizBlocks.forEach((block) => {
+      block.hidden = Boolean(state.found) && !state.found.has(Number(block.dataset.quizRace));
+      if (!block.hidden) shown += 1;
+    });
+    if (quizNone) quizNone.hidden = shown > 0;
+  }
 
   function showAll() {
-    rows.forEach((row) => {
-      row.hidden = false;
-      row.querySelector(".split-chip").hidden = true;
-    });
-    groups.forEach((g) => { g.hidden = false; });
-    reset.hidden = true;
-    if (unmappedBox) unmappedBox.hidden = true;
+    state.found = null;
+    state.zip = null;
+    state.precinct = null;
+    render();
   }
 
   function show(found) {
-    const byN = new Map(found.map((r) => [r.n, r]));
-    rows.forEach((row) => {
-      const hit = byN.get(Number(row.dataset.race));
-      row.hidden = !hit;
-      row.querySelector(".split-chip").hidden = !(hit && hit.split);
-    });
-    groups.forEach((g) => { g.hidden = !g.querySelector("[data-race]:not([hidden])"); });
-    reset.hidden = false;
-    if (unmappedBox) unmappedBox.hidden = false;
+    state.found = new Map(found.map((r) => [r.n, r]));
+    render();
+  }
+
+  function locationHash() {
+    return buildHash({ zip: state.zip, precinct: state.precinct });
   }
 
   function applyZip(zip, updateHash) {
@@ -181,11 +224,13 @@ function initBallotPage(payload) {
       status.textContent = `ZIP code ${clean} isn't in our ${payload.name} data. Showing every race on this ballot.`;
       return;
     }
+    state.zip = clean;
+    state.precinct = null;
     show(found);
     const split = found.filter((r) => r.split).length;
     status.textContent = `ZIP code ${clean}: ${plural(found.length, "race", "races")} on your ballot, closest to home first.` +
       (split ? ` ${plural(split, "race depends", "races depend")} on your exact address. Add your precinct number to be sure.` : "");
-    if (updateHash) history.replaceState(null, "", `#zip=${clean}`);
+    if (updateHash) history.replaceState(null, "", locationHash());
   }
 
   function loadShapes() {
@@ -253,11 +298,108 @@ function initBallotPage(payload) {
       status.textContent = `Precinct ${clean} isn't in our ${payload.name} data. Showing every race on this ballot.`;
       return;
     }
+    state.precinct = clean;
+    state.zip = null;
     show(found);
     const split = found.filter((r) => r.split).length;
     status.textContent = `${label ? label + ". " : ""}Precinct ${clean}: ${plural(found.length, "race", "races")} on your ballot, closest to home first.` +
       (split ? ` ${plural(split, "race depends", "races depend")} on your exact address.` : "");
-    if (updateHash) history.replaceState(null, "", `#precinct=${clean}`);
+    if (updateHash) history.replaceState(null, "", locationHash());
+  }
+
+  // --- Topics ---
+  function setTopics(topics) {
+    state.topics = topics.filter((t) => t in labels);
+    if (picker) {
+      picker.querySelectorAll('input[name="topic"]').forEach((box) => { box.checked = state.topics.includes(box.value); });
+    }
+    render();
+  }
+  if (picker) {
+    picker.addEventListener("change", () => {
+      setTopics([...picker.querySelectorAll('input[name="topic"]:checked')].map((box) => box.value));
+    });
+  }
+
+  // --- Ballot-wide quiz ---
+  function readQuiz() {
+    const answers = {};
+    for (const race of quizRaces) answers[race.key] = readAnswers(quizForm, race.questions, `${race.n}-`);
+    return answers;
+  }
+
+  function fillQuiz(answers) {
+    for (const race of quizRaces) {
+      for (const [qid, a] of Object.entries(answers[race.key] || {})) {
+        const pick = quizForm.querySelector(`input[name="${CSS.escape(`answer-${race.n}-${qid}`)}"][value="${a.option}"]`);
+        const weight = quizForm.querySelector(`input[name="${CSS.escape(`importance-${race.n}-${qid}`)}"][value="${a.importance}"]`);
+        if (pick) pick.checked = true;
+        if (weight) weight.checked = true;
+      }
+    }
+  }
+
+  function privateLink(answers) {
+    const visible = quizRaces.filter((r) => !state.found || state.found.has(r.n));
+    const mine = Object.fromEntries(visible.map((r) => [r.key, answers[r.key] || {}]));
+    return window.location.origin + window.location.pathname +
+      buildHash({ zip: state.zip, precinct: state.precinct, topics: state.topics, answers: encodeAnswers(mine) });
+  }
+
+  function showResults(answers) {
+    const visible = quizRaces.filter((r) => !state.found || state.found.has(r.n));
+    const scored = scoreBallot(visible, answers);
+    const heading = el("h2", { id: "ballot-results-h", tabindex: "-1", text: "Your results" });
+    quizOut.replaceChildren(heading);
+    if (!scored.length) {
+      quizOut.append(el("p", { text: "Answer at least one question to see results." }));
+    } else {
+      const candidateRaces = payload.races.filter((r) => r.kind !== "measure" && (!state.found || state.found.has(r.n))).length;
+      quizOut.append(
+        el("p", { class: "coverage", text: `${coverageText(scored, candidateRaces)} The rest don't have enough checked records yet, or are races for judges, which have no quiz.` }),
+        el("p", { class: "muted", text: "How your answers line up with each candidate's verified record. Candidates are listed alphabetically. This is not a recommendation." }));
+      for (const { race, results, closest } of scored) {
+        const questionsById = new Map(race.questions.map((q) => [q.id, q]));
+        const block = el("section", { class: "result-race", "aria-labelledby": `rr-${race.n}` },
+          el("h3", { id: `rr-${race.n}` }, el("a", { href: race.url, text: race.name })));
+        block.append(renderGrid({ questions: race.questions }, results, questionsById), comparisonNote(results));
+        for (const { candidate, result } of results) {
+          block.append(renderCandidate(candidate, result, questionsById, payload.formUrl, candidate.id === closest, `${race.n}-`));
+        }
+        quizOut.append(block);
+      }
+      const linkBox = el("input", { type: "text", readonly: "", class: "link-box", "aria-label": "Private link to these results", hidden: "" });
+      const copyStatus = el("p", { class: "muted", role: "status" });
+      const printBtn = el("button", { type: "button", text: "Print or save as PDF" });
+      const copyBtn = el("button", { type: "button", class: "button-secondary", text: "Copy a private link" });
+      printBtn.addEventListener("click", () => window.print());
+      copyBtn.addEventListener("click", async () => {
+        const link = privateLink(answers);
+        linkBox.value = link;
+        try {
+          await navigator.clipboard.writeText(link);
+          copyStatus.textContent = "Link copied. Your answers are in the part after #, which browsers never send to any server. Anyone you give the link to can see them.";
+        } catch {
+          linkBox.hidden = false;
+          linkBox.select();
+          copyStatus.textContent = "Copy this link. Your answers are in the part after #, which browsers never send to any server.";
+        }
+      });
+      quizOut.append(el("div", { class: "form-actions result-actions" }, printBtn, copyBtn), linkBox, copyStatus);
+    }
+    quizOut.hidden = false;
+    heading.focus();
+  }
+
+  if (quizForm) {
+    quizForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      showResults(readQuiz());
+    });
+    quizForm.addEventListener("reset", () => {
+      quizOut.replaceChildren();
+      quizOut.hidden = true;
+    });
   }
 
   form.addEventListener("submit", (event) => {
@@ -266,26 +408,37 @@ function initBallotPage(payload) {
     else if (pctInput && pctInput.value.trim()) applyPrecinct(pctInput.value, true);
     else applyZip(input.value, true);
   });
+  if (topicOnly) topicOnly.addEventListener("change", render);
   reset.addEventListener("click", () => {
     showAll();
     status.textContent = "Showing every race on this ballot.";
     history.replaceState(null, "", window.location.pathname);
     input.focus();
   });
-  const zipHash = /^#zip=(\d{5})$/.exec(window.location.hash);
-  const pctHash = /^#precinct=(\d{1,6})$/.exec(window.location.hash);
-  const atHash = /^#at=(-?\d{1,3}\.\d+),(-?\d{1,3}\.\d+)$/.exec(window.location.hash);
-  if (atHash && payload.shapesUrl) {
+
+  const hash = parseHash(window.location.hash);
+  if (hash.topics.length) setTopics(hash.topics);
+  if (hash.at && payload.shapesUrl) {
     // From the home page's address box. The map location is dropped from the URL right
     // away; placeAt then records only the precinct number.
     history.replaceState(null, "", window.location.pathname);
-    placeAt(Number(atHash[1]), Number(atHash[2]), "Found your address");
-  } else if (pctHash && pctInput) {
-    pctInput.value = pctHash[1];
-    applyPrecinct(pctHash[1], false);
-  } else if (zipHash) {
-    input.value = zipHash[1];
-    applyZip(zipHash[1], false);
+    placeAt(hash.at[0], hash.at[1], "Found your address");
+  } else if (hash.precinct && pctInput) {
+    pctInput.value = hash.precinct;
+    applyPrecinct(hash.precinct, false);
+  } else if (hash.zip) {
+    input.value = hash.zip;
+    applyZip(hash.zip, false);
+  } else {
+    render();
+  }
+  if (hash.answers && quizForm) {
+    // A private results link: fill in the answers, show the results, then drop the answers and
+    // topics from the address bar so they don't linger in the browser's history.
+    const answers = decodeAnswers(hash.answers, quizRaces);
+    fillQuiz(answers);
+    showResults(readQuiz());
+    history.replaceState(null, "", locationHash() || window.location.pathname);
   }
 }
 

@@ -8,16 +8,19 @@ powers:
     description: Hears civil cases where more than $500 and up to $325,000 is at stake.
     statute: Government Code § 25.0003(c)(1)
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+    topics: [courts-justice]
 
   - id: P-APPEALS
     description: Hears appeals of civil cases from Justice of the Peace courts in Harris County.
     statute: Government Code § 25.1032(a)
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+    topics: [courts-justice]
 
   - id: P-EMINENT-DOMAIN
     description: Handles eminent domain cases in Harris County, where the government takes private property for public use.
     statute: Government Code § 25.1032(c)
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+    topics: [courts-justice, housing-land]
 
 plain_summary:
   intro:

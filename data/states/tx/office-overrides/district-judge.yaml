@@ -13,16 +13,19 @@ powers:
     description: District courts hear felony criminal cases.
     statute: Code of Criminal Procedure art. 4.05
     source_url: https://statutes.capitol.texas.gov/Docs/CR/htm/CR.4.htm
+    topics: [courts-justice]
 
   - id: P-CIVIL
     description: District courts hear civil cases, including any case where more than $500 is at stake.
     statute: Texas Constitution art. V, § 8; Government Code § 24.007
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.24.htm
+    topics: [courts-justice]
 
   - id: P-FAMILY
     description: Family district courts have primary responsibility for family law cases, such as adoption, divorce, child custody, and child support.
     statute: Government Code § 24.601
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.24.htm
+    topics: [courts-justice]
 
 plain_summary:
   intro:

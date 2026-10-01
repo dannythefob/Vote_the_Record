@@ -1,3 +1,4 @@
 office_type: district-judge
 level: county
+judicial: true
 powers: []   # Texas powers: data/states/tx/office-overrides/district-judge.yaml

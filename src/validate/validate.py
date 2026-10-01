@@ -192,12 +192,15 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
     # Offices: powers and surveys.
     powers: dict[str, set[str]] = {}
     surveys: dict[str, dict] = {}
+    judicial: set[str] = set()
     for rel, (kind, doc) in docs.items():
         if not isinstance(doc, dict):
             continue
         office = rel.split("/")[1] if rel.startswith("offices/") else None
         if kind in ("powers", "survey") and doc.get("office_type") != office:
             report.error(rel, f"office_type must be '{office}' to match its folder")
+        if kind == "powers" and doc.get("judicial"):
+            judicial.add(office)
         if kind == "powers":
             # Merge, don't assign: state overrides (under data/) may already be loaded.
             powers.setdefault(office, set()).update(
@@ -223,6 +226,8 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
 
     for office, survey in surveys.items():
         rel = f"offices/{office}/survey.yaml"
+        if office in judicial and survey.get("scenarios"):
+            report.error(rel, "judicial offices have no quiz: judges can't promise how they would rule")
         tags = set(survey.get("tags") or [])
         seen = set()
         for scenario in survey.get("scenarios") or []:

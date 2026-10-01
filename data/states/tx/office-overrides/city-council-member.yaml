@@ -8,11 +8,13 @@ powers:
     description: Votes, as a member of the city's governing body, on adopting the city budget. The vote must be a record vote, and a budget that will raise more property tax revenue than the year before needs a separate vote.
     statute: Local Government Code § 102.007
     source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.102.htm
+    topics: [taxes-budget]
 
   - id: P-TAX-RATE
     description: Votes, as a member of the city's governing body, on adopting the city's property tax rate.
     statute: Tax Code § 26.05(a)
     source_url: https://statutes.capitol.texas.gov/Docs/TX/htm/TX.26.htm
+    topics: [taxes-budget]
 
   - id: P-ORDINANCES
     description: Votes on city ordinances, rules, and police regulations.

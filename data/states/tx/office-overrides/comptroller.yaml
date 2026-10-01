@@ -13,11 +13,13 @@ powers:
     description: Estimates how much money the state will take in. A bill that spends money can't be sent to the governor unless the comptroller certifies it fits within that estimate.
     statute: Texas Constitution art. III, § 49a
     source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.3.htm
+    topics: [taxes-budget]
 
   - id: P-TAXES
     description: Collects state taxes and is the state's sole accounting officer.
     statute: Government Code § 403.011
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.403.htm
+    topics: [taxes-budget]
 
 plain_summary:
   intro:

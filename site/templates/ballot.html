@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% from "partials/macros.html" import verification_badge, source_line, report_link %}
+{% from "partials/quiz.html" import quiz_question %}
+{% set topic_labels = config.get("topics") or {} %}
 {% block title %}{{ ballot.name }}{% endblock %}
 {% block description %}Everything on the {{ ballot.name }} for {{ ballot.election_date | longdate }}, closest to home first. Enter your ZIP code to see just your races.{% endblock %}
 {% block content %}
@@ -45,6 +47,21 @@
   <p><strong>Your exact ballot depends on your street address.</strong> ZIP codes can cross district lines, so some races are marked "Depends on your address".{% if ballot.lookup_url %} <a href="{{ ballot.lookup_url }}" rel="noopener noreferrer">Check your exact ballot with the county</a>.{% endif %}</p>
 </aside>
 
+{% if ballot.topics_used and topic_labels %}
+<section id="topic-picker" class="card topic-picker" aria-labelledby="topics-h" hidden>
+  <h2 id="topics-h">What matters to you?</h2>
+  <p class="muted">Pick topics to highlight the races that deal with them. Highlights come from what each office can do under the law, never from the candidates.</p>
+  <fieldset class="topic-options">
+    <legend class="visually-hidden">Topics</legend>
+    {% for key, label in topic_labels.items() if key in ballot.topics_used %}
+    <label class="topic-option"><input type="checkbox" name="topic" value="{{ key }}"> {{ label }}</label>
+    {% endfor %}
+  </fieldset>
+  <label class="topic-only"><input type="checkbox" id="topic-only"> Show only races about these topics</label>
+  <p id="topic-status" class="muted" role="status" aria-live="polite"></p>
+</section>
+{% endif %}
+
 {% if ballot.unmapped_races %}
 <aside id="unmapped-box" class="notice" hidden aria-labelledby="unmapped-h">
   <h2 id="unmapped-h" class="notice-h">Also on some {{ ballot.name | replace(" ballot", "") }} ballots</h2>
@@ -65,6 +82,7 @@
     <li class="card ballot-race" data-race="{{ entry.n }}">
       <h3 class="ballot-race-name"><a href="{{ race.url }}">{{ race.name }}</a></h3>
       <span class="chip split-chip" hidden>Depends on your address</span>
+      <span class="chip topic-chip" hidden></span>
       {% if race.kind == "measure" %}
       <span class="chip chip-measure">Proposition</span>
       <p class="race-sum">{% if race.explained %}{{ race.explained[0].get('headline') or race.explained[0].statement }}{% else %}{{ race.ballot_text | truncate(220) }}{% endif %}</p>
@@ -72,6 +90,7 @@
       <p class="race-meta"><a href="{{ race.url }}">Read the exact wording →</a></p>
       {% else %}
       {% if race.plain_summary %}<p class="race-sum">{{ race.plain_summary.intro.text }}</p>{% endif %}
+      {% if race.get('topics') and topic_labels %}<p class="race-topics">About: {% for key, label in topic_labels.items() if key in race.topics %}{{ label }}{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
       {% if race.seats > 1 %}<p class="muted">Vote for up to {{ race.seats }}.</p>{% endif %}
       {% if race.candidates %}
       <ul class="ballot-cands">
@@ -89,6 +108,31 @@
   </ul>
 </section>
 {% endfor %}
+
+{% if ballot.payload.quiz %}
+<section id="ballot-quiz" aria-labelledby="quiz-h">
+  <h2 id="quiz-h">Quiz for your ballot</h2>
+  <p>What would you do? Answer what-if questions about the jobs on your ballot, then see how your answers line up with each candidate's checked record. Skip anything you like. Nothing is saved or sent anywhere.</p>
+  <p class="muted">So far only races whose candidates we've researched have questions. Races for judges never get a quiz: the Texas Code of Judicial Conduct bars judges and judicial candidates from promising how they would rule. <a href="/methodology/#quiz-for-your-whole-ballot">How the quiz works</a>.</p>
+  <noscript><p class="banner-inline">The quiz needs JavaScript. Everything else on this page works without it.</p></noscript>
+  <form id="ballot-quiz-form" class="survey" novalidate hidden>
+    {% for qr in ballot.payload.quiz %}
+    <div class="quiz-race" data-quiz-race="{{ qr.n }}">
+      <h3 class="quiz-race-name"><a href="{{ qr.url }}">{{ qr.name }}</a></h3>
+      {% for q in qr.questions %}
+      {{ quiz_question(q, loop.index, qr.questions | length, qr.n ~ "-") }}
+      {% endfor %}
+    </div>
+    {% endfor %}
+    <p id="quiz-none" class="empty" hidden>None of the races on your ballot has a quiz yet.</p>
+    <div class="form-actions">
+      <button type="submit">See my results</button>
+      <button type="reset" class="button-secondary">Start over</button>
+    </div>
+  </form>
+  <div id="ballot-results" class="results" aria-live="polite" hidden></div>
+</section>
+{% endif %}
 
 <section aria-labelledby="order-h">
   <h2 id="order-h">Why this order?</h2>

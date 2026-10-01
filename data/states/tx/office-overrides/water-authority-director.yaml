@@ -12,16 +12,19 @@ powers:
     description: The authority must use its powers in a way that promotes regional water treatment and distribution.
     statute: Special District Local Laws Code § 8888.151(b)
     source_url: https://statutes.capitol.texas.gov/Docs/SD/htm/SD.8888.htm
+    topics: [water-utilities]
 
   - id: P-FEES
     description: The authority can charge well owners a fee on the amount of water pumped from their wells.
     statute: Special District Local Laws Code § 8888.156(a)
     source_url: https://statutes.capitol.texas.gov/Docs/SD/htm/SD.8888.htm
+    topics: [water-utilities]
 
   - id: P-GROUNDWATER
     description: The authority can adopt and enforce a groundwater reduction plan that is binding on wells in the authority.
     statute: Special District Local Laws Code § 8888.157(a)
     source_url: https://statutes.capitol.texas.gov/Docs/SD/htm/SD.8888.htm
+    topics: [water-utilities]
 
 plain_summary:
   intro:

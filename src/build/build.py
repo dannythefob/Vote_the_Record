@@ -39,6 +39,10 @@ def load_config(path: Path) -> tuple[dict, list[str]]:
     config = load_yaml(path) or {}
     errors = []
     form = config.get("corrections_form_url")
+    topics = config.get("topics") or {}
+    schema_topics = json.loads((REPO / "schemas/other.schema.json").read_text(encoding="utf-8"))["$defs"]["topic"]["enum"]
+    if topics and set(topics) != set(schema_topics):
+        errors.append(f"{path.name}: topics must list exactly the topics in schemas/other.schema.json")
     if form is not None and not (isinstance(form, str) and form.startswith(("https://", "/")) and "{id}" in form):
         errors.append(f"{path.name}: corrections_form_url must be null, or an https:// URL or /path containing {{id}}")
     for state, links in (config.get("official_links") or {}).items():
@@ -177,6 +181,8 @@ def build(root: Path, out: Path, *, demo: bool = False, config_path: Path | None
     }
     ballot_template = env.get_template("ballot.html")
     for ballot in site["ballots"]:
+        ballot["payload"]["topicLabels"] = config.get("topics") or {}
+        ballot["payload"]["formUrl"] = config.get("corrections_form_url")
         pages[ballot["url"]] = ballot_template.render(ballot=ballot, page="ballot")
     measure_template = env.get_template("measure.html")
     for measure in site["measures"]:

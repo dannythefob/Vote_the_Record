@@ -63,7 +63,7 @@ def test_beta_breakdown_and_no_record_states(report):
     survey = report["survey"]
     assert "Not enough record to compare." in survey["text"]["Blake Sample"]
     assert survey["betaBreakdownOpen"] == [False, True, None]
-    assert survey["text"]["Casey Placeholder"].endswith("No record on file for this candidate.")
+    assert survey["text"]["Casey Placeholder"].endswith("We found no record for this candidate in the sources we reviewed, so they can't be compared.")
     assert survey["unverifiedBadgesInResults"] >= 2  # unverified record and unverified link
 
 

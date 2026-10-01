@@ -93,7 +93,13 @@ def assemble_ballot(docs: dict, rel: str, doc: dict, races_by_path: dict, root: 
         "areaShapesUrl": f"/geo/{state}/{locality}/{date}/area-shapes.json" if has_area_shapes else None,
         "localAreas": sorted(json.loads((root / folder / "area-shapes.json").read_text(encoding="utf-8"))["areas"])
                       if has_area_shapes else [],
-        "races": [{"n": i, "area": r["area"], "office": r["office_type"]} for i, r in enumerate(ranked)],
+        "races": [{"n": i, "area": r["area"], "office": r["office_type"], "kind": r.get("kind") or "race",
+                   "topics": r.get("topics") or []} for i, r in enumerate(ranked)],
+        # Races with a quiz (never judges'; see METHODOLOGY "Quiz for your whole ballot").
+        "quiz": [{"n": i, "key": f"{r['locality']}/{r['slug']}", "name": r["name"], "url": r["url"],
+                  "questions": r["payload"]["questions"], "candidates": r["payload"]["candidates"]}
+                 for i, r in enumerate(ranked)
+                 if r.get("kind") != "measure" and r.get("questions") and not r.get("judicial")],
     }
     return {
         "name": doc["name"], "state": state, "locality": locality, "election_date": date,
@@ -103,6 +109,7 @@ def assemble_ballot(docs: dict, rel: str, doc: dict, races_by_path: dict, root: 
         "unmapped_races": [{"n": i, "race": r} for i, r in enumerate(ranked) if r["area"] in set(doc.get("unmapped") or [])],
         "zip_sources": zips_doc.get("sources") or [],
         "precinct_sources": pct_doc.get("sources") or [],
+        "topics_used": sorted({t for r in ranked for t in r.get("topics") or []}),
         "has_zips": bool(payload["zips"]), "has_precincts": bool(payload["precincts"]), "groups": groups, "ranked": ranked,
         "count": len(ranked), "payload": payload, "rel": rel,
         "shapes_src": (root / folder / "precinct-shapes.json") if has_shapes else None,
@@ -412,7 +419,10 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
         ],
     }
     plain = (override_doc or {}).get("plain_summary") or (office_doc or {}).get("plain_summary")
+    all_powers = ((office_doc or {}).get("powers") or []) + ((override_doc or {}).get("powers") or [])
     return {
+        "topics": sorted({t for p in all_powers for t in p.get("topics") or []}),
+        "judicial": bool((office_doc or {}).get("judicial")),
         "plain_summary": plain,
         "powers": (office_doc or {}).get("powers") or [],
         "state_powers": (override_doc or {}).get("powers") or [],

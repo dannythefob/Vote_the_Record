@@ -13,6 +13,7 @@ powers:
     description: Manages and oversees the state's public land and the state's rights in it.
     statute: Natural Resources Code § 31.051
     source_url: https://statutes.capitol.texas.gov/Docs/NR/htm/NR.31.htm
+    topics: [housing-land]
 
 plain_summary:
   intro:

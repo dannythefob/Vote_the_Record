@@ -12,6 +12,7 @@ powers:
     description: The Township is governed by a seven-member board elected by residents to staggered two-year terms. Directors set policy and approve the annual budget.
     statute: The Woodlands Township website (not a statute)
     source_url: https://www.thewoodlandstownship-tx.gov/Government/Board-of-Directors
+    topics: [taxes-budget]
 
 plain_summary:
   intro:

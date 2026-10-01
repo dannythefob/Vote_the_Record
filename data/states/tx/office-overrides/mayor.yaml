@@ -8,6 +8,7 @@ powers:
     description: The presiding officer of a city's governing body is the city's emergency management director and may declare a local state of disaster. Continuing it for more than seven days needs the governing body's consent.
     statute: Government Code §§ 418.1015, 418.108
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.418.htm
+    topics: [emergencies]
 
   - id: P-CHARTER
     description: In a home-rule city, the city charter sets the city government's structure, including the mayor's powers and duties.

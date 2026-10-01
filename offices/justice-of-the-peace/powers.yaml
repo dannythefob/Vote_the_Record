@@ -1,3 +1,4 @@
 office_type: justice-of-the-peace
 level: county
+judicial: true
 powers: []   # Texas powers: data/states/tx/office-overrides/justice-of-the-peace.yaml

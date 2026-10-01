@@ -228,6 +228,11 @@
         "facts": { "type": "array", "items": { "$ref": "urn:vtr:schema:fact" } }
       }
     },
+    "topic": {
+      "description": "Voter topics for the ballot page's 'what matters to you' picker. Labels are in site/site.yaml.",
+      "enum": ["taxes-budget", "emergencies", "roads-transportation", "courts-justice", "schools",
+               "water-utilities", "energy", "elections", "housing-land", "health"]
+    },
     "power": {
       "type": "object",
       "additionalProperties": false,
@@ -236,7 +241,11 @@
         "id": { "type": "string", "pattern": "^P-[A-Z0-9-]+$" },
         "description": { "type": "string", "minLength": 1 },
         "statute": { "type": "string" },
-        "source_url": { "$ref": "urn:vtr:schema:fact#/$defs/url" }
+        "source_url": { "$ref": "urn:vtr:schema:fact#/$defs/url" },
+        "topics": {
+          "description": "Topics this power directly covers, judged from its description only.",
+          "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/topic" }
+        }
       }
     },
     "powers": {
@@ -246,6 +255,10 @@
       "properties": {
         "office_type": { "$ref": "urn:vtr:schema:fact#/$defs/slug" },
         "level": { "$ref": "#/$defs/level" },
+        "judicial": {
+          "description": "A judge's office. Judicial ethics rules bar promises about future rulings, so it never has quiz scenarios.",
+          "type": "boolean"
+        },
         "powers": { "type": "array", "items": { "$ref": "#/$defs/power" } },
         "why_it_matters": { "$ref": "#/$defs/why_it_matters" },
         "plain_summary": { "$ref": "#/$defs/plain_summary" }

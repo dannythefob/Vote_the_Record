@@ -8,21 +8,25 @@ powers:
     description: The board of trustees has the exclusive power and duty to govern and oversee the management of the district's public schools.
     statute: Education Code § 11.151(b)
     source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.11.htm
+    topics: [schools]
 
   - id: P-BUDGET
     description: The board adopts the district's annual budget.
     statute: Education Code § 11.1511(b)(7)
     source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.11.htm
+    topics: [schools, taxes-budget]
 
   - id: P-TAX-RATE
     description: The board adopts the district's tax rate each fiscal year.
     statute: Education Code § 11.1511(b)(8)
     source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.11.htm
+    topics: [schools, taxes-budget]
 
   - id: P-SUPERINTENDENT
     description: The board sets goals for the district and the superintendent, monitors progress toward them, and makes sure the superintendent is held accountable.
     statute: Education Code § 11.1511(b)(2), (4)
     source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.11.htm
+    topics: [schools]
 
   - id: P-TERM
     description: Trustees serve three- or four-year terms.

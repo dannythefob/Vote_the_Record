@@ -150,5 +150,12 @@ votes and filings as they are recorded.
   and county; the browser finds the precinct from `precinct-shapes.json`. Never store or log
   what a visitor types, and never send it anywhere else. The CSP allows `connect-src 'self'`
   only. The Worker module may export only functions and objects (strings break the runtime).
+- Ballot pages offer topic highlights (each power's `topics`, from what the law says the office
+  does) and one quiz across the visitor's races. "Closest to your answers" appears only when
+  at least two candidates have records, every candidate with records has a match percentage,
+  and one is strictly highest. A candidate with no record found is listed, said so plainly,
+  and left out of the comparison. Offices
+  with `judicial: true` never have quiz questions (Code of Judicial Conduct, Canon 5). Results
+  go out only by print/PDF or a link carrying answers after `#`; nothing is stored or sent.
 - A race with `detail: basic` says "We haven't researched this candidate's record yet",
   never "Not found in the sources reviewed". `incumbent: null` means not checked yet.

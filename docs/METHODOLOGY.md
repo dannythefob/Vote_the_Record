@@ -136,6 +136,54 @@ compare. For any candidate below the minimum, the site runs in **beta mode**:
 Once a candidate has scorable records on at least 3 of your answered questions, the match
 percentage appears, with the same breakdown available underneath.
 
+## Quiz for your whole ballot
+After you enter your address, ZIP code, or precinct, the ballot page offers one quiz with
+the questions from every race on your ballot that has them. Each race is scored on its
+own, exactly as above. Nothing is added up across races.
+
+**What you see first.** "We could compare candidates in X of your Y races." A race counts
+when at least two of its candidates have records and every one of them has a match
+percentage. Most races start out with too few
+checked records, so X is often small at first and grows as we research more races.
+
+**Candidates with no record.** Fair isn't the same as identical. We research every
+candidate the same way and show the records we find. If we find no record at all for a
+candidate (for example, a first-time write-in candidate), we say so plainly: "We found no
+record for this candidate in the sources we reviewed." That candidate stays on the list in
+alphabetical order but isn't part of the comparison.
+
+**"Closest to your answers."** In a race, this mark goes to the candidate with the
+highest match percentage, but only when:
+- at least two candidates have records,
+- every candidate with records has a percentage (enough checked record on at least 3 of
+  your answered questions), and
+- no one ties for the highest percentage (as shown, rounded to a whole number).
+
+Otherwise no one is marked, and the race says why. A candidate whose records aren't
+checked yet is never ranked below one with more. Candidates stay in alphabetical order
+either way. The mark is a summary of the records, not a recommendation.
+
+**No quiz for judges.** The Texas Code of Judicial Conduct, Canon 5(1)(i), bars judges
+and judicial candidates from making "pledges or promises of conduct in office regarding
+pending or impending cases, specific classes of cases, specific classes of litigants, or
+specific propositions of law" ([Texas Code of Judicial Conduct](https://www.txcourts.gov/media/1462935/texas-state-code-of-judicial-conduct.pdf), [archived copy](https://web.archive.org/web/20261001092159/https://www.txcourts.gov/media/1462935/texas-state-code-of-judicial-conduct.pdf)).
+A "what would you do?" quiz would ask for exactly that, so races for judges never have
+one. The validator rejects quiz questions for any office marked as judicial.
+
+**Topics.** "What matters to you?" highlights races whose office deals with the topics you
+pick. Each of an office's legal powers lists the topics it directly covers, judged only
+from what the law says the office does. For example, a county commissioner's road power is
+tagged "Roads & transportation". A power that doesn't clearly fit a topic is left untagged.
+Lawmakers can pass laws on many subjects, but their powers are tagged only where the power
+itself names the topic (the budget and taxes). Topics never change the order of races and
+never depend on the candidates.
+
+**Your results stay with you.** Answers live only in the page while it's open. "Print or
+save as PDF" uses your browser's print window. "Copy a private link" puts your answers in
+the part of the link after `#`, which browsers never send to any server. Anyone you give the
+link to can see your answers. When you open such a link, the page fills in the answers,
+shows the results, and then clears them from the address bar.
+
 ## How your ballot is ordered
 Each county ballot page lists every race, grouped by level of government, **closest to
 home first**:

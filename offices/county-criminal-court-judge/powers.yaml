@@ -1,3 +1,4 @@
 office_type: county-criminal-court-judge
 level: county
+judicial: true
 powers: []   # Texas powers: data/states/tx/office-overrides/county-criminal-court-judge.yaml

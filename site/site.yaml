@@ -47,3 +47,17 @@ campaign_finance:
         office_types: [county-judge, county-commissioner, county-attorney, county-clerk, district-clerk,
                        county-treasurer, county-civil-court-judge, county-criminal-court-judge, probate-judge,
                        justice-of-the-peace]
+
+# Topics for the ballot page's "What matters to you?" picker, in display order. Keys must
+# match the topic list in schemas/other.schema.json; each office power lists its topics.
+topics:
+  taxes-budget: Taxes & budget
+  schools: Schools
+  emergencies: Disasters & emergencies
+  roads-transportation: Roads & transportation
+  water-utilities: Water & utilities
+  housing-land: Housing, land & property
+  courts-justice: Courts & justice
+  health: Health
+  elections: Elections
+  energy: Energy

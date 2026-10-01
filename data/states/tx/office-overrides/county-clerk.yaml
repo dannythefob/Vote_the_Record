@@ -13,6 +13,7 @@ powers:
     description: Records documents filed for recording, and keeps the index of property records such as deeds and mortgages.
     statute: Local Government Code §§ 193.001, 193.003
     source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.193.htm
+    topics: [housing-land]
 
   - id: P-COMMISSIONERS
     description: Keeps the Commissioners Court's books, papers, and records.

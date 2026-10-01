@@ -474,3 +474,25 @@ def test_unmapped_area_must_be_on_the_ballot_and_not_in_zips(tmp_path):
                          extra={f"{BALLOT_DIR}/ballot.yaml": ballot})
     assert any("unmapped: area 'nowhere'" in e for e in errors)
     assert any("'test-county/jp-1' is listed as unmapped" in e for e in errors)
+
+
+def test_judicial_office_may_not_have_quiz_scenarios(tmp_path):
+    assert build(tmp_path) == []
+    powers = tmp_path / "offices/test-office/powers.yaml"
+    doc = yaml.safe_load(powers.read_text(encoding="utf-8"))
+    doc["judicial"] = True
+    powers.write_text(yaml.safe_dump(doc, sort_keys=False), encoding="utf-8")
+    errors = validate(tmp_path).errors
+    assert any("judicial offices have no quiz" in e for e in errors)
+
+
+def test_power_topics_must_come_from_the_topic_list(tmp_path):
+    assert build(tmp_path) == []
+    powers = tmp_path / "offices/test-office/powers.yaml"
+    doc = yaml.safe_load(powers.read_text(encoding="utf-8"))
+    doc["powers"][0]["topics"] = ["taxes-budget"]
+    powers.write_text(yaml.safe_dump(doc, sort_keys=False), encoding="utf-8")
+    assert validate(tmp_path).errors == []
+    doc["powers"][0]["topics"] = ["hot-button-issue"]
+    powers.write_text(yaml.safe_dump(doc, sort_keys=False), encoding="utf-8")
+    assert validate(tmp_path).errors != []

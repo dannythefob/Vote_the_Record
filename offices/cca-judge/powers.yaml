@@ -1,3 +1,4 @@
 office_type: cca-judge
 level: state
+judicial: true
 powers: []   # Texas powers: data/states/tx/office-overrides/cca-judge.yaml

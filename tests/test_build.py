@@ -674,3 +674,29 @@ def test_basic_race_shows_money_lines_and_unconfirmed_incumbents(tmp_path):
     assert "No 2025–2026 report found in Demo Ethics Office data." in race
     assert "Campaign finance reports for this office are filed locally, not with the state." in race
     assert "Texas Election Code, chapter 252</a> lists the filing office" in race
+
+
+def test_ballot_page_has_topics_and_a_quiz_without_judges(tmp_path):
+    out = tmp_path / "dist"
+    assert build(REPO / "tests" / "fixtures" / "demo", out, demo=True, today="2026-09-29") == 0
+    html = read(out, BALLOT_PAGE)
+    assert 'id="topic-picker"' in html and 'value="taxes-budget"' in html and 'value="roads-transportation"' in html
+    assert 'value="schools"' not in html  # only topics some race on this ballot deals with
+    assert "About: Taxes &amp; budget · Disasters &amp; emergencies · Roads &amp; transportation" in html
+    data = json.loads(re.search(r'id="ballot-data">(.*?)</script>', html, re.S).group(1))
+    keys = [q["key"] for q in data["quiz"]]
+    assert keys == ["demo-county/commissioner-precinct-9"]  # JP races are judicial: never a quiz
+    assert data["topicLabels"]["schools"] == "Schools"
+    quiz = html[html.index('id="ballot-quiz"'):]
+    n = data["quiz"][0]["n"]
+    assert f'name="answer-{n}-county-commissioner/S-01"' in quiz
+    assert "Texas Code of Judicial Conduct" in quiz
+    assert "Closest to your answers" not in html  # only ever added by JS, under the rules in quiz.js
+
+
+def test_topic_labels_must_match_the_schema(tmp_path):
+    config = yaml.safe_load((REPO / "site" / "site.yaml").read_text(encoding="utf-8"))
+    config["topics"].pop("energy")
+    path = tmp_path / "site.yaml"
+    path.write_text(yaml.safe_dump(config), encoding="utf-8")
+    assert build(REPO / "tests" / "fixtures" / "demo", tmp_path / "dist", demo=True, config_path=path) == 1

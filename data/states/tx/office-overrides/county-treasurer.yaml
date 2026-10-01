@@ -13,11 +13,13 @@ powers:
     description: The county's chief custodian of money. Keeps county funds in a designated depository and accounts for all money belonging to the county.
     statute: Local Government Code § 113.001
     source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.113.htm
+    topics: [taxes-budget]
 
   - id: P-ACCOUNTS
     description: Keeps accounts of the county's receipts, spending, and debts.
     statute: Local Government Code § 113.002
     source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.113.htm
+    topics: [taxes-budget]
 
 plain_summary:
   intro:

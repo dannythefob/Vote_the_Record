@@ -7,6 +7,7 @@ powers:
     description: The district exists to promote employment, commerce, transportation, housing, tourism, recreation, the arts, entertainment, economic development, safety, and scenic beauty.
     statute: Special District Local Laws Code § 3813.003(b)
     source_url: https://statutes.capitol.texas.gov/Docs/SD/htm/SD.3813.htm
+    topics: [roads-transportation, housing-land]
 
   - id: P-BOARD
     description: Five directors. The Harris County Commissioners Court appoints Positions 1 to 3, and voters elect Positions 4 and 5.
@@ -17,6 +18,7 @@ powers:
     description: The district can impose a sales and use tax, but may not impose a property tax.
     statute: Special District Local Laws Code §§ 3813.151, 3813.159
     source_url: https://statutes.capitol.texas.gov/Docs/SD/htm/SD.3813.htm
+    topics: [taxes-budget]
 
 plain_summary:
   intro:

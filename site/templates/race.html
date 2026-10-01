@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% from "partials/macros.html" import fact_list, verification_badge, source_line, report_link %}
 {% from "partials/icons.html" import icon %}
+{% from "partials/quiz.html" import quiz_question %}
 {% block title %}{{ race.name }}{% endblock %}
 {% block description %}What the {{ race.name }} does, who's running, and a quick quiz to compare your views with their record.{% endblock %}
 {% block content %}
@@ -156,21 +157,7 @@
   <noscript><p class="banner-inline">The quiz needs JavaScript. Everything else on this page works without it.</p></noscript>
   <form id="survey-form" class="survey" novalidate>
     {% for q in race.questions %}
-    <fieldset class="card question">
-      <legend><span class="q-number">Question {{ loop.index }} of {{ race.questions | length }}</span> {{ q.text }}</legend>
-      <div class="options">
-        {% for o in q.options %}
-        <label><input type="radio" name="answer-{{ q.id }}" value="{{ o.id }}"> {{ o.text }}</label>
-        {% endfor %}
-        <label class="skip"><input type="radio" name="answer-{{ q.id }}" value="" checked> Skip this one</label>
-      </div>
-      <fieldset class="importance">
-        <legend>How much does this matter to you?</legend>
-        {% for value, text in [(1, "A little"), (2, "Somewhat"), (3, "A lot")] %}
-        <label><input type="radio" name="importance-{{ q.id }}" value="{{ value }}"{% if value == 2 %} checked{% endif %}> {{ text }}</label>
-        {% endfor %}
-      </fieldset>
-    </fieldset>
+    {{ quiz_question(q, loop.index, race.questions | length) }}
     {% endfor %}
     <div class="form-actions">
       <button type="submit">See my results</button>

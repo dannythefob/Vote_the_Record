@@ -13,16 +13,19 @@ powers:
     description: The board sets curriculum and graduation requirements for public schools.
     statute: Education Code § 7.102(c)(4), (11)
     source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.7.htm
+    topics: [schools]
 
   - id: P-MATERIALS
     description: The board adopts the instructional materials (textbooks and similar) for public schools.
     statute: Education Code § 7.102(c)(23)
     source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.7.htm
+    topics: [schools]
 
   - id: P-PLAN
     description: The board writes and updates the long-range plan for public education.
     statute: Education Code § 7.102(c)(1)
     source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.7.htm
+    topics: [schools]
 
 plain_summary:
   intro:

@@ -204,6 +204,58 @@ async function main() {
     })()`);
   })();
 
+  // Topics and the ballot-wide quiz.
+  await load(BALLOT);
+  const names = (sel) => `[...document.querySelectorAll('${sel}')].map(h => h.textContent.trim())`;
+  report.ballot.topics = await evaluate(`(async () => {
+    const wait = () => new Promise(r => setTimeout(r, 50));
+    const box = document.querySelector('#topic-picker input[value="roads-transportation"]');
+    box.click(); await wait();
+    const out = { pickerShown: !document.getElementById('topic-picker').hidden,
+                  hits: ${names(".ballot-race.topic-hit .ballot-race-name")},
+                  chip: document.querySelector('.ballot-race.topic-hit .topic-chip').textContent,
+                  status: document.getElementById('topic-status').textContent };
+    document.getElementById('topic-only').click(); await wait();
+    out.onlyShown = ${names("[data-race]:not([hidden]) .ballot-race-name")};
+    document.getElementById('topic-only').click(); box.click(); await wait();
+    out.afterClear = document.querySelectorAll('.topic-hit').length;
+    return out;
+  })()`);
+  report.ballot.quiz = await evaluate(`(async () => {
+    const wait = () => new Promise(r => setTimeout(r, 80));
+    const form = document.getElementById('ballot-quiz-form');
+    const blocks = ${names("[data-quiz-race]:not([hidden]) .quiz-race-name")};
+    form.querySelectorAll('.question').forEach(q => {
+      q.querySelector('.options input[value="A"]').click();
+      q.querySelector('.importance input[value="3"]').click();
+    });
+    form.querySelector('button[type=submit]').click(); await wait();
+    const out = document.getElementById('ballot-results');
+    const res = { blocks, shown: !out.hidden, focused: document.activeElement && document.activeElement.id,
+      coverage: out.querySelector('.coverage').textContent,
+      notes: ${names("#ballot-results .compare-note, #ballot-results .result-race > p.muted")},
+      cards: ${names("#ballot-results .result h3")},
+      closest: ${names("#ballot-results .result-closest h3")} };
+    out.querySelector('.result-actions .button-secondary').click(); await wait();
+    const linkBox = out.querySelector('.link-box');
+    res.link = linkBox.value;
+    return res;
+  })()`);
+  const link = report.ballot.quiz.link;
+  await load("/");  // a fresh page, so the link really loads (a hash-only change wouldn't)
+  await cdp.send("Page.navigate", { url: link });
+  for (let i = 0; i < 100; i++) {
+    if (await evaluate("document.readyState === 'complete' && !document.getElementById('ballot-results').hidden")) break;
+    await new Promise((r) => setTimeout(r, 50));
+  }
+  problems.cspViolations.push(...(await evaluate("window.__csp")).map((v) => `${BALLOT} (private link): ${v}`));
+  report.ballot.fromLink = await evaluate(`(() => ({
+    hash: location.hash,
+    resultsShown: !document.getElementById('ballot-results').hidden,
+    closest: ${names("#ballot-results .result-closest h3")},
+    checked: document.querySelectorAll('#ballot-quiz-form .options input[value="A"]:checked').length,
+  }))()`);
+
   await cdp.send("Emulation.setEmulatedMedia", { features: [
     { name: "prefers-color-scheme", value: "dark" }, { name: "prefers-reduced-motion", value: "reduce" }] });
   report.dark = await evaluate("getComputedStyle(document.body).backgroundColor");

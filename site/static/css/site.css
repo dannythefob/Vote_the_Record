@@ -383,3 +383,31 @@ details.more[open] > summary { margin-bottom: 8px; }
 .choice-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; }
 .choice-list li { border: 1px solid var(--control); border-radius: 4px; padding: 4px 12px; font-weight: 600; }
 .notice-h { font-size: 1.05rem; margin: 0 0 6px; }
+
+/* Topics ("What matters to you?") and the ballot-wide quiz */
+.topic-picker { margin: 20px 0; }
+.topic-picker h2 { margin-top: 0; }
+.topic-options { border: 0; padding: 0; margin: 8px 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.topic-option { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 1px solid var(--control);
+  border-radius: 999px; background: var(--surface); cursor: pointer; }
+.topic-option:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.topic-only { display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; }
+.race-topics { margin: 4px 0; font-size: 0.88rem; color: var(--muted); }
+.ballot-race.topic-hit { border-color: var(--accent); box-shadow: inset 4px 0 0 var(--accent); }
+.topic-chip { border-color: var(--accent); color: var(--accent); }
+.quiz-race { margin: 24px 0; }
+.quiz-race-name { margin-bottom: 8px; }
+.result-race { margin: 28px 0; }
+.coverage { font-weight: 600; }
+.compare-note { color: var(--warn-ink); background: var(--warn-bg); padding: 8px 12px; border-radius: 6px; }
+.chip-closest { display: inline-block; border-color: var(--accent); color: var(--on-accent); background: var(--accent); margin: 0 0 8px; }
+.result-closest { border-color: var(--accent); }
+.link-box { width: 100%; margin-top: 8px; }
+
+@media print {
+  .site-header, .site-footer, .banner, .zip-form, .topic-picker, #ballot-quiz-form, .result-actions, .link-box,
+  .notice, .hero-actions, .skip-link { display: none !important; }
+  body { background: #fff; color: #000; }
+  .card { box-shadow: none; break-inside: avoid; }
+  a { color: #000; }
+}

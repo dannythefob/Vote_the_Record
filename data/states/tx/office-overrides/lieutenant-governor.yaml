@@ -18,6 +18,7 @@ powers:
     description: Sits on the Legislative Budget Board, whose staff prepares the state budget bill for each regular session.
     statute: Government Code §§ 322.001, 322.008
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.322.htm
+    topics: [taxes-budget]
 
   - id: P-SUCCESSION
     description: Becomes governor for the rest of the term if the office of governor becomes vacant.

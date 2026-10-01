@@ -7,11 +7,13 @@ powers:
     description: To provide emergency services, the district may hold and manage property, enter into contracts, and hire the officers and employees it needs.
     statute: Health and Safety Code § 775.031(a)
     source_url: https://statutes.capitol.texas.gov/Docs/HS/htm/HS.775.htm
+    topics: [emergencies]
 
   - id: P-TAX
     description: The board imposes a property tax each year to support the district.
     statute: Health and Safety Code § 775.074(a)
     source_url: https://statutes.capitol.texas.gov/Docs/HS/htm/HS.775.htm
+    topics: [taxes-budget]
 
 plain_summary:
   intro:

@@ -1,3 +1,4 @@
 office_type: supreme-court-justice
 level: state
+judicial: true
 powers: []   # Texas powers: data/states/tx/office-overrides/supreme-court-justice.yaml
