@@ -15,7 +15,7 @@ funding:
   source_title: 'Texas Ethics Commission: Flores, David O. (Mr.), campaign finance report 101067776 (filed Sep 26, 2026)'
   source_kind: document
   sha256: 36245de9461aaf0ef87e307cda2ec4e15b467b19324818b120aed2f1baf0b8df
-  archive_url: null
+  archive_url: https://web.archive.org/web/20261001175621/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101067776.PDF
   event_date: '2026-09-24'
   retrieved: '2026-09-30'
   verification: unverified
