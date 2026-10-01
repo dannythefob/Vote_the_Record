@@ -30,7 +30,7 @@ sources:
   source_title: 'City of Austin: City Council'
   source_kind: page
   sha256: null
-  archive_url: null
+  archive_url: https://web.archive.org/web/20261001200044/https://www.austintexas.gov/department/city-council
   event_date: '2026-10-01'
   retrieved: '2026-10-01'
   verification: unverified
