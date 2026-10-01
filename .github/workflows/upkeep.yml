@@ -1,0 +1,61 @@
+name: weekly upkeep report
+
+# Every Monday (and on demand): checks what needs attention and posts it to one GitHub issue
+# labeled "upkeep". It only reads the data; it never commits. See docs/MAINTAINING.md.
+
+on:
+  schedule:
+    - cron: "0 13 * * 1"   # Mondays 13:00 UTC (8:00 Central daylight time)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+
+      - name: Status and source links
+        run: python src/tools/status.py --check-links > report.md
+
+      - name: Who holds each office (official rosters)
+        run: |
+          { echo; echo "## Rosters"; echo '```'; python src/tools/check_rosters.py; echo '```'; } >> report.md
+
+      - name: New Texas Ethics Commission reports (preview only)
+        run: |
+          today=$(date -u +%F)
+          { echo; echo "## Campaign finance (Texas Ethics Commission)"; } >> report.md
+          first=1
+          for ballot in data/states/tx/localities/*/elections/*/ballot.yaml; do
+            date=$(basename "$(dirname "$ballot")")
+            [ "$date" \< "$today" ] && continue
+            if [ $first = 1 ]; then
+              args="--download"; first=0
+            else
+              args="--zip cache/tec/TEC_CF_CSV.zip"
+            fi
+            { echo; echo "\`$ballot\`"; echo '```'; python src/collectors/states/tx/tec_finance.py $args --ballot "$ballot"; echo '```'; } >> report.md
+          done
+
+      - name: Post to the upkeep issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          head -c 60000 report.md > body.md
+          gh label create upkeep --description "Weekly upkeep report" --color 0F5C63 --force
+          number=$(gh issue list --label upkeep --state open --json number --jq '.[0].number')
+          if [ -n "$number" ]; then
+            gh issue edit "$number" --body-file body.md
+            gh issue comment "$number" --body "Report updated $(date -u +%F). Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          else
+            gh issue create --title "Weekly upkeep report" --label upkeep --body-file body.md
+          fi

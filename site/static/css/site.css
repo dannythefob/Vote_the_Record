@@ -411,3 +411,4 @@ details.more[open] > summary { margin-bottom: 8px; }
   .card { box-shadow: none; break-inside: avoid; }
   a { color: #000; }
 }
+.earlier { margin-top: 4px; font-size: 0.9rem; }

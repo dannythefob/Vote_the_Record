@@ -134,6 +134,11 @@ votes and filings as they are recorded.
 - Read "Report a problem" submissions (owner only): `python src/review/reports.py`
 - JS scoring tests alone: `node --test "tests/js/*.test.mjs"` (also run by pytest via tests/test_js.py)
 - Site settings and deploy details: `site/README.md`
+- Upkeep (runbook: `docs/MAINTAINING.md`; all preview first, `--write` to apply):
+  `python src/tools/status.py [--check-links]`, `python src/tools/check_rosters.py`,
+  `python src/tools/archive.py`, `python src/tools/new_election.py --spec <file>`,
+  `python src/collectors/states/tx/tec_finance.py --ballot <ballot.yaml> (--zip <file> | --download)`.
+  The weekly `upkeep` workflow posts the same checks to a GitHub issue; it never commits.
 - Owner's review page (verify facts with one click; owner only, never run by Claude): `python src/review/review.py` — see `docs/REVIEWING.md`
 
 ## Site rules

@@ -661,7 +661,8 @@ def test_basic_race_shows_money_lines_and_unconfirmed_incumbents(tmp_path):
     money = dict(base, id="tx/localities/demo-esd/elections/2026-11-03/commissioners/candidates/a-one#M-01",
                  headline="Raised $10 and had $5 on hand (DEMO)", statement="DEMO report.",
                  source_url="https://example.gov/r1", source_title="DEMO report")
-    for slug, name, funding in (("a-one", "A One", [money]), ("b-two", "B Two", [])):
+    older = dict(money, id=money["id"].replace("#M-01", "#M-00"), headline="Raised $1 (OLDER DEMO)", event_date="2026-01-15")
+    for slug, name, funding in (("a-one", "A One", [older, money]), ("b-two", "B Two", [])):
         (folder / "candidates" / f"{slug}.yaml").write_text(yaml.safe_dump({
             "id": slug, "name": name, "incumbent": None, "ballot_party": None, "records": [], "funding": funding,
             "endorsements": [], "running_on": {"policy_proposals": [], "attack_messaging": [], "contested_claims": []},
@@ -671,6 +672,7 @@ def test_basic_race_shows_money_lines_and_unconfirmed_incumbents(tmp_path):
     race = read(out, "races/tx/demo-esd/2026-11-03/commissioners/index.html")
     assert "We haven't confirmed who holds this office now." in race
     assert "Raised $10 and had $5 on hand (DEMO)" in race and 'href="https://example.gov/r1"' in race
+    assert race.index("Raised $10 and had $5 on hand (DEMO)") < race.index("Earlier reports (1)") < race.index("(OLDER DEMO)")
     assert "No 2025–2026 report found in Demo Ethics Office data." in race
     assert "Campaign finance reports for this office are filed locally, not with the state." in race
     assert "Texas Election Code, chapter 252</a> lists the filing office" in race

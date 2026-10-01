@@ -1,0 +1,101 @@
+# Keeping the site up to date
+
+This is the runbook for keeping Vote the Record current: every week, for each new election,
+and after Election Day. Every tool here previews its changes first. Add `--write` only after
+reading the preview. Any change under `data/` asks for the owner's approval, and no tool ever
+marks anything verified (see [REVIEWING.md](REVIEWING.md)).
+
+Run commands from the project folder in a VS Code terminal (**Terminal → New Terminal**).
+On Windows, write `.venv\Scripts\python` where this page says `python`.
+
+## Every week
+
+A GitHub Action (`.github/workflows/upkeep.yml`) runs every Monday morning. It updates one
+GitHub issue labeled **upkeep** with:
+
+- **Status:** unverified items, sources without an archived copy, races missing incumbent
+  status or money information, and source links that stopped loading.
+- **Rosters:** official officeholder lists that no longer match who we show as the incumbent.
+- **Campaign finance:** new Texas Ethics Commission reports since the last update.
+
+It never changes anything. To act on it:
+
+| The report says | Run |
+|---|---|
+| Sources without an archived copy | `python src/tools/archive.py`, then again with `--write` |
+| New campaign finance reports | `python src/collectors/states/tx/tec_finance.py --download --ballot <ballot.yaml>`, then again with `--zip cache/tec/TEC_CF_CSV.zip --write` |
+| A roster no longer matches | Open the roster link and look. If a seat changed hands, update that race by hand. If it's a known, harmless case (say, a candidate holding a *different* seat on the same list), add it to `src/tools/roster_known.yaml` with the reason. |
+| A source link stopped loading | Nothing urgent: the archived copy still holds the record. Find the document's new address if there is one. |
+
+To run the same checks on your computer:
+
+```
+python src/tools/status.py --check-links
+python src/tools/check_rosters.py
+```
+
+New money reports never replace old ones. Each report becomes its own fact (M-01, M-02,
+...). The race page shows the newest, and earlier ones sit under "Earlier reports".
+
+## A new election
+
+1. **Get the official sample ballot** from the county clerk or elections office. Save the
+   PDF, note its URL, and get its SHA-256 (`certutil -hashfile file.pdf SHA256` on Windows).
+   Archive it: `https://web.archive.org/save/<url>`.
+2. **Write a spec file** listing every contest in ballot order, with names exactly as printed.
+   The format is at the top of `src/tools/new_election.py`. Example:
+
+   ```yaml
+   ballot: tx/localities/travis-county/elections/2027-05-01
+   name: Travis County ballot
+   election_date: "2027-05-01"
+   election_label: May 1, 2027 joint election
+   lookup_url: https://...
+   sample_ballot: {issuer: Travis County Clerk, url: "https://...", title: "Sample Ballot, May 1, 2027",
+                   sha256: "...", archive_url: "https://web.archive.org/web/...", retrieved: "2027-03-15"}
+   contests:
+     - race: tx/localities/city-of-austin/elections/2027-05-01/council-district-3
+       name: Austin City Council, District 3
+       office_type: city-council-member
+       page: 2
+       candidates: [{name: JANE DOE, party: null}]
+   ```
+
+3. **Create the files:** `python src/tools/new_election.py --spec <spec.yaml>`, check the list,
+   then add `--write`. Every race starts as a basic page. Nothing existing is overwritten.
+4. **New office types** need `offices/<type>/powers.yaml` (with `level`, and `judicial: true`
+   for any judge) and, for Texas, `data/states/tx/office-overrides/<type>.yaml`, with each power
+   citing its law and listing its `topics`.
+5. **Address and ZIP lookup:** for Harris County, re-run
+   `src/collectors/states/tx/harris_precincts.py` for the new ballot. A new county needs its own
+   collector built the same way.
+6. **Same data for every race:** incumbent status from official rosters (add a
+   "Who holds this office now" fact, `#S-HOLDER`, citing the roster), and campaign finance with
+   `tec_finance.py`.
+7. **Check:** `python src/validate/validate.py`, `python -m pytest tests`, and
+   `python src/build/build.py`. Preview with `python -m http.server 8000 -d site/dist`.
+8. **Review** the new facts in the review page ([REVIEWING.md](REVIEWING.md)), then merge to `main`
+   to publish.
+
+Ballot pages disappear from the site once their election date passes. Race pages stay.
+
+## After Election Day (design, to build once results are certified)
+
+After the election, the site shifts from candidates to the people who won: what they said,
+what they do, and how they vote, next to each other and sourced. The plan:
+
+1. **Results.** Each race gets a sourced `result`: the winners, citing the official canvass.
+   The ballot page becomes an archive page that shows outcomes.
+2. **People.** Add a person record, `data/states/<st>/people/<slug>.yaml`, so that someone who
+   runs again, or wins and later runs for another office, keeps one history. Candidate files
+   point to their person. Records and promises then belong to the person, not to one race.
+3. **Officeholders.** Each winner gets an officeholder entry for the seat and term. Their votes
+   and actions (from official minutes and roll calls, in the existing `actions/` files) and
+   their promise tracker carry over from the campaign.
+4. **What they said vs. what they did.** The officeholder page shows each promise or statement
+   next to the matching votes and actions, with sources. Like everything else, it states what is
+   recorded, in the same words for everyone, with no labels or adjectives.
+5. **Later:** shareable cards built from the same sourced facts, for social media.
+
+Open questions to settle before building: how person IDs are chosen, and how to link records
+gathered for a candidate page to the person without changing any published fact ID.

@@ -1,0 +1,9 @@
+# Roster findings already reviewed, so check_rosters.py stops repeating them.
+# Each entry: the race folder (under data/states), the candidate file name, and why it's fine.
+known:
+  - race: tx/districts/court-of-appeals-14/elections/2026-11-03/chief-justice
+    candidate: kevin-jewell
+    reason: A justice in a different seat on the same court; the chief justice seat has no incumbent running.
+  - race: tx/localities/city-of-league-city/elections/2026-11-03/mayor
+    candidate: tom-crews
+    reason: Holds council Position 3 and is running for mayor; not the incumbent mayor.

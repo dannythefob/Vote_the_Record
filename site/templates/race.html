@@ -85,8 +85,11 @@
     {% if race.detail == "basic" %}
     {% if c.funding or race.funding_check %}
     <ul class="glance">
-      {% for f in c.funding %}
-      <li>{{ icon("money") }}<span><strong>Money:</strong> {{ f.get('headline') or f.statement }}{% if f.verification != "verified" %} <span class="badge badge-unverified">Unverified</span>{% endif %} <a href="{{ f.source_url }}" rel="noopener noreferrer">Source</a></span></li>
+      {% for f in c.funding_latest %}
+      <li>{{ icon("money") }}<span><strong>Money:</strong> {{ f.get('headline') or f.statement }}{% if f.verification != "verified" %} <span class="badge badge-unverified">Unverified</span>{% endif %} <a href="{{ f.source_url }}" rel="noopener noreferrer">Source</a>
+        {% if c.funding_earlier %}<details class="earlier"><summary>Earlier reports ({{ c.funding_earlier | length }})</summary><ul>
+          {% for e in c.funding_earlier %}<li>{{ e.get('headline') or e.statement }}{% if e.verification != "verified" %} <span class="badge badge-unverified">Unverified</span>{% endif %} <a href="{{ e.source_url }}" rel="noopener noreferrer">Source</a></li>{% endfor %}
+        </ul></details>{% endif %}</span></li>
       {% else %}
       <li>{{ icon("money") }}<span><strong>Money:</strong> No 2025–2026 report found in {{ race.funding_check.source_title.split(":")[0] }} data.{% if race.funding_check.verification != "verified" %} <span class="badge badge-unverified">Unverified</span>{% endif %}</span></li>
       {% endfor %}

@@ -392,6 +392,9 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
             for entry in cand.get("promise_tracker") or []
         ]
         cand["promise_card"] = promise_score(cand["promises"]) if cand.get("incumbent") else None
+        # Newest report first on the card; earlier ones stay listed (facts are never edited).
+        money = sorted(cand.get("funding") or [], key=lambda f: (f.get("event_date") or "", f["id"]), reverse=True)
+        cand["funding_latest"], cand["funding_earlier"] = money[:1], money[1:]
 
     questions = [
         {"id": f"{office}/{s['id']}", "title": s.get("title") or s["id"], "text": s["scenario"], "powers": s["powers"],
