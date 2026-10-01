@@ -5,7 +5,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "src" / "collectors" / "states" / "tx"))
-import harris_precincts as h  # noqa: E402
+import county_precincts as h  # noqa: E402
 
 
 def square(x0, y0, size, value):

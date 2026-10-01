@@ -20,3 +20,36 @@ sources:
   verification: unverified
   verified_on: null
   reviewer: null
+- id: tx/districts/state-house-48/elections/2026-11-03/state-representative/race#S-FUND
+  headline: Campaign finance search with no recent report
+  statement: The Texas Ethics Commission's campaign finance data, downloaded October 1, 2026, has no report for a period ending on or after 2025-01-01 for Anthony Gupta.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip
+  source_title: 'Texas Ethics Commission: Campaign Finance Data, bulk CSV download'
+  source_kind: document
+  sha256: e3672d7576a949dd6285436e44a419a6ac7fa79e0a063a341e14926549bd2633
+  archive_url: null
+  event_date: '2026-10-01'
+  retrieved: '2026-10-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Searched filers.csv and cover.csv (candidate and judicial officeholder filers) by name, with office and district checks for nicknames. Absence in the bulk data is not proof that no report exists; check TEC's search at https://www.ethics.state.tx.us/search/cf/. The bulk file is too large for the Wayback Machine.
+- id: tx/districts/state-house-48/elections/2026-11-03/state-representative/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (Texas House of Representatives: Members), checked on October 1, 2026, shows that Donna Howard, a candidate in this race, currently holds this seat. It does not list the other candidates as holding this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://house.texas.gov/members/
+  source_title: 'Texas House of Representatives: Members'
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20261001021239/https://house.texas.gov/members
+  event_date: '2026-10-01'
+  retrieved: '2026-10-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null

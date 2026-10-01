@@ -13,6 +13,7 @@ a full example):
   lookup_url: https://...                                    # the county's "what's on my ballot"
   sample_ballot: {issuer: Travis County Clerk, url: ..., title: ..., sha256: ..., archive_url: ..., retrieved: ...}
   write_in_list: {url: ..., title: ..., sha256: ..., archive_url: ..., retrieved: ...}   # optional
+  localities: {city-of-austin: city, austin-isd: school-district}   # optional: writes locality.yaml if missing
   contests:                                                  # in ballot order
     - existing: tx/statewide/elections/2027-05-01/governor   # already in the data: just list it
     - race: tx/localities/city-of-austin/elections/2027-05-01/council-district-3
@@ -128,6 +129,14 @@ def plan(root: Path, spec: dict) -> list[tuple[Path, str, dict]]:
                 doc["write_in"] = True
             doc.update(EMPTY)
             out.append((target, "# Basic race: name and ballot label as printed on the sample ballot. Unverified.\n", doc))
+
+    # Localities new to this ballot get a locality.yaml (cities, school districts, special districts).
+    state = spec["ballot"].split("/")[0]
+    for slug_, kind in (spec.get("localities") or {}).items():
+        target = root / "data/states" / state / "localities" / slug_ / "locality.yaml"
+        if not target.exists():
+            out.append((target, f"# {kind.replace('-', ' ').capitalize()} on the {spec['name']}.\n",
+                        {"locality": slug_, "type": kind, "state": state.upper(), "sources": []}))
 
     ballot_file = root / "data/states" / spec["ballot"] / "ballot.yaml"
     if ballot_file.exists():

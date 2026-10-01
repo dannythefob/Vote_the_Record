@@ -1,7 +1,7 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: andy-brown
 name: Andy Brown
-incumbent: null
+incumbent: true
 ballot_party: Democratic Party
 records: []
 funding: []

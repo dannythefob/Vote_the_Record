@@ -20,3 +20,19 @@ sources:
   verification: unverified
   verified_on: null
   reviewer: null
+- id: tx/districts/court-of-appeals-3/elections/2026-11-03/chief-justice/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (Third Court of Appeals: Justices), checked on October 1, 2026, shows that Darlene Byrne, a candidate in this race, currently holds this seat. It does not list the other candidates as holding this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.txcourts.gov/3rdcoa/about-the-court/justices/
+  source_title: 'Third Court of Appeals: Justices'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-01'
+  retrieved: '2026-10-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null

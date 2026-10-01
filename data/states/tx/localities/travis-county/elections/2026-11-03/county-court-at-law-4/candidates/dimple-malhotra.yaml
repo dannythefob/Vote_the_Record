@@ -1,7 +1,7 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: dimple-malhotra
 name: Dimple Malhotra
-incumbent: null
+incumbent: true
 ballot_party: Democratic Party
 records: []
 funding: []

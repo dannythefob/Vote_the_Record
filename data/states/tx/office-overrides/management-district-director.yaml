@@ -1,0 +1,35 @@
+# Powers of a Texas municipal management district director.
+# Text checked against Local Government Code chapter 375 (statutes.capitol.texas.gov, read through
+# its document server tcss.legis.texas.gov) on 2026-10-01. A district's own creating law can add to these.
+office_type: management-district-director
+state: TX
+powers:
+  - id: P-PURPOSE
+    description: A municipal management district exists to promote employment, commerce, economic development, and the public welfare in commercial areas.
+    statute: Local Government Code § 375.001(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.375.htm
+    topics: [housing-land]
+
+  - id: P-BORROW
+    description: The district may borrow money and issue notes, bonds, or other obligations on terms the board decides.
+    statute: Local Government Code § 375.092(d)
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.375.htm
+    topics: [taxes-budget]
+
+  - id: P-ASSESSMENTS
+    description: The board may carry out improvement projects and services that benefit all or part of the district, and charge special assessments on property in that area to pay for them.
+    statute: Local Government Code § 375.111
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.375.htm
+    topics: [taxes-budget, housing-land]
+
+plain_summary:
+  intro:
+    text: Serves on the board of a district that builds and pays for improvements in a commercial or development area, using bonds and charges on property.
+    powers: [P-PURPOSE, P-BORROW, P-ASSESSMENTS]
+  points:
+    - text: Can issue bonds and borrow money
+      icon: budget
+      powers: [P-BORROW]
+    - text: Can charge property owners for improvements that benefit them
+      icon: budget
+      powers: [P-ASSESSMENTS]

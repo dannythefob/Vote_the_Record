@@ -1,7 +1,7 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: raul-arturo-gonzalez
 name: Raul Arturo Gonzalez
-incumbent: null
+incumbent: true
 ballot_party: Democratic Party
 records: []
 funding: []

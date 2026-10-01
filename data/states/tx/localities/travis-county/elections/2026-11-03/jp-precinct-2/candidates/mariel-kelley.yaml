@@ -1,7 +1,7 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: mariel-kelley
 name: Mariel Kelley
-incumbent: null
+incumbent: false
 ballot_party: Democratic Party
 records: []
 funding: []

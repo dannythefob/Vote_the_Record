@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: montserrat-garibay
 name: Montserrat Garibay
-incumbent: null
+incumbent: false
 ballot_party: Democratic Party
 records: []
-funding: []
+funding:
+- id: tx/districts/state-house-49/elections/2026-11-03/state-representative/candidates/montserrat-garibay#M-01
+  headline: Raised $21,089 and had $14,683 on hand (May 17 - Jun 30, 2026)
+  statement: 'Campaign finance report covering May 17 - Jun 30, 2026, filed Jul 15, 2026: $21,089.34 in total political contributions, $102,369.64 in total political expenditures, $14,683.32 in contributions on hand at the end of the period, and $35,100.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101057863.PDF
+  source_title: 'Texas Ethics Commission: Garibay, Montserrat (Mrs.), campaign finance report 101057863 (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: 3a30afd64eac905b0af2ba113b97f5c7fa326dc884b417d41eb9200525b97347
+  archive_url: https://web.archive.org/web/20261001190904/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101057863.PDF
+  event_date: '2026-06-30'
+  retrieved: '2026-10-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101057863, form COH, TEC report type SEMIJUL; filer ID 00083295 (Garibay, Montserrat (Mrs.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-01; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

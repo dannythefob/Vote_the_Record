@@ -1,0 +1,3 @@
+office_type: library-district-trustee
+level: local
+powers: []   # Texas powers: data/states/tx/office-overrides/library-district-trustee.yaml

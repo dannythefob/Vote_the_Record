@@ -1,0 +1,26 @@
+# Proposition: exact wording and choices as printed on the sample ballot. Unverified.
+name: City of Sunset Valley, Proposition A
+election_date: '2026-11-03'
+kind: other
+ballot_text: Whether the City of Sunset Valley Crime Control and Prevention District should be continued for ten (10) years and the crime control and prevention district sales tax should be continued for ten (10) years.
+choices:
+- FOR
+- AGAINST
+explained: []
+sources:
+- id: tx/localities/city-of-sunset-valley/elections/2026-11-03/proposition-a/measure#S-01
+  headline: Proposition as printed on the sample ballot
+  statement: 'The Travis County Clerk''s sample ballot for the November 3, 2026 joint general and special elections prints "City of Sunset Valley, Proposition A" on page 6 with the choices FOR and AGAINST and this English wording: "Whether the City of Sunset Valley Crime Control and Prevention District should be continued for ten (10) years and the crime control and prevention district sales tax should be continued for ten (10) years."'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf
+  source_title: 'Travis County Clerk: Consolidated Ballot, November 3, 2026 Joint General and Special Elections (page 6)'
+  source_kind: document
+  sha256: 1e09c8a7e8f264c87e5fb91468c6122ad16b3515d610a43453719a991f4dbeb3
+  archive_url: https://web.archive.org/web/20261001173209/https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf
+  event_date: '2026-11-03'
+  retrieved: '2026-10-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null
