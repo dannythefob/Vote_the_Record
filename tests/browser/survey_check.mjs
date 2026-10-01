@@ -43,10 +43,22 @@ function startServer() {
 
 async function launchBrowser() {
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), "vtr-browser-"));
+  // Linux CI runners (Ubuntu 24.04+) block Chrome's sandbox, so it can't start there without
+  // --no-sandbox. This browser only ever loads the local demo build.
+  const linuxFlags = process.platform === "linux" ? ["--no-sandbox", "--disable-dev-shm-usage"] : [];
   const proc = spawn(browserPath, ["--headless=new", "--remote-debugging-port=0", `--user-data-dir=${profile}`,
-    "--no-first-run", "--no-default-browser-check", "--disable-extensions", "about:blank"], { stdio: "ignore" });
+    "--no-first-run", "--no-default-browser-check", "--disable-extensions", ...linuxFlags, "about:blank"],
+    { stdio: ["ignore", "ignore", "pipe"] });
+  let stderr = "";
+  proc.stderr.on("data", (d) => { stderr += d; });
   const portFile = path.join(profile, "DevToolsActivePort");
-  for (let i = 0; i < 100 && !fs.existsSync(portFile); i++) await new Promise((r) => setTimeout(r, 100));
+  for (let i = 0; i < 300 && !fs.existsSync(portFile) && proc.exitCode === null; i++) {
+    await new Promise((r) => setTimeout(r, 100));
+  }
+  if (!fs.existsSync(portFile)) {
+    proc.kill();
+    throw new Error(`The browser did not start (exit code ${proc.exitCode}). Its output:\n${stderr.slice(-2000)}`);
+  }
   const port = fs.readFileSync(portFile, "utf-8").split("\n")[0].trim();
   const targets = await (await fetch(`http://127.0.0.1:${port}/json/list`)).json();
   const page = targets.find((t) => t.type === "page");
