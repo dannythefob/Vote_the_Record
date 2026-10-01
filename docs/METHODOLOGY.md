@@ -192,6 +192,22 @@ does and the candidates as printed on the official sample ballot. A basic page s
 "We haven't researched this candidate's record yet", which is different from "not found
 in the sources reviewed". Records, sources, and quizzes are added race by race.
 
+**Who holds the office now.** "Incumbent" means the candidate holds the seat on the
+ballot, not a different office. We check the official list for that office (for example,
+the Texas House member list, a court's list of judges, or a school board's member page),
+link it under "Where this list of candidates comes from", and archive it on the Wayback
+Machine. When we can't get or match an official list, the page says "We haven't confirmed
+who holds this office now" and no candidate is marked either way.
+
+**Money.** Every race page says where its candidates file campaign finance reports: the
+Federal Election Commission for Congress, the Texas Ethics Commission for state offices and
+district judges, and the county clerk or a local office for the rest (Texas Election Code,
+chapter 252). Where the filing office publishes data we can read in bulk, each candidate's
+card shows totals from their latest report for a period ending in 2025 or 2026: money
+raised, money spent, cash on hand, and loans, exactly as reported, with the report period.
+If no report turns up, the card says so. A missing report in the data does not prove that
+none was filed. Totals are display-only and never affect a match.
+
 ## Promise tracker
 For now, only the **current officeholder** (the incumbent) has a promise tracker. It
 lists promises they made and the status of each:

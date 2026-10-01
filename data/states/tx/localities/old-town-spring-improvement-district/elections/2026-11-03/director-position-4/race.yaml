@@ -3,6 +3,7 @@ name: Old Town Spring Improvement District, Director, Position 4 (Resident)
 office_type: improvement-district-director
 election_date: '2026-11-03'
 detail: basic
+notes: 'Incumbent status not confirmed: No official director list could be retrieved in three attempts on 2026-09-30.'
 sources:
 - id: tx/localities/old-town-spring-improvement-district/elections/2026-11-03/director-position-4/race#S-01
   headline: Candidates as printed on the Harris County sample ballot

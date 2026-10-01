@@ -1,7 +1,7 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: lashawn-a-williams
 name: LASHAWN A. WILLIAMS
-incumbent: null
+incumbent: true
 ballot_party: Democratic Party
 records: []
 funding: []

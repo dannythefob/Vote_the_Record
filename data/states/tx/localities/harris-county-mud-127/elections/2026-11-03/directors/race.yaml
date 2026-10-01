@@ -21,3 +21,19 @@ sources:
   verification: unverified
   verified_on: null
   reviewer: null
+- id: tx/localities/harris-county-mud-127/elections/2026-11-03/directors/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (Harris County MUD 127: Board of Directors), checked on September 30, 2026, shows that Donna Finkbeiner and Maureen Herzog, candidates in this race, currently hold seats on this board. It does not list the other candidates as holding this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.hcmud127.com/board-of-directors/
+  source_title: 'Harris County MUD 127: Board of Directors'
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20261001023131/https://www.hcmud127.com/board-of-directors/
+  event_date: '2026-09-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null

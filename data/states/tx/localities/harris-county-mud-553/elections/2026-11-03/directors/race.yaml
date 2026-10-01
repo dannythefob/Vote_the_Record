@@ -4,6 +4,7 @@ office_type: water-district-director
 election_date: '2026-11-03'
 seats: 5
 detail: basic
+notes: 'Incumbent status not confirmed: This district was created recently; no official director list was found.'
 sources:
 - id: tx/localities/harris-county-mud-553/elections/2026-11-03/directors/race#S-01
   headline: Candidates as printed on the Harris County sample ballot

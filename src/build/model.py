@@ -418,6 +418,9 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
         "state_powers": (override_doc or {}).get("powers") or [],
         "why_it_matters": pick_why_it_matters(race_doc, locality_doc, office_doc),
         "sources": race_doc.get("sources") or [],
+        "office_level": (office_doc or {}).get("level"),
+        # A race-level fact recording a campaign finance search that found no report for someone.
+        "funding_check": next((f for f in race_doc.get("sources") or [] if f["id"].endswith("#S-FUND")), None),
         "candidates": candidates,
         "incumbents": [c for c in candidates if c.get("incumbent")],
         "questions": questions,

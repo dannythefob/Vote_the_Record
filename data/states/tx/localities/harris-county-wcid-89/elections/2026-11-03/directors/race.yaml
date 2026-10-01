@@ -4,6 +4,7 @@ office_type: water-district-director
 election_date: '2026-11-03'
 seats: 2
 detail: basic
+notes: 'Incumbent status not confirmed: The district''s director list shows a Michael C Smith; the ballot lists Mike Smith. We have not confirmed they are the same person.'
 sources:
 - id: tx/localities/harris-county-wcid-89/elections/2026-11-03/directors/race#S-01
   headline: Candidates as printed on the Harris County sample ballot

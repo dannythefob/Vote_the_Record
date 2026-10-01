@@ -20,3 +20,19 @@ sources:
   verification: unverified
   verified_on: null
   reviewer: null
+- id: tx/statewide/elections/2026-11-03/agriculture-commissioner/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (Texas Department of Agriculture: Commissioner), checked on September 30, 2026, does not show any of the candidates in this race as the current holder of this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://texasagriculture.gov/Home/Agency-Information/Commissioner
+  source_title: 'Texas Department of Agriculture: Commissioner'
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20261001021915/https://texasagriculture.gov/Home/Agency-Information/Commissioner
+  event_date: '2026-09-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null

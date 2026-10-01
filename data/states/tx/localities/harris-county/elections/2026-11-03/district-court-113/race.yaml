@@ -20,3 +20,19 @@ sources:
   verification: unverified
   verified_on: null
   reviewer: null
+- id: tx/localities/harris-county/elections/2026-11-03/district-court-113/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (Harris County District Courts (JUSTEX): civil district courts and judges), checked on September 30, 2026, shows that RABEEA COLLIER, a candidate in this race, currently holds this seat. It does not list the other candidates as holding this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.justex.net/JustexAPI/api/Courts/?CourtClassID=1
+  source_title: 'Harris County District Courts (JUSTEX): civil district courts and judges'
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20261001022205/https://www.justex.net/JustexAPI/api/Courts/?CourtClassID=1
+  event_date: '2026-09-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null

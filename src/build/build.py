@@ -48,6 +48,23 @@ def load_config(path: Path) -> tuple[dict, list[str]]:
     return config, errors
 
 
+def finance_filer(config: dict, race: dict) -> dict | None:
+    """Where this race's candidates file campaign finance reports (site.yaml campaign_finance)."""
+    cf = config.get("campaign_finance") or {}
+    if race.get("office_level") == "federal":
+        return dict(cf["federal"], law_title=None, law_url=None) if cf.get("federal") else None
+    state = cf.get(race["state"])
+    if not state:
+        return None
+    law = {"law_title": state.get("law_title"), "law_url": state.get("law_url")}
+    if race.get("office_level") == "state" or race["office_type"] in (state.get("state_office_types") or []):
+        return dict(state["state"], **law)
+    local = (state.get("localities") or {}).get(race["locality"]) or {}
+    if race["office_type"] in (local.get("office_types") or []):
+        return {"name": local["name"], "url": local["url"], **law}
+    return {"name": None, "url": None, **law}
+
+
 def make_env(config: dict, demo: bool) -> Environment:
     env = Environment(
         loader=FileSystemLoader(SITE / "templates"),
@@ -166,6 +183,7 @@ def build(root: Path, out: Path, *, demo: bool = False, config_path: Path | None
         pages[measure["url"]] = measure_template.render(measure=measure, page="measure")
     race_template = env.get_template("race.html")
     for race in site["races"]:
+        race["finance"] = finance_filer(config, race)
         payload = dict(race["payload"], corrections_form_url=config.get("corrections_form_url"))
         pages[race["url"]] = race_template.render(race=race, payload=payload, page="race")
 

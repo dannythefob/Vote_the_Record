@@ -54,6 +54,15 @@
   <h2 id="candidates-h">The candidates</h2>
   {% if race.seats > 1 %}<p><strong>Vote for up to {{ race.seats }}.</strong> This race fills {{ race.seats }} seats.</p>{% endif %}
   <p class="muted">Listed A to Z. Tap "See details" for every fact and its source.</p>
+  {% if race.candidates and race.candidates | selectattr("incumbent", "none") | list | length == race.candidates | length %}
+  <p class="muted">We haven't confirmed who holds this office now.</p>
+  {% endif %}
+  {% if race.finance %}
+  <p class="muted finance-note">{{ icon("money") }} <span><strong>Money:</strong>
+    {% if race.finance.name %}Campaign finance reports for this office are filed with the <a href="{{ race.finance.url }}" rel="noopener noreferrer">{{ race.finance.name }}</a>.
+    {% else %}Campaign finance reports for this office are filed locally, not with the state.{% endif %}
+    {% if race.finance.law_url %}<a href="{{ race.finance.law_url }}" rel="noopener noreferrer">{{ race.finance.law_title }}</a> lists the filing office for each kind of race.{% endif %}</span></p>
+  {% endif %}
   <div class="cand-grid">
   {% for c in race.candidates %}
   <article class="card candidate" aria-labelledby="cand-{{ c.id }}">
@@ -73,6 +82,15 @@
       </div>
     </div>
     {% if race.detail == "basic" %}
+    {% if c.funding or race.funding_check %}
+    <ul class="glance">
+      {% for f in c.funding %}
+      <li>{{ icon("money") }}<span><strong>Money:</strong> {{ f.get('headline') or f.statement }}{% if f.verification != "verified" %} <span class="badge badge-unverified">Unverified</span>{% endif %} <a href="{{ f.source_url }}" rel="noopener noreferrer">Source</a></span></li>
+      {% else %}
+      <li>{{ icon("money") }}<span><strong>Money:</strong> No 2025–2026 report found in {{ race.funding_check.source_title.split(":")[0] }} data.{% if race.funding_check.verification != "verified" %} <span class="badge badge-unverified">Unverified</span>{% endif %}</span></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
     <p class="empty">We haven't researched this candidate's record yet.</p>
     {% else %}
     <section class="on-record" aria-label="{{ c.name }}: on the record">

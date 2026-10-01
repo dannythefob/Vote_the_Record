@@ -618,3 +618,59 @@ def test_unmapped_districts_get_their_own_box_and_multi_seat_races_say_so(tmp_pa
     assert data["unmapped"] == ["demo-esd"]
     race = read(out, "races/tx/demo-esd/2026-11-03/commissioners/index.html")
     assert "<strong>Vote for up to 3.</strong> This race fills 3 seats." in race
+
+
+def test_finance_filer_picks_the_filing_office_by_level_type_and_locality():
+    from build import finance_filer
+    config = {"campaign_finance": {
+        "federal": {"name": "FEC", "url": "https://fec.example/"},
+        "tx": {"law_title": "Code ch. 252", "law_url": "https://law.example/252",
+               "state": {"name": "TEC", "url": "https://tec.example/"}, "state_office_types": ["district-judge"],
+               "localities": {"harris-county": {"name": "County Clerk", "url": "https://clerk.example/",
+                                                "office_types": ["county-clerk"]}}}}}
+
+    def race(level, office, locality="harris-county", state="tx"):
+        return {"office_level": level, "office_type": office, "locality": locality, "state": state}
+
+    assert finance_filer(config, race("federal", "us-representative"))["name"] == "FEC"
+    assert finance_filer(config, race("state", "governor", "statewide"))["name"] == "TEC"
+    assert finance_filer(config, race("county", "district-judge"))["name"] == "TEC"
+    assert finance_filer(config, race("county", "county-clerk"))["url"] == "https://clerk.example/"
+    local = finance_filer(config, race("local", "mayor", "some-city"))
+    assert local["name"] is None and local["law_url"] == "https://law.example/252"
+    assert finance_filer(config, race("county", "county-clerk", state="ca")) is None
+    assert finance_filer({}, race("federal", "us-representative")) is None
+
+
+def test_basic_race_shows_money_lines_and_unconfirmed_incumbents(tmp_path):
+    root = tmp_path / "demo"
+    shutil.copytree(REPO / "tests" / "fixtures" / "demo", root)
+    folder = root / "data/states/tx/localities/demo-esd/elections/2026-11-03/commissioners"
+    (folder / "candidates").mkdir(parents=True)
+    base = {"label": "official_record", "claim_status": "documented", "contradicted_by": [], "source_kind": "page",
+            "sha256": None, "archive_url": None, "event_date": "2026-09-01", "retrieved": "2026-09-01",
+            "verification": "unverified", "verified_on": None, "reviewer": None}
+    src = dict(base, id="tx/localities/demo-esd/elections/2026-11-03/commissioners/race#S-01", statement="DEMO ballot.",
+               source_url="https://example.gov/b", source_title="DEMO")
+    check = dict(base, id="tx/localities/demo-esd/elections/2026-11-03/commissioners/race#S-FUND",
+                 statement="DEMO: no report for B TWO.", source_url="https://example.gov/cf",
+                 source_title="Demo Ethics Office: bulk data")
+    (folder / "race.yaml").write_text(yaml.safe_dump({"name": "Demo ESD Commissioners", "office_type": "city-council-member",
+                                                      "election_date": "2026-11-03", "detail": "basic",
+                                                      "sources": [src, check]}), encoding="utf-8")
+    money = dict(base, id="tx/localities/demo-esd/elections/2026-11-03/commissioners/candidates/a-one#M-01",
+                 headline="Raised $10 and had $5 on hand (DEMO)", statement="DEMO report.",
+                 source_url="https://example.gov/r1", source_title="DEMO report")
+    for slug, name, funding in (("a-one", "A One", [money]), ("b-two", "B Two", [])):
+        (folder / "candidates" / f"{slug}.yaml").write_text(yaml.safe_dump({
+            "id": slug, "name": name, "incumbent": None, "ballot_party": None, "records": [], "funding": funding,
+            "endorsements": [], "running_on": {"policy_proposals": [], "attack_messaging": [], "contested_claims": []},
+            "mappings": [], "promise_tracker": []}), encoding="utf-8")
+    out = tmp_path / "dist"
+    assert build(root, out, demo=True, today="2026-09-29") == 0
+    race = read(out, "races/tx/demo-esd/2026-11-03/commissioners/index.html")
+    assert "We haven't confirmed who holds this office now." in race
+    assert "Raised $10 and had $5 on hand (DEMO)" in race and 'href="https://example.gov/r1"' in race
+    assert "No 2025–2026 report found in Demo Ethics Office data." in race
+    assert "Campaign finance reports for this office are filed locally, not with the state." in race
+    assert "Texas Election Code, chapter 252</a> lists the filing office" in race

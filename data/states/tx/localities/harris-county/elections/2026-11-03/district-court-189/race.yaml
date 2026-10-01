@@ -3,6 +3,7 @@ name: Civil District Judge, 189th Judicial District
 office_type: district-judge
 election_date: '2026-11-03'
 detail: basic
+notes: 'Incumbent status not confirmed: The Harris County district courts site lists the 189th District Court judge as Tamika Craft-Demming; the ballot lists TAMIKA "TAMI" CRAFT. We have not confirmed they are the same person.'
 sources:
 - id: tx/localities/harris-county/elections/2026-11-03/district-court-189/race#S-01
   headline: Candidates as printed on the Harris County sample ballot

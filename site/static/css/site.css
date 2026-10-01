@@ -277,6 +277,8 @@ details.more[open] > summary { margin-bottom: 8px; }
 .glance { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 8px; }
 .glance li { display: flex; gap: 10px; align-items: flex-start; margin: 0; }
 .glance .icon { color: var(--accent); margin-top: 2px; }
+.finance-note { display: flex; gap: 10px; align-items: flex-start; }
+.finance-note .icon { color: var(--accent); margin-top: 2px; flex: none; }
 .credit { font-size: 0.8rem; color: var(--muted); margin: 10px 0 0; }
 .card h4 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
 .fact { background: var(--bg); }

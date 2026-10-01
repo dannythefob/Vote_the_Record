@@ -20,3 +20,19 @@ sources:
   verification: unverified
   verified_on: null
   reviewer: null
+- id: tx/statewide/elections/2026-11-03/cca-place-4/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (Texas Court of Criminal Appeals: Judges), checked on September 30, 2026, shows that KEVIN PATRICK YEARY, a candidate in this race, currently holds this seat. It does not list the other candidates as holding this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.txcourts.gov/cca/about-the-court/judges/
+  source_title: 'Texas Court of Criminal Appeals: Judges'
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20261001021409/https://www.txcourts.gov/cca/about-the-court/judges/
+  event_date: '2026-09-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null

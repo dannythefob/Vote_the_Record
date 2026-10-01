@@ -3,6 +3,7 @@ name: Spring ISD Trustee, Position 5
 office_type: school-trustee
 election_date: '2026-11-03'
 detail: basic
+notes: 'Incumbent status not confirmed: Spring ISD''s board page could not be retrieved in three attempts on 2026-09-30.'
 sources:
 - id: tx/localities/spring-isd/elections/2026-11-03/trustee-position-5/race#S-01
   headline: Candidates as printed on the Harris County sample ballot

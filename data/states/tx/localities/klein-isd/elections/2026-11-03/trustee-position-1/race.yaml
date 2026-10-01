@@ -3,6 +3,7 @@ name: Klein ISD Trustee, Position 1
 office_type: school-trustee
 election_date: '2026-11-03'
 detail: basic
+notes: 'Incumbent status not confirmed: Klein ISD''s board page could not be retrieved in three attempts on 2026-09-30.'
 sources:
 - id: tx/localities/klein-isd/elections/2026-11-03/trustee-position-1/race#S-01
   headline: Candidates as printed on the Harris County sample ballot
