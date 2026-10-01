@@ -15,7 +15,7 @@ funding:
   source_title: 'Texas Ethics Commission: Harding, Dennis Kyle, campaign finance report 101055722 (filed Jul 15, 2026)'
   source_kind: document
   sha256: 105e28d57b863a1db5a3195af6037d0d643763924dac49323932e57c2f263fd6
-  archive_url: null
+  archive_url: https://web.archive.org/web/20261001173959/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101055722.PDF
   event_date: '2026-06-30'
   retrieved: '2026-09-30'
   verification: unverified
