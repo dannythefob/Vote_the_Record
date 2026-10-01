@@ -70,9 +70,12 @@ as "BY HAND" and isn't added.
 4. **New office types** need `offices/<type>/powers.yaml` (with `level`, and `judicial: true`
    for any judge) and, for Texas, `data/states/tx/office-overrides/<type>.yaml`, with each power
    citing its law and listing its `topics`.
-5. **Address and ZIP lookup:** for Harris County, re-run
-   `src/collectors/states/tx/harris_precincts.py` for the new ballot. A new county needs its own
-   collector built the same way.
+5. **Address and ZIP lookup:** run `src/collectors/states/tx/county_precincts.py --county <county>`
+   for the new ballot, writing to a scratch folder first, then copy the four files into the ballot
+   folder. A county not yet in its `COUNTIES` table needs an entry: its official precinct layer,
+   the field for each district kind, the areas every voter shares, and its cities, school
+   districts, and water districts (Census and TCEQ IDs). Districts with no official boundary go in
+   the ballot's `unmapped` list.
 6. **Same data for every race:** incumbent status from official rosters (add a
    "Who holds this office now" fact, `#S-HOLDER`, citing the roster), and campaign finance with
    `tec_finance.py`.

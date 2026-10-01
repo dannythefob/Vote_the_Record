@@ -46,7 +46,14 @@ campaign_finance:
         url: https://ethics.harrisvotes.com/
         office_types: [county-judge, county-commissioner, county-attorney, county-clerk, district-clerk,
                        county-treasurer, county-civil-court-judge, county-criminal-court-judge, probate-judge,
-                       justice-of-the-peace]
+                       justice-of-the-peace, appraisal-district-director]
+      # County and precinct offices and elected appraisal district directors: Election Code 252.005(2).
+      travis-county:
+        name: Travis County Clerk
+        url: https://votetravis.gov/candidates-office-holders/campaign-finance/
+        office_types: [county-judge, county-commissioner, county-attorney, county-clerk, district-clerk,
+                       county-treasurer, county-court-at-law-judge, probate-judge, justice-of-the-peace,
+                       constable, appraisal-district-director]
 
 # Topics for the ballot page's "What matters to you?" picker, in display order. Keys must
 # match the topic list in schemas/other.schema.json; each office power lists its topics.

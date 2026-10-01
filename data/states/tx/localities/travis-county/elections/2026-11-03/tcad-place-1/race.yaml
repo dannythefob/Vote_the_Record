@@ -20,3 +20,19 @@ sources:
   verification: unverified
   verified_on: null
   reviewer: null
+- id: tx/localities/travis-county/elections/2026-11-03/tcad-place-1/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (Travis Central Appraisal District: Board of Directors), checked on October 1, 2026, does not show any of the candidates in this race as the current holder of this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://traviscad.org/board-of-directors/
+  source_title: 'Travis Central Appraisal District: Board of Directors'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-01'
+  retrieved: '2026-10-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null

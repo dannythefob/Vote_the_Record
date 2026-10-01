@@ -15,7 +15,7 @@ funding:
   source_title: 'Texas Ethics Commission: Goldberg, Mark (Mr.), campaign finance report 101067732 (filed Sep 25, 2026)'
   source_kind: document
   sha256: afce85144198b4c5bc5572d5aa5963e7aebe8d91f87e78265a6cf98a73188c77
-  archive_url: null
+  archive_url: https://web.archive.org/web/20261001201530/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101067732.PDF
   event_date: '2026-09-24'
   retrieved: '2026-09-30'
   verification: unverified

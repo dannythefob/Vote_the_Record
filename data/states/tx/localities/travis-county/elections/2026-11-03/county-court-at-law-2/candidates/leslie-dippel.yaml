@@ -1,7 +1,7 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: leslie-dippel
 name: Leslie Dippel
-incumbent: null
+incumbent: false
 ballot_party: Democratic Party
 records: []
 funding: []

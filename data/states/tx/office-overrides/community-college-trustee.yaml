@@ -1,0 +1,41 @@
+# Powers of a Texas community (junior) college district trustee.
+# Text checked against Education Code chapter 130 (statutes.capitol.texas.gov, read through its
+# document server tcss.legis.texas.gov) on 2026-10-01.
+office_type: community-college-trustee
+state: TX
+powers:
+  - id: P-MISSION
+    description: A public community college is a two-year school that mainly serves its local taxing district, offering vocational, technical, and academic courses for certificates and associate degrees.
+    statute: Education Code § 130.0011
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.130.htm
+    topics: [schools]
+
+  - id: P-BOARD
+    description: The board of trustees runs the college, following the general laws for independent school districts where they apply.
+    statute: Education Code § 130.084(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.130.htm
+    topics: [schools]
+
+  - id: P-TUITION
+    description: Sets the college's tuition, rents, rates, and fees.
+    statute: Education Code § 130.084(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.130.htm
+    topics: [schools, taxes-budget]
+
+  - id: P-TAX
+    description: Can issue bonds for buildings and levy property taxes to pay them and to run the college. The bond tax may not exceed 50 cents, and bond and maintenance taxes together may not exceed $1, per $100 of taxable value.
+    statute: Education Code § 130.122(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.130.htm
+    topics: [taxes-budget, schools]
+
+plain_summary:
+  intro:
+    text: Serves on the board that runs the community college, including its tuition, fees, and property tax.
+    powers: [P-BOARD, P-TUITION, P-TAX]
+  points:
+    - text: Sets tuition and fees
+      icon: budget
+      powers: [P-TUITION]
+    - text: Can levy property taxes and issue bonds, within limits set by law
+      icon: budget
+      powers: [P-TAX]

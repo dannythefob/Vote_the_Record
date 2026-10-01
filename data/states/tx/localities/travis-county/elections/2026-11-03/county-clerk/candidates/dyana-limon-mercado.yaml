@@ -1,7 +1,7 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: dyana-limon-mercado
 name: Dyana Limon-Mercado
-incumbent: null
+incumbent: true
 ballot_party: Democratic Party
 records: []
 funding: []

@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: donna-howard
 name: Donna Howard
-incumbent: null
+incumbent: true
 ballot_party: Democratic Party
 records: []
-funding: []
+funding:
+- id: tx/districts/state-house-48/elections/2026-11-03/state-representative/candidates/donna-howard#M-01
+  headline: Raised $27,075 and had $30,658 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1 - Jun 30, 2026, filed Jul 15, 2026: $27,075.09 in total political contributions, $97,130.13 in total political expenditures, $30,658.10 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101059636.PDF
+  source_title: 'Texas Ethics Commission: Howard, Donna S. (The Honorable), campaign finance report 101059636 (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: deee3cc7bc9f7ac416ce7d1cbfb55ecab5887ac88e456318b3c373f279f2edde
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101059636, form COH, TEC report type SEMIJUL; filer ID 00042130 (Howard, Donna S. (The Honorable)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-01; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

@@ -20,3 +20,19 @@ sources:
   verification: unverified
   verified_on: null
   reviewer: null
+- id: tx/localities/travis-county/elections/2026-11-03/district-court-147/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (Travis County: 147th Criminal District Court), checked on October 1, 2026, shows that Cliff Brown, a candidate in this race, currently holds this seat.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.traviscountytx.gov/courts/criminal/district/147
+  source_title: 'Travis County: 147th Criminal District Court'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-01'
+  retrieved: '2026-10-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null
