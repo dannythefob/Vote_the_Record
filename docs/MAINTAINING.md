@@ -36,6 +36,10 @@ python src/tools/check_rosters.py
 
 New money reports never replace old ones. Each report becomes its own fact (M-01, M-02,
 ...). The race page shows the newest, and earlier ones sit under "Earlier reports".
+Each money fact cites that report's own PDF, as filed with the Texas Ethics Commission, with
+its SHA-256, after the tool checks that every total appears in it. Archive the new PDFs with
+`archive.py` so they can be verified. A report whose PDF is missing or doesn't match is listed
+as "BY HAND" and isn't added.
 
 ## A new election
 

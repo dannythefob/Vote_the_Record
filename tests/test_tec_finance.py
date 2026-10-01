@@ -91,10 +91,25 @@ COVERS = [cover("1", "100", "20260630", "20260715"),
           cover("4", "400", "20260630", "20260715", ftype="JCOH")]
 
 
-def run(root, zip_path, today="2026-09-30"):
+PDF_TOTALS = "%PDF-1.4 fake report: 100.00 120.00 50.00 75.00 999.00"
+
+
+def fake_get(url, body=PDF_TOTALS):
+    return body.encode() if "/2026/pdfs/" in url else None  # only the filing year's folder exists
+
+
+def run(root, zip_path, today="2026-09-30", getter=fake_get, relink=False):
     config = yaml.safe_load((root / "site/site.yaml").read_text(encoding="utf-8"))
     tec = tf.TecData(zip_path, "2025-01-01", today)
-    return tf.plan(root, root / BALLOT, tec, "a" * 64, today, "2025-01-01", config)
+    return tf.plan(root, root / BALLOT, tec, "a" * 64, today, "2025-01-01", config, getter=getter, relink=relink)
+
+
+import pytest  # noqa: E402
+
+
+@pytest.fixture(autouse=True)
+def plain_text_pdfs(monkeypatch):
+    monkeypatch.setattr(tf, "pdf_text", lambda data, max_pages=None: data.decode())
 
 
 def apply(changes):
@@ -113,13 +128,15 @@ def test_matches_adds_facts_and_flags_missing(tmp_path):
     apply(changes)
     jane = load(tmp_path, f"data/states/{HOUSE}/candidates/jane-doe.yaml")["funding"]
     assert [f["id"] for f in jane] == [f"{HOUSE}/candidates/jane-doe#M-01"]
-    assert "(report 102)" in jane[0]["source_title"] and "$120.00" in jane[0]["statement"]
+    assert "report 102" in jane[0]["source_title"] and "$120.00" in jane[0]["statement"]
+    assert jane[0]["source_url"] == "https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_102.PDF"
+    assert jane[0]["sha256"] == __import__("hashlib").sha256(PDF_TOTALS.encode()).hexdigest()
     assert jane[0]["verification"] == "unverified" and jane[0]["reviewer"] is None
     assert "The report data lists no amount for outstanding loans." in jane[0]["statement"]
     bob = load(tmp_path, f"data/states/{HOUSE}/candidates/bob-smith.yaml")["funding"]
-    assert "(report 200)" in bob[0]["source_title"]  # Robert "Bob", office and district both match
+    assert "report 200" in bob[0]["source_title"]  # Robert "Bob", office and district both match
     okey = load(tmp_path, f"data/states/{COURT}/candidates/okey-judge.yaml")["funding"]
-    assert "(report 400)" in okey[0]["source_title"]  # found despite the placeholder first row
+    assert "report 400" in okey[0]["source_title"]  # found despite the placeholder first row
     race = load(tmp_path, f"data/states/{HOUSE}/race.yaml")["sources"]
     assert race[-1]["id"].endswith("#S-FUND") and "AL NEWCOMER" in race[-1]["statement"]
 
@@ -142,7 +159,7 @@ def test_rerun_is_a_no_op_and_a_new_report_adds_m02_without_touching_m01(tmp_pat
     apply(changes)
     funding = load(tmp_path, rel)["funding"]
     assert funding[0] == before  # the verified fact is untouched
-    assert funding[1]["id"].endswith("#M-02") and "(report 103)" in funding[1]["source_title"]
+    assert funding[1]["id"].endswith("#M-02") and "report 103" in funding[1]["source_title"]
 
 
 def test_nickname_without_matching_district_is_not_accepted(tmp_path):
@@ -161,3 +178,37 @@ def test_hand_formatted_files_are_skipped_not_rewritten(tmp_path):
     changes, log = run(tmp_path, tmp_path / "tec.zip")
     assert rel not in [p for p, _ in changes]
     assert any(line.startswith("SKIP") and "jane-doe.yaml" in line for line in log)
+
+
+def test_no_fact_without_a_matching_pdf(tmp_path):
+    make_repo(tmp_path)
+    make_zip(tmp_path / "tec.zip", FILERS, COVERS)
+    changes, log = run(tmp_path, tmp_path / "tec.zip", getter=lambda url: None)
+    assert not any("jane-doe" in str(p) for p, _ in changes)
+    assert any("no PDF found" in line for line in log)
+    changes, log = run(tmp_path, tmp_path / "tec.zip", getter=lambda url: fake_get(url, "%PDF other numbers 1.00"))
+    assert not any("jane-doe" in str(p) for p, _ in changes)
+    assert any("totals not found in the PDF: 120.00" in line for line in log)
+
+
+def test_relink_repoints_unverified_bulk_facts_only(tmp_path):
+    make_repo(tmp_path)
+    make_zip(tmp_path / "tec.zip", FILERS, COVERS)
+    bulk = {"id": f"{HOUSE}/candidates/jane-doe#M-01", "headline": "h", "statement": "s", "label": "official_record",
+            "claim_status": "documented", "contradicted_by": [], "source_url": tf.TEC_URL,
+            "source_title": f"{tf.TEC_TITLE} (report 102)", "source_kind": "document", "sha256": "a" * 64,
+            "archive_url": None, "event_date": "2026-06-30", "retrieved": "2026-09-30", "verification": "unverified",
+            "verified_on": None, "reviewer": None, "notes": "old"}
+    rel = tmp_path / f"data/states/{HOUSE}/candidates/jane-doe.yaml"
+    rel.write_text(to_yaml(cand_doc("jane-doe", "JANE DOE", [bulk])), encoding="utf-8")
+    bob = tmp_path / f"data/states/{HOUSE}/candidates/bob-smith.yaml"
+    verified = dict(bulk, id=f"{HOUSE}/candidates/bob-smith#M-01", source_title=f"{tf.TEC_TITLE} (report 200)",
+                    verification="verified", verified_on="2026-10-01", reviewer="owner", archive_url="https://web.archive.org/x")
+    bob.write_text(to_yaml(cand_doc("bob-smith", "BOB SMITH", [verified])), encoding="utf-8")
+    assert not any(line.startswith("RELINK") for line in run(tmp_path, tmp_path / "tec.zip")[1])  # only with relink
+    changes, log = run(tmp_path, tmp_path / "tec.zip", relink=True)
+    apply(changes)
+    fact = load(tmp_path, rel.relative_to(tmp_path).as_posix())["funding"][0]
+    assert fact["id"] == bulk["id"] and fact["statement"] == "s" and fact["verification"] == "unverified"
+    assert fact["source_url"].endswith("ScrubbedReport_102.PDF") and "report 102" in fact["source_title"]
+    assert load(tmp_path, bob.relative_to(tmp_path).as_posix())["funding"] == [verified]  # verified: untouched

@@ -11,17 +11,17 @@ funding:
   label: official_record
   claim_status: documented
   contradicted_by: []
-  source_url: https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip
-  source_title: 'Texas Ethics Commission: Campaign Finance Data, bulk CSV download (report 101058304)'
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101058304.PDF
+  source_title: 'Texas Ethics Commission: Bord, Stefanie (Mrs.), campaign finance report 101058304 (filed Jul 15, 2026)'
   source_kind: document
-  sha256: e3672d7576a949dd6285436e44a419a6ac7fa79e0a063a341e14926549bd2633
+  sha256: 95d5548390b740ad3d62b42ec891937564c4250024c11e52f6fd3d78db411dce
   archive_url: null
   event_date: '2026-06-30'
   retrieved: '2026-09-30'
   verification: unverified
   verified_on: null
   reviewer: null
-  notes: From cover.csv in the Texas Ethics Commission's bulk campaign finance data, downloaded 2026-09-30 (sha256 is of the zip file). Report ID 101058304, form COH, TEC report type SEMIJUL; filer ID 00089977 (Bord, Stefanie (Mrs.)). Matched by first name. This is the filer's latest report with a period ending in 2025 or 2026; a correction filed later replaces the version it corrects. The 1 GB file can't be archived on the Wayback Machine; the same report can be checked in TEC's search at https://www.ethics.state.tx.us/search/cf/.
+  notes: Report ID 101058304, form COH, TEC report type SEMIJUL; filer ID 00089977 (Bord, Stefanie (Mrs.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

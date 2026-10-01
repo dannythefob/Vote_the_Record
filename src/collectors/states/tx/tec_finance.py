@@ -15,8 +15,14 @@ and district judges; site/site.yaml campaign_finance):
     on the ballot is accepted only when the office code AND the district both match.
   - Takes the filer's latest report for a period ending between --since and --today; a
     correction filed later replaces the version it corrects.
+  - Downloads that report's own PDF from TEC (the filed Form C/OH), checks that every total
+    from the data appears in it, and cites the PDF (URL + SHA-256), so the fact can be archived
+    and verified like any other document. A report whose PDF can't be found or doesn't match is
+    left for a person to check.
   - Adds a funding fact (M-01, M-02, ...) when that report is new for the candidate. Existing
     facts are never edited, so published IDs and verified facts stay as they are.
+    (--relink is a one-time exception: it repoints unverified facts that still cite the bulk
+    file to their report's PDF, changing only source fields.)
   - For candidates with no such report, adds one race fact (S-FUND) saying so, if the race has
     none yet; otherwise it prints a note to update by hand.
 Every fact is written unverified (CLAUDE.md rule 3a).
@@ -32,6 +38,7 @@ import io
 import re
 import sys
 import unicodedata
+import urllib.error
 import urllib.request
 import zipfile
 from pathlib import Path
@@ -45,6 +52,9 @@ from yamlio import NotRoundTrip, read_doc, write_doc  # noqa: E402
 TEC_URL = "https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip"
 TEC_TITLE = "Texas Ethics Commission: Campaign Finance Data, bulk CSV download"
 TEC_SEARCH = "https://www.ethics.state.tx.us/search/cf/"
+# Each filed report's PDF, as linked from TEC's report-number search; the folder is a year.
+REPORT_PDF = "https://prd.tecprd.ethicsefile.com/public/cf/{year}/pdfs/ScrubbedReport_{rid}.PDF"
+USER_AGENT = "Mozilla/5.0 (compatible; VoteTheRecord/1.0; +https://github.com/dannythefob/Vote_the_Record)"
 FILER_TYPES = ("COH", "JCOH")  # candidate/officeholder and judicial candidate/officeholder
 
 # TEC office codes (filers.csv ctaSeekOfficeCd / filerHoldOfficeCd) for each office type.
@@ -175,7 +185,61 @@ def period(start: str, end: str) -> str:
     return f"{day(start)}{', ' + start[:4] if start[:4] != end[:4] else ''} - {day(end)}, {end[:4]}"
 
 
-def funding_fact(fact_id: str, m: dict, zip_sha: str, retrieved: str) -> dict:
+def http_get(url: str) -> bytes | None:
+    """The body, or None for a 404. Other errors raise."""
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    try:
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            return resp.read()
+    except urllib.error.HTTPError as err:
+        if err.code == 404:
+            return None
+        raise
+
+
+def pdf_text(data: bytes, max_pages: int | None = None) -> str:
+    from pypdf import PdfReader
+    pages = PdfReader(io.BytesIO(data)).pages
+    return " ".join((page.extract_text() or "") for page in list(pages)[:max_pages])
+
+
+def report_pdf(rep: dict, getter=http_get) -> dict:
+    """{'url', 'sha256', 'problem'}: the report's PDF, checked against the data's totals."""
+    rid = rep["reportInfoIdent"]
+    years = dict.fromkeys([rep["filedDt"][:4], rep["periodEndDt"][:4], str(int(rep["filedDt"][:4]) + 1)])
+    for year in years:
+        url = REPORT_PDF.format(year=year, rid=rid)
+        data = getter(url)
+        if data is None:
+            continue
+        if not data.startswith(b"%PDF"):
+            return {"url": url, "sha256": None, "problem": "the report link didn't return a PDF"}
+        wanted = [f"{float(rep[k]):,.2f}" for k, _ in AMOUNTS if rep[k]]
+        text = pdf_text(data, 8)  # the cover and totals pages come first
+        if any(v not in text for v in wanted):
+            text = pdf_text(data)
+        missing = [v for v in wanted if v not in text]
+        problem = f"totals not found in the PDF: {', '.join(missing)}" if missing else None
+        return {"url": url, "sha256": hashlib.sha256(data).hexdigest(), "problem": problem}
+    return {"url": None, "sha256": None, "problem": "no PDF found for this report"}
+
+
+def pdf_source(m: dict, pdf: dict, retrieved: str) -> dict:
+    """The source fields of a funding fact that cites the report's own PDF."""
+    rep = m["report"]
+    notes = (f"Report ID {rep['reportInfoIdent']}, form {rep['formTypeCd']}, TEC report type {rep['reportTypeCd1']}; "
+             f"filer ID {m['filer']} ({m['filer_name']}). Found in TEC's bulk campaign finance data ({TEC_URL}, "
+             f"cover.csv) and matched by {m['matched_by']}; every total in this fact was checked against the PDF. This "
+             f"is the filer's latest report for a period ending by {retrieved}; a correction filed later replaces the "
+             f"version it corrects.")
+    return {"source_url": pdf["url"],
+            "source_title": f"Texas Ethics Commission: {m['filer_name']}, campaign finance report {rep['reportInfoIdent']} "
+                            f"(filed {day(rep['filedDt'])}, {rep['filedDt'][:4]})",
+            "source_kind": "document", "sha256": pdf["sha256"], "archive_url": None, "retrieved": retrieved,
+            "notes": notes}
+
+
+def funding_fact(fact_id: str, m: dict, zip_sha: str, retrieved: str, pdf: dict | None = None) -> dict:
     rep = m["report"]
     vals = {k: rep[k] for k, _ in AMOUNTS}
     c, e, h = vals["totalContribAmount"], vals["totalExpendAmount"], vals["contribsMaintainedAmount"]
@@ -199,11 +263,12 @@ def funding_fact(fact_id: str, m: dict, zip_sha: str, retrieved: str) -> dict:
              f"This is the filer's latest report for a period ending by {retrieved}; a correction filed later "
              f"replaces the version it corrects. The bulk file is too large for the Wayback Machine; the same report "
              f"can be checked in TEC's search at {TEC_SEARCH}.")
-    return {"id": fact_id, "headline": (" and ".join(bits) or "Report filed") + f" ({span})", "statement": statement,
+    fact = {"id": fact_id, "headline": (" and ".join(bits) or "Report filed") + f" ({span})", "statement": statement,
             "label": "official_record", "claim_status": "documented", "contradicted_by": [], "source_url": TEC_URL,
             "source_title": f"{TEC_TITLE} (report {rep['reportInfoIdent']})", "source_kind": "document",
             "sha256": zip_sha, "archive_url": None, "event_date": ymd(rep["periodEndDt"]), "retrieved": retrieved,
             "verification": "unverified", "verified_on": None, "reviewer": None, "notes": notes}
+    return dict(fact, **pdf_source(m, pdf, retrieved)) if pdf else fact
 
 
 def fund_check_fact(fact_id: str, names: list[str], since: str, zip_sha: str, retrieved: str) -> dict:
@@ -239,8 +304,13 @@ def tec_races(root: Path, ballot_path: Path, config: dict) -> list[tuple[str, di
     return out
 
 
+def report_id_of(fact: dict) -> str | None:
+    m = re.search(r"\breport (\d+)\b", fact.get("source_title", ""))
+    return m.group(1) if m else None
+
+
 def plan(root: Path, ballot_path: Path, tec: TecData, zip_sha: str, retrieved: str, since: str,
-         config: dict) -> tuple[list[tuple[Path, dict]], list[str]]:
+         config: dict, getter=http_get, relink: bool = False) -> tuple[list[tuple[Path, dict]], list[str]]:
     """Files to rewrite (path, new doc) and a printable log."""
     changes: dict[Path, tuple[str, dict]] = {}
     log = []
@@ -260,13 +330,30 @@ def plan(root: Path, ballot_path: Path, tec: TecData, zip_sha: str, retrieved: s
                 missing.append(cand["name"])
                 continue
             report_id = m["report"]["reportInfoIdent"]
-            have = {re.search(r"\(report (\d+)\)", f.get("source_title", "")).group(1)
-                    for f in cand.get("funding") or [] if re.search(r"\(report (\d+)\)", f.get("source_title", ""))}
+            have = {report_id_of(f) for f in cand.get("funding") or []}
+            if relink:
+                for f in cand.get("funding") or []:
+                    if f.get("source_url") != TEC_URL or f.get("verification") != "unverified":
+                        continue
+                    if report_id_of(f) != report_id:
+                        log.append(f"BY HAND {f['id']}: cites report {report_id_of(f)}, not the latest; relink it by hand")
+                        continue
+                    pdf = report_pdf(m["report"], getter)
+                    if pdf["problem"]:
+                        log.append(f"BY HAND {f['id']}: {pdf['problem']} ({pdf['url'] or 'no URL'})")
+                        continue
+                    f.update(pdf_source(m, pdf, retrieved))
+                    changes[cand_file] = (header, cand)
+                    log.append(f"RELINK {f['id']}: {pdf['url']}")
             if report_id in have:
+                continue
+            pdf = report_pdf(m["report"], getter)
+            if pdf["problem"]:
+                log.append(f"BY HAND {race_path}: {cand['name']}, report {report_id}: {pdf['problem']} ({pdf['url'] or 'no URL'})")
                 continue
             numbers = [int(x) for f in cand.get("funding") or [] for x in re.findall(r"#M-(\d+)$", f["id"])]
             fact_id = f"{race_path}/candidates/{cand_file.stem}#M-{max(numbers, default=0) + 1:02d}"
-            cand["funding"] = list(cand.get("funding") or []) + [funding_fact(fact_id, m, zip_sha, retrieved)]
+            cand["funding"] = list(cand.get("funding") or []) + [funding_fact(fact_id, m, zip_sha, retrieved, pdf)]
             changes[cand_file] = (header, cand)
             log.append(f"ADD {fact_id}: report {report_id} ({m['matched_by']})")
         if missing:
@@ -306,6 +393,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--today", default=dt.date.today().isoformat())
     parser.add_argument("--root", type=Path, default=REPO)
     parser.add_argument("--write", action="store_true", help="write the changes (otherwise only print them)")
+    parser.add_argument("--relink", action="store_true",
+                        help="one-time: repoint unverified facts that cite the bulk file to their report's PDF")
     args = parser.parse_args(argv)
 
     zip_path = args.zip
@@ -318,7 +407,7 @@ def main(argv: list[str] | None = None) -> int:
     since = args.since or f"{int(election[:4]) - 1}-01-01"
     config = yaml.safe_load((args.root / "site" / "site.yaml").read_text(encoding="utf-8")) or {}
     tec = TecData(zip_path, since, args.today)
-    changes, log = plan(args.root, args.ballot, tec, sha256(zip_path), args.today, since, config)
+    changes, log = plan(args.root, args.ballot, tec, sha256(zip_path), args.today, since, config, relink=args.relink)
     print("\n".join(log) or "Nothing new.")
     if args.write:
         for path, (header, doc) in changes:
