@@ -1,0 +1,38 @@
+# Basic race page: the office and candidates as printed on the Harris County sample ballot. Unverified.
+name: League City Mayor
+office_type: mayor
+election_date: '2026-11-03'
+detail: basic
+sources:
+- id: tx/localities/city-of-league-city/elections/2026-11-03/mayor/race#S-01
+  headline: Candidates as printed on the Harris County sample ballot
+  statement: 'The Harris County Clerk''s sample ballot for the November 3, 2026 election lists "City of League City, Mayor (Four Year Term)" on page 7, with these candidates: Nick Long; Tom Crews.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  source_title: 'Harris County Clerk: Sample Ballot, November 3, 2026 General and Special Elections (page 7)'
+  source_kind: document
+  sha256: 0b35cb063ef0cb82001e2fb79141e259b95c330cd0d10ad7b2575e34d611e1ed
+  archive_url: https://web.archive.org/web/20260921224207/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  event_date: '2026-11-03'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/localities/city-of-league-city/elections/2026-11-03/mayor/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (City of League City: City Council), checked on September 30, 2026, shows that Nick Long, a candidate in this race, currently holds this seat. It does not list the other candidates as holding this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.leaguecitytx.gov/412/City-Council
+  source_title: 'City of League City: City Council'
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20261001022746/https://www.leaguecitytx.gov/412/City-Council
+  event_date: '2026-09-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null

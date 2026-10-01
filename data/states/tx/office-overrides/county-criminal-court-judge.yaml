@@ -8,11 +8,13 @@ powers:
     description: Hears misdemeanor cases that can bring a fine over $500. Lesser, fine-only cases go to Justices of the Peace.
     statute: Code of Criminal Procedure art. 4.07; Government Code § 25.1033(a)
     source_url: https://statutes.capitol.texas.gov/Docs/CR/htm/CR.4.htm
+    topics: [courts-justice]
 
   - id: P-APPEALS
     description: Hears appeals of criminal cases from Justice of the Peace and city municipal courts in the county.
     statute: Government Code § 25.1033(a)
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+    topics: [courts-justice]
 
 plain_summary:
   intro:

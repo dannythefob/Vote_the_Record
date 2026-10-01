@@ -1,6 +1,7 @@
 # FICTIONAL demo office for tests.
 office_type: justice-of-the-peace
 level: county
+judicial: true
 powers:
 - id: P-MAIN
   description: Hears small civil claims and minor criminal cases.

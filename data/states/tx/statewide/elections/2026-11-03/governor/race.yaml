@@ -30,10 +30,43 @@ sources:
   source_title: 'Harris County Clerk: List of Declared Write-In Candidates, November 3, 2026 General and Special Elections'
   source_kind: document
   sha256: 2056f6a21f8c89f769971bf5ccbc7373160d657f93971128e18fb30513e250a4
-  archive_url: null
+  archive_url: https://web.archive.org/web/20260925191858/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/Write-Ins/2026/1126_Write-In_for_BBM.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=azVo5pcm184KqQpeMxG5gOo%2BVcoJmZCswMsgHlausCE%3D
   event_date: '2026-11-03'
   retrieved: '2026-09-30'
   verification: unverified
   verified_on: null
   reviewer: null
   notes: The Wayback Machine refused saves on 2026-09-30 (rate limit); archive_url must be added before this can be verified.
+- id: tx/statewide/elections/2026-11-03/governor/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (Office of the Texas Governor: home page), checked on September 30, 2026, shows that GREG ABBOTT, a candidate in this race, currently holds this seat. It does not list the other candidates as holding this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://gov.texas.gov/
+  source_title: 'Office of the Texas Governor: home page'
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20261001021615/https://gov.texas.gov/
+  event_date: '2026-09-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/statewide/elections/2026-11-03/governor/race#S-FUND
+  headline: Campaign finance search with no 2025-2026 report
+  statement: The Texas Ethics Commission's campaign finance data, downloaded September 30, 2026, has no report covering a period ending in 2025 or 2026 for Jinghpaw Majoishingra.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip
+  source_title: 'Texas Ethics Commission: Campaign Finance Data, bulk CSV download'
+  source_kind: document
+  sha256: e3672d7576a949dd6285436e44a419a6ac7fa79e0a063a341e14926549bd2633
+  archive_url: null
+  event_date: '2026-09-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Searched filers.csv and cover.csv (candidate and judicial officeholder filers) by name, with office and district checks for nicknames. Absence in the bulk data is not proof that no report exists; check TEC's search at https://www.ethics.state.tx.us/search/cf/. The 1 GB file can't be archived on the Wayback Machine.

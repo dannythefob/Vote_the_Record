@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: dawn-buckingham
 name: DAWN BUCKINGHAM
-incumbent: null
+incumbent: true
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/statewide/elections/2026-11-03/land-commissioner/candidates/dawn-buckingham#M-01
+  headline: Raised $646,865 and had $3,216,157 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1 - Jun 30, 2026, filed Jul 15, 2026: $646,865.00 in total political contributions, $212,069.85 in total political expenditures, $3,216,156.76 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101058525.PDF
+  source_title: 'Texas Ethics Commission: Buckingham M.D., Dawn C. (The Honorable), campaign finance report 101058525 (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: 2020988afa65d4232b2059e5d4a0cedfffd8a48a85ac2c376d6c6390de8d25c1
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101058525, form COH, TEC report type SEMIJUL; filer ID 00069001 (Buckingham M.D., Dawn C. (The Honorable)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

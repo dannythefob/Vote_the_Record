@@ -1,0 +1,26 @@
+# Proposition: exact wording and choices as printed on the Harris County sample ballot. Unverified.
+name: West Harris County MUD No. 15, Proposition A
+election_date: '2026-11-03'
+kind: bond
+ballot_text: THIS IS A TAX INCREASE The issuance of bonds in the aggregate amount of $30,000,000 for water, sanitary sewer, drainage and storm sewer systems and refunding purposes. Taxes sufficient to pay the principal of and interest on the bonds will be imposed.
+choices:
+- FOR
+- AGAINST
+explained: []
+sources:
+- id: tx/localities/west-harris-county-mud-15/elections/2026-11-03/proposition-a/measure#S-01
+  headline: Proposition as printed on the Harris County sample ballot
+  statement: 'The Harris County Clerk''s sample ballot for the November 3, 2026 election prints "West Harris County MUD No. 15, Proposition A" on page 14 with the choices FOR and AGAINST and this English wording: "THIS IS A TAX INCREASE The issuance of bonds in the aggregate amount of $30,000,000 for water, sanitary sewer, drainage and storm sewer systems and refunding purposes. Taxes sufficient to pay the principal of and interest on the bonds will be imposed."'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  source_title: 'Harris County Clerk: Sample Ballot, November 3, 2026 General and Special Elections (page 14)'
+  source_kind: document
+  sha256: 0b35cb063ef0cb82001e2fb79141e259b95c330cd0d10ad7b2575e34d611e1ed
+  archive_url: https://web.archive.org/web/20260921224207/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  event_date: '2026-11-03'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null

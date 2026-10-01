@@ -136,6 +136,54 @@ compare. For any candidate below the minimum, the site runs in **beta mode**:
 Once a candidate has scorable records on at least 3 of your answered questions, the match
 percentage appears, with the same breakdown available underneath.
 
+## Quiz for your whole ballot
+After you enter your address, ZIP code, or precinct, the ballot page offers one quiz with
+the questions from every race on your ballot that has them. Each race is scored on its
+own, exactly as above. Nothing is added up across races.
+
+**What you see first.** "We could compare candidates in X of your Y races." A race counts
+when at least two of its candidates have records and every one of them has a match
+percentage. Most races start out with too few
+checked records, so X is often small at first and grows as we research more races.
+
+**Candidates with no record.** Fair isn't the same as identical. We research every
+candidate the same way and show the records we find. If we find no record at all for a
+candidate (for example, a first-time write-in candidate), we say so plainly: "We found no
+record for this candidate in the sources we reviewed." That candidate stays on the list in
+alphabetical order but isn't part of the comparison.
+
+**"Closest to your answers."** In a race, this mark goes to the candidate with the
+highest match percentage, but only when:
+- at least two candidates have records,
+- every candidate with records has a percentage (enough checked record on at least 3 of
+  your answered questions), and
+- no one ties for the highest percentage (as shown, rounded to a whole number).
+
+Otherwise no one is marked, and the race says why. A candidate whose records aren't
+checked yet is never ranked below one with more. Candidates stay in alphabetical order
+either way. The mark is a summary of the records, not a recommendation.
+
+**No quiz for judges.** The Texas Code of Judicial Conduct, Canon 5(1)(i), bars judges
+and judicial candidates from making "pledges or promises of conduct in office regarding
+pending or impending cases, specific classes of cases, specific classes of litigants, or
+specific propositions of law" ([Texas Code of Judicial Conduct](https://www.txcourts.gov/media/1462935/texas-state-code-of-judicial-conduct.pdf), [archived copy](https://web.archive.org/web/20261001092159/https://www.txcourts.gov/media/1462935/texas-state-code-of-judicial-conduct.pdf)).
+A "what would you do?" quiz would ask for exactly that, so races for judges never have
+one. The validator rejects quiz questions for any office marked as judicial.
+
+**Topics.** "What matters to you?" highlights races whose office deals with the topics you
+pick. Each of an office's legal powers lists the topics it directly covers, judged only
+from what the law says the office does. For example, a county commissioner's road power is
+tagged "Roads & transportation". A power that doesn't clearly fit a topic is left untagged.
+Lawmakers can pass laws on many subjects, but their powers are tagged only where the power
+itself names the topic (the budget and taxes). Topics never change the order of races and
+never depend on the candidates.
+
+**Your results stay with you.** Answers live only in the page while it's open. "Print or
+save as PDF" uses your browser's print window. "Copy a private link" puts your answers in
+the part of the link after `#`, which browsers never send to any server. Anyone you give the
+link to can see your answers. When you open such a link, the page fills in the answers,
+shows the results, and then clears them from the address bar.
+
 ## How your ballot is ordered
 Each county ballot page lists every race, grouped by level of government, **closest to
 home first**:
@@ -157,10 +205,29 @@ code list for each county cites where it comes from. A ZIP code can cross distri
 when it does, every race you might have is shown and marked "Depends on your address".
 For your exact ballot, use your county's official lookup, which each ballot page links.
 
+**Finding your races by street address (exact).** Type your address and we find the
+precinct it's in, which gives your exact list of races. Here's what happens to your address:
+our server passes it to the U.S. Census Bureau's public geocoder, which returns only a map
+location and county. The Census Bureau sees the address but not who you are, because the
+request comes from our server, not your device. Your browser then matches that location
+against the county's official precinct map. Nothing is stored or logged, by us or on your
+device. If you live right on a precinct line, double-check with your county's official
+lookup.
+
 **Finding your races by precinct number (exact).** Your voting precinct number is printed
 on your voter registration card. Enter it to see exactly the races on your ballot. Each
 precinct's districts come from the county's official voting precinct map. Like the ZIP
 lookup, it runs in your browser and nothing is sent or saved.
+
+**Cities and other local areas.** City limits and school district boundaries come from the
+Census Bureau; water districts (such as municipal utility districts) come from the Texas
+Commission on Environmental Quality's official water district map. A precinct or ZIP code that is only partly inside a city shows that city's races
+and propositions as "Depends on your address"; the address lookup checks the city outline
+directly, so it gives the exact answer.
+
+**Districts we can't map yet.** A few districts have no official boundary map we can use yet.
+We never guess whether you live in one. After you look up your ballot, their contests are
+listed separately under "Also on some ballots", with a link to your county's official lookup.
 
 **How ZIP codes are matched.** ZIP codes aren't voting districts. We use the Census
 Bureau's ZIP Code Tabulation Areas, which approximate ZIP codes, and overlay them on the
@@ -172,6 +239,22 @@ possible race is shown and marked "Depends on your address".
 does and the candidates as printed on the official sample ballot. A basic page says
 "We haven't researched this candidate's record yet", which is different from "not found
 in the sources reviewed". Records, sources, and quizzes are added race by race.
+
+**Who holds the office now.** "Incumbent" means the candidate holds the seat on the
+ballot, not a different office. We check the official list for that office (for example,
+the Texas House member list, a court's list of judges, or a school board's member page),
+link it under "Where this list of candidates comes from", and archive it on the Wayback
+Machine. When we can't get or match an official list, the page says "We haven't confirmed
+who holds this office now" and no candidate is marked either way.
+
+**Money.** Every race page says where its candidates file campaign finance reports: the
+Federal Election Commission for Congress, the Texas Ethics Commission for state offices and
+district judges, and the county clerk or a local office for the rest (Texas Election Code,
+chapter 252). Where the filing office publishes data we can read in bulk, each candidate's
+card shows totals from their latest report for a period ending in 2025 or 2026: money
+raised, money spent, cash on hand, and loans, exactly as reported, with the report period.
+If no report turns up, the card says so. A missing report in the data does not prove that
+none was filed. Totals are display-only and never affect a match.
 
 ## Promise tracker
 For now, only the **current officeholder** (the incumbent) has a promise tracker. It

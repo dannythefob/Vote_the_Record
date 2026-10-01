@@ -13,11 +13,13 @@ powers:
     description: The state's highest court for criminal cases. Its decisions are final.
     statute: Texas Constitution art. V, § 5(a)
     source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+    topics: [courts-justice]
 
   - id: P-DEATH-PENALTY
     description: Every case in which the death penalty was given is appealed directly to this court.
     statute: Texas Constitution art. V, § 5(b)
     source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+    topics: [courts-justice]
 
 plain_summary:
   intro:

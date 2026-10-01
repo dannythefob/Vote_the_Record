@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: teresa-waldrop
 name: TERESA WALDROP
-incumbent: null
+incumbent: true
 ballot_party: Democratic Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/district-court-312/candidates/teresa-waldrop#M-01
+  headline: Raised $750 and had $37,456 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1 - Jun 30, 2026, filed Jul 14, 2026: $750.00 in total political contributions, $7,247.32 in total political expenditures, $37,456.17 in contributions on hand at the end of the period, and $39,600.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101057383.PDF
+  source_title: 'Texas Ethics Commission: Waldrop, Teresa J. (The Honorable), campaign finance report 101057383 (filed Jul 14, 2026)'
+  source_kind: document
+  sha256: 0548cfd7166d1afc00e87d7350a6331e49d568370c72539dddae14a8a2accc40
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101057383, form JCOH, TEC report type SEMIJUL; filer ID 00086011 (Waldrop, Teresa J. (The Honorable)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

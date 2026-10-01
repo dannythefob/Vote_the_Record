@@ -1,0 +1,43 @@
+# Powers of a director of a Texas water district (MUD, FWSD, WCID, PUD) under the general law in
+# Water Code chapter 49 (and chapter 54 for MUD bonds). Checked on statutes.capitol.texas.gov (read
+# through tcss.legis.texas.gov) on 2026-09-30. Each district's creating law may add to these.
+office_type: water-district-director
+state: TX
+powers:
+  - id: P-MANAGE
+    description: The board is responsible for managing all the district's affairs, and hires or contracts with the engineers, lawyers, financial advisors, and operators the district needs.
+    statute: Water Code § 49.057(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/WA/htm/WA.49.htm
+    topics: [water-utilities]
+
+  - id: P-TERM
+    description: Directors serve staggered four-year terms.
+    statute: Water Code § 49.103(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/WA/htm/WA.49.htm
+
+  - id: P-TAX
+    description: A district may levy a tax for operation and maintenance.
+    statute: Water Code § 49.107(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/WA/htm/WA.49.htm
+    topics: [taxes-budget]
+
+  - id: P-BONDS
+    description: A municipal utility district can't issue bonds paid wholly or partly from taxes, other than refunding bonds, unless voters approve them.
+    statute: Water Code § 54.505
+    source_url: https://statutes.capitol.texas.gov/Docs/WA/htm/WA.54.htm
+    topics: [taxes-budget]
+
+plain_summary:
+  intro:
+    text: Helps run a local water district, which provides services like water, sewer, and drainage and can levy property taxes.
+    powers: [P-MANAGE, P-TAX]
+  points:
+    - text: Manages the district's affairs and contracts
+      icon: contract
+      powers: [P-MANAGE]
+    - text: Can levy a property tax for operations and maintenance
+      icon: budget
+      powers: [P-TAX]
+    - text: Most bonds repaid with taxes need voter approval
+      icon: vote
+      powers: [P-BONDS]

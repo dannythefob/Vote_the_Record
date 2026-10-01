@@ -1,3 +1,4 @@
 office_type: probate-judge
 level: county
+judicial: true
 powers: []   # Texas powers: data/states/tx/office-overrides/probate-judge.yaml

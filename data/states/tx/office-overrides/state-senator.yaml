@@ -18,6 +18,7 @@ powers:
     description: Votes on the state budget and tax bills. Tax bills must start in the House.
     statute: Texas Constitution art. III, § 33
     source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.3.htm
+    topics: [taxes-budget]
 
   - id: P-CONFIRM
     description: Votes on the governor's appointments. Two-thirds of the senators present must consent.

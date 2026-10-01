@@ -9,11 +9,17 @@
   {% if site.zip_index %}
   <form id="zip-find" class="zip-form" role="search" hidden>
     <label for="zip-home">See what's on your ballot</label>
+    {% if site.county_index %}
+    <div class="zip-row">
+      <input id="address-home" name="address" type="text" autocomplete="street-address" maxlength="200" placeholder="Your street address (exact)" aria-label="Your street address">
+    </div>
+    <p class="muted">Or just your ZIP code:</p>
+    {% endif %}
     <div class="zip-row">
       <input id="zip-home" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" pattern="\d{5}(-\d{4})?" placeholder="Your ZIP code">
       <button type="submit">Show my races</button>
     </div>
-    <p class="muted">Your ZIP code stays on your device: nothing is sent or saved.</p>
+    <p class="muted">Nothing you type is saved. An address is looked up by the U.S. Census Bureau through our server and never stored.</p>
     <p id="zip-home-status" class="zip-status" role="status" aria-live="polite"></p>
     <ul id="zip-home-choices" class="link-list"></ul>
   </form>
@@ -108,6 +114,7 @@
 </section>
 {% if site.zip_index %}
 <script type="application/json" id="zip-index">{{ site.zip_index | json_script }}</script>
+<script type="application/json" id="county-index">{{ site.county_index | json_script }}</script>
 <script type="module" src="/static/js/ballot.js"></script>
 {% endif %}
 {% endblock %}

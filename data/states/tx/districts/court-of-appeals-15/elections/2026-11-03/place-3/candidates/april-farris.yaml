@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: april-farris
 name: APRIL FARRIS
-incumbent: null
+incumbent: true
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/districts/court-of-appeals-15/elections/2026-11-03/place-3/candidates/april-farris#M-01
+  headline: Raised $83,131 and had $184,794 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1 - Jun 30, 2026, filed Jul 13, 2026: $83,130.91 in total political contributions, $43,220.47 in total political expenditures, $184,793.95 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101034128.PDF
+  source_title: 'Texas Ethics Commission: Farris, April L. (The Honorable), campaign finance report 101034128 (filed Jul 13, 2026)'
+  source_kind: document
+  sha256: f7ba9ef3c8383f21e995bf9ba215f78ec9372e6f98239e9440c7022535127c32
+  archive_url: https://web.archive.org/web/20261001162353/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101034128.PDF
+  event_date: '2026-06-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101034128, form JCOH, TEC report type SEMIJUL; filer ID 00085183 (Farris, April L. (The Honorable)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

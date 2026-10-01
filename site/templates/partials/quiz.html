@@ -1,0 +1,19 @@
+{# One quiz question: answer radios plus "how much does this matter". `key` keeps input names
+   unique when several races' questions share one form (the ballot page). #}
+{% macro quiz_question(q, number, total, key="") -%}
+<fieldset class="card question">
+  <legend><span class="q-number">Question {{ number }} of {{ total }}</span> {{ q.text }}</legend>
+  <div class="options">
+    {% for o in q.options %}
+    <label><input type="radio" name="answer-{{ key }}{{ q.id }}" value="{{ o.id }}"> {{ o.text }}</label>
+    {% endfor %}
+    <label class="skip"><input type="radio" name="answer-{{ key }}{{ q.id }}" value="" checked> Skip this one</label>
+  </div>
+  <fieldset class="importance">
+    <legend>How much does this matter to you?</legend>
+    {% for value, text in [(1, "A little"), (2, "Somewhat"), (3, "A lot")] %}
+    <label><input type="radio" name="importance-{{ key }}{{ q.id }}" value="{{ value }}"{% if value == 2 %} checked{% endif %}> {{ text }}</label>
+    {% endfor %}
+  </fieldset>
+</fieldset>
+{%- endmacro %}

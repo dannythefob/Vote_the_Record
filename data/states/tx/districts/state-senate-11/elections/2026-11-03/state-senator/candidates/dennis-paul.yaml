@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: dennis-paul
 name: DENNIS PAUL
-incumbent: null
+incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/districts/state-senate-11/elections/2026-11-03/state-senator/candidates/dennis-paul#M-01
+  headline: Had $8,761 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1 - Jun 30, 2026, filed Jul 15, 2026: $4,663.74 in total political expenditures, $8,761.08 in contributions on hand at the end of the period, and $0.00 in outstanding loans. The report data lists no amount for total political contributions.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101059571.PDF
+  source_title: 'Texas Ethics Commission: Paul, Dennis R. (The Honorable), campaign finance report 101059571 (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: 55368940d909cff89657c1b8b890863256f41eee63b7975c3125373fda3831e5
+  archive_url: https://web.archive.org/web/20261001182322/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101059571.PDF
+  event_date: '2026-06-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101059571, form COH, TEC report type SEMIJUL; filer ID 00069502 (Paul, Dennis R. (The Honorable)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

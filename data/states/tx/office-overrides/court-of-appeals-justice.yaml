@@ -13,6 +13,7 @@ powers:
     description: Hears appeals from district and county courts in its district, and decides them by majority vote of the justices sitting on the case.
     statute: Texas Constitution art. V, § 6(a)
     source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+    topics: [courts-justice]
 
   - id: P-HOUSTON-COURTS
     description: The First and Fourteenth Courts of Appeals both cover the same 10 counties, including Harris, and each has a chief justice and eight justices.
@@ -23,6 +24,7 @@ powers:
     description: The Fifteenth Court of Appeals covers the whole state and hears appeals in civil cases brought by or against the state and its agencies.
     statute: Government Code §§ 22.201(p), 22.220(d)
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.22.htm
+    topics: [courts-justice]
 
 plain_summary:
   intro:

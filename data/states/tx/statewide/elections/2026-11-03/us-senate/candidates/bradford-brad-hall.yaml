@@ -1,7 +1,7 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: bradford-brad-hall
 name: Bradford “Brad” Hall
-incumbent: null
+incumbent: false
 ballot_party: null
 write_in: true
 records: []

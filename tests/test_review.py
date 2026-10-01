@@ -141,7 +141,7 @@ def test_finds_fact_whose_id_is_wrapped_onto_the_next_line(repo):
 
 GOV = "data/states/tx/statewide/elections/2026-11-03/governor/race.yaml"
 GOV_S01 = "tx/statewide/elections/2026-11-03/governor/race#S-01"
-GOV_S02 = "tx/statewide/elections/2026-11-03/governor/race#S-02"  # write-in list: no archive yet
+GOV_S02 = "tx/statewide/elections/2026-11-03/governor/race#S-02"  # write-in list; tests unarchive it
 AG = "data/states/tx/statewide/elections/2026-11-03/attorney-general/race.yaml"
 AG_S01 = "tx/statewide/elections/2026-11-03/attorney-general/race#S-01"
 
@@ -153,7 +153,17 @@ def test_race_ballot_zip_and_precinct_sources_are_listed(repo):
     assert item["who"] == "Governor" and item["section"] == "sources"
 
 
+def unarchive(path, fact_id):
+    """Make one fact not ready to verify (no archived copy), whatever the live data holds."""
+    text = path.read_text(encoding="utf-8")
+    start = text.index(f"id: {fact_id}")
+    line_start = text.index("archive_url:", start)
+    line_end = text.index("\n", line_start)
+    path.write_text(text[:line_start] + "archive_url: null" + text[line_end:], encoding="utf-8")
+
+
 def test_verify_many_changes_only_ready_facts_and_their_three_lines(repo):
+    unarchive(repo / GOV, GOV_S02)
     before = {f: (repo / f).read_text(encoding="utf-8") for f in (GOV, AG)}
     result = review.apply_many(repo, [{"file": GOV, "key": GOV_S01}, {"file": GOV, "key": GOV_S02},
                                       {"file": AG, "key": AG_S01}], "Test Reviewer")

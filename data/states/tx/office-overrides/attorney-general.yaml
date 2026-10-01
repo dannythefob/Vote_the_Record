@@ -13,6 +13,7 @@ powers:
     description: Represents the state in lawsuits before the Texas Supreme Court and the courts of appeals.
     statute: Texas Constitution art. IV, § 22; Government Code § 402.021
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.402.htm
+    topics: [courts-justice]
 
   - id: P-OPINIONS
     description: Gives written legal opinions to the governor and other officials when they ask.

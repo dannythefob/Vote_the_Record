@@ -1,0 +1,38 @@
+# Basic race page: the office and candidates as printed on the Harris County sample ballot. Unverified.
+name: North Harris County Regional Water Authority, Director, District 1
+office_type: water-authority-director
+election_date: '2026-11-03'
+detail: basic
+sources:
+- id: tx/localities/north-harris-county-regional-water-authority/elections/2026-11-03/director-district-1/race#S-01
+  headline: Candidates as printed on the Harris County sample ballot
+  statement: 'The Harris County Clerk''s sample ballot for the November 3, 2026 election lists "N HARRIS COUNTY REG WA POS 1, Director, District 1" on page 13, with these candidates: Richard Manning; Catherine E. Shook.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  source_title: 'Harris County Clerk: Sample Ballot, November 3, 2026 General and Special Elections (page 13)'
+  source_kind: document
+  sha256: 0b35cb063ef0cb82001e2fb79141e259b95c330cd0d10ad7b2575e34d611e1ed
+  archive_url: https://web.archive.org/web/20260921224207/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  event_date: '2026-11-03'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/localities/north-harris-county-regional-water-authority/elections/2026-11-03/director-district-1/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (North Harris County Regional Water Authority: Board of Directors), checked on September 30, 2026, does not show any of the candidates in this race as the current holder of this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.nhcrwa.com/about/board-of-directors/
+  source_title: 'North Harris County Regional Water Authority: Board of Directors'
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20261001023101/https://www.nhcrwa.com/about/board-of-directors/
+  event_date: '2026-09-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null

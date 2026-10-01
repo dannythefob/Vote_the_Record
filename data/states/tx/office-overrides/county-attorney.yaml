@@ -13,6 +13,7 @@ powers:
     description: In Harris County, the County Attorney's primary duty is to represent the state, Harris County, and county officials in civil matters, and the office also represents the Harris County Flood Control District.
     statute: Government Code § 45.201
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.45.htm
+    topics: [courts-justice]
 
 plain_summary:
   intro:

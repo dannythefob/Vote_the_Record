@@ -8,11 +8,13 @@ powers:
     description: Handles probate (wills and estates), guardianship, mental health, and eminent domain cases.
     statute: Government Code § 25.0021
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+    topics: [courts-justice]
 
   - id: P-MENTAL-HEALTH
     description: In Harris County, Probate Court No. 3 has primary responsibility for mental illness cases, and Probate Court No. 4 has secondary responsibility.
     statute: Government Code § 25.1034(b)
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+    topics: [courts-justice, health]
 
 plain_summary:
   intro:

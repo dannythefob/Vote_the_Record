@@ -13,6 +13,7 @@ powers:
     description: The commission has jurisdiction over oil and gas wells, pipelines, and the people and companies that operate them.
     statute: Natural Resources Code § 81.051
     source_url: https://statutes.capitol.texas.gov/Docs/NR/htm/NR.81.htm
+    topics: [energy]
 
 plain_summary:
   intro:

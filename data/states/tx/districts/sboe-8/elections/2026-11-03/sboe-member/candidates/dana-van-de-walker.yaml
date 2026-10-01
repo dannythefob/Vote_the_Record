@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: dana-van-de-walker
 name: DANA VAN DE WALKER
-incumbent: null
+incumbent: false
 ballot_party: Democratic Party
 records: []
-funding: []
+funding:
+- id: tx/districts/sboe-8/elections/2026-11-03/sboe-member/candidates/dana-van-de-walker#M-01
+  headline: Raised $2,034 and had $1,452 on hand (Feb 22 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Feb 22 - Jun 30, 2026, filed Jul 9, 2026: $2,034.13 in total political contributions, $681.80 in total political expenditures, $1,452.33 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101058637.PDF
+  source_title: 'Texas Ethics Commission: Van De Walker, Dana J. (Ms.), campaign finance report 101058637 (filed Jul 9, 2026)'
+  source_kind: document
+  sha256: 8f271d5806191dd6484a4aeef737d0b393a425a8316ae85ff0ce9ca9c3ae65d0
+  archive_url: https://web.archive.org/web/20261001171523/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101058637.PDF
+  event_date: '2026-06-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101058637, form COH, TEC report type SEMIJUL; filer ID 00090564 (Van De Walker, Dana J. (Ms.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

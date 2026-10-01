@@ -1,7 +1,7 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: carla-l-wyatt
 name: CARLA L. WYATT
-incumbent: null
+incumbent: true
 ballot_party: Democratic Party
 records: []
 funding: []

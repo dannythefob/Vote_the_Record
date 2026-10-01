@@ -14,26 +14,31 @@ powers:
     description: Votes, as a member of the Commissioners Court, on adopting the county budget. The vote to adopt it must be a record vote.
     statute: Local Government Code §§ 111.039, 111.068
     source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.111.htm
+    topics: [taxes-budget]
 
   - id: P-TAX-RATE
     description: Votes, as a member of the county's governing body, on adopting the county property tax rate.
     statute: Tax Code § 26.05(a)
     source_url: https://statutes.capitol.texas.gov/Docs/TX/htm/TX.26.htm
+    topics: [taxes-budget]
 
   - id: P-CONTRACTS
     description: Votes on county purchases. Contracts over $100,000 must use competitive bidding or another listed procedure unless the court grants an exemption.
     statute: Local Government Code §§ 262.023, 262.024
     source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.262.htm
+    topics: [taxes-budget]
 
   - id: P-ROADS
     description: The Commissioners Court may exercise general control over all roads, highways, and bridges in the county.
     statute: Transportation Code § 251.016
     source_url: https://statutes.capitol.texas.gov/Docs/TN/htm/TN.251.htm
+    topics: [roads-transportation]
 
   - id: P-PRECINCTS
     description: Votes, as a member of the Commissioners Court, on dividing the county into election precincts.
     statute: Election Code § 42.001(a)
     source_url: https://statutes.capitol.texas.gov/Docs/EL/htm/EL.42.htm
+    topics: [elections]
 
 plain_summary:
   intro:

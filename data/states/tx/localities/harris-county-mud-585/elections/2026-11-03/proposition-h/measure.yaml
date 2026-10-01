@@ -1,0 +1,26 @@
+# Proposition: exact wording and choices as printed on the Harris County sample ballot. Unverified.
+name: Harris County MUD No. 585, Proposition H
+election_date: '2026-11-03'
+kind: tax-rate
+ballot_text: THIS IS A TAX INCREASE An operation and maintenance tax not to exceed one dollar and fifty cents ($1.50) per one hundred dollars ($100) valuation of taxable property
+choices:
+- FOR
+- AGAINST
+explained: []
+sources:
+- id: tx/localities/harris-county-mud-585/elections/2026-11-03/proposition-h/measure#S-01
+  headline: Proposition as printed on the Harris County sample ballot
+  statement: 'The Harris County Clerk''s sample ballot for the November 3, 2026 election prints "Harris County MUD No. 585, Proposition H" on page 13 with the choices FOR and AGAINST and this English wording: "THIS IS A TAX INCREASE An operation and maintenance tax not to exceed one dollar and fifty cents ($1.50) per one hundred dollars ($100) valuation of taxable property"'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  source_title: 'Harris County Clerk: Sample Ballot, November 3, 2026 General and Special Elections (page 13)'
+  source_kind: document
+  sha256: 0b35cb063ef0cb82001e2fb79141e259b95c330cd0d10ad7b2575e34d611e1ed
+  archive_url: https://web.archive.org/web/20260921224207/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  event_date: '2026-11-03'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null

@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: tiffany-nelson
 name: TIFFANY NELSON
-incumbent: null
+incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/districts/sboe-6/elections/2026-11-03/sboe-member/candidates/tiffany-nelson#M-01
+  headline: Raised $17,981 and had $13,200 on hand (Feb 22 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Feb 22 - Jun 30, 2026, filed Jul 14, 2026: $17,981.48 in total political contributions, $12,913.10 in total political expenditures, $13,200.07 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101058031.PDF
+  source_title: 'Texas Ethics Commission: Nelson, Tiffany, campaign finance report 101058031 (filed Jul 14, 2026)'
+  source_kind: document
+  sha256: 642ef4febc67ca50f5beb6d5fc04a6e400eaf40b94b441bdde42b637bb8dc053
+  archive_url: https://web.archive.org/web/20261001171235/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101058031.PDF
+  event_date: '2026-06-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101058031, form COH, TEC report type SEMIJUL; filer ID 00090031 (Nelson, Tiffany). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

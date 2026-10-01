@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: dave-bennett
 name: DAVE BENNETT
-incumbent: null
+incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/dave-bennett#M-01
+  headline: Raised $2,175 and had $45,854 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1 - Jun 30, 2026, filed Jul 13, 2026: $2,174.57 in total political contributions, $30,385.34 in total political expenditures, $45,854.43 in contributions on hand at the end of the period, and $42,000.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101057718.PDF
+  source_title: 'Texas Ethics Commission: Bennett, David L. (Mr.), campaign finance report 101057718 (filed Jul 13, 2026)'
+  source_kind: document
+  sha256: 3252a2e9ef33f4976451595fcc1b785165d2d665b0847ed7f336bc51fec8007c
+  archive_url: https://web.archive.org/web/20261001180440/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101057718.PDF
+  event_date: '2026-06-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101057718, form COH, TEC report type SEMIJUL; filer ID 00089991 (Bennett, David L. (Mr.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by nickname, middle name, or initial, with office and district; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

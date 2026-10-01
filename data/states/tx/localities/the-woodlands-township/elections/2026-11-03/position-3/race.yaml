@@ -1,0 +1,23 @@
+# Basic race page: the office and candidates as printed on the Harris County sample ballot. Unverified.
+name: The Woodlands Township, Position 3
+office_type: township-director
+election_date: '2026-11-03'
+detail: basic
+notes: 'Incumbent status not confirmed: The Township''s board page refused our requests three times on 2026-09-30, and the Wayback Machine has no copy.'
+sources:
+- id: tx/localities/the-woodlands-township/elections/2026-11-03/position-3/race#S-01
+  headline: Candidates as printed on the Harris County sample ballot
+  statement: 'The Harris County Clerk''s sample ballot for the November 3, 2026 election lists "The Woodlands Township, Position No. 3" on page 14, with these candidates: Priscila Young; Nick Tran; Lisa Gilmore.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  source_title: 'Harris County Clerk: Sample Ballot, November 3, 2026 General and Special Elections (page 14)'
+  source_kind: document
+  sha256: 0b35cb063ef0cb82001e2fb79141e259b95c330cd0d10ad7b2575e34d611e1ed
+  archive_url: https://web.archive.org/web/20260921224207/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  event_date: '2026-11-03'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null

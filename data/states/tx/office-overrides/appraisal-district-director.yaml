@@ -8,6 +8,7 @@ powers:
     description: The appraisal district is responsible for appraising property in the district for property tax purposes of each local taxing unit.
     statute: Tax Code § 6.01(b)
     source_url: https://statutes.capitol.texas.gov/Docs/TX/htm/TX.6.htm
+    topics: [taxes-budget, housing-land]
 
   - id: P-BOARD
     description: In counties of 75,000 or more people, the appraisal district has a nine-member board. Five are appointed by local taxing units, three are elected countywide, and the county tax assessor-collector serves ex officio.

@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: tammie-nielsen
 name: TAMMIE NIELSEN
-incumbent: null
+incumbent: true
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/districts/sboe-4/elections/2026-11-03/sboe-member/candidates/tammie-nielsen#M-01
+  headline: Had $0 on hand (Sep 23 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Sep 23 - Sep 24, 2026, filed Sep 26, 2026: $0.00 in contributions on hand at the end of the period, and $0.00 in outstanding loans. The report data lists no amount for total political contributions or total political expenditures.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101067976.PDF
+  source_title: 'Texas Ethics Commission: Nielsen, Tammie (The Honorable), campaign finance report 101067976 (filed Sep 26, 2026)'
+  source_kind: document
+  sha256: f3e4056b78e1c6d9516861c7f70978015ed376b248f6600f8692506f77e54e6e
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101067976, form COH, TEC report type E30DAYBEF; filer ID 00091174 (Nielsen, Tammie (The Honorable)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

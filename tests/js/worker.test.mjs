@@ -83,3 +83,58 @@ test("without the REPORTS binding, reports go to the 'unavailable' error page", 
   assert.equal(res.status, 303);
   assert.equal(res.headers.get("Location"), "/report/error/?reason=unavailable");
 });
+
+import * as workerModule from "../../src/worker/index.js";
+import { cleanAddress, handleLocate } from "../../src/worker/index.js";
+const GEOCODER = "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress";
+
+function locateRequest(body, type = "application/json") {
+  return new Request("https://x.test/api/locate", { method: "POST", body: JSON.stringify(body), headers: { "Content-Type": type } });
+}
+
+const CENSUS_OK = { result: { addressMatches: [{
+  matchedAddress: "1001 PRESTON ST, HOUSTON, TX, 77002",
+  coordinates: { x: -95.361246, y: 29.761519 },
+  geographies: { Counties: [{ NAME: "Harris County", STATE: "48", GEOID: "48201" }] },
+}] } };
+
+test("cleanAddress needs a number and a sane length", () => {
+  assert.equal(cleanAddress("  1001   Preston St, Houston ") , "1001 Preston St, Houston");
+  for (const bad of ["", "Main Street", "1 a", "9".repeat(201), null]) assert.equal(cleanAddress(bad), null, String(bad));
+});
+
+test("locate asks the Census geocoder and returns only the location and county", async () => {
+  let asked;
+  const res = await handleLocate(locateRequest({ address: "1001 Preston St, Houston, TX 77002" }), async (url) => {
+    asked = url;
+    return new Response(JSON.stringify(CENSUS_OK), { status: 200 });
+  });
+  assert.equal(res.status, 200);
+  assert.equal(res.headers.get("Cache-Control"), "no-store");
+  assert.ok(asked.startsWith(GEOCODER + "?"));
+  assert.equal(new URL(asked).searchParams.get("address"), "1001 Preston St, Houston, TX 77002");
+  assert.deepEqual(await res.json(), { matched: "1001 PRESTON ST, HOUSTON, TX, 77002", lon: -95.361246, lat: 29.761519,
+    county: "Harris County", stateFips: "48" });
+});
+
+test("locate reports not-found, bad input, and an unavailable geocoder", async () => {
+  const none = await handleLocate(locateRequest({ address: "123 Nowhere Rd" }),
+    async () => new Response(JSON.stringify({ result: { addressMatches: [] } })));
+  assert.equal(none.status, 404);
+  assert.equal((await handleLocate(locateRequest({ address: "no numbers" }), async () => { throw new Error("called"); })).status, 400);
+  assert.equal((await handleLocate(locateRequest({ address: "1 Main St" }, "text/plain"), async () => { throw new Error("called"); })).status, 400);
+  const down = await handleLocate(locateRequest({ address: "1 Main St, Houston" }), async () => { throw new Error("network"); });
+  assert.equal(down.status, 502);
+  assert.deepEqual(await down.json(), { error: "unavailable" });
+});
+
+test("GET /api/locate is not allowed", async () => {
+  const res = await worker.fetch(new Request("https://x.test/api/locate"), { ASSETS: { fetch: () => new Response("asset") } });
+  assert.equal(res.status, 405);
+});
+
+test("the Worker module exports only functions and objects (strings break the Workers runtime)", () => {
+  for (const [name, value] of Object.entries(workerModule)) {
+    assert.ok(typeof value === "function" || (typeof value === "object" && value !== null), `${name} is a ${typeof value}`);
+  }
+});

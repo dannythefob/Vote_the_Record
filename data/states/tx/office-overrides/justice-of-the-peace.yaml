@@ -14,11 +14,13 @@ powers:
     description: Hears civil cases where up to $20,000 is at stake, and eviction cases.
     statute: Government Code § 27.031
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.27.htm
+    topics: [courts-justice, housing-land]
 
   - id: P-CRIMINAL
     description: Hears criminal cases punishable by a fine only.
     statute: Texas Constitution art. V, § 19; Code of Criminal Procedure art. 4.11
     source_url: https://statutes.capitol.texas.gov/Docs/CR/htm/CR.4.htm
+    topics: [courts-justice]
 
 plain_summary:
   intro:

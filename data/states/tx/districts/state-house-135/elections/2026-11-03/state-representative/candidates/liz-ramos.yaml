@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: liz-ramos
 name: LIZ RAMOS
-incumbent: null
+incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/districts/state-house-135/elections/2026-11-03/state-representative/candidates/liz-ramos#M-01
+  headline: Raised $2,273 and had $523 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1 - Jun 30, 2026, filed Jul 15, 2026: $2,273.45 in total political contributions, $3,278.97 in total political expenditures, $523.01 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101061799.PDF
+  source_title: 'Texas Ethics Commission: Ramos, Lizbeth, campaign finance report 101061799 (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: ccc8f715950a3718396c1028d3f8b7f842d183c6b358eb06ad9cad74293906a5
+  archive_url: https://web.archive.org/web/20261001173647/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101061799.PDF
+  event_date: '2026-06-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101061799, form CORCOH, TEC report type SEMIJUL; filer ID 00089479 (Ramos, Lizbeth). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by nickname, middle name, or initial, with office and district; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

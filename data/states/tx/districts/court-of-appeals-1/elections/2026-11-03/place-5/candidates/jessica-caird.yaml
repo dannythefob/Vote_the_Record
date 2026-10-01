@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: jessica-caird
 name: JESSICA CAIRD
-incumbent: null
+incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/districts/court-of-appeals-1/elections/2026-11-03/place-5/candidates/jessica-caird#M-01
+  headline: Raised $10,300 and had $13,454 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1 - Jun 30, 2026, filed Jul 13, 2026: $10,300.00 in total political contributions, $3,717.48 in total political expenditures, $13,454.31 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101059801.PDF
+  source_title: 'Texas Ethics Commission: Caird, Jessica A. (Ms.), campaign finance report 101059801 (filed Jul 13, 2026)'
+  source_kind: document
+  sha256: 87f404ef8cd1df0a31d7bcf41689fe82d2ef85534aeecebaed2f7a55a87ad7b8
+  archive_url: https://web.archive.org/web/20261001161608/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101059801.PDF
+  event_date: '2026-06-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101059801, form JCOH, TEC report type SEMIJUL; filer ID 00089132 (Caird, Jessica A. (Ms.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

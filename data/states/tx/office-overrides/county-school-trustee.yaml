@@ -9,11 +9,13 @@ powers:
     description: Serves on the board of county school trustees. In a county of Harris County's size, the county board of education is treated as a school district and overseen by the Texas Education Agency.
     statute: Education Code § 11.151(f)
     source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.11.htm
+    topics: [schools]
 
   - id: P-PROGRAMS
     description: The Harris County Department of Education runs Special Schools, Adult Education, CASE for Kids, Head Start, and School-Based Therapy Services (as listed on its official website).
     statute: Harris County Department of Education website (not a statute)
     source_url: https://www.hcde-texas.org/about/
+    topics: [schools]
 
 plain_summary:
   intro:

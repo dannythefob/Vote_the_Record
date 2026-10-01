@@ -20,3 +20,19 @@ sources:
   verification: unverified
   verified_on: null
   reviewer: null
+- id: tx/districts/state-house-147/elections/2026-11-03/state-representative/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (Texas House of Representatives: Members), checked on September 30, 2026, shows that JOLANDA JONES, a candidate in this race, currently holds this seat. It does not list the other candidates as holding this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://house.texas.gov/members/
+  source_title: 'Texas House of Representatives: Members'
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20261001021239/https://house.texas.gov/members
+  event_date: '2026-09-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null

@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: pat-dixon
 name: PAT DIXON
-incumbent: null
+incumbent: false
 ballot_party: Libertarian Party
 records: []
-funding: []
+funding:
+- id: tx/statewide/elections/2026-11-03/governor/candidates/pat-dixon#M-01
+  headline: Raised $9,233 and had $6,374 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1 - Jun 30, 2026, filed Jul 13, 2026: $9,232.53 in total political contributions, $2,410.35 in total political expenditures, $6,373.65 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101054219.PDF
+  source_title: 'Texas Ethics Commission: Dixon, Patrick J. (Mr.), campaign finance report 101054219 (filed Jul 13, 2026)'
+  source_kind: document
+  sha256: 8fe3982e4df6e66c255f38055bb3f131ddf9c646169060e2fbd32c10a58cd22c
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101054219, form COH, TEC report type SEMIJUL; filer ID 00055583 (Dixon, Patrick J. (Mr.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by nickname, middle name, or initial, with office and district; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

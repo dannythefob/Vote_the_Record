@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: mike-schofield
 name: MIKE SCHOFIELD
-incumbent: null
+incumbent: true
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/districts/state-house-132/elections/2026-11-03/state-representative/candidates/mike-schofield#M-01
+  headline: Raised $79,847 and had $187,731 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1 - Jun 30, 2026, filed Jul 15, 2026: $79,846.52 in total political contributions, $37,868.01 in total political expenditures, $187,730.60 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101057804.PDF
+  source_title: 'Texas Ethics Commission: Schofield, Michael (The Honorable), campaign finance report 101057804 (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: 833807bb1e92bb2155d063701e9aeac16ba5ffbc304561b8fa0d1af6e758d74d
+  archive_url: https://web.archive.org/web/20261001172347/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101057804.PDF
+  event_date: '2026-06-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101057804, form COH, TEC report type SEMIJUL; filer ID 00057835 (Schofield, Michael (The Honorable)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by nickname, middle name, or initial, with office and district; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

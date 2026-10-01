@@ -24,3 +24,40 @@ official_links:
       url: https://www.votetexas.gov/voting-by-mail/
     - name: Important election dates (Texas Secretary of State)
       url: https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml
+
+# Where candidates file campaign finance reports, shown on every race page.
+# Federal offices file with the FEC. For a state, `state` covers state-level offices plus any
+# office_types listed under state_office_types; `localities` names the filing office for listed
+# office types in one locality; everything else gets the generic "filed locally" line.
+campaign_finance:
+  federal:
+    name: Federal Election Commission
+    url: https://www.fec.gov/data/
+  tx:
+    law_title: Texas Election Code, chapter 252
+    law_url: https://statutes.capitol.texas.gov/Docs/EL/htm/EL.252.htm
+    state:
+      name: Texas Ethics Commission
+      url: https://www.ethics.state.tx.us/search/cf/
+    state_office_types: [district-judge]
+    localities:
+      harris-county:
+        name: Harris County Clerk
+        url: https://ethics.harrisvotes.com/
+        office_types: [county-judge, county-commissioner, county-attorney, county-clerk, district-clerk,
+                       county-treasurer, county-civil-court-judge, county-criminal-court-judge, probate-judge,
+                       justice-of-the-peace]
+
+# Topics for the ballot page's "What matters to you?" picker, in display order. Keys must
+# match the topic list in schemas/other.schema.json; each office power lists its topics.
+topics:
+  taxes-budget: Taxes & budget
+  schools: Schools
+  emergencies: Disasters & emergencies
+  roads-transportation: Roads & transportation
+  water-utilities: Water & utilities
+  housing-land: Housing, land & property
+  courts-justice: Courts & justice
+  health: Health
+  elections: Elections
+  energy: Energy

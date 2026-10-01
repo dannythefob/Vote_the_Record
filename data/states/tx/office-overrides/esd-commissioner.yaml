@@ -1,0 +1,28 @@
+# Powers of an emergency services district commissioner (Health and Safety Code chapter 775).
+# Checked on statutes.capitol.texas.gov (read through tcss.legis.texas.gov) on 2026-09-30.
+office_type: esd-commissioner
+state: TX
+powers:
+  - id: P-SERVICES
+    description: To provide emergency services, the district may hold and manage property, enter into contracts, and hire the officers and employees it needs.
+    statute: Health and Safety Code § 775.031(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/HS/htm/HS.775.htm
+    topics: [emergencies]
+
+  - id: P-TAX
+    description: The board imposes a property tax each year to support the district.
+    statute: Health and Safety Code § 775.074(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/HS/htm/HS.775.htm
+    topics: [taxes-budget]
+
+plain_summary:
+  intro:
+    text: Helps run an emergency services district, which provides services such as fire protection or ambulance service and levies a property tax.
+    powers: [P-SERVICES, P-TAX]
+  points:
+    - text: Oversees emergency services, contracts, and staff
+      icon: shield
+      powers: [P-SERVICES]
+    - text: Sets the district's property tax each year
+      icon: budget
+      powers: [P-TAX]

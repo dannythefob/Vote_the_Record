@@ -70,3 +70,78 @@ test("a precinct gets exactly its areas plus implied and everywhere areas, never
 test("zipEverywhere areas are added to every ZIP", () => {
   assert.ok(racesForZip(withPrecincts, "11111").some((r) => r.n === 6));
 });
+
+import { pointInRings, findPrecinct, countySlug, locate, LOCATE_ERRORS } from "../../site/static/js/ballot.js";
+
+const SHAPES = { precincts: {
+  "7": [[[0, 0], [10, 0], [10, 10], [0, 10], [0, 0]], [[4, 4], [6, 4], [6, 6], [4, 6], [4, 4]]],
+  "8": [[[4, 4], [6, 4], [6, 6], [4, 6], [4, 4]]],
+} };
+
+test("pointInRings respects holes", () => {
+  assert.equal(pointInRings(SHAPES.precincts["7"], 1, 1), true);
+  assert.equal(pointInRings(SHAPES.precincts["7"], 5, 5), false);
+  assert.equal(pointInRings(SHAPES.precincts["7"], 11, 5), false);
+});
+
+test("findPrecinct returns the precinct containing the point", () => {
+  assert.equal(findPrecinct(SHAPES, 5, 5), "8");
+  assert.equal(findPrecinct(SHAPES, 2, 8), "7");
+  assert.equal(findPrecinct(SHAPES, 20, 20), null);
+});
+
+test("countySlug matches locality folder names", () => {
+  assert.equal(countySlug("Harris County"), "harris-county");
+  assert.equal(countySlug("Fort Bend County"), "fort-bend-county");
+  assert.equal(countySlug(null), "");
+});
+
+test("locate posts only the address to our own Worker and maps errors", async () => {
+  let call;
+  const ok = await locate("1001 Preston St", async (url, init) => {
+    call = { url, init };
+    return new Response(JSON.stringify({ matched: "X", lat: 1, lon: 2, county: "Harris County" }), { status: 200 });
+  });
+  assert.equal(call.url, "/api/locate");
+  assert.deepEqual(JSON.parse(call.init.body), { address: "1001 Preston St" });
+  assert.equal(ok.county, "Harris County");
+  const nf = await locate("1 Nowhere", async () => new Response(JSON.stringify({ error: "not-found" }), { status: 404 }));
+  assert.deepEqual(nf, { error: "not-found" });
+  const odd = await locate("1 X", async () => new Response(JSON.stringify({ error: "weird" }), { status: 400 }));
+  assert.deepEqual(odd, { error: "unavailable" });
+  const down = await locate("1 X", async () => { throw new Error("offline"); });
+  assert.deepEqual(down, { error: "unavailable" });
+  assert.ok(LOCATE_ERRORS["not-found"].includes("couldn't find"));
+});
+
+import { areasAt } from "../../site/static/js/ballot.js";
+
+const CITY = {
+  implied: ["tx", "demo-county"],
+  areas: ["city-a", "us-house-1"],
+  localAreas: ["city-a"],
+  precincts: { "5": [1, [0]], "6": [1, 0] },
+  zips: {},
+  races: [
+    { n: 0, area: "city-a", office: "measure" },
+    { n: 1, area: "us-house-1", office: "us-representative" },
+    { n: 2, area: "tx", office: "governor" },
+  ],
+};
+
+test("a precinct partly inside a city flags the city's contests as depending on the address", () => {
+  assert.deepEqual(racesForPrecinct(CITY, "5"), [
+    { n: 0, split: true }, { n: 1, split: false }, { n: 2, split: false }]);
+  assert.deepEqual(racesForPrecinct(CITY, "6")[0], { n: 0, split: false });
+});
+
+test("an exact location settles city contests: inside keeps them, outside drops them", () => {
+  assert.deepEqual(racesForPrecinct(CITY, "5", new Set(["city-a"])).map((r) => [r.n, r.split]), [[0, false], [1, false], [2, false]]);
+  assert.deepEqual(racesForPrecinct(CITY, "5", new Set()).map((r) => r.n), [1, 2]);
+});
+
+test("areasAt lists every local area whose outline contains the point", () => {
+  const shapes = { areas: { "city-a": [[[0, 0], [2, 0], [2, 2], [0, 2], [0, 0]]], "city-b": [[[5, 5], [6, 5], [6, 6], [5, 6], [5, 5]]] } };
+  assert.deepEqual([...areasAt(shapes, 1, 1)], ["city-a"]);
+  assert.deepEqual([...areasAt(shapes, 9, 9)], []);
+});

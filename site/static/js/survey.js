@@ -2,6 +2,7 @@
 // and renders results. It builds DOM nodes with textContent (never innerHTML), sets no
 // inline styles, stores nothing, and makes no network requests.
 import { scoreCandidate, recordWeight } from "./score.js";
+import { closestCandidate, comparable } from "./quiz.js";
 
 const LABELS = { official_record: "Official record", news_report: "News report", candidate_claim: "Candidate's claim",
                  organization_statement: "Organization's statement" };
@@ -10,7 +11,7 @@ const RECORD_TYPES = { vote: "Vote", sponsored: "Sponsored measure", promise_kep
 const IMPORTANCE = { 1: "A little", 2: "Somewhat", 3: "A lot" };
 const STATUSES = { documented: "Documented", allegation: "Allegation", disputed: "Disputed", contradicted: "Contradicted" };
 
-function el(tag, props = {}, ...children) {
+export function el(tag, props = {}, ...children) {
   const node = document.createElement(tag);
   for (const [key, value] of Object.entries(props)) {
     if (key === "class") node.className = value;
@@ -35,11 +36,11 @@ function reportLink(template, itemId) {
                    rel: "noopener noreferrer" }, "Report a problem");
 }
 
-function readAnswers(form, questions) {
+export function readAnswers(form, questions, key = "") {
   const answers = {};
   for (const q of questions) {
-    const choice = form.querySelector(`input[name="${CSS.escape(`answer-${q.id}`)}"]:checked`);
-    const importance = form.querySelector(`input[name="${CSS.escape(`importance-${q.id}`)}"]:checked`);
+    const choice = form.querySelector(`input[name="${CSS.escape(`answer-${key}${q.id}`)}"]:checked`);
+    const importance = form.querySelector(`input[name="${CSS.escape(`importance-${key}${q.id}`)}"]:checked`);
     answers[q.id] = {
       option: choice && choice.value ? choice.value : null,
       importance: importance ? Number(importance.value) : 2,
@@ -106,7 +107,7 @@ export function cellFor(q) {
 }
 const CELL_MARK = { same: "✓", differ: "✗", mixed: "◐", none: "—", unscored: "·" };
 
-function renderGrid(data, results, questionsById) {
+export function renderGrid(data, results, questionsById) {
   const answered = data.questions.filter((q) => results[0].result.questions.some((r) => r.id === q.id));
   const table = el("table", { class: "compare-grid" },
     el("caption", {}, "At a glance: your answers compared with each candidate's checked record"));
@@ -130,11 +131,12 @@ function renderGrid(data, results, questionsById) {
     el("p", { class: "note", text: "Only records that have been checked against their source, and linked to a question, count here. \"Record not counted\" means a related record exists but hasn't been checked yet or is disputed. Details for each candidate are below." }));
 }
 
-function renderCandidate(candidate, result, questionsById, template) {
-  const card = el("section", { class: "card result", "aria-labelledby": `result-${candidate.id}` },
-    el("h3", { id: `result-${candidate.id}`, text: candidate.name }));
+export function renderCandidate(candidate, result, questionsById, template, closest = false, idPrefix = "") {
+  const card = el("section", { class: `card result${closest ? " result-closest" : ""}`, "aria-labelledby": `result-${idPrefix}${candidate.id}` },
+    el("h3", { id: `result-${idPrefix}${candidate.id}`, text: candidate.name }),
+    closest ? el("p", { class: "chip chip-closest", text: "Closest to your answers" }) : null);
   if (!result.hasRecords) {
-    card.append(el("p", { class: "empty", text: "No record on file for this candidate." }));
+    card.append(el("p", { class: "empty", text: "We found no record for this candidate in the sources we reviewed, so they can't be compared." }));
     return card;
   }
   const basedOn = `Based on ${result.scored} of ${result.answered} question${result.answered === 1 ? "" : "s"}.`;
@@ -153,6 +155,22 @@ function renderCandidate(candidate, result, questionsById, template) {
         renderBreakdown(result, questionsById, template)));
   }
   return card;
+}
+
+// Said once per race: why there is, or isn't, a "Closest to your answers" mark.
+export function comparisonNote(results) {
+  const none = results.filter((r) => !r.result.hasRecords).map((r) => r.candidate.name);
+  const setAside = none.length
+    ? ` We found no record for ${none.join(" or ")} in the sources we reviewed, so they aren't part of the comparison.`
+    : "";
+  if (comparable(results)) {
+    return el("p", { class: "muted", text: `The candidates with records here have enough checked record to compare. "Closest to your answers" marks the highest match; a tie marks no one.${setAside}` });
+  }
+  const withRecords = results.filter((r) => r.result.hasRecords).length;
+  const why = withRecords < 2
+    ? (results.length < 2 ? "Only one candidate is in this race, so there is no comparison." : "Fewer than two candidates here have records we could find, so there is no comparison.")
+    : "Not enough record to compare these candidates. A candidate is marked closest only when every candidate with records has enough checked record.";
+  return el("p", { class: "compare-note", text: why + setAside });
 }
 
 function init() {
@@ -177,8 +195,10 @@ function init() {
       // already alphabetical; never re-sorted by score
       const results = data.candidates.map((candidate) => ({ candidate, result: scoreCandidate(candidate, data.questions, answers) }));
       output.append(renderGrid(data, results, questionsById));
+      const closest = closestCandidate(results);
+      output.append(comparisonNote(results));
       for (const { candidate, result } of results) {
-        output.append(renderCandidate(candidate, result, questionsById, data.corrections_form_url));
+        output.append(renderCandidate(candidate, result, questionsById, data.corrections_form_url, candidate.id === closest));
       }
     }
     output.hidden = false;

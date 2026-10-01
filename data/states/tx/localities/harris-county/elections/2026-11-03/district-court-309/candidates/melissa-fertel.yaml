@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: melissa-fertel
 name: MELISSA FERTEL
-incumbent: null
+incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/district-court-309/candidates/melissa-fertel#M-01
+  headline: Had $0 on hand (Jul 1 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1 - Sep 24, 2026, filed Sep 27, 2026: $0.00 in contributions on hand at the end of the period, and $0.00 in outstanding loans. The report data lists no amount for total political contributions or total political expenditures.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101068027.PDF
+  source_title: 'Texas Ethics Commission: Fertel, Melissa Gael (Ms.), campaign finance report 101068027 (filed Sep 27, 2026)'
+  source_kind: document
+  sha256: d6e4dad9ccb8ed8a41bbff84afbf5d4311175c69a92444521f2c5fd802622a44
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101068027, form JCOH, TEC report type E30DAYBEF; filer ID 00062751 (Fertel, Melissa Gael (Ms.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

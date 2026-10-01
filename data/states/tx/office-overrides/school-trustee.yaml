@@ -1,0 +1,49 @@
+# Powers of a Texas independent school district trustee.
+# Text checked against the Education Code (statutes.capitol.texas.gov, read through its document
+# server tcss.legis.texas.gov) on 2026-09-30.
+office_type: school-trustee
+state: TX
+powers:
+  - id: P-GOVERN
+    description: The board of trustees has the exclusive power and duty to govern and oversee the management of the district's public schools.
+    statute: Education Code § 11.151(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.11.htm
+    topics: [schools]
+
+  - id: P-BUDGET
+    description: The board adopts the district's annual budget.
+    statute: Education Code § 11.1511(b)(7)
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.11.htm
+    topics: [schools, taxes-budget]
+
+  - id: P-TAX-RATE
+    description: The board adopts the district's tax rate each fiscal year.
+    statute: Education Code § 11.1511(b)(8)
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.11.htm
+    topics: [schools, taxes-budget]
+
+  - id: P-SUPERINTENDENT
+    description: The board sets goals for the district and the superintendent, monitors progress toward them, and makes sure the superintendent is held accountable.
+    statute: Education Code § 11.1511(b)(2), (4)
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.11.htm
+    topics: [schools]
+
+  - id: P-TERM
+    description: Trustees serve three- or four-year terms.
+    statute: Education Code § 11.059(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.11.htm
+
+plain_summary:
+  intro:
+    text: "Helps run your local school district: sets the budget and the tax rate, and oversees the superintendent."
+    powers: [P-GOVERN, P-BUDGET, P-TAX-RATE, P-SUPERINTENDENT]
+  points:
+    - text: Votes on the school district budget
+      icon: budget
+      powers: [P-BUDGET]
+    - text: Votes on the school district's property tax rate
+      icon: budget
+      powers: [P-TAX-RATE]
+    - text: Sets goals for the superintendent and holds them accountable
+      icon: gavel
+      powers: [P-SUPERINTENDENT]

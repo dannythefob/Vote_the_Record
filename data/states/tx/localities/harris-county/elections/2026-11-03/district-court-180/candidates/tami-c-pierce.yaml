@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: tami-c-pierce
 name: TAMI C. PIERCE
-incumbent: null
+incumbent: true
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/district-court-180/candidates/tami-c-pierce#M-01
+  headline: Raised $3,225 and had $4,629 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1 - Jun 30, 2026, filed Jul 14, 2026: $3,225.00 in total political contributions, $4,818.00 in total political expenditures, $4,629.10 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101059585.PDF
+  source_title: 'Texas Ethics Commission: Pierce, Tami C. (The Honorable), campaign finance report 101059585 (filed Jul 14, 2026)'
+  source_kind: document
+  sha256: eea0cdfc94394edda35b5e1b227aa6b5c070e425f71cd89e8f660abc36da3dfb
+  archive_url: https://web.archive.org/web/20261001183532/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101059585.PDF
+  event_date: '2026-06-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101059585, form JCOH, TEC report type A15DAYAFT; filer ID 00085771 (Pierce, Tami C. (The Honorable)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

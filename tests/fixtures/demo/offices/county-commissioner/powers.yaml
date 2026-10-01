@@ -4,15 +4,18 @@ powers:
   - id: P-BUDGET
     description: Votes on the county budget and the property tax rate as one member of the commissioners court.
     source_url: https://example.org/law/county-budget
+    topics: [taxes-budget]
   - id: P-CONTRACTS
     description: Votes to approve county contracts and purchases.
     source_url: https://example.org/law/county-contracts
   - id: P-ROADS
     description: Oversees county roads and bridges in the precinct.
     source_url: https://example.org/law/county-roads
+    topics: [roads-transportation]
   - id: P-EMERGENCY
     description: Votes on disaster declarations and emergency spending with the rest of the court.
     source_url: https://example.org/law/county-emergency
+    topics: [emergencies, taxes-budget]
 why_it_matters:
   - text: OFFICE-LEVEL reason (should be overridden by the race-level reason).
     source_url: https://example.org/office-reason

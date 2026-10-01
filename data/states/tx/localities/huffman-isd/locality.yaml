@@ -1,0 +1,5 @@
+# Huffman ISD, on the Harris County ballot. Boundaries come from the Census Bureau (see precincts.yaml).
+locality: huffman-isd
+type: school-district
+state: TX
+sources: []

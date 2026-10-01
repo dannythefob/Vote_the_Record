@@ -127,7 +127,7 @@ records:
     source_title: Houston City Council Minutes, July 10-11, 2001 (pages 17-18, Item 30, Motion 2001-0780)
     source_kind: document
     sha256: eb54a5b0e544b6f797598bfb77e9a570a340914bf264636ccb89c5857ded2e6f
-    archive_url: null
+    archive_url: "https://web.archive.org/web/20260930095656/https://www.houstontx.gov/citysec/agenda/2001/20010710.pdf"
     event_date: '2001-07-10'
     retrieved: '2026-09-30'
     verification: unverified
@@ -149,7 +149,7 @@ records:
     source_title: Houston City Council Minutes, July 10-11, 2001 (pages 18-19, Item 30, Ordinance 2001-0659)
     source_kind: document
     sha256: eb54a5b0e544b6f797598bfb77e9a570a340914bf264636ccb89c5857ded2e6f
-    archive_url: null
+    archive_url: "https://web.archive.org/web/20260930095656/https://www.houstontx.gov/citysec/agenda/2001/20010710.pdf"
     event_date: '2001-07-10'
     retrieved: '2026-09-30'
     verification: unverified
@@ -191,7 +191,7 @@ records:
     source_title: Harris County Commissioners Court Agenda, January 9, 2018 (page 15, Treasurer item 1)
     source_kind: document
     sha256: 1108fd006e3258b28f5bf999ebd2b3506a16f21819afb99e81d5def6c6686c39
-    archive_url: null
+    archive_url: "https://web.archive.org/web/20260930095857/https://agenda.harriscountytx.gov/Portals/agenda/Documents/Meeting-Archive/2018/01-09-18.pdf"
     event_date: '2018-01-09'
     retrieved: '2026-09-30'
     verification: unverified

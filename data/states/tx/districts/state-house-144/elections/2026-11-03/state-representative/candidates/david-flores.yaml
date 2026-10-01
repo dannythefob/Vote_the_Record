@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
 id: david-flores
 name: DAVID FLORES
-incumbent: null
+incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/districts/state-house-144/elections/2026-11-03/state-representative/candidates/david-flores#M-01
+  headline: Raised $2,386 and had $5,503 on hand (Jul 1 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1 - Sep 24, 2026, filed Sep 26, 2026: $2,385.56 in total political contributions, $336.80 in total political expenditures, $5,503.07 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101067776.PDF
+  source_title: 'Texas Ethics Commission: Flores, David O. (Mr.), campaign finance report 101067776 (filed Sep 26, 2026)'
+  source_kind: document
+  sha256: 36245de9461aaf0ef87e307cda2ec4e15b467b19324818b120aed2f1baf0b8df
+  archive_url: https://web.archive.org/web/20261001175621/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101067776.PDF
+  event_date: '2026-09-24'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101067776, form COH, TEC report type E30DAYBEF; filer ID 00090214 (Flores, David O. (Mr.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

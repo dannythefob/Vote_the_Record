@@ -1,0 +1,5 @@
+# Channelview ISD, on the Harris County ballot. Boundaries come from the Census Bureau (see precincts.yaml).
+locality: channelview-isd
+type: school-district
+state: TX
+sources: []

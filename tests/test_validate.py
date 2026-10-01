@@ -410,3 +410,89 @@ def test_precinct_numbers_are_digits_without_leading_zeros(tmp_path):
             "sources": [dict(SRC, id="tx/localities/test-county/elections/2026-11-03/precincts#S-01")],
             "precincts": {"0012": ["us-house-9", "test-county/jp-1"]}}})
     assert any("precincts" in e and "0012" in e for e in errors)
+
+
+
+def test_precinct_shapes_must_match_precincts_and_cite_their_source(tmp_path):
+    import json as _json
+    pct = {"sources": [dict(SRC, id="tx/localities/test-county/elections/2026-11-03/precincts#S-01")],
+           "precincts": {"12": ["us-house-9", "test-county/jp-1"], "13": ["us-house-9"]}}
+    errors = ballot_repo(tmp_path, [US9, JP1], extra={f"{BALLOT_DIR}/precincts.yaml": pct})
+    assert errors == []
+    shapes = tmp_path / BALLOT_DIR / "precinct-shapes.json"
+    square = [[[0, 0], [1, 0], [1, 1], [0, 1], [0, 0]]]
+    shapes.write_text(_json.dumps({"source": "tx/elsewhere#S-01", "precincts": {"12": square, "99": square}}))
+    from validate import validate as _validate
+    errors = _validate(tmp_path).errors
+    assert any("source must be the ID" in e for e in errors)
+    assert any("precinct 13 has no outline" in e for e in errors)
+    assert any("precinct 99 has an outline but is not in precincts.yaml" in e for e in errors)
+
+
+
+MEASURE_SRC = dict(SRC, id="tx/localities/test-county/elections/2026-11-03/prop-a/measure#S-01")
+MEASURE = {"name": "Test County, Proposition A", "election_date": "2026-11-03", "ballot_text": "Shall the county...",
+           "choices": ["FOR", "AGAINST"], "sources": [MEASURE_SRC]}
+PROP = "tx/localities/test-county/elections/2026-11-03/prop-a"
+
+
+def test_ballot_can_list_a_measure(tmp_path):
+    errors = ballot_repo(tmp_path, [US9, JP1, PROP], {"77001": ["us-house-9", "test-county/jp-1"]},
+                         extra={f"{BALLOT_DIR}/prop-a/measure.yaml": MEASURE})
+    assert errors == []
+
+
+def test_contest_folder_cannot_hold_both_a_race_and_a_measure(tmp_path):
+    errors = ballot_repo(tmp_path, [US9, JP1], {"77001": ["us-house-9", "test-county/jp-1"]},
+                         extra={f"{BALLOT_DIR}/jp-1/measure.yaml": dict(MEASURE, sources=[
+                             dict(SRC, id="tx/localities/test-county/elections/2026-11-03/jp-1/measure#S-01")])})
+    assert any("either race.yaml or measure.yaml" in e for e in errors)
+
+
+def test_measure_needs_choices_and_exact_wording(tmp_path):
+    bad = {k: v for k, v in MEASURE.items() if k != "ballot_text"}
+    errors = ballot_repo(tmp_path, [US9, JP1], {"77001": ["us-house-9", "test-county/jp-1"]},
+                         extra={f"{BALLOT_DIR}/prop-a/measure.yaml": dict(bad, choices=["FOR"])})
+    assert any("ballot_text" in e for e in errors)
+    assert any("choices" in e for e in errors)
+
+
+
+def test_unmapped_areas_skip_reachability_but_must_be_real_and_unused(tmp_path):
+    ballot = {"name": "Test County ballot", "election_date": "2026-11-03",
+              "sources": [dict(SRC, id="tx/localities/test-county/elections/2026-11-03/ballot#S-01")],
+              "contests": [US9, JP1], "unmapped": ["test-county/jp-1"]}
+    errors = ballot_repo(tmp_path, [US9, JP1], {"77001": ["us-house-9"]}, extra={f"{BALLOT_DIR}/ballot.yaml": ballot})
+    assert errors == []  # jp-1 is unmapped, so no ZIP needs to reach it
+
+
+def test_unmapped_area_must_be_on_the_ballot_and_not_in_zips(tmp_path):
+    ballot = {"name": "Test County ballot", "election_date": "2026-11-03",
+              "sources": [dict(SRC, id="tx/localities/test-county/elections/2026-11-03/ballot#S-01")],
+              "contests": [US9, JP1], "unmapped": ["test-county/jp-1", "nowhere"]}
+    errors = ballot_repo(tmp_path, [US9, JP1], {"77001": ["us-house-9", "test-county/jp-1"]},
+                         extra={f"{BALLOT_DIR}/ballot.yaml": ballot})
+    assert any("unmapped: area 'nowhere'" in e for e in errors)
+    assert any("'test-county/jp-1' is listed as unmapped" in e for e in errors)
+
+
+def test_judicial_office_may_not_have_quiz_scenarios(tmp_path):
+    assert build(tmp_path) == []
+    powers = tmp_path / "offices/test-office/powers.yaml"
+    doc = yaml.safe_load(powers.read_text(encoding="utf-8"))
+    doc["judicial"] = True
+    powers.write_text(yaml.safe_dump(doc, sort_keys=False), encoding="utf-8")
+    errors = validate(tmp_path).errors
+    assert any("judicial offices have no quiz" in e for e in errors)
+
+
+def test_power_topics_must_come_from_the_topic_list(tmp_path):
+    assert build(tmp_path) == []
+    powers = tmp_path / "offices/test-office/powers.yaml"
+    doc = yaml.safe_load(powers.read_text(encoding="utf-8"))
+    doc["powers"][0]["topics"] = ["taxes-budget"]
+    powers.write_text(yaml.safe_dump(doc, sort_keys=False), encoding="utf-8")
+    assert validate(tmp_path).errors == []
+    doc["powers"][0]["topics"] = ["hot-button-issue"]
+    powers.write_text(yaml.safe_dump(doc, sort_keys=False), encoding="utf-8")
+    assert validate(tmp_path).errors != []

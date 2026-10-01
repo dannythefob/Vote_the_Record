@@ -1,0 +1,14 @@
+# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+id: tommy-cones
+name: Tommy Cones
+incumbent: true
+ballot_party: null
+records: []
+funding: []
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

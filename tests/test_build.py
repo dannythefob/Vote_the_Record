@@ -101,7 +101,7 @@ def test_headers_file_has_csp_and_privacy_headers(real_site):
     assert headers.is_file()
     text = headers.read_text(encoding="utf-8")
     assert ("Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; "
-            "font-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; "
+            "font-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; "
             "frame-ancestors 'none'; base-uri 'none'; form-action 'self'") in text
     assert "Referrer-Policy: no-referrer" in text
     assert "Permissions-Policy:" in text
@@ -459,11 +459,11 @@ def test_ballot_is_ordered_closest_to_home_then_by_ballot_order(demo_site):
     levels = re.findall(r'<h2 id="lvl-([a-z]+)">', html)
     assert levels == ["local", "county", "state", "federal"]
     names = re.findall(r'<h3 class="ballot-race-name"><a href="[^"]+">([^<]+)</a></h3>', html)
-    assert names == ["Demo City Council, Place 1", "Demo County Commissioner, Precinct 9",
+    assert names == ["Demo City Council, Place 1", "Demo City, Proposition A", "Demo County Commissioner, Precinct 9",
                      "Justice of the Peace, Precinct 1", "Justice of the Peace, Precinct 2", "Governor",
                      "U.S. Representative, District 1", "U.S. Representative, District 2"]
     rows = re.findall(r'data-race="(\d+)"', html)
-    assert rows == [str(i) for i in range(7)]  # matches the embedded payload order
+    assert rows == [str(i) for i in range(8)]  # matches the embedded payload order
 
 
 def test_ballot_lists_candidates_a_to_z_with_ballot_labels_and_write_ins(demo_site):
@@ -480,12 +480,12 @@ def test_ballot_zip_tools_are_private_and_progressive(demo_site):
     assert '<form id="zip-form" class="zip-form" role="search" hidden>' in html  # shown by JS only
     assert "nothing is sent or saved" in html
     assert 'href="https://example.gov/whats-on-my-ballot"' in html
-    assert html.count('class="chip split-chip" hidden') == 7
+    assert html.count('class="chip split-chip" hidden') == 8
     raw = re.search(r'<script type="application/json" id="ballot-data">(.*?)</script>', html, re.S).group(1)
     data = json.loads(raw)
     assert data["implied"] == ["tx", "demo-county"]
     assert data["zips"]["22222"] == [["us-house-1", "us-house-2"], "demo-county/jp-2"]
-    assert [r["area"] for r in data["races"]][:2] == ["demo-city", "demo-county/commissioner-9"]
+    assert [r["area"] for r in data["races"]][:3] == ["demo-city", "demo-city", "demo-county/commissioner-9"]
     assert "Unverified" in html  # ballot sources carry badges
 
 
@@ -526,9 +526,9 @@ def test_partial_ballot_says_races_are_still_being_added(tmp_path):
     html = read(out, BALLOT_PAGE)
     assert "We're still adding races to this page." in html
     assert 'href="https://example.gov/demo-sample-ballot.pdf"' in html
-    assert "7 races added so far." in html
+    assert "8 races added so far." in html
     assert "Every race on this ballot" not in html
-    assert "7 races so far" in read(out, "index.html")
+    assert "8 races so far" in read(out, "index.html")
 
 
 def test_ballot_payload_packs_precincts_as_area_indexes(demo_site):
@@ -540,3 +540,165 @@ def test_ballot_payload_packs_precincts_as_area_indexes(demo_site):
     assert data["precincts"]["102"] == [5, 3]
     assert '<input id="precinct" name="precinct"' in html
     assert "on your voter registration card" in html
+
+
+
+def test_precinct_outlines_are_published_for_the_address_lookup(demo_site):
+    shapes = demo_site / "geo/tx/demo-county/2026-11-03/precinct-shapes.json"
+    assert shapes.is_file()
+    assert sorted(json.loads(shapes.read_text(encoding="utf-8"))["precincts"]) == ["101", "102", "103"]
+    html = read(demo_site, BALLOT_PAGE)
+    raw = re.search(r'<script type="application/json" id="ballot-data">(.*?)</script>', html, re.S).group(1)
+    data = json.loads(raw)
+    assert data["shapesUrl"] == "/geo/tx/demo-county/2026-11-03/precinct-shapes.json"
+    assert data["locality"] == "demo-county"
+    assert '<input id="address" name="address"' in html
+    assert "U.S. Census Bureau through our server and never stored" in html
+
+
+def test_home_address_box_maps_counties_to_ballots(demo_site):
+    html = read(demo_site, "index.html")
+    raw = re.search(r'<script type="application/json" id="county-index">(.*?)</script>', html, re.S).group(1)
+    assert json.loads(raw) == {"demo-county": [{"name": "Demo County ballot", "url": "/ballot/tx/demo-county/2026-11-03/"}]}
+    assert '<input id="address-home" name="address"' in html
+
+
+
+def test_proposition_is_listed_closest_to_home_with_its_choices(demo_site):
+    html = read(demo_site, BALLOT_PAGE)
+    local = html[html.index('id="lvl-local"'):html.index('id="lvl-county"')]
+    assert '<span class="chip chip-measure">Proposition</span>' in local
+    assert "Lets the city borrow up to $10 million for parks" in local
+    assert "Your choices: FOR · AGAINST" in local
+    assert 'href="/measures/tx/demo-city/2026-11-03/prop-a/"' in local
+
+
+def test_proposition_page_shows_exact_wording_choices_meaning_and_sources(demo_site):
+    html = read(demo_site, "measures/tx/demo-city/2026-11-03/prop-a/index.html")
+    assert "<h1>Demo City, Proposition A</h1>" in html
+    assert '<blockquote class="ballot-text">DEMO CITY, PROPOSITION A. THIS IS A PROPERTY TAX INCREASE.' in html
+    assert "<li>FOR</li>" in html and "<li>AGAINST</li>" in html
+    meaning = html[html.index('id="meaning-h"'):html.index('id="sources-h"')]
+    assert "Lets the city borrow up to $10 million for parks" in meaning
+    assert 'badge badge-unverified' in meaning
+    assert "DEMO County Clerk: Sample Ballot" in html
+
+
+
+def test_unmapped_districts_get_their_own_box_and_multi_seat_races_say_so(tmp_path):
+    root = tmp_path / "demo"
+    shutil.copytree(REPO / "tests" / "fixtures" / "demo", root)
+    folder = root / "data/states/tx/localities/demo-esd/elections/2026-11-03/commissioners"
+    (folder / "candidates").mkdir(parents=True)
+    src = {"id": "tx/localities/demo-esd/elections/2026-11-03/commissioners/race#S-01", "statement": "DEMO ballot.",
+           "label": "official_record", "claim_status": "documented", "contradicted_by": [],
+           "source_url": "https://example.gov/b.pdf", "source_title": "DEMO", "source_kind": "page", "sha256": None,
+           "archive_url": None, "event_date": "2026-11-03", "retrieved": "2026-09-01", "verification": "unverified",
+           "verified_on": None, "reviewer": None}
+    (folder / "race.yaml").write_text(yaml.safe_dump({"name": "Demo ESD Commissioners", "office_type": "city-council-member",
+                                                      "election_date": "2026-11-03", "seats": 3, "detail": "basic",
+                                                      "sources": [src]}), encoding="utf-8")
+    for slug, name in (("a-one", "A One"), ("b-two", "B Two")):
+        (folder / "candidates" / f"{slug}.yaml").write_text(yaml.safe_dump({
+            "id": slug, "name": name, "incumbent": None, "ballot_party": None, "records": [], "funding": [],
+            "endorsements": [], "running_on": {"policy_proposals": [], "attack_messaging": [], "contested_claims": []},
+            "mappings": [], "promise_tracker": []}), encoding="utf-8")
+    ballot = root / "data/states/tx/localities/demo-county/elections/2026-11-03/ballot.yaml"
+    ballot.write_text(ballot.read_text(encoding="utf-8")
+                      + "- tx/localities/demo-esd/elections/2026-11-03/commissioners\nunmapped:\n- demo-esd\n", encoding="utf-8")
+    out = tmp_path / "dist"
+    assert build(root, out, demo=True, today="2026-09-29") == 0
+    html = read(out, BALLOT_PAGE)
+    box = html[html.index('id="unmapped-box"'):html.index("</aside>", html.index('id="unmapped-box"'))]
+    assert "hidden" in html[html.index('<aside id="unmapped-box"'):html.index('<aside id="unmapped-box"') + 60]
+    assert "We can't map these districts yet" in box
+    assert 'href="/races/tx/demo-esd/2026-11-03/commissioners/"' in box
+    assert "Vote for up to 3." in html
+    data = json.loads(re.search(r'id="ballot-data">(.*?)</script>', html, re.S).group(1))
+    assert data["unmapped"] == ["demo-esd"]
+    race = read(out, "races/tx/demo-esd/2026-11-03/commissioners/index.html")
+    assert "<strong>Vote for up to 3.</strong> This race fills 3 seats." in race
+
+
+def test_finance_filer_picks_the_filing_office_by_level_type_and_locality():
+    from build import finance_filer
+    config = {"campaign_finance": {
+        "federal": {"name": "FEC", "url": "https://fec.example/"},
+        "tx": {"law_title": "Code ch. 252", "law_url": "https://law.example/252",
+               "state": {"name": "TEC", "url": "https://tec.example/"}, "state_office_types": ["district-judge"],
+               "localities": {"harris-county": {"name": "County Clerk", "url": "https://clerk.example/",
+                                                "office_types": ["county-clerk"]}}}}}
+
+    def race(level, office, locality="harris-county", state="tx"):
+        return {"office_level": level, "office_type": office, "locality": locality, "state": state}
+
+    assert finance_filer(config, race("federal", "us-representative"))["name"] == "FEC"
+    assert finance_filer(config, race("state", "governor", "statewide"))["name"] == "TEC"
+    assert finance_filer(config, race("county", "district-judge"))["name"] == "TEC"
+    assert finance_filer(config, race("county", "county-clerk"))["url"] == "https://clerk.example/"
+    local = finance_filer(config, race("local", "mayor", "some-city"))
+    assert local["name"] is None and local["law_url"] == "https://law.example/252"
+    assert finance_filer(config, race("county", "county-clerk", state="ca")) is None
+    assert finance_filer({}, race("federal", "us-representative")) is None
+
+
+def test_basic_race_shows_money_lines_and_unconfirmed_incumbents(tmp_path):
+    root = tmp_path / "demo"
+    shutil.copytree(REPO / "tests" / "fixtures" / "demo", root)
+    folder = root / "data/states/tx/localities/demo-esd/elections/2026-11-03/commissioners"
+    (folder / "candidates").mkdir(parents=True)
+    base = {"label": "official_record", "claim_status": "documented", "contradicted_by": [], "source_kind": "page",
+            "sha256": None, "archive_url": None, "event_date": "2026-09-01", "retrieved": "2026-09-01",
+            "verification": "unverified", "verified_on": None, "reviewer": None}
+    src = dict(base, id="tx/localities/demo-esd/elections/2026-11-03/commissioners/race#S-01", statement="DEMO ballot.",
+               source_url="https://example.gov/b", source_title="DEMO")
+    check = dict(base, id="tx/localities/demo-esd/elections/2026-11-03/commissioners/race#S-FUND",
+                 statement="DEMO: no report for B TWO.", source_url="https://example.gov/cf",
+                 source_title="Demo Ethics Office: bulk data")
+    (folder / "race.yaml").write_text(yaml.safe_dump({"name": "Demo ESD Commissioners", "office_type": "city-council-member",
+                                                      "election_date": "2026-11-03", "detail": "basic",
+                                                      "sources": [src, check]}), encoding="utf-8")
+    money = dict(base, id="tx/localities/demo-esd/elections/2026-11-03/commissioners/candidates/a-one#M-01",
+                 headline="Raised $10 and had $5 on hand (DEMO)", statement="DEMO report.",
+                 source_url="https://example.gov/r1", source_title="DEMO report")
+    older = dict(money, id=money["id"].replace("#M-01", "#M-00"), headline="Raised $1 (OLDER DEMO)", event_date="2026-01-15")
+    for slug, name, funding in (("a-one", "A One", [older, money]), ("b-two", "B Two", [])):
+        (folder / "candidates" / f"{slug}.yaml").write_text(yaml.safe_dump({
+            "id": slug, "name": name, "incumbent": None, "ballot_party": None, "records": [], "funding": funding,
+            "endorsements": [], "running_on": {"policy_proposals": [], "attack_messaging": [], "contested_claims": []},
+            "mappings": [], "promise_tracker": []}), encoding="utf-8")
+    out = tmp_path / "dist"
+    assert build(root, out, demo=True, today="2026-09-29") == 0
+    race = read(out, "races/tx/demo-esd/2026-11-03/commissioners/index.html")
+    assert "We haven't confirmed who holds this office now." in race
+    assert "Raised $10 and had $5 on hand (DEMO)" in race and 'href="https://example.gov/r1"' in race
+    assert race.index("Raised $10 and had $5 on hand (DEMO)") < race.index("Earlier reports (1)") < race.index("(OLDER DEMO)")
+    assert "No 2025–2026 report found in Demo Ethics Office data." in race
+    assert "Campaign finance reports for this office are filed locally, not with the state." in race
+    assert "Texas Election Code, chapter 252</a> lists the filing office" in race
+
+
+def test_ballot_page_has_topics_and_a_quiz_without_judges(tmp_path):
+    out = tmp_path / "dist"
+    assert build(REPO / "tests" / "fixtures" / "demo", out, demo=True, today="2026-09-29") == 0
+    html = read(out, BALLOT_PAGE)
+    assert 'id="topic-picker"' in html and 'value="taxes-budget"' in html and 'value="roads-transportation"' in html
+    assert 'value="schools"' not in html  # only topics some race on this ballot deals with
+    assert "About: Taxes &amp; budget · Disasters &amp; emergencies · Roads &amp; transportation" in html
+    data = json.loads(re.search(r'id="ballot-data">(.*?)</script>', html, re.S).group(1))
+    keys = [q["key"] for q in data["quiz"]]
+    assert keys == ["demo-county/commissioner-precinct-9"]  # JP races are judicial: never a quiz
+    assert data["topicLabels"]["schools"] == "Schools"
+    quiz = html[html.index('id="ballot-quiz"'):]
+    n = data["quiz"][0]["n"]
+    assert f'name="answer-{n}-county-commissioner/S-01"' in quiz
+    assert "Texas Code of Judicial Conduct" in quiz
+    assert "Closest to your answers" not in html  # only ever added by JS, under the rules in quiz.js
+
+
+def test_topic_labels_must_match_the_schema(tmp_path):
+    config = yaml.safe_load((REPO / "site" / "site.yaml").read_text(encoding="utf-8"))
+    config["topics"].pop("energy")
+    path = tmp_path / "site.yaml"
+    path.write_text(yaml.safe_dump(config), encoding="utf-8")
+    assert build(REPO / "tests" / "fixtures" / "demo", tmp_path / "dist", demo=True, config_path=path) == 1

@@ -1,0 +1,28 @@
+# Powers of a Texas mayor (state laws only). A mayor's other powers come from the city
+# charter, which is not cited here yet. Text checked against statutes.capitol.texas.gov (read
+# through its document server tcss.legis.texas.gov) on 2026-09-30.
+office_type: mayor
+state: TX
+powers:
+  - id: P-EMERGENCY
+    description: The presiding officer of a city's governing body is the city's emergency management director and may declare a local state of disaster. Continuing it for more than seven days needs the governing body's consent.
+    statute: Government Code §§ 418.1015, 418.108
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.418.htm
+    topics: [emergencies]
+
+  - id: P-CHARTER
+    description: In a home-rule city, the city charter sets the city government's structure, including the mayor's powers and duties.
+    statute: Local Government Code § 51.072
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.51.htm
+
+plain_summary:
+  intro:
+    text: Elected to lead the city government. The city charter sets the mayor's exact powers.
+    powers: [P-CHARTER]
+  points:
+    - text: If the mayor presides over the council, the mayor leads the city's emergency response and can declare a local disaster
+      icon: storm
+      powers: [P-EMERGENCY]
+    - text: The city charter sets the rest of the job
+      icon: gavel
+      powers: [P-CHARTER]

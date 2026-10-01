@@ -1,2 +1,3 @@
 office_type: city-council-member
-powers: []   # {id: P-XXX, description, source_url}
+level: local
+powers: []   # Texas powers: data/states/tx/office-overrides/city-council-member.yaml

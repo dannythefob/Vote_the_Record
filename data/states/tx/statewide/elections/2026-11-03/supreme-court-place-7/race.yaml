@@ -20,3 +20,19 @@ sources:
   verification: unverified
   verified_on: null
   reviewer: null
+- id: tx/statewide/elections/2026-11-03/supreme-court-place-7/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (Supreme Court of Texas: Justices), checked on September 30, 2026, shows that KYLE HAWKINS, a candidate in this race, currently holds this seat. It does not list the other candidates as holding this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.txcourts.gov/supreme/about-the-court/justices/
+  source_title: 'Supreme Court of Texas: Justices'
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20261001021339/https://www.txcourts.gov/supreme/about-the-court/justices/
+  event_date: '2026-09-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null

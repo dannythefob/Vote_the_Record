@@ -13,11 +13,13 @@ powers:
     description: Keeps the records of the district courts, records their proceedings, and enters their judgments.
     statute: Government Code § 51.303(a)-(b)
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.51.htm
+    topics: [courts-justice]
 
   - id: P-PROTECTIVE-ORDERS
     description: Accepts applications for protective orders.
     statute: Government Code § 51.303(b)(4)
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.51.htm
+    topics: [courts-justice]
 
 plain_summary:
   intro:

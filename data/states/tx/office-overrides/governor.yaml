@@ -33,11 +33,13 @@ powers:
     description: Can grant pardons and shorten sentences, but only on the written recommendation of the Board of Pardons and Paroles.
     statute: Texas Constitution art. IV, § 11(b)
     source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.4.htm
+    topics: [courts-justice]
 
   - id: P-DISASTER
     description: Can declare a state of disaster.
     statute: Government Code § 418.014
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.418.htm
+    topics: [emergencies]
 
 plain_summary:
   intro:

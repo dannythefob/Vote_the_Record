@@ -1,0 +1,3 @@
+office_type: township-director
+level: local
+powers: []   # Texas powers: data/states/tx/office-overrides/township-director.yaml

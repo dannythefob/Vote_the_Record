@@ -30,10 +30,26 @@ sources:
   source_title: 'Harris County Clerk: List of Declared Write-In Candidates, November 3, 2026 General and Special Elections'
   source_kind: document
   sha256: 2056f6a21f8c89f769971bf5ccbc7373160d657f93971128e18fb30513e250a4
-  archive_url: null
+  archive_url: https://web.archive.org/web/20260925191858/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/Write-Ins/2026/1126_Write-In_for_BBM.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=azVo5pcm184KqQpeMxG5gOo%2BVcoJmZCswMsgHlausCE%3D
   event_date: '2026-11-03'
   retrieved: '2026-09-30'
   verification: unverified
   verified_on: null
   reviewer: null
   notes: The Wayback Machine refused saves on 2026-09-30 (rate limit); archive_url must be added before this can be verified.
+- id: tx/statewide/elections/2026-11-03/us-senate/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (U.S. Senate: Senators'' contact information (XML)), checked on September 30, 2026, does not show any of the candidates in this race as the current holder of this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.senate.gov/general/contact_information/senators_cfm.xml
+  source_title: 'U.S. Senate: Senators'' contact information (XML)'
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20261001021217/https://www.senate.gov/general/contact_information/senators_cfm.xml
+  event_date: '2026-09-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
