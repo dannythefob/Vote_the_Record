@@ -3,6 +3,16 @@ name: Travis County ballot
 election_date: '2026-11-03'
 lookup_url: https://votetravis.gov/current-election-information/current-election/
 complete: true
+unmapped:
+- austin-community-college
+- eastwood-mud
+- hidden-lakes-mud-1
+- travis-county-esd-10
+- travis-county-esd-4
+- travis-county-esd-9
+- travis-county-mmd-1
+- travis-county-mud-41
+- wells-branch-library-district
 sources:
 - id: tx/localities/travis-county/elections/2026-11-03/ballot#S-01
   headline: Every contest on the sample ballot

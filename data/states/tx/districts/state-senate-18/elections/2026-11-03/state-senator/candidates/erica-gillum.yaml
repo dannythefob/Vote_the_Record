@@ -15,7 +15,7 @@ funding:
   source_title: 'Texas Ethics Commission: Gillum, Erica (Ms.), campaign finance report 101061492 (filed Jul 15, 2026)'
   source_kind: document
   sha256: 7e811e61be3284fdaa4c2f9f7f762bd93b0a055bbbe73a83db3b6b5e8ffd87d1
-  archive_url: null
+  archive_url: https://web.archive.org/web/20261001182611/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101061492.PDF
   event_date: '2026-06-30'
   retrieved: '2026-09-30'
   verification: unverified

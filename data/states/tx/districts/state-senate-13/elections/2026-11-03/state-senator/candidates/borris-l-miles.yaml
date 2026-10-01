@@ -15,7 +15,7 @@ funding:
   source_title: 'Texas Ethics Commission: Miles, Borris Lee (The Honorable), campaign finance report 101043817 (filed Mar 14, 2026)'
   source_kind: document
   sha256: 0d31b11da216b4880f5976876c7639a65cce03b4f16d2dd9ef4797c7dcf4bbf5
-  archive_url: null
+  archive_url: https://web.archive.org/web/20261001182506/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101043817.PDF
   event_date: '2025-12-31'
   retrieved: '2026-09-30'
   verification: unverified
