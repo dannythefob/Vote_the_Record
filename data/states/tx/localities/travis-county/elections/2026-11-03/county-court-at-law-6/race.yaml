@@ -1,0 +1,22 @@
+# Basic race page: the office and candidates as printed on the sample ballot. Unverified.
+name: Judge, County Court at Law No. 6
+office_type: county-court-at-law-judge
+election_date: '2026-11-03'
+detail: basic
+sources:
+- id: tx/localities/travis-county/elections/2026-11-03/county-court-at-law-6/race#S-01
+  headline: Candidates as printed on the sample ballot
+  statement: 'The Travis County Clerk''s sample ballot for the November 3, 2026 joint general and special elections lists "Judge, County Court at Law No. 6" on page 2, with these candidates: Denise Hernández (Democratic Party).'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf
+  source_title: 'Travis County Clerk: Consolidated Ballot, November 3, 2026 Joint General and Special Elections (page 2)'
+  source_kind: document
+  sha256: 1e09c8a7e8f264c87e5fb91468c6122ad16b3515d610a43453719a991f4dbeb3
+  archive_url: https://web.archive.org/web/20261001173209/https://votetravis.gov/wp-content/uploads/G26-Bedsheet-Ballot-Final-FINAL.pdf
+  event_date: '2026-11-03'
+  retrieved: '2026-10-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null

@@ -1,0 +1,4 @@
+office_type: county-court-at-law-judge
+level: county
+judicial: true
+powers: []   # Texas powers: data/states/tx/office-overrides/county-court-at-law-judge.yaml

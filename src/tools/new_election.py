@@ -14,11 +14,13 @@ a full example):
   sample_ballot: {issuer: Travis County Clerk, url: ..., title: ..., sha256: ..., archive_url: ..., retrieved: ...}
   write_in_list: {url: ..., title: ..., sha256: ..., archive_url: ..., retrieved: ...}   # optional
   contests:                                                  # in ballot order
+    - existing: tx/statewide/elections/2027-05-01/governor   # already in the data: just list it
     - race: tx/localities/city-of-austin/elections/2027-05-01/council-district-3
       name: Austin City Council, District 3
       office_type: city-council-member
       page: 2
       seats: 1                                               # optional
+      area: travis-county/commissioner-2                     # optional: the voting area, if not the folder's
       candidates: [{name: JANE DOE, party: null}]            # exactly as printed
       write_ins: [Pat Roe]                                   # optional, from the write-in list
     - measure: tx/localities/city-of-austin/elections/2027-05-01/proposition-a
@@ -39,6 +41,7 @@ from __future__ import annotations
 import argparse
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 import yaml
@@ -52,7 +55,9 @@ EMPTY = {"records": [], "funding": [], "endorsements": [],
 
 
 def slug(name: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "-", re.sub(r"[“”\"']", "", name.lower())).strip("-")
+    """'Yvonne Muñoz' -> 'yvonne-munoz'; quotes and nickname marks dropped."""
+    plain = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "-", re.sub(r"[\"']", "", plain.lower())).strip("-")
 
 
 def fact(fid: str, headline: str, statement: str, src: dict, title: str, date: str) -> dict:
@@ -71,6 +76,10 @@ def plan(root: Path, spec: dict) -> list[tuple[Path, str, dict]]:
     out: list[tuple[Path, str, dict]] = []
     contests = []
     for c in spec["contests"]:
+        if "existing" in c:  # a race already in the data (e.g. statewide): only listed on this ballot
+            assert (root / "data/states" / c["existing"] / "race.yaml").exists(), c["existing"]
+            contests.append(c["existing"])
+            continue
         path = c.get("race") or c.get("measure")
         assert path.startswith(spec["ballot"].split("/")[0] + "/") and f"/elections/{date}/" in path, path
         contests.append(path)
@@ -100,8 +109,12 @@ def plan(root: Path, spec: dict) -> list[tuple[Path, str, dict]]:
                                 f"{', '.join(c['write_ins'])}.", wl, wl["title"], date))
         if not (folder / "race.yaml").exists():
             race = {"name": c["name"], "office_type": c["office_type"], "election_date": date, "detail": "basic"}
+            if c.get("area"):
+                race["area"] = c["area"]  # e.g. travis-county/commissioner-2, when the folder doesn't say it
             if c.get("seats", 1) > 1:
                 race["seats"] = c["seats"]
+            if c.get("notes"):
+                race["notes"] = c["notes"]
             race["sources"] = sources
             out.append((folder / "race.yaml",
                         "# Basic race page: the office and candidates as printed on the sample ballot. Unverified.\n", race))

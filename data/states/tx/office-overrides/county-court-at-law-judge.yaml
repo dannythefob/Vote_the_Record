@@ -1,0 +1,46 @@
+# Powers of a Texas county court at law judge (a statutory county court).
+# Text checked against Government Code chapter 25 (statutes.capitol.texas.gov, read through its
+# document server tcss.legis.texas.gov) on 2026-10-01.
+office_type: county-court-at-law-judge
+state: TX
+powers:
+  - id: P-JURISDICTION
+    description: Hears the cases, civil and criminal, that the law gives county courts, including appeals. It has no power over roads, bridges, or the general business of the county, which belong to the Commissioners Court.
+    statute: Government Code § 25.0003(a)-(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+    topics: [courts-justice]
+
+  - id: P-CIVIL
+    description: Also hears civil cases where more than $500 and up to $325,000 is at stake, not counting interest, damages, penalties, fees, and costs.
+    statute: Government Code § 25.0003(c)(1)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+    topics: [courts-justice]
+
+  - id: P-TRAVIS-COURTS
+    description: Travis County has nine county courts at law, which sit in Austin. County Court at Law No. 9 gives preference to criminal cases.
+    statute: Government Code §§ 25.2291, 25.2292(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+
+  - id: P-TRAVIS-APPEALS
+    description: In Travis County, every appeal from a Justice of the Peace court or other lower court goes to a county court at law.
+    statute: Government Code § 25.2292(j)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+    topics: [courts-justice]
+
+  - id: P-TRAVIS-FAMILY-VIOLENCE
+    description: In Travis County, County Court at Law No. 4 also hears state jail and third-degree felony cases involving family violence, and gives preference to cases where family violence is alleged.
+    statute: Government Code § 25.2292(c)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+    topics: [courts-justice]
+
+plain_summary:
+  intro:
+    text: A judge on a county court at law, which hears civil cases up to $325,000, appeals from Justice of the Peace courts, and other cases the law gives county courts.
+    powers: [P-JURISDICTION, P-CIVIL, P-TRAVIS-APPEALS]
+  points:
+    - text: Hears civil cases where more than $500 and up to $325,000 is at stake
+      icon: court
+      powers: [P-CIVIL]
+    - text: In Travis County, hears every appeal from Justice of the Peace courts
+      icon: gavel
+      powers: [P-TRAVIS-APPEALS]

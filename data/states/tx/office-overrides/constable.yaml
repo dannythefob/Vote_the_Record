@@ -1,0 +1,28 @@
+# Powers of a Texas constable.
+# Text checked against the Texas Constitution and Local Government Code chapter 86
+# (statutes.capitol.texas.gov, read through its document server tcss.legis.texas.gov) on 2026-10-01.
+office_type: constable
+state: TX
+powers:
+  - id: P-TERM
+    description: Each county precinct elects one constable, who serves a four-year term.
+    statute: Texas Constitution art. V, § 18(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.5.htm
+
+  - id: P-PROCESS
+    description: Serves the court papers sent to the constable, such as warrants, subpoenas, and eviction notices, and may serve civil or criminal process anywhere in the county.
+    statute: Local Government Code § 86.021(a)-(c)
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.86.htm
+    topics: [courts-justice, housing-land]
+
+plain_summary:
+  intro:
+    text: Elected in one county precinct for four years to serve court papers, such as warrants, subpoenas, and eviction notices.
+    powers: [P-TERM, P-PROCESS]
+  points:
+    - text: Serves warrants, subpoenas, and other court papers anywhere in the county
+      icon: shield
+      powers: [P-PROCESS]
+    - text: Delivers eviction notices
+      icon: contract
+      powers: [P-PROCESS]
