@@ -143,6 +143,7 @@ function initBallotPage(payload) {
   const status = document.getElementById("zip-status");
   const reset = document.getElementById("zip-reset");
   const rows = [...document.querySelectorAll("[data-race]")];
+  const unmappedBox = document.getElementById("unmapped-box");
   const groups = [...document.querySelectorAll("[data-group]")];
   form.hidden = false;
 
@@ -153,6 +154,7 @@ function initBallotPage(payload) {
     });
     groups.forEach((g) => { g.hidden = false; });
     reset.hidden = true;
+    if (unmappedBox) unmappedBox.hidden = true;
   }
 
   function show(found) {
@@ -164,6 +166,7 @@ function initBallotPage(payload) {
     });
     groups.forEach((g) => { g.hidden = !g.querySelector("[data-race]:not([hidden])"); });
     reset.hidden = false;
+    if (unmappedBox) unmappedBox.hidden = false;
   }
 
   function applyZip(zip, updateHash) {

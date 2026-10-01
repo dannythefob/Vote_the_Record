@@ -1,0 +1,34 @@
+# Powers of an Old Town Spring Improvement District director (Special District Local Laws Code
+# chapter 3813). Checked on statutes.capitol.texas.gov (read through tcss.legis.texas.gov) on 2026-09-30.
+office_type: improvement-district-director
+state: TX
+powers:
+  - id: P-PURPOSE
+    description: The district exists to promote employment, commerce, transportation, housing, tourism, recreation, the arts, entertainment, economic development, safety, and scenic beauty.
+    statute: Special District Local Laws Code § 3813.003(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/SD/htm/SD.3813.htm
+
+  - id: P-BOARD
+    description: Five directors. The Harris County Commissioners Court appoints Positions 1 to 3, and voters elect Positions 4 and 5.
+    statute: Special District Local Laws Code § 3813.051(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/SD/htm/SD.3813.htm
+
+  - id: P-TAXES
+    description: The district can impose a sales and use tax, but may not impose a property tax.
+    statute: Special District Local Laws Code §§ 3813.151, 3813.159
+    source_url: https://statutes.capitol.texas.gov/Docs/SD/htm/SD.3813.htm
+
+plain_summary:
+  intro:
+    text: Helps run a district that promotes business, tourism, and safety in Old Town Spring, funded by sales tax, not property tax.
+    powers: [P-PURPOSE, P-TAXES]
+  points:
+    - text: Promotes business, tourism, and safety in the district
+      icon: megaphone
+      powers: [P-PURPOSE]
+    - text: Two of five directors are elected; the county appoints three
+      icon: vote
+      powers: [P-BOARD]
+    - text: Funded by sales tax; no property tax allowed
+      icon: budget
+      powers: [P-TAXES]

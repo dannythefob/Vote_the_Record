@@ -1,0 +1,39 @@
+# Powers of a North Harris County Regional Water Authority director (Special District Local Laws
+# Code chapter 8888). Checked on statutes.capitol.texas.gov (read through tcss.legis.texas.gov) on 2026-09-30.
+office_type: water-authority-director
+state: TX
+powers:
+  - id: P-BOARD
+    description: Five directors, each elected by the voters of one of five single-member districts.
+    statute: Special District Local Laws Code §§ 8888.101, 8888.102
+    source_url: https://statutes.capitol.texas.gov/Docs/SD/htm/SD.8888.htm
+
+  - id: P-PURPOSE
+    description: The authority must use its powers in a way that promotes regional water treatment and distribution.
+    statute: Special District Local Laws Code § 8888.151(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/SD/htm/SD.8888.htm
+
+  - id: P-FEES
+    description: The authority can charge well owners a fee on the amount of water pumped from their wells.
+    statute: Special District Local Laws Code § 8888.156(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/SD/htm/SD.8888.htm
+
+  - id: P-GROUNDWATER
+    description: The authority can adopt and enforce a groundwater reduction plan that is binding on wells in the authority.
+    statute: Special District Local Laws Code § 8888.157(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/SD/htm/SD.8888.htm
+
+plain_summary:
+  intro:
+    text: Oversees the shift from groundwater to surface water in north Harris County, including fees on water pumped from wells.
+    powers: [P-PURPOSE, P-FEES, P-GROUNDWATER]
+  points:
+    - text: Promotes regional water treatment and distribution
+      icon: shield
+      powers: [P-PURPOSE]
+    - text: Charges well owners a fee on water they pump
+      icon: budget
+      powers: [P-FEES]
+    - text: Can require wells to cut groundwater use under a plan
+      icon: gavel
+      powers: [P-GROUNDWATER]

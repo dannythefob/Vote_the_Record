@@ -51,7 +51,24 @@ sources:
   verification: unverified
   verified_on: null
   reviewer: null
-  notes: 'Read on 2026-09-30; SHA-256 of the downloaded query responses: 98d92b8b59bdeeef254297d8376d7490d0b64a1a77c98cc7d5daf82d1ba4c1e9. Areas used: channelview-isd (layer 14, GEOID 4813590), city-of-baytown (layer 28, GEOID 4806128), city-of-houston (layer 28, GEOID 4835000), city-of-league-city (layer 28, GEOID 4841980), crosby-isd (layer 14, GEOID 4815750), cypress-fairbanks-isd (layer 14, GEOID 4816110), huffman-isd (layer 14, GEOID 4823820), klein-isd (layer 14, GEOID 4825740), la-porte-isd (layer 14, GEOID 4826190), new-caney-isd (layer 14, GEOID 4832400), sheldon-isd (layer 14, GEOID 4839990), spring-isd (layer 14, GEOID 4841220), tomball-isd (layer 14, GEOID 4842960). A precinct or ZIP code at least 99% inside a city counts as inside it; one at least 1% inside is marked as depending on the address. The address lookup uses the outlines directly.'
+  notes: 'Read on 2026-09-30; SHA-256 of the downloaded query responses: 98d92b8b59bdeeef254297d8376d7490d0b64a1a77c98cc7d5daf82d1ba4c1e9. Areas used: channelview-isd (layer 14, GEOID 4813590), city-of-baytown (layer 28, GEOID 4806128), city-of-houston (layer 28, GEOID 4835000), city-of-league-city (layer 28, GEOID 4841980), crosby-isd (layer 14, GEOID 4815750), cypress-fairbanks-isd (layer 14, GEOID 4816110), huffman-isd (layer 14, GEOID 4823820), klein-isd (layer 14, GEOID 4825740), la-porte-isd (layer 14, GEOID 4826190), new-caney-isd (layer 14, GEOID 4832400), sheldon-isd (layer 14, GEOID 4839990), spring-isd (layer 14, GEOID 4841220), tomball-isd (layer 14, GEOID 4842960). A precinct or ZIP code at least 99% inside an area counts as inside it; one at least 1% inside, or holding at least 1% of the area, is marked as depending on the address. The address lookup uses the outlines directly.'
+- id: tx/localities/harris-county/elections/2026-11-03/zips#S-04
+  headline: TCEQ water district boundaries
+  statement: The Texas Commission on Environmental Quality's Water Districts map service publishes the boundaries of water districts, including municipal utility districts, fresh water supply districts, and municipal management districts.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://gisweb.tceq.texas.gov/arcgis/rest/services/iwud/WaterDistricts_PRD/MapServer
+  source_title: 'Texas Commission on Environmental Quality: Water Districts map service'
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20260930225735/https://gisweb.tceq.texas.gov/arcgis/rest/services/iwud/WaterDistricts_PRD/MapServer
+  event_date: '2026-09-30'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Read on 2026-09-30; SHA-256 of the downloaded query responses: 1d90489e3c6e0a11f88486483d59c7a6059efabbcf5798431c35d339106291a3. Districts used: harris-county-fwsd-1a (layer 2, DISTRICT_ID 3639000), harris-county-mud-127 (layer 6, DISTRICT_ID 3737312), harris-county-mud-130 (layer 6, DISTRICT_ID 3737318), harris-county-mud-189 (layer 6, DISTRICT_ID 3737446), harris-county-mud-50 (layer 6, DISTRICT_ID 3737148), harris-county-mud-553 (layer 6, DISTRICT_ID 9000004), harris-county-wcid-89 (layer 6, DISTRICT_ID 4190000), intercontinental-crossing-mud (layer 6, DISTRICT_ID 4711250), old-town-spring-improvement-district (layer 5, DISTRICT_ID 6205100), spanish-cove-pud (layer 6, DISTRICT_ID 7587000), west-harris-county-mud-15 (layer 6, DISTRICT_ID 8472972), weston-mud (layer 6, DISTRICT_ID 8474000). Same method as the Census boundaries.'
 everywhere: ["court-of-appeals-1", "court-of-appeals-14"]
 zips:
   '77002': [["us-house-18", "us-house-7"], "state-senate-13", ["state-house-142", "state-house-145", "state-house-147"], ["sboe-4", "sboe-6"], "harris-county/commissioner-2", ["harris-county/jp-1", "harris-county/jp-6", "harris-county/jp-7"], "city-of-houston"]
@@ -93,13 +110,13 @@ zips:
   '77038': ["us-house-29", ["state-house-139", "state-house-140", "state-house-141"], "sboe-4", "harris-county/commissioner-2", ["harris-county/jp-1", "harris-county/jp-4"], ["city-of-houston"]]
   '77039': ["us-house-29", ["state-house-140", "state-house-141"], "sboe-4", "harris-county/commissioner-2", ["harris-county/jp-1", "harris-county/jp-3"], ["city-of-houston"]]
   '77040': [["us-house-2", "us-house-29", "us-house-38"], ["state-house-138", "state-house-139", "state-house-148"], "sboe-6", "harris-county/commissioner-4", ["harris-county/jp-1", "harris-county/jp-4"], ["city-of-houston"], ["cypress-fairbanks-isd"]]
-  '77041': [["us-house-29", "us-house-38"], ["state-house-135", "state-house-138", "state-house-148"], "sboe-6", "harris-county/commissioner-4", ["harris-county/jp-1", "harris-county/jp-5"], ["city-of-houston"], ["cypress-fairbanks-isd"]]
+  '77041': [["us-house-29", "us-house-38"], ["state-house-135", "state-house-138", "state-house-148"], "sboe-6", "harris-county/commissioner-4", ["harris-county/jp-1", "harris-county/jp-5"], ["city-of-houston"], ["cypress-fairbanks-isd"], ["harris-county-mud-130"]]
   '77042': [["us-house-38", "us-house-7", "us-house-8"], "state-senate-13", ["state-house-133", "state-house-137"], ["sboe-6", "sboe-8"], "harris-county/commissioner-4", "harris-county/jp-5", "city-of-houston"]
   '77043': ["us-house-38", "state-house-138", "sboe-6", "harris-county/commissioner-4", "harris-county/jp-5", "city-of-houston", ["cypress-fairbanks-isd"]]
   '77044': [["us-house-18", "us-house-2", "us-house-9"], ["state-house-127", "state-house-142"], ["sboe-4", "sboe-8"], "harris-county/jp-3", ["city-of-houston"], ["sheldon-isd"]]
   '77045': ["us-house-18", "state-senate-13", ["state-house-131", "state-house-146"], "sboe-4", "harris-county/jp-7", "city-of-houston"]
   '77046': ["us-house-7", "state-house-134", "sboe-6", "harris-county/commissioner-4", "harris-county/jp-1", "city-of-houston"]
-  '77047': ["us-house-18", "state-senate-13", ["state-house-131", "state-house-146"], "sboe-4", "harris-county/jp-7", ["city-of-houston"]]
+  '77047': ["us-house-18", "state-senate-13", ["state-house-131", "state-house-146"], "sboe-4", "harris-county/jp-7", ["city-of-houston"], ["harris-county-wcid-89"]]
   '77048': [["us-house-18", "us-house-36"], "state-senate-13", ["state-house-131", "state-house-146", "state-house-147"], "sboe-4", "harris-county/jp-7", "city-of-houston"]
   '77049': ["us-house-9", ["state-house-142", "state-house-143"], ["sboe-4", "sboe-8"], "harris-county/commissioner-2", "harris-county/jp-3", ["channelview-isd"], ["city-of-houston"], ["sheldon-isd"]]
   '77050': ["us-house-18", "state-senate-13", ["state-house-140", "state-house-141"], "sboe-4", "harris-county/commissioner-2", "harris-county/jp-3", ["city-of-houston"]]
@@ -109,7 +126,7 @@ zips:
   '77055': [["us-house-29", "us-house-38", "us-house-7"], ["state-house-134", "state-house-138", "state-house-148"], "sboe-6", "harris-county/commissioner-4", ["harris-county/jp-1", "harris-county/jp-5"], ["city-of-houston"]]
   '77056': [["us-house-38", "us-house-7"], ["state-house-133", "state-house-134", "state-house-137", "state-house-138"], ["sboe-4", "sboe-6", "sboe-8"], "harris-county/commissioner-4", ["harris-county/jp-1", "harris-county/jp-5"], "city-of-houston"]
   '77057': [["us-house-38", "us-house-7"], ["state-house-133", "state-house-137", "state-house-138"], ["sboe-4", "sboe-6", "sboe-8"], "harris-county/commissioner-4", ["harris-county/jp-1", "harris-county/jp-5"], "city-of-houston"]
-  '77058': ["us-house-36", "state-senate-11", "state-house-129", "sboe-8", "harris-county/commissioner-2", "harris-county/jp-8", ["city-of-houston"]]
+  '77058': ["us-house-36", "state-senate-11", "state-house-129", "sboe-8", "harris-county/commissioner-2", "harris-county/jp-8", ["city-of-houston"], ["city-of-league-city"]]
   '77059': ["us-house-36", "state-senate-11", "state-house-129", "sboe-8", "harris-county/commissioner-2", "harris-county/jp-8", ["city-of-houston"]]
   '77060': ["us-house-29", ["state-house-140", "state-house-141"], "sboe-4", "harris-county/commissioner-2", ["harris-county/jp-1", "harris-county/jp-4"], ["city-of-houston"]]
   '77061': ["us-house-36", "state-house-147", "sboe-4", "harris-county/commissioner-2", "harris-county/jp-2", "city-of-houston"]
@@ -124,7 +141,7 @@ zips:
   '77070': [["us-house-2", "us-house-38"], ["state-house-126", "state-house-130"], "sboe-6", "harris-county/jp-4", ["city-of-houston"], ["cypress-fairbanks-isd"], ["klein-isd"], ["tomball-isd"]]
   '77071': [["us-house-18", "us-house-7"], "state-senate-13", ["state-house-131", "state-house-146"], ["sboe-4", "sboe-7", "sboe-8"], "harris-county/commissioner-4", ["harris-county/jp-5", "harris-county/jp-7"], ["city-of-houston"]]
   '77072': [["us-house-7", "us-house-8"], "state-senate-13", ["state-house-131", "state-house-137", "state-house-149"], ["sboe-4", "sboe-8"], "harris-county/commissioner-4", "harris-county/jp-5", ["city-of-houston"]]
-  '77073': ["us-house-29", "state-senate-4", ["state-house-141", "state-house-150"], "sboe-4", "harris-county/jp-4", ["city-of-houston"], ["spring-isd"]]
+  '77073': ["us-house-29", "state-senate-4", ["state-house-141", "state-house-150"], "sboe-4", "harris-county/jp-4", ["city-of-houston"], ["intercontinental-crossing-mud"], ["spring-isd"]]
   '77074': [["us-house-18", "us-house-7"], "state-senate-13", ["state-house-131", "state-house-137", "state-house-146"], ["sboe-4", "sboe-8"], "harris-county/commissioner-4", ["harris-county/jp-5", "harris-county/jp-7"], "city-of-houston"]
   '77075': ["us-house-36", ["state-house-131", "state-house-147"], "sboe-4", "harris-county/commissioner-2", "harris-county/jp-2", "city-of-houston"]
   '77076': ["us-house-29", ["state-house-140", "state-house-145"], "sboe-4", "harris-county/commissioner-2", "harris-county/jp-1", "city-of-houston"]
@@ -141,12 +158,12 @@ zips:
   '77087': [["us-house-18", "us-house-9"], ["state-house-145", "state-house-147"], "sboe-4", "harris-county/commissioner-2", ["harris-county/jp-2", "harris-county/jp-6"], "city-of-houston"]
   '77088': ["us-house-29", ["state-house-139", "state-house-140", "state-house-148"], ["sboe-4", "sboe-6"], "harris-county/commissioner-2", "harris-county/jp-1", ["city-of-houston"], ["klein-isd"]]
   '77089': ["us-house-36", "state-senate-11", ["state-house-129", "state-house-131", "state-house-144", "state-house-147"], "sboe-4", "harris-county/commissioner-2", "harris-county/jp-2", ["city-of-houston"]]
-  '77090': ["us-house-29", "state-senate-4", ["state-house-139", "state-house-141"], ["sboe-4", "sboe-6"], "harris-county/jp-4", ["city-of-houston"], "spring-isd"]
+  '77090': ["us-house-29", "state-senate-4", ["state-house-139", "state-house-141"], ["sboe-4", "sboe-6"], "harris-county/jp-4", ["city-of-houston"], ["harris-county-mud-189"], "spring-isd"]
   '77091': ["us-house-29", ["state-house-139", "state-house-140", "state-house-145", "state-house-148"], "sboe-4", "harris-county/commissioner-2", "harris-county/jp-1", "city-of-houston"]
   '77092': ["us-house-29", ["state-house-139", "state-house-148"], ["sboe-4", "sboe-6"], "harris-county/commissioner-4", "harris-county/jp-1", "city-of-houston", ["cypress-fairbanks-isd"]]
   '77093': ["us-house-29", "state-house-140", "sboe-4", "harris-county/commissioner-2", ["harris-county/jp-1", "harris-county/jp-3"], ["city-of-houston"]]
   '77094': [["us-house-22", "us-house-8"], ["state-house-132", "state-house-133", "state-house-149"], ["sboe-6", "sboe-8"], "harris-county/commissioner-4", "harris-county/jp-5", ["city-of-houston"]]
-  '77095': [["us-house-38", "us-house-8"], "state-senate-18", ["state-house-130", "state-house-132", "state-house-135", "state-house-138", "state-house-148"], "sboe-6", "harris-county/commissioner-4", "harris-county/jp-5", ["city-of-houston"], "cypress-fairbanks-isd"]
+  '77095': [["us-house-38", "us-house-8"], "state-senate-18", ["state-house-130", "state-house-132", "state-house-135", "state-house-138", "state-house-148"], "sboe-6", "harris-county/commissioner-4", "harris-county/jp-5", ["city-of-houston"], "cypress-fairbanks-isd", ["harris-county-mud-130"], ["west-harris-county-mud-15"]]
   '77096': [["us-house-18", "us-house-7"], "state-senate-13", ["state-house-131", "state-house-134", "state-house-137", "state-house-146"], ["sboe-4", "sboe-8"], "harris-county/commissioner-4", ["harris-county/jp-1", "harris-county/jp-5", "harris-county/jp-7"], "city-of-houston"]
   '77098': ["us-house-7", "state-house-134", ["sboe-4", "sboe-6"], "harris-county/commissioner-4", "harris-county/jp-1", "city-of-houston"]
   '77099': [["us-house-18", "us-house-7"], "state-senate-13", ["state-house-131", "state-house-149"], ["sboe-4", "sboe-8"], "harris-county/commissioner-4", ["harris-county/jp-5", "harris-county/jp-7"], ["city-of-houston"]]
@@ -156,9 +173,9 @@ zips:
   '77339': [["us-house-2", "us-house-29"], "state-senate-4", "state-house-127", ["sboe-4", "sboe-8"], "harris-county/jp-4", ["city-of-houston"], ["new-caney-isd"]]
   '77345': ["us-house-2", "state-senate-4", "state-house-127", "sboe-8", "harris-county/jp-4", "city-of-houston"]
   '77346': [["us-house-2", "us-house-29"], "state-senate-4", ["state-house-127", "state-house-142"], ["sboe-4", "sboe-8"], "harris-county/jp-4", ["city-of-houston"]]
-  '77357': ["us-house-2", "state-senate-4", "state-house-127", "sboe-8", ["harris-county/jp-3", "harris-county/jp-4"], ["city-of-houston"], ["huffman-isd"]]
+  '77357': ["us-house-2", "state-senate-4", "state-house-127", "sboe-8", ["harris-county/jp-3", "harris-county/jp-4"], ["city-of-houston"], ["huffman-isd"], ["new-caney-isd"]]
   '77365': ["us-house-2", "state-senate-4", "state-house-127", "sboe-8", "harris-county/jp-4", "city-of-houston"]
-  '77373': [["us-house-2", "us-house-29"], "state-senate-4", ["state-house-127", "state-house-150"], "sboe-6", "harris-county/jp-4", ["city-of-houston"], "spring-isd"]
+  '77373': [["us-house-2", "us-house-29"], "state-senate-4", ["state-house-127", "state-house-150"], "sboe-6", "harris-county/jp-4", ["city-of-houston"], ["old-town-spring-improvement-district"], "spring-isd"]
   '77375': [["us-house-2", "us-house-38"], ["state-house-126", "state-house-130", "state-house-150"], "sboe-6", "harris-county/commissioner-4", "harris-county/jp-4", ["city-of-houston"], ["klein-isd"], ["tomball-isd"]]
   '77377': ["us-house-38", ["state-house-126", "state-house-130"], ["sboe-6", "sboe-8"], "harris-county/commissioner-4", "harris-county/jp-4", ["city-of-houston"], ["tomball-isd"]]
   '77379': [["us-house-2", "us-house-38"], ["state-house-126", "state-house-150"], "sboe-6", "harris-county/jp-4", ["city-of-houston"], "klein-isd"]
@@ -167,10 +184,10 @@ zips:
   '77396': [["us-house-18", "us-house-2", "us-house-29"], ["state-house-141", "state-house-142"], ["sboe-4", "sboe-8"], "harris-county/commissioner-2", ["harris-county/jp-3", "harris-county/jp-4"], ["city-of-houston"], ["sheldon-isd"]]
   '77401': ["us-house-7", "state-house-134", "sboe-4", "harris-county/jp-1"]
   '77407': ["us-house-22", "state-house-149", "sboe-8", "harris-county/commissioner-4", "harris-county/jp-5", "city-of-houston"]
-  '77429': ["us-house-38", ["state-house-126", "state-house-130"], ["sboe-6", "sboe-8"], "harris-county/commissioner-4", "harris-county/jp-4", ["city-of-houston"], ["cypress-fairbanks-isd"], ["tomball-isd"]]
-  '77433': [["us-house-38", "us-house-8"], "state-senate-18", ["state-house-130", "state-house-132", "state-house-135"], ["sboe-6", "sboe-8"], "harris-county/commissioner-4", ["harris-county/jp-4", "harris-county/jp-5"], ["city-of-houston"], ["cypress-fairbanks-isd"], ["tomball-isd"]]
+  '77429': ["us-house-38", ["state-house-126", "state-house-130"], ["sboe-6", "sboe-8"], "harris-county/commissioner-4", "harris-county/jp-4", ["city-of-houston"], ["cypress-fairbanks-isd"], ["tomball-isd"], ["west-harris-county-mud-15"]]
+  '77433': [["us-house-38", "us-house-8"], "state-senate-18", ["state-house-130", "state-house-132", "state-house-135"], ["sboe-6", "sboe-8"], "harris-county/commissioner-4", ["harris-county/jp-4", "harris-county/jp-5"], ["city-of-houston"], ["cypress-fairbanks-isd"], ["harris-county-mud-553"], ["tomball-isd"]]
   '77447': [["us-house-38", "us-house-8"], "state-senate-18", ["state-house-130", "state-house-132"], "sboe-8", "harris-county/commissioner-4", ["harris-county/jp-4", "harris-county/jp-5"]]
-  '77449': [["us-house-22", "us-house-8"], ["state-house-132", "state-house-135", "state-house-149"], "sboe-8", "harris-county/commissioner-4", "harris-county/jp-5", ["city-of-houston"], ["cypress-fairbanks-isd"]]
+  '77449': [["us-house-22", "us-house-8"], ["state-house-132", "state-house-135", "state-house-149"], "sboe-8", "harris-county/commissioner-4", "harris-county/jp-5", ["city-of-houston"], ["cypress-fairbanks-isd"], ["harris-county-mud-127"], ["weston-mud"]]
   '77450': ["us-house-22", ["state-house-132", "state-house-149"], "sboe-8", "harris-county/commissioner-4", "harris-county/jp-5", ["city-of-houston"]]
   '77477': [["us-house-18", "us-house-7"], "state-senate-13", "state-house-131", ["sboe-4", "sboe-7"], "harris-county/commissioner-4", ["harris-county/jp-5", "harris-county/jp-7"], ["city-of-houston"]]
   '77484': ["us-house-8", "state-senate-18", ["state-house-130", "state-house-132"], "sboe-8", "harris-county/commissioner-4", ["harris-county/jp-4", "harris-county/jp-5"]]
@@ -184,15 +201,15 @@ zips:
   '77506': ["us-house-9", "state-house-144", ["sboe-4", "sboe-8"], "harris-county/commissioner-2", ["harris-county/jp-2", "harris-county/jp-8"], ["city-of-houston"]]
   '77507': [["us-house-36", "us-house-9"], "state-senate-11", ["state-house-128", "state-house-129"], "sboe-8", "harris-county/commissioner-2", "harris-county/jp-8", ["la-porte-isd"]]
   '77520': [["us-house-36", "us-house-9"], "state-senate-11", ["state-house-128", "state-house-143"], "sboe-8", "harris-county/commissioner-2", "harris-county/jp-3", ["city-of-baytown"], ["city-of-houston"]]
-  '77521': [["us-house-36", "us-house-9"], ["state-senate-11", "state-senate-4"], "state-house-128", "sboe-8", "harris-county/commissioner-2", "harris-county/jp-3", ["city-of-baytown"], ["crosby-isd"]]
+  '77521': [["us-house-36", "us-house-9"], ["state-senate-11", "state-senate-4"], "state-house-128", "sboe-8", "harris-county/commissioner-2", "harris-county/jp-3", ["city-of-baytown"], ["crosby-isd"], ["harris-county-fwsd-1a"]]
   '77523': ["us-house-36", "state-senate-11", "state-house-128", "sboe-8", "harris-county/commissioner-2", "harris-county/jp-3", ["city-of-baytown"]]
   '77530': ["us-house-9", "state-house-143", ["sboe-4", "sboe-8"], "harris-county/commissioner-2", "harris-county/jp-3", "channelview-isd", ["city-of-houston"]]
-  '77532': ["us-house-9", "state-senate-4", ["state-house-128", "state-house-142"], "sboe-8", "harris-county/commissioner-2", "harris-county/jp-3", ["city-of-houston"], ["crosby-isd"], ["huffman-isd"]]
+  '77532': ["us-house-9", "state-senate-4", ["state-house-128", "state-house-142"], "sboe-8", "harris-county/commissioner-2", "harris-county/jp-3", ["city-of-houston"], ["crosby-isd"], ["harris-county-mud-50"], ["huffman-isd"], ["spanish-cove-pud"]]
   '77535': ["us-house-9", "state-senate-4", "state-house-128", "sboe-8", "harris-county/jp-3"]
   '77536': ["us-house-9", "state-senate-11", ["state-house-128", "state-house-144"], "sboe-8", "harris-county/commissioner-2", "harris-county/jp-8", ["la-porte-isd"]]
   '77546': ["us-house-36", "state-senate-11", ["state-house-129", "state-house-144"], ["sboe-4", "sboe-8"], "harris-county/commissioner-2", "harris-county/jp-2", ["city-of-houston"], ["city-of-league-city"]]
   '77547': ["us-house-9", "state-house-143", "sboe-4", "harris-county/commissioner-2", "harris-county/jp-2", ["city-of-houston"]]
-  '77562': ["us-house-9", "state-senate-4", "state-house-128", "sboe-8", "harris-county/commissioner-2", "harris-county/jp-3", ["crosby-isd"]]
+  '77562': ["us-house-9", "state-senate-4", "state-house-128", "sboe-8", "harris-county/commissioner-2", "harris-county/jp-3", ["crosby-isd"], ["harris-county-fwsd-1a"]]
   '77571': [["us-house-36", "us-house-9"], "state-senate-11", ["state-house-128", "state-house-129", "state-house-143", "state-house-144"], "sboe-8", "harris-county/commissioner-2", "harris-county/jp-8", ["city-of-houston"], ["la-porte-isd"]]
   '77581': ["us-house-36", "state-senate-11", "state-house-129", "sboe-4", "harris-county/commissioner-2", "harris-county/jp-2"]
   '77586': ["us-house-36", "state-senate-11", "state-house-129", "sboe-8", "harris-county/commissioner-2", "harris-county/jp-8"]

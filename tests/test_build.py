@@ -582,3 +582,39 @@ def test_proposition_page_shows_exact_wording_choices_meaning_and_sources(demo_s
     assert "Lets the city borrow up to $10 million for parks" in meaning
     assert 'badge badge-unverified' in meaning
     assert "DEMO County Clerk: Sample Ballot" in html
+
+
+
+def test_unmapped_districts_get_their_own_box_and_multi_seat_races_say_so(tmp_path):
+    root = tmp_path / "demo"
+    shutil.copytree(REPO / "tests" / "fixtures" / "demo", root)
+    folder = root / "data/states/tx/localities/demo-esd/elections/2026-11-03/commissioners"
+    (folder / "candidates").mkdir(parents=True)
+    src = {"id": "tx/localities/demo-esd/elections/2026-11-03/commissioners/race#S-01", "statement": "DEMO ballot.",
+           "label": "official_record", "claim_status": "documented", "contradicted_by": [],
+           "source_url": "https://example.gov/b.pdf", "source_title": "DEMO", "source_kind": "page", "sha256": None,
+           "archive_url": None, "event_date": "2026-11-03", "retrieved": "2026-09-01", "verification": "unverified",
+           "verified_on": None, "reviewer": None}
+    (folder / "race.yaml").write_text(yaml.safe_dump({"name": "Demo ESD Commissioners", "office_type": "city-council-member",
+                                                      "election_date": "2026-11-03", "seats": 3, "detail": "basic",
+                                                      "sources": [src]}), encoding="utf-8")
+    for slug, name in (("a-one", "A One"), ("b-two", "B Two")):
+        (folder / "candidates" / f"{slug}.yaml").write_text(yaml.safe_dump({
+            "id": slug, "name": name, "incumbent": None, "ballot_party": None, "records": [], "funding": [],
+            "endorsements": [], "running_on": {"policy_proposals": [], "attack_messaging": [], "contested_claims": []},
+            "mappings": [], "promise_tracker": []}), encoding="utf-8")
+    ballot = root / "data/states/tx/localities/demo-county/elections/2026-11-03/ballot.yaml"
+    ballot.write_text(ballot.read_text(encoding="utf-8")
+                      + "- tx/localities/demo-esd/elections/2026-11-03/commissioners\nunmapped:\n- demo-esd\n", encoding="utf-8")
+    out = tmp_path / "dist"
+    assert build(root, out, demo=True, today="2026-09-29") == 0
+    html = read(out, BALLOT_PAGE)
+    box = html[html.index('id="unmapped-box"'):html.index("</aside>", html.index('id="unmapped-box"'))]
+    assert "hidden" in html[html.index('<aside id="unmapped-box"'):html.index('<aside id="unmapped-box"') + 60]
+    assert "We can't map these districts yet" in box
+    assert 'href="/races/tx/demo-esd/2026-11-03/commissioners/"' in box
+    assert "Vote for up to 3." in html
+    data = json.loads(re.search(r'id="ballot-data">(.*?)</script>', html, re.S).group(1))
+    assert data["unmapped"] == ["demo-esd"]
+    race = read(out, "races/tx/demo-esd/2026-11-03/commissioners/index.html")
+    assert "<strong>Vote for up to 3.</strong> This race fills 3 seats." in race

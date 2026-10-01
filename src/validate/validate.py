@@ -262,6 +262,7 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
                 report.error(rel, f"race page URL clashes with {urls[url]}")
             urls[url] = rel
     ballot_areas: dict[str, set[str]] = {}
+    unmapped_areas: dict[str, set[str]] = {}
     for rel, (kind, doc) in docs.items():
         if kind != "ballot" or not isinstance(doc, dict):
             continue
@@ -286,7 +287,11 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
             if race_kind == "race" and not (race.get("level") or levels.get(race.get("office_type"))):
                 report.error(rel, f"contest '{contest}': no level (set it in offices/{race.get('office_type')}/powers.yaml)")
             areas.add(race_area(race_rel, race))
+        for area in doc.get("unmapped") or []:
+            if area not in areas:
+                report.error(rel, f"unmapped: area '{area}' is not the area of any contest on the ballot")
         ballot_areas[rel.rsplit("/", 1)[0]] = areas
+        unmapped_areas[rel.rsplit("/", 1)[0]] = set(doc.get("unmapped") or [])
     for rel, (kind, doc) in docs.items():
         if kind not in ("zips", "precincts") or not isinstance(doc, dict):
             continue
@@ -314,7 +319,9 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
                     report.error(rel, f"{key}: '{area}' is implied for every {noun}; leave it out")
                 elif area not in ballot_areas[folder]:
                     report.error(rel, f"{key}: area '{area}' is not the area of any contest on the ballot")
-        for area in sorted(ballot_areas[folder] - implied - used):
+                elif area in unmapped_areas[folder]:
+                    report.error(rel, f"{key}: area '{area}' is listed as unmapped in ballot.yaml")
+        for area in sorted(ballot_areas[folder] - implied - used - unmapped_areas[folder]):
             report.error(rel, f"area '{area}' is on the ballot but no {noun} reaches it")
         shapes_file = root / folder / "precinct-shapes.json"
         if kind == "precincts" and shapes_file.is_file():

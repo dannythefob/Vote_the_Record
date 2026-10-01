@@ -1,0 +1,26 @@
+# Proposition: exact wording and choices as printed on the Harris County sample ballot. Unverified.
+name: Harris County MUD No. 553, Proposition D
+election_date: '2026-11-03'
+kind: bond
+ballot_text: THIS IS A TAX INCREASE The issuance of $35,000,000 in bonds and the issuance of $52,500,000 in refunding bonds and the levy of ad valorem taxes sufficient to pay the principal of and interest on the bonds (parks and recreational facilities).
+choices:
+- FOR
+- AGAINST
+explained: []
+sources:
+- id: tx/localities/harris-county-mud-553/elections/2026-11-03/proposition-d/measure#S-01
+  headline: Proposition as printed on the Harris County sample ballot
+  statement: 'The Harris County Clerk''s sample ballot for the November 3, 2026 election prints "Harris County MUD No. 553, Proposition D" on page 12 with the choices FOR and AGAINST and this English wording: "THIS IS A TAX INCREASE The issuance of $35,000,000 in bonds and the issuance of $52,500,000 in refunding bonds and the levy of ad valorem taxes sufficient to pay the principal of and interest on the bonds (parks and recreational facilities)."'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  source_title: 'Harris County Clerk: Sample Ballot, November 3, 2026 General and Special Elections (page 12)'
+  source_kind: document
+  sha256: 0b35cb063ef0cb82001e2fb79141e259b95c330cd0d10ad7b2575e34d611e1ed
+  archive_url: https://web.archive.org/web/20260921224207/https://hctxdnnstg.blob.core.windows.net/harrisvotes/prd/SampleBallot/2026/11-3/1126_Yellow%20Sample%20Ballot%20ENG-SPA%20for%20Website%20Posting.pdf?sv=2017-04-17&sr=b&si=DNNFileManagerPolicy&sig=hs1POFZK5TnbA%2BtPK4PC2dPczCggvtATNgRDkT38rl8%3D
+  event_date: '2026-11-03'
+  retrieved: '2026-09-30'
+  verification: unverified
+  verified_on: null
+  reviewer: null

@@ -455,3 +455,22 @@ def test_measure_needs_choices_and_exact_wording(tmp_path):
                          extra={f"{BALLOT_DIR}/prop-a/measure.yaml": dict(bad, choices=["FOR"])})
     assert any("ballot_text" in e for e in errors)
     assert any("choices" in e for e in errors)
+
+
+
+def test_unmapped_areas_skip_reachability_but_must_be_real_and_unused(tmp_path):
+    ballot = {"name": "Test County ballot", "election_date": "2026-11-03",
+              "sources": [dict(SRC, id="tx/localities/test-county/elections/2026-11-03/ballot#S-01")],
+              "contests": [US9, JP1], "unmapped": ["test-county/jp-1"]}
+    errors = ballot_repo(tmp_path, [US9, JP1], {"77001": ["us-house-9"]}, extra={f"{BALLOT_DIR}/ballot.yaml": ballot})
+    assert errors == []  # jp-1 is unmapped, so no ZIP needs to reach it
+
+
+def test_unmapped_area_must_be_on_the_ballot_and_not_in_zips(tmp_path):
+    ballot = {"name": "Test County ballot", "election_date": "2026-11-03",
+              "sources": [dict(SRC, id="tx/localities/test-county/elections/2026-11-03/ballot#S-01")],
+              "contests": [US9, JP1], "unmapped": ["test-county/jp-1", "nowhere"]}
+    errors = ballot_repo(tmp_path, [US9, JP1], {"77001": ["us-house-9", "test-county/jp-1"]},
+                         extra={f"{BALLOT_DIR}/ballot.yaml": ballot})
+    assert any("unmapped: area 'nowhere'" in e for e in errors)
+    assert any("'test-county/jp-1' is listed as unmapped" in e for e in errors)

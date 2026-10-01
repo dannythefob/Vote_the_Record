@@ -45,6 +45,16 @@
   <p><strong>Your exact ballot depends on your street address.</strong> ZIP codes can cross district lines, so some races are marked "Depends on your address".{% if ballot.lookup_url %} <a href="{{ ballot.lookup_url }}" rel="noopener noreferrer">Check your exact ballot with the county</a>.{% endif %}</p>
 </aside>
 
+{% if ballot.unmapped_races %}
+<aside id="unmapped-box" class="notice" hidden aria-labelledby="unmapped-h">
+  <h2 id="unmapped-h" class="notice-h">Also on some {{ ballot.name | replace(" ballot", "") }} ballots</h2>
+  <p>We can't map these districts yet, so we can't tell if they're on your ballot.{% if ballot.lookup_url %} <a href="{{ ballot.lookup_url }}" rel="noopener noreferrer">Check the county's lookup</a>.{% endif %}</p>
+  <ul class="link-list">
+    {% for entry in ballot.unmapped_races %}<li><a href="{{ entry.race.url }}">{{ entry.race.name }}</a></li>{% endfor %}
+  </ul>
+</aside>
+{% endif %}
+
 {% for group in ballot.groups %}
 <section class="ballot-group" data-group aria-labelledby="lvl-{{ group.level }}">
   <h2 id="lvl-{{ group.level }}">{{ group.title }}</h2>
@@ -62,6 +72,7 @@
       <p class="race-meta"><a href="{{ race.url }}">Read the exact wording →</a></p>
       {% else %}
       {% if race.plain_summary %}<p class="race-sum">{{ race.plain_summary.intro.text }}</p>{% endif %}
+      {% if race.seats > 1 %}<p class="muted">Vote for up to {{ race.seats }}.</p>{% endif %}
       {% if race.candidates %}
       <ul class="ballot-cands">
         {% for c in race.candidates %}

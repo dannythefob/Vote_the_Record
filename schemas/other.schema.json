@@ -123,6 +123,10 @@
         "election_date": { "$ref": "urn:vtr:schema:fact#/$defs/date" },
         "lookup_url": { "description": "Official look-up-your-exact-ballot page.", "$ref": "urn:vtr:schema:fact#/$defs/url" },
         "complete": { "description": "false while races are still being added; the page then says so and links the official sample ballot.", "type": "boolean" },
+        "unmapped": {
+          "description": "Areas on this ballot with no usable official boundary yet. Lookups never place a voter in them; the page lists their contests separately and points to the county's official lookup.",
+          "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/area" }
+        },
         "sources": { "type": "array", "minItems": 1, "items": { "$ref": "urn:vtr:schema:fact" } },
         "contests": {
           "type": "array",

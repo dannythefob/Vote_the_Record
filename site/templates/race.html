@@ -52,6 +52,7 @@
 
 <section id="candidates" aria-labelledby="candidates-h">
   <h2 id="candidates-h">The candidates</h2>
+  {% if race.seats > 1 %}<p><strong>Vote for up to {{ race.seats }}.</strong> This race fills {{ race.seats }} seats.</p>{% endif %}
   <p class="muted">Listed A to Z. Tap "See details" for every fact and its source.</p>
   <div class="cand-grid">
   {% for c in race.candidates %}

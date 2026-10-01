@@ -1,0 +1,26 @@
+# Powers of a director of The Woodlands Township. P-BOARD cites the Township's official website
+# (not a statute), read on 2026-09-30; P-LAW cites Special District Local Laws Code § 11011.002.
+office_type: township-director
+state: TX
+powers:
+  - id: P-LAW
+    description: The Township is governed by Special District Local Laws Code chapter 11011 and a 1993 special law (Chapter 289, Acts of the 73rd Legislature).
+    statute: Special District Local Laws Code § 11011.002
+    source_url: https://statutes.capitol.texas.gov/Docs/SD/htm/SD.11011.htm
+
+  - id: P-BOARD
+    description: The Township is governed by a seven-member board elected by residents to staggered two-year terms. Directors set policy and approve the annual budget.
+    statute: The Woodlands Township website (not a statute)
+    source_url: https://www.thewoodlandstownship-tx.gov/Government/Board-of-Directors
+
+plain_summary:
+  intro:
+    text: One of seven elected directors who set The Woodlands Township's policies and budget.
+    powers: [P-BOARD]
+  points:
+    - text: Sets Township policy
+      icon: gavel
+      powers: [P-BOARD]
+    - text: Approves the Township's annual budget
+      icon: budget
+      powers: [P-BOARD]

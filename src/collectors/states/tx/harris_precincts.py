@@ -48,6 +48,10 @@ SCOTUS_ORDER = "https://www.supremecourt.gov/opinions/25pdf/25a608_7khn.pdf"
 TIGER_SERVICE = "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer"
 PLACE_LAYER = TIGER_SERVICE + "/28"   # Incorporated Places (cities)
 SCHOOL_LAYER = TIGER_SERVICE + "/14"  # Unified School Districts
+TCEQ_SERVICE = "https://gisweb.tceq.texas.gov/arcgis/rest/services/iwud/WaterDistricts_PRD/MapServer"
+TCEQ_FWSD = TCEQ_SERVICE + "/2"   # Fresh Water Supply Districts
+TCEQ_MMD = TCEQ_SERVICE + "/5"    # Municipal Management Districts (incl. improvement districts)
+TCEQ_MUD = TCEQ_SERVICE + "/6"    # Municipal Utility Districts (TCEQ also files some WCIDs and PUDs here)
 # Local areas: area slug -> (Census layer, GEOID). Only areas with a contest on the ballot are used.
 LOCAL_AREAS = {
     "city-of-houston": (PLACE_LAYER, "4835000"),
@@ -63,6 +67,19 @@ LOCAL_AREAS = {
     "sheldon-isd": (SCHOOL_LAYER, "4839990"),
     "spring-isd": (SCHOOL_LAYER, "4841220"),
     "tomball-isd": (SCHOOL_LAYER, "4842960"),
+    # TCEQ water districts, matched by DISTRICT_ID.
+    "harris-county-fwsd-1a": (TCEQ_FWSD, "3639000"),
+    "harris-county-mud-50": (TCEQ_MUD, "3737148"),
+    "harris-county-mud-127": (TCEQ_MUD, "3737312"),
+    "harris-county-mud-130": (TCEQ_MUD, "3737318"),
+    "harris-county-mud-189": (TCEQ_MUD, "3737446"),
+    "harris-county-mud-553": (TCEQ_MUD, "9000004"),
+    "harris-county-wcid-89": (TCEQ_MUD, "4190000"),
+    "intercontinental-crossing-mud": (TCEQ_MUD, "4711250"),
+    "spanish-cove-pud": (TCEQ_MUD, "7587000"),
+    "west-harris-county-mud-15": (TCEQ_MUD, "8472972"),
+    "weston-mud": (TCEQ_MUD, "8474000"),
+    "old-town-spring-improvement-district": (TCEQ_MMD, "6205100"),
 }
 # Wayback Machine copies, checked when made (documents: same SHA-256 as the original).
 ARCHIVES = {
@@ -70,6 +87,7 @@ ARCHIVES = {
     ZCTA_LAYER: "https://web.archive.org/web/20260930221535/" + ZCTA_LAYER,
     PLACE_LAYER: "https://web.archive.org/web/20260930221613/" + PLACE_LAYER,
     TIGER_SERVICE: "https://web.archive.org/web/20260930223321/" + TIGER_SERVICE,
+    TCEQ_SERVICE: "https://web.archive.org/web/20260930225735/" + TCEQ_SERVICE,
 }
 SURE_SHARE = 0.99  # a precinct or ZIP at least this much inside an area is treated as fully inside
 STEP = 0.001      # grid step in degrees (~110 m north-south)
@@ -280,10 +298,17 @@ def main(argv=None) -> int:
     local = {slug: spec for slug, spec in LOCAL_AREAS.items() if slug in on_ballot}
     local_feats = {}
     for slug, (layer, geoid) in local.items():
-        feats = paged(layer, {"where": f"GEOID='{geoid}'", "outFields": "GEOID,NAME", "returnGeometry": "true",
-                              "outSR": 4326, "geometryPrecision": 6, "f": "geojson"}, args.cache, f"place-{geoid}", 10)
-        assert len(feats) == 1, f"expected one area for {geoid}"
-        local_feats[slug] = feats[0]
+        field = "DISTRICT_ID" if layer.startswith(TCEQ_SERVICE) else "GEOID"
+        prefix = "tceq" if field == "DISTRICT_ID" else "place"
+        feats = paged(layer, {"where": f"{field}='{geoid}'", "outFields": f"{field},NAME", "returnGeometry": "true",
+                              "outSR": 4326, "geometryPrecision": 6, "f": "geojson"}, args.cache, f"{prefix}-{geoid}", 10)
+        assert feats, f"no boundary found for {slug} ({field} {geoid})"
+        # Some districts are stored as several pieces: merge them into one multipolygon.
+        polys = []
+        for f in feats:
+            g = f["geometry"]
+            polys += [g["coordinates"]] if g["type"] == "Polygon" else g["coordinates"]
+        local_feats[slug] = {"type": "Feature", "properties": {}, "geometry": {"type": "MultiPolygon", "coordinates": polys}}
     pct_cells: dict[int, int] = {}
     zip_cells: dict[str, int] = {}
     for prow, zrow in zip(pgrid, zgrid):
@@ -305,17 +330,20 @@ def main(argv=None) -> int:
                     in_pct[p] = in_pct.get(p, 0) + 1
                     if z:
                         in_zip[z] = in_zip.get(z, 0) + 1
+        area_total = sum(in_pct.values())
+        # Partly inside: at least MIN_SHARE of the precinct/ZIP is in the area, or at least MIN_SHARE of the
+        # area is in the precinct/ZIP (so small districts are never dropped).
         for p, n in in_pct.items():
             share = n / pct_cells[p]
             if share >= SURE_SHARE:
                 local_pct.setdefault(p, []).append(slug)
-            elif share >= MIN_SHARE:
+            elif share >= MIN_SHARE or n / area_total >= MIN_SHARE:
                 local_pct.setdefault(p, []).append([slug])
         for z, n in in_zip.items():
             share = n / zip_cells[z]
             if share >= SURE_SHARE:
                 local_zip.setdefault(z, []).append(slug)
-            elif share >= MIN_SHARE:
+            elif share >= MIN_SHARE or n / area_total >= MIN_SHARE:
                 local_zip.setdefault(z, []).append([slug])
 
     by_pct = {a["VPCT"]: areas_for(a, on_ballot) for a in attrs}
@@ -370,6 +398,8 @@ def main(argv=None) -> int:
         "County. Results are approximate; the precinct lookup is exact.")
     zip_county = dict(county_src, id=f"{fid}/zips#S-02")
     raw_places = b"".join((args.cache / f).read_bytes() for f in sorted(p.name for p in args.cache.glob("place-*.json")))
+    raw_tceq = b"".join((args.cache / f).read_bytes() for f in sorted(p.name for p in args.cache.glob("tceq-*.json")))
+    tceq_used = {slug: spec for slug, spec in local.items() if spec[0].startswith(TCEQ_SERVICE)}
     place_src = source(
         f"{fid}/precincts#S-03", "Census boundaries of cities and school districts",
         "The U.S. Census Bureau's TIGERweb service publishes the current boundaries of incorporated places (cities) "
@@ -377,18 +407,30 @@ def main(argv=None) -> int:
         TIGER_SERVICE, "U.S. Census Bureau TIGERweb: Incorporated Places (layer 28) and Unified School Districts (layer 14)",
         "page", None,
         f"Read on {TODAY}; SHA-256 of the downloaded query responses: {sha(raw_places)}. Areas used: "
-        + ", ".join(f"{slug} (layer {layer.rsplit('/', 1)[1]}, GEOID {geoid})" for slug, (layer, geoid) in sorted(local.items()))
-        + f". A precinct or ZIP code at least {SURE_SHARE:.0%} inside a city counts as inside it; one at least "
-        f"{MIN_SHARE:.0%} inside is marked as depending on the address. The address lookup uses the outlines directly.")
+        + ", ".join(f"{slug} (layer {layer.rsplit('/', 1)[1]}, GEOID {geoid})" for slug, (layer, geoid) in sorted(local.items())
+                    if not layer.startswith(TCEQ_SERVICE))
+        + f". A precinct or ZIP code at least {SURE_SHARE:.0%} inside an area counts as inside it; one at least "
+        f"{MIN_SHARE:.0%} inside, or holding at least {MIN_SHARE:.0%} of the area, is marked as depending on the address. "
+        "The address lookup uses the outlines directly.")
     zip_place = dict(place_src, id=f"{fid}/zips#S-03")
+    tceq_src = source(
+        f"{fid}/precincts#S-04", "TCEQ water district boundaries",
+        "The Texas Commission on Environmental Quality's Water Districts map service publishes the boundaries of "
+        "water districts, including municipal utility districts, fresh water supply districts, and municipal "
+        "management districts.",
+        TCEQ_SERVICE, "Texas Commission on Environmental Quality: Water Districts map service", "page", None,
+        f"Read on {TODAY}; SHA-256 of the downloaded query responses: {sha(raw_tceq)}. Districts used: "
+        + ", ".join(f"{slug} (layer {layer.rsplit('/', 1)[1]}, DISTRICT_ID {geoid})" for slug, (layer, geoid) in sorted(tceq_used.items()))
+        + ". Same method as the Census boundaries.")
+    zip_tceq = dict(tceq_src, id=f"{fid}/zips#S-04")
     if len(local) != len({g for _, g in local.values()}):
         raise SystemExit("two local areas share a GEOID")
 
     write(args.out / "precincts.yaml", "Each precinct's districts from the Harris County precinct layer; a nested "
           "list means the precinct is only partly in those areas (city lines).",
-          [county_src, scotus_src] + ([place_src] if local else []), "precincts", precincts)
+          [county_src, scotus_src] + ([place_src] if local else []) + ([tceq_src] if tceq_used else []), "precincts", precincts)
     write(args.out / "zips.yaml", "Approximate: a nested list means the ZIP is split between those districts.",
-          [zcta_src, zip_county] + ([zip_place] if local else []), "zips", zips)
+          [zcta_src, zip_county] + ([zip_place] if local else []) + ([zip_tceq] if tceq_used else []), "zips", zips)
     if local:
         area_out = {"source": place_src["id"], "note": "Generated by src/collectors/states/tx/harris_precincts.py; "
                     f"outlines simplified to about {SIMPLIFY} degrees. Unverified.", "areas": {}}

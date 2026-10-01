@@ -82,6 +82,7 @@ def assemble_ballot(docs: dict, rel: str, doc: dict, races_by_path: dict, root: 
     payload = {
         "name": doc["name"],
         "implied": [state, locality],
+        "unmapped": doc.get("unmapped") or [],
         "zips": zips_doc.get("zips") or {},
         "zipEverywhere": zips_doc.get("everywhere") or [],
         "areas": area_list,
@@ -99,6 +100,7 @@ def assemble_ballot(docs: dict, rel: str, doc: dict, races_by_path: dict, root: 
         "url": f"/ballot/{state}/{locality}/{date}/",
         "lookup_url": doc.get("lookup_url"), "sources": doc["sources"],
         "complete": doc.get("complete", True),
+        "unmapped_races": [{"n": i, "race": r} for i, r in enumerate(ranked) if r["area"] in set(doc.get("unmapped") or [])],
         "zip_sources": zips_doc.get("sources") or [],
         "precinct_sources": pct_doc.get("sources") or [],
         "has_zips": bool(payload["zips"]), "has_precincts": bool(payload["precincts"]), "groups": groups, "ranked": ranked,
@@ -125,6 +127,7 @@ def load_site(root: Path, today: str) -> dict:
             "area": race_area(rel, doc),
             "level": doc.get("level") or office_doc.get("level"),
             "detail": doc.get("detail", "full"),
+            "seats": doc.get("seats", 1),
             "path": rel.removeprefix("data/states/").removesuffix("/race.yaml"),
             "state_name": STATE_NAMES.get(loc["state"].upper(), loc["state"].upper()),
             "locality_name": {"statewide": "Statewide", "districts": "Districts"}.get(
@@ -159,7 +162,7 @@ def load_site(root: Path, today: str) -> dict:
             "choices": doc["choices"],
             "explained": doc.get("explained") or [],
             "sources": doc["sources"],
-            "candidates": [], "plain_summary": None, "questions": [],
+            "candidates": [], "plain_summary": None, "questions": [], "seats": 1,
         })
 
     essentials = []

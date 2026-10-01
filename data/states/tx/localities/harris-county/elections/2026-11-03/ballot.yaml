@@ -2,7 +2,12 @@
 name: Harris County ballot
 election_date: '2026-11-03'
 lookup_url: https://www.harrisvotes.com/Voter/Whats-on-my-Ballot
-complete: false
+complete: true
+unmapped:
+- harris-county-esd-9
+- harris-county-mud-585
+- north-harris-county-regional-water-authority
+- the-woodlands-township
 sources:
 - id: tx/localities/harris-county/elections/2026-11-03/ballot#S-01
   headline: Every contest on the Harris County sample ballot
@@ -217,3 +222,38 @@ contests:
 - tx/localities/tomball-isd/elections/2026-11-03/trustee-position-2
 - tx/localities/tomball-isd/elections/2026-11-03/trustee-position-3
 - tx/localities/tomball-isd/elections/2026-11-03/trustee-position-4
+- tx/localities/harris-county-esd-9/elections/2026-11-03/commissioners
+- tx/localities/harris-county-fwsd-1a/elections/2026-11-03/proposition-a
+- tx/localities/harris-county-mud-50/elections/2026-11-03/director-position-1
+- tx/localities/harris-county-mud-50/elections/2026-11-03/director-position-3
+- tx/localities/harris-county-mud-127/elections/2026-11-03/directors
+- tx/localities/harris-county-mud-130/elections/2026-11-03/proposition-a
+- tx/localities/harris-county-mud-189/elections/2026-11-03/proposition-a
+- tx/localities/harris-county-mud-553/elections/2026-11-03/proposition-a
+- tx/localities/harris-county-mud-553/elections/2026-11-03/directors
+- tx/localities/harris-county-mud-553/elections/2026-11-03/proposition-b
+- tx/localities/harris-county-mud-553/elections/2026-11-03/proposition-c
+- tx/localities/harris-county-mud-553/elections/2026-11-03/proposition-d
+- tx/localities/harris-county-mud-553/elections/2026-11-03/proposition-e
+- tx/localities/harris-county-mud-585/elections/2026-11-03/proposition-a
+- tx/localities/harris-county-mud-585/elections/2026-11-03/directors
+- tx/localities/harris-county-mud-585/elections/2026-11-03/proposition-b
+- tx/localities/harris-county-mud-585/elections/2026-11-03/proposition-c
+- tx/localities/harris-county-mud-585/elections/2026-11-03/proposition-d
+- tx/localities/harris-county-mud-585/elections/2026-11-03/proposition-e
+- tx/localities/harris-county-mud-585/elections/2026-11-03/proposition-f
+- tx/localities/harris-county-mud-585/elections/2026-11-03/proposition-g
+- tx/localities/harris-county-mud-585/elections/2026-11-03/proposition-h
+- tx/localities/harris-county-wcid-89/elections/2026-11-03/directors
+- tx/localities/intercontinental-crossing-mud/elections/2026-11-03/proposition-a
+- tx/localities/intercontinental-crossing-mud/elections/2026-11-03/proposition-b
+- tx/localities/north-harris-county-regional-water-authority/elections/2026-11-03/director-district-1
+- tx/localities/old-town-spring-improvement-district/elections/2026-11-03/director-position-4
+- tx/localities/old-town-spring-improvement-district/elections/2026-11-03/director-position-5
+- tx/localities/spanish-cove-pud/elections/2026-11-03/proposition-a
+- tx/localities/west-harris-county-mud-15/elections/2026-11-03/proposition-a
+- tx/localities/weston-mud/elections/2026-11-03/proposition-a
+- tx/localities/the-woodlands-township/elections/2026-11-03/position-1
+- tx/localities/the-woodlands-township/elections/2026-11-03/position-2
+- tx/localities/the-woodlands-township/elections/2026-11-03/position-3
+- tx/localities/the-woodlands-township/elections/2026-11-03/position-4

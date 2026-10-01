@@ -380,3 +380,4 @@ details.more[open] > summary { margin-bottom: 8px; }
 .ballot-text { background: var(--surface); border-left: 4px solid var(--line); margin: 0; padding: 12px 16px; white-space: pre-line; }
 .choice-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; }
 .choice-list li { border: 1px solid var(--control); border-radius: 4px; padding: 4px 12px; font-weight: 600; }
+.notice-h { font-size: 1.05rem; margin: 0 0 6px; }

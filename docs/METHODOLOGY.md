@@ -171,10 +171,15 @@ on your voter registration card. Enter it to see exactly the races on your ballo
 precinct's districts come from the county's official voting precinct map. Like the ZIP
 lookup, it runs in your browser and nothing is sent or saved.
 
-**Cities and other local areas.** City limits come from the Census Bureau's official city
-boundaries. A precinct or ZIP code that is only partly inside a city shows that city's races
+**Cities and other local areas.** City limits and school district boundaries come from the
+Census Bureau; water districts (such as municipal utility districts) come from the Texas
+Commission on Environmental Quality's official water district map. A precinct or ZIP code that is only partly inside a city shows that city's races
 and propositions as "Depends on your address"; the address lookup checks the city outline
 directly, so it gives the exact answer.
+
+**Districts we can't map yet.** A few districts have no official boundary map we can use yet.
+We never guess whether you live in one. After you look up your ballot, their contests are
+listed separately under "Also on some ballots", with a link to your county's official lookup.
 
 **How ZIP codes are matched.** ZIP codes aren't voting districts. We use the Census
 Bureau's ZIP Code Tabulation Areas, which approximate ZIP codes, and overlay them on the

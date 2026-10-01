@@ -1,0 +1,3 @@
+office_type: water-authority-director
+level: local
+powers: []   # Texas powers: data/states/tx/office-overrides/water-authority-director.yaml
