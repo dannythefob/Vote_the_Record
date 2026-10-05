@@ -19,17 +19,31 @@ powers:
     description: The First and Fourteenth Courts of Appeals both cover the same 10 counties, including Harris, and each has a chief justice and eight justices.
     statute: Government Code §§ 22.201(b), (o); 22.216
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.22.htm
+    only_in: [court-of-appeals-1, court-of-appeals-14]
 
   - id: P-FIFTEENTH
     description: The Fifteenth Court of Appeals covers the whole state and hears appeals in civil cases brought by or against the state and its agencies.
     statute: Government Code §§ 22.201(p), 22.220(d)
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.22.htm
     topics: [courts-justice]
+    only_in: [court-of-appeals-15]
+
+  - id: P-THIRD
+    description: The Third Court of Appeals District is made up of 24 counties, including Travis, Williamson, and Hays.
+    statute: Government Code § 22.201(d)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.22.htm
+    only_in: [court-of-appeals-3]
+
+  - id: P-FIFTH
+    description: The Fifth Court of Appeals District is made up of Collin, Dallas, Grayson, Hunt, Kaufman, and Rockwall counties.
+    statute: Government Code § 22.201(f)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.22.htm
+    only_in: [court-of-appeals-5]
 
 plain_summary:
   intro:
-    text: Hears appeals from trial courts, the middle step before the state's highest courts. Harris County is covered by the First, Fourteenth, and Fifteenth Courts of Appeals.
-    powers: [P-APPEALS, P-HOUSTON-COURTS, P-FIFTEENTH]
+    text: Hears appeals from trial courts, the middle step before the state's highest courts.
+    powers: [P-APPEALS]
   points:
     - text: Decides appeals from district and county courts
       icon: court

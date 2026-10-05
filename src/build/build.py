@@ -65,7 +65,8 @@ def finance_filer(config: dict, race: dict) -> dict | None:
         return dict(state["state"], **law)
     local = (state.get("localities") or {}).get(race["locality"]) or {}
     if race["office_type"] in (local.get("office_types") or []):
-        return {"name": local["name"], "url": local["url"], **law}
+        # published_on: when the county posts the reports but no page names the office that receives them.
+        return {"name": local["name"], "url": local["url"], "published_on": local.get("published_on"), **law}
     return {"name": None, "url": None, **law}
 
 

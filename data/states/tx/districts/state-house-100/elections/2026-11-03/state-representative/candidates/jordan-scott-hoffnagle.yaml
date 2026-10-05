@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: jordan-scott-hoffnagle
+name: Jordan Scott Hoffnagle
+incumbent: false
+ballot_party: Republican Party
+records: []
+funding:
+- id: tx/districts/state-house-100/elections/2026-11-03/state-representative/candidates/jordan-scott-hoffnagle#M-01
+  headline: Raised $245 and had $248 on hand (Jul 1 - Sep 30, 2026)
+  statement: 'Campaign finance report covering Jul 1 - Sep 30, 2026, filed Oct 3, 2026: $245.00 in total political contributions, $431.92 in total political expenditures, $247.70 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101069158.PDF
+  source_title: 'Texas Ethics Commission: Hoffnagle, Jordan Scott (Mr.), campaign finance report 101069158 (filed Oct 3, 2026)'
+  source_kind: document
+  sha256: 39dce75e33fa5efd80261f1f329beed2fc241d78ed0c5a2edc14cc50dd6212c4
+  archive_url: null
+  event_date: '2026-09-30'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101069158, form COH, TEC report type E30DAYBEF; filer ID 00090342 (Hoffnagle, Jordan Scott (Mr.)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-04; a correction filed later replaces the version it corrects.
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

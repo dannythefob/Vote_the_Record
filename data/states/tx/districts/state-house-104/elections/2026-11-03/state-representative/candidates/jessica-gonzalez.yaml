@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: jessica-gonzalez
+name: Jessica Gonzalez
+incumbent: true
+ballot_party: Democratic Party
+records: []
+funding:
+- id: tx/districts/state-house-104/elections/2026-11-03/state-representative/candidates/jessica-gonzalez#M-01
+  headline: Raised $34,837 and had $107,659 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1 - Jun 30, 2026, filed Jul 22, 2026: $34,837.15 in total political contributions, $30,200.53 in total political expenditures, $107,659.48 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101062814.PDF
+  source_title: 'Texas Ethics Commission: Gonzalez, Jessica A. (The Honorable), campaign finance report 101062814 (filed Jul 22, 2026)'
+  source_kind: document
+  sha256: 4e2abef645c97da4034887fea5b7159b324fed93d6cb514dc1257cfab7559bca
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101062814, form CORCOH, TEC report type SEMIJUL; filer ID 00082026 (Gonzalez, Jessica A. (The Honorable)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-04; a correction filed later replaces the version it corrects.
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

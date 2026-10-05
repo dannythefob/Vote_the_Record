@@ -1,0 +1,4 @@
+office_type: county-criminal-appeals-judge
+level: county
+judicial: true
+powers: []   # Texas powers: data/states/tx/office-overrides/county-criminal-appeals-judge.yaml

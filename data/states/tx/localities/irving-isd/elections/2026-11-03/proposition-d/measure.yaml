@@ -1,0 +1,27 @@
+# Proposition: exact wording and choices as printed on the sample ballot. Unverified.
+name: Irving ISD, Proposition D
+election_date: '2026-11-03'
+kind: bond
+ballot_text: THIS IS A PROPERTY TAX INCREASE The issuance of $60,162,278 of bonds for the construction, acquisition and equipment of three multi-purpose indoor facilities at Irving High School, MacArthur High School and Nimitz High School for ROTC, athletics and marching band, and the levying of a tax sufficient to pay the principal of and interest on the bonds and the costs of any credit agreements executed in connection with the bonds.
+choices:
+- For
+- Against
+explained: []
+sources:
+- id: tx/localities/irving-isd/elections/2026-11-03/proposition-d/measure#S-01
+  headline: Proposition as printed on the sample ballot
+  statement: 'The Dallas County Elections Department''s sample ballot for the November 3, 2026 general and joint election prints "Irving ISD, Proposition D" on page 5 with the choices For and Against and this English wording: "THIS IS A PROPERTY TAX INCREASE The issuance of $60,162,278 of bonds for the construction, acquisition and equipment of three multi-purpose indoor facilities at Irving High School, MacArthur High School and Nimitz High School for ROTC, athletics and marching band, and the levying of a tax sufficient to pay the principal of and interest on the bonds and the costs of any credit agreements executed in connection with the bonds."'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.dallascountyvotes.org/wp-content/uploads/2026/09/Full-Sample-Ballot-Watermark-8.5x14-Legal_110326.pdf
+  source_title: 'Dallas County Elections Department: Full Sample Ballot, General and Joint Election, November 3, 2026 (page 5)'
+  source_kind: document
+  sha256: 8bc2b8dcf3cde416638c0c0a069c6b67092ba6703d9f2d32b9bbcfcb51ad444b
+  archive_url: https://web.archive.org/web/20261001200148/https://www.dallascountyvotes.org/wp-content/uploads/2026/09/Full-Sample-Ballot-Watermark-8.5x14-Legal_110326.pdf
+  event_date: '2026-11-03'
+  retrieved: '2026-10-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The PDF has no text layer (its text is drawn as outlines), so names and wording were transcribed by reading the pages rendered as images at 2400 pixels wide. Check them against the PDF when verifying. The ballot prints parties as Rep, Dem, Lib, and Grn.

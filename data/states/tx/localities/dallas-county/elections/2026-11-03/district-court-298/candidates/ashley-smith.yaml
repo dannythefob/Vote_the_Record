@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: ashley-smith
+name: Ashley Smith
+incumbent: false
+ballot_party: Democratic Party
+records: []
+funding:
+- id: tx/localities/dallas-county/elections/2026-11-03/district-court-298/candidates/ashley-smith#M-01
+  headline: Raised $51,068 and had $39,123 on hand (Feb 22 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Feb 22 - Jun 30, 2026, filed Jul 9, 2026: $51,067.64 in total political contributions, $15,008.16 in total political expenditures, $39,123.12 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101058853.PDF
+  source_title: 'Texas Ethics Commission: Snell Smith, Ashley (Mrs.), campaign finance report 101058853 (filed Jul 9, 2026)'
+  source_kind: document
+  sha256: bba548a999aeca3d15996045dcf67cb82b887a8e0a6da5cda634a373d9433632
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101058853, form JCOH, TEC report type SEMIJUL; filer ID 00089708 (Snell Smith, Ashley (Mrs.)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by surname variant, with office and district; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-04; a correction filed later replaces the version it corrects.
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

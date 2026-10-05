@@ -27,7 +27,7 @@
     {% if ballot.has_precincts %}
     <label for="precinct" class="precinct-label">Precinct number <span class="muted">(optional, exact)</span></label>
     <div class="zip-row">
-      <input id="precinct" name="precinct" type="text" inputmode="numeric" autocomplete="off" maxlength="6" pattern="\d{1,6}" placeholder="e.g. 123">
+      <input id="precinct" name="precinct" type="text" autocomplete="off" maxlength="6" pattern="\d[0-9A-Za-z]{0,5}" placeholder="e.g. 123">
     </div>
     <p class="muted">Your precinct number is on your voter registration card. With it, you see exactly your races.</p>
     {% endif %}

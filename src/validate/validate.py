@@ -223,6 +223,11 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
             for pid in line.get("powers") or []:
                 if pid not in powers.get(office, set()):
                     report.error(rel, f"plain_summary: power {pid} does not exist for office '{office}'")
+        # The intro shows on every race of this office type, so it may not rest on a power limited to some places.
+        limited = {p.get("id") for p in doc.get("powers") or [] if isinstance(p, dict) and p.get("only_in")}
+        for pid in (summary.get("intro") or {}).get("powers") or []:
+            if pid in limited:
+                report.error(rel, f"plain_summary: intro cites {pid}, which applies only in some places (only_in)")
 
     for office, survey in surveys.items():
         rel = f"offices/{office}/survey.yaml"

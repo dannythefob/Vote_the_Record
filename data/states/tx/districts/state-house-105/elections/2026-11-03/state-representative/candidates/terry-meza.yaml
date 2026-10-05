@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: terry-meza
+name: Terry Meza
+incumbent: true
+ballot_party: Democratic Party
+records: []
+funding:
+- id: tx/districts/state-house-105/elections/2026-11-03/state-representative/candidates/terry-meza#M-01
+  headline: Raised $10,589 and had $68,890 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1 - Jun 30, 2026, filed Jul 13, 2026: $10,589.00 in total political contributions, $8,232.03 in total political expenditures, $68,889.87 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101059960.PDF
+  source_title: 'Texas Ethics Commission: Meza, Thresa A. (The Honorable), campaign finance report 101059960 (filed Jul 13, 2026)'
+  source_kind: document
+  sha256: 07b217929a9e506ef0465c046f5d1e4eecc03f2d361c939e90de4b5d9963d67f
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101059960, form COH, TEC report type SEMIJUL; filer ID 00069649 (Meza, Thresa A. (The Honorable)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by nickname, middle name, or initial, with office and district; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-04; a correction filed later replaces the version it corrects.
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

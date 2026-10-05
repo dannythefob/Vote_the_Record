@@ -640,6 +640,12 @@ def test_finance_filer_picks_the_filing_office_by_level_type_and_locality():
     assert local["name"] is None and local["law_url"] == "https://law.example/252"
     assert finance_filer(config, race("county", "county-clerk", state="ca")) is None
     assert finance_filer({}, race("federal", "us-representative")) is None
+    config["campaign_finance"]["tx"]["localities"]["dallas-county"] = {
+        "name": "Dallas County", "published_on": "the county's reports page", "url": "https://dallas.example/",
+        "office_types": ["constable"]}
+    posted = finance_filer(config, race("county", "constable", "dallas-county"))
+    assert posted["published_on"] == "the county's reports page" and posted["url"] == "https://dallas.example/"
+    assert finance_filer(config, race("county", "county-clerk"))["published_on"] is None
 
 
 def test_basic_race_shows_money_lines_and_unconfirmed_incumbents(tmp_path):

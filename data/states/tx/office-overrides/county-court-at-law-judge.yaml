@@ -20,23 +20,33 @@ powers:
     description: Travis County has nine county courts at law, which sit in Austin. County Court at Law No. 9 gives preference to criminal cases.
     statute: Government Code §§ 25.2291, 25.2292(b)
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+    only_in: [travis-county]
 
   - id: P-TRAVIS-APPEALS
     description: In Travis County, every appeal from a Justice of the Peace court or other lower court goes to a county court at law.
     statute: Government Code § 25.2292(j)
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
     topics: [courts-justice]
+    only_in: [travis-county]
 
   - id: P-TRAVIS-FAMILY-VIOLENCE
     description: In Travis County, County Court at Law No. 4 also hears state jail and third-degree felony cases involving family violence, and gives preference to cases where family violence is alleged.
     statute: Government Code § 25.2292(c)
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
     topics: [courts-justice]
+    only_in: [travis-county]
+
+  - id: P-DALLAS-CIVIL
+    description: In Dallas County, a county court at law also hears civil cases regardless of the amount at stake. Dallas County has five county courts at law.
+    statute: Government Code §§ 25.0591(a), 25.0592(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+    topics: [courts-justice]
+    only_in: [dallas-county]
 
 plain_summary:
   intro:
-    text: A judge on a county court at law, which hears civil cases up to $325,000, appeals from Justice of the Peace courts, and other cases the law gives county courts.
-    powers: [P-JURISDICTION, P-CIVIL, P-TRAVIS-APPEALS]
+    text: A judge on a county court at law, which hears civil cases and the other cases the law gives county courts.
+    powers: [P-JURISDICTION, P-CIVIL]
   points:
     - text: Hears civil cases where more than $500 and up to $325,000 is at stake
       icon: court
@@ -44,3 +54,6 @@ plain_summary:
     - text: In Travis County, hears every appeal from Justice of the Peace courts
       icon: gavel
       powers: [P-TRAVIS-APPEALS]
+    - text: In Dallas County, hears civil cases of any amount
+      icon: court
+      powers: [P-DALLAS-CIVIL]

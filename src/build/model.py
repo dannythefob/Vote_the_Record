@@ -421,14 +421,24 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
             for c in candidates
         ],
     }
+    # A power with `only_in` applies only to races in those localities or districts (e.g. one county's courts).
+    def applies(power):
+        return not power.get("only_in") or race["locality"] in power["only_in"]
+
+    office_powers = [p for p in (office_doc or {}).get("powers") or [] if applies(p)]
+    state_powers = [p for p in (override_doc or {}).get("powers") or [] if applies(p)]
+    shown = {p["id"] for p in office_powers + state_powers}
     plain = (override_doc or {}).get("plain_summary") or (office_doc or {}).get("plain_summary")
-    all_powers = ((office_doc or {}).get("powers") or []) + ((override_doc or {}).get("powers") or [])
+    if plain:  # drop bullets that only summarize powers that don't apply here
+        plain = dict(plain, points=[pt for pt in plain.get("points") or []
+                                    if not pt.get("powers") or set(pt["powers"]) & shown])
+    all_powers = office_powers + state_powers
     return {
         "topics": sorted({t for p in all_powers for t in p.get("topics") or []}),
         "judicial": bool((office_doc or {}).get("judicial")),
         "plain_summary": plain,
-        "powers": (office_doc or {}).get("powers") or [],
-        "state_powers": (override_doc or {}).get("powers") or [],
+        "powers": office_powers,
+        "state_powers": state_powers,
         "why_it_matters": pick_why_it_matters(race_doc, locality_doc, office_doc),
         "sources": race_doc.get("sources") or [],
         "office_level": (office_doc or {}).get("level"),

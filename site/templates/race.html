@@ -60,7 +60,8 @@
   {% endif %}
   {% if race.finance %}
   <p class="muted finance-note">{{ icon("money") }} <span><strong>Money:</strong>
-    {% if race.finance.name %}Campaign finance reports for this office are filed with the <a href="{{ race.finance.url }}" rel="noopener noreferrer">{{ race.finance.name }}</a>.
+    {% if race.finance.get("published_on") %}Campaign finance reports for this office are published on <a href="{{ race.finance.url }}" rel="noopener noreferrer">{{ race.finance.published_on }}</a>.
+    {% elif race.finance.name %}Campaign finance reports for this office are filed with the <a href="{{ race.finance.url }}" rel="noopener noreferrer">{{ race.finance.name }}</a>.
     {% else %}Campaign finance reports for this office are filed locally, not with the state.{% endif %}
     {% if race.finance.law_url %}<a href="{{ race.finance.law_url }}" rel="noopener noreferrer">{{ race.finance.law_title }}</a> lists the filing office for each kind of race.{% endif %}</span></p>
   {% endif %}

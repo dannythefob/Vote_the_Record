@@ -22,6 +22,23 @@ funding:
   verified_on: null
   reviewer: null
   notes: Report ID 101058285, form COH, TEC report type SEMIJUL; filer ID 00090296 (Cristo, Anthony D. (Mr.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
+- id: tx/statewide/elections/2026-11-03/lieutenant-governor/candidates/anthony-cristo#M-02
+  headline: Raised $125 and had $648 on hand (Jul 1 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1 - Sep 24, 2026, filed Oct 3, 2026: $125.00 in total political contributions, $173.86 in total political expenditures, $647.88 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101069118.PDF
+  source_title: 'Texas Ethics Commission: Cristo, Anthony D. (Mr.), campaign finance report 101069118 (filed Oct 3, 2026)'
+  source_kind: document
+  sha256: 7abeff3fb37fa5eb757f6f1f81e26921194967b4b5a3419c1a2f5bc6a2ee76d0
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101069118, form COH, TEC report type E30DAYBEF; filer ID 00090296 (Cristo, Anthony D. (Mr.)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-04; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: will-campbell
+name: Will Campbell
+incumbent: false
+ballot_party: Republican Party
+records: []
+funding:
+- id: tx/districts/state-house-109/elections/2026-11-03/state-representative/candidates/will-campbell#M-01
+  headline: Raised $1,595 and had $1,093 on hand (Jul 1 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1 - Sep 24, 2026, filed Sep 29, 2026: $1,595.00 in total political contributions, $1,816.83 in total political expenditures, $1,092.91 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101068203.PDF
+  source_title: 'Texas Ethics Commission: Campbell III, Wilson A. (Mr.), campaign finance report 101068203 (filed Sep 29, 2026)'
+  source_kind: document
+  sha256: 610d5c739b93a7992f70b7ad34a80c5c42e93f7d47f15747271dea706a5b8ce0
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101068203, form COH, TEC report type E30DAYBEF; filer ID 00090452 (Campbell III, Wilson A. (Mr.)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by nickname, middle name, or initial, with office and district; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-04; a correction filed later replaces the version it corrects.
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

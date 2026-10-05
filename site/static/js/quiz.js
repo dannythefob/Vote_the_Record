@@ -15,7 +15,7 @@ export function parseHash(hash) {
     const key = part.slice(0, eq);
     const value = part.slice(eq + 1);
     if (key === "zip" && /^\d{5}$/.test(value)) out.zip = value;
-    else if (key === "precinct" && /^\d{1,6}$/.test(value)) out.precinct = value;
+    else if (key === "precinct" && /^\d[0-9A-Z]{0,5}$/.test(value)) out.precinct = value;
     else if (key === "at") {
       const m = /^(-?\d{1,3}\.\d+),(-?\d{1,3}\.\d+)$/.exec(value);
       if (m) out.at = [Number(m[1]), Number(m[2])];
