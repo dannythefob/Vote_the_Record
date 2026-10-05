@@ -54,6 +54,11 @@ campaign_finance:
         office_types: [county-judge, county-commissioner, county-attorney, county-clerk, district-clerk,
                        county-treasurer, county-court-at-law-judge, probate-judge, justice-of-the-peace,
                        constable, appraisal-district-director]
+      city-of-austin:
+        # Offices of a political subdivision other than a county: its clerk or secretary (252.005(3)).
+        name: Austin City Clerk
+        url: https://www.austintexas.gov/department/campaign-finance-reports
+        office_types: [city-council-member, mayor]
       dallas-county:
         # The reports are posted on dallascounty.org; no page found names the office that receives them
         # (252.005(2): the county clerk, or the elections administrator in counties that have one).

@@ -2,7 +2,6 @@
 name: County Attorney (Unexpired Term)
 office_type: county-attorney
 election_date: '2026-11-03'
-detail: basic
 sources:
 - id: tx/localities/harris-county/elections/2026-11-03/county-attorney/race#S-01
   headline: Candidates as printed on the Harris County sample ballot

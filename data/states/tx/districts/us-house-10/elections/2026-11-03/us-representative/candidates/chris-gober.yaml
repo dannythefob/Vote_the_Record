@@ -1,13 +1,81 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: chris-gober
 name: Chris Gober
 incumbent: false
 ballot_party: Republican Party
 records: []
 funding: []
-endorsements: []
+endorsements:
+- id: tx/districts/us-house-10/elections/2026-11-03/us-representative/candidates/chris-gober#E-01
+  headline: President Trump
+  statement: 'Listed as an endorser on the campaign website: President Trump.'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://chrisgober.com/
+  source_title: Chris Gober for Congress (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine. The endorser's own announcement was not checked.
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-10/elections/2026-11-03/us-representative/candidates/chris-gober#O-01
+    headline: Border security and help for Texas law enforcement
+    statement: 'Campaign website: "Crush the cartels by helping President Trump secure our border and empowering Texas law enforcement to halt the invasion of drugs, violence, and gangs into our community."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://chrisgober.com/
+    source_title: Chris Gober for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-10/elections/2026-11-03/us-representative/candidates/chris-gober#O-02
+    headline: Rural costs and health care
+    statement: 'Campaign website: "Chris will fight to cut burdensome regulations, expand small business opportunities, make essentials more affordable, and strengthen rural healthcare so families don’t have to drive hours for treatment."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://chrisgober.com/
+    source_title: Chris Gober for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-10/elections/2026-11-03/us-representative/candidates/chris-gober#O-03
+    headline: AI infrastructure that protects rural electricity rates and water
+    statement: 'Campaign website: "champion smart investments in American AI infrastructure that protect rural Texans from projects that drive up electricity rates and drain local water supplies."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://chrisgober.com/
+    source_title: Chris Gober for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

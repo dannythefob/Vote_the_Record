@@ -1,14 +1,88 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: adrian-garcia
 name: ADRIAN GARCIA
 incumbent: true
 ballot_party: Democratic Party
-records: []
+records:
+- id: tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2/candidates/adrian-garcia#R-01
+  record_type: vote
+  headline: Voted for proposing a 2025 Flood Control District tax rate of $0.04966, the voter-approval rate (Sept. 2025)
+  result: All five members voted for the proposal.
+  statement: As a member of Commissioners Court (the governing body of the Harris County Flood Control District), voted FOR the proposal of a 2025 tax rate of $0.04966 per $100, which the notice lists as above the no-new-revenue rate ($0.04781) and equal to the voter-approval rate. The notice lists all five members voting for the proposal.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.hctax.net/About/Announcements/Tax%20Hearing%20Notices/2025/2025%20Notice%20of%20Public%20Hearing%20and%20Rates%2009-10-2025.pdf
+  source_title: 'Harris County Tax Assessor-Collector: 2025 Notices of Public Hearing on Tax Increase (Sept. 10, 2025), page 1'
+  source_kind: document
+  sha256: 370aa98dfe81744ea4331c50f525d257acd10def93a49e250124cdc42753ed6d
+  archive_url: null
+  event_date: '2025-09-10'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The notice is required by Tax Code § 26.06 and lists how each member of the governing body voted on the proposal. Not yet archived on the Wayback Machine. The notice does not give the date of the vote; event_date is the notice's date.
+- id: tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2/candidates/adrian-garcia#R-02
+  record_type: vote
+  headline: Voted against proposing a 2025 Harris Health tax rate of $0.18761, the voter-approval rate (Sept. 2025)
+  result: Proposed 3-2.
+  statement: As a member of Commissioners Court (the governing body of the Harris County Hospital District dba Harris Health), voted AGAINST the proposal of a 2025 tax rate of $0.18761 per $100, which the notice lists as above the no-new-revenue rate ($0.16086) and equal to the voter-approval rate. The notice lists Judge Hidalgo and Commissioners Ellis and Briones voting for, and Commissioners Garcia and Ramsey voting against.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.hctax.net/About/Announcements/Tax%20Hearing%20Notices/2025/2025%20Notice%20of%20Public%20Hearing%20and%20Rates%2009-10-2025.pdf
+  source_title: 'Harris County Tax Assessor-Collector: 2025 Notices of Public Hearing on Tax Increase (Sept. 10, 2025), page 5'
+  source_kind: document
+  sha256: 370aa98dfe81744ea4331c50f525d257acd10def93a49e250124cdc42753ed6d
+  archive_url: null
+  event_date: '2025-09-10'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The notice is required by Tax Code § 26.06 and lists how each member of the governing body voted on the proposal. Not yet archived on the Wayback Machine. The notice does not give the date of the vote; event_date is the notice's date.
+- id: tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2/candidates/adrian-garcia#R-03
+  record_type: vote
+  headline: Voted for proposing a 2022 county tax rate of $0.36030 (2022)
+  result: Proposed 3-0, with two members absent.
+  statement: As a member of Commissioners Court, voted FOR the proposal of a 2022 Harris County tax rate of $0.36030 per $100, which the notice lists as above the no-new-revenue rate ($0.34373) and below the voter-approval rate ($0.36132). The notice lists Judge Hidalgo and Commissioners Ellis and Garcia voting for, none against, and Commissioners Ramsey and Cagle absent.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.harriscountytx.gov/LinkClick.aspx?fileticket=7davFMjD56o%3D&portalid=49&language=en-US
+  source_title: 'Harris County: 2022 Notice of Public Hearing on Tax Increase, page 1'
+  source_kind: document
+  sha256: b72416c9c3004dd6f68795fe13840f524f80d116f001a9cf64a928e3c1a2115b
+  archive_url: null
+  event_date: '2022-10-18'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The notice is required by Tax Code § 26.06 and lists how each member of the governing body voted on the proposal. Not yet archived on the Wayback Machine. The notice does not give the date of the vote; event_date is the hearing date the notice announces, which came after the vote.
 funding: []
 endorsements: []
 running_on:
   policy_proposals: []
   attack_messaging: []
   contested_claims: []
-mappings: []
+mappings:
+- record: tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2/candidates/adrian-garcia#R-01
+  question: county-commissioner/S-01
+  options:
+  - A
+  rationale: Voted for proposing the Flood Control District rate at the voter-approval rate. A vote to propose a rate above the no-new-revenue rate is consistent with raising revenue (A); members also voted on other entities' rates.
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- record: tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2/candidates/adrian-garcia#R-02
+  question: county-commissioner/S-01
+  options:
+  - B
+  - C
+  rationale: Voted against proposing the Harris Health rate at the voter-approval rate. A no vote rules out that increase but does not show whether he preferred cuts or reserves, so B and C are both listed.
+  verification: unverified
+  verified_on: null
+  reviewer: null
 promise_tracker: []

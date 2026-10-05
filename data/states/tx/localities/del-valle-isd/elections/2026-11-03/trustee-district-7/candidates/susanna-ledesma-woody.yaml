@@ -1,14 +1,79 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: susanna-ledesma-woody
 name: Susanna Ledesma Woody
 incumbent: true
 ballot_party: null
-records: []
+records:
+- id: tx/localities/del-valle-isd/elections/2026-11-03/trustee-district-7/candidates/susanna-ledesma-woody#R-01
+  record_type: vote
+  headline: Voted yes on a debt-service tax rate of $0.30 per $100, above the state minimum (Aug. 2026)
+  result: Motion carried 6-0 (this step required a 60% vote).
+  statement: As a Del Valle ISD trustee, voted yes on the motion "that a proposed rate to pay debt service of $0.30 per $100 of taxable value be approved," which the minutes say "exceeds the District's debt service rate determined under Section 44.004(c)(5)(A)(ii)(b), Education Code, which is $0.2784 per $100 of taxable value, by $0.0216." The minutes list the ayes as Sierra, Pantoja, Wegner, Guadian, Ledesma Woody, and Burton.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://meetings.boardbook.org/Documents/DownloadPDF/14433486?org=675
+  source_title: 'Del Valle ISD Board of Trustees: Minutes, Regular Board Meeting, August 11, 2026 (page 7)'
+  source_kind: document
+  sha256: f163336a95ae21e06b6421cc8c79744da79b6c9c913dc072a3783eb54f126ea6
+  archive_url: null
+  event_date: '2026-08-11'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Official minutes posted on the district's BoardBook page (https://meetings.boardbook.org/Public/Minutes/675?meeting=752975). The PDF is a scan with no text layer; the wording was read from the page images. Not yet archived on the Wayback Machine.
+- id: tx/localities/del-valle-isd/elections/2026-11-03/trustee-district-7/candidates/susanna-ledesma-woody#R-02
+  record_type: vote
+  headline: Voted yes on adopting a 2026 tax rate the motion calls a 12.33% increase (Aug. 2026)
+  result: Motion carried 6-0.
+  statement: As a Del Valle ISD trustee, voted yes on the motion "that the property tax rate be increased by the adoption of a tax rate of $1.328, which is effectively a 12.33% increase in the tax rate." The minutes list the ayes as Sierra, Pantoja, Wegner, Guadian, Ledesma Woody, and Burton.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://meetings.boardbook.org/Documents/DownloadPDF/14433486?org=675
+  source_title: 'Del Valle ISD Board of Trustees: Minutes, Regular Board Meeting, August 11, 2026 (page 8)'
+  source_kind: document
+  sha256: f163336a95ae21e06b6421cc8c79744da79b6c9c913dc072a3783eb54f126ea6
+  archive_url: null
+  event_date: '2026-08-11'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Official minutes posted on the district's BoardBook page (https://meetings.boardbook.org/Public/Minutes/675?meeting=752975). The PDF is a scan with no text layer; the wording was read from the page images. Not yet archived on the Wayback Machine. The minutes record the rate as $1.328; the ballot's Proposition A ratifies a rate of $1.0328. The difference is not explained in the minutes and should be checked against the adopted tax rate order.
+- id: tx/localities/del-valle-isd/elections/2026-11-03/trustee-district-7/candidates/susanna-ledesma-woody#R-03
+  record_type: vote
+  headline: Voted yes on calling the tax ratification election, Proposition A (Aug. 2026)
+  result: Motion carried 6-0.
+  statement: As a Del Valle ISD trustee, voted yes on the motion to "adopt the Order Calling a Tax Ratification Election To Be Held By the Del Valle Independent School District" for November 3, 2026. The minutes list the ayes as Sierra, Pantoja, Wegner, Guadian, Ledesma Woody, and Burton.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://meetings.boardbook.org/Documents/DownloadPDF/14433486?org=675
+  source_title: 'Del Valle ISD Board of Trustees: Minutes, Regular Board Meeting, August 11, 2026 (page 8)'
+  source_kind: document
+  sha256: f163336a95ae21e06b6421cc8c79744da79b6c9c913dc072a3783eb54f126ea6
+  archive_url: null
+  event_date: '2026-08-11'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Official minutes posted on the district's BoardBook page (https://meetings.boardbook.org/Public/Minutes/675?meeting=752975). The PDF is a scan with no text layer; the wording was read from the page images. Not yet archived on the Wayback Machine.
 funding: []
 endorsements: []
 running_on:
   policy_proposals: []
   attack_messaging: []
   contested_claims: []
-mappings: []
+mappings:
+- record: tx/localities/del-valle-isd/elections/2026-11-03/trustee-district-7/candidates/susanna-ledesma-woody#R-02
+  question: school-trustee/S-01
+  options:
+  - A
+  rationale: Voted to adopt a tax rate the motion describes as a 12.33% increase and to call an election asking voters to ratify it. That matches raising the tax rate with voter approval (A).
+  verification: unverified
+  verified_on: null
+  reviewer: null
 promise_tracker: []

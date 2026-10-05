@@ -1,9 +1,31 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: abbie-kamin
 name: ABBIE KAMIN
 incumbent: true
 ballot_party: Democratic Party
-records: []
+records:
+- id: tx/localities/harris-county/elections/2026-11-03/county-attorney/candidates/abbie-kamin#R-01
+  record_type: vote
+  headline: Voted yes on a 5-year ShotSpotter gunshot-detection contract, $3.5M max (Jan. 2022)
+  result: Passed; the minutes list Council Member Plummer as the only no vote (Ordinance 2022-0020).
+  followups:
+  - tx/localities/city-of-houston/actions/2023-01-31#F-001
+  - tx/localities/city-of-houston/actions/2024-06-11#F-001
+  same_event: tx/localities/city-of-houston/actions/2022-01-05#item-32
+  statement: As a Houston City Council member (District C), voted yes on Item 32, Ordinance No. 2022-0020, a five-year contract with ShotSpotter, Inc. for gunshot detection services for the Houston Police Department ($3,500,000.00 maximum contract amount in the item caption). The roll call shows all members present, and the minutes record "Council Member Plummer voting no, balance voting aye."
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.houstontx.gov/citysec/agenda/2022/20220105.pdf
+  source_title: Houston City Council Minutes, January 5, 2022 (page 13, Item 32)
+  source_kind: document
+  sha256: 92a398f1cdfcd47fcaa18ab085ead208e013ee96ea6f2e0364f4bd8435902491
+  archive_url: https://web.archive.org/web/20251223005915/https://houstontx.gov/citysec/agenda/2022/20220105.pdf
+  event_date: '2022-01-05'
+  retrieved: '2026-09-28'
+  verification: unverified
+  verified_on: null
+  reviewer: null
 funding: []
 endorsements: []
 running_on:
