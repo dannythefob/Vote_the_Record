@@ -1,4 +1,4 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: farrah-abraham
 name: Farrah Abraham
 incumbent: false
@@ -7,7 +7,41 @@ records: []
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/farrah-abraham#O-01
+    headline: 'Data centers: water protections such as closed-loop cooling and reclaimed water'
+    statement: 'Campaign website: "I support smart development with strict water protections: mandating closed-loop dry cooling systems that eliminate water waste, expanding reclaimed water networks, and requiring large facilities to protect municipal drinking water."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://farrahabraham.com/farrah-for-austin
+    source_title: 'Farrah Abraham: Farrah for Austin (campaign page)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/farrah-abraham#O-02
+    headline: Ordinance reform and property tax relief
+    statement: 'Campaign website: "UT paralegal certified, driving civic ordinance reform and property tax relief."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://farrahabraham.com/farrah-for-austin
+    source_title: 'Farrah Abraham: Farrah for Austin (campaign page)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

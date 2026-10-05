@@ -640,6 +640,12 @@ def test_finance_filer_picks_the_filing_office_by_level_type_and_locality():
     assert local["name"] is None and local["law_url"] == "https://law.example/252"
     assert finance_filer(config, race("county", "county-clerk", state="ca")) is None
     assert finance_filer({}, race("federal", "us-representative")) is None
+    config["campaign_finance"]["tx"]["localities"]["dallas-county"] = {
+        "name": "Dallas County", "published_on": "the county's reports page", "url": "https://dallas.example/",
+        "office_types": ["constable"]}
+    posted = finance_filer(config, race("county", "constable", "dallas-county"))
+    assert posted["published_on"] == "the county's reports page" and posted["url"] == "https://dallas.example/"
+    assert finance_filer(config, race("county", "county-clerk"))["published_on"] is None
 
 
 def test_basic_race_shows_money_lines_and_unconfirmed_incumbents(tmp_path):
@@ -676,6 +682,37 @@ def test_basic_race_shows_money_lines_and_unconfirmed_incumbents(tmp_path):
     assert "No 2025–2026 report found in Demo Ethics Office data." in race
     assert "Campaign finance reports for this office are filed locally, not with the state." in race
     assert "Texas Election Code, chapter 252</a> lists the filing office" in race
+
+
+def test_researched_race_says_pending_for_a_candidate_not_yet_researched(tmp_path):
+    root = tmp_path / "demo"
+    shutil.copytree(REPO / "tests" / "fixtures" / "demo", root)
+    folder = root / "data/states/tx/localities/demo-esd/elections/2026-11-03/commissioners"
+    (folder / "candidates").mkdir(parents=True)
+    base = {"label": "official_record", "claim_status": "documented", "contradicted_by": [], "source_kind": "page",
+            "sha256": None, "archive_url": None, "event_date": "2026-09-01", "retrieved": "2026-09-01",
+            "verification": "unverified", "verified_on": None, "reviewer": None}
+    src = dict(base, id="tx/localities/demo-esd/elections/2026-11-03/commissioners/race#S-01", statement="DEMO ballot.",
+               source_url="https://example.gov/b", source_title="DEMO")
+    (folder / "race.yaml").write_text(yaml.safe_dump({"name": "Demo ESD Commissioners", "office_type": "city-council-member",
+                                                      "election_date": "2026-11-03", "sources": [src]}), encoding="utf-8")
+    vote = dict(base, id="tx/localities/demo-esd/elections/2026-11-03/commissioners/candidates/a-one#R-01",
+                record_type="vote", headline="Voted yes on the DEMO budget", statement="DEMO vote.",
+                source_url="https://example.gov/m", source_title="DEMO minutes")
+    for slug, name, records, extra in (("a-one", "A One", [vote], {}), ("b-two", "B Two", [], {"research": "pending"})):
+        (folder / "candidates" / f"{slug}.yaml").write_text(yaml.safe_dump({
+            "id": slug, "name": name, "incumbent": None, "ballot_party": None, **extra, "records": records, "funding": [],
+            "endorsements": [], "running_on": {"policy_proposals": [], "attack_messaging": [], "contested_claims": []},
+            "mappings": [], "promise_tracker": []}), encoding="utf-8")
+    out = tmp_path / "dist"
+    assert build(root, out, demo=True, today="2026-09-29") == 0
+    race = read(out, "races/tx/demo-esd/2026-11-03/commissioners/index.html")
+    assert "Voted yes on the DEMO budget" in race
+    b_two = race[race.index('id="cand-b-two"'):]
+    assert b_two.index("We haven't researched this candidate's record yet.") < b_two.index("</article>")
+    run_b = race[race.index('id="run-b-two"'):]
+    assert run_b.index("We haven't researched this candidate's record yet.") < run_b.index("</article>")
+    assert "Not found in the sources reviewed" not in run_b[:run_b.index("</article>")]
 
 
 def test_ballot_page_has_topics_and_a_quiz_without_judges(tmp_path):

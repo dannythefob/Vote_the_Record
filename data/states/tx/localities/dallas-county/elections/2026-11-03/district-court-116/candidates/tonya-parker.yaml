@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: tonya-parker
+name: Tonya Parker
+incumbent: true
+ballot_party: Democratic Party
+records: []
+funding:
+- id: tx/localities/dallas-county/elections/2026-11-03/district-court-116/candidates/tonya-parker#M-01
+  headline: Raised $10,750 and had $268,489 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1 - Jun 30, 2026, filed Jul 9, 2026: $10,750.00 in total political contributions, $16,784.17 in total political expenditures, $268,488.80 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101057447.PDF
+  source_title: 'Texas Ethics Commission: Parker, Tonya (The Honorable), campaign finance report 101057447 (filed Jul 9, 2026)'
+  source_kind: document
+  sha256: a8ea513279b04d06b071f11789ab0f85ae6c57ecd3df0fe6bc743a674fffadda
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101057447, form JCOH, TEC report type SEMIJUL; filer ID 00065784 (Parker, Tonya (The Honorable)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-04; a correction filed later replaces the version it corrects.
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

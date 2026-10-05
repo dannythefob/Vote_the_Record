@@ -91,7 +91,7 @@
         "everywhere": { "$ref": "#/$defs/everywhere" },
         "precincts": {
           "type": "object",
-          "propertyNames": { "pattern": "^[1-9][0-9]{0,5}$" },
+          "propertyNames": { "pattern": "^[1-9][0-9A-Z]{0,5}$", "description": "Precinct number without leading zeros; a few Dallas County precincts include capital letters (e.g. 32A0)." },
           "additionalProperties": {
             "type": "array",
             "items": {
@@ -245,6 +245,10 @@
         "topics": {
           "description": "Topics this power directly covers, judged from its description only.",
           "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/topic" }
+        },
+        "only_in": {
+          "description": "The power applies only to races in these localities or districts (slugs), e.g. one county's courts.",
+          "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "urn:vtr:schema:fact#/$defs/slug" }
         }
       }
     },

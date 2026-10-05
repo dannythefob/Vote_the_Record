@@ -14,6 +14,7 @@ powers:
     description: In Harris County, Probate Court No. 3 has primary responsibility for mental illness cases, and Probate Court No. 4 has secondary responsibility.
     statute: Government Code § 25.1034(b)
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+    only_in: [harris-county]
     topics: [courts-justice, health]
 
 plain_summary:

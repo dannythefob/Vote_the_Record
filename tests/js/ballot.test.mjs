@@ -54,10 +54,11 @@ const withPrecincts = {
   races: [...payload.races, { n: 6, area: "coa-1", office: "court-of-appeals-justice" }],
 };
 
-test("cleanPrecinct strips leading zeros and rejects non-numbers", () => {
+test("cleanPrecinct strips leading zeros, allows letters after a digit, and rejects the rest", () => {
   assert.equal(cleanPrecinct("0123"), "123");
   assert.equal(cleanPrecinct(" 7 "), "7");
-  for (const bad of ["", "0", "12a", "1234567", null]) assert.equal(cleanPrecinct(bad), null, String(bad));
+  assert.equal(cleanPrecinct("32a0"), "32A0");
+  for (const bad of ["", "0", "a12", "12-3", "1234567", "<b>", null]) assert.equal(cleanPrecinct(bad), null, String(bad));
 });
 
 test("a precinct gets exactly its areas plus implied and everywhere areas, never split", () => {

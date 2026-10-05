@@ -29,10 +29,13 @@ export function racesForZip(payload, zip) {
     .map((r) => ({ n: r.n, split: maybe.has(r.area) && !sure.has(r.area) }));
 }
 
-/** "0123", " 123 " -> "123"; anything that isn't 1-6 digits -> null. */
+/**
+ * "0123", " 123 " -> "123"; "32a0" -> "32A0" (a few Dallas County precincts include letters).
+ * Anything that isn't 1-6 letters and digits starting with a digit -> null.
+ */
 export function cleanPrecinct(text) {
-  const m = /^\s*0*(\d{1,6})\s*$/.exec(text || "");
-  return m && m[1] !== "0" ? m[1] : null;
+  const m = /^\s*0*(\d[0-9A-Za-z]{0,5})\s*$/.exec(text || "");
+  return m && m[1] !== "0" ? m[1].toUpperCase() : null;
 }
 
 /**
@@ -289,7 +292,7 @@ function initBallotPage(payload) {
   function applyPrecinct(text, updateHash, label = "", atPoint = null) {
     const clean = cleanPrecinct(text);
     if (!clean) {
-      status.textContent = "Enter your precinct number (digits only), or leave it blank and use your ZIP code.";
+      status.textContent = "Enter your precinct number as it appears on your voter registration card, or leave it blank and use your ZIP code.";
       return;
     }
     const found = racesForPrecinct(payload, clean, atPoint);

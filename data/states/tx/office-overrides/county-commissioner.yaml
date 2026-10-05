@@ -40,6 +40,12 @@ powers:
     source_url: https://statutes.capitol.texas.gov/Docs/EL/htm/EL.42.htm
     topics: [elections]
 
+  - id: P-DISASTER-CONSENT
+    description: A local disaster declaration by the county judge may not be continued or renewed for more than seven days without the consent of the Commissioners Court.
+    statute: Government Code § 418.108(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.418.htm
+    topics: [emergencies]
+
 plain_summary:
   intro:
     text: One of four members of the Commissioners Court, which sets the county budget and property tax rate and oversees county roads.

@@ -11,7 +11,8 @@ a full example):
   election_date: "2027-05-01"
   election_label: May 1, 2027 joint election                  # used in fact statements
   lookup_url: https://...                                    # the county's "what's on my ballot"
-  sample_ballot: {issuer: Travis County Clerk, url: ..., title: ..., sha256: ..., archive_url: ..., retrieved: ...}
+  sample_ballot: {issuer: Travis County Clerk, url: ..., title: ..., sha256: ..., archive_url: ..., retrieved: ...,
+                  notes: ...}   # notes optional, copied onto every fact
   write_in_list: {url: ..., title: ..., sha256: ..., archive_url: ..., retrieved: ...}   # optional
   localities: {city-of-austin: city, austin-isd: school-district}   # optional: writes locality.yaml if missing
   contests:                                                  # in ballot order
@@ -62,11 +63,14 @@ def slug(name: str) -> str:
 
 
 def fact(fid: str, headline: str, statement: str, src: dict, title: str, date: str) -> dict:
-    return {"id": fid, "headline": headline, "statement": statement, "label": "official_record",
-            "claim_status": "documented", "contradicted_by": [], "source_url": src["url"], "source_title": title,
-            "source_kind": "document", "sha256": src.get("sha256"), "archive_url": src.get("archive_url"),
-            "event_date": date, "retrieved": str(src["retrieved"]), "verification": "unverified",
-            "verified_on": None, "reviewer": None}
+    f = {"id": fid, "headline": headline, "statement": statement, "label": "official_record",
+         "claim_status": "documented", "contradicted_by": [], "source_url": src["url"], "source_title": title,
+         "source_kind": "document", "sha256": src.get("sha256"), "archive_url": src.get("archive_url"),
+         "event_date": date, "retrieved": str(src["retrieved"]), "verification": "unverified",
+         "verified_on": None, "reviewer": None}
+    if src.get("notes"):  # e.g. how the text was read from a ballot with no text layer
+        f["notes"] = src["notes"]
+    return f
 
 
 def plan(root: Path, spec: dict) -> list[tuple[Path, str, dict]]:

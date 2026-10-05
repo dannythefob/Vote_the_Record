@@ -1,14 +1,125 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: candace-l-hunter
 name: Candace L. Hunter
 incumbent: true
 ballot_party: null
-records: []
+records:
+- id: tx/localities/austin-isd/elections/2026-11-03/trustee-district-1/candidates/candace-l-hunter#R-01
+  record_type: vote
+  headline: Voted no on changing Widén Elementary's turnaround plan from closure to a restart (Nov. 2025)
+  result: Failed 3-6.
+  statement: As an Austin ISD trustee, voted no on an amendment by Trustee Quintana, during Item 14.1 (Approval of TEA Turnaround Plans), "to amend the motion Widén Turnaround Plan from a closure and reassign to a restart." The vote record lists Trustees Gonzales, Quintana, and de Urioste voting yes and the other six trustees voting no.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://go.boarddocs.com/tx/austinisd/Board.nsf/goto?open&id=DJVSNZ738706
+  source_title: 'Austin ISD Board of Trustees: Minutes, Regular Voting Meeting, November 20, 2025'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2025-11-20'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes published on the district's BoardDocs site; the link opens the meeting, and the minutes are under its Minutes tab. Read on 2026-10-04 through BoardDocs' minutes view. Not yet archived on the Wayback Machine.
+- id: tx/localities/austin-isd/elections/2026-11-03/trustee-district-1/candidates/candace-l-hunter#R-02
+  record_type: vote
+  headline: Voted yes on the TEA turnaround plans, as amended (Nov. 2025)
+  result: Passed 8-1.
+  statement: As an Austin ISD trustee, voted yes on Item 14.1, Approval of TEA Turnaround Plans, as amended (with Winn and Widén removed for a separate vote). The vote record lists Trustee Gonzales as the only no vote. On the separate motion to approve the turnaround plans for Winn and Widén as presented by the administration, she voted yes; that motion passed 5-4.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://go.boarddocs.com/tx/austinisd/Board.nsf/goto?open&id=DJVSNZ738706
+  source_title: 'Austin ISD Board of Trustees: Minutes, Regular Voting Meeting, November 20, 2025'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2025-11-20'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes published on the district's BoardDocs site; the link opens the meeting, and the minutes are under its Minutes tab. Read on 2026-10-04 through BoardDocs' minutes view. Not yet archived on the Wayback Machine.
+- id: tx/localities/austin-isd/elections/2026-11-03/trustee-district-1/candidates/candace-l-hunter#R-03
+  record_type: vote
+  headline: Voted yes on consolidation plan components tied to the turnaround plans (Nov. 2025)
+  result: Passed 7-2.
+  statement: As an Austin ISD trustee, voted yes on Item 14.2, Approval of Consolidation Plan Components Related to Turnaround Plans. The vote record lists Trustees Gonzales and de Urioste voting no.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://go.boarddocs.com/tx/austinisd/Board.nsf/goto?open&id=DJVSNZ738706
+  source_title: 'Austin ISD Board of Trustees: Minutes, Regular Voting Meeting, November 20, 2025'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2025-11-20'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes published on the district's BoardDocs site; the link opens the meeting, and the minutes are under its Minutes tab. Read on 2026-10-04 through BoardDocs' minutes view. Not yet archived on the Wayback Machine.
+- id: tx/localities/austin-isd/elections/2026-11-03/trustee-district-1/candidates/candace-l-hunter#R-04
+  record_type: vote
+  headline: Voted yes on consolidation components for program moves, as amended (Nov. 2025)
+  result: Passed 6-3.
+  statement: As an Austin ISD trustee, seconded and voted yes on Item 14.3, Approval of Consolidation Components Related to Programmatic Moves, as amended to convert the school-wide dual language programs at Becker, Ridgetop, and Reilly elementary schools to two-way dual language programs at Sanchez, Pickle, and Wooten that are "not wall to wall." The vote record lists Trustees Gonzales, de Urioste, and Whitley Chu voting no.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://go.boarddocs.com/tx/austinisd/Board.nsf/goto?open&id=DJVSNZ738706
+  source_title: 'Austin ISD Board of Trustees: Minutes, Regular Voting Meeting, November 20, 2025'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2025-11-20'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes published on the district's BoardDocs site; the link opens the meeting, and the minutes are under its Minutes tab. Read on 2026-10-04 through BoardDocs' minutes view. Not yet archived on the Wayback Machine.
+- id: tx/localities/austin-isd/elections/2026-11-03/trustee-district-1/candidates/candace-l-hunter#R-05
+  record_type: vote
+  headline: Voted yes on a 2025 school tax rate of $0.9252, down $0.0253 (Sept. 2025)
+  result: Passed unanimously.
+  statement: As an Austin ISD trustee, voted yes on Item 16.1, Motion 1, "that the property tax rate be adopted at a tax rate of $ 0.9252 per one hundred dollars of assessed valuation," which the motion states "represents a decrease of $0.0253 from last year's total tax rate" and reflects a $0.8022 maintenance and operations rate and a $0.1230 interest and sinking rate.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://go.boarddocs.com/tx/austinisd/Board.nsf/goto?open&id=DJVSM27346D2
+  source_title: 'Austin ISD Board of Trustees: Minutes, Regular Voting Meeting, September 25, 2025'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2025-09-25'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes published on the district's BoardDocs site; the link opens the meeting, and the minutes are under its Minutes tab. Read on 2026-10-04 through BoardDocs' minutes view. Not yet archived on the Wayback Machine.
 funding: []
 endorsements: []
 running_on:
   policy_proposals: []
   attack_messaging: []
   contested_claims: []
-mappings: []
+mappings:
+- record: tx/localities/austin-isd/elections/2026-11-03/trustee-district-1/candidates/candace-l-hunter#R-03
+  question: school-trustee/S-02
+  options:
+  - A
+  rationale: Voted for the consolidation components tied to the turnaround plans and for those tied to program moves. That is consistent with consolidating schools (A). The minutes do not list which campuses each component affects.
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- record: tx/localities/austin-isd/elections/2026-11-03/trustee-district-1/candidates/candace-l-hunter#R-01
+  question: school-trustee/S-03
+  options:
+  - A
+  rationale: Voted against changing Widén Elementary's turnaround plan from "a closure and reassign" to "a restart," and for the turnaround plans as amended. That is consistent with closing a struggling campus and reassigning its students (A) rather than a restart (B).
+  verification: unverified
+  verified_on: null
+  reviewer: null
 promise_tracker: []

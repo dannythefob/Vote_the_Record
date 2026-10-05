@@ -2,7 +2,6 @@
 name: Austin City Council, District 5
 office_type: city-council-member
 election_date: '2026-11-03'
-detail: basic
 sources:
 - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/race#S-01
   headline: Candidates as printed on the sample ballot
@@ -36,3 +35,20 @@ sources:
   verification: unverified
   verified_on: null
   reviewer: null
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/race#S-FUND
+  headline: Campaign finance search with no recent report
+  statement: The City of Austin's open data set "Campaign Finance - Report Detail," checked October 4, 2026, has no July 15 semiannual report for Farrah Abraham or Liz Brink for a period in 2026. It lists two pre-election reports for Elizabeth M. Brink (filed August 21 and September 23, 2026) without totals.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://data.austintexas.gov/Budget-and-Finance/Campaign-Finance-Report-Detail/b2pc-2s8n
+  source_title: 'City of Austin Open Data: Campaign Finance - Report Detail'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Searched the data set by filer name on 2026-10-04 for reports for periods ending in 2026. Absence in the data is not proof that no report exists; check the City Clerk's campaign finance records. Not yet archived.

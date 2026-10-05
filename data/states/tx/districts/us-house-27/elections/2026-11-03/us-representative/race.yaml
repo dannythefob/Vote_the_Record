@@ -2,7 +2,6 @@
 name: U.S. Representative, District 27
 office_type: us-representative
 election_date: '2026-11-03'
-detail: basic
 notes: The ballot prints a write-in line for this race. The Travis County Clerk's list of declared write-in candidates was not found on votetravis.gov on 2026-10-01, so write-in candidates are not listed here yet.
 sources:
 - id: tx/districts/us-house-27/elections/2026-11-03/us-representative/race#S-01

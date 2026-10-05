@@ -60,7 +60,8 @@
   {% endif %}
   {% if race.finance %}
   <p class="muted finance-note">{{ icon("money") }} <span><strong>Money:</strong>
-    {% if race.finance.name %}Campaign finance reports for this office are filed with the <a href="{{ race.finance.url }}" rel="noopener noreferrer">{{ race.finance.name }}</a>.
+    {% if race.finance.get("published_on") %}Campaign finance reports for this office are published on <a href="{{ race.finance.url }}" rel="noopener noreferrer">{{ race.finance.published_on }}</a>.
+    {% elif race.finance.name %}Campaign finance reports for this office are filed with the <a href="{{ race.finance.url }}" rel="noopener noreferrer">{{ race.finance.name }}</a>.
     {% else %}Campaign finance reports for this office are filed locally, not with the state.{% endif %}
     {% if race.finance.law_url %}<a href="{{ race.finance.law_url }}" rel="noopener noreferrer">{{ race.finance.law_title }}</a> lists the filing office for each kind of race.{% endif %}</span></p>
   {% endif %}
@@ -82,7 +83,7 @@
         </p>
       </div>
     </div>
-    {% if race.detail == "basic" %}
+    {% if race.detail == "basic" or c.get('research') == 'pending' %}
     {% if c.funding or race.funding_check %}
     <ul class="glance">
       {% for f in c.funding_latest %}
@@ -189,12 +190,16 @@
   {% for c in race.candidates %}
   <article class="card" aria-labelledby="run-{{ c.id }}">
     <h3 id="run-{{ c.id }}">{{ c.name }}</h3>
+    {% if c.get('research') == 'pending' %}
+    <p class="empty">We haven't researched this candidate's record yet.</p>
+    {% else %}
     <h4>Policy proposals</h4>
     {{ fact_list(c.running_on.policy_proposals, race.facts) }}
     <h4>Attack messaging</h4>
     {{ fact_list(c.running_on.attack_messaging, race.facts) }}
     <h4>Contested claims</h4>
     {{ fact_list(c.running_on.contested_claims, race.facts) }}
+    {% endif %}
   </article>
   {% endfor %}
   </div>

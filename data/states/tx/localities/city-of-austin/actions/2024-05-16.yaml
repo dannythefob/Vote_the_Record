@@ -1,0 +1,22 @@
+# Austin City Council, meeting of May 16-17, 2024.
+# Unverified; written by an AI assistant from the official minutes. Owner review required.
+body: Austin City Council
+meeting_date: '2024-05-16'
+facts:
+- id: tx/localities/city-of-austin/actions/2024-05-16#F-001
+  headline: 'HOME Phase 2 as proposed: smaller minimum lot size for one home'
+  statement: 'The City of Austin''s Recommendation for Action for Agenda Item 6 of May 16, 2024 (HOME Phase 2) says: "The proposed code amendments would reduce the lot size required for one home" and "Lower the minimum lot size for one unit from 5,750 sq ft to 2,000 sq ft," along with reduced lot widths and setbacks and changes to flag-lot rules.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=428722
+  source_title: 'City of Austin: Recommendation for Action, Agenda Item 6, May 16, 2024 (HOME Phase 2)'
+  source_kind: document
+  sha256: 1c7d93ae6b06f407db28189236d4696f9c07dda676ced108b49379e61083c07e
+  archive_url: null
+  event_date: '2024-05-16'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine. This describes the proposal before the meeting. The council approved the Planning Commission's recommended version as amended (Ordinance No. 20240516-006); the adopted lot size was not checked here.

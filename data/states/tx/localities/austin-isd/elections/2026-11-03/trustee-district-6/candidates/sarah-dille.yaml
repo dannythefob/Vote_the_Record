@@ -1,13 +1,64 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: sarah-dille
 name: Sarah Dille
 incumbent: false
 ballot_party: null
 records: []
 funding: []
-endorsements: []
+endorsements:
+- id: tx/localities/austin-isd/elections/2026-11-03/trustee-district-6/candidates/sarah-dille#E-01
+  headline: Lloyd Doggett
+  statement: 'Listed as an endorser on the campaign website: Lloyd Doggett.'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.sarahforaisd.com/
+  source_title: Sarah Dille for Austin ISD Board of Trustees, District 6 (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine. The endorser's own announcement was not checked.
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/austin-isd/elections/2026-11-03/trustee-district-6/candidates/sarah-dille#O-01
+    headline: Listen to teachers, staff, students, and families
+    statement: 'Campaign website: "Teachers, staff, students, and families experience our schools every day. Sarah will make sure their voices—and the needs of District 6—are heard when decisions are made."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.sarahforaisd.com/
+    source_title: Sarah Dille for Austin ISD Board of Trustees, District 6 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/austin-isd/elections/2026-11-03/trustee-district-6/candidates/sarah-dille#O-02
+    headline: Strong neighborhood schools and public education funding
+    statement: 'Campaign website: "Sarah will stand up for strong neighborhood schools, responsible public education funding, and an AISD that remains a vital part of our community."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.sarahforaisd.com/
+    source_title: Sarah Dille for Austin ISD Board of Trustees, District 6 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

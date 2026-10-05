@@ -1,14 +1,245 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: ryan-alter
 name: Ryan Alter
 incumbent: true
 ballot_party: null
-records: []
-funding: []
+records:
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/ryan-alter#R-01
+  record_type: vote
+  headline: Voted yes on a 2025 city tax rate of $0.574017 per $100, an 18.8% increase (Aug. 2025)
+  result: Approved 11-0. Because the rate was above the voter-approval rate, it went to voters as Proposition Q, which they rejected; the council then set the rate at the voter-approval rate.
+  followups:
+  - tx/localities/city-of-austin/actions/2025-11-17#F-001
+  - tx/localities/city-of-austin/actions/2025-11-20#F-001
+  statement: As an Austin City Council member, voted yes on Ordinance No. 20250813-001, for "the property tax rate to be increased by the adoption of a tax rate of $0.574017 per hundred dollar valuation, which is effectively a[n] 18.8 percent increase in the tax rate." The roll call lists Mayor Watson, Mayor Pro Tem Fuentes, and Council Members Alter, Duchen, Ellis, Harper-Madison, Laine, Qadri, Siegel, Vela and Velásquez voting aye.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=463228
+  source_title: 'Austin City Council: Budget Council Minutes, August 13, 2025 (page 18)'
+  source_kind: document
+  sha256: 52ddfa52133a59bdf87400a6638a1374b866b33dcedb72f29c9914c51fc561ea
+  archive_url: null
+  event_date: '2025-08-13'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine.
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/ryan-alter#R-02
+  record_type: vote
+  headline: Voted yes to put a tax rate above the voter-approval rate to voters (Proposition Q, Aug. 2025)
+  result: Approved 11-0. Voters rejected Proposition Q on November 4, 2025.
+  followups:
+  - tx/localities/city-of-austin/actions/2025-11-17#F-001
+  statement: As an Austin City Council member, voted yes on Ordinance No. 20250813-010, ordering a November 4, 2025 special election on "approval of an ad valorem tax rate of $0.574017 per $100 valuation ... a rate that is $0.05 higher per $100 valuation than the voter approval tax rate of the City of Austin," for purposes including housing affordability and homelessness, parks, public health, public safety, and financial stability.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=463228
+  source_title: 'Austin City Council: Budget Council Minutes, August 13, 2025 (page 21-22)'
+  source_kind: document
+  sha256: 52ddfa52133a59bdf87400a6638a1374b866b33dcedb72f29c9914c51fc561ea
+  archive_url: null
+  event_date: '2025-08-13'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine.
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/ryan-alter#R-03
+  record_type: vote
+  headline: Voted yes on adopting the city's 2025-26 budget (Aug. 2025)
+  result: Approved 10-1.
+  followups:
+  - tx/localities/city-of-austin/actions/2025-11-20#F-001
+  statement: As an Austin City Council member, voted yes on Ordinance No. 20250813-005, adopting the City of Austin Budget for Fiscal Year 2025-2026, as amended. The roll call lists Council Member Duchen as the only nay vote.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=463228
+  source_title: 'Austin City Council: Budget Council Minutes, August 13, 2025 (page 13-14)'
+  source_kind: document
+  sha256: 52ddfa52133a59bdf87400a6638a1374b866b33dcedb72f29c9914c51fc561ea
+  archive_url: null
+  event_date: '2025-08-13'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine.
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/ryan-alter#R-04
+  record_type: vote
+  headline: Voted yes on a budget amendment adding health, homelessness, police oversight, and other items (passed 6-5)
+  result: Approved 6-5.
+  statement: As an Austin City Council member, voted yes on a budget amendment by Council Member Vela, seconded by Council Member Alter, that added ongoing general fund items including harm reduction, a trauma recovery center, a family justice center, the sobering center, restoring the police oversight budget, homelessness prevention and rapid exit, a family stabilization grant, bad-weather pay for front-line employees, and a regional animal adoption center, added to several shelter and rehousing lines, and removed $500,000 in one-time funding for the Climate Revolving Fund. The minutes list the ayes as Mayor Watson, Mayor Pro Tem Fuentes, and Council Members Alter, Harper-Madison, Vela and Velásquez, and the nays as Council Members Duchen, Ellis, Laine, Qadri and Siegel.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=463228
+  source_title: 'Austin City Council: Budget Council Minutes, August 13, 2025 (page 5-6)'
+  source_kind: document
+  sha256: 52ddfa52133a59bdf87400a6638a1374b866b33dcedb72f29c9914c51fc561ea
+  archive_url: null
+  event_date: '2025-08-13'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine.
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/ryan-alter#R-05
+  record_type: vote
+  headline: Voted yes on cutting the budget and the tax rate to the voter-approval rate after Proposition Q failed (Nov. 2025)
+  result: Both approved 11-0.
+  statement: As an Austin City Council member, voted yes on Ordinance No. 20251120-004, amending the 2025-26 budget to reflect lower property tax revenue after voters did not approve the adopted rate, and on Ordinance No. 20251120-006, adopting a tax rate of 0.524017 dollars per hundred dollar valuation, "which is effectively a 8.4 percent increase in the tax rate." Both roll calls list all eleven members voting aye.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=466438
+  source_title: 'Austin City Council: Regular Council Minutes, November 20, 2025 (page 25)'
+  source_kind: document
+  sha256: 56bc6e499bccfe51332e7b3cb191b1b02019c140a6daee39bd3efa0f798ae694
+  archive_url: null
+  event_date: '2025-11-20'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine.
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/ryan-alter#R-06
+  record_type: vote
+  headline: Voted yes on loosening height and setback rules near single-family homes ("compatibility," May 2024)
+  result: Approved 9-2.
+  statement: As an Austin City Council member, voted yes on Ordinance No. 20240516-004, amending City Code Title 25 "to revise height, building placement, and other related regulations that apply to property and are in addition to the base zoning regulations (also known as Compatibility Standards)." The roll call lists Council Members Alison Alter and Kelly as the nay votes.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=432867
+  source_title: 'Austin City Council: Regular Council Minutes, May 16-17, 2024 (page 7-8)'
+  source_kind: document
+  sha256: 4859a0ae98899a2f9df17ceb195ff56c81533786128157a50c82332892deeb51
+  archive_url: null
+  event_date: '2024-05-16'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine. The minutes PDF is a scan; its text layer has recognition errors (for example in council members' names), so check the wording against the page image when verifying.
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/ryan-alter#R-07
+  record_type: vote
+  headline: Voted yes on a density bonus near planned light rail stations (May 2024)
+  result: Approved 10-1.
+  statement: As an Austin City Council member, voted yes on Ordinance No. 20240516-005, creating "regulations, including a density bonus program that modifies height and compatibility in exchange for community benefits, for properties that are located within a half mile of the planned Phase 1 Light Rail and Priority Extensions (also known as the Equitable Transit-Oriented Development (ETOD) overlay)." Council Member Kelly voted nay.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=432867
+  source_title: 'Austin City Council: Regular Council Minutes, May 16-17, 2024 (page 17)'
+  source_kind: document
+  sha256: 4859a0ae98899a2f9df17ceb195ff56c81533786128157a50c82332892deeb51
+  archive_url: null
+  event_date: '2024-05-16'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine. The minutes PDF is a scan; its text layer has recognition errors (for example in council members' names), so check the wording against the page image when verifying.
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/ryan-alter#R-08
+  record_type: vote
+  headline: Voted yes on HOME Phase 2, new rules for small lots and flag lots (May 2024)
+  result: Approved 9-2.
+  same_event: tx/localities/city-of-austin/actions/2024-05-16#F-001
+  statement: As an Austin City Council member, voted yes on Ordinance No. 20240516-006, amending City Code Title 25 "to revise regulations that apply to lots with one housing unit, including small lots, and flag lots (also known as HOME Phase 2)." The roll call lists Council Members Alison Alter and Kelly as the nay votes.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=432867
+  source_title: 'Austin City Council: Regular Council Minutes, May 16-17, 2024 (page 52)'
+  source_kind: document
+  sha256: 4859a0ae98899a2f9df17ceb195ff56c81533786128157a50c82332892deeb51
+  archive_url: null
+  event_date: '2024-05-16'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine. The minutes PDF is a scan; its text layer has recognition errors (for example in council members' names), so check the wording against the page image when verifying.
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/ryan-alter#R-09
+  record_type: vote
+  headline: Voted yes on calling the 2026 parks and library bond election (Aug. 2026)
+  result: Approved 11-0.
+  statement: As an Austin City Council member, voted yes on Ordinance No. 20260806-002, ordering a November 3, 2026 bond election with Proposition A ($260,000,000 for parks and recreation) and Proposition B ($35,000,000 for libraries). The minutes record an 11-0 vote.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=480200
+  source_title: 'Austin City Council: Budget Council Minutes, August 6, 2026 (pages 6-8)'
+  source_kind: document
+  sha256: 57dd3e4c99f6326f19dbd2042828a890db4954d28bf05f6d463e812eab21cc57
+  archive_url: null
+  event_date: '2026-08-06'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine.
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/ryan-alter#R-10
+  record_type: vote
+  headline: Voted yes on calling the 2026 charter amendment election (Aug. 2026)
+  result: Approved 11-0.
+  statement: As an Austin City Council member, voted yes on Ordinance No. 20260806-004, ordering a November 3, 2026 charter amendment election on Propositions C through J. The minutes record an 11-0 vote.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=480200
+  source_title: 'Austin City Council: Budget Council Minutes, August 6, 2026 (pages 6-8)'
+  source_kind: document
+  sha256: 57dd3e4c99f6326f19dbd2042828a890db4954d28bf05f6d463e812eab21cc57
+  archive_url: null
+  event_date: '2026-08-06'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine.
+funding:
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/ryan-alter#M-01
+  headline: Raised $57,382 and had $169,056 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'City of Austin campaign finance report (July 15th semiannual) covering Jan 1, 2026 - Jun 30, 2026, filed Jul 15, 2026: $57,381.50 in total political contributions, $7,970.00 in total political expenditures, $169,056.41 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=476926
+  source_title: 'City of Austin: Alter, Ryan, campaign finance report R20260101100722319 (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: b4bb845495ed843439744626a542dcc5b4ede28eb78d19993d54ab4c9149566d
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Filed with the Austin City Clerk; found in the City of Austin open data set "Campaign Finance - Report Detail" (https://data.austintexas.gov/resource/b2pc-2s8n.json), which links the filed report. Every total in this fact was checked against the report PDF. Latest report on file as of 2026-10-04; a correction filed later replaces the version it corrects. Reports due October 5, 2026 (30 days before the election) were not yet in the data. Not yet archived.
 endorsements: []
 running_on:
   policy_proposals: []
   attack_messaging: []
   contested_claims: []
-mappings: []
+mappings:
+- record: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/ryan-alter#R-01
+  question: city-council-member/S-01
+  options:
+  - A
+  rationale: Voted to adopt a 2025 tax rate 18.8% higher, above the voter-approval rate, and to send it to voters (Proposition Q). That is consistent with raising the tax rate (A). After voters rejected it, the council set the rate at the voter-approval rate and cut the budget to match, as state law required.
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- record: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/ryan-alter#R-08
+  question: city-council-member/S-02
+  options:
+  - A
+  rationale: Voted for HOME Phase 2, which the city's staff described as lowering the minimum lot size for one home (see the linked city action), and for revising the compatibility rules on height and building placement. That is consistent with allowing more homes on existing lots across the city (A).
+  verification: unverified
+  verified_on: null
+  reviewer: null
 promise_tracker: []

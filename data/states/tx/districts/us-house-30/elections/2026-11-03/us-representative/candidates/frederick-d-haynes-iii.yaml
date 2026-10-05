@@ -1,0 +1,14 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: frederick-d-haynes-iii
+name: Frederick D. Haynes III
+incumbent: false
+ballot_party: Democratic Party
+records: []
+funding: []
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

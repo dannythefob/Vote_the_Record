@@ -1,0 +1,159 @@
+# Contests on this ballot, in ballot order. complete: true (all 135 contests).
+name: Dallas County ballot
+election_date: '2026-11-03'
+lookup_url: https://www.dallascountyvotes.org/voters/ballot/
+complete: true
+sources:
+- id: tx/localities/dallas-county/elections/2026-11-03/ballot#S-01
+  headline: Every contest on the sample ballot
+  statement: The Dallas County Elections Department's sample ballot for the November 3, 2026 general and joint election lists every contest on this ballot.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.dallascountyvotes.org/wp-content/uploads/2026/09/Full-Sample-Ballot-Watermark-8.5x14-Legal_110326.pdf
+  source_title: 'Dallas County Elections Department: Full Sample Ballot, General and Joint Election, November 3, 2026'
+  source_kind: document
+  sha256: 8bc2b8dcf3cde416638c0c0a069c6b67092ba6703d9f2d32b9bbcfcb51ad444b
+  archive_url: https://web.archive.org/web/20261001200148/https://www.dallascountyvotes.org/wp-content/uploads/2026/09/Full-Sample-Ballot-Watermark-8.5x14-Legal_110326.pdf
+  event_date: '2026-11-03'
+  retrieved: '2026-10-01'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The PDF has no text layer (its text is drawn as outlines), so names and wording were transcribed by reading the pages rendered as images at 2400 pixels wide. Check them against the PDF when verifying. The ballot prints parties as Rep, Dem, Lib, and Grn.
+contests:
+- tx/statewide/elections/2026-11-03/us-senate
+- tx/districts/us-house-5/elections/2026-11-03/us-representative
+- tx/districts/us-house-6/elections/2026-11-03/us-representative
+- tx/districts/us-house-24/elections/2026-11-03/us-representative
+- tx/districts/us-house-30/elections/2026-11-03/us-representative
+- tx/districts/us-house-32/elections/2026-11-03/us-representative
+- tx/districts/us-house-33/elections/2026-11-03/us-representative
+- tx/statewide/elections/2026-11-03/governor
+- tx/statewide/elections/2026-11-03/lieutenant-governor
+- tx/statewide/elections/2026-11-03/attorney-general
+- tx/statewide/elections/2026-11-03/comptroller
+- tx/statewide/elections/2026-11-03/land-commissioner
+- tx/statewide/elections/2026-11-03/agriculture-commissioner
+- tx/statewide/elections/2026-11-03/railroad-commissioner
+- tx/statewide/elections/2026-11-03/supreme-court-chief-justice
+- tx/statewide/elections/2026-11-03/supreme-court-place-2
+- tx/statewide/elections/2026-11-03/supreme-court-place-7
+- tx/statewide/elections/2026-11-03/supreme-court-place-8
+- tx/statewide/elections/2026-11-03/cca-place-3
+- tx/statewide/elections/2026-11-03/cca-place-4
+- tx/statewide/elections/2026-11-03/cca-place-9
+- tx/districts/sboe-9/elections/2026-11-03/sboe-member
+- tx/districts/sboe-13/elections/2026-11-03/sboe-member
+- tx/districts/sboe-14/elections/2026-11-03/sboe-member
+- tx/districts/state-senate-2/elections/2026-11-03/state-senator
+- tx/districts/state-house-100/elections/2026-11-03/state-representative
+- tx/districts/state-house-102/elections/2026-11-03/state-representative
+- tx/districts/state-house-103/elections/2026-11-03/state-representative
+- tx/districts/state-house-104/elections/2026-11-03/state-representative
+- tx/districts/state-house-105/elections/2026-11-03/state-representative
+- tx/districts/state-house-107/elections/2026-11-03/state-representative
+- tx/districts/state-house-108/elections/2026-11-03/state-representative
+- tx/districts/state-house-109/elections/2026-11-03/state-representative
+- tx/districts/state-house-110/elections/2026-11-03/state-representative
+- tx/districts/state-house-111/elections/2026-11-03/state-representative
+- tx/districts/state-house-112/elections/2026-11-03/state-representative
+- tx/districts/state-house-113/elections/2026-11-03/state-representative
+- tx/districts/state-house-114/elections/2026-11-03/state-representative
+- tx/districts/state-house-115/elections/2026-11-03/state-representative
+- tx/districts/court-of-appeals-15/elections/2026-11-03/chief-justice
+- tx/districts/court-of-appeals-15/elections/2026-11-03/place-2
+- tx/districts/court-of-appeals-15/elections/2026-11-03/place-3
+- tx/districts/court-of-appeals-5/elections/2026-11-03/place-3
+- tx/districts/court-of-appeals-5/elections/2026-11-03/place-6
+- tx/districts/court-of-appeals-5/elections/2026-11-03/place-8
+- tx/localities/dallas-county/elections/2026-11-03/district-court-298
+- tx/localities/dallas-county/elections/2026-11-03/criminal-district-attorney
+- tx/localities/dallas-county/elections/2026-11-03/county-judge
+- tx/localities/dallas-county/elections/2026-11-03/district-clerk
+- tx/localities/dallas-county/elections/2026-11-03/county-clerk
+- tx/localities/dallas-county/elections/2026-11-03/county-treasurer
+- tx/localities/dallas-county/elections/2026-11-03/commissioner-precinct-2
+- tx/localities/dallas-county/elections/2026-11-03/commissioner-precinct-4
+- tx/localities/dallas-county/elections/2026-11-03/jp-precinct-1-place-1
+- tx/localities/dallas-county/elections/2026-11-03/jp-precinct-1-place-2
+- tx/localities/dallas-county/elections/2026-11-03/jp-precinct-2-place-1
+- tx/localities/dallas-county/elections/2026-11-03/jp-precinct-2-place-2
+- tx/localities/dallas-county/elections/2026-11-03/jp-precinct-3-place-1
+- tx/localities/dallas-county/elections/2026-11-03/jp-precinct-3-place-2
+- tx/localities/dallas-county/elections/2026-11-03/jp-precinct-4-place-1
+- tx/localities/dallas-county/elections/2026-11-03/jp-precinct-4-place-2
+- tx/localities/dallas-county/elections/2026-11-03/jp-precinct-5-place-1
+- tx/localities/dallas-county/elections/2026-11-03/jp-precinct-5-place-2
+- tx/localities/dallas-county/elections/2026-11-03/constable-precinct-1
+- tx/localities/dallas-county/elections/2026-11-03/constable-precinct-2
+- tx/localities/dallas-county/elections/2026-11-03/constable-precinct-3
+- tx/localities/dallas-county/elections/2026-11-03/constable-precinct-4
+- tx/localities/dallas-county/elections/2026-11-03/constable-precinct-5
+- tx/localities/dallas-county/elections/2026-11-03/district-court-44
+- tx/localities/dallas-county/elections/2026-11-03/district-court-68
+- tx/localities/dallas-county/elections/2026-11-03/district-court-101
+- tx/localities/dallas-county/elections/2026-11-03/district-court-116
+- tx/localities/dallas-county/elections/2026-11-03/district-court-134
+- tx/localities/dallas-county/elections/2026-11-03/district-court-160
+- tx/localities/dallas-county/elections/2026-11-03/district-court-191
+- tx/localities/dallas-county/elections/2026-11-03/district-court-192
+- tx/localities/dallas-county/elections/2026-11-03/district-court-193
+- tx/localities/dallas-county/elections/2026-11-03/district-court-194
+- tx/localities/dallas-county/elections/2026-11-03/district-court-195
+- tx/localities/dallas-county/elections/2026-11-03/district-court-203
+- tx/localities/dallas-county/elections/2026-11-03/district-court-204
+- tx/localities/dallas-county/elections/2026-11-03/district-court-254
+- tx/localities/dallas-county/elections/2026-11-03/district-court-255
+- tx/localities/dallas-county/elections/2026-11-03/district-court-256
+- tx/localities/dallas-county/elections/2026-11-03/district-court-265
+- tx/localities/dallas-county/elections/2026-11-03/district-court-282
+- tx/localities/dallas-county/elections/2026-11-03/district-court-283
+- tx/localities/dallas-county/elections/2026-11-03/district-court-291
+- tx/localities/dallas-county/elections/2026-11-03/district-court-292
+- tx/localities/dallas-county/elections/2026-11-03/district-court-363
+- tx/localities/dallas-county/elections/2026-11-03/district-court-301
+- tx/localities/dallas-county/elections/2026-11-03/district-court-302
+- tx/localities/dallas-county/elections/2026-11-03/district-court-303
+- tx/localities/dallas-county/elections/2026-11-03/district-court-304
+- tx/localities/dallas-county/elections/2026-11-03/district-court-305
+- tx/localities/dallas-county/elections/2026-11-03/district-court-330
+- tx/localities/dallas-county/elections/2026-11-03/criminal-district-court-1
+- tx/localities/dallas-county/elections/2026-11-03/criminal-district-court-5
+- tx/localities/dallas-county/elections/2026-11-03/criminal-district-court-6
+- tx/localities/dallas-county/elections/2026-11-03/criminal-district-court-7
+- tx/localities/dallas-county/elections/2026-11-03/county-court-at-law-1
+- tx/localities/dallas-county/elections/2026-11-03/county-court-at-law-2
+- tx/localities/dallas-county/elections/2026-11-03/county-court-at-law-3
+- tx/localities/dallas-county/elections/2026-11-03/county-court-at-law-4
+- tx/localities/dallas-county/elections/2026-11-03/county-court-at-law-5
+- tx/localities/dallas-county/elections/2026-11-03/county-criminal-appeals-1
+- tx/localities/dallas-county/elections/2026-11-03/county-criminal-appeals-2
+- tx/localities/dallas-county/elections/2026-11-03/county-criminal-court-1
+- tx/localities/dallas-county/elections/2026-11-03/county-criminal-court-2
+- tx/localities/dallas-county/elections/2026-11-03/county-criminal-court-3
+- tx/localities/dallas-county/elections/2026-11-03/county-criminal-court-4
+- tx/localities/dallas-county/elections/2026-11-03/county-criminal-court-5
+- tx/localities/dallas-county/elections/2026-11-03/county-criminal-court-6
+- tx/localities/dallas-county/elections/2026-11-03/county-criminal-court-7
+- tx/localities/dallas-county/elections/2026-11-03/county-criminal-court-8
+- tx/localities/dallas-county/elections/2026-11-03/county-criminal-court-9
+- tx/localities/dallas-county/elections/2026-11-03/county-criminal-court-10
+- tx/localities/dallas-county/elections/2026-11-03/county-criminal-court-11
+- tx/localities/dallas-county/elections/2026-11-03/probate-court-1
+- tx/localities/dallas-county/elections/2026-11-03/probate-court-2
+- tx/localities/dallas-county/elections/2026-11-03/probate-court-3
+- tx/localities/dallas-county/elections/2026-11-03/proposition-a
+- tx/localities/city-of-dallas/elections/2026-11-03/proposition-a
+- tx/localities/city-of-garland/elections/2026-11-03/proposition-a
+- tx/localities/city-of-university-park/elections/2026-11-03/proposition-a
+- tx/localities/city-of-wylie/elections/2026-11-03/proposition-a
+- tx/localities/city-of-wylie/elections/2026-11-03/proposition-b
+- tx/localities/city-of-wylie/elections/2026-11-03/proposition-c
+- tx/localities/city-of-wylie/elections/2026-11-03/proposition-d
+- tx/localities/city-of-wylie/elections/2026-11-03/proposition-e
+- tx/localities/irving-isd/elections/2026-11-03/proposition-a
+- tx/localities/irving-isd/elections/2026-11-03/proposition-b
+- tx/localities/irving-isd/elections/2026-11-03/proposition-c
+- tx/localities/irving-isd/elections/2026-11-03/proposition-d
+- tx/localities/mesquite-isd/elections/2026-11-03/proposition-a

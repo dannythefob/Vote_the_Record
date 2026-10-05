@@ -1,3 +1,41 @@
+# DRAFT for owner review (2026-10-04): hypothetical scenarios for a school board trustee. Every
+# scenario cites the powers it rests on; for Texas those are in
+# data/states/tx/office-overrides/school-trustee.yaml.
 office_type: school-trustee
-tags: []   # controlled list of approach tags; never name or imply a party
-scenarios: []   # {id: S-01, powers: [P-XXX], scenario, options: [{id: A, text, tags: [...]}]}
+tags:
+  - raise-revenue
+  - cut-spending
+  - use-reserves
+  - consolidate-schools
+  - keep-schools-open
+  - repurpose-space
+  - close-and-reassign
+  - restart-with-partner
+  - add-supports
+scenarios:
+  - id: S-01
+    title: Budget deficit
+    powers: [P-BUDGET, P-TAX-RATE]
+    scenario: The district projects a budget deficit next year. Which would you push for first?
+    options:
+      - {id: A, text: "Raise the tax rate, even if voters must approve it in an election", tags: [raise-revenue]}
+      - {id: B, text: Cut spending in central office and campus budgets, tags: [cut-spending]}
+      - {id: C, text: Draw on reserves for one year and revisit next year, tags: [use-reserves]}
+
+  - id: S-02
+    title: Half-empty schools
+    powers: [P-GOVERN, P-BUDGET]
+    scenario: Several schools are running at about half of their capacity, and the district spends more per student to keep them open. What do you support?
+    options:
+      - {id: A, text: Consolidate some schools and move students to nearby campuses, tags: [consolidate-schools]}
+      - {id: B, text: "Keep every school open and find savings elsewhere", tags: [keep-schools-open]}
+      - {id: C, text: "Keep the schools open but lease or share their empty space", tags: [repurpose-space]}
+
+  - id: S-03
+    title: A struggling school
+    powers: [P-GOVERN, P-SUPERINTENDENT]
+    scenario: State law requires a turnaround plan for a school that has failed state ratings for several years in a row. Which plan do you support?
+    options:
+      - {id: A, text: Close the school and reassign students to higher-rated campuses, tags: [close-and-reassign]}
+      - {id: B, text: Restart the school under a new operator or partner, tags: [restart-with-partner]}
+      - {id: C, text: "Keep the school as is, with more staff and support", tags: [add-supports]}

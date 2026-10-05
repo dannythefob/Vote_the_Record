@@ -1,3 +1,40 @@
+# DRAFT for owner review (2026-10-04): hypothetical scenarios for a Texas state senator. Every scenario
+# cites the powers it rests on; for Texas those are in data/states/tx/office-overrides/state-senator.yaml.
 office_type: state-senator
-tags: []   # controlled list of approach tags; never name or imply a party
-scenarios: []   # {id: S-01, powers: [P-XXX], scenario, options: [{id: A, text, tags: [...]}]}
+tags:
+  - create-esa-program
+  - fund-public-schools
+  - small-pilot
+  - raise-homestead-exemption
+  - lower-school-tax-rates
+  - keep-for-other-needs
+  - tighten-bail
+  - keep-bail-rules
+  - expand-pretrial-services
+scenarios:
+  - id: S-01
+    title: State money for private school
+    powers: [P-LAWS, P-BUDGET]
+    scenario: A bill would give families a yearly amount of state money to spend on private school tuition and other education costs. How do you vote?
+    options:
+      - {id: A, text: "Support creating the program", tags: [create-esa-program]}
+      - {id: B, text: "Oppose it and put the money into public school funding instead", tags: [fund-public-schools]}
+      - {id: C, text: "Support only a small pilot for certain students first", tags: [small-pilot]}
+
+  - id: S-02
+    title: Surplus and property taxes
+    powers: [P-BUDGET, P-LAWS]
+    scenario: The state has billions of dollars more than it needs for the current budget. Which property tax approach do you support?
+    options:
+      - {id: A, text: "Raise the homestead exemption so homeowners pay school taxes on less of their home's value", tags: [raise-homestead-exemption]}
+      - {id: B, text: "Lower school tax rates for every property owner, including businesses", tags: [lower-school-tax-rates]}
+      - {id: C, text: "Keep most of the money for other state needs", tags: [keep-for-other-needs]}
+
+  - id: S-03
+    title: Bail rules
+    powers: [P-LAWS]
+    scenario: A bill would make it harder for people charged with certain violent crimes to be released on bail and would add rules for groups that pay bail for others. How do you vote?
+    options:
+      - {id: A, text: "Support tightening bail rules", tags: [tighten-bail]}
+      - {id: B, text: "Oppose it and keep the current bail rules", tags: [keep-bail-rules]}
+      - {id: C, text: "Oppose it and fund pretrial services and faster trials instead", tags: [expand-pretrial-services]}

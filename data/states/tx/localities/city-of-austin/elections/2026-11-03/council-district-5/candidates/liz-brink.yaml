@@ -1,14 +1,135 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: liz-brink
 name: Liz Brink
 incumbent: false
 ballot_party: null
-records: []
+records:
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/liz-brink#R-01
+  record_type: statement
+  headline: 'Campaign platform: Fiscal responsibility: limit tax increases'
+  statement: 'Campaign website: "Fiscal Responsibility Limit tax increases. Spend wisely. Taxpayer dollars are not unlimited, and D5 families feel every hike."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: &id001 []
+  source_url: https://lizbrinkatx.com/
+  source_title: Liz Brink for Austin City Council District 5 (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/liz-brink#R-02
+  record_type: statement
+  headline: 'Campaign platform: Public safety: staff police, fire, and EMS; publish response times'
+  statement: 'Campaign website: "Recruit and retain officers, firefighters and medics with pay and support that competes with every suburb poaching them. ... Publish 911 and EMS response times by district, every month."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: &id002 []
+  source_url: https://lizbrinkatx.com/
+  source_title: Liz Brink for Austin City Council District 5 (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/liz-brink#O-01
+    headline: 'Fiscal responsibility: limit tax increases'
+    statement: 'Campaign website: "Fiscal Responsibility Limit tax increases. Spend wisely. Taxpayer dollars are not unlimited, and D5 families feel every hike."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: *id001
+    source_url: https://lizbrinkatx.com/
+    source_title: Liz Brink for Austin City Council District 5 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/liz-brink#O-02
+    headline: 'Public safety: staff police, fire, and EMS; publish response times'
+    statement: 'Campaign website: "Recruit and retain officers, firefighters and medics with pay and support that competes with every suburb poaching them. ... Publish 911 and EMS response times by district, every month."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: *id002
+    source_url: https://lizbrinkatx.com/
+    source_title: Liz Brink for Austin City Council District 5 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/liz-brink#O-03
+    headline: 'Maintain the city: roads, drainage, grid first'
+    statement: 'Campaign website: "Fix our roads, our drainage, our grid. Deliver the essential services we already pay for before chasing shiny new ones."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://lizbrinkatx.com/
+    source_title: Liz Brink for Austin City Council District 5 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/liz-brink#O-04
+    headline: Independent audits and oversight
+    statement: 'Campaign website: "Independent audits. Strong oversight. Clear reporting and measurable results you can actually look up."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://lizbrinkatx.com/
+    source_title: Liz Brink for Austin City Council District 5 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
-mappings: []
+mappings:
+- record: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/liz-brink#R-01
+  question: city-council-member/S-01
+  options:
+  - B
+  - C
+  rationale: Her platform says to "Limit tax increases" and "Spend wisely," which runs against raising the tax rate (A). It does not say whether she would prefer spending cuts or reserves, so both B and C are listed. This is a campaign claim, so it counts at the lowest evidence weight.
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- record: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/liz-brink#R-02
+  question: city-council-member/S-03
+  options:
+  - A
+  rationale: Her platform puts public safety first and calls for recruiting and retaining officers, firefighters, and medics with competitive pay. That is consistent with putting money toward public safety staffing (A). Campaign claim; lowest weight.
+  verification: unverified
+  verified_on: null
+  reviewer: null
 promise_tracker: []

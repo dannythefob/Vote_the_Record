@@ -49,7 +49,7 @@ REPO = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(REPO / "src" / "collectors"))
 from yamlio import NotRoundTrip, read_doc, write_doc  # noqa: E402
 
-TEC_URL = "https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip"
+TEC_URL = "https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip"  # linked from TEC_SEARCH (moved by October 2026)
 TEC_TITLE = "Texas Ethics Commission: Campaign Finance Data, bulk CSV download"
 TEC_SEARCH = "https://www.ethics.state.tx.us/search/cf/"
 # Each filed report's PDF, as linked from TEC's report-number search; the folder is a year.

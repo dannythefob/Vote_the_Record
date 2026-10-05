@@ -1,0 +1,36 @@
+# Powers of a Texas criminal district attorney.
+# Text checked against Government Code chapter 44 (statutes.capitol.texas.gov, read through its
+# document server tcss.legis.texas.gov) on 2026-10-01.
+office_type: criminal-district-attorney
+state: TX
+powers:
+  - id: P-ELECTED
+    description: The voters of each county the law lists, including Dallas, elect a criminal district attorney.
+    statute: Government Code § 44.001
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.44.htm
+
+  - id: P-DALLAS-CASES
+    description: In Dallas County, has exclusive control of criminal cases and habeas corpus cases in the county's courts, represents the state in them, and serves as the district attorney for all of the county's district courts.
+    statute: Government Code § 44.157(a)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.44.htm
+    topics: [courts-justice]
+    only_in: [dallas-county]
+
+  - id: P-DALLAS-POWERS
+    description: In Dallas County, has all the powers and duties that the law gives county and district attorneys.
+    statute: Government Code § 44.157(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.44.htm
+    topics: [courts-justice]
+    only_in: [dallas-county]
+
+plain_summary:
+  intro:
+    text: A criminal district attorney, elected by the voters of the county.
+    powers: [P-ELECTED]
+  points:
+    - text: Controls the criminal cases in Dallas County's courts
+      icon: gavel
+      powers: [P-DALLAS-CASES]
+    - text: Serves as the district attorney for every district court in Dallas County
+      icon: court
+      powers: [P-DALLAS-CASES]

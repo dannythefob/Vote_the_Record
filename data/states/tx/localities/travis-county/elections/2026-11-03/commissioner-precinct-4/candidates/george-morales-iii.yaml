@@ -1,14 +1,59 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: george-morales-iii
 name: George Morales III
 incumbent: true
 ballot_party: Democratic Party
-records: []
+summary:
+- id: tx/localities/travis-county/elections/2026-11-03/commissioner-precinct-4/candidates/george-morales-iii#B-01
+  headline: Commissioner since June 2026; formerly Constable, Precinct 4
+  statement: Travis County's Precinct Four page names George Morales as the Precinct Four Commissioner and says he has 27 years of public experience as a peace officer. Commissioners Court minutes list him as "Constable, Precinct 4" on October 7, 2025, and as Commissioner, Precinct 4 from the June 16, 2026 meeting on.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.traviscountytx.gov/commissioners-court/precinct-four
+  source_title: 'Travis County: Precinct Four'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The Commissioners Court minutes of October 7, 2025 and June 16, 2026 are on the court's meeting portal (https://traviscotx.portal.civicclerk.com/). How the seat was filled was not found in the minutes reviewed.
+records:
+- id: tx/localities/travis-county/elections/2026-11-03/commissioner-precinct-4/candidates/george-morales-iii#R-01
+  record_type: vote
+  headline: Voted to adopt a county tax rate of 38.6210 cents per $100 (Sept. 2026)
+  result: Approved unanimously.
+  statement: As a member of the Travis County Commissioners Court, voted yes on the motion that the "Property tax rate be increased by the adoption of a tax rate of 38.6210 cents for each $100 valuation of all taxable property, which is effectively a two and a half (2.1%) percent increase in the tax rate" for the tax year beginning January 1, 2026 (Fiscal Year 2027). The minutes list the ayes as Andy Brown, Jeffrey Travillion, Brigid Shea, Ann Howard, and George Morales.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://traviscotx.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=13293,plainText=false)
+  source_title: 'Travis County Commissioners Court: Minutes, Voting Session, September 15, 2026 (page 7-8)'
+  source_kind: document
+  sha256: 2c8b2c68ade221e830909d6ce6e3f47387a55e4a412af241b23144a6e09e92fd
+  archive_url: null
+  event_date: '2026-09-15'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes published by the Travis County Clerk on the Commissioners Court meeting portal (https://traviscotx.portal.civicclerk.com/); the source URL is the portal's download link for the minutes PDF. Not yet archived on the Wayback Machine. The motion's wording, "two and a half (2.1%) percent," is quoted as it appears in the minutes.
 funding: []
 endorsements: []
 running_on:
   policy_proposals: []
   attack_messaging: []
   contested_claims: []
-mappings: []
+mappings:
+- record: tx/localities/travis-county/elections/2026-11-03/commissioner-precinct-4/candidates/george-morales-iii#R-01
+  question: county-commissioner/S-01
+  options:
+  - A
+  rationale: Voted to adopt a 2026 county tax rate that the motion describes as an increase. That is consistent with raising the rate (A). It was a unanimous vote on the annual rate, not a choice among the three options, so it is weak evidence of how he would close a shortfall.
+  verification: unverified
+  verified_on: null
+  reviewer: null
 promise_tracker: []

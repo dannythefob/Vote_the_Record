@@ -1,13 +1,115 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: selena-xie
 name: Selena Xie
 incumbent: false
 ballot_party: null
 records: []
-funding: []
+funding:
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-8/candidates/selena-xie#M-01
+  headline: Raised $44,545 and had $106,773 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'City of Austin campaign finance report (July 15th semiannual) covering Jan 1, 2026 - Jun 30, 2026, filed Jul 15, 2026: $44,544.83 in total political contributions, $8,703.72 in total political expenditures, $106,772.90 in contributions on hand at the end of the period, and $25,000.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=476928
+  source_title: 'City of Austin: Xie, Selena, campaign finance report R20260101100722101 (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: d417f603e50feb881ee35100451ce857afeeb73f42b39ea10c8b1bd2ed8545a3
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Filed with the Austin City Clerk; found in the City of Austin open data set "Campaign Finance - Report Detail" (https://data.austintexas.gov/resource/b2pc-2s8n.json), which links the filed report. Every total in this fact was checked against the report PDF. Latest report on file as of 2026-10-04; a correction filed later replaces the version it corrects. Reports due October 5, 2026 (30 days before the election) were not yet in the data. Not yet archived.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-8/candidates/selena-xie#O-01
+    headline: Protect against flooding, drought, and wildfire
+    statement: 'Campaign website: "Protecting Barton Creek, the Edwards Aquifer, and our neighborhoods from flooding, drought, and wildfire."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://selenaforaustin.com/
+    source_title: Selena Xie for Austin City Council District 8 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-8/candidates/selena-xie#O-02
+    headline: Housing affordability
+    statement: 'Campaign website: "Real affordability so families, seniors, and working people can stay in the community they helped build."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://selenaforaustin.com/
+    source_title: Selena Xie for Austin City Council District 8 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-8/candidates/selena-xie#O-03
+    headline: Budget accountability and transparency
+    statement: 'Campaign website: "Accountability for taxpayer dollars, transparency, and disciplined budgeting that delivers results."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://selenaforaustin.com/
+    source_title: Selena Xie for Austin City Council District 8 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-8/candidates/selena-xie#O-04
+    headline: Public safety and crisis response
+    statement: 'Campaign website: "Strong EMS, fire, and police, plus modern crisis response so the right help arrives in time."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://selenaforaustin.com/
+    source_title: Selena Xie for Austin City Council District 8 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-8/candidates/selena-xie#O-05
+    headline: Keep the city's electric and water utilities public
+    statement: 'Campaign website: "Protecting Austin''s publicly owned electric and water utilities to keep rates affordable and environmental programs strong."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://selenaforaustin.com/
+    source_title: Selena Xie for Austin City Council District 8 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

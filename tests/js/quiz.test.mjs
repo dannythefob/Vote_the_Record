@@ -32,6 +32,8 @@ test("parseHash reads location, topics, and answers, ignoring junk", () => {
   assert.equal(h.answers, "x~S-01~A~2");
   assert.deepEqual(parseHash("#at=29.76,-95.36").at, [29.76, -95.36]);
   assert.equal(parseHash("#zip=7700").zip, null);
+  assert.equal(parseHash("#precinct=32A0").precinct, "32A0");
+  assert.equal(parseHash("#precinct=A32").precinct, null);
 });
 
 test("buildHash prefers the precinct and round-trips through parseHash", () => {

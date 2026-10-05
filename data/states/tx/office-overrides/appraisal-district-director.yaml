@@ -22,7 +22,7 @@ powers:
 
 plain_summary:
   intro:
-    text: Helps oversee the Harris Central Appraisal District, which sets the value of property for property taxes, and appoints its chief appraiser.
+    text: Helps oversee the county's appraisal district, which sets the value of property for property taxes, and appoints its chief appraiser.
     powers: [P-APPRAISE, P-BOARD, P-CHIEF-APPRAISER]
   points:
     - text: The district values property for property taxes

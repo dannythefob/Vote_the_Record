@@ -1,0 +1,34 @@
+# Powers of a Dallas County criminal court of appeals judge.
+# Text checked against Government Code chapter 25 (statutes.capitol.texas.gov, read through its
+# document server tcss.legis.texas.gov) on 2026-10-01.
+office_type: county-criminal-appeals-judge
+state: TX
+powers:
+  - id: P-COURTS
+    description: Dallas County has two county criminal courts of appeals.
+    statute: Government Code § 25.0591(c)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+
+  - id: P-APPEALS
+    description: Has sole jurisdiction in the county over appeals of criminal convictions, under state law or city ordinances, from justice courts and city municipal courts.
+    statute: Government Code § 25.0594(a)(1)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+    topics: [courts-justice]
+
+  - id: P-JURISDICTION
+    description: Also shares the criminal cases, original and on appeal, that the law gives county courts.
+    statute: Government Code § 25.0594(a)(2)
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
+    topics: [courts-justice]
+
+plain_summary:
+  intro:
+    text: A judge on one of Dallas County's two county criminal courts of appeals, which hear appeals of criminal convictions from justice and city municipal courts.
+    powers: [P-COURTS, P-APPEALS]
+  points:
+    - text: Hears every appeal of a criminal conviction from the county's justice and municipal courts
+      icon: gavel
+      powers: [P-APPEALS]
+    - text: Also hears other criminal cases the law gives county courts
+      icon: court
+      powers: [P-JURISDICTION]

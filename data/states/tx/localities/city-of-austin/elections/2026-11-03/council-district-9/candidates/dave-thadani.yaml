@@ -1,10 +1,28 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: dave-thadani
 name: Dave Thadani
 incumbent: false
 ballot_party: null
+research: pending
 records: []
-funding: []
+funding:
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-9/candidates/dave-thadani#M-01
+  headline: Raised $972 and had $268 on hand (Jan 14 - Jun 30, 2026)
+  statement: 'City of Austin campaign finance report (July 15th semiannual) covering Jan 14, 2026 - Jun 30, 2026, filed Jul 16, 2026: $972.00 in total political contributions, $835.82 in total political expenditures, $267.57 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=476986
+  source_title: 'City of Austin: Thadani, Dave, campaign finance report R20260114100722351 (filed Jul 16, 2026)'
+  source_kind: document
+  sha256: 951e7937923f85d8d20273b5a378124576d5e747d860fb14e0549d1d1c9be6ea
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Filed with the Austin City Clerk; found in the City of Austin open data set "Campaign Finance - Report Detail" (https://data.austintexas.gov/resource/b2pc-2s8n.json), which links the filed report. Every total in this fact was checked against the report PDF. Latest report on file as of 2026-10-04; a correction filed later replaces the version it corrects. Reports due October 5, 2026 (30 days before the election) were not yet in the data. Not yet archived.
 endorsements: []
 running_on:
   policy_proposals: []

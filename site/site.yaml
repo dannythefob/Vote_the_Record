@@ -54,6 +54,15 @@ campaign_finance:
         office_types: [county-judge, county-commissioner, county-attorney, county-clerk, district-clerk,
                        county-treasurer, county-court-at-law-judge, probate-judge, justice-of-the-peace,
                        constable, appraisal-district-director]
+      dallas-county:
+        # The reports are posted on dallascounty.org; no page found names the office that receives them
+        # (252.005(2): the county clerk, or the elections administrator in counties that have one).
+        name: Dallas County
+        published_on: Dallas County's Campaign Finance Reports page
+        url: https://www.dallascounty.org/government/campaign-finance/
+        office_types: [county-judge, county-commissioner, county-clerk, district-clerk, county-treasurer,
+                       criminal-district-attorney, county-court-at-law-judge, county-criminal-court-judge,
+                       county-criminal-appeals-judge, probate-judge, justice-of-the-peace, constable]
 
 # Topics for the ballot page's "What matters to you?" picker, in display order. Keys must
 # match the topic list in schemas/other.schema.json; each office power lists its topics.

@@ -12,6 +12,7 @@ powers:
 
   - id: P-APPEALS
     description: Hears appeals of criminal cases from Justice of the Peace and city municipal courts in the county.
+    only_in: [harris-county]
     statute: Government Code § 25.1033(a)
     source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.25.htm
     topics: [courts-justice]

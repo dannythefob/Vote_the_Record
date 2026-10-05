@@ -1,0 +1,14 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: mike-jones
+name: Mike Jones
+incumbent: true
+ballot_party: Democratic Party
+records: []
+funding: []
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

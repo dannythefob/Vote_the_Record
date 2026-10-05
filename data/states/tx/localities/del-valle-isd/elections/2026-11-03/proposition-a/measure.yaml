@@ -6,7 +6,91 @@ ballot_text: THIS IS A TAX INCREASE. Ratifying the ad valorem tax rate of $1.032
 choices:
 - FOR
 - AGAINST
-explained: []
+explained:
+- id: tx/localities/del-valle-isd/elections/2026-11-03/proposition-a/measure#E-01
+  headline: Voters must approve this rate because it is above the district's voter-approval rate
+  statement: 'Tax Code § 26.08(a): "If the governing body of a school district adopts a tax rate that exceeds the district''s voter-approval tax rate, the registered voters of the district at an election held for that purpose must determine whether to approve the adopted tax rate."'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://tcss.legis.texas.gov/resources/TX/htm/TX.26.htm
+  source_title: Texas Tax Code § 26.08 (Texas Legislature, statutes)
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20260930223049/https://tcss.legis.texas.gov/resources/TX/htm/TX.26.htm
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/localities/del-valle-isd/elections/2026-11-03/proposition-a/measure#E-02
+  headline: Del Valle ISD says the board voted unanimously to call this election
+  statement: 'The district''s Prop A page says: "The Del Valle Independent School District Board of Trustees unanimously approved calling a Voter-Approved Tax Ratification Election for the November 3 ballot."'
+  label: organization_statement
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.dvisd.net/aboutpropa/propanews
+  source_title: 'Del Valle ISD: Prop A News (district website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The school district's own description of its proposition, read from the rendered page on 2026-10-04. Not yet archived on the Wayback Machine.
+- id: tx/localities/del-valle-isd/elections/2026-11-03/proposition-a/measure#E-03
+  headline: Del Valle ISD says it would raise $13.9 million this year for raises and the new high school
+  statement: 'The district''s Prop A page says: "Proposition A would provide $13.9 million of new funding to Del Valle ISD in the current fiscal year (and is expected to provide at least as much each year thereafter) to support the district’s Maintenance & Operations (M&O) instructional budget. The funds would be used to provide additional raises to teachers and staff, as well as support programs and new staff at the district’s new second high school, set to open in 2028."'
+  label: organization_statement
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.dvisd.net/aboutpropa/propanews
+  source_title: 'Del Valle ISD: Prop A News (district website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The school district's own description of its proposition, read from the rendered page on 2026-10-04. Not yet archived on the Wayback Machine.
+- id: tx/localities/del-valle-isd/elections/2026-11-03/proposition-a/measure#E-04
+  headline: Del Valle ISD estimates $9.14 a year more for an average home
+  statement: 'The district''s Prop A page says: "Based on the average home market value of $314,376 in Del Valle ISD, homeowners would see an estimated increase of $9.14 annually with the passage of Prop A. The estimated financial impact of the 2026 election includes the $140,000 standard Homestead Exemption."'
+  label: organization_statement
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.dvisd.net/aboutpropa/propanews
+  source_title: 'Del Valle ISD: Prop A News (district website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The school district's own description of its proposition, read from the rendered page on 2026-10-04. Not yet archived on the Wayback Machine.
+- id: tx/localities/del-valle-isd/elections/2026-11-03/proposition-a/measure#E-05
+  headline: Del Valle ISD says homeowners with the over-65 or disabled exemption would not pay more
+  statement: 'The district''s Prop A page says: "There will not be an increase in taxes for homeowners who are senior citizens or disabled persons as a result of this proposal, provided they have applied for and received the Over 65 or Disabled Homestead Exemption with the appropriate appraisal district and have made no major improvements or additions to their residence."'
+  label: organization_statement
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.dvisd.net/aboutpropa/propanews
+  source_title: 'Del Valle ISD: Prop A News (district website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The school district's own description of its proposition, read from the rendered page on 2026-10-04. Not yet archived on the Wayback Machine.
 sources:
 - id: tx/localities/del-valle-isd/elections/2026-11-03/proposition-a/measure#S-01
   headline: Proposition as printed on the sample ballot
