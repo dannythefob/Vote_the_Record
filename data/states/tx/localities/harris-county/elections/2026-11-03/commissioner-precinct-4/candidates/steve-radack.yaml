@@ -1,9 +1,26 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: steve-radack
 name: STEVE RADACK
 incumbent: false
 ballot_party: Republican Party
-research: pending
+summary:
+- id: tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-4/candidates/steve-radack#B-01
+  headline: Former Harris County Commissioner, Precinct 3; former constable and HPD sergeant (per his campaign)
+  statement: 'His campaign website says: "Steve Radack has dedicated his life to public service in a journey that has taken him from patrolling the streets of Houston as a Sergeant with the Houston Police Department, to the Constable of the second largest Constable''s Office in the State of Texas, to Commissioner of Harris County Precinct 3." It says he served 32 years as Commissioner of Precinct 3.'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.steveradack.com/
+  source_title: Steve Radack for Harris County Commissioner Precinct 4 (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding: []
 endorsements: []

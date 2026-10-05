@@ -61,10 +61,62 @@ records:
   verified_on: null
   reviewer: null
   notes: The notice is required by Tax Code § 26.06 and lists how each member of the governing body voted on the proposal. Not yet archived on the Wayback Machine. The notice does not give the date of the vote; event_date is the hearing date the notice announces, which came after the vote.
+- id: tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2/candidates/adrian-garcia#R-04
+  record_type: statement
+  headline: 'Campaign platform: Says he cut spending rather than raise taxes during last year''s shortfall'
+  statement: 'Campaign website: "When Harris County faced a budget shortfall last year, Adrian made the hard call — cutting wasteful spending rather than raising taxes on working families."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: &id001 []
+  source_url: https://www.adriangarcia.com/
+  source_title: Adrian Garcia for Harris County Commissioner (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2/candidates/adrian-garcia#O-01
+    headline: Lower costs, careful spending, public safety, flood protection
+    statement: 'Campaign website: "Adrian’s priorities are simple: lowering costs for families, being a responsible steward of taxpayer dollars, keeping our neighborhoods safe, and protecting our homes from flooding."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.adriangarcia.com/
+    source_title: Adrian Garcia for Harris County Commissioner (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2/candidates/adrian-garcia#O-02
+    headline: Says he cut spending rather than raise taxes during last year's shortfall
+    statement: 'Campaign website: "When Harris County faced a budget shortfall last year, Adrian made the hard call — cutting wasteful spending rather than raising taxes on working families."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: *id001
+    source_url: https://www.adriangarcia.com/
+    source_title: Adrian Garcia for Harris County Commissioner (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings:
@@ -82,6 +134,14 @@ mappings:
   - B
   - C
   rationale: Voted against proposing the Harris Health rate at the voter-approval rate. A no vote rules out that increase but does not show whether he preferred cuts or reserves, so B and C are both listed.
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- record: tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2/candidates/adrian-garcia#R-04
+  question: county-commissioner/S-01
+  options:
+  - B
+  rationale: His campaign site says that when the county faced a budget shortfall he chose "cutting wasteful spending rather than raising taxes." That matches cutting spending (B). This is a campaign claim, so it counts at the lowest evidence weight; his recorded 2025 votes on proposed rates (Flood Control for, Harris Health against) are listed separately.
   verification: unverified
   verified_on: null
   reviewer: null
