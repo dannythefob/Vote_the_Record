@@ -1,3 +1,41 @@
+# DRAFT for owner review (2026-10-04): hypothetical scenarios for a city council member. Every
+# scenario cites the powers it rests on; for Texas those are in
+# data/states/tx/office-overrides/city-council-member.yaml.
 office_type: city-council-member
-tags: []   # controlled list of approach tags; never name or imply a party
-scenarios: []   # {id: S-01, powers: [P-XXX], scenario, options: [{id: A, text, tags: [...]}]}
+tags:
+  - raise-revenue
+  - cut-spending
+  - use-reserves
+  - more-homes-citywide
+  - more-homes-near-transit
+  - keep-lot-rules
+  - safety-staffing
+  - services-and-housing
+  - parks-and-libraries
+scenarios:
+  - id: S-01
+    title: Budget shortfall
+    powers: [P-BUDGET, P-TAX-RATE]
+    scenario: Next year's city budget is short of what it takes to keep current services. Which would you push for first?
+    options:
+      - {id: A, text: "Raise the property tax rate, even if it means asking voters to approve a rate above the state limit", tags: [raise-revenue]}
+      - {id: B, text: Cut spending across city departments, tags: [cut-spending]}
+      - {id: C, text: Draw on reserves for one year and revisit next year, tags: [use-reserves]}
+
+  - id: S-02
+    title: Where new homes can go
+    powers: [P-ORDINANCES]
+    scenario: Home prices in the city keep rising. The council is considering changes to the rules for how many homes can be built on a lot. What do you support?
+    options:
+      - {id: A, text: "Allow more homes on existing lots across the city, such as smaller lots or two or three homes per lot", tags: [more-homes-citywide]}
+      - {id: B, text: Allow more homes only along major roads and near transit, tags: [more-homes-near-transit]}
+      - {id: C, text: Keep the current lot rules, tags: [keep-lot-rules]}
+
+  - id: S-03
+    title: A one-time surplus
+    powers: [P-BUDGET]
+    scenario: The city ends the year with a one-time surplus. Where should most of it go?
+    options:
+      - {id: A, text: "Police, fire, and EMS staffing and equipment", tags: [safety-staffing]}
+      - {id: B, text: "Homelessness services and housing help", tags: [services-and-housing]}
+      - {id: C, text: "Parks, pools, and libraries", tags: [parks-and-libraries]}

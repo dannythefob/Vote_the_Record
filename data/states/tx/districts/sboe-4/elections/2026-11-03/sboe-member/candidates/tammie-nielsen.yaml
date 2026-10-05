@@ -15,7 +15,7 @@ funding:
   source_title: 'Texas Ethics Commission: Nielsen, Tammie (The Honorable), campaign finance report 101067976 (filed Sep 26, 2026)'
   source_kind: document
   sha256: f3e4056b78e1c6d9516861c7f70978015ed376b248f6600f8692506f77e54e6e
-  archive_url: null
+  archive_url: https://web.archive.org/web/20261001162658/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101067976.PDF
   event_date: '2026-09-24'
   retrieved: '2026-09-30'
   verification: unverified

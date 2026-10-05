@@ -3,6 +3,7 @@ id: sara-mcgee
 name: SARA MCGEE
 incumbent: false
 ballot_party: Democratic Party
+research: pending
 records: []
 funding:
 - id: tx/districts/state-house-132/elections/2026-11-03/state-representative/candidates/sara-mcgee#M-01
@@ -15,7 +16,7 @@ funding:
   source_title: 'Texas Ethics Commission: McGee, Sara A. (Ms.), campaign finance report 101061509 (filed Jul 15, 2026)'
   source_kind: document
   sha256: da8b7efb74e4db47399b7579d5a8fea770f28f6de2b9c1d6b73ce40ae8fe07c0
-  archive_url: null
+  archive_url: https://web.archive.org/web/20261001173023/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101061509.PDF
   event_date: '2026-06-30'
   retrieved: '2026-09-30'
   verification: unverified

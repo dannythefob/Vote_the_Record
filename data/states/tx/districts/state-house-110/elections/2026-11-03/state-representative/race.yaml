@@ -2,7 +2,6 @@
 name: State Representative, District 110
 office_type: state-representative
 election_date: '2026-11-03'
-detail: basic
 sources:
 - id: tx/districts/state-house-110/elections/2026-11-03/state-representative/race#S-01
   headline: Candidates as printed on the sample ballot
@@ -31,7 +30,7 @@ sources:
   source_title: 'Texas House of Representatives: member page, District 110'
   source_kind: page
   sha256: null
-  archive_url: null
+  archive_url: https://web.archive.org/web/20261005160104/https://house.texas.gov/members/2555
   event_date: '2026-10-04'
   retrieved: '2026-10-04'
   verification: unverified

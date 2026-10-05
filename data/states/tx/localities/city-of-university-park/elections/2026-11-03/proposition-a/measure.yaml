@@ -6,7 +6,23 @@ ballot_text: THIS IS A TAX INCREASE Approving the ad valorem tax rate of $0.2200
 choices:
 - For
 - Against
-explained: []
+explained:
+- id: tx/localities/city-of-university-park/elections/2026-11-03/proposition-a/measure#E-01
+  headline: Voters must approve this rate because it is above the voter-approval rate
+  statement: 'Tax Code § 26.07(b) applies to taxing units other than school districts: when the governing body adopts a tax rate above the unit''s voter-approval tax rate (or, for some units, above the greater of that rate and its de minimis rate), "the registered voters of the taxing unit at an election held for that purpose must determine whether to approve the adopted tax rate."'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://tcss.legis.texas.gov/resources/TX/htm/TX.26.htm
+  source_title: Texas Tax Code § 26.07 (Texas Legislature, statutes)
+  source_kind: page
+  sha256: null
+  archive_url: https://web.archive.org/web/20260930223049/https://tcss.legis.texas.gov/resources/TX/htm/TX.26.htm
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
 sources:
 - id: tx/localities/city-of-university-park/elections/2026-11-03/proposition-a/measure#S-01
   headline: Proposition as printed on the sample ballot

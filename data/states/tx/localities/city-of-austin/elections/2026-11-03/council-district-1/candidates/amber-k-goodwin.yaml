@@ -1,13 +1,115 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: amber-k-goodwin
 name: Amber K. Goodwin
 incumbent: false
 ballot_party: null
 records: []
-funding: []
+funding:
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-1/candidates/amber-k-goodwin#M-01
+  headline: Raised $91,346 and had $63,355 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'City of Austin campaign finance report (July 15th semiannual) covering Jan 1, 2026 - Jun 30, 2026, filed Jul 15, 2026: $91,346.00 in total political contributions, $26,778.88 in total political expenditures, $63,354.94 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=476930
+  source_title: 'City of Austin: Goodwin, Amber K., campaign finance report R20260101100722318 (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: 0e6982170fb56d5d3bf9f4715f698dc73915db8a4f1122bcda725fd3f34cf228
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Filed with the Austin City Clerk; found in the City of Austin open data set "Campaign Finance - Report Detail" (https://data.austintexas.gov/resource/b2pc-2s8n.json), which links the filed report. Every total in this fact was checked against the report PDF. Latest report on file as of 2026-10-04; a correction filed later replaces the version it corrects. Reports due October 5, 2026 (30 days before the election) were not yet in the data. Not yet archived.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-1/candidates/amber-k-goodwin#O-01
+    headline: 'Housing: permitting, zoning reforms, density bonuses, community land trust'
+    statement: 'Campaign website: "That means continuing to improve Austin''s permitting and development process, supporting thoughtful land use and zoning reforms, ensuring the city''s density bonus programs deliver deeply affordable homes for working families, and strengthening proven programs like Austin''s Community Land Trust to help make homeownership more attainable for first-time buyers."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://amberforaustin.com/policy-plans
+    source_title: 'Amber Goodwin for Austin City Council District 1: Policy Plans (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-1/candidates/amber-k-goodwin#O-02
+    headline: Transit-oriented development with guaranteed affordability
+    statement: 'Campaign website: "Amber will fight for expanded, frequent, affordable transit service connecting East Austin to jobs, healthcare, and schools, and will push for Equitable Transit-Oriented Development that pairs new density near transit with guaranteed affordability, not just additional market-rate units."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://amberforaustin.com/policy-plans
+    source_title: 'Amber Goodwin for Austin City Council District 1: Policy Plans (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-1/candidates/amber-k-goodwin#O-03
+    headline: Free youth mental health care in District 1
+    statement: 'Campaign website: "the District 1 Youth Mental Health Guarantee, a commitment that every child in East Austin who needs mental health care will be able to get it for free, no insurance required, no waitlist, no exceptions."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://amberforaustin.com/policy-plans
+    source_title: 'Amber Goodwin for Austin City Council District 1: Policy Plans (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-1/candidates/amber-k-goodwin#O-04
+    headline: Eviction prevention as violence prevention
+    statement: 'Campaign website: "Amber will make eviction interdiction a city priority, working across community service providers, city departments, Travis County, and Justice of the Peace courts to connect families at risk of eviction to legal aid, rental assistance, and mediation before displacement occurs."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://amberforaustin.com/policy-plans
+    source_title: 'Amber Goodwin for Austin City Council District 1: Policy Plans (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-1/candidates/amber-k-goodwin#O-05
+    headline: Grow the Office of Violence Prevention
+    statement: 'Campaign website: "Amber will protect and grow the Austin Office of Violence Prevention, which she helped establish in 2019 as the first city in Texas with an office dedicated to violence prevention."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://amberforaustin.com/policy-plans
+    source_title: 'Amber Goodwin for Austin City Council District 1: Policy Plans (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

@@ -83,7 +83,7 @@
         </p>
       </div>
     </div>
-    {% if race.detail == "basic" %}
+    {% if race.detail == "basic" or c.get('research') == 'pending' %}
     {% if c.funding or race.funding_check %}
     <ul class="glance">
       {% for f in c.funding_latest %}
@@ -190,12 +190,16 @@
   {% for c in race.candidates %}
   <article class="card" aria-labelledby="run-{{ c.id }}">
     <h3 id="run-{{ c.id }}">{{ c.name }}</h3>
+    {% if c.get('research') == 'pending' %}
+    <p class="empty">We haven't researched this candidate's record yet.</p>
+    {% else %}
     <h4>Policy proposals</h4>
     {{ fact_list(c.running_on.policy_proposals, race.facts) }}
     <h4>Attack messaging</h4>
     {{ fact_list(c.running_on.attack_messaging, race.facts) }}
     <h4>Contested claims</h4>
     {{ fact_list(c.running_on.contested_claims, race.facts) }}
+    {% endif %}
   </article>
   {% endfor %}
   </div>

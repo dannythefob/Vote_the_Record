@@ -1,3 +1,26 @@
+# DRAFT for owner review (2026-10-04): hypothetical scenarios for a U.S. representative. Every
+# scenario cites the powers it rests on (offices/us-representative/powers.yaml).
 office_type: us-representative
-tags: []   # controlled list of approach tags; never name or imply a party
-scenarios: []   # {id: S-01, powers: [P-XXX], scenario, options: [{id: A, text, tags: [...]}]}
+tags:
+  - support-package
+  - oppose-package
+  - require-full-offset
+  - cancel-funding
+  - keep-funding
+scenarios:
+  - id: S-01
+    title: A large tax and spending bill
+    powers: [P-TAX-SPEND, P-LAWS]
+    scenario: A bill would extend expiring tax cuts, add new ones, and pay for part of the cost by cutting spending on some health and nutrition programs. How do you vote?
+    options:
+      - {id: A, text: Vote for the bill, tags: [support-package]}
+      - {id: B, text: Vote against the bill, tags: [oppose-package]}
+      - {id: C, text: "Vote for it only if the full cost is paid for", tags: [require-full-offset]}
+
+  - id: S-02
+    title: Cancelling approved funding
+    powers: [P-TAX-SPEND]
+    scenario: The President asks Congress to cancel billions of dollars it already approved for foreign aid and public broadcasting. How do you vote?
+    options:
+      - {id: A, text: Vote to cancel the funding, tags: [cancel-funding]}
+      - {id: B, text: Vote to keep the funding, tags: [keep-funding]}

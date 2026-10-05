@@ -1,13 +1,64 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: david-weinberg
 name: David Weinberg
 incumbent: false
 ballot_party: null
 records: []
-funding: []
+funding:
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/david-weinberg#M-01
+  headline: Raised $5,250 and had $240,472 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'City of Austin campaign finance report (July 15th semiannual) covering Jan 1, 2026 - Jun 30, 2026, filed Jul 15, 2026: $5,250.00 in total political contributions, $35,025.38 in total political expenditures, $240,471.85 in contributions on hand at the end of the period, and $275,000.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=476821
+  source_title: 'City of Austin: Weinberg, David M., campaign finance report R20260101100722179 (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: 1ec4812f44be2ac3fa9608242a9f74e06b88aca5578ba19443ffe06bc475f028
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Filed with the Austin City Clerk; found in the City of Austin open data set "Campaign Finance - Report Detail" (https://data.austintexas.gov/resource/b2pc-2s8n.json), which links the filed report. Every total in this fact was checked against the report PDF. Latest report on file as of 2026-10-04; a correction filed later replaces the version it corrects. Reports due October 5, 2026 (30 days before the election) were not yet in the data. Not yet archived.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/david-weinberg#O-01
+    headline: Community approval before big city projects
+    statement: 'Campaign website: "Receiving the community’s approval before voting to green light multi-million-dollar city projects. Especially when we are being asked to pay more in taxes and face the possible closure of neighborhood schools."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://davidforatx.com/
+    source_title: David Weinberg for Austin 2026 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-5/candidates/david-weinberg#O-02
+    headline: Listen to residents on how much development fits the district
+    statement: 'Campaign website: "Listening to constituents about what level of commercial and residential development is appropriate for the district."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://davidforatx.com/
+    source_title: David Weinberg for Austin 2026 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

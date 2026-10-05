@@ -3,6 +3,7 @@ id: bonnie-abadie
 name: Bonnie Abadie
 incumbent: false
 ballot_party: Republican Party
+research: pending
 records: []
 funding:
 - id: tx/districts/state-house-102/elections/2026-11-03/state-representative/candidates/bonnie-abadie#M-01
@@ -15,7 +16,7 @@ funding:
   source_title: 'Texas Ethics Commission: Abadie, Bonnie, campaign finance report 101069017 (filed Oct 2, 2026)'
   source_kind: document
   sha256: 295bb1f247a9b0ac5a52f73b5803590b296f293870683c866cc5609a08b92e2c
-  archive_url: null
+  archive_url: https://web.archive.org/web/20261005153852/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101069017.PDF
   event_date: '2026-09-24'
   retrieved: '2026-10-04'
   verification: unverified

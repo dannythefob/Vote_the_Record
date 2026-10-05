@@ -1,0 +1,22 @@
+# Austin City Council, meeting of November 17, 2025.
+# Unverified; written by an AI assistant from the official minutes. Owner review required.
+body: Austin City Council
+meeting_date: '2025-11-17'
+facts:
+- id: tx/localities/city-of-austin/actions/2025-11-17#F-001
+  headline: Voters rejected Proposition Q, the 2025 city tax rate above the voter-approval rate
+  statement: 'Austin City Council Resolution No. 20251117-001 canvassed the November 4, 2025 special election on a proposed property tax rate exceeding the voter-approval rate and declared that Proposition Q is not adopted. The returns listed are: For 62,952; Against 109,375.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=463101
+  source_title: 'Austin City Council: Resolution No. 20251117-001, canvassing the November 4, 2025 special election'
+  source_kind: document
+  sha256: c57975099d455298dd37a31dde8a6ad149aaa4f71a7c4eb8491b2127fcc0a8aa
+  archive_url: null
+  event_date: '2025-11-17'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine.

@@ -1,13 +1,98 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: rich-heyman
 name: Rich Heyman
 incumbent: false
 ballot_party: null
 records: []
-funding: []
+funding:
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-9/candidates/rich-heyman#M-01
+  headline: Raised $18,901 and had $32,360 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'City of Austin campaign finance report (July 15th semiannual) covering Jan 1, 2026 - Jun 30, 2026, filed Jul 13, 2026: $18,901.00 in total political contributions, $11,941.27 in total political expenditures, $32,359.96 in contributions on hand at the end of the period, and $20,000.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=476723
+  source_title: 'City of Austin: Heyman, Richard, campaign finance report R20260101100722142 (filed Jul 13, 2026)'
+  source_kind: document
+  sha256: 669080d9fe3a94971c01767fd1898c5b5bcd821bb0190565d67104f0c1014d84
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Filed with the Austin City Clerk; found in the City of Austin open data set "Campaign Finance - Report Detail" (https://data.austintexas.gov/resource/b2pc-2s8n.json), which links the filed report. Every total in this fact was checked against the report PDF. Latest report on file as of 2026-10-04; a correction filed later replaces the version it corrects. Reports due October 5, 2026 (30 days before the election) were not yet in the data. Not yet archived.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-9/candidates/rich-heyman#O-01
+    headline: Community wealth building in economic development
+    statement: 'Campaign website: "Foster new economic development initiatives that prioritize community wealth building, local autonomy and resilience, and loosen our reliance on the whims of Wall Street."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.richforaustin.org/
+    source_title: Rich Heyman for Austin City Council District 9 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-9/candidates/rich-heyman#O-02
+    headline: Affordable housing and limits on displacement
+    statement: 'Campaign website: "Prioritize true affordable housing, stabilize vulnerable neighborhoods, and create responsible development policies, not reckless ones that mostly serve developer and lobbyist interests while displacing lower-income residents."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.richforaustin.org/
+    source_title: Rich Heyman for Austin City Council District 9 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-9/candidates/rich-heyman#O-03
+    headline: Climate equity plan, flooding, and tree canopy
+    statement: 'Campaign website: "Invest more in the climate equity plan, mitigate flooding potential, increase urban tree canopy."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.richforaustin.org/
+    source_title: Rich Heyman for Austin City Council District 9 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-9/candidates/rich-heyman#O-04
+    headline: Keep public spaces, assets, and jobs public
+    statement: 'Campaign website: "Protect public spaces, assets, and jobs from privatization."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.richforaustin.org/
+    source_title: Rich Heyman for Austin City Council District 9 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

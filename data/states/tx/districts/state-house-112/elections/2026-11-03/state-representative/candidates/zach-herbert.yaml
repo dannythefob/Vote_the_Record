@@ -3,6 +3,7 @@ id: zach-herbert
 name: Zach Herbert
 incumbent: false
 ballot_party: Democratic Party
+research: pending
 records: []
 funding:
 - id: tx/districts/state-house-112/elections/2026-11-03/state-representative/candidates/zach-herbert#M-01
@@ -15,7 +16,7 @@ funding:
   source_title: 'Texas Ethics Commission: Herbert, Zachary D. (Mr.), campaign finance report 101068380 (filed Oct 2, 2026)'
   source_kind: document
   sha256: 4f3332d4f39bae143e4470e9d4a7c90041430b2a7ce72324c4af65cdf9b7744b
-  archive_url: null
+  archive_url: https://web.archive.org/web/20261004004029/https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101068380.PDF
   event_date: '2026-09-24'
   retrieved: '2026-10-04'
   verification: unverified

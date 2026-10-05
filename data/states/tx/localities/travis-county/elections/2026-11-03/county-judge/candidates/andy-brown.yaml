@@ -1,14 +1,182 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: andy-brown
 name: Andy Brown
 incumbent: true
 ballot_party: Democratic Party
-records: []
+summary:
+- id: tx/localities/travis-county/elections/2026-11-03/county-judge/candidates/andy-brown#B-01
+  headline: Travis County Judge; former court clerk and legislative aide
+  statement: Travis County's biography page for Judge Andy Brown says that before taking office he helped establish the Sobering Center, served as a legislative aide to former Texas House Speaker Pete Laney, and clerked for the U.S. District Court in McAllen.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.traviscountytx.gov/commissioners-court/county-judge/andy-brown-bio
+  source_title: 'Travis County: Andy Brown Bio'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Read from the rendered page (the site loads its text by script). Only past positions are summarized; the page's descriptions of results are the office's own and are not repeated.
+records:
+- id: tx/localities/travis-county/elections/2026-11-03/county-judge/candidates/andy-brown#R-01
+  record_type: vote
+  headline: Voted to continue the July 2025 flood disaster declaration (July 2025)
+  result: Approved unanimously.
+  statement: As a member of the Travis County Commissioners Court, voted yes on the motion to "Approve the order to continue the Disaster Declaration issued by County Judge Andy Brown on July 5, 2025." The minutes list the ayes as Andy Brown, Jeffrey Travillion, Brigid Shea, Ann Howard, and Margaret Gómez.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://traviscotx.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12362,plainText=false)
+  source_title: 'Travis County Commissioners Court: Minutes, Voting Session, July 8, 2025 (page 3)'
+  source_kind: document
+  sha256: 33a2fb9d76f2646f03fbddcb5529f749577eb626b997f17bbbc29f67acf78cdf
+  archive_url: null
+  event_date: '2025-07-08'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes published by the Travis County Clerk on the Commissioners Court meeting portal (https://traviscotx.portal.civicclerk.com/); the source URL is the portal's download link for the minutes PDF. Not yet archived on the Wayback Machine.
+- id: tx/localities/travis-county/elections/2026-11-03/county-judge/candidates/andy-brown#R-02
+  record_type: vote
+  headline: Voted to fund flood debris pickup with up to $4 million from the Emergency Reserve (July 2025)
+  result: Approved unanimously.
+  statement: As a member of the Travis County Commissioners Court, voted yes on a motion to move forward with contracts to pick up debris and heavy items from areas of Travis County affected by flooding, as amended to "direct staff to transfer up to $4,000,000 from the Emergency Reserve, with the understanding that any unused funds will be appropriately returned to the Emergency Reserve" and to waive fees for trash and debris disposal at the FM 1431 Transfer Station until further notice.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://traviscotx.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12362,plainText=false)
+  source_title: 'Travis County Commissioners Court: Minutes, Voting Session, July 8, 2025 (page 3)'
+  source_kind: document
+  sha256: 33a2fb9d76f2646f03fbddcb5529f749577eb626b997f17bbbc29f67acf78cdf
+  archive_url: null
+  event_date: '2025-07-08'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes published by the Travis County Clerk on the Commissioners Court meeting portal (https://traviscotx.portal.civicclerk.com/); the source URL is the portal's download link for the minutes PDF. Not yet archived on the Wayback Machine.
+- id: tx/localities/travis-county/elections/2026-11-03/county-judge/candidates/andy-brown#R-03
+  record_type: vote
+  headline: Voted to waive county permit fees for flood-damaged homes that insurance won't cover (July 2025)
+  result: Approved unanimously.
+  statement: As a member of the Travis County Commissioners Court, voted yes on a motion to "Waive the Travis County permitting fees in areas identified as damaged for homeowners who need to rebuild due to flood damage and can prove that their insurance will not cover the cost of the fees."
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://traviscotx.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12362,plainText=false)
+  source_title: 'Travis County Commissioners Court: Minutes, Voting Session, July 8, 2025 (page 3)'
+  source_kind: document
+  sha256: 33a2fb9d76f2646f03fbddcb5529f749577eb626b997f17bbbc29f67acf78cdf
+  archive_url: null
+  event_date: '2025-07-08'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes published by the Travis County Clerk on the Commissioners Court meeting portal (https://traviscotx.portal.civicclerk.com/); the source URL is the portal's download link for the minutes PDF. Not yet archived on the Wayback Machine.
+- id: tx/localities/travis-county/elections/2026-11-03/county-judge/candidates/andy-brown#R-04
+  record_type: vote
+  headline: Voted to calculate the 2025 tax rate under the disaster rule (July 2025)
+  result: Approved unanimously by the members voting.
+  statement: As a member of the Travis County Commissioners Court, voted yes on Item 14, an "order designating the Budget Officer to calculate the tax rate for Tax Year 2025 (Fiscal Year 2026) in the manner provided for a special taxing unit due to a declared disaster." The minutes list the ayes as Andy Brown, Jeffrey Travillion, Brigid Shea, and Ann Howard.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://traviscotx.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12400,plainText=false)
+  source_title: 'Travis County Commissioners Court: Minutes, Voting Session, July 29, 2025 (page 6)'
+  source_kind: document
+  sha256: d906811ea8b40136890442e6800f176b3409b816e6540d23f20c8810abd65c86
+  archive_url: null
+  event_date: '2025-07-29'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes published by the Travis County Clerk on the Commissioners Court meeting portal (https://traviscotx.portal.civicclerk.com/); the source URL is the portal's download link for the minutes PDF. Not yet archived on the Wayback Machine.
+- id: tx/localities/travis-county/elections/2026-11-03/county-judge/candidates/andy-brown#R-05
+  record_type: vote
+  headline: Voted to advertise a 2025 tax rate 8% above the no-new-revenue operating rate (Aug. 2025)
+  result: Approved unanimously.
+  statement: As a member of the Travis County Commissioners Court, voted yes on Item 22, to advertise "the Tax Year 2025 (Fiscal Year 2026) property tax rate of 37.5845 cents per $100 of taxable value, which is 8% above the No-New-Revenue Maintenance and Operations Rate plus required debt service, calculated in the manner provided for a special taxing unit due to the declared disaster."
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://traviscotx.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12510,plainText=false)
+  source_title: 'Travis County Commissioners Court: Minutes, Voting Session, August 26, 2025 (page 8)'
+  source_kind: document
+  sha256: 797f4bbf8dbd9419358be3cdd5857fe02fc089f551b2d4b70ba58b92128e8583
+  archive_url: null
+  event_date: '2025-08-26'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes published by the Travis County Clerk on the Commissioners Court meeting portal (https://traviscotx.portal.civicclerk.com/); the source URL is the portal's download link for the minutes PDF. Not yet archived on the Wayback Machine.
+- id: tx/localities/travis-county/elections/2026-11-03/county-judge/candidates/andy-brown#R-06
+  record_type: vote
+  headline: Voted to adopt a county tax rate of 37.5845 cents per $100, a 9.5% increase (Sept. 2025)
+  result: Approved unanimously.
+  statement: As a member of the Travis County Commissioners Court, voted yes on the motion to adopt "a tax rate of 37.5845 cents for each $100 valuation of all taxable property, which is effectively a nine and a half percent (9.5%) increase in the tax rate" for the tax year beginning January 1, 2025 (Fiscal Year 2026).
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://traviscotx.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=12584,plainText=false)
+  source_title: 'Travis County Commissioners Court: Minutes, Voting Session, September 16, 2025 (page 10-11)'
+  source_kind: document
+  sha256: 1cea80f235ccf0655dcbc45e4fc84e1a52468143790029384928fe46c05e8fe5
+  archive_url: null
+  event_date: '2025-09-16'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes published by the Travis County Clerk on the Commissioners Court meeting portal (https://traviscotx.portal.civicclerk.com/); the source URL is the portal's download link for the minutes PDF. Not yet archived on the Wayback Machine.
+- id: tx/localities/travis-county/elections/2026-11-03/county-judge/candidates/andy-brown#R-07
+  record_type: vote
+  headline: Voted to adopt a county tax rate of 38.6210 cents per $100 (Sept. 2026)
+  result: Approved unanimously.
+  statement: As a member of the Travis County Commissioners Court, voted yes on the motion that the "Property tax rate be increased by the adoption of a tax rate of 38.6210 cents for each $100 valuation of all taxable property, which is effectively a two and a half (2.1%) percent increase in the tax rate" for the tax year beginning January 1, 2026 (Fiscal Year 2027). The minutes list the ayes as Andy Brown, Jeffrey Travillion, Brigid Shea, Ann Howard, and George Morales.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://traviscotx.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=13293,plainText=false)
+  source_title: 'Travis County Commissioners Court: Minutes, Voting Session, September 15, 2026 (page 7-8)'
+  source_kind: document
+  sha256: 2c8b2c68ade221e830909d6ce6e3f47387a55e4a412af241b23144a6e09e92fd
+  archive_url: null
+  event_date: '2026-09-15'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes published by the Travis County Clerk on the Commissioners Court meeting portal (https://traviscotx.portal.civicclerk.com/); the source URL is the portal's download link for the minutes PDF. Not yet archived on the Wayback Machine. The motion's wording, "two and a half (2.1%) percent," is quoted as it appears in the minutes.
 funding: []
 endorsements: []
 running_on:
   policy_proposals: []
   attack_messaging: []
   contested_claims: []
-mappings: []
+mappings:
+- record: tx/localities/travis-county/elections/2026-11-03/county-judge/candidates/andy-brown#R-04
+  question: county-judge/S-01
+  options:
+  - A
+  rationale: Voted to have the 2025 tax rate calculated under the disaster rule, which allowed a larger increase than the usual limit, and then (R-05, R-06) to advertise and adopt a rate 9.5% higher. That is consistent with raising the property tax rate (A). The votes were unanimous, and the minutes do not record whether cuts or reserves were also considered.
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- record: tx/localities/travis-county/elections/2026-11-03/county-judge/candidates/andy-brown#R-01
+  question: county-judge/S-04
+  options:
+  - A
+  - B
+  rationale: Voted with the court to continue his own July 5, 2025 flood disaster declaration beyond seven days. That rules out letting it end (C); the minutes do not say how long it was continued or whether a review schedule was set, so A and B are both listed.
+  verification: unverified
+  verified_on: null
+  reviewer: null
 promise_tracker: []

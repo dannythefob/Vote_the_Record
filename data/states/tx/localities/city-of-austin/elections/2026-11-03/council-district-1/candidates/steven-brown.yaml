@@ -1,13 +1,149 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: steven-brown
 name: Steven Brown
 incumbent: false
 ballot_party: null
 records: []
-funding: []
-endorsements: []
+funding:
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-1/candidates/steven-brown#M-01
+  headline: Raised $16,411 and had $10,340 on hand (Jan 1 - Jun 30, 2026)
+  statement: 'City of Austin campaign finance report (July 15th semiannual) covering Jan 1, 2026 - Jun 30, 2026, filed Jul 15, 2026: $16,410.65 in total political contributions, $12,422.79 in total political expenditures, $10,340.00 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=476929
+  source_title: 'City of Austin: Brown, Steven A., campaign finance report R20260101100722090 (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: 1c7f69f8dddfc64549e1408c8919dca9ee9f4f39356f5830a33288ffd246eede
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Filed with the Austin City Clerk; found in the City of Austin open data set "Campaign Finance - Report Detail" (https://data.austintexas.gov/resource/b2pc-2s8n.json), which links the filed report. Every total in this fact was checked against the report PDF. Latest report on file as of 2026-10-04; a correction filed later replaces the version it corrects. Reports due October 5, 2026 (30 days before the election) were not yet in the data. Not yet archived.
+endorsements:
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-1/candidates/steven-brown#E-01
+  headline: ATU Local 1091
+  statement: 'Listed as an endorser on the campaign website: ATU Local 1091.'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://brownforaustind1.com/
+  source_title: Steven Brown for Austin City Council District 1 (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine. The endorser's own announcement was not checked.
+- id: tx/localities/city-of-austin/elections/2026-11-03/council-district-1/candidates/steven-brown#E-02
+  headline: Austin Police Association
+  statement: 'Listed as an endorser on the campaign website: Austin Police Association.'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://brownforaustind1.com/
+  source_title: Steven Brown for Austin City Council District 1 (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine. The endorser's own announcement was not checked.
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-1/candidates/steven-brown#O-01
+    headline: Housing affordability for long-term residents
+    statement: 'Campaign website: "Keep long-term residents, renters and seniors in the community they built instead of pricing them out."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://brownforaustind1.com/
+    source_title: Steven Brown for Austin City Council District 1 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-1/candidates/steven-brown#O-02
+    headline: Living wages on city contracts and local hiring
+    statement: 'Campaign website: "Living wages on city contracts, local hiring, and tax policy that puts D1 working families first."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://brownforaustind1.com/
+    source_title: Steven Brown for Austin City Council District 1 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-1/candidates/steven-brown#O-03
+    headline: City money for schools, parks, libraries, after-school programs
+    statement: 'Campaign website: "Real city dollars into D1 schools, parks, libraries and after-school programs."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://brownforaustind1.com/
+    source_title: Steven Brown for Austin City Council District 1 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-1/candidates/steven-brown#O-04
+    headline: Lower crime, police accountability, clean water, tree canopy
+    statement: 'Campaign website: "Lower crime, police accountability, clean water and more tree canopy."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://brownforaustind1.com/
+    source_title: Steven Brown for Austin City Council District 1 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/city-of-austin/elections/2026-11-03/council-district-1/candidates/steven-brown#O-05
+    headline: Safer streets, sidewalks, and reliable transit
+    statement: 'Campaign website: "Safer streets, connected sidewalks and transit you can count on."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://brownforaustind1.com/
+    source_title: Steven Brown for Austin City Council District 1 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

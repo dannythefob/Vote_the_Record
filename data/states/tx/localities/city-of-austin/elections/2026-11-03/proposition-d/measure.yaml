@@ -6,7 +6,41 @@ ballot_text: Shall the City Charter be amended to delete language providing that
 choices:
 - FOR
 - AGAINST
-explained: []
+explained:
+- id: tx/localities/city-of-austin/elections/2026-11-03/proposition-d/measure#E-01
+  headline: The City Council voted 11-0 to put the charter amendments on the ballot
+  statement: On August 6, 2026, the Austin City Council approved Ordinance No. 20260806-004, calling the charter amendment election with Propositions C through J, on an 11-0 vote. The ordinance's title says the propositions include "a citizen-initiated charter amendment certified sufficient on June 22, 2026."
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=480200
+  source_title: 'Austin City Council: Budget Council Minutes, August 6, 2026 (pages 6-8)'
+  source_kind: document
+  sha256: 57dd3e4c99f6326f19dbd2042828a890db4954d28bf05f6d463e812eab21cc57
+  archive_url: null
+  event_date: '2026-08-06'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine.
+- id: tx/localities/city-of-austin/elections/2026-11-03/proposition-d/measure#E-02
+  headline: The ordinance contains the exact charter text that would change
+  statement: Ordinance No. 20260806-004 sets out, for each of Propositions C through J, the City Charter text as it would read if the proposition is approved by a majority of voters.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=478849
+  source_title: 'City of Austin: Ordinance No. 20260806-004, ordering a charter amendment election for November 3, 2026'
+  source_kind: document
+  sha256: 4de8c75051d8e6fccab99781cd55696444146bf906c3cf7b62d8c12a116580bd
+  archive_url: null
+  event_date: '2026-08-06'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine.
 sources:
 - id: tx/localities/city-of-austin/elections/2026-11-03/proposition-d/measure#S-01
   headline: Proposition as printed on the sample ballot

@@ -6,7 +6,92 @@ ballot_text: THIS IS A TAX INCREASE; the issuance of bonds in the amount of $260
 choices:
 - FOR
 - AGAINST
-explained: []
+explained:
+- id: tx/localities/city-of-austin/elections/2026-11-03/proposition-a/measure#E-01
+  headline: What the $260 million is for
+  statement: The ordinance's full proposition authorizes up to $260,000,000 in bonds for city park, recreation (including sports, athletics, and aquatics), and open space improvements, "with priority given to" building improvements at the Gus Garcia Recreation Center, Doris Miller Auditorium, and Mayfield Park; trail, park, and electrification infrastructure at listed parks; parkland improvements at listed parks; improvements at Garrison, Big Stacy, Walnut Creek, and Civitan pools; and parkland acquisition.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=478892
+  source_title: 'City of Austin: Ordinance No. 20260806-002, ordering a General Obligation Bond Election for November 3, 2026'
+  source_kind: document
+  sha256: ea518ab02c072f097944c53f3676a88367ffc7ae7b29db6d972f188fccd8ac12
+  archive_url: null
+  event_date: '2026-08-06'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Ordinance Part 1 (Measure A); the ballot itself prints the shorter wording. Not yet archived on the Wayback Machine.
+- id: tx/localities/city-of-austin/elections/2026-11-03/proposition-a/measure#E-02
+  headline: 'Estimated cost with interest: about $453 million'
+  statement: The city's Voter Information Document for this proposition lists $260,000,000 in principal, $193,357,500 in estimated interest (presuming a 6% interest rate), and $453,357,500 in estimated combined principal and interest.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=478421
+  source_title: 'City of Austin: Voter Information Document, Exhibit B to the bond election ordinance (agenda backup, File ID 26-2115)'
+  source_kind: document
+  sha256: 31b960053c5d316af59d69480ab745e6773b4a0080f73d455a9fd581099af398
+  archive_url: null
+  event_date: '2026-08-06'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Attached to the ordinance as Exhibit B (agenda backup copy, before proposition letters were filled in). Not yet archived on the Wayback Machine.
+- id: tx/localities/city-of-austin/elections/2026-11-03/proposition-a/measure#E-03
+  headline: 'Estimated tax impact: up to $8.14 a year on a $100,000 home'
+  statement: The Voter Information Document lists $8.14 as the "estimated maximum annual increase in the amount of taxes on a residence homestead with an appraised value of $100,000 to repay the debt obligations to be authorized, if approved," assuming a $20,000 homestead exemption.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=478421
+  source_title: 'City of Austin: Voter Information Document, Exhibit B to the bond election ordinance (agenda backup, File ID 26-2115)'
+  source_kind: document
+  sha256: 31b960053c5d316af59d69480ab745e6773b4a0080f73d455a9fd581099af398
+  archive_url: null
+  event_date: '2026-08-06'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine.
+- id: tx/localities/city-of-austin/elections/2026-11-03/proposition-a/measure#E-04
+  headline: The city's existing debt
+  statement: The bond election ordinance states that, as of its adoption, the City's outstanding debt principal totaled $2,378,150,000, the interest owed on that debt through maturity totaled $963,306,343, and the City's debt service tax rate was $0.113735 per $100 of taxable value. It says the maximum interest rate for any bonds approved is 6.00%.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=478892
+  source_title: 'City of Austin: Ordinance No. 20260806-002, ordering a General Obligation Bond Election for November 3, 2026'
+  source_kind: document
+  sha256: ea518ab02c072f097944c53f3676a88367ffc7ae7b29db6d972f188fccd8ac12
+  archive_url: null
+  event_date: '2026-08-06'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Ordinance Part 6. Not yet archived on the Wayback Machine.
+- id: tx/localities/city-of-austin/elections/2026-11-03/proposition-a/measure#E-05
+  headline: The City Council voted 11-0 to put it on the ballot
+  statement: On August 6, 2026, the Austin City Council approved Ordinance No. 20260806-002, calling this bond election with Proposition A for Parks and Recreation and Proposition B for Library improvements, on an 11-0 vote.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=480200
+  source_title: 'Austin City Council: Budget Council Minutes, August 6, 2026 (pages 6-8)'
+  source_kind: document
+  sha256: 57dd3e4c99f6326f19dbd2042828a890db4954d28bf05f6d463e812eab21cc57
+  archive_url: null
+  event_date: '2026-08-06'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine.
 sources:
 - id: tx/localities/city-of-austin/elections/2026-11-03/proposition-a/measure#S-01
   headline: Proposition as printed on the sample ballot

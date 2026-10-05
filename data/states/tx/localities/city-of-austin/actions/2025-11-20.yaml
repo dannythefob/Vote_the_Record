@@ -1,0 +1,22 @@
+# Austin City Council, meeting of November 20, 2025.
+# Unverified; written by an AI assistant from the official minutes. Owner review required.
+body: Austin City Council
+meeting_date: '2025-11-20'
+facts:
+- id: tx/localities/city-of-austin/actions/2025-11-20#F-001
+  headline: After Proposition Q failed, the council amended the budget and set the rate at the voter-approval rate
+  statement: On November 20, 2025, the Austin City Council approved Ordinance No. 20251120-004, amending the Fiscal Year 2025-2026 budget "to reflect reduced projected property (ad valorem) tax revenues resulting from the voters not approving the property tax rate adopted by the City Council," and Ordinance No. 20251120-006, adopting a tax rate of 0.524017 dollars per hundred dollar valuation, "which is effectively a 8.4 percent increase in the tax rate." Both passed 11-0.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://services.austintexas.gov/edims/document.cfm?id=466438
+  source_title: 'Austin City Council: Regular Council Minutes, November 20, 2025 (page 25)'
+  source_kind: document
+  sha256: 56bc6e499bccfe51332e7b3cb191b1b02019c140a6daee39bd3efa0f798ae694
+  archive_url: null
+  event_date: '2025-11-20'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Not yet archived on the Wayback Machine.

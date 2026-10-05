@@ -1,8 +1,26 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: dana-walker
 name: Dana Walker
 incumbent: true
 ballot_party: null
+summary:
+- id: tx/localities/austin-community-college/elections/2026-11-03/trustee-place-1/candidates/dana-walker#B-01
+  headline: Trustee since 2020 (Place 1)
+  statement: Austin Community College's board page says Dana Walker "was elected for Place 1 on the Austin Community College District Board of Trustees in 2020. Her term will end in 2026."
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://offices.austincc.edu/board-of-trustees/board-members/dana-walker/
+  source_title: 'Austin Community College: Board of Trustees member page'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Read from the rendered page on 2026-10-04. Not yet archived on the Wayback Machine.
 records: []
 funding: []
 endorsements: []
