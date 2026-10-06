@@ -1,8 +1,26 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: shannon-dicely
 name: SHANNON DICELY
 incumbent: false
 ballot_party: Democratic Party
+summary:
+- id: tx/districts/state-senate-11/elections/2026-11-03/state-senator/candidates/shannon-dicely#B-01
+  headline: Parent and community volunteer; political science student (per her campaign)
+  statement: 'Campaign website: "She became a dedicated stay at home parent when her children were born. During this time, she engaged in her community through school volunteering, neighborhood leadership, and local civic involvement."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.shannondicely.com/meet_shannon
+  source_title: 'Shannon Dicely for Texas Senate: Meet Shannon (campaign website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/districts/state-senate-11/elections/2026-11-03/state-senator/candidates/shannon-dicely#M-01
@@ -24,7 +42,126 @@ funding:
   notes: Report ID 101062262, form COH, TEC report type SEMIJUL; filer ID 00089745 (Dicely, Shannon A. (Mrs.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/state-senate-11/elections/2026-11-03/state-senator/candidates/shannon-dicely#O-01
+    headline: Raise the basic per-student allotment; fund by enrollment
+    statement: 'Campaign website: "Increase the basic per-student allotment and modernize formulas so districts are funded based on enrollment--not attendance--ensuring stability and fairness"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.shannondicely.com/public_education
+    source_title: 'Shannon Dicely for Texas Senate: Public Education (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-senate-11/elections/2026-11-03/state-senator/candidates/shannon-dicely#O-02
+    headline: Paid parental leave for school staff
+    statement: 'Campaign website: "Guarantee paid parental leave for teachers and school staff to support families and strengthen workforce stability"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.shannondicely.com/public_education
+    source_title: 'Shannon Dicely for Texas Senate: Public Education (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-senate-11/elections/2026-11-03/state-senator/candidates/shannon-dicely#O-03
+    headline: Raise the minimum wage
+    statement: 'Campaign website: "Raise the minimum wage so full-time work pays a living wage"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.shannondicely.com/affordability_for_families
+    source_title: 'Shannon Dicely for Texas Senate: Affordability for Families (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-senate-11/elections/2026-11-03/state-senator/candidates/shannon-dicely#O-04
+    headline: Child care and universal pre-K
+    statement: 'Campaign website: "Expand access to high-quality, affordable child care by supporting providers through workforce development and sustainable funding as well as fund universal PreK"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.shannondicely.com/affordability_for_families
+    source_title: 'Shannon Dicely for Texas Senate: Affordability for Families (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-senate-11/elections/2026-11-03/state-senator/candidates/shannon-dicely#O-05
+    headline: Expand Medicaid
+    statement: 'Campaign website: "Close the coverage gap so working families and individuals can access preventative and life-saving care"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.shannondicely.com/healthcare
+    source_title: 'Shannon Dicely for Texas Senate: Healthcare (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-senate-11/elections/2026-11-03/state-senator/candidates/shannon-dicely#O-06
+    headline: Repeal SB 1 (2021 election law); online voter registration
+    statement: 'Campaign website: "Repeal voter suppression laws like SB1 that target seniors, people of color, and working Texans ... Expand online voter registration and mail-in ballot access"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.shannondicely.com/voting_rights
+    source_title: 'Shannon Dicely for Texas Senate: Voting Rights (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-senate-11/elections/2026-11-03/state-senator/candidates/shannon-dicely#O-07
+    headline: Nonpartisan redistricting
+    statement: 'Campaign website: "End gerrymandering, fight schemes that intend to rig elections, and support nonpartisan redistricting"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.shannondicely.com/voting_rights
+    source_title: 'Shannon Dicely for Texas Senate: Voting Rights (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

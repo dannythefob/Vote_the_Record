@@ -1,8 +1,26 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: desiree-klaus
 name: DESIREE KLAUS
 incumbent: false
 ballot_party: Democratic Party
+summary:
+- id: tx/districts/state-house-128/elections/2026-11-03/state-representative/candidates/desiree-klaus#B-01
+  headline: Small business owner; Baytown native (per her campaign)
+  statement: 'Campaign website: "Desiree learned to pivot by building her own small business."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.desireeklaustx.com/
+  source_title: Desiree Klaus for Texas (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/districts/state-house-128/elections/2026-11-03/state-representative/candidates/desiree-klaus#M-01
@@ -24,7 +42,58 @@ funding:
   notes: Report ID 101060756, form COH, TEC report type SEMIJUL; filer ID 00090006 (Klaus, Desiree C. (Ms.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/state-house-128/elections/2026-11-03/state-representative/candidates/desiree-klaus#O-01
+    headline: Fund public schools, not vouchers
+    statement: 'Campaign website: "I will fight to fund public schools—not vouchers."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.desireeklaustx.com/issues
+    source_title: 'Desiree Klaus for Texas: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-128/elections/2026-11-03/state-representative/candidates/desiree-klaus#O-02
+    headline: Cap prescription prices; end surprise billing
+    statement: 'Campaign website: "Cap prescription prices, end surprise billing, fund neighborhood clinics and mobile care, and protect the coverage families rely on."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.desireeklaustx.com/issues
+    source_title: 'Desiree Klaus for Texas: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-128/elections/2026-11-03/state-representative/candidates/desiree-klaus#O-03
+    headline: Workforce training and small business support
+    statement: 'Campaign website: "Advance workforce training and place local workers in high-demand careers, support small businesses with capital and coaching, and invest in safe, modern infrastructure that attracts new industries."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.desireeklaustx.com/issues
+    source_title: 'Desiree Klaus for Texas: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

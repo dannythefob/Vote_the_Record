@@ -1,13 +1,133 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: trever-nehls
 name: TREVER NEHLS
 incumbent: false
 ballot_party: Republican Party
+summary:
+- id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/trever-nehls#B-01
+  headline: Retired Army colonel; former Fort Bend County constable (per his campaign)
+  statement: 'Campaign website: "He later served as Constable for Fort Bend County Precinct 4 from 2013 to 2020"'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.trevernehlsforcongress.com/
+  source_title: Trever Nehls for Congress (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/trever-nehls#O-01
+    headline: Border wall and deportations
+    statement: 'Campaign website: "Congress must help President Trump fully secure the southern border, finish the wall, end catch-and-release permanently, and deport illegal aliens who violate our laws."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.trevernehlsforcongress.com/issues/
+    source_title: 'Trever Nehls for Congress: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/trever-nehls#O-02
+    headline: Lower taxes and fewer regulations
+    statement: 'Campaign website: "Trever supports lower taxes, fewer regulations and a pro-growth agenda that strengthens the American economy."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.trevernehlsforcongress.com/issues/
+    source_title: 'Trever Nehls for Congress: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/trever-nehls#O-03
+    headline: 'Schools: DEI, gender, girls'' sports, curriculum'
+    statement: 'Campaign website: "He will vote to eliminate DEI mandates, block gender ideology in schools, protect girls’ sports, and require full curriculum transparency."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.trevernehlsforcongress.com/issues/
+    source_title: 'Trever Nehls for Congress: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/trever-nehls#O-04
+    headline: Expand domestic energy production
+    statement: 'Campaign website: "He will fight to end any remaining Biden anti-energy policies while focusing on legislation that expands domestic production and cuts burdensome regulations that drive up gas prices for families."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.trevernehlsforcongress.com/issues/
+    source_title: 'Trever Nehls for Congress: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/trever-nehls#O-05
+    headline: Fund law enforcement
+    statement: 'Campaign website: "will fully fund and support law enforcement."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.trevernehlsforcongress.com/issues/
+    source_title: 'Trever Nehls for Congress: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/trever-nehls#O-06
+    headline: Finish SH-99 and flood mitigation
+    statement: 'Campaign website: "A top priority is finishing and expanding SH-99 through Brazoria, Fort Bend & Harris Counties."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.trevernehlsforcongress.com/issues/
+    source_title: 'Trever Nehls for Congress: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

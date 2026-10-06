@@ -1,14 +1,133 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: alexander-hale
 name: ALEXANDER HALE
 incumbent: false
 ballot_party: Republican Party
-research: pending
+summary:
+- id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/alexander-hale#B-01
+  headline: Energy and chemicals consultant (per his campaign)
+  statement: 'Campaign website: "I live in the Heights, and currently work as an Energy and Chemicals Consultant for Alvarez & Marsal here in Houston."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.halefortexas.com/about
+  source_title: 'Hale for Texas: Meet Alexander (campaign website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/alexander-hale#O-01
+    headline: Cut federal rules that raise building costs
+    statement: 'Campaign website: "Build more, faster. Cut the federal red tape that makes it more expensive to build a house, a power plant, or a pipeline in Houston."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.halefortexas.com/priorities/affordability
+    source_title: 'Hale for Texas: Increasing Affordability (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/alexander-hale#O-02
+    headline: Bring down federal deficits
+    statement: 'Campaign website: "Stop financing inflation. Bring down the deficits that keep mortgage rates near 7 percent."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.halefortexas.com/priorities/affordability
+    source_title: 'Hale for Texas: Increasing Affordability (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/alexander-hale#O-03
+    headline: Health care price transparency
+    statement: 'Campaign website: "Make every price visible before care is delivered, and enforce it."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.halefortexas.com/priorities/healthcare
+    source_title: 'Hale for Texas: Lowering Healthcare Costs (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/alexander-hale#O-04
+    headline: Paying doctors directly with pre-tax dollars
+    statement: 'Campaign website: "Let families pay their doctor directly with pre-tax dollars, and keep insurance for real emergencies."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.halefortexas.com/priorities/healthcare
+    source_title: 'Hale for Texas: Lowering Healthcare Costs (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/alexander-hale#O-05
+    headline: Reject continuing resolutions
+    statement: 'Campaign website: "Reject continuing resolutions that lock in bloat."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.halefortexas.com/priorities/fiscal
+    source_title: 'Hale for Texas: Fiscal Responsibility (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/alexander-hale#O-06
+    headline: All-of-the-above energy
+    statement: 'Campaign website: "Champion an all-of-the-above strategy: oil, gas, nuclear, refining, and innovation."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.halefortexas.com/priorities/energy
+    source_title: 'Hale for Texas: Houston''s Energy Economy (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

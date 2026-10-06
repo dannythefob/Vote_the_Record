@@ -1,8 +1,26 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: darlene-breaux
 name: DARLENE BREAUX
 incumbent: false
 ballot_party: Democratic Party
+summary:
+- id: tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#B-01
+  headline: Alief ISD board president; educator (per her campaign)
+  statement: 'Campaign website: "As Board President for Alief ISD and a Master Trustee with the Texas Association of School Boards, Dr. Breaux leads with integrity and results."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://darlenebreaux.com/about/
+  source_title: 'Dr. Darlene Breaux for State Representative: About (campaign website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#M-01
@@ -24,7 +42,109 @@ funding:
   notes: Report ID 101058407, form COH, TEC report type SEMIJUL; filer ID 00090202 (Breaux, Darlene E. (Mrs.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#O-01
+    headline: Fund schools by enrollment
+    statement: 'Campaign website: "Fully fund mandates issued by the state and shift from attendance-based to enrollment-based funding"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://darlenebreaux.com/priorities/
+    source_title: 'Dr. Darlene Breaux for State Representative: Priorities (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#O-02
+    headline: Oppose vouchers
+    statement: 'Campaign website: "Against the voucher bill, which funds families already in private school and puts no accountability rules on those schools"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://darlenebreaux.com/priorities/
+    source_title: 'Dr. Darlene Breaux for State Representative: Priorities (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#O-03
+    headline: Raise teacher base pay
+    statement: 'Campaign website: "Raise base salaries for teachers"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://darlenebreaux.com/priorities/
+    source_title: 'Dr. Darlene Breaux for State Representative: Priorities (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#O-04
+    headline: Medicaid expansion
+    statement: 'Campaign website: "Push for Medicaid expansion and reforms"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://darlenebreaux.com/priorities/
+    source_title: 'Dr. Darlene Breaux for State Representative: Priorities (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#O-05
+    headline: Property tax circuit breaker; senior homestead exemption
+    statement: 'Campaign website: "Expand the homestead exemption for seniors, people with disabilities, and fixed-income households ... Advocate for a property tax circuit breaker targeting relief to households with high tax bills relative to income"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://darlenebreaux.com/priorities/
+    source_title: 'Dr. Darlene Breaux for State Representative: Priorities (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#O-06
+    headline: Fentanyl test strips; straw gun purchases
+    statement: 'Campaign website: "Legalize fentanyl test strips statewide and regulate straw firearms sales"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://darlenebreaux.com/priorities/
+    source_title: 'Dr. Darlene Breaux for State Representative: Priorities (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

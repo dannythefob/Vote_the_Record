@@ -1,13 +1,133 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: jon-bonck
 name: JON BONCK
 incumbent: false
 ballot_party: Republican Party
+summary:
+- id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/jon-bonck#B-01
+  headline: Mortgage and real estate professional (per his campaign)
+  statement: 'Campaign website: "Jon Bonck is a Christian, husband, father, and mortgage leader from Greater Houston"'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.jonbonck.com/
+  source_title: Jon Bonck for Congress (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/jon-bonck#O-01
+    headline: Border wall
+    statement: 'Campaign website: "Finish the wall. End the invasion. Put Texas first."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.jonbonck.com/
+    source_title: Jon Bonck for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/jon-bonck#O-02
+    headline: Abortion
+    statement: 'Campaign website: "Life begins at conception. No compromise."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.jonbonck.com/
+    source_title: Jon Bonck for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/jon-bonck#O-03
+    headline: 'Schools: curriculum and gender'
+    statement: 'Campaign website: "No woke curriculum. No gender ideology. Parents first."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.jonbonck.com/
+    source_title: Jon Bonck for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/jon-bonck#O-04
+    headline: Foreign spending
+    statement: 'Campaign website: "No more blank checks for foreign wars. Put America first."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.jonbonck.com/
+    source_title: Jon Bonck for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/jon-bonck#O-05
+    headline: Vaccine mandates
+    statement: 'Campaign website: "No mandates. No coercion. No mRNA vaccines"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.jonbonck.com/
+    source_title: Jon Bonck for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/jon-bonck#O-06
+    headline: Cut housing red tape
+    statement: 'Campaign website: "When in Washington, Jon will work to reform these outdated policies and eliminate red tape to help Americans thrive and achieve the American dream."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.jonbonck.com/
+    source_title: Jon Bonck for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

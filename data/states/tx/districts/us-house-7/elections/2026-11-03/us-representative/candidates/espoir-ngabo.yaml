@@ -1,14 +1,133 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: espoir-ngabo
 name: ESPOIR NGABO
 incumbent: false
 ballot_party: Green Party
-research: pending
+summary:
+- id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/espoir-ngabo#B-01
+  headline: IT analyst (per his campaign)
+  statement: 'Campaign website: "Now serving as a Regional IT Analyst at BrandSafway"'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.espoirfortexas.com/about
+  source_title: 'Espoir for Texas: About Espoir (campaign website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/espoir-ngabo#O-01
+    headline: Single-payer health care
+    statement: 'Campaign website: "We must stop treating health as a profit center and guarantee free, universal, single-payer care, so no Houstonian goes bankrupt staying alive."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.espoirfortexas.com/
+    source_title: Espoir for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/espoir-ngabo#O-02
+    headline: $25 minimum wage
+    statement: 'Campaign website: "Raise the wage to meet the cost of living and tie it to inflation!"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.espoirfortexas.com/
+    source_title: Espoir for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/espoir-ngabo#O-03
+    headline: Flood mitigation
+    statement: 'Campaign website: "We must improve drainage systems, restore the bayous and invest in green infrastructure to help protect neighborhoods before disasters strike."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.espoirfortexas.com/
+    source_title: Espoir for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/espoir-ngabo#O-04
+    headline: Federal support for public transit
+    statement: 'Campaign website: "Reliable public transit will reduce congestion, shorten commutes, and connect working families to jobs across greater Houston."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.espoirfortexas.com/
+    source_title: Espoir for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/espoir-ngabo#O-05
+    headline: Public matching funds for small donations
+    statement: 'Campaign website: "We need to level the playing-field by matching small-dollar donations with public funds."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.espoirfortexas.com/
+    source_title: Espoir for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/espoir-ngabo#O-06
+    headline: Ranked choice voting
+    statement: 'Campaign website: "We should rank candidates in order of preferences instead of just choosing one."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.espoirfortexas.com/
+    source_title: Espoir for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

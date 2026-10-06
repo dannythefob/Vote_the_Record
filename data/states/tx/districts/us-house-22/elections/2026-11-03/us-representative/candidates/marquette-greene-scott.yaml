@@ -1,13 +1,133 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: marquette-greene-scott
 name: MARQUETTE GREENE-SCOTT
 incumbent: false
 ballot_party: Democratic Party
+summary:
+- id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/marquette-greene-scott#B-01
+  headline: Iowa Colony council member; attorney; former math teacher (per her campaign)
+  statement: 'Campaign website: "currently Mayor Pro Tem of the City of Iowa Colony, Texas, holding Position 3 on the city council."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://marquettegreenescott.com/bio/
+  source_title: 'Marquette Greene-Scott for Congress: Bio (campaign website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/marquette-greene-scott#O-01
+    headline: VA funding
+    statement: 'Campaign website: "Congress must ensure adequate funding for the VA to fulfill its promises to our veterans."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://marquettegreenescott.com/marquette-position-provocative-issues-facts/
+    source_title: 'Marquette Greene-Scott for Congress: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/marquette-greene-scott#O-02
+    headline: Pathway to citizenship for people brought here as children
+    statement: 'Campaign website: "It’s crucial that we provide them with a pathway to citizenship and acknowledge their significant contributions to our society."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://marquettegreenescott.com/marquette-position-provocative-issues-facts/
+    source_title: 'Marquette Greene-Scott for Congress: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/marquette-greene-scott#O-03
+    headline: Universal health care
+    statement: 'Campaign website: "Now is the time to pass universal healthcare."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://marquettegreenescott.com/marquette-position-provocative-issues-facts/
+    source_title: 'Marquette Greene-Scott for Congress: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/marquette-greene-scott#O-04
+    headline: Independent redistricting commissions
+    statement: 'Campaign website: "ending partisan gerrymandering by instituting independent redistricting commissions"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://marquettegreenescott.com/marquette-position-provocative-issues-facts/
+    source_title: 'Marquette Greene-Scott for Congress: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/marquette-greene-scott#O-05
+    headline: John Lewis Voting Rights Advancement Act
+    statement: 'Campaign website: "Finally, Congress needs to pass the John Lewis Voter’s Rights Advancement Act."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://marquettegreenescott.com/marquette-position-provocative-issues-facts/
+    source_title: 'Marquette Greene-Scott for Congress: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/marquette-greene-scott#O-06
+    headline: Federal abortion protections
+    statement: 'Campaign website: "At the national level, it’s crucial to support federal legislation that establishes new, nationwide legal protections to restore the right to abortion."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://marquettegreenescott.com/marquette-position-provocative-issues-facts/
+    source_title: 'Marquette Greene-Scott for Congress: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

@@ -1,13 +1,150 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: melissa-mcdonough
 name: MELISSA MCDONOUGH
 incumbent: false
 ballot_party: Democratic Party
+summary:
+- id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/melissa-mcdonough#B-01
+  headline: Real estate broker (per her campaign)
+  statement: 'Campaign website: "She has almost 30 years of experience as a REALTOR© and 20 years of real estate brokerage owner/manager experience with over 45 agents."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://melissaforcongress.com/about-melissa/
+  source_title: 'Melissa for Congress: About Melissa (campaign website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/melissa-mcdonough#O-01
+    headline: Medicaid expansion
+    statement: 'Campaign website: "We should expand Medicaid and make Texas a state where getting sick won’t ruin your life."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://melissaforcongress.com/platform/
+    source_title: 'Melissa for Congress: Platform (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/melissa-mcdonough#O-02
+    headline: Safe gun storage (Ethan's Law)
+    statement: 'Campaign website: "Melissa supports Ethan’s Law, which promotes the secure storage of firearms to help prevent children and teens from accessing unsecured guns."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://melissaforcongress.com/platform/
+    source_title: 'Melissa for Congress: Platform (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/melissa-mcdonough#O-03
+    headline: Easier mail voting; countywide voting
+    statement: 'Campaign website: "We need to make mail-in voting easier, continue to allow county-wide voting, have more accessible polling locations, and keep polling locations safe and fully stocked with the resources they need."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://melissaforcongress.com/platform/
+    source_title: 'Melissa for Congress: Platform (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/melissa-mcdonough#O-04
+    headline: Abortion
+    statement: 'Campaign website: "Women deserve the right to bodily autonomy, and their healthcare decisions should be made privately with a physician."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://melissaforcongress.com/platform/
+    source_title: 'Melissa for Congress: Platform (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/melissa-mcdonough#O-05
+    headline: Immigration processing over barriers
+    statement: 'Campaign website: "Instead of wasting taxpayer money on ineffective barriers, we should be streamlining the immigration process."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://melissaforcongress.com/platform/
+    source_title: 'Melissa for Congress: Platform (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/melissa-mcdonough#O-06
+    headline: Ukraine aid
+    statement: 'Campaign website: "We should continue to support Ukraine with our old military equipment while avoiding a scenario that would require “boots on the ground.”"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://melissaforcongress.com/platform/
+    source_title: 'Melissa for Congress: Platform (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/melissa-mcdonough#O-07
+    headline: Renewable energy alongside fossil fuels
+    statement: 'Campaign website: "Using renewables in conjunction with fossil fuels will help keep our grid from failing while mitigating negative environmental impacts."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://melissaforcongress.com/platform/
+    source_title: 'Melissa for Congress: Platform (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

@@ -1,13 +1,116 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: jessica-hart-steinmann
 name: JESSICA HART STEINMANN
 incumbent: false
 ballot_party: Republican Party
+summary:
+- id: tx/districts/us-house-8/elections/2026-11-03/us-representative/candidates/jessica-hart-steinmann#B-01
+  headline: Former U.S. Justice Department official; lawyer (per her campaign)
+  statement: 'Campaign website: "She served in President Trump’s Department of Justice, where she led efforts to combat human trafficking and support crime victims as the Director for the Office of Victims of Crime."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.jessicasteinmann.com/about
+  source_title: 'Jessica Steinmann: About (campaign website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-8/elections/2026-11-03/us-representative/candidates/jessica-hart-steinmann#O-01
+    headline: Border wall and ending catch-and-release
+    statement: 'Campaign website: "I will fight to finish President Trump’s wall, end catch-and-release, and restore law and order at our southern border."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.jessicasteinmann.com/issues
+    source_title: 'Jessica Steinmann: On the Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-8/elections/2026-11-03/us-representative/candidates/jessica-hart-steinmann#O-02
+    headline: Expand energy production
+    statement: 'Campaign website: "Now, we must end crippling restrictions and unleash American energy to make America the dominant energy producer in the world and protect our national security."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.jessicasteinmann.com/issues
+    source_title: 'Jessica Steinmann: On the Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-8/elections/2026-11-03/us-representative/candidates/jessica-hart-steinmann#O-03
+    headline: Parental rights
+    statement: 'Campaign website: "I will continue to fight for parents — not the government — overseeing the upbringing of their children."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.jessicasteinmann.com/issues
+    source_title: 'Jessica Steinmann: On the Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-8/elections/2026-11-03/us-representative/candidates/jessica-hart-steinmann#O-04
+    headline: Fewer rules on artificial intelligence
+    statement: 'Campaign website: "To win that race, we need to cut the burdensome regulations that slow innovation and unleash pro-energy policies that power our economy and our tech sector."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.jessicasteinmann.com/issues
+    source_title: 'Jessica Steinmann: On the Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-8/elections/2026-11-03/us-representative/candidates/jessica-hart-steinmann#O-05
+    headline: Digital assets and blockchain
+    statement: 'Campaign website: "She is a strong supporter of digital assets, blockchain technology, and financial innovation that expands economic freedom."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.jessicasteinmann.com/issues
+    source_title: 'Jessica Steinmann: On the Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

@@ -1,13 +1,48 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: leticia-gutierrez
 name: LETICIA GUTIERREZ
 incumbent: false
 ballot_party: Democratic Party
+summary:
+- id: tx/districts/us-house-9/elections/2026-11-03/us-representative/candidates/leticia-gutierrez#B-01
+  headline: Finance graduate of the University of St. Thomas (per her campaign)
+  statement: 'Campaign website: "Leticia graduated from Milby High School and earned a degree in finance from the University of St. Thomas."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.leticiaforcongress.com/about
+  source_title: 'Leticia for Congress: Leticia''s Story (campaign website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-9/elections/2026-11-03/us-representative/candidates/leticia-gutierrez#O-01
+    headline: Storm-ready infrastructure
+    statement: 'Campaign website: "From Hurricane Harvey, Winter Storm Uri (where 250 persons lost their lives) to the Derecho, I want to ensure that our infrastructure is prepared to take care of you."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.leticiaforcongress.com/priorities
+    source_title: 'Leticia for Congress: My Priorities (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

@@ -1,14 +1,133 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: rhonda-hart
 name: RHONDA HART
 incumbent: false
 ballot_party: Democratic Party
-research: pending
+summary:
+- id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#B-01
+  headline: Army veteran; gun-storage law advocate (per her campaign)
+  statement: 'Campaign website: "I am Rhonda Hart, a Texas mom and disabled military veteran."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://hart4congress.com/
+  source_title: Rhonda Hart for Congress (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#O-01
+    headline: Oppose school vouchers; more public school funding
+    statement: 'Campaign website: "I oppose it completely. We should be investing more in public education, not less — paying teachers what they deserve, and the bus drivers, custodians, cafeteria workers, and every support staff member who makes those schools run."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://hart4congress.com/
+    source_title: Rhonda Hart for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#O-02
+    headline: Renewable energy
+    statement: 'Campaign website: "We need to protect our natural resources and invest seriously in renewable energy — solar and wind in particular."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://hart4congress.com/
+    source_title: Rhonda Hart for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#O-03
+    headline: Oppose the SAVE Act
+    statement: 'Campaign website: "I will not support the SAVE Act. Period."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://hart4congress.com/
+    source_title: Rhonda Hart for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#O-04
+    headline: Reverse the transgender troop ban
+    statement: 'Campaign website: "The ban on transgender troops must be reversed."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://hart4congress.com/
+    source_title: Rhonda Hart for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#O-05
+    headline: End tariffs; raise the minimum wage; tax billionaires
+    statement: 'Campaign website: "End the chaotic, reckless tariffs. ... Raise the minimum wage. Tax billionaires."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://hart4congress.com/
+    source_title: Rhonda Hart for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#O-06
+    headline: Health care not tied to a job
+    statement: 'Campaign website: "Every American deserves healthcare that isn''t tied to a paycheck or a premium."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://hart4congress.com/
+    source_title: Rhonda Hart for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

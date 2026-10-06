@@ -1,8 +1,26 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: tom-butler
 name: TOM BUTLER
 incumbent: false
 ballot_party: Republican Party
+summary:
+- id: tx/districts/state-house-128/elections/2026-11-03/state-representative/candidates/tom-butler#B-01
+  headline: Credit union president; former state commission member (per his campaign)
+  statement: 'Campaign website: "Today, he is proud to serve as President of USI Federal Credit Union in La Porte. Public service has always been central to Tom’s life. He served eight years on the Texas Credit Union Commission, including as Chairman, and he spent the past 12 years as Vice Chair of the Texas Department of Licensing and Regulation."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://tombutler.org/meet-tom/
+  source_title: 'Tom Butler for State Representative: Meet Tom (campaign website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/districts/state-house-128/elections/2026-11-03/state-representative/candidates/tom-butler#M-01
@@ -24,7 +42,92 @@ funding:
   notes: Report ID 101061382, form COH, TEC report type SEMIJUL; filer ID 00089986 (Butler, Thomas (Mr.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by nickname, middle name, or initial, with office and district; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/state-house-128/elections/2026-11-03/state-representative/candidates/tom-butler#O-01
+    headline: Cut property taxes; limit appraisals
+    statement: 'Campaign website: "I will work to cut property taxes (not just slow their growth), rein in runaway appraisals, and push for lasting reforms that let Texans keep more of what they earn and truly own their property."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://tombutler.org/
+    source_title: Tom Butler for State Representative (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-128/elections/2026-11-03/state-representative/candidates/tom-butler#O-02
+    headline: Require ID to register to vote
+    statement: 'Campaign website: "I will fight to ensure that ID is required even to register to vote, something that should have been done a long time ago."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://tombutler.org/
+    source_title: Tom Butler for State Representative (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-128/elections/2026-11-03/state-representative/candidates/tom-butler#O-03
+    headline: Expand the state school choice program
+    statement: 'Campaign website: "I applaud the Legislature’s new school choice program, and I will champion expanding it so every child has access to the best education possible, whether that’s public, private, charter, or homeschool."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://tombutler.org/
+    source_title: Tom Butler for State Representative (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-128/elections/2026-11-03/state-representative/candidates/tom-butler#O-04
+    headline: Oppose bail policies that release dangerous offenders; statewide sex crimes unit
+    statement: 'Campaign website: "I will Back the Blue, crack down on violent criminals, and oppose reckless bail policies that put dangerous offenders back on the streets. ... I will lead on the creation of a statewide Sex Crimes Investigative Unit"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://tombutler.org/
+    source_title: Tom Butler for State Representative (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-128/elections/2026-11-03/state-representative/candidates/tom-butler#O-05
+    headline: Windstorm insurance (TWIA) costs
+    statement: 'Campaign website: "I will fight to keep coverage affordable, demand accountability and transparency from TWIA, and push for reforms that bring real competition and relief to Texas families."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://tombutler.org/
+    source_title: Tom Butler for State Representative (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

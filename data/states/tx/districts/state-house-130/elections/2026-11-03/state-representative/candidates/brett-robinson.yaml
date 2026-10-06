@@ -1,9 +1,26 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: brett-robinson
 name: BRETT ROBINSON
 incumbent: false
 ballot_party: Democratic Party
-research: pending
+summary:
+- id: tx/districts/state-house-130/elections/2026-11-03/state-representative/candidates/brett-robinson#B-01
+  headline: University of Houston public administration graduate (per his campaign)
+  statement: 'Campaign website: "A proud graduate from the University of Houston Masters of Public Administration program, Brett has been a Cypress resident for 16 years."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.brett4texas.com/
+  source_title: Brett4Texas (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/districts/state-house-130/elections/2026-11-03/state-representative/candidates/brett-robinson#M-01

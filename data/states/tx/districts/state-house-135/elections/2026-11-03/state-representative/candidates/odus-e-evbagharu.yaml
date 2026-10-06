@@ -1,8 +1,26 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: odus-e-evbagharu
 name: ODUS E. EVBAGHARU
 incumbent: false
 ballot_party: Democratic Party
+summary:
+- id: tx/districts/state-house-135/elections/2026-11-03/state-representative/candidates/odus-e-evbagharu#B-01
+  headline: Small business owner; University of Houston graduate (per his campaign)
+  statement: 'Campaign website: "As the son of immigrants, Odus grew up in the Cy-Fair community, attended Cy-Fair public schools, and graduated from the University of Houston. Today, he is also a small business owner."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.odusfortexas.com/
+  source_title: Odus for Texas (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/districts/state-house-135/elections/2026-11-03/state-representative/candidates/odus-e-evbagharu#M-01
@@ -24,7 +42,58 @@ funding:
   notes: Report ID 101059609, form COH, TEC report type SEMIJUL; filer ID 00085290 (Evbagharu, Odus E. (Mr.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/state-house-135/elections/2026-11-03/state-representative/candidates/odus-e-evbagharu#O-01
+    headline: Expand Medicaid
+    statement: 'Campaign website: "I’ll fight to expand Medicaid, bringing billions in federal dollars back home, lowering costs for everyone, and giving over one million uninsured Texans access to healthcare."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://odusfortexas.com/issue/healthcare-is-a-right/
+    source_title: 'Odus for Texas: Healthcare is a Right (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-135/elections/2026-11-03/state-representative/candidates/odus-e-evbagharu#O-02
+    headline: Fully fund public schools
+    statement: 'Campaign website: "I’ll fight to fully fund our schools, ensuring every student has access to technology, mentors, and pathways to careers — whether college, trade school, or apprenticeships."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://odusfortexas.com/issue/empower-every-child-support-every-educator/
+    source_title: 'Odus for Texas: Empower Every Child and Parent, Support Every Educator (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-135/elections/2026-11-03/state-representative/candidates/odus-e-evbagharu#O-03
+    headline: Affordable housing, transit, energy efficiency
+    statement: 'Campaign website: "By expanding affordable housing, investing in public transit, and reducing utility bills through energy efficiency, we can ensure families stay and thrive in the neighborhoods they call home."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://odusfortexas.com/issue/lowering-costs-for-texans/
+    source_title: 'Odus for Texas: Lowering Costs for Texans (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

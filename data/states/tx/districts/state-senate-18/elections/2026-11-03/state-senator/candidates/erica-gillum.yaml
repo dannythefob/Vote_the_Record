@@ -1,9 +1,26 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: erica-gillum
 name: ERICA GILLUM
 incumbent: false
 ballot_party: Democratic Party
-research: pending
+summary:
+- id: tx/districts/state-senate-18/elections/2026-11-03/state-senator/candidates/erica-gillum#B-01
+  headline: Former Hempstead mayor and council member (per her campaign)
+  statement: 'Campaign website: "His example inspired me to serve my own community, first on the Hempstead City Council from 2020 to 2022, and then as Mayor from 2022 to 2024."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.gillumfortexas.com/
+  source_title: Gillum for Texas (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/districts/state-senate-18/elections/2026-11-03/state-senator/candidates/erica-gillum#M-01
@@ -25,7 +42,41 @@ funding:
   notes: Report ID 101061492, form COH, TEC report type SEMIJUL; filer ID 00089913 (Gillum, Erica (Ms.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/state-senate-18/elections/2026-11-03/state-senator/candidates/erica-gillum#O-01
+    headline: Fully fund schools; teacher pay
+    statement: 'Campaign website: "I will fight to fully fund neighborhood schools, ensure teachers are paid what they deserve, and expand programs that prepare every child for success."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.gillumfortexas.com/
+    source_title: Gillum for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-senate-18/elections/2026-11-03/state-senator/candidates/erica-gillum#O-02
+    headline: Rural water and roads
+    statement: 'Campaign website: "I will ensure adequate water supplies, reliable roads, and strong rural services, protecting farmers’ livelihoods and supporting families who depend on prosperous crops to feed their communities and sustain their futures."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.gillumfortexas.com/
+    source_title: Gillum for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []
