@@ -1,0 +1,36 @@
+# Unverified; written by an AI assistant from official records and the laws cited. Owner review required.
+office_type: state-senator
+state: TX
+decisions:
+- id: tx/decisions/state-senator#2025-education-savings-accounts
+  title: Texas creates education savings accounts (SB 2, 2025)
+  status: decided
+  date: '2025-02-05'
+  decided_by: Texas Legislature
+  what_happened: Lawmakers passed Senate Bill 2, creating an education savings account program. The Senate passed it 19-12
+    on February 5, 2025.
+  how_it_affects_you: State lawmakers, not local school boards, decide whether public money can follow students to private
+    school and other education costs.
+  powers:
+  - P-LAWS
+  facts:
+  - tx/districts/state-senate-18/elections/2026-11-03/state-senator/candidates/lois-w-kolkhorst#R-01
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/decisions/state-senator#2025-bail-rules
+  title: New bail rules (SB 9, 2025)
+  status: decided
+  date: '2025-02-19'
+  decided_by: Texas Legislature
+  what_happened: Lawmakers passed Senate Bill 9, changing how bail is set and reviewed and regulating charitable bail groups.
+    The Senate passed it 27-3 on February 19, 2025.
+  how_it_affects_you: State lawmakers write the bail rules that judges must follow when deciding who stays in jail before
+    trial.
+  powers:
+  - P-LAWS
+  facts:
+  - tx/districts/state-senate-18/elections/2026-11-03/state-senator/candidates/lois-w-kolkhorst#R-02
+  verification: unverified
+  verified_on: null
+  reviewer: null

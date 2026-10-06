@@ -1,0 +1,15 @@
+# Fictional demo data for the "Who decides?" guide. Never deploy.
+state: TX
+issues:
+  - id: tx/who-decides#demo-potholes
+    question: Who fixes the potholes on my county road?
+    short_answer: In this demo, county commissioners decide which county roads get fixed.
+    deciders:
+      - office_types: [county-commissioner]
+        role: Decide which county roads get fixed and pay for it.
+        statute: Demo Code 1.01
+        source_url: https://example.org/demo-law
+    decisions: [tx/decisions/county-commissioner#demo-budget-cut]
+    verification: unverified
+    verified_on: null
+    reviewer: null

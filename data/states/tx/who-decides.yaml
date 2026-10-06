@@ -1,0 +1,271 @@
+# Unverified; written by an AI assistant from official records and the laws cited. Owner review required.
+state: TX
+issues:
+- id: tx/who-decides#sanctuary-cities
+  question: Can my city or county be a "sanctuary city" for immigrants?
+  short_answer: No. A 2017 Texas law (Senate Bill 4) bans cities, counties, and their police, sheriffs, and prosecutors from
+    adopting or enforcing policies that limit immigration enforcement. Local jails must generally honor federal immigration
+    detainer requests. State lawmakers wrote that law. Congress writes the federal immigration laws themselves.
+  deciders:
+  - office_types: &id001
+    - state-representative
+    - state-senator
+    role: Wrote the state law that bans local "sanctuary" policies, and can change it.
+    statute: Government Code §§ 752.053, 752.056, 752.0565
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.752.htm
+  - office_types:
+    - city-council-member
+    - county-commissioner
+    - county-attorney
+    role: Must follow the state law that bans sanctuary policies. A city or county that breaks it can be fined, and an official
+      can be removed from office.
+    statute: Government Code §§ 752.051, 752.053, 752.056, 752.0565
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.752.htm
+  - office_types:
+    - attorney-general
+    role: Can take a city or county to court after a resident files a complaint, and must seek removal of an official when
+      there is evidence the law was broken.
+    statute: Government Code §§ 752.055, 752.0565
+    source_url: https://statutes.capitol.texas.gov/Docs/GV/htm/GV.752.htm
+  - office_types: &id002
+    - us-representative
+    - us-senator
+    role: Write the federal immigration laws, such as the Immigration and Nationality Act.
+    statute: 8 U.S.C. chapter 12
+    source_url: https://uscode.house.gov/view.xhtml?path=/prelim@title8/chapter12&edition=prelim
+  sources:
+  - title: Code of Criminal Procedure art. 2A.060 (immigration detainer requests)
+    url: https://statutes.capitol.texas.gov/Docs/CR/htm/CR.2A.htm
+  decisions:
+  - tx/decisions/us-representative#2025-laken-riley-act
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/who-decides#abortion
+  question: Who decides abortion laws in Texas?
+  short_answer: State lawmakers. In 2022 the U.S. Supreme Court ruled that the authority to regulate abortion is returned
+    to the people and their elected representatives, so each state sets its own laws. Texas law bans abortion unless a licensed
+    doctor acts because the pregnant patient has a life-threatening physical condition caused or made worse by the pregnancy.
+  deciders:
+  - office_types: *id001
+    role: Write and can change Texas's abortion laws.
+    statute: Health and Safety Code chapter 170A
+    source_url: https://statutes.capitol.texas.gov/Docs/HS/htm/HS.170A.htm
+  sources:
+  - title: Dobbs v. Jackson Women's Health Organization (U.S. Supreme Court, 2022)
+    url: https://www.supremecourt.gov/opinions/21pdf/19-1392_6j37.pdf
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/who-decides#school-vouchers
+  question: Who decides whether public money can pay for private school?
+  short_answer: State lawmakers. In 2025 they created an education savings account program that pays for approved education
+    expenses, run by the state comptroller. Local school boards don't decide this.
+  deciders:
+  - office_types: *id001
+    role: Created the program by law and decide its rules and how much money goes into it.
+    statute: Education Code §§ 29.351-29.353
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.29.htm
+  decisions:
+  - tx/decisions/state-representative#2025-education-savings-accounts
+  - tx/decisions/state-senator#2025-education-savings-accounts
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/who-decides#property-taxes
+  question: Who decides how much property tax I pay?
+  short_answer: Several offices share it. Every local government that taxes your property, like your city, county, and school
+    district, sets its own rate each year. An appraisal district values your property. State lawmakers set tax breaks like
+    the homestead exemption.
+  deciders:
+  - office_types:
+    - city-council-member
+    - county-commissioner
+    - school-trustee
+    - community-college-trustee
+    - water-district-director
+    role: Each board sets its own tax rate every year.
+    statute: Tax Code § 26.05
+    source_url: https://statutes.capitol.texas.gov/Docs/TX/htm/TX.26.htm
+  - office_types:
+    - appraisal-district-director
+    role: In counties with 75,000 or more people, three directors of the appraisal district board are elected by voters. The
+      district appraises property values.
+    statute: Tax Code § 6.0301
+    source_url: https://statutes.capitol.texas.gov/Docs/TX/htm/TX.6.htm
+  - office_types: *id001
+    role: Set homestead exemptions, like the $140,000 exemption from school taxes.
+    statute: Tax Code § 11.13
+    source_url: https://statutes.capitol.texas.gov/Docs/TX/htm/TX.11.htm
+  decisions:
+  - tx/decisions/city-council-member#austin-2025-tax-election
+  - tx/decisions/school-trustee#alief-2026-tax-rate
+  - tx/decisions/county-commissioner#harris-2025-hospital-flood-rates
+  - tx/decisions/state-representative#2025-homestead-exemption
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/who-decides#guns
+  question: Who decides gun laws?
+  short_answer: State lawmakers and Congress. Texas law forbids cities from making their own gun rules.
+  deciders:
+  - office_types: *id001
+    role: Write Texas gun laws, including the law that stops cities from regulating guns.
+    statute: Local Government Code § 229.001
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.229.htm
+  - office_types: *id002
+    role: Write federal gun laws.
+    statute: 18 U.S.C. chapter 44
+    source_url: https://uscode.house.gov/view.xhtml?path=/prelim@title18/part1/chapter44&edition=prelim
+  - office_types:
+    - city-council-member
+    role: Can't regulate owning, carrying, or selling guns. City gun rules like that are void under state law.
+    statute: Local Government Code § 229.001
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.229.htm
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/who-decides#minimum-wage
+  question: Who decides the minimum wage?
+  short_answer: Congress sets the federal minimum wage, and Texas law uses that same amount. Cities and counties can't set
+    a higher minimum wage for private businesses.
+  deciders:
+  - office_types: *id002
+    role: Set the federal minimum wage.
+    statute: 29 U.S.C. § 206
+    source_url: https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title29-section206&num=0&edition=prelim
+  - office_types: *id001
+    role: Tied the Texas minimum wage to the federal one and blocked local minimum wages for private businesses. Can change
+      that.
+    statute: Labor Code §§ 62.051, 62.0515
+    source_url: https://statutes.capitol.texas.gov/Docs/LA/htm/LA.62.htm
+  - office_types:
+    - city-council-member
+    - county-commissioner
+    role: Can't set a higher minimum wage for private businesses, but can require one in their own contracts.
+    statute: Labor Code § 62.0515
+    source_url: https://statutes.capitol.texas.gov/Docs/LA/htm/LA.62.htm
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/who-decides#bail
+  question: Who decides who stays in jail before trial?
+  short_answer: State lawmakers write the bail rules. Judges and magistrates, including justices of the peace, set bail in
+    each case by following those rules.
+  deciders:
+  - office_types: *id001
+    role: Write the bail rules.
+    statute: Code of Criminal Procedure chapter 17
+    source_url: https://statutes.capitol.texas.gov/Docs/CR/htm/CR.17.htm
+  - office_types:
+    - district-judge
+    - county-criminal-court-judge
+    - justice-of-the-peace
+    role: Set the amount and conditions of bail for people who are arrested.
+    statute: Code of Criminal Procedure arts. 2A.151, 17.15
+    source_url: https://statutes.capitol.texas.gov/Docs/CR/htm/CR.17.htm
+  decisions:
+  - tx/decisions/state-representative#2025-bail-rules
+  - tx/decisions/state-senator#2025-bail-rules
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/who-decides#what-schools-teach
+  question: Who decides what my kids learn and which books are in school libraries?
+  short_answer: The State Board of Education decides what every public school student must learn. Your local school board
+    makes the library rules for your district. State lawmakers write the education laws both boards follow.
+  deciders:
+  - office_types:
+    - sboe-member
+    role: Decide what students must learn in each subject, statewide.
+    statute: Education Code § 28.002(c)
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.28.htm
+  - office_types:
+    - school-trustee
+    role: Adopt the district's policy for adding library books, handle challenges to books, and may create a library advisory
+      council.
+    statute: Education Code §§ 33.025-33.027
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.33.htm
+  - office_types: *id001
+    role: Write the education laws, including school library standards.
+    statute: Education Code § 33.021
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.33.htm
+  decisions:
+  - tx/decisions/sboe-member#2026-required-reading
+  - tx/decisions/sboe-member#2026-grade-8-social-studies
+  - tx/decisions/school-trustee#alief-2025-library-council
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/who-decides#school-closures
+  question: Who decides if my neighborhood school closes?
+  short_answer: Your local school board. It governs and oversees the district's schools.
+  deciders:
+  - office_types:
+    - school-trustee
+    role: Govern the district's schools, including whether they close or merge.
+    statute: Education Code § 11.151(b)
+    source_url: https://statutes.capitol.texas.gov/Docs/ED/htm/ED.11.htm
+  decisions:
+  - tx/decisions/school-trustee#austin-isd-2025-closures
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/who-decides#medicaid
+  question: Who decides whether more people get Medicaid health coverage?
+  short_answer: The U.S. Supreme Court ruled in 2012 that each state has a genuine choice whether to take part in the Medicaid
+    expansion. In Texas, state lawmakers write the laws and the budget. Congress writes Medicaid law and decides what the
+    federal government pays.
+  deciders:
+  - office_types: *id001
+    role: Write state law and the state budget.
+    statute: Texas Constitution art. III
+    source_url: https://statutes.capitol.texas.gov/Docs/CN/htm/CN.3.htm
+  - office_types: *id002
+    role: Write federal Medicaid law, including what share the federal government pays.
+    statute: 42 U.S.C. § 1396d
+    source_url: https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section1396d&num=0&edition=prelim
+  sources:
+  - title: National Federation of Independent Business v. Sebelius, 567 U.S. 519 (2012)
+    url: https://tile.loc.gov/storage-services/service/ll/usrep/usrep567/usrep567519/usrep567519.pdf
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/who-decides#polling-places
+  question: Who decides where I vote?
+  short_answer: For November elections, the county clerk recommends a polling place for each precinct, and Commissioners Court
+    approves it. In counties with more than 175,000 people, no voter may be sent more than 25 miles from home.
+  deciders:
+  - office_types:
+    - county-clerk
+    role: Recommend the polling place for each precinct.
+    statute: Election Code § 43.002
+    source_url: https://statutes.capitol.texas.gov/Docs/EL/htm/EL.43.htm
+  - office_types:
+    - county-commissioner
+    role: Designate the polling places, unless there's good cause to reject the clerk's choice.
+    statute: Election Code § 43.002
+    source_url: https://statutes.capitol.texas.gov/Docs/EL/htm/EL.43.htm
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/who-decides#police-technology
+  question: Who decides whether police use tools like gunshot detectors or cameras?
+  short_answer: For city police, your city council, through contracts and the city budget. For the county, Commissioners Court
+    approves county contracts and the budget.
+  deciders:
+  - office_types:
+    - city-council-member
+    role: Adopt the city budget that pays for police equipment and contracts.
+    statute: Local Government Code § 102.007
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.102.htm
+  - office_types:
+    - county-commissioner
+    role: Approve county purchases and contracts and adopt the county budget.
+    statute: Local Government Code §§ 262.023, 111.039
+    source_url: https://statutes.capitol.texas.gov/Docs/LG/htm/LG.262.htm
+  decisions:
+  - tx/decisions/city-council-member#houston-shotspotter
+  verification: unverified
+  verified_on: null
+  reviewer: null

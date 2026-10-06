@@ -1,0 +1,23 @@
+# Unverified; written by an AI assistant from official records and the laws cited. Owner review required.
+office_type: county-commissioner
+state: TX
+decisions:
+- id: tx/decisions/county-commissioner#harris-2025-hospital-flood-rates
+  title: Harris County's proposed 2025 tax rates for its public hospital district and flood control
+  status: decided
+  date: '2025-09-10'
+  decided_by: Harris County Commissioners Court
+  locality: harris-county
+  what_happened: 'Commissioners Court also runs the Harris Health hospital district and the Flood Control District. In September
+    2025 it proposed 2025 tax rates at the highest level allowed without an election: $0.18761 per $100 for Harris Health
+    (3-2) and $0.04966 per $100 for flood control (5-0).'
+  how_it_affects_you: County commissioners decide how much you pay in property taxes for things like the county's public hospital
+    system and flood protection.
+  powers:
+  - P-TAX-RATE
+  facts:
+  - tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-4/candidates/lesley-briones#R-02
+  - tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2/candidates/adrian-garcia#R-01
+  verification: unverified
+  verified_on: null
+  reviewer: null

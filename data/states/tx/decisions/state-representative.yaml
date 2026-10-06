@@ -1,0 +1,53 @@
+# Unverified; written by an AI assistant from official records and the laws cited. Owner review required.
+office_type: state-representative
+state: TX
+decisions:
+- id: tx/decisions/state-representative#2025-education-savings-accounts
+  title: Texas creates education savings accounts (SB 2, 2025)
+  status: decided
+  date: '2025-04-17'
+  decided_by: Texas Legislature
+  what_happened: Lawmakers passed Senate Bill 2, creating an education savings account program. The House passed it 86-61
+    on April 17, 2025.
+  how_it_affects_you: State lawmakers, not local school boards, decide whether public money can follow students to private
+    school and other education costs.
+  powers:
+  - P-LAWS
+  facts:
+  - tx/districts/state-house-108/elections/2026-11-03/state-representative/candidates/morgan-meyer#R-01
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/decisions/state-representative#2025-bail-rules
+  title: New bail rules (SB 9, 2025)
+  status: decided
+  date: '2025-05-20'
+  decided_by: Texas Legislature
+  what_happened: Lawmakers passed Senate Bill 9, changing how bail is set and reviewed and regulating charitable bail groups.
+    The House passed it 118-25 on May 20, 2025.
+  how_it_affects_you: State lawmakers write the bail rules that judges must follow when deciding who stays in jail before
+    trial.
+  powers:
+  - P-LAWS
+  facts:
+  - tx/districts/state-house-103/elections/2026-11-03/state-representative/candidates/rafael-anchia#R-06
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/decisions/state-representative#2025-homestead-exemption
+  title: A bigger school-tax break for homeowners (SB 4, 2025)
+  status: decided
+  date: '2025-05-21'
+  decided_by: Texas Legislature
+  what_happened: Lawmakers passed Senate Bill 4, increasing the homestead exemption from school property taxes. The House
+    passed it 143-0.
+  how_it_affects_you: State lawmakers decide how much of your home's value is exempt from school taxes, which lowers your
+    tax bill.
+  powers:
+  - P-LAWS
+  - P-BUDGET
+  facts:
+  - tx/districts/state-house-108/elections/2026-11-03/state-representative/candidates/morgan-meyer#R-04
+  verification: unverified
+  verified_on: null
+  reviewer: null

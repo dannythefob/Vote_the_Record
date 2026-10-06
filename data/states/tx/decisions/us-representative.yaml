@@ -1,0 +1,48 @@
+# Unverified; written by an AI assistant from official records and the laws cited. Owner review required.
+office_type: us-representative
+state: TX
+decisions:
+- id: tx/decisions/us-representative#2025-one-big-beautiful-bill
+  title: The One Big Beautiful Bill Act (H.R. 1), 2025
+  status: decided
+  date: '2025-07-03'
+  decided_by: U.S. House of Representatives
+  what_happened: The House gave final approval to H.R. 1, the One Big Beautiful Bill Act, 218-214 on July 3, 2025.
+  how_it_affects_you: Your U.S. representative votes on federal taxes and spending, which can change what you pay and what
+    programs get.
+  powers:
+  - P-TAX-SPEND
+  facts:
+  - tx/districts/us-house-11/elections/2026-11-03/us-representative/candidates/august-pfluger#R-06
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/decisions/us-representative#2025-rescissions
+  title: Cancelling money Congress already approved (H.R. 4), 2025
+  status: decided
+  date: '2025-06-12'
+  decided_by: U.S. House of Representatives
+  what_happened: The House passed the Rescissions Act of 2025 (H.R. 4), 214-212 on June 12, 2025.
+  how_it_affects_you: Congress decides federal spending, including taking back money it approved earlier (a rescission).
+  powers:
+  - P-TAX-SPEND
+  facts:
+  - tx/districts/us-house-11/elections/2026-11-03/us-representative/candidates/august-pfluger#R-05
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/decisions/us-representative#2025-laken-riley-act
+  title: The Laken Riley Act (S. 5), 2025
+  status: decided
+  date: '2025-01-22'
+  decided_by: U.S. House of Representatives
+  what_happened: The House passed the Laken Riley Act (S. 5), 263-156 on January 22, 2025.
+  how_it_affects_you: Your U.S. representative votes on federal laws, including immigration laws. Every bill has to pass the
+    House.
+  powers:
+  - P-LAWS
+  facts:
+  - tx/districts/us-house-11/elections/2026-11-03/us-representative/candidates/august-pfluger#R-01
+  verification: unverified
+  verified_on: null
+  reviewer: null

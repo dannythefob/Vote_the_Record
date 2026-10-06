@@ -25,6 +25,14 @@ official_links:
     - name: Important election dates (Texas Secretary of State)
       url: https://www.sos.state.tx.us/elections/voter/important-election-dates.shtml
 
+# "Check your voter registration" button under Key dates on the home page, by state: the state's
+# official lookup. Texas: the Secretary of State's "Am I Registered?" portal, as linked from
+# https://www.votetexas.gov/register-to-vote/ (checked 2026-10-06).
+registration_check:
+  TX:
+    name: the Texas Secretary of State's "Am I Registered?" lookup
+    url: https://goelect.txelections.civixapps.com/ivis-mvp-ui/#/login
+
 # Where candidates file campaign finance reports, shown on every race page.
 # Federal offices file with the FEC. For a state, `state` covers state-level offices plus any
 # office_types listed under state_office_types; `localities` names the filing office for listed

@@ -1,0 +1,47 @@
+# Unverified; written by an AI assistant from official records and the laws cited. Owner review required.
+office_type: city-council-member
+state: TX
+decisions:
+- id: tx/decisions/city-council-member#austin-2025-tax-election
+  title: Austin's 2025 vote on a bigger property tax increase (Proposition Q)
+  status: decided
+  date: '2025-11-20'
+  decided_by: Austin City Council
+  locality: city-of-austin
+  what_happened: 'In August 2025 the council voted 11-0 to ask voters for a city tax rate of $0.574017 per $100 of property
+    value, 5 cents above the highest rate it could set without an election, to pay for things like housing and homelessness,
+    parks, public health, and public safety. On November 4, 2025, voters said no: 62,952 for and 109,375 against. On November
+    20 the council voted 11-0 to cut the budget to match and set a lower rate of $0.524017.'
+  how_it_affects_you: Your city council sets your city property tax rate and decides what the money pays for. Here the council's
+    plan needed voters' approval, and voters turned it down.
+  powers:
+  - P-TAX-RATE
+  - P-BUDGET
+  facts:
+  - tx/localities/city-of-austin/elections/2026-11-03/council-district-3/candidates/jose-velasquez#R-02
+  - tx/localities/city-of-austin/actions/2025-11-17#F-001
+  - tx/localities/city-of-austin/actions/2025-11-20#F-001
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/decisions/city-council-member#houston-shotspotter
+  title: Houston's gunshot-detection (ShotSpotter) contract
+  status: decided
+  date: '2024-06-11'
+  decided_by: Houston City Council
+  locality: city-of-houston
+  what_happened: In January 2022 the council approved a 5-year contract with ShotSpotter, Inc. for gunshot detection, up to
+    $3.5 million. In 2023 it added $2.8 million to the contract. In the June 2024 budget it adopted an amendment to pay for
+    an extra police cadet class, with the money to come first from cancelling the ShotSpotter contract.
+  how_it_affects_you: Your city council can start or stop police technology like gunshot detectors, through contracts and
+    the city budget.
+  powers:
+  - P-BUDGET
+  - P-ORDINANCES
+  facts:
+  - tx/localities/city-of-houston/actions/2022-01-05#F-001
+  - tx/localities/city-of-houston/actions/2023-01-31#F-001
+  - tx/localities/city-of-houston/actions/2024-06-11#F-001
+  verification: unverified
+  verified_on: null
+  reviewer: null
