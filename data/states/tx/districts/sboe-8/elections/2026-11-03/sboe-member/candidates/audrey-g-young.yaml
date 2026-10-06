@@ -1,9 +1,104 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: audrey-g-young
 name: AUDREY G. YOUNG
 incumbent: true
 ballot_party: Republican Party
-records: []
+records:
+- id: tx/districts/sboe-8/elections/2026-11-03/sboe-member/candidates/audrey-g-young#R-01
+  record_type: vote
+  headline: Voted for a proposed rule on parental rights training for school board members, first reading (Jan. 2026)
+  result: Adopted 8-4.
+  statement: As a State Board of Education member, voted for the recommendation to "Approve for first reading and filing authorization proposed new 19 TAC Chapter 61, School Districts, Subchapter A, Board of Trustees Relationship, §61.4, Parental Rights Training for School Board Members." The roll call lists Francis, Pickren, Young, Ellis, Maynard, Hall, Little, and Kinsey in favor and Reveles, Perez-Diaz, Clark, and Brooks opposed.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://sboe.texas.gov/state-board-of-education/sboe-meetings/january2026-sboe-minutes.pdf
+  source_title: 'Texas State Board of Education: Minutes, January 30, 2026 (page 13)'
+  source_kind: document
+  sha256: 02fbe42b90520acaa124441faa86a5ab2ab2d6deeb2035c3869008145edffc7e
+  archive_url: null
+  event_date: '2026-01-30'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Official minutes published by the Texas Education Agency for the State Board of Education. Not yet archived on the Wayback Machine.
+- id: tx/districts/sboe-8/elections/2026-11-03/sboe-member/candidates/audrey-g-young#R-02
+  record_type: vote
+  headline: Abstained on adopting a substitute parental rights training curriculum (April 2026)
+  result: Adopted 7-5.
+  statement: As a State Board of Education member, abstained on Member Hickman's substitute for the parental rights training curriculum, replacing the training pack in the Board book with "the training pack received yesterday." The roll call lists Perez-Diaz, Childs, Bell-Metereau, Hickman, Little, Clark, and Brooks in favor; Francis, Pickren, Ellis, Maynard, and Hall opposed; and Young abstaining.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://sboe.texas.gov/state-board-of-education/sboe-meetings/april-2026-sboe-minutes.pdf
+  source_title: 'Texas State Board of Education: Minutes, April 2026 (page 14)'
+  source_kind: document
+  sha256: 4083d7387da7af1681298a2bdef5d36fa6ab759ef7d66bae40c35dc5df435816
+  archive_url: null
+  event_date: '2026-04-10'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Official minutes published by the Texas Education Agency for the State Board of Education. Not yet archived on the Wayback Machine.
+- id: tx/districts/sboe-8/elections/2026-11-03/sboe-member/candidates/audrey-g-young#R-03
+  record_type: vote
+  headline: Voted for the state's new required literary works lists for English and Spanish language arts (June 2026)
+  result: Adopted 9-5-1 (one absent).
+  statement: As a State Board of Education member, voted for the recommendation, as amended, adopting new literary works lists in the Texas Essential Knowledge and Skills for English Language Arts and Reading (Kindergarten-Grade 5, Grades 6-8, and High School) and for Spanish Language Arts and Reading and English as a Second Language. The roll call lists Francis, Hickman, Pickren, Young, Ellis, Maynard, Little, Hall, and Kinsey for and Reveles, Perez-Diaz, Childs, Clark, and Brooks against.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://sboe.texas.gov/state-board-of-education/sboe-meetings/2026-06-26-sboe-mins.pdf
+  source_title: 'Texas State Board of Education: Minutes, June 26, 2026 (page 7)'
+  source_kind: document
+  sha256: e2c8c3b3efde3fa7ca4d5f421304a58cd106dcdbca2d5170acfb71761a5ef8d0
+  archive_url: null
+  event_date: '2026-06-26'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Official minutes published by the Texas Education Agency for the State Board of Education. Not yet archived on the Wayback Machine.
+- id: tx/districts/sboe-8/elections/2026-11-03/sboe-member/candidates/audrey-g-young#R-04
+  record_type: vote
+  headline: Voted for new Grade 8 social studies standards (June 2026)
+  result: Adopted 9-5.
+  statement: As a State Board of Education member, voted for the recommendation, as amended, on proposed 19 TAC Chapter 113, Texas Essential Knowledge and Skills for Social Studies, §113.23, Social Studies, Grade 8, Adopted 2026. The roll call lists Francis, Hickman, Pickren, Young, Ellis, Maynard, Little, Hall, and Kinsey for and Reveles, Perez-Diaz, Childs, Bell-Metereau, and Clark against.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://sboe.texas.gov/state-board-of-education/sboe-meetings/2026-06-26-sboe-mins.pdf
+  source_title: 'Texas State Board of Education: Minutes, June 26, 2026 (page 9)'
+  source_kind: document
+  sha256: e2c8c3b3efde3fa7ca4d5f421304a58cd106dcdbca2d5170acfb71761a5ef8d0
+  archive_url: null
+  event_date: '2026-06-26'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Official minutes published by the Texas Education Agency for the State Board of Education. Not yet archived on the Wayback Machine.
+- id: tx/districts/sboe-8/elections/2026-11-03/sboe-member/candidates/audrey-g-young#R-05
+  record_type: vote
+  headline: Voted for letting a new charter school proposal go forward without objection (June 2026)
+  result: Adopted 9-5-1.
+  statement: As a State Board of Education member, voted for the motion, as amended, to "Review and take no action on the commissioner's proposed Generation 31 Subchapter D Open-Enrollment Charter School, Texas High School for Accelerated Learning, scheduled to open in the 2027–2028 school year." The roll call lists Francis, Childs, Hickman, Pickren, Young, Ellis, Maynard, Hall, and Kinsey for, Reveles, Perez-Diaz, Bell-Metereau, Clark, and Brooks against, and Little abstaining.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://sboe.texas.gov/state-board-of-education/sboe-meetings/2026-06-26-sboe-mins.pdf
+  source_title: 'Texas State Board of Education: Minutes, June 26, 2026 (pages 11-12)'
+  source_kind: document
+  sha256: e2c8c3b3efde3fa7ca4d5f421304a58cd106dcdbca2d5170acfb71761a5ef8d0
+  archive_url: null
+  event_date: '2026-06-26'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Official minutes published by the Texas Education Agency for the State Board of Education. Not yet archived on the Wayback Machine.
 funding:
 - id: tx/districts/sboe-8/elections/2026-11-03/sboe-member/candidates/audrey-g-young#M-01
   headline: Raised $8,050 and had $20,087 on hand (Feb 22 - Jun 30, 2026)

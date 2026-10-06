@@ -1,14 +1,64 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: claire-reynolds
 name: Claire Reynolds
 incumbent: false
 ballot_party: Democratic Party
-research: pending
 records: []
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-11/elections/2026-11-03/us-representative/candidates/claire-reynolds#O-01
+    headline: Health insurance not tied to jobs
+    statement: 'Campaign website: "A single-payer health insurance system may seem out of reach, but Medicare and the VA do just that for millions and millions of Texans."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.clairereynoldsforcongress.org/
+    source_title: Claire Reynolds for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-11/elections/2026-11-03/us-representative/candidates/claire-reynolds#O-02
+    headline: Border security and immigration reform
+    statement: 'Campaign website: "We can have a strong border while reforming our draconian and unwieldy immigration system."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.clairereynoldsforcongress.org/
+    source_title: Claire Reynolds for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-11/elections/2026-11-03/us-representative/candidates/claire-reynolds#O-03
+    headline: Abortion
+    statement: 'Campaign website: "Abortion in Texas should be safe, legal, and rare."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.clairereynoldsforcongress.org/
+    source_title: Claire Reynolds for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

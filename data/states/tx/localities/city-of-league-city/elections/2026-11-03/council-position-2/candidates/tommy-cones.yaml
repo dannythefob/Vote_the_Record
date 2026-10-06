@@ -1,9 +1,47 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: tommy-cones
 name: Tommy Cones
 incumbent: true
 ballot_party: null
-records: []
+records:
+- id: tx/localities/city-of-league-city/elections/2026-11-03/council-position-2/candidates/tommy-cones#R-01
+  record_type: vote
+  headline: Voted against on adopting the city's 2025-26 budget, first reading (Aug. 2025)
+  result: Passed 7-1 on first reading.
+  statement: As a League City council member, voted against on the motion to approve Ordinance No. 2025-31 "adopting the Annual Budget for Governmental and Proprietary Funds for Fiscal Year 2026 on First Reading." The minutes list Council Member Cones as the only vote opposed.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://legistar1.granicus.com/LeagueCity/meetings/2025/8/2181_M_City_Council_25-08-26_Meeting_Minutes.pdf
+  source_title: 'League City City Council: Minutes, August 26, 2025 (page 5, Item 7B)'
+  source_kind: document
+  sha256: 848e6cdc7d5d79aafddd939642054ba17543d902ce0f527a4778d6ad9101c766
+  archive_url: null
+  event_date: '2025-08-26'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Official minutes posted on the city's Legistar site (https://leaguecity.legistar.com/). Not yet archived on the Wayback Machine.
+- id: tx/localities/city-of-league-city/elections/2026-11-03/council-position-2/candidates/tommy-cones#R-02
+  record_type: vote
+  headline: Voted for issuing 2026 general obligation bonds and certificates of obligation (Aug. 2026)
+  result: Both passed 7-1 on first and final reading.
+  statement: As a League City council member, voted for Ordinance No. 2026-29 (Combination Tax and Revenue Certificates of Obligation, Series 2026) and Ordinance No. 2026-30 (General Obligation Improvement Bonds, Series 2026), each "levying an ad valorem tax in payment thereof." The minutes list Council Member Crews as the only vote opposed on first and final reading.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://legistar1.granicus.com/LeagueCity/meetings/2026/8/2222_M_City_Council_26-08-25_Meeting_Minutes.pdf
+  source_title: 'League City City Council: Minutes, August 25, 2026 (page 7, Items 10A-10B)'
+  source_kind: document
+  sha256: 54069612342d1c610e195b7d4ee620a32831c8fd432b4797c494934a49d5e27c
+  archive_url: null
+  event_date: '2026-08-25'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Official minutes posted on the city's Legistar site (https://leaguecity.legistar.com/). Not yet archived on the Wayback Machine.
 funding: []
 endorsements: []
 running_on:

@@ -1,9 +1,28 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: james-franco
 name: James Franco
 incumbent: true
 ballot_party: null
-records: []
+records:
+- id: tx/localities/city-of-baytown/elections/2026-11-03/council-district-4/candidates/james-franco#R-01
+  record_type: vote
+  headline: Voted for proposing a 2026 city tax rate of $0.69803, above the no-new-revenue rate (2026)
+  result: Proposed with all seven members voting for it.
+  statement: As a Baytown City Council member, voted FOR the proposal of a 2026 tax rate of $0.69803 per $100 valuation. The city's notice says the proposed rate "is greater than the no-new-revenue tax rate," meaning the city "is proposing to increase property taxes for the 2026 tax year," and is not greater than the voter-approval rate. The notice lists the mayor and all six council members voting for the proposal, with no votes against.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://baytown.org/1329/Notice-of-Meeting-to-Vote-on-Tax-Rate
+  source_title: 'City of Baytown: Notice of Meeting to Vote on Tax Rate (2026)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-09-10'
+  retrieved: '2026-10-05'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The notice is required by Tax Code § 26.06 and lists how each member voted on the proposal; it announces a public meeting to vote on the rate on September 10, 2026, and does not give the date of the proposal vote. Read from the rendered page on 2026-10-05. Not yet archived on the Wayback Machine.
 funding: []
 endorsements: []
 running_on:

@@ -2,7 +2,6 @@
 name: District Clerk
 office_type: district-clerk
 election_date: '2026-11-03'
-detail: basic
 sources:
 - id: tx/localities/harris-county/elections/2026-11-03/district-clerk/race#S-01
   headline: Candidates as printed on the Harris County sample ballot

@@ -1,4 +1,4 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: marc-cowart
 name: MARC COWART
 incumbent: false
@@ -7,7 +7,24 @@ records: []
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/harris-county/elections/2026-11-03/county-treasurer/candidates/marc-cowart#O-01
+    headline: Integrity, transparency, and accountability in the Treasurer's office
+    statement: 'Campaign website: "A proven leader with Harris County roots, Marc Cowart is running to restore integrity, transparency and accountability to the office of Harris County Treasurer."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.marccowart.com/
+    source_title: Marc Cowart for Harris County Treasurer (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

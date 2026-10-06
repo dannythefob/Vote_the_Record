@@ -1,9 +1,28 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: jean-mayer
 name: Jean Mayer
 incumbent: true
 ballot_party: null
-records: []
+records:
+- id: tx/localities/pflugerville-isd/elections/2026-11-03/trustee-place-6/candidates/jean-mayer#R-01
+  record_type: vote
+  headline: Voted yes on a 2026 school tax rate of $1.1069 per $100 (Aug. 2026)
+  result: Carried 7-0 in a roll call vote.
+  statement: As a Pflugerville ISD trustee, voted yes on Item 5, "an Ordinance to set the proposed 2026 Pflugerville ISD tax rate, as presented." The minutes say the proposed rate was "$1.1069 per $100 of taxable value, composed of $0.7869 for Maintenance & Operations (M&O) and $0.3200 for Interest & Sinking (debt service)," and that certified taxable values came in about 2% lower than last year, "resulting in a maintained tax rate." The roll call lists Trustees Lorigo-Johst, Daniel, Torres, Okafor, Mitchell, Yañez, and Mayer voting in favor.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://meetings.boardbook.org/Documents/DownloadPDF/14445265?org=Pflugerville
+  source_title: 'Pflugerville ISD Board of Trustees: Minutes, Regular Meeting, August 20, 2026 (page 87)'
+  source_kind: document
+  sha256: 5936eb1a9d380bd4e8f9095f2967de87ab10c48810ac09319819328f4e1add93
+  archive_url: null
+  event_date: '2026-08-20'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Official minutes posted on the district's BoardBook page (https://meetings.boardbook.org/Public/Minutes/Pflugerville?meeting=756898). The PDF is a scan with no text layer; the wording was read from the page image. Not yet archived on the Wayback Machine.
 funding: []
 endorsements: []
 running_on:

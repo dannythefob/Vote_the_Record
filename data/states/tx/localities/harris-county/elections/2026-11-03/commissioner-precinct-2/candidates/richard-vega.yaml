@@ -1,4 +1,4 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: richard-vega
 name: RICHARD VEGA
 incumbent: false
@@ -7,7 +7,41 @@ records: []
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2/candidates/richard-vega#O-01
+    headline: Support law enforcement
+    statement: 'Campaign website: "Support law enforcement and put safer communities first."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.richardvega.us/
+    source_title: Richard Vega for Harris County Commissioner Precinct 2 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2/candidates/richard-vega#O-02
+    headline: Less waste, more transparency
+    statement: 'Campaign website: "Less waste, more transparency, and stronger public trust."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.richardvega.us/
+    source_title: Richard Vega for Harris County Commissioner Precinct 2 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

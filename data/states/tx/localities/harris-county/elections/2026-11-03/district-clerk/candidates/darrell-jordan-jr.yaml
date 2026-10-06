@@ -1,8 +1,26 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: darrell-jordan-jr
 name: DARRELL JORDAN, JR
 incumbent: false
 ballot_party: Democratic Party
+summary:
+- id: tx/localities/harris-county/elections/2026-11-03/district-clerk/candidates/darrell-jordan-jr#B-01
+  headline: Army veteran, attorney, former Harris County judge (per his campaign)
+  statement: 'His campaign website says: "From growing up in a working-class family to serving in the U.S. Army for more than 24 years, practicing law for nearly two decades, and serving eight years on the bench as a Harris County judge, Darrell has always believed that public service is about people, not politics."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.darrelljordanjr.com/
+  source_title: Darrell Jordan Jr. for Harris County District Clerk (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding: []
 endorsements: []

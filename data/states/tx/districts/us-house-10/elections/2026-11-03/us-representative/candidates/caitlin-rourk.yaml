@@ -1,4 +1,4 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: caitlin-rourk
 name: Caitlin Rourk
 incumbent: false
@@ -7,7 +7,24 @@ records: []
 funding: []
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-10/elections/2026-11-03/us-representative/candidates/caitlin-rourk#O-01
+    headline: Answer to the district, not donors or insiders
+    statement: 'Campaign website: "In Congress, I’ll go to work every day for the communities I represent - not political insiders, not party bosses, and not wealthy donors."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.caitlinrourk.com/
+    source_title: Caitlin Rourk for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []
