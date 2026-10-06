@@ -21,7 +21,45 @@ summary:
   verified_on: null
   reviewer: null
   notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
-records: []
+records:
+- id: tx/districts/state-senate-18/elections/2026-11-03/state-senator/candidates/erica-gillum#R-01
+  record_type: vote
+  headline: Voted yes on a 2021 city tax rate of $0.560905 per $100 (Sept. 2021)
+  result: Passed 5-0.
+  statement: As a Hempstead City Council member, voted aye on the motion "that the property tax be increased by the adoption of a tax rate of $0.560905, which is effectively an 11.35 percent increase in the tax rate." The rate combined $0.532328 for maintenance and operations and $0.028577 for debt service, each adopted by separate 5-0 votes. The minutes list Mayor Pro-Tem Garfield and Councilmembers Gillum, Pearce, Villarreal, and Murray voting aye.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.hempsteadcitytx.gov/council_member_images/Agendas/Minutes/CC%20Minutes%2009-20-21.pdf
+  source_title: 'City of Hempstead: City Council Minutes, Regular Session, September 20, 2021 (page 2)'
+  source_kind: document
+  sha256: 7d0728e5cff793ff5844b7db28e36b45d6d9ab932b4b9f69dbeac1a6ba3b04f5
+  archive_url: null
+  event_date: '2021-09-20'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Official minutes posted on the City of Hempstead's Agendas & Minutes page (https://www.hempsteadcitytx.gov/city_government/mayor_and_council/council_meeting_agendas.php). Not yet archived on the Wayback Machine.
+- id: tx/districts/state-senate-18/elections/2026-11-03/state-senator/candidates/erica-gillum#R-02
+  record_type: vote
+  headline: Voted yes on the city's 2021-22 budget (Sept. 2021)
+  result: Passed 5-0.
+  statement: As a Hempstead City Council member, voted aye on "an Ordinance adopting the General Budget for the City of Hempstead for the year 2021-2022," after a public hearing at which, the minutes say, no public comments were made. The minutes list Mayor Pro-Tem Garfield and Councilmembers Gillum, Pearce, Villarreal, and Murray voting aye.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.hempsteadcitytx.gov/council_member_images/Agendas/Minutes/CC%20Meeting%20Minutes%2009-15-21.pdf
+  source_title: 'City of Hempstead: City Council Minutes, Special Session, September 15, 2021 (page 2)'
+  source_kind: document
+  sha256: 1c6e9784216ef81dedd5bc0fed20df618e7ef29b88a3e6015c608ef43627c42a
+  archive_url: null
+  event_date: '2021-09-15'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Official minutes posted on the City of Hempstead's Agendas & Minutes page (https://www.hempsteadcitytx.gov/city_government/mayor_and_council/council_meeting_agendas.php). Not yet archived on the Wayback Machine.
 funding:
 - id: tx/districts/state-senate-18/elections/2026-11-03/state-senator/candidates/erica-gillum#M-01
   headline: Raised $4,676 and had $625 on hand (Jan 1 - Jun 30, 2026)

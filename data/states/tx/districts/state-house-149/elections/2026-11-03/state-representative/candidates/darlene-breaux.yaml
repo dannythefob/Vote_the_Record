@@ -21,7 +21,102 @@ summary:
   verified_on: null
   reviewer: null
   notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
-records: []
+records:
+- id: tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#R-01
+  record_type: vote
+  headline: Voted yes on a 2026 school tax rate of $1.0204 per $100 (Aug. 2026)
+  result: Passed 6-0.
+  statement: 'As an Alief ISD trustee and board president, voted yes on Item 11.4, the "Resolution Setting and Levying School District Ad Valorem Taxes for the Alief Independent School District for the Year 2026." The resolution sets a total rate of $1.0204 per $100 of valuation: $0.7954 for maintenance and operations and $0.2250 for debt payments. The minutes list Trustees Breaux, Spurlock, Truong, Williams, Patrick, and Perez voting for, none against, and Trustee Moreno absent.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://meetings.boardbook.org/Documents/DownloadPDF/14285448?org=770
+  source_title: 'Alief ISD Board of Trustees: Minutes, Regular Board Meeting, August 18, 2026 (page 9)'
+  source_kind: document
+  sha256: aeb07f84debd7a1ffe6af2aa8791ea5599aba81f9a2a0af58bf3b2db4e298c78
+  archive_url: null
+  event_date: '2026-08-18'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Official minutes posted on the district''s BoardBook page (agenda: https://meetings.boardbook.org/Public/Agenda/770?meeting=750577). The PDF is a scan with no text layer; the wording was read from the page image. The rates are from the tax-rate resolution attached to the same agenda item (https://meetings.boardbook.org/Documents/DownloadPDF/2869385?org=770). Not yet archived on the Wayback Machine.'
+- id: tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#R-02
+  record_type: vote
+  headline: Voted yes on the 2026-27 district budget (Aug. 2026)
+  result: Passed 6-0.
+  statement: As an Alief ISD trustee and board president, voted yes on Item 11.3, "Consider Approval of the 2026-2027 Fiscal Year Budget," after a public hearing. The minutes list Trustees Breaux, Spurlock, Truong, Williams, Patrick, and Perez voting for, none against, and Trustee Moreno absent.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://meetings.boardbook.org/Documents/DownloadPDF/14285448?org=770
+  source_title: 'Alief ISD Board of Trustees: Minutes, Regular Board Meeting, August 18, 2026 (page 8)'
+  source_kind: document
+  sha256: aeb07f84debd7a1ffe6af2aa8791ea5599aba81f9a2a0af58bf3b2db4e298c78
+  archive_url: null
+  event_date: '2026-08-18'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Official minutes posted on the district''s BoardBook page (agenda: https://meetings.boardbook.org/Public/Agenda/770?meeting=750577). The PDF is a scan with no text layer; the wording was read from the page image. Not yet archived on the Wayback Machine.'
+- id: tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#R-03
+  record_type: vote
+  headline: Voted yes on a 2025 school tax rate of $1.0072 per $100 (Aug. 2025)
+  result: Passed 6-0.
+  statement: 'As an Alief ISD trustee and board president, voted yes on Item 11.3, "a Resolution Setting and Levying School District Ad Valorem Taxes for the Alief Independent School District for the Year 2025." The resolution sets a total rate of $1.0072 per $100 of valuation: $0.8022 for maintenance and operations and $0.2050 for debt payments. The minutes list Breaux, Key, Moreno, Truong, Spurlock, and Williams voting for and none against.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://meetings.boardbook.org/Documents/DownloadPDF/2875363?org=770
+  source_title: 'Alief ISD Board of Trustees: Minutes, Regular Board Meeting, August 26, 2025 (page 9)'
+  source_kind: document
+  sha256: 8962610b36bd786d092e29603fe83fbb053924fe598d6cd05351756b75020c2f
+  archive_url: null
+  event_date: '2025-08-26'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Official minutes posted on the district''s BoardBook page (agenda: https://meetings.boardbook.org/Public/Agenda/770?meeting=702148). The PDF is a scan with no text layer; the wording was read from the page image. The rates are from the tax-rate resolution attached to the same agenda item (https://meetings.boardbook.org/Documents/DownloadPDF/2869371?org=770). Not yet archived on the Wayback Machine.'
+- id: tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#R-04
+  record_type: vote
+  headline: Voted yes on the 2025-26 district budget (Aug. 2025)
+  result: Passed 6-0.
+  statement: As an Alief ISD trustee and board president, voted yes on Item 11.2, "Consider Adoption of the 2025-2026 Fiscal Year Budget," after a public hearing. The minutes list Breaux, Key, Moreno, Truong, Spurlock, and Williams voting for and none against.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://meetings.boardbook.org/Documents/DownloadPDF/2875363?org=770
+  source_title: 'Alief ISD Board of Trustees: Minutes, Regular Board Meeting, August 26, 2025 (page 9)'
+  source_kind: document
+  sha256: 8962610b36bd786d092e29603fe83fbb053924fe598d6cd05351756b75020c2f
+  archive_url: null
+  event_date: '2025-08-26'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Official minutes posted on the district''s BoardBook page (agenda: https://meetings.boardbook.org/Public/Agenda/770?meeting=702148). The PDF is a scan with no text layer; the wording was read from the page image. Not yet archived on the Wayback Machine.'
+- id: tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#R-05
+  record_type: vote
+  headline: Voted yes on creating a school library advisory council (Aug. 2025)
+  result: Passed 5-0.
+  statement: As an Alief ISD trustee and board president, voted yes on Item 11.6, "Consider and Discuss Resolution establishing a Local School Library Advisory Council EFB (EXHIBIT)." The minutes list Breaux, Moreno, Truong, Spurlock, and Williams voting for and none against.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://meetings.boardbook.org/Documents/DownloadPDF/2875363?org=770
+  source_title: 'Alief ISD Board of Trustees: Minutes, Regular Board Meeting, August 26, 2025 (page 10)'
+  source_kind: document
+  sha256: 8962610b36bd786d092e29603fe83fbb053924fe598d6cd05351756b75020c2f
+  archive_url: null
+  event_date: '2025-08-26'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Official minutes posted on the district''s BoardBook page (agenda: https://meetings.boardbook.org/Public/Agenda/770?meeting=702148). The PDF is a scan with no text layer; the wording was read from the page image. Not yet archived on the Wayback Machine.'
 funding:
 - id: tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#M-01
   headline: Raised $20,848 and had $14,375 on hand (May 17 - Jun 30, 2026)
