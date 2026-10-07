@@ -54,6 +54,19 @@
     <p class="muted">Opens {{ reg.name }}, the state's official site. Look yourself up before Election Day so there are no surprises at the polls. We never see what you enter there.</p>
   </div>
   {% endif %}
+  {% if election.at_the_polls %}
+  <h3>When you go vote</h3>
+  <ul class="item-list">
+    {% for rule in election.at_the_polls %}
+    <li class="card item poll-rule">
+      <p class="item-main"><strong>{{ rule.heading }}</strong></p>
+      <p>{{ rule.text }}</p>
+      {% if rule.get('list') %}<ul class="poll-list">{% for x in rule.list %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
+      <p class="item-meta">{{ verification_badge(rule) }} · {{ source_line(rule) }} · {{ report_link(rule.id) }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
   <details class="more">
     <summary>Sources for these dates</summary>
     <ul class="item-list">

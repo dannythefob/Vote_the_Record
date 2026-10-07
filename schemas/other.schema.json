@@ -169,8 +169,41 @@
       "properties": {
         "state": { "type": "string", "pattern": "^[A-Z]{2}$" },
         "election_date": { "$ref": "urn:vtr:schema:fact#/$defs/date" },
-        "items": { "type": "array", "items": { "$ref": "#/$defs/essential" } }
+        "items": { "type": "array", "items": { "$ref": "#/$defs/essential" } },
+        "at_the_polls": {
+          "description": "Plain-language rules for voting in person (what to bring, what's allowed), each citing its source.",
+          "type": "array", "items": { "$ref": "#/$defs/poll_rule" }
+        }
       }
+    },
+    "poll_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id", "heading", "text", "source_url", "source_title", "source_kind", "sha256",
+        "archive_url", "retrieved", "verification", "verified_on", "reviewer"
+      ],
+      "properties": {
+        "id": { "$ref": "urn:vtr:schema:fact#/$defs/fact_id" },
+        "heading": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "text": { "description": "Plain language; must not say more than the source.", "type": "string", "minLength": 1 },
+        "list": { "description": "Optional bullet items, as listed by the source.", "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "source_url": { "$ref": "urn:vtr:schema:fact#/$defs/url" },
+        "source_title": { "type": "string", "minLength": 1 },
+        "source_kind": { "enum": ["document", "page"] },
+        "sha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+        "archive_url": { "anyOf": [{ "$ref": "urn:vtr:schema:fact#/$defs/url" }, { "type": "null" }] },
+        "retrieved": { "$ref": "urn:vtr:schema:fact#/$defs/date" },
+        "verification": { "enum": ["unverified", "verified"] },
+        "verified_on": { "anyOf": [{ "$ref": "urn:vtr:schema:fact#/$defs/date" }, { "type": "null" }] },
+        "reviewer": { "type": ["string", "null"] },
+        "notes": { "type": "string" }
+      },
+      "allOf": [
+        { "$ref": "urn:vtr:schema:fact#/$defs/verification_rules" },
+        { "if": { "properties": { "source_kind": { "const": "page" } } }, "then": { "properties": { "sha256": { "type": "null" } } } },
+        { "if": { "properties": { "verification": { "const": "verified" } } }, "then": { "properties": { "archive_url": { "type": "string" } } } }
+      ]
     },
     "essential": {
       "type": "object",

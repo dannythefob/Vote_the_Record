@@ -21,6 +21,10 @@ sources:
   verified_on: null
   reviewer: null
   notes: Candidate names are from the PDF's text layer. Proposition wording was transcribed from the pages rendered as images and checked against the text layer; it is kept exactly as printed, including the ballot's own typos, with the outer quotation marks left off and only the English choices listed. The ballot prints parties as REP, DEM, LIB, GRN, and IND ("Independent Party" in its legend).
+unmapped:
+- edwards-aquifer-authority/district-1
+- somerset-isd/district-3
+- somerset-isd/district-7
 contests:
 - tx/statewide/elections/2026-11-03/us-senate
 - tx/districts/us-house-20/elections/2026-11-03/us-representative
