@@ -4,7 +4,24 @@ name: JAMES S. HORWITZ
 incumbent: true
 ballot_party: Democratic Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/probate-court-4/candidates/james-s-horwitz#M-01
+  headline: Raised $27,945 and had $35,786 on hand (Jan 1, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1, 2026 - Jun 30, 2026, filed with the Harris County Clerk on Jul 10, 2026: $27,945.00 in total political contributions, and $35,785.59 in contributions on hand at the end of the period.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox%2BflJbEByh0W1UvdadKI8VR%2BG00hxcWIFLTVbAnpH8FZjFFIqWXa2D%2FFjBUa4cCC8amtWj9oTKQsPI1qfazhm877TvJ4J7JKE8dS%2F0JK0QuW
+  source_title: 'Harris County Clerk: campaign finance report, James S. Horwitz (file 2026324, filed Jul 10, 2026)'
+  source_kind: document
+  sha256: 690e930001771962d51754eaecca5d3772be6c247c9c34dbbdd52513d607069a
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026324, filed Jul 10, 2026, office listed as "County Probate Court 4". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Left out because handwriting or the ''Unofficial Copy'' watermark made it unclear: total expenditures, outstanding loans. Report type checked on the form: July 15. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

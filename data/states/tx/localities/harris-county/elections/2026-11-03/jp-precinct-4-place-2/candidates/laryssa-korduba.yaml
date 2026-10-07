@@ -4,7 +4,24 @@ name: LARYSSA KORDUBA
 incumbent: true
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/jp-precinct-4-place-2/candidates/laryssa-korduba#M-01
+  headline: Raised $10,225 and had $95,244 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Harris County Clerk on Oct 5, 2026: $10,224.69 in total political contributions, $36,092.47 in total political expenditures, $95,244.23 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox%2FT6NuI4ZU%2BXC5BxYo43wnV5q6ZMFlfyhJnr%2Ft3vsFQtzc7f7mMtWSSJ6keHxjjRWYfKfabvDbUV%2FuKCc54W2RFc7aCCWZqZtZ%2FrlHPiOZlG
+  source_title: 'Harris County Clerk: campaign finance report, Laryssa Korduba (file 2026541, filed Oct 5, 2026)'
+  source_kind: document
+  sha256: 9f3844c096ea85f1dd24e0c309d06756b37bceb7cd4936062ea86cdf1b6f3781
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026541, filed Oct 5, 2026, office listed as "Justice Of The Peace Pct. 4, Place 2". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

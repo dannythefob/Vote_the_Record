@@ -4,7 +4,24 @@ name: XAVIER ALFARO
 incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/county-criminal-court-9/candidates/xavier-alfaro#M-01
+  headline: Raised $500 and had $500 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Harris County Clerk on Oct 5, 2026: $500.00 in total political contributions, $2,078.23 in total political expenditures, and $500.00 in contributions on hand at the end of the period.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox22wr0xfIiq%2Fd%2FCB9XxKe1P3SKgpO8JPpFHxEhLOr0kHjT%2BMx4%2ByrhGIpW3tbOLie2IpnpYcrHpFhTGfSoNiDJOOJehO3%2BwF3wQKrcrCrIOv
+  source_title: 'Harris County Clerk: campaign finance report, Xavier Alfaro (file 2026508, filed Oct 5, 2026)'
+  source_kind: document
+  sha256: be960c89ee9f95a80fae758e095b7f8c2014cdf5c8d02a5fcc8304ac7b354ece
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026508, filed Oct 5, 2026, office listed as "County Criminal Court 9". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Left out because handwriting or the ''Unofficial Copy'' watermark made it unclear: outstanding loans. Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

@@ -22,7 +22,24 @@ summary:
   reviewer: null
   notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-4/candidates/steve-radack#M-01
+  headline: Raised $86,337 and had $482,650 on hand (Jan 1, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1, 2026 - Jun 30, 2026, filed with the Harris County Clerk on Jul 15, 2026: $86,337.00 in total political contributions, $24,717.45 in total political expenditures, $482,649.56 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox9rmR7bTgo%2BqhOwDvB51iF0HZaX%2BMkKGd4Ca7TkHmYYsU%2FR43W9r%2FG9kQB0mFEfI4SOJc9WiPrNJHmm5r0BH6cuZrUKSNapcAPjnCKdWRtDu
+  source_title: 'Harris County Clerk: campaign finance report, Steve Radack (file 2026397, filed Jul 15, 2026)'
+  source_kind: document
+  sha256: 54e17ae8edf3c70d8221e8db6c2fd1f315db5be2900561c66c4e4a697a15bdb7
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026397, filed Jul 15, 2026, office listed as "Commissioner Pct. 4". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: July 15. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

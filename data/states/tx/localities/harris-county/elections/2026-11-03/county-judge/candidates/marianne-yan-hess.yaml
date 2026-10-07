@@ -24,7 +24,24 @@ summary:
   reviewer: null
   notes: The Wayback Machine refused saves on 2026-09-30 (rate limit); archive_url must be added before this can be verified.
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/county-judge/candidates/marianne-yan-hess#M-01
+  headline: Had $0 on hand (Aug 12, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Aug 12, 2026 - Sep 24, 2026, filed with the Harris County Clerk on Oct 5, 2026: $0.00 in total political contributions, $0.00 in total political expenditures, $0.00 in contributions on hand at the end of the period, and $1,358.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox2In2cAuRSi1SAA8H%2FtwiRNEx%2FCIzwCfDK0avwOl4EPQMCpaDtiW90kcX8hAPm%2BWLBMhjTk0liSaPqkn2VqGfQZShz39ffn1wJuOrZqNKMdm
+  source_title: 'Harris County Clerk: campaign finance report, Marianne “Yan” Hess (file 2026537, filed Oct 5, 2026)'
+  source_kind: document
+  sha256: 5afe0d2eeca0f5df57146e0c2bd8b3e317187d4f36070f8e7a1d2562bdbec5f5
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026537, filed Oct 5, 2026, office listed as "County Judge". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

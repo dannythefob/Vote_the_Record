@@ -5,7 +5,24 @@ incumbent: false
 ballot_party: Republican Party
 research: pending
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/county-attorney/candidates/jacqueline-lucci-smith#M-01
+  headline: Raised $19,550 and had $25,045 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Harris County Clerk on Oct 5, 2026: $19,550.00 in total political contributions, $19,693.86 in total political expenditures, $25,044.63 in contributions on hand at the end of the period, and $10,000.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox3XTnW0X1dnrKJGo67wFLI3xsiW7zpggpLq3RAYZ63na09ucA0D4caqOFu5h1%2FPUPaEcpq6kk%2F%2Fpvd51B9Tfq3l21GXlQSKe2%2FrCxurQyXXX
+  source_title: 'Harris County Clerk: campaign finance report, Jacqueline Lucci Smith (file 2026543, filed Oct 5, 2026)'
+  source_kind: document
+  sha256: 70a8daa646f350d6b5d251b17d280623ffe66a3f315c19a9d71bd7f4dba83a68
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026543, filed Oct 5, 2026, office listed as "County Attorney". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

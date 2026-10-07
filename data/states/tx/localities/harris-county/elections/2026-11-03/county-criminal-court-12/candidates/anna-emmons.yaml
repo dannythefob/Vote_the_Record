@@ -4,7 +4,24 @@ name: ANNA EMMONS
 incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/county-criminal-court-12/candidates/anna-emmons#M-01
+  headline: Raised $3,661 and had $7,138 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Harris County Clerk on Oct 1, 2026: $3,661.36 in total political contributions, $8,375.33 in total political expenditures, $7,137.59 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox0lW7KmakE8xaKFMlGtYMGLHx29goRDXPYmVgyXixqdEuzgt75v6JEE17u%2FjxBQ9xJAecPd2xXv91Dq0ozjMKu1JNnvetsAJLM%2FET0e01YVC
+  source_title: 'Harris County Clerk: campaign finance report, Anna Emmons (file 2026499, filed Oct 1, 2026)'
+  source_kind: document
+  sha256: 2f199c9cc9cab9f22bb8198ef7776582cd5ac0783fa6a2771fb2839892c94649
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026499, filed Oct 1, 2026, office listed as "County Criminal Court 12". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

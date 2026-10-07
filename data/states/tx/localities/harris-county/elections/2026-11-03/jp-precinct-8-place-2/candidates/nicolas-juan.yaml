@@ -4,7 +4,24 @@ name: NICOLAS JUAN
 incumbent: false
 ballot_party: Democratic Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/jp-precinct-8-place-2/candidates/nicolas-juan#M-01
+  headline: Spent $840 (Jan 1, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1, 2026 - Jun 30, 2026, filed with the Harris County Clerk on Jul 15, 2026: $840.00 in total political expenditures.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox75wpzmBAWZkhzTFG%2BkaVo2qfay33ffn1jfG9cEba68tI%2Bkf8Xj9Un11zgTfqfz5yXMZbkJE6vVGL%2BtBGuJ%2FsZIIk2FSHFS7aAt24mOFsFLZ
+  source_title: 'Harris County Clerk: campaign finance report, Nicolas Juan (file 2026436, filed Jul 15, 2026)'
+  source_kind: document
+  sha256: 46f1b3200afe0eaf0e087989778ab70ab9d68d94e7eb18fdef6237dcf1c276bc
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026436, filed Jul 15, 2026, office listed as "Justice Of The Peace Pct. 8, Place 2". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Left out because cash on hand and loans left blank: total contributions, contributions on hand, outstanding loans. Report type checked on the form: July 15. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

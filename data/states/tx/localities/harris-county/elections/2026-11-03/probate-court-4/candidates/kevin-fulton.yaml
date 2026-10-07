@@ -4,7 +4,24 @@ name: KEVIN FULTON
 incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/probate-court-4/candidates/kevin-fulton#M-01
+  headline: Had $0 on hand (Jan 1, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1, 2026 - Jun 30, 2026, filed with the Harris County Clerk on Jul 15, 2026: $0.00 in total political contributions, $1,050.00 in total political expenditures, $0.00 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox1N%2Fy8CblNgfrqMG6jQIPaKyHBOEX%2BDM5CLpSW1F1YDJpvXcUbgU7FL%2F8iwHktfG%2FqmQd5sgqmOtUhOFqattaiPw6EvH6AJsJMtbrbEfys%2F1
+  source_title: 'Harris County Clerk: campaign finance report, Kevin Fulton (file 2026434, filed Jul 15, 2026)'
+  source_kind: document
+  sha256: 026fd0b811fc76b0fa82bdddf09b2799a84faa4e6488a89fb2d79f2e85b85702
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026434, filed Jul 15, 2026, office listed as "County Probate Court 4". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: July 15. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []
