@@ -4,7 +4,24 @@ name: MARK FURY
 incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/jp-precinct-5-place-2/candidates/mark-fury#M-01
+  headline: Raised $36,800 (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Harris County Clerk on Oct 5, 2026: $36,800.00 in total political contributions, and $36,574.09 in total political expenditures.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox2sAkZWQnsnDw1OX%2BFjLSUV0bPOIQC0afFG8LK%2B6AHBOgmheHpnYNeQ5ITadph15ODrPpcGhg4aKhoJbD0XR4nzzR4vAQqB4E8LwJPNRGY1d
+  source_title: 'Harris County Clerk: campaign finance report, Mark Fury (file 2026535, filed Oct 5, 2026)'
+  source_kind: document
+  sha256: 5436d2748ec4e76b6456af84498688437097e4bed96d49620e82c005efa30679
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026535, filed Oct 5, 2026, office listed as "Justice Of The Peace Pct. 5, Place 2". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Left out because cash on hand left blank: contributions on hand, outstanding loans. Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

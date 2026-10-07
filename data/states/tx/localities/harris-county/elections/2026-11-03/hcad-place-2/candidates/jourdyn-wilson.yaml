@@ -4,7 +4,24 @@ name: Jourdyn Wilson
 incumbent: false
 ballot_party: null
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/hcad-place-2/candidates/jourdyn-wilson#M-01
+  headline: Raised $685 and had $150 on hand (Jul 1, 2026 - Oct 1, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Oct 1, 2026, filed with the Harris County Clerk on Oct 5, 2026: $685.00 in total political contributions, $1,035.00 in total political expenditures, $150.00 in contributions on hand at the end of the period, and $500.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox9s9yP78UZQzKFzIEH70v29YgrCFv%2BTRSXAD04tm%2FPypEpgT0niiFwtaMh1nDhIeBiFiZTjs77%2BkaqS4TwVLEDPFpjaAWgMJMSlLBCbHyfI%2B
+  source_title: 'Harris County Clerk: campaign finance report, Jourdyn Wilson (file 2026514, filed Oct 5, 2026)'
+  source_kind: document
+  sha256: e4095780254fdb2b0abc2c3aba5b55db5f5005e34ba75e371e32a634be92a760
+  archive_url: null
+  event_date: '2026-10-01'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026514, filed Oct 5, 2026, office listed as "HCAD, At-Large, Place 2". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

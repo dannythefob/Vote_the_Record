@@ -4,7 +4,24 @@ name: RICHARD VEGA
 incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-2/candidates/richard-vega#M-01
+  headline: Raised $83,295 and had $59,242 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Harris County Clerk on Oct 5, 2026: $83,294.57 in total political contributions, $55,660.64 in total political expenditures, $59,242.28 in contributions on hand at the end of the period, and $2,000.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox9yDQerJW%2BtGat%2BWyzOtmomme7r8HhPLXKLETS9EpkpNFdf8z7DIwdfaQU7egXp3nvUelsLh66OirAK1msRkQYHQadtVb2pbUT6XuC3lsa%2BK
+  source_title: 'Harris County Clerk: campaign finance report, Richard Vega (file 2026539, filed Oct 5, 2026)'
+  source_kind: document
+  sha256: 0e486e7b51e01b5be66c0cc0f603b2d146e0177b15bb0f85cb910cbe3e07542b
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026539, filed Oct 5, 2026, office listed as "Commissioner Pct. 2". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals:

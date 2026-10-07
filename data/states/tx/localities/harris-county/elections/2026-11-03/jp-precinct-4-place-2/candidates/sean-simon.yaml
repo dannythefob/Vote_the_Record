@@ -4,7 +4,24 @@ name: SEAN SIMON
 incumbent: false
 ballot_party: Democratic Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/jp-precinct-4-place-2/candidates/sean-simon#M-01
+  headline: Had $1,191 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Harris County Clerk on Oct 6, 2026: $1,190.99 in contributions on hand at the end of the period.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6SqmckoxxVLZzV50fmZyeWapQf07%2BXDx0U5SaOzfT1aw7Gq73y%2FZIU0cnJOwCT3lQj%2FNlDHkjpOhuiULylXLkO8sJBqJfGaaQUJ1wusmjF%2F7bXaCK%2Ff
+  source_title: 'Harris County Clerk: campaign finance report, Sean Simon (file 2026549, filed Oct 6, 2026)'
+  source_kind: document
+  sha256: b5e41e910336500866f100e4ed96f76edb3783a0322a165908031a568408b22a
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026549, filed Oct 6, 2026, office listed as "Justice Of The Peace Pct. 4, Place 2". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Left out because handwriting or the ''Unofficial Copy'' watermark made it unclear: total contributions, total expenditures, outstanding loans. Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

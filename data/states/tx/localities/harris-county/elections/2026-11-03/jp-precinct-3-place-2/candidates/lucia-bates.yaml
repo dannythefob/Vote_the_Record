@@ -4,7 +4,24 @@ name: LUCIA BATES
 incumbent: true
 ballot_party: Democratic Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/jp-precinct-3-place-2/candidates/lucia-bates#M-01
+  headline: Had $21,142 on hand (Jan 1, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1, 2026 - Jun 30, 2026, filed with the Harris County Clerk on Jul 10, 2026: $2,786.51 in total political expenditures, $21,141.80 in contributions on hand at the end of the period, and $16,175.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox%2FlnYGHvmrCew9BnbfNPNaZjVEGMm%2Bk7CBQo4Eo8PIAHuiWYEhUs2yS%2FMq4LKYLX7GXPUI25hIUtU6ehJeGQ4t2mgAVtQtkwB1ko1B7jTfFl
+  source_title: 'Harris County Clerk: campaign finance report, Lucia Bates (file 2026343, filed Jul 10, 2026)'
+  source_kind: document
+  sha256: 17baea54aa557e0fe926d789d0ad57f2127f5dae9d052ea1bf94866dda84bb28
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026343, filed Jul 10, 2026, office listed as "Justice Of The Peace Pct. 3, Place 2". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Left out because contributions line left blank: total contributions. Report type checked on the form: July 15. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

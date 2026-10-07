@@ -4,7 +4,24 @@ name: Kathy Blueford-Daniels
 incumbent: true
 ballot_party: null
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/hcad-place-1/candidates/kathy-blueford-daniels#M-01
+  headline: Raised $5,515 and had $3,000 on hand (report filed Oct 6, 2026)
+  statement: 'Campaign finance report (filed Oct 6, 2026), filed with the Harris County Clerk on Oct 6, 2026: $5,515.00 in total political contributions, $2,872.00 in total political expenditures, $3,000.00 in contributions on hand at the end of the period, and $2,600.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox4w%2FCVySxP%2BVoWNOjetuZ5KxxAEGLH8lcLw85TJbeZFQE23rupBm03HDuj7GOkudB6JV%2BvPw9oF6ewnnKWe4dNpfYueSLJ%2B%2BZZYQ1acaEEh0
+  source_title: 'Harris County Clerk: campaign finance report, Kathy Blueford-Daniels (file 2026555, filed Oct 6, 2026)'
+  source_kind: document
+  sha256: ba5ba10a485726e6d7d8632c955f7dcdd51f12719ed58590e6347fdf5afa9ea0
+  archive_url: null
+  event_date: '2026-10-06'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Harris County Clerk file number 2026555, filed Oct 6, 2026, office listed as "HCAD, At-Large, Place 1". Found by searching the Clerk's campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Not yet archived on the Wayback Machine.
 endorsements: []
 running_on:
   policy_proposals: []

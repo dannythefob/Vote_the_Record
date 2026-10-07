@@ -4,7 +4,24 @@ name: JAMIE KING
 incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/county-civil-court-1/candidates/jamie-king#M-01
+  headline: Raised $1,100 and had $765 on hand (through Sep 24, 2026)
+  statement: 'Campaign finance report covering through Sep 24, 2026, filed with the Harris County Clerk on Oct 2, 2026: $1,100.00 in total political contributions, $1,578.50 in total political expenditures, $765.12 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox%2F6R8zr5YcPEbl5PwbhYFlOCCaj6bnof4I5kslyWI8agJ%2FK3kQ5DEIoGxfbARFd2RMiYDcreYpRqaTKLFDjQJUg%2BNCUYt5Pzlv1NsVhrQQdF
+  source_title: 'Harris County Clerk: campaign finance report, Jamie King (file 2026505, filed Oct 2, 2026)'
+  source_kind: document
+  sha256: 2e9a92949a24ba18ae8e90345d2617a0e7ede1455d3303855a970d638c212fa5
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026505, filed Oct 2, 2026, office listed as "County Civil Court At Law 1". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

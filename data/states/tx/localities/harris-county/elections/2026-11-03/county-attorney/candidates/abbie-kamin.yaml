@@ -26,7 +26,24 @@ records:
   verification: unverified
   verified_on: null
   reviewer: null
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/county-attorney/candidates/abbie-kamin#M-01
+  headline: Raised $192,061 and had $146,198 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Harris County Clerk on Oct 5, 2026: $192,061.00 in total political contributions, $329,581.37 in total political expenditures, $146,197.66 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox8azjhZw89UiJLj%2FRKmIjeSZ9x%2F5TKUQ3qTO2ca7567bsQDKdpH6FhXPSCMkvw5qUC8WhUdbZ6aa3RyY56bJOGcc1G78vAtz2NxS3DqgS9KP
+  source_title: 'Harris County Clerk: campaign finance report, Abbie Kamin (file 2026523, filed Oct 5, 2026)'
+  source_kind: document
+  sha256: 3f43752b223563b6cc5e86f7eb02d28fe69b34bea7f3068ddafb6988f70ea16f
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026523, filed Oct 5, 2026, office listed as "County Attorney". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

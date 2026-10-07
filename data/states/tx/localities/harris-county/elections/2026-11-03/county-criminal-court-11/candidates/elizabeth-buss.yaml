@@ -4,7 +4,24 @@ name: ELIZABETH BUSS
 incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/county-criminal-court-11/candidates/elizabeth-buss#M-01
+  headline: Raised $600 and had $600 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Harris County Clerk on Oct 5, 2026: $600.00 in total political contributions, $87.00 in total political expenditures, $600.00 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox%2FvQnJJG9q3PNfNi5nvcavbHhwUjr0Fu%2FbdCtrEkboov2zi04Us0WO8LYeXgUo6bWDwB%2BDIZtr6ZLNKHSMlxkveed4fMkeB089lMBuJVNSrP
+  source_title: 'Harris County Clerk: campaign finance report, Elizabeth Buss (file 2026521, filed Oct 5, 2026)'
+  source_kind: document
+  sha256: e27f89bbd96244472477a5285e7d7dc0d47a14d77386c75c17b015d91f1e6a8e
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026521, filed Oct 5, 2026, office listed as "County Criminal Court 11". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

@@ -4,7 +4,24 @@ name: RONALD SCHRAMM
 incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/probate-court-3/candidates/ronald-schramm#M-01
+  headline: Had $2,500 on hand (Jul 1, 2026 - Oct 4, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Oct 4, 2026, filed with the Harris County Clerk on Oct 5, 2026: $0.00 in total political contributions, $0.00 in total political expenditures, $2,500.00 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox8BDB4dTVHvOuLhR6ggXEJlpyfvm5OQDMSl2w%2FWP%2FMcGzTCLtJddlnqXDGhwQN3V2Fse2FIJB%2BMUg3OBXuuzVaoJUO4Sz0XVcUYsnXuzZcJQ
+  source_title: 'Harris County Clerk: campaign finance report, Ronald Schramm (file 2026525, filed Oct 5, 2026)'
+  source_kind: document
+  sha256: 95d54db7265c785e3dd753ee6c2416d39e03ff8cb107c1ace94c3a970cfe6764
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026525, filed Oct 5, 2026, office listed as "County Probate Court 3". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

@@ -4,7 +4,24 @@ name: LOYD H. WRIGHT
 incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/probate-court-1/candidates/loyd-h-wright#M-01
+  headline: Had $0 on hand (Jan 1, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1, 2026 - Jun 30, 2026, filed with the Harris County Clerk on Jul 14, 2026: $0.00 in total political contributions, $0.00 in total political expenditures, $0.00 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox6K%2F7uNfkPXBUAmS0EslZNSR9LFjQ%2FoOeargLu5lBtryUHPFFYIbZ3FvF0jMznFa230tMpYkA84ujAYdChuTqfeNe%2BkegxJSfBtl0vAIKsyM
+  source_title: 'Harris County Clerk: campaign finance report, Loyd H. Wright (file 2026355, filed Jul 14, 2026)'
+  source_kind: document
+  sha256: 216f5f4c61cb5ff53e01755c8b47b8159d8dd2e1dd7741f5f5a0f2a95757532e
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026355, filed Jul 14, 2026, office listed as "County Probate Court 1". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: July 15. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

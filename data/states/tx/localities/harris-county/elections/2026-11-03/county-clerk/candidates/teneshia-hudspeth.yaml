@@ -22,7 +22,24 @@ summary:
   reviewer: null
   notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/county-clerk/candidates/teneshia-hudspeth#M-01
+  headline: Raised $14,111 and had $22,442 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Harris County Clerk on Oct 5, 2026: $14,111.06 in total political contributions, $14,513.77 in total political expenditures, $22,441.76 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox5gqVodHjRk6TZsHqNRJQOmDNBsF42%2FLCyspecoi2EJyNdT%2FGbKOl2GolWEbyCa8WyrUYyt6ibngCaTfDCpVqKMCV1FsWRhHDjSJdKHKEB03
+  source_title: 'Harris County Clerk: campaign finance report, Teneshia Hudspeth (file 2026540, filed Oct 5, 2026)'
+  source_kind: document
+  sha256: 5243af335b8e9ad897ca85d097080b3281ec211ccaed46614ef1a3b83151e287
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026540, filed Oct 5, 2026, office listed as "County Clerk". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

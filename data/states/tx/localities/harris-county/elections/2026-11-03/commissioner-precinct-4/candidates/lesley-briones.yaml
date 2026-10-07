@@ -42,7 +42,24 @@ records:
   verified_on: null
   reviewer: null
   notes: The notice is required by Tax Code § 26.06 and lists how each member of the governing body voted on the proposal. Not yet archived on the Wayback Machine. The notice does not give the date of the vote; event_date is the notice's date.
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/commissioner-precinct-4/candidates/lesley-briones#M-01
+  headline: Raised $433,878 and had $3,980,910 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Harris County Clerk on Oct 5, 2026: $433,878.00 in total political contributions, $631,543.20 in total political expenditures, $3,980,909.63 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox2VC5dPbl%2FOx4mB%2FWcieajafI81KPLH9kefcGTwf%2F0RbLw%2BMMvwbdYMOtnN3bqVAf5bamkZKSVb54AfGovrWcu5EMmdfW%2BUZ2Mj2ZuwJZKFw
+  source_title: 'Harris County Clerk: campaign finance report, Lesley Briones (file 2026528, filed Oct 5, 2026)'
+  source_kind: document
+  sha256: 83b55989a00d34962c690a49c2c8e079f6eaa0feca5db474fece8a34f35b4ef9
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026528, filed Oct 5, 2026, office listed as "Commissioner Pct. 4". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

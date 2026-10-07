@@ -4,7 +4,24 @@ name: RAUL RODRIGUEZ
 incumbent: true
 ballot_party: Democratic Party
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/county-criminal-court-13/candidates/raul-rodriguez#M-01
+  headline: Raised $20,406 and had $18,500 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Harris County Clerk on Oct 5, 2026: $20,405.55 in total political contributions, $31,254.84 in total political expenditures, $18,500.33 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6Sqmckox6l5lq5uvAjVkX5N8ngYRFTRyHCKQDuEwFGfb8trxzqY8xhmJXguO4iOalHELnNC4v3yN0HtR3Vn9TWNtEd5H3sWEtb7QuSaZWa8nb990Loi
+  source_title: 'Harris County Clerk: campaign finance report, Raul Rodriguez (file 2026530, filed Oct 5, 2026)'
+  source_kind: document
+  sha256: 310b43a137fb0b4316fdac328f59c672d315b8cd286c1a72b796e253997cd6d6
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026530, filed Oct 5, 2026, office listed as "County Criminal Court 13". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

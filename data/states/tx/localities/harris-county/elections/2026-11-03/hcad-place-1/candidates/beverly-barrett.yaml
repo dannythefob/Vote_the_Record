@@ -4,7 +4,24 @@ name: Beverly Barrett
 incumbent: false
 ballot_party: null
 records: []
-funding: []
+funding:
+- id: tx/localities/harris-county/elections/2026-11-03/hcad-place-1/candidates/beverly-barrett#M-01
+  headline: Had $0 on hand (Aug 17, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Aug 17, 2026 - Sep 24, 2026, filed with the Harris County Clerk on Oct 2, 2026: $0.00 in total political contributions, $1,620.25 in total political expenditures, $0.00 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ethics.harrisvotes.com/Document.aspx?ID=8clm5%2FUZ7yw9%2F6SqmckoxwGJG6HBeKJqhN2Z2Lg%2Ba6hNS226akRs%2B748Ed7pMQtcL4KwEyZi5K3wC3r1DOIzNyuYqZRpYswHuTkQnqjy3Fj%2FJX%2FxC9f3nOnc3OsYJfiq
+  source_title: 'Harris County Clerk: campaign finance report, Beverly Barrett (file 2026503, filed Oct 2, 2026)'
+  source_kind: document
+  sha256: a7f15378e9b813ba01f32d82fce2a1d296b98d70cc3d4a468b65e182c5b8d6e2
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Harris County Clerk file number 2026503, filed Oct 2, 2026, office listed as "HCAD, At-Large, Place 1". Found by searching the Clerk''s campaign finance reports (https://ethics.harrisvotes.com/CampaignFinanceReports/COR.aspx) for reports filed July 1 - October 6, 2026, and matched by first and last name; this is the newest report found for the candidate. The PDF is a scan; the totals were read from the cover-sheet image (PDF page 3). Report type checked on the form: 30th day before election. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []
