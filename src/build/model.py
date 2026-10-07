@@ -208,7 +208,7 @@ def load_site(root: Path, today: str) -> dict:
 
     return {"races": races, "measures": measures, "essentials": essentials, "corrections": corrections,
             "ballots": ballots, "other_races": [r for r in races if r["path"] not in on_ballot],
-            "zip_index": zip_index, "county_index": county_index}
+            "zip_index": zip_index, "county_index": county_index, "who_decides": load_who_decides(docs)}
 
 
 FACT_SECTIONS = ("summary", "records", "funding", "endorsements")
@@ -362,6 +362,53 @@ def pick_why_it_matters(race_doc: dict, locality_doc: dict | None, office_doc: d
     return []
 
 
+DECISIONS_ON_PAGE = 6
+
+# Plain names for office types in the "Who decides?" guide.
+OFFICE_NAMES = {
+    "us-representative": "U.S. representative", "us-senator": "U.S. senator", "sboe-member": "State Board of Education member",
+    "cca-judge": "Court of Criminal Appeals judge", "jp": "Justice of the peace",
+    "esd-commissioner": "Emergency services district commissioner",
+}
+
+
+def office_name(slug: str) -> str:
+    return OFFICE_NAMES.get(slug) or slug.replace("-", " ").capitalize()
+
+
+def anchor(item_id: str) -> str:
+    """tx/who-decides#sanctuary-cities -> sanctuary-cities"""
+    return item_id.rsplit("#", 1)[1].lower()
+
+
+def race_decisions(decisions: list[dict], locality: str, facts: dict) -> list[dict]:
+    """Decisions for a race page: this place's first, then the rest of the state, newest first in each group."""
+    out = []
+    for d in decisions:
+        cited = [facts[f] for f in d["facts"] if f in facts]
+        out.append(dict(d, here=d.get("locality") == locality,
+                        sources=[{"url": f["source_url"], "title": f["source_title"]} for f in cited]))
+    out.sort(key=lambda d: d["date"], reverse=True)
+    out.sort(key=lambda d: not d["here"])
+    return out
+
+
+def load_who_decides(docs: dict) -> list[dict]:
+    """The "Who decides?" guide, one section per state."""
+    decisions = {d["id"]: d for kind, doc in docs.values() if kind == "decisions" for d in doc.get("decisions") or []}
+    out = []
+    for rel, (kind, doc) in sorted(docs.items()):
+        if kind != "who_decides":
+            continue
+        issues = []
+        for i in doc.get("issues") or []:
+            issues.append(dict(i, anchor=anchor(i["id"]),
+                               deciders=[dict(d, names=[office_name(o) for o in d["office_types"]]) for d in i["deciders"]],
+                               examples=[decisions[x] for x in i.get("decisions") or [] if x in decisions]))
+        out.append({"state": doc["state"], "state_name": STATE_NAMES.get(doc["state"], doc["state"]), "issues": issues})
+    return out
+
+
 def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
     office = race["office_type"]
     race_doc = docs[race["rel"]][1]
@@ -433,7 +480,16 @@ def assemble_race(docs: dict, race: dict, facts: dict) -> dict:
         plain = dict(plain, points=[pt for pt in plain.get("points") or []
                                     if not pt.get("powers") or set(pt["powers"]) & shown])
     all_powers = office_powers + state_powers
+    decisions_doc = docs.get(f"data/states/{race['state']}/decisions/{office}.yaml", (None, None))[1] or {}
+    decisions = race_decisions(decisions_doc.get("decisions") or [], race["locality"], facts)
+    issues_doc = docs.get(f"data/states/{race['state']}/who-decides.yaml", (None, None))[1] or {}
+    issues = [{"question": i["question"], "anchor": anchor(i["id"]),
+               "role": next(d["role"] for d in i["deciders"] if office in d["office_types"])}
+              for i in issues_doc.get("issues") or [] if any(office in d["office_types"] for d in i["deciders"])]
     return {
+        "decisions": decisions[:DECISIONS_ON_PAGE],
+        "decisions_more": max(0, len(decisions) - DECISIONS_ON_PAGE),
+        "issues": issues,
         "topics": sorted({t for p in all_powers for t in p.get("topics") or []}),
         "judicial": bool((office_doc or {}).get("judicial")),
         "plain_summary": plain,

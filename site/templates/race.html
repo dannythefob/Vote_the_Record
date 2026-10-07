@@ -51,6 +51,36 @@
 </section>
 {% endif %}
 
+{% if race.decisions %}
+<section id="decisions" aria-labelledby="decisions-h">
+  <h2 id="decisions-h">Real decisions this job has made</h2>
+  <p class="muted">Examples of how this office, or one like it in {{ race.state_name }}, has changed people's lives. Closest to you first.</p>
+  <ul class="item-list">
+    {% for d in race.decisions %}
+    <li class="card item decision">
+      <p class="item-meta"><span class="badge">{{ "Decided" if d.status == "decided" else "Being decided now" }}</span> {{ d.decided_by }} · {{ d.date | longdate }}</p>
+      <p class="item-main"><strong>{{ d.title }}</strong></p>
+      <p>{{ d.what_happened }}</p>
+      <p><strong>How it affects you:</strong> {{ d.how_it_affects_you }}</p>
+      <p class="item-meta">{{ verification_badge(d) }}{% for s in d.sources %} · <a href="{{ s.url }}" rel="noopener noreferrer">{{ s.title }}</a>{% endfor %} · {{ report_link(d.id) }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if race.decisions_more %}<p class="muted">{{ race.decisions_more }} more on the <a href="/who-decides/">Who decides?</a> page.</p>{% endif %}
+</section>
+{% endif %}
+
+{% if race.issues %}
+<section id="issues" aria-labelledby="issues-h">
+  <h2 id="issues-h">Issues this job has a say in</h2>
+  <ul class="plain-points">
+    {% for i in race.issues %}
+    <li>{{ icon("info") }}<span><a href="/who-decides/#{{ i.anchor }}">{{ i.question }}</a> {{ i.role }}</span></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
 <section id="candidates" aria-labelledby="candidates-h">
   <h2 id="candidates-h">The candidates</h2>
   {% if race.seats > 1 %}<p><strong>Vote for up to {{ race.seats }}.</strong> This race fills {{ race.seats }} seats.</p>{% endif %}

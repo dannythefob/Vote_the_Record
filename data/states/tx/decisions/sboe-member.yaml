@@ -1,0 +1,34 @@
+# Unverified; written by an AI assistant from official records and the laws cited. Owner review required.
+office_type: sboe-member
+state: TX
+decisions:
+- id: tx/decisions/sboe-member#2026-required-reading
+  title: Required reading lists for Texas schools
+  status: decided
+  date: '2026-06-26'
+  decided_by: Texas State Board of Education
+  what_happened: The board voted 9-5, with one member abstaining, to adopt new lists of required literary works for English
+    and Spanish language arts classes.
+  how_it_affects_you: The State Board of Education decides what every Texas public school student has to learn, including
+    required reading.
+  powers:
+  - P-CURRICULUM
+  facts:
+  - tx/districts/sboe-7/elections/2026-11-03/sboe-member/candidates/julie-pickren#R-03
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/decisions/sboe-member#2026-grade-8-social-studies
+  title: New Grade 8 social studies standards
+  status: decided
+  date: '2026-06-26'
+  decided_by: Texas State Board of Education
+  what_happened: The board voted 9-5 to adopt new Grade 8 social studies standards.
+  how_it_affects_you: These standards set what eighth graders in every Texas public school are taught in social studies.
+  powers:
+  - P-CURRICULUM
+  facts:
+  - tx/districts/sboe-7/elections/2026-11-03/sboe-member/candidates/julie-pickren#R-04
+  verification: unverified
+  verified_on: null
+  reviewer: null

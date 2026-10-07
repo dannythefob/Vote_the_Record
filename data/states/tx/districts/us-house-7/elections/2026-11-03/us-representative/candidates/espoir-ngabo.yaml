@@ -1,14 +1,150 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: espoir-ngabo
 name: ESPOIR NGABO
 incumbent: false
 ballot_party: Green Party
-research: pending
+summary:
+- id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/espoir-ngabo#B-01
+  headline: IT analyst (per his campaign)
+  statement: 'Campaign website: "Now serving as a Regional IT Analyst at BrandSafway"'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.espoirfortexas.com/about
+  source_title: 'Espoir for Texas: About Espoir (campaign website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
-funding: []
+funding:
+- id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/espoir-ngabo#M-01
+  headline: Raised $3,133 and had $0 on hand (2025-26 cycle through Jun 30, 2026)
+  statement: 'The FEC''s all-candidates summary for the 2025-2026 cycle lists, for NGABO, ESPOIR (candidate ID H6TX07177), through June 30, 2026: $3,132.88 in total receipts, $2,132.88 of it from individuals, $1,000.00 in contributions from the candidate, $3,125.00 in total disbursements, and $0.00 cash on hand at the end of the period.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.fec.gov/files/bulk-downloads/2026/weball26.zip
+  source_title: 'Federal Election Commission: All candidates file, 2025-2026 (weball26.zip)'
+  source_kind: document
+  sha256: 31ddb81424644a25e7bfb241f55ae9e78f285ffe3c75bcad398fa9f0f5b63016
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'From weball26.txt in the FEC''s bulk data, downloaded 2026-10-06 (sha256 is of the zip file); columns as described at https://www.fec.gov/campaign-finance-data/all-candidates-file-description/. The totals are cumulative for the cycle as reported by the campaign. Matched by last name and district (first name too when two filers share a last name). Spot-checked against the FEC API for three candidates. The candidate''s FEC page: https://www.fec.gov/data/candidate/H6TX07177/. The bulk file is updated as new reports arrive; the next quarterly reports cover through September 30, 2026.'
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/espoir-ngabo#O-01
+    headline: Single-payer health care
+    statement: 'Campaign website: "We must stop treating health as a profit center and guarantee free, universal, single-payer care, so no Houstonian goes bankrupt staying alive."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.espoirfortexas.com/
+    source_title: Espoir for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/espoir-ngabo#O-02
+    headline: $25 minimum wage
+    statement: 'Campaign website: "Raise the wage to meet the cost of living and tie it to inflation!"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.espoirfortexas.com/
+    source_title: Espoir for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/espoir-ngabo#O-03
+    headline: Flood mitigation
+    statement: 'Campaign website: "We must improve drainage systems, restore the bayous and invest in green infrastructure to help protect neighborhoods before disasters strike."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.espoirfortexas.com/
+    source_title: Espoir for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/espoir-ngabo#O-04
+    headline: Federal support for public transit
+    statement: 'Campaign website: "Reliable public transit will reduce congestion, shorten commutes, and connect working families to jobs across greater Houston."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.espoirfortexas.com/
+    source_title: Espoir for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/espoir-ngabo#O-05
+    headline: Public matching funds for small donations
+    statement: 'Campaign website: "We need to level the playing-field by matching small-dollar donations with public funds."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.espoirfortexas.com/
+    source_title: Espoir for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/espoir-ngabo#O-06
+    headline: Ranked choice voting
+    statement: 'Campaign website: "We should rank candidates in order of preferences instead of just choosing one."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.espoirfortexas.com/
+    source_title: Espoir for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

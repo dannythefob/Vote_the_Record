@@ -228,6 +228,84 @@
         "facts": { "type": "array", "items": { "$ref": "urn:vtr:schema:fact" } }
       }
     },
+    "decisions": {
+      "description": "Big decisions made by one type of office (or bodies at its level) in one state, in plain language. Every entry rests on sourced facts and on the office's powers.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["office_type", "state", "decisions"],
+      "properties": {
+        "office_type": { "$ref": "urn:vtr:schema:fact#/$defs/slug" },
+        "state": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "decisions": { "type": "array", "items": { "$ref": "#/$defs/decision" } }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "status", "date", "decided_by", "what_happened", "how_it_affects_you", "powers", "facts",
+                   "verification", "verified_on", "reviewer"],
+      "properties": {
+        "id": { "$ref": "urn:vtr:schema:fact#/$defs/fact_id" },
+        "title": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "status": { "description": "decided, or pending (still being decided).", "enum": ["decided", "pending"] },
+        "date": { "$ref": "urn:vtr:schema:fact#/$defs/date" },
+        "decided_by": { "description": "The body that decided, as named in the record (e.g. 'Austin City Council').", "type": "string", "minLength": 1 },
+        "locality": { "description": "The locality or district (slug) where it was decided; its races list it first.", "$ref": "urn:vtr:schema:fact#/$defs/slug" },
+        "what_happened": { "description": "Plain language; must not say more than the cited facts.", "type": "string", "minLength": 1, "maxLength": 600 },
+        "how_it_affects_you": { "description": "Plain language; must not say more than the cited powers and facts.", "type": "string", "minLength": 1, "maxLength": 300 },
+        "powers": { "description": "Power IDs of this office type that the decision used.", "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^P-[A-Z0-9-]+$" } },
+        "facts": { "description": "IDs of the sourced facts this entry summarizes (votes, actions, measures).", "type": "array", "minItems": 1, "items": { "$ref": "urn:vtr:schema:fact#/$defs/fact_id" } },
+        "verification": { "enum": ["unverified", "verified"] },
+        "verified_on": { "anyOf": [{ "$ref": "urn:vtr:schema:fact#/$defs/date" }, { "type": "null" }] },
+        "reviewer": { "type": ["string", "null"] }
+      },
+      "allOf": [{ "$ref": "urn:vtr:schema:fact#/$defs/verification_rules" }]
+    },
+    "who_decides": {
+      "description": "Plain-language guide: for common issues, which offices decide them in this state and how, each citing the law.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "issues"],
+      "properties": {
+        "state": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "issues": { "type": "array", "items": { "$ref": "#/$defs/issue" } }
+      }
+    },
+    "issue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "question", "short_answer", "deciders", "verification", "verified_on", "reviewer"],
+      "properties": {
+        "id": { "$ref": "urn:vtr:schema:fact#/$defs/fact_id" },
+        "question": { "description": "The question a voter would ask, in their words.", "type": "string", "minLength": 1, "maxLength": 120 },
+        "short_answer": { "description": "Plain language; must not say more than the deciders' cited laws.", "type": "string", "minLength": 1, "maxLength": 400 },
+        "deciders": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/decider" } },
+        "sources": {
+          "description": "Official sources for parts of the short answer not covered by a decider's law (e.g. a court ruling).",
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["title", "url"],
+            "properties": { "title": { "type": "string", "minLength": 1 }, "url": { "$ref": "urn:vtr:schema:fact#/$defs/url" } }
+          }
+        },
+        "decisions": { "description": "IDs of decision entries that are examples of this issue.", "type": "array", "items": { "$ref": "urn:vtr:schema:fact#/$defs/fact_id" } },
+        "verification": { "enum": ["unverified", "verified"] },
+        "verified_on": { "anyOf": [{ "$ref": "urn:vtr:schema:fact#/$defs/date" }, { "type": "null" }] },
+        "reviewer": { "type": ["string", "null"] }
+      },
+      "allOf": [{ "$ref": "urn:vtr:schema:fact#/$defs/verification_rules" }]
+    },
+    "decider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["office_types", "role", "source_url"],
+      "properties": {
+        "office_types": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "urn:vtr:schema:fact#/$defs/slug" } },
+        "role": { "description": "What these offices do on this issue, in plain language.", "type": "string", "minLength": 1, "maxLength": 300 },
+        "statute": { "type": "string" },
+        "source_url": { "$ref": "urn:vtr:schema:fact#/$defs/url" }
+      }
+    },
     "topic": {
       "description": "Voter topics for the ballot page's 'what matters to you' picker. Labels are in site/site.yaml.",
       "enum": ["taxes-budget", "emergencies", "roads-transportation", "courts-justice", "schools",

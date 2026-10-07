@@ -1,9 +1,26 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: tyler-smith
 name: TYLER SMITH
 incumbent: false
 ballot_party: Democratic Party
-research: pending
+summary:
+- id: tx/districts/state-house-138/elections/2026-11-03/state-representative/candidates/tyler-smith#B-01
+  headline: Texas Southern University political science graduate (per his campaign)
+  statement: 'Campaign website: "Born in Houston, Tyler spent part of his childhood in Los Angeles before returning home to attend Texas Southern University, where he earned a degree in Political Science."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://tylerfortx.com/
+  source_title: Tyler Smith for State Representative (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/districts/state-house-138/elections/2026-11-03/state-representative/candidates/tyler-smith#M-01
@@ -25,7 +42,58 @@ funding:
   notes: Report ID 101058177, form COH, TEC report type SEMIJUL; filer ID 00089653 (Smith, Tyler). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/state-house-138/elections/2026-11-03/state-representative/candidates/tyler-smith#O-01
+    headline: Bail reform for repeat violent offenders
+    statement: 'Campaign website: "Keep repeat violent offenders off our streets through comprehensive bipartisan bail reform"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://tylerfortx.com/
+    source_title: Tyler Smith for State Representative (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-138/elections/2026-11-03/state-representative/candidates/tyler-smith#O-02
+    headline: Housing and health care costs
+    statement: 'Campaign website: "Lower the costs of housing and health care"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://tylerfortx.com/
+    source_title: Tyler Smith for State Representative (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-138/elections/2026-11-03/state-representative/candidates/tyler-smith#O-03
+    headline: Power grid and extreme weather
+    statement: 'Campaign website: "Fix the power grid, protect our families from extreme weather, and stand up to corporate polluters"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://tylerfortx.com/
+    source_title: Tyler Smith for State Representative (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

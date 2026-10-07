@@ -1,13 +1,133 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: shaun-finnie
 name: SHAUN FINNIE
 incumbent: false
 ballot_party: Democratic Party
+summary:
+- id: tx/districts/us-house-2/elections/2026-11-03/us-representative/candidates/shaun-finnie#B-01
+  headline: Energy investment banker and former oil and gas lawyer (per his campaign)
+  statement: 'Campaign website: "He was an oil and gas lawyer for three years, and since then has spent the last 30 years working in investment banking, focusing on energy, primarily oil and gas mergers & acquisitions."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://shaunfinnieforcongress.com/meet-shaun/
+  source_title: 'Shaun Finnie for Congress: Meet Shaun (campaign website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
-funding: []
+funding:
+- id: tx/districts/us-house-2/elections/2026-11-03/us-representative/candidates/shaun-finnie#M-01
+  headline: Raised $2,729,677 and had $1,469,201 on hand (2025-26 cycle through Jun 30, 2026)
+  statement: 'The FEC''s all-candidates summary for the 2025-2026 cycle lists, for FINNIE, SHAUN (candidate ID H6TX02251), through June 30, 2026: $2,729,676.76 in total receipts, $764,947.65 of it from individuals, $1,961,000.00 in loans from the candidate, $1,000.00 from other political committees, $1,260,476.12 in total disbursements, $1,469,200.64 cash on hand at the end of the period, and $1,961,000.00 in debts owed by the campaign.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.fec.gov/files/bulk-downloads/2026/weball26.zip
+  source_title: 'Federal Election Commission: All candidates file, 2025-2026 (weball26.zip)'
+  source_kind: document
+  sha256: 31ddb81424644a25e7bfb241f55ae9e78f285ffe3c75bcad398fa9f0f5b63016
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'From weball26.txt in the FEC''s bulk data, downloaded 2026-10-06 (sha256 is of the zip file); columns as described at https://www.fec.gov/campaign-finance-data/all-candidates-file-description/. The totals are cumulative for the cycle as reported by the campaign. Matched by last name and district (first name too when two filers share a last name). Spot-checked against the FEC API for three candidates. The candidate''s FEC page: https://www.fec.gov/data/candidate/H6TX02251/. The bulk file is updated as new reports arrive; the next quarterly reports cover through September 30, 2026.'
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-2/elections/2026-11-03/us-representative/candidates/shaun-finnie#O-01
+    headline: Remove the tariffs
+    statement: 'Campaign website: "Remove the Tariffs."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://shaunfinnieforcongress.com/
+    source_title: Shaun Finnie for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-2/elections/2026-11-03/us-representative/candidates/shaun-finnie#O-02
+    headline: Address the federal debt
+    statement: 'Campaign website: "Address the federal debt to protect the economic futures of our young people."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://shaunfinnieforcongress.com/
+    source_title: Shaun Finnie for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-2/elections/2026-11-03/us-representative/candidates/shaun-finnie#O-03
+    headline: Protect Social Security, Medicare, and Medicaid benefits
+    statement: 'Campaign website: "Protect the Social Security, Medicare, and Medicaid benefits of middle-class Americans from any potential cuts."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://shaunfinnieforcongress.com/
+    source_title: Shaun Finnie for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-2/elections/2026-11-03/us-representative/candidates/shaun-finnie#O-04
+    headline: Women's health care decisions
+    statement: 'Campaign website: "Ensure that women have the right to make their own healthcare decisions."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://shaunfinnieforcongress.com/
+    source_title: Shaun Finnie for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-2/elections/2026-11-03/us-representative/candidates/shaun-finnie#O-05
+    headline: Public education and research funding
+    statement: 'Campaign website: "Invest in public education and in medical and scientific research."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://shaunfinnieforcongress.com/
+    source_title: Shaun Finnie for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

@@ -1,8 +1,26 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: stefanie-bord
 name: STEFANIE BORD
 incumbent: false
 ballot_party: Democratic Party
+summary:
+- id: tx/districts/state-house-126/elections/2026-11-03/state-representative/candidates/stefanie-bord#B-01
+  headline: Former science teacher (per her campaign)
+  statement: 'Campaign website: "She went back to work as a high school science teacher, covering Earth and Environmental Science, and a General Science class for the upperclassmen."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.stefaniebordfortexas.com/about
+  source_title: 'Stefanie Bord for Texas: About (campaign website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/districts/state-house-126/elections/2026-11-03/state-representative/candidates/stefanie-bord#M-01
@@ -24,7 +42,109 @@ funding:
   notes: Report ID 101058304, form COH, TEC report type SEMIJUL; filer ID 00089977 (Bord, Stefanie (Mrs.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/state-house-126/elections/2026-11-03/state-representative/candidates/stefanie-bord#O-01
+    headline: School funding, property taxes, health care, flood control
+    statement: 'Campaign website: "She will fight to fully fund public education and support teachers, lower property taxes for homeowners, expand access to affordable healthcare, protect reproductive rights, and invest in flood control to keep families safe."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.stefaniebordfortexas.com/
+    source_title: Stefanie Bord for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-126/elections/2026-11-03/state-representative/candidates/stefanie-bord#O-02
+    headline: Expand Medicaid
+    statement: 'Campaign website: "Expanding Medicaid in our state will help insure more people who deserve to be able to see a doctor, but it won’t be enough."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.stefaniebordfortexas.com/issues
+    source_title: 'Stefanie Bord for Texas: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-126/elections/2026-11-03/state-representative/candidates/stefanie-bord#O-03
+    headline: Limit building in floodplains
+    statement: 'Campaign website: "I will pass laws about not building homes or other structures in floodplains"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.stefaniebordfortexas.com/issues
+    source_title: 'Stefanie Bord for Texas: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-126/elections/2026-11-03/state-representative/candidates/stefanie-bord#O-04
+    headline: Spend unused Harvey flood money
+    statement: 'Campaign website: "We should work to get this money to districts that need it NOW before the next big hurricane strikes."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.stefaniebordfortexas.com/issues
+    source_title: 'Stefanie Bord for Texas: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-126/elections/2026-11-03/state-representative/candidates/stefanie-bord#O-05
+    headline: School counselors
+    statement: 'Campaign website: "Secular, professionally licensed counselors should be the ones talking to and guiding students and I will make that the law again."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.stefaniebordfortexas.com/issues
+    source_title: 'Stefanie Bord for Texas: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-126/elections/2026-11-03/state-representative/candidates/stefanie-bord#O-06
+    headline: Abortion travel bans
+    statement: 'Campaign website: "I plan to outlaw travel bans that have been imposed locally."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.stefaniebordfortexas.com/issues
+    source_title: 'Stefanie Bord for Texas: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

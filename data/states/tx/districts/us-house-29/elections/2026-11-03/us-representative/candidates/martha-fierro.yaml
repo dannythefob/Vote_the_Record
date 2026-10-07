@@ -1,14 +1,116 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: martha-fierro
 name: MARTHA FIERRO
 incumbent: false
 ballot_party: Republican Party
-research: pending
+summary:
+- id: tx/districts/us-house-29/elections/2026-11-03/us-representative/candidates/martha-fierro#B-01
+  headline: Former health care worker; ministry director (per her campaign)
+  statement: 'Campaign website: "A first-generation college graduate with two degrees from the University of Houston, Martha began working at 19 as a Healthcare worker at the Texas Medical Center."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.fierrofortexas.com/meet-martha
+  source_title: 'Fierro for Texas: Meet Martha (campaign website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
-funding: []
+funding:
+- id: tx/districts/us-house-29/elections/2026-11-03/us-representative/candidates/martha-fierro#M-01
+  headline: Reported no money raised or on hand (2025-26 cycle through Jun 30, 2026)
+  statement: 'The FEC''s all-candidates summary for the 2025-2026 cycle lists, for FIERRO, MARTHA ELENA, (candidate ID H6TX29122), through June 30, 2026: $0.00 in total receipts, $0.00 of it from individuals, $0.00 in total disbursements, and $0.00 cash on hand at the end of the period.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.fec.gov/files/bulk-downloads/2026/weball26.zip
+  source_title: 'Federal Election Commission: All candidates file, 2025-2026 (weball26.zip)'
+  source_kind: document
+  sha256: 31ddb81424644a25e7bfb241f55ae9e78f285ffe3c75bcad398fa9f0f5b63016
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'From weball26.txt in the FEC''s bulk data, downloaded 2026-10-06 (sha256 is of the zip file); columns as described at https://www.fec.gov/campaign-finance-data/all-candidates-file-description/. The totals are cumulative for the cycle as reported by the campaign. Matched by last name and district (first name too when two filers share a last name). Spot-checked against the FEC API for three candidates. The candidate''s FEC page: https://www.fec.gov/data/candidate/H6TX29122/. The bulk file is updated as new reports arrive; the next quarterly reports cover through September 30, 2026.'
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-29/elections/2026-11-03/us-representative/candidates/martha-fierro#O-01
+    headline: 'Health care: competition rather than mandates'
+    statement: 'Campaign website: "By raising competition, expanding access, and protecting patient choice — not imposing government mandates — we can ensure families and seniors get the care they need at prices they can afford."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.fierrofortexas.com/
+    source_title: Fierro for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-29/elections/2026-11-03/us-representative/candidates/martha-fierro#O-02
+    headline: School choice and parental rights
+    statement: 'Campaign website: "Empower parents with school choice, defend parental rights, and protect the values that make Texas strong."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.fierrofortexas.com/
+    source_title: Fierro for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-29/elections/2026-11-03/us-representative/candidates/martha-fierro#O-03
+    headline: Cut federal spending; support oil and gas
+    statement: 'Campaign website: "Make Houston Affordable Again by cutting reckless federal spending and fighting inflation to lower costs for gas, groceries, and housing. Protect Texas energy independence — keep energy decisions in Texas, support oil and natural gas, and strengthen grid reliability to lower bills."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.fierrofortexas.com/
+    source_title: Fierro for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-29/elections/2026-11-03/us-representative/candidates/martha-fierro#O-04
+    headline: Border enforcement
+    statement: 'Campaign website: "Support Border Patrol and stop policies that encourage illegal crossings and human trafficking."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.fierrofortexas.com/
+    source_title: Fierro for Texas (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

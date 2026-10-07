@@ -1,0 +1,51 @@
+# Unverified; written by an AI assistant from official records and the laws cited. Owner review required.
+office_type: school-trustee
+state: TX
+decisions:
+- id: tx/decisions/school-trustee#austin-isd-2025-closures
+  title: Austin ISD's 2025 school turnaround and consolidation plans
+  status: decided
+  date: '2025-11-20'
+  decided_by: Austin ISD Board of Trustees
+  locality: austin-isd
+  what_happened: In November 2025 the board voted on turnaround plans for the Texas Education Agency and on consolidating
+    schools. An amendment to change Widén Elementary's plan from closing the school to a restart failed 3-6. Consolidation
+    plan pieces tied to the turnaround plans passed 7-2.
+  how_it_affects_you: Your school board decides whether neighborhood schools close, merge, or change.
+  powers:
+  - P-GOVERN
+  facts:
+  - tx/localities/austin-isd/elections/2026-11-03/trustee-district-1/candidates/candace-l-hunter#R-01
+  - tx/localities/austin-isd/elections/2026-11-03/trustee-district-1/candidates/candace-l-hunter#R-03
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/decisions/school-trustee#alief-2026-tax-rate
+  title: Alief ISD's 2026 school tax rate
+  status: decided
+  date: '2026-08-18'
+  decided_by: Alief ISD Board of Trustees
+  what_happened: The board voted 6-0 to set the 2026 school tax rate at $1.0204 per $100 of property value.
+  how_it_affects_you: School taxes are often the biggest part of a property tax bill. Your school board sets that rate every
+    year.
+  powers:
+  - P-TAX-RATE
+  facts:
+  - tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#R-01
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- id: tx/decisions/school-trustee#alief-2025-library-council
+  title: Alief ISD creates a school library advisory council
+  status: decided
+  date: '2025-08-26'
+  decided_by: Alief ISD Board of Trustees
+  what_happened: The board voted 5-0 to create a local school library advisory council.
+  how_it_affects_you: Your school board makes local decisions about school libraries, like creating this council.
+  powers:
+  - P-GOVERN
+  facts:
+  - tx/districts/state-house-149/elections/2026-11-03/state-representative/candidates/darlene-breaux#R-05
+  verification: unverified
+  verified_on: null
+  reviewer: null

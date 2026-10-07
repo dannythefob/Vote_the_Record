@@ -1,9 +1,26 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: helen-zhou
 name: HELEN ZHOU
 incumbent: false
 ballot_party: Republican Party
-research: pending
+summary:
+- id: tx/districts/state-house-137/elections/2026-11-03/state-representative/candidates/helen-zhou#B-01
+  headline: CPA and real estate broker (per her campaign)
+  statement: 'Campaign website: "Licensed Texas Certified Public Accountant and Texas real estate broker"'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://helenforstaterep.com/about-us/
+  source_title: 'Helen for State Rep: About (campaign website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/districts/state-house-137/elections/2026-11-03/state-representative/candidates/helen-zhou#M-01
@@ -25,7 +42,75 @@ funding:
   notes: Report ID 101060344, form COH, TEC report type SEMIJUL; filer ID 00090237 (Zhou, Helen Q.). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/state-house-137/elections/2026-11-03/state-representative/candidates/helen-zhou#O-01
+    headline: Bail reform
+    statement: 'Campaign website: "She will support policies, like bail reform, that keep the most convicted felons off our streets."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://helenforstaterep.com/
+    source_title: Helen for State Rep (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-137/elections/2026-11-03/state-representative/candidates/helen-zhou#O-02
+    headline: Debt-free job training
+    statement: 'Campaign website: "That’s why I will fight to bring debt-free job training directly into our community colleges, high schools, and adult vocational programs."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://helenforstaterep.com/issues/
+    source_title: 'Helen for State Rep: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-137/elections/2026-11-03/state-representative/candidates/helen-zhou#O-03
+    headline: State money for flood projects and the East Water Purification Plant
+    statement: 'Campaign website: "full state funding to finish Project Brays and every flood-protection project that shields District 137; $2–3 billion from the Rainy Day Fund and the Texas Water Fund to rebuild the East Water Purification Plant before it collapses"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://helenforstaterep.com/issues/
+    source_title: 'Helen for State Rep: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-137/elections/2026-11-03/state-representative/candidates/helen-zhou#O-04
+    headline: Buyouts for homes that flood repeatedly
+    statement: 'Campaign website: "mandatory buyouts and elevation grants for homes that flood twice"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://helenforstaterep.com/issues/
+    source_title: 'Helen for State Rep: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

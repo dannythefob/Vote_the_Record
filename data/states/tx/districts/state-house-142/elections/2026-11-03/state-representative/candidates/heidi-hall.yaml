@@ -1,9 +1,26 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: heidi-hall
 name: HEIDI HALL
 incumbent: false
 ballot_party: Republican Party
-research: pending
+summary:
+- id: tx/districts/state-house-142/elections/2026-11-03/state-representative/candidates/heidi-hall#B-01
+  headline: Retired veteran; court-appointed special advocate volunteer (per her campaign)
+  statement: 'Campaign website: "After serving her country as a veteran, Heidi continued her dedication to helping others by volunteering as a CASA (Court Appointed Special Advocate) for the past five years."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.heididhall.com/about
+  source_title: 'Heidi Hall for State Representative: About (campaign website)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/districts/state-house-142/elections/2026-11-03/state-representative/candidates/heidi-hall#M-01
@@ -25,7 +42,41 @@ funding:
   notes: Report ID 101059502, form COH, TEC report type SEMIJUL; filer ID 00090454 (Hall, Heidi D. (Mrs.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/state-house-142/elections/2026-11-03/state-representative/candidates/heidi-hall#O-01
+    headline: School choice
+    statement: 'Campaign website: "Heidi believes parents should have a strong voice in their children''s education and supports school choice, giving families the ability to choose the school that best meets their child''s needs."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.heididhall.com/issues
+    source_title: 'Heidi Hall for State Representative: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-142/elections/2026-11-03/state-representative/candidates/heidi-hall#O-02
+    headline: Law enforcement resources
+    statement: 'Campaign website: "Heidi will advocate for policies that strengthen law enforcement, improve community partnerships, and ensure officers have the resources they need to protect the public."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.heididhall.com/issues
+    source_title: 'Heidi Hall for State Representative: Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

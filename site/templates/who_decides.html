@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% from "partials/macros.html" import verification_badge, report_link %}
+{% from "partials/icons.html" import icon %}
+{% block title %}Who decides?{% endblock %}
+{% block description %}Which offices on your ballot decide the issues people care about, in plain language, with the law behind each answer.{% endblock %}
+{% block content %}
+<header class="hero">
+  <h1>Who decides?</h1>
+  <p class="lead">Upset about something, or want it changed? Find out which offices on your ballot actually have the power over it.</p>
+</header>
+{% if not site.who_decides %}
+<p class="empty">This guide has not been written yet.</p>
+{% endif %}
+{% for state in site.who_decides %}
+<section aria-labelledby="wd-{{ state.state | lower }}">
+  <h2 id="wd-{{ state.state | lower }}">{{ state.state_name }}</h2>
+  <nav aria-label="Questions for {{ state.state_name }}">
+    <ul class="link-list">
+      {% for issue in state.issues %}<li><a href="#{{ issue.anchor }}">{{ issue.question }}</a></li>{% endfor %}
+    </ul>
+  </nav>
+  {% for issue in state.issues %}
+  <article class="card issue" id="{{ issue.anchor }}">
+    <h3>{{ issue.question }}</h3>
+    <p class="item-main">{{ issue.short_answer }}</p>
+    {% if issue.get('sources') %}<p class="item-meta">Also based on: {% for s in issue.sources %}<a href="{{ s.url }}" rel="noopener noreferrer">{{ s.title }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
+    <h4>Who has a say</h4>
+    <ul class="decider-list">
+      {% for d in issue.deciders %}
+      <li><strong>{{ d.names | join(", ") }}:</strong> {{ d.role }}
+        <span class="item-meta">{% if d.get('statute') %}{{ d.statute }} · {% endif %}<a href="{{ d.source_url }}" rel="noopener noreferrer">Read the law</a></span></li>
+      {% endfor %}
+    </ul>
+    {% if issue.examples %}
+    <h4>Real examples</h4>
+    <ul class="decider-list">
+      {% for ex in issue.examples %}<li><strong>{{ ex.title }}</strong> ({{ ex.decided_by }}, {{ ex.date | shortdate }}): {{ ex.what_happened }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    <p class="item-meta">{{ verification_badge(issue) }} {{ report_link(issue.id) }}</p>
+  </article>
+  {% endfor %}
+</section>
+{% endfor %}
+<p class="note">This guide explains who holds the power under the law. It does not say what any office should do.</p>
+{% endblock %}

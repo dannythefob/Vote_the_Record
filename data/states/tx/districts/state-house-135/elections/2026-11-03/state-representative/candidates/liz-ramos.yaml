@@ -1,8 +1,26 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: liz-ramos
 name: LIZ RAMOS
 incumbent: false
 ballot_party: Republican Party
+summary:
+- id: tx/districts/state-house-135/elections/2026-11-03/state-representative/candidates/liz-ramos#B-01
+  headline: Pediatric practice manager (per her campaign)
+  statement: 'Campaign website: "Since 2007, she has helped build and manage a thriving pediatric medical practice from the ground up, gaining real-world experience in budgeting, staffing, operations, and patient care."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.lizramosfortexas.com/
+  source_title: Liz Ramos for Texas (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/districts/state-house-135/elections/2026-11-03/state-representative/candidates/liz-ramos#M-01
@@ -24,7 +42,92 @@ funding:
   notes: Report ID 101061799, form CORCOH, TEC report type SEMIJUL; filer ID 00089479 (Ramos, Lizbeth). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by nickname, middle name, or initial, with office and district; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/state-house-135/elections/2026-11-03/state-representative/candidates/liz-ramos#O-01
+    headline: Eliminate property taxes
+    statement: 'Campaign website: "Works to end property taxes, protecting seniors and families from being taxed out of their homes."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.lizramosfortexas.com/on-the-issues
+    source_title: 'Liz Ramos for Texas: On the Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-135/elections/2026-11-03/state-representative/candidates/liz-ramos#O-02
+    headline: State homeland security department and deportations
+    statement: 'Campaign website: "Creates a dedicated Department of Homeland Security to block illegal entry, stop trafficking, and deport illegals to Mexico or their home countries."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.lizramosfortexas.com/on-the-issues
+    source_title: 'Liz Ramos for Texas: On the Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-135/elections/2026-11-03/state-representative/candidates/liz-ramos#O-03
+    headline: Require E-Verify; end services for people here illegally
+    statement: 'Campaign website: "Requires all Texas employers to use E-Verify with harsh penalties, while cutting all subsidies, public services, in-state tuition, and school enrollment for illegals—except emergency care."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.lizramosfortexas.com/on-the-issues
+    source_title: 'Liz Ramos for Texas: On the Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-135/elections/2026-11-03/state-representative/candidates/liz-ramos#O-04
+    headline: End sanctuary policies; armed school guards
+    statement: 'Campaign website: "Ends sanctuary policies, supports armed school guards, and prioritizes community policing to keep families safe at home and work."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.lizramosfortexas.com/on-the-issues
+    source_title: 'Liz Ramos for Texas: On the Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/state-house-135/elections/2026-11-03/state-representative/candidates/liz-ramos#O-05
+    headline: Abortion
+    statement: 'Campaign website: "I stand firmly in support of the sanctity of life and am dedicated to protecting the unborn, believing every life is precious and deserving of protection beginning at conception."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.lizramosfortexas.com/on-the-issues
+    source_title: 'Liz Ramos for Texas: On the Issues (campaign website)'
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

@@ -1,9 +1,26 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: michelle-williams
 name: MICHELLE WILLIAMS
 incumbent: false
 ballot_party: Democratic Party
-research: pending
+summary:
+- id: tx/districts/state-house-127/elections/2026-11-03/state-representative/candidates/michelle-williams#B-01
+  headline: Former Houston ISD teacher (per her campaign)
+  statement: 'Campaign website: "Michelle Williams spent 12 years in the classroom, giving her heart to students across the Houston Independent School District."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.michelleforstaterep.com/
+  source_title: Michelle Williams for State Representative (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/districts/state-house-127/elections/2026-11-03/state-representative/candidates/michelle-williams#M-01

@@ -80,6 +80,8 @@ def test_home_has_beta_banner_official_links_and_race_list(real_site):
     home = read(real_site, "index.html")
     assert "<strong>Beta.</strong>" in home
     assert 'href="https://www.votetexas.gov/"' in home
+    assert 'href="https://goelect.txelections.civixapps.com/ivis-mvp-ui/#/login"' in home
+    assert "Check your voter registration" in home
     assert 'href="/ballot/tx/harris-county/2026-11-03/"' in home
     ballot = read(real_site, "ballot/tx/harris-county/2026-11-03/index.html")
     assert 'href="/races/tx/harris-county/2026-11-03/county-judge/"' in ballot
@@ -289,9 +291,58 @@ def test_home_links_the_ballot_which_links_the_race(demo_site):
 
 def test_race_sections_in_required_order(demo_site):
     html = read(demo_site, RACE_PAGE)
-    ids = ["office-h", "why-h", "candidates-h", "survey-h", "running-h", "promises-h", "how-h"]
+    ids = ["office-h", "why-h", "decisions-h", "issues-h", "candidates-h", "survey-h", "running-h", "promises-h", "how-h"]
     positions = [html.index(f'id="{i}"') for i in ids]
     assert positions == sorted(positions)
+
+
+def test_race_page_shows_decisions_local_first_with_sources_and_badges(demo_site):
+    html = read(demo_site, RACE_PAGE)
+    section = html[html.index('id="decisions-h"'):html.index('id="issues-h"')]
+    assert section.index("Demo County cut department spending") < section.index("Another county")
+    assert "Being decided now" in section and "Decided" in section
+    assert "How it affects you:" in section
+    assert 'href="https://example.org/demo-county/minutes/2025-03-12"' in section
+    assert section.count("Unverified") >= 2
+
+
+def test_race_page_links_issues_this_office_has_a_say_in(demo_site):
+    html = read(demo_site, RACE_PAGE)
+    assert 'href="/who-decides/#demo-potholes"' in html
+    assert "Decide which county roads get fixed and pay for it." in html
+
+
+def test_who_decides_page_lists_issues_with_offices_laws_and_examples(demo_site):
+    html = read(demo_site, "who-decides/index.html")
+    assert 'id="demo-potholes"' in html
+    assert "County commissioner:" in html
+    assert 'href="https://example.org/demo-law"' in html
+    assert "Demo County cut department spending by 3 percent" in html
+    assert 'aria-current="page"' in html and ">Who decides?</a>" in html
+
+
+def test_validator_checks_decisions_and_issues(tmp_path):
+    from validate import validate
+    import shutil
+    root = tmp_path / "repo"
+    shutil.copytree(DEMO, root)
+    path = root / "data/states/tx/decisions/county-commissioner.yaml"
+    doc = yaml.safe_load(path.read_text(encoding="utf-8"))
+    doc["decisions"][0]["powers"] = ["P-NOPE"]
+    doc["decisions"][0]["facts"] = ["tx/nowhere#X"]
+    doc["decisions"][0]["what_happened"] = "Republicans cut the budget."
+    doc["decisions"][1]["id"] = "tx/elsewhere#wrong"
+    path.write_text(yaml.safe_dump(doc, sort_keys=False), encoding="utf-8")
+    wd = root / "data/states/tx/who-decides.yaml"
+    issues = yaml.safe_load(wd.read_text(encoding="utf-8"))
+    issues["issues"][0]["deciders"][0]["office_types"] = ["no-such-office"]
+    wd.write_text(yaml.safe_dump(issues, sort_keys=False), encoding="utf-8")
+    errors = " | ".join(validate(root, REPO / "schemas").errors)
+    assert "power P-NOPE does not exist" in errors
+    assert "fact 'tx/nowhere#X' does not exist" in errors
+    assert "mentions a party" in errors
+    assert "must start with 'tx/decisions/county-commissioner#'" in errors
+    assert "office type 'no-such-office' has no folder" in errors
 
 
 def test_candidates_alphabetical_not_file_order(demo_site):

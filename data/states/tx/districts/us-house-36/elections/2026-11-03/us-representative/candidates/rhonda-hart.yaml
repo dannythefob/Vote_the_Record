@@ -1,14 +1,150 @@
-# Basic race: name and ballot label as printed by the Harris County Clerk. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: rhonda-hart
 name: RHONDA HART
 incumbent: false
 ballot_party: Democratic Party
-research: pending
+summary:
+- id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#B-01
+  headline: Army veteran; gun-storage law advocate (per her campaign)
+  statement: 'Campaign website: "I am Rhonda Hart, a Texas mom and disabled military veteran."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://hart4congress.com/
+  source_title: Rhonda Hart for Congress (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
-funding: []
+funding:
+- id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#M-01
+  headline: Reported no money raised or on hand (2025-26 cycle through Mar 31, 2026)
+  statement: 'The FEC''s all-candidates summary for the 2025-2026 cycle lists, for HART, RHONDA J (candidate ID H4TX14111), through March 31, 2026: $0.00 in total receipts, $0.00 of it from individuals, $0.00 in total disbursements, $0.00 cash on hand at the end of the period, and $4,796.81 in debts owed by the campaign.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.fec.gov/files/bulk-downloads/2026/weball26.zip
+  source_title: 'Federal Election Commission: All candidates file, 2025-2026 (weball26.zip)'
+  source_kind: document
+  sha256: 31ddb81424644a25e7bfb241f55ae9e78f285ffe3c75bcad398fa9f0f5b63016
+  archive_url: null
+  event_date: '2026-03-31'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'From weball26.txt in the FEC''s bulk data, downloaded 2026-10-06 (sha256 is of the zip file); columns as described at https://www.fec.gov/campaign-finance-data/all-candidates-file-description/. The totals are cumulative for the cycle as reported by the campaign. Matched by last name and district (first name too when two filers share a last name). Spot-checked against the FEC API for three candidates. The candidate''s FEC page: https://www.fec.gov/data/candidate/H4TX14111/. The bulk file is updated as new reports arrive; the next quarterly reports cover through September 30, 2026.'
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#O-01
+    headline: Oppose school vouchers; more public school funding
+    statement: 'Campaign website: "I oppose it completely. We should be investing more in public education, not less — paying teachers what they deserve, and the bus drivers, custodians, cafeteria workers, and every support staff member who makes those schools run."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://hart4congress.com/
+    source_title: Rhonda Hart for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#O-02
+    headline: Renewable energy
+    statement: 'Campaign website: "We need to protect our natural resources and invest seriously in renewable energy — solar and wind in particular."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://hart4congress.com/
+    source_title: Rhonda Hart for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#O-03
+    headline: Oppose the SAVE Act
+    statement: 'Campaign website: "I will not support the SAVE Act. Period."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://hart4congress.com/
+    source_title: Rhonda Hart for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#O-04
+    headline: Reverse the transgender troop ban
+    statement: 'Campaign website: "The ban on transgender troops must be reversed."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://hart4congress.com/
+    source_title: Rhonda Hart for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#O-05
+    headline: End tariffs; raise the minimum wage; tax billionaires
+    statement: 'Campaign website: "End the chaotic, reckless tariffs. ... Raise the minimum wage. Tax billionaires."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://hart4congress.com/
+    source_title: Rhonda Hart for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#O-06
+    headline: Health care not tied to a job
+    statement: 'Campaign website: "Every American deserves healthcare that isn''t tied to a paycheck or a premium."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://hart4congress.com/
+    source_title: Rhonda Hart for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

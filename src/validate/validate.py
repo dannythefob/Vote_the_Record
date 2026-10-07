@@ -43,6 +43,8 @@ FILE_KINDS = [
     (re.compile(r"^data/states/[a-z]{2}/(statewide|districts/[^/]+|localities/[^/]+)/elections/\d{4}-\d{2}-\d{2}/[^/]+/race\.yaml$"), "race"),
     (re.compile(r"^data/states/[a-z]{2}/(statewide|districts/[^/]+|localities/[^/]+)/elections/\d{4}-\d{2}-\d{2}/[^/]+/measure\.yaml$"), "measure"),
     (re.compile(r"^data/states/[a-z]{2}/(statewide|districts/[^/]+|localities/[^/]+)/elections/\d{4}-\d{2}-\d{2}/[^/]+/candidates/[^/]+\.yaml$"), "candidate"),
+    (re.compile(r"^data/states/[a-z]{2}/decisions/[^/]+\.yaml$"), "decisions"),
+    (re.compile(r"^data/states/[a-z]{2}/who-decides\.yaml$"), "who_decides"),
     (re.compile(r"^corrections/log\.yaml$"), "corrections"),
 ]
 
@@ -82,7 +84,8 @@ def load_validators(schemas_dir: Path) -> dict[str, Draft202012Validator]:
         **{
             kind: for_ref(f"urn:vtr:schema:other#/$defs/{kind}")
             for kind in ("race", "actions", "powers", "office_override", "survey",
-                         "state", "locality", "corrections", "voter_essentials", "ballot", "zips", "precincts", "measure")
+                         "state", "locality", "corrections", "voter_essentials", "ballot", "zips", "precincts", "measure",
+                         "decisions", "who_decides")
         },
     }
 
@@ -443,7 +446,70 @@ def validate(root: Path, schemas_dir: Path | None = None) -> Report:
                 if ref not in all_ids:
                     report.error(rel, f"promise_tracker[{i}]: '{ref}' does not exist")
 
+    check_decisions_and_issues(root, docs, powers, all_ids, report)
     return report
+
+
+def check_decisions_and_issues(root: Path, docs: dict, powers: dict, all_ids: dict, report: Report) -> None:
+    """Big decisions and the who-decides guide: path-based IDs, real powers, facts, and offices; no party talk."""
+    offices = {p.name for p in (root / "offices").iterdir() if p.is_dir()} if (root / "offices").is_dir() else set()
+    decision_ids: set[str] = set()
+    for rel, (kind, doc) in docs.items():
+        if kind != "decisions" or not isinstance(doc, dict):
+            continue
+        state, office = rel.split("/")[2], rel.rsplit("/", 1)[1].removesuffix(".yaml")
+        if doc.get("office_type") != office:
+            report.error(rel, f"office_type must be '{office}' to match the file name")
+        if str(doc.get("state", "")).lower() != state:
+            report.error(rel, f"state must be '{state.upper()}' to match its folder")
+        for d in doc.get("decisions") or []:
+            if not isinstance(d, dict):
+                continue
+            did = d.get("id", "")
+            if not str(did).startswith(id_prefix(rel) + "#"):
+                report.error(rel, f"decisions: id '{did}' must start with '{id_prefix(rel)}#' (path-based IDs)")
+            if did in decision_ids or did in all_ids:
+                report.error(rel, f"decisions: duplicate id '{did}'")
+            decision_ids.add(did)
+            for pid in d.get("powers") or []:
+                if pid not in powers.get(office, set()):
+                    report.error(rel, f"{did}: power {pid} does not exist for office '{office}'")
+            for ref in d.get("facts") or []:
+                if ref not in all_ids:
+                    report.error(rel, f"{did}: fact '{ref}' does not exist")
+            loc = d.get("locality")
+            if loc and not any((root / "data/states" / state / k / loc).is_dir() for k in ("localities", "districts")):
+                report.error(rel, f"{did}: locality '{loc}' has no folder under data/states/{state}/")
+            for key in ("title", "what_happened", "how_it_affects_you"):
+                if PARTY_TERMS.search(d.get(key) or ""):
+                    report.error(rel, f"{did}: {key} mentions a party (rule 5)")
+    issue_ids: set[str] = set()
+    for rel, (kind, doc) in docs.items():
+        if kind != "who_decides" or not isinstance(doc, dict):
+            continue
+        state = rel.split("/")[2]
+        if str(doc.get("state", "")).lower() != state:
+            report.error(rel, f"state must be '{state.upper()}' to match its folder")
+        for issue in doc.get("issues") or []:
+            if not isinstance(issue, dict):
+                continue
+            iid = issue.get("id", "")
+            if not str(iid).startswith(id_prefix(rel) + "#"):
+                report.error(rel, f"issues: id '{iid}' must start with '{id_prefix(rel)}#' (path-based IDs)")
+            if iid in issue_ids:
+                report.error(rel, f"issues: duplicate id '{iid}'")
+            issue_ids.add(iid)
+            texts = [issue.get("question"), issue.get("short_answer")]
+            for decider in issue.get("deciders") or []:
+                texts.append(decider.get("role"))
+                for office in decider.get("office_types") or []:
+                    if office not in offices:
+                        report.error(rel, f"{iid}: office type '{office}' has no folder under offices/")
+            for ref in issue.get("decisions") or []:
+                if ref not in decision_ids:
+                    report.error(rel, f"{iid}: decision '{ref}' does not exist")
+            if any(PARTY_TERMS.search(t or "") for t in texts):
+                report.error(rel, f"{iid}: text mentions a party (rule 5)")
 
 
 def main(argv: list[str]) -> int:

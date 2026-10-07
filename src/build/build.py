@@ -49,6 +49,9 @@ def load_config(path: Path) -> tuple[dict, list[str]]:
         for link in links:
             if not str(link.get("url", "")).startswith("https://"):
                 errors.append(f"{path.name}: official_links.{state}: '{link.get('name')}' needs an https:// url")
+    for state, check in (config.get("registration_check") or {}).items():
+        if not (check.get("name") and str(check.get("url", "")).startswith("https://")):
+            errors.append(f"{path.name}: registration_check.{state} needs a name and an https:// url")
     return config, errors
 
 
@@ -176,6 +179,7 @@ def build(root: Path, out: Path, *, demo: bool = False, config_path: Path | None
             body=render_methodology(config), page="methodology"),
         "/corrections/": env.get_template("corrections.html").render(site=site, page="corrections"),
         "/about/": env.get_template("about.html").render(page="about"),
+        "/who-decides/": env.get_template("who_decides.html").render(site=site, page="who-decides"),
         "/report/": env.get_template("report.html").render(page="report"),
         "/report/thanks/": env.get_template("report_done.html").render(page="report", ok=True),
         "/report/error/": env.get_template("report_done.html").render(page="report", ok=False),

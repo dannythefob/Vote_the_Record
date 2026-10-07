@@ -1,0 +1,31 @@
+# Fictional demo data for the "Real decisions this job has made" section. Never deploy.
+office_type: county-commissioner
+state: TX
+decisions:
+  - id: tx/decisions/county-commissioner#demo-budget-cut
+    title: Demo County cut department spending by 3 percent
+    status: decided
+    date: "2025-03-12"
+    decided_by: Demo County Commissioners Court
+    locality: demo-county
+    what_happened: The court passed a budget amendment cutting department spending by 3 percent.
+    how_it_affects_you: Commissioners set the county budget, which pays for the services you use.
+    powers: [P-BUDGET]
+    facts:
+      - tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-01
+    verification: unverified
+    verified_on: null
+    reviewer: null
+  - id: tx/decisions/county-commissioner#elsewhere-roads
+    title: Another county's road plan (fictional)
+    status: pending
+    date: "2026-09-01"
+    decided_by: Elsewhere County Commissioners Court
+    what_happened: A fictional road plan is still being decided.
+    how_it_affects_you: Commissioners decide which county roads get fixed first.
+    powers: [P-ROADS]
+    facts:
+      - tx/localities/demo-county/elections/2026-11-03/commissioner-precinct-9/candidates/02-avery-example#R-01
+    verification: unverified
+    verified_on: null
+    reviewer: null
