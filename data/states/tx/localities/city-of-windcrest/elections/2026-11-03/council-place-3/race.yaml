@@ -1,0 +1,23 @@
+# Basic race page: the office and candidates as printed on the sample ballot. Unverified.
+name: City of Windcrest City Council, Place 3
+office_type: city-council-member
+election_date: '2026-11-03'
+detail: basic
+sources:
+- id: tx/localities/city-of-windcrest/elections/2026-11-03/council-place-3/race#S-01
+  headline: Candidates as printed on the sample ballot
+  statement: 'The Bexar County Elections Department''s sample ballot for the November 3, 2026 joint general, special, charter and bond election lists "City of Windcrest, For City Council, Place 3" on page 3, with these candidates: Greg Turner; Robert Maloy.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://elections.bexar.gov/DocumentCenter/View/1708/Generic-Sample-Ballot
+  source_title: 'Bexar County Elections Department: Generic Sample Ballot, Joint General, Special, Charter and Bond Election, November 3, 2026 (page 3)'
+  source_kind: document
+  sha256: 618a0dafdb6eac0f97a7fa6e9a9696cd89763786107b361928fdb3e383cdb7af
+  archive_url: https://web.archive.org/web/20261007004410/https://elections.bexar.gov/DocumentCenter/View/1708/Generic-Sample-Ballot
+  event_date: '2026-11-03'
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Candidate names are from the PDF's text layer. Proposition wording was transcribed from the pages rendered as images and checked against the text layer; it is kept exactly as printed, including the ballot's own typos, with the outer quotation marks left off and only the English choices listed. The ballot prints parties as REP, DEM, LIB, GRN, and IND ("Independent Party" in its legend).
