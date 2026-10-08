@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: anna-campos
 name: Anna Campos
-incumbent: null
+incumbent: true
 ballot_party: Democratic Party
 records: []
-funding: []
+funding:
+- id: tx/localities/bexar-county/elections/2026-11-03/jp-precinct-4/candidates/anna-campos#M-01
+  headline: Raised $5,950 and had $4,492 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Bexar County Elections Department on Oct 5, 2026: $5,950.00 in total political contributions, $1,457.70 in total political expenditures, and $4,492.30 in contributions on hand at the end of the period.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://edocs.bexar.org/elections/ce10052026annamcampos.pdf
+  source_title: 'Bexar County Elections Department: campaign finance report, Anna Campos (filed Oct 5, 2026)'
+  source_kind: document
+  sha256: 68913cc72612390f02f6c6a186f02d1f8eeb777d7fdf8354cb5e322e3b177f70
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed on the county''s campaign finance search (https://apps.bexar.org/electionsfinancereport/) as "Contributions and Expenditures 30 day", office "Justice of the Peace, Precinct 4 Place 1", filer "Campos, Anna", filed Oct 5, 2026; matched by first and last name. This is the newest report listed for the candidate. The PDF is a scan; the totals were read from the cover-sheet image. Reading note: outstanding-loan total left blank. Left out: outstanding loans. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

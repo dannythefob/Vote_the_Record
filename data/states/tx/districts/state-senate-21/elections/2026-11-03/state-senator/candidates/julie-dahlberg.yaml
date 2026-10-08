@@ -23,6 +23,23 @@ funding:
   verified_on: null
   reviewer: null
   notes: Report ID 101061483, form COH, TEC report type SEMIJUL; filer ID 00086288 (Dahlberg, Julia E. (Mrs.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by nickname, middle name, or initial, with office and district; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-01; a correction filed later replaces the version it corrects.
+- id: tx/districts/state-senate-21/elections/2026-11-03/state-senator/candidates/julie-dahlberg#M-02
+  headline: Raised $4,183 and had $1,207 on hand (Jul 1 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1 - Sep 24, 2026, filed Oct 5, 2026: $4,183.00 in total political contributions, $4,663.37 in total political expenditures, $1,207.03 in contributions on hand at the end of the period, and $432.19 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101069429.PDF
+  source_title: 'Texas Ethics Commission: Dahlberg, Julia E. (Mrs.), campaign finance report 101069429 (filed Oct 5, 2026)'
+  source_kind: document
+  sha256: 1063f8dc94f0cf898df1ed871b13a5801224d2e75199d92b89f07253e787bb56
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101069429, form COH, TEC report type E30DAYBEF; filer ID 00086288 (Dahlberg, Julia E. (Mrs.)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by nickname, middle name, or initial, with office and district; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-07; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

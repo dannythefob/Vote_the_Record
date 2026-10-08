@@ -1,7 +1,7 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: melanie-m-lira
 name: Melanie M. Lira
-incumbent: null
+incumbent: true
 ballot_party: Democratic Party
 records: []
 funding: []

@@ -4,7 +4,24 @@ name: Diana Arévalo
 incumbent: null
 ballot_party: null
 records: []
-funding: []
+funding:
+- id: tx/localities/bexar-county/elections/2026-11-03/bcad-place-1/candidates/diana-arevalo#M-01
+  headline: Raised $8,415 and had $7,014 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Bexar County Elections Department on Sep 30, 2026: $8,414.79 in total political contributions, $2,288.13 in total political expenditures, $7,013.64 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://edocs.bexar.org/elections/cnedianaarevalo09302026.pdf
+  source_title: 'Bexar County Elections Department: campaign finance report, Diana Arévalo (filed Sep 30, 2026)'
+  source_kind: document
+  sha256: 6fae4b3d3f944f0540c323aa5d54e423c5160475add69bd1321384282b30f17e
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Listed on the county's campaign finance search (https://apps.bexar.org/electionsfinancereport/) as "Contributions and Expenditures 30 day", office "Appraisal District Board of Directors", filer "Arevalo , Diana", filed Sep 30, 2026; matched by first and last name. This is the newest report listed for the candidate. The PDF is a scan; the totals were read from the cover-sheet image. Not yet archived on the Wayback Machine.
 endorsements: []
 running_on:
   policy_proposals: []

@@ -1,7 +1,7 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: jessica-ann-hannah
 name: Jessica Ann Hannah
-incumbent: null
+incumbent: true
 ballot_party: null
 records: []
 funding: []

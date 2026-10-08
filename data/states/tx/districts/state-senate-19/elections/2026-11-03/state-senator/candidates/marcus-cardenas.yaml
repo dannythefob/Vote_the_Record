@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: marcus-cardenas
 name: Marcus Cardenas
-incumbent: null
+incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/districts/state-senate-19/elections/2026-11-03/state-senator/candidates/marcus-cardenas#M-01
+  headline: Had $379 on hand (May 17 - May 26, 2026)
+  statement: 'Campaign finance report covering May 17 - May 26, 2026, filed Sep 14, 2026: $261.26 in total political expenditures, $379.33 in contributions on hand at the end of the period, and $0.00 in outstanding loans. The report data lists no amount for total political contributions.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101067437.PDF
+  source_title: 'Texas Ethics Commission: Cardenas, Marcus (Mr.), campaign finance report 101067437 (filed Sep 14, 2026)'
+  source_kind: document
+  sha256: 60057453e63e574baa7cf8be0911b5bb5e50844491119de08a8fc754bc3006ce
+  archive_url: null
+  event_date: '2026-05-26'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101067437, form COH, TEC report type E08DAYBEF; filer ID 00090032 (Cardenas, Marcus (Mr.)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-07; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

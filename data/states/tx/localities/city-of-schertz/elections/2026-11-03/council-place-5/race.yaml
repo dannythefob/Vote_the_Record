@@ -21,3 +21,19 @@ sources:
   verified_on: null
   reviewer: null
   notes: Candidate names are from the PDF's text layer. Proposition wording was transcribed from the pages rendered as images and checked against the text layer; it is kept exactly as printed, including the ballot's own typos, with the outer quotation marks left off and only the English choices listed. The ballot prints parties as REP, DEM, LIB, GRN, and IND ("Independent Party" in its legend).
+- id: tx/localities/city-of-schertz/elections/2026-11-03/council-place-5/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (City of Schertz: City Council), checked on October 7, 2026, shows that Robert M. Westbrook, a candidate in this race, currently holds this office. The list lists the name as "Robert Westbrook". It does not list the other candidates as holding this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.schertz.com/226/City-Council
+  source_title: 'City of Schertz: City Council'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-07'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null

@@ -1,7 +1,7 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: lucy-adame-clark
 name: Lucy Adame-Clark
-incumbent: null
+incumbent: true
 ballot_party: Democratic Party
 records: []
 funding: []
