@@ -2,7 +2,6 @@
 name: Edgewood ISD Trustee, Place 1
 office_type: school-trustee
 election_date: '2026-11-03'
-detail: basic
 sources:
 - id: tx/localities/edgewood-isd/elections/2026-11-03/trustee-place-1/race#S-01
   headline: Candidates as printed on the sample ballot

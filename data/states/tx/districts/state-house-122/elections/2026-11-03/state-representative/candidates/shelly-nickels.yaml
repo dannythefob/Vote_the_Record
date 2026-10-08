@@ -3,6 +3,7 @@ id: shelly-nickels
 name: Shelly Nickels
 incumbent: false
 ballot_party: Democratic Party
+research: pending
 records: []
 funding:
 - id: tx/districts/state-house-122/elections/2026-11-03/state-representative/candidates/shelly-nickels#M-01

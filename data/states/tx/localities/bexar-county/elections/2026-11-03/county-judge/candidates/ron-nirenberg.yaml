@@ -1,9 +1,47 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: ron-nirenberg
 name: Ron Nirenberg
 incumbent: false
 ballot_party: Democratic Party
-records: []
+records:
+- id: tx/localities/bexar-county/elections/2026-11-03/county-judge/candidates/ron-nirenberg#R-01
+  record_type: vote
+  headline: As San Antonio mayor, voted yes on the city's FY 2025 budget (Sept. 2024)
+  result: Approved 11-0.
+  statement: As Mayor of San Antonio, voted yes on September 19, 2024 on the motion "to Approve the balance of the Budget as presented," adopting the city's FY 2025 operating and capital budgets (Item 4). The minutes record all 11 members voting aye. On five earlier votes that day on funding for specific outside organizations in the budget, he voted aye on three and is listed as recused on two (BioMed SA, and a group including Las Casas Foundation, Girl Scouts, H-E-B and the Witte Museum).
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://webapp9.sanantonio.gov/FileNetArchive/%7B6B64D9F0-0718-4936-B970-A3F89B0478DC%7D/%7B6B64D9F0-0718-4936-B970-A3F89B0478DC%7D.pdf
+  source_title: 'City of San Antonio: Meeting Minutes, City Council A Session, September 19, 2024 (pages 6-7 of 19)'
+  source_kind: document
+  sha256: 79840f0f99525ba3093a532d32fbf4467b25e9c883d35366936e9e4fb8e30b8b
+  archive_url: null
+  event_date: '2024-09-19'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Found through the City Clerk's Municipal Archive search (https://webapp9.sanantonio.gov/ArchSearch_mod/Default.aspx, collection "Minutes", date September 19, 2024). The PDF is a scan; the votes were checked against the page image. All 11 members were present. The minutes call it Mayor Nirenberg's twelfth and final city budget. Not yet archived on the Wayback Machine.
+- id: tx/localities/bexar-county/elections/2026-11-03/county-judge/candidates/ron-nirenberg#R-02
+  record_type: vote
+  headline: As San Antonio mayor, voted yes on keeping the city property tax rate at 54.159 cents (Sept. 2024)
+  result: Each approved 11-0.
+  statement: As Mayor of San Antonio, voted yes on September 19, 2024 on the ordinances setting the city's 2024 property tax rate at 33.009 cents per $100 for maintenance and operations (Item 6) and 21.150 cents per $100 for debt (Item 7), and on the ordinance ratifying that the FY 2025 budget "will require raising more revenue from property taxes than in the FY2024 Budget" (Item 5). The minutes record all 11 members voting aye on each.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://webapp9.sanantonio.gov/FileNetArchive/%7B6B64D9F0-0718-4936-B970-A3F89B0478DC%7D/%7B6B64D9F0-0718-4936-B970-A3F89B0478DC%7D.pdf
+  source_title: 'City of San Antonio: Meeting Minutes, City Council A Session, September 19, 2024 (pages 7-8 of 19)'
+  source_kind: document
+  sha256: 79840f0f99525ba3093a532d32fbf4467b25e9c883d35366936e9e4fb8e30b8b
+  archive_url: null
+  event_date: '2024-09-19'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Found through the City Clerk's Municipal Archive search (https://webapp9.sanantonio.gov/ArchSearch_mod/Default.aspx, collection "Minutes", date September 19, 2024). The PDF is a scan; the votes were checked against the page image. All 11 members were present. The two rates add up to 54.159 cents per $100. The minutes record City Manager Erik Walsh saying the budget "did not require any new property taxes." Not yet archived on the Wayback Machine.
 funding:
 - id: tx/localities/bexar-county/elections/2026-11-03/county-judge/candidates/ron-nirenberg#M-01
   headline: Raised $672,695 and had $480,164 on hand (Jul 1, 2026 - Sep 24, 2026)
@@ -24,7 +62,58 @@ funding:
   notes: Listed on the county's campaign finance search (https://apps.bexar.org/electionsfinancereport/) as "Contributions and Expenditures 30 day", office "County Judge", filer "Nirenberg, Ron", filed Oct 5, 2026; matched by first and last name. This is the newest report listed for the candidate. The PDF is a scan; the totals were read from the cover-sheet image. Not yet archived on the Wayback Machine.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/bexar-county/elections/2026-11-03/county-judge/candidates/ron-nirenberg#O-01
+    headline: County, city and suburbs working together
+    statement: 'Campaign website: "Build stronger partnerships between the county, city, and suburbs to streamline services and produce results."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://voteron.com/
+    source_title: Ron for County Judge – Ron Nirenberg (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/bexar-county/elections/2026-11-03/county-judge/candidates/ron-nirenberg#O-02
+    headline: Plan ahead for problems
+    statement: 'Campaign website: "Anticipate challenges, plan ahead, and protect our communities before problems grow."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://voteron.com/
+    source_title: Ron for County Judge – Ron Nirenberg (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/bexar-county/elections/2026-11-03/county-judge/candidates/ron-nirenberg#O-03
+    headline: A more transparent county government
+    statement: 'Campaign website: "Make county government relevant, transparent, and focused on improving everyday lives."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://voteron.com/
+    source_title: Ron for County Judge – Ron Nirenberg (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

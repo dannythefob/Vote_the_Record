@@ -1,8 +1,26 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: luz-elena-chapa
 name: Luz Elena Chapa
 incumbent: false
 ballot_party: Democratic Party
+summary:
+- id: tx/localities/bexar-county/elections/2026-11-03/criminal-district-attorney/candidates/luz-elena-chapa#B-01
+  headline: Former justice on the Fourth Court of Appeals (per her campaign)
+  statement: Her campaign website cites her "12 years of service on the Fourth Court of Appeals from 2013 – 2025" and says "She authored over 1,400 opinions, including nearly 600 in criminal cases."
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://chapaforda.com/
+  source_title: Judge Luz Elena Chapa for DA (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/localities/bexar-county/elections/2026-11-03/criminal-district-attorney/candidates/luz-elena-chapa#M-01
@@ -24,7 +42,58 @@ funding:
   notes: 'Listed on the county''s campaign finance search (https://apps.bexar.org/electionsfinancereport/) as "Contributions and Expenditures 30 day", office "District Attorney", filer "Chapa, Luz Elena", filed Oct 5, 2026; matched by first and last name. This is the newest report listed for the candidate. The PDF is a scan; the totals were read from the cover-sheet image. Reading note: contributions include 8,796.44 in non-monetary (in-kind) contributions (Schedule A2). Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/bexar-county/elections/2026-11-03/criminal-district-attorney/candidates/luz-elena-chapa#O-01
+    headline: A fully funded and fully staffed DA's office
+    statement: 'Campaign website: "As District Attorney, Judge Chapa will ensure the DA''s office is fully-funded and fully-staffed so prosecutors have the resources they need to make sure justice is done."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://chapaforda.com/
+    source_title: Judge Luz Elena Chapa for DA (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/bexar-county/elections/2026-11-03/criminal-district-attorney/candidates/luz-elena-chapa#O-02
+    headline: Domestic violence case backlog
+    statement: 'Campaign website: "The growing backlog of unprosecuted domestic violence cases is a stain on Bexar County and an injustice to sufferers of abuse."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://chapaforda.com/
+    source_title: Judge Luz Elena Chapa for DA (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/bexar-county/elections/2026-11-03/criminal-district-attorney/candidates/luz-elena-chapa#O-03
+    headline: Rebuild the DA's working relationship with police
+    statement: 'Campaign website: "As DA, Judge Chapa will repair the broken relationship between the DA''s office and law enforcement, rebuilding trust and cooperation that serves the interests of justice and crime victims."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://chapaforda.com/
+    source_title: Judge Luz Elena Chapa for DA (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

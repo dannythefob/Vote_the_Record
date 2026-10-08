@@ -1,8 +1,26 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: david-sherwood-hill
 name: David Sherwood Hill
 incumbent: false
 ballot_party: Republican Party
+summary:
+- id: tx/localities/bexar-county/elections/2026-11-03/commissioner-precinct-2/candidates/david-sherwood-hill#B-01
+  headline: Civil engineer and business owner (per his campaign)
+  statement: His campaign website describes him as "a San Antonian, civil engineer, business leader, entrepreneur, inventor, and family man."
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://davidsherwoodhill.com/
+  source_title: David Sherwood Hill for Bexar County Commissioner, Precinct 2 (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/localities/bexar-county/elections/2026-11-03/commissioner-precinct-2/candidates/david-sherwood-hill#M-01
@@ -24,7 +42,41 @@ funding:
   notes: Listed on the county's campaign finance search (https://apps.bexar.org/electionsfinancereport/) as "Contributions and Expenditures 30 day", office "County Commissioner Precinct 2", filer "Hill, David", filed Oct 5, 2026; matched by first and last name. This is the newest report listed for the candidate. The PDF is a scan; the totals were read from the cover-sheet image. Not yet archived on the Wayback Machine.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/bexar-county/elections/2026-11-03/commissioner-precinct-2/candidates/david-sherwood-hill#O-01
+    headline: Cut taxes and control spending
+    statement: 'Campaign website: "My mission is simple: cut taxes, control spending, challenge waste, demand accountability, and make county government answer to the taxpayers again."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://davidsherwoodhill.com/
+    source_title: David Sherwood Hill for Bexar County Commissioner, Precinct 2 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/bexar-county/elections/2026-11-03/commissioner-precinct-2/candidates/david-sherwood-hill#O-02
+    headline: Explore major property tax relief with state leaders
+    statement: 'Campaign website: "I will work with state leaders to explore making Bexar County a serious candidate for major property-tax relief — including whether reductions approaching 30% can be achieved legally and responsibly without weakening essential services."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://davidsherwoodhill.com/
+    source_title: David Sherwood Hill for Bexar County Commissioner, Precinct 2 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

@@ -2,7 +2,6 @@
 name: City of Schertz City Council, Place 5
 office_type: city-council-member
 election_date: '2026-11-03'
-detail: basic
 sources:
 - id: tx/localities/city-of-schertz/elections/2026-11-03/council-place-5/race#S-01
   headline: Candidates as printed on the sample ballot

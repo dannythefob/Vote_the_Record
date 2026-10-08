@@ -2,7 +2,6 @@
 name: State Representative, District 124
 office_type: state-representative
 election_date: '2026-11-03'
-detail: basic
 notes: The ballot prints a write-in line for this race. The Bexar County Elections Department's list of declared write-in candidates has not been checked yet, so write-in candidates are not listed here.
 sources:
 - id: tx/districts/state-house-124/elections/2026-11-03/state-representative/race#S-01

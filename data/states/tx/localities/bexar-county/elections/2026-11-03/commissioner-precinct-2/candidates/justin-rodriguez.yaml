@@ -1,9 +1,28 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: justin-rodriguez
 name: Justin Rodriguez
 incumbent: true
 ballot_party: Democratic Party
-records: []
+records:
+- id: tx/localities/bexar-county/elections/2026-11-03/commissioner-precinct-2/candidates/justin-rodriguez#R-01
+  record_type: vote
+  headline: Voted yes on the FY 2025-26 county budget, keeping the tax rate at $0.299999 (Sept. 2025)
+  result: Adopted 5-0.
+  statement: As a member of Commissioners Court, seconded and voted for the motion adopting the FY 2025-26 operating and capital budget on September 9, 2025. The county's adopted budget book records that Commissioner Tommy Calvert made the motion, Commissioner Justin Rodriguez seconded it, and Commissioners Clay-Flores, Rodriguez, Moody, Calvert and Judge Sakai voted "Aye." The adopted property tax rate was $0.299999 per $100, the same as the year before.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.bexar.org/DocumentCenter/View/51564/County-Managers-Message-and-Table-of-Contents-FY-2025-26-PDF
+  source_title: 'Bexar County: FY 2025-26 Adopted Annual Budget, County Manager''s Message and Table of Contents (page 1)'
+  source_kind: document
+  sha256: 5e509114ac073db9cb09f26653f161a8160989206b3f30098a51a034bb078aa0
+  archive_url: null
+  event_date: '2025-09-09'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Page 1 reprints the court's order of September 9, 2025 (Item 6. b-e) and how each member voted. The same page lists the adopted property tax rate ($0.299999 per $100, unchanged from FY 2025), the no-new-revenue rate ($0.306953) and the voter-approval rate ($0.353016), and states that the budget will raise $13,340,187 (2.2 percent) more in property tax revenue than the year before. Not yet archived on the Wayback Machine.
 funding:
 - id: tx/localities/bexar-county/elections/2026-11-03/commissioner-precinct-2/candidates/justin-rodriguez#M-01
   headline: Raised $41,749 and had $1,077,458 on hand (Jul 1, 2026 - Sep 28, 2026)

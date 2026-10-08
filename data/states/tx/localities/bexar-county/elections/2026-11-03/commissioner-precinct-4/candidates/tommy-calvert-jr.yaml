@@ -1,9 +1,47 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: tommy-calvert-jr
 name: Tommy Calvert Jr.
 incumbent: true
 ballot_party: Democratic Party
-records: []
+records:
+- id: tx/localities/bexar-county/elections/2026-11-03/commissioner-precinct-4/candidates/tommy-calvert-jr#R-01
+  record_type: vote
+  headline: Voted yes on the FY 2025-26 county budget, keeping the tax rate at $0.299999 (Sept. 2025)
+  result: Adopted 5-0.
+  statement: As a member of Commissioners Court, made and voted for the motion adopting the FY 2025-26 operating and capital budget on September 9, 2025. The county's adopted budget book records that Commissioner Tommy Calvert made the motion, Commissioner Justin Rodriguez seconded it, and Commissioners Clay-Flores, Rodriguez, Moody, Calvert and Judge Sakai voted "Aye." The adopted property tax rate was $0.299999 per $100, the same as the year before.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.bexar.org/DocumentCenter/View/51564/County-Managers-Message-and-Table-of-Contents-FY-2025-26-PDF
+  source_title: 'Bexar County: FY 2025-26 Adopted Annual Budget, County Manager''s Message and Table of Contents (page 1)'
+  source_kind: document
+  sha256: 5e509114ac073db9cb09f26653f161a8160989206b3f30098a51a034bb078aa0
+  archive_url: null
+  event_date: '2025-09-09'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Page 1 reprints the court's order of September 9, 2025 (Item 6. b-e) and how each member voted. The same page lists the adopted property tax rate ($0.299999 per $100, unchanged from FY 2025), the no-new-revenue rate ($0.306953) and the voter-approval rate ($0.353016), and states that the budget will raise $13,340,187 (2.2 percent) more in property tax revenue than the year before. Not yet archived on the Wayback Machine.
+- id: tx/localities/bexar-county/elections/2026-11-03/commissioner-precinct-4/candidates/tommy-calvert-jr#R-02
+  record_type: vote
+  headline: Voted no on the FY 2026-27 county budget (Sept. 2026)
+  result: Approved 3-2.
+  statement: On September 15, 2026, Commissioners Court approved the FY 2026-27 budget 3-2, keeping the property tax rate at $0.299999 per $100 (Bexar County news release). Texas Public Radio reported that Commissioner Grant Moody voted against the spending plan, "as did Precinct 4 Commissioner Tommy Calvert, who said he could have used more analysis by the budget office to make more informed budget decisions."
+  label: news_report
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.tpr.org/government-politics/2026-09-15/county-adopts-2-6-billion-budget-as-county-manager-announces-retirement
+  source_title: 'Texas Public Radio: County adopts $2.6 billion budget as county manager announces retirement (Sept. 15, 2026)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-09-15'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The county's official news release (https://www.bexar.org/Archive.aspx?ADID=9727, Sept. 15, 2026) gives the 3-2 total but not how each member voted. The official minutes are kept in the County Clerk's records search (https://bexar.tx.publicsearch.us/), which could not be searched here, so who voted no is from the news report. The article does not name the three members who voted for the budget. Not yet archived on the Wayback Machine.
 funding:
 - id: tx/localities/bexar-county/elections/2026-11-03/commissioner-precinct-4/candidates/tommy-calvert-jr#M-01
   headline: Raised $7,325 and had $198,995 on hand (Jul 1, 2026 - Sep 24, 2026)

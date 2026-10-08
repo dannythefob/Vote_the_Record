@@ -1,8 +1,26 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: mark-teixeira
 name: Mark Teixeira
 incumbent: false
 ballot_party: Republican Party
+summary:
+- id: tx/districts/us-house-21/elections/2026-11-03/us-representative/candidates/mark-teixeira#B-01
+  headline: Former Major League Baseball player (per his campaign)
+  statement: His campaign website says he "was drafted 5th overall by the Texas Rangers in the 2001 MLB Draft" and "capped his career with a World Series Championship with the New York Yankees in 2009."
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://teixeiraforcongress.com/
+  source_title: Mark "Tex" Teixeira for Congress (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
 funding:
 - id: tx/districts/us-house-21/elections/2026-11-03/us-representative/candidates/mark-teixeira#M-01
@@ -24,7 +42,24 @@ funding:
   notes: 'From weball26.txt in the FEC''s bulk data, downloaded 2026-10-06 (sha256 is of the zip file); columns as described at https://www.fec.gov/campaign-finance-data/all-candidates-file-description/. The totals are cumulative for the cycle as reported by the campaign. Matched by last name and district (first name too when two filers share a last name). Spot-checked against the FEC API for three candidates. The candidate''s FEC page: https://www.fec.gov/data/candidate/H6TX21301/. The bulk file is updated as new reports arrive; the next quarterly reports cover through September 30, 2026.'
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/districts/us-house-21/elections/2026-11-03/us-representative/candidates/mark-teixeira#O-01
+    headline: Lower costs, safety, and freedoms
+    statement: 'Campaign website: "He’ll fight to lower costs, keep Texans safe, and defend our freedoms."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://teixeiraforcongress.com/
+    source_title: Mark "Tex" Teixeira for Congress (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

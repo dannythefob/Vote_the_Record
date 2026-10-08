@@ -1,9 +1,28 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: carol-g-patterson
 name: Carol G. Patterson
 incumbent: true
 ballot_party: null
-records: []
+records:
+- id: tx/localities/edwards-aquifer-authority/elections/2026-11-03/director-district-1/candidates/carol-g-patterson#R-01
+  record_type: vote
+  headline: Present when the board adopted the 2026 budget and aquifer pumping fees without opposition (Nov. 2025)
+  result: Passed without opposition (12 directors present).
+  statement: The minutes of the November 12, 2025 board meeting list Director Carol Patterson as present at roll call. The board adopted Resolution and Order No. 11-25-137, approving the fiscal year 2026 operating budget and setting 2026 aquifer management fees of $2 per acre-foot for agricultural users, $62 per acre-foot for non-agricultural users (General Fund), and a $35 per acre-foot non-agricultural program fee (EAHCP Fund). The minutes say "The motion passed without opposition"; they do not list individual votes.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://legistar.granicus.com/EdwardsAquifer/meetings/2025/11/2274_M_Board_of_Directors_25-11-12_Meeting_Minutes.pdf
+  source_title: 'Edwards Aquifer Authority Board of Directors: Meeting Minutes, November 12, 2025 (pages 1 and 6)'
+  source_kind: document
+  sha256: 477b6fc6ae43673e20da436be8575146e9faf981082bf76f2cf5c57c8fd938d7
+  archive_url: null
+  event_date: '2025-11-12'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Listed on the authority's Legistar site (https://edwardsaquifer.legistar.com/). Two directors were absent. The minutes record no individual roll call on this item, so this is not shown as her personal vote. Not yet archived on the Wayback Machine.
 funding: []
 endorsements: []
 running_on:

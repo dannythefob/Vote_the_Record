@@ -1,9 +1,104 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: michael-valdez
 name: Michael Valdez
 incumbent: true
 ballot_party: null
-records: []
+records:
+- id: tx/localities/edgewood-isd/elections/2026-11-03/trustee-place-6/candidates/michael-valdez#R-01
+  record_type: vote
+  headline: Voted yes on the 2025-26 district budget and proposed tax rate (June 2025)
+  result: Passed 7-0.
+  statement: As a trustee, voted yes on the consent agenda that included "the Adoption of the 2025-2026 District Official Budget and the Proposed 2025 Tax Rate" (item B) on June 12, 2025. The minutes record all seven trustees voting yes.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://meetings.boardbook.org/Documents/DownloadPDF/3385322?org=844
+  source_title: 'Edgewood ISD Board of Trustees: Minutes of Regular Meeting, June 12, 2025'
+  source_kind: document
+  sha256: 9f81289d69c9d59a7d6c07b45f2c6b5001f7786e2dbf6a4f74c79b4e2ee18860
+  archive_url: null
+  event_date: '2025-06-12'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Approved minutes posted on the district's BoardBook page (https://meetings.boardbook.org/Public/Minutes/844?meeting=647380), with each trustee's vote under "Voting Detail." The budget was one of consent items A through K, approved in one motion. Not yet archived on the Wayback Machine.
+- id: tx/localities/edgewood-isd/elections/2026-11-03/trustee-place-6/candidates/michael-valdez#R-02
+  record_type: vote
+  headline: Voted no on hiring lawyers to sue social media companies over student use (June 2025)
+  result: Passed 6-1.
+  statement: As a trustee, voted no on June 12, 2025 on a contingency-fee legal services agreement with JCA Law, PLLC and Guerra LLP "for the purposes of pursuing litigation and causes of action and the potential recover of damages against social media companies resulting from student social media usage." The minutes record six trustees voting yes and Michael Valdez voting no.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://meetings.boardbook.org/Documents/DownloadPDF/3385322?org=844
+  source_title: 'Edgewood ISD Board of Trustees: Minutes of Regular Meeting, June 12, 2025'
+  source_kind: document
+  sha256: 9f81289d69c9d59a7d6c07b45f2c6b5001f7786e2dbf6a4f74c79b4e2ee18860
+  archive_url: null
+  event_date: '2025-06-12'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Approved minutes posted on the district's BoardBook page (https://meetings.boardbook.org/Public/Minutes/844?meeting=647380), with each trustee's vote under "Voting Detail." Not yet archived on the Wayback Machine.
+- id: tx/localities/edgewood-isd/elections/2026-11-03/trustee-place-6/candidates/michael-valdez#R-03
+  record_type: vote
+  headline: Voted yes on a 2025 tax rate of $0.98615 (Sept. 2025)
+  result: Passed 6-0.
+  statement: As a trustee, voted yes on September 16, 2025 on the motion "that the property tax rate be increased by the adoption of a tax rate of $0.98615, which is effectively a 2.17 percent increase in the tax rate." The minutes record the six trustees present voting yes; Frank Espinosa made the motion.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://meetings.boardbook.org/Documents/DownloadPDF/3385328?org=844
+  source_title: 'Edgewood ISD Board of Trustees: Minutes of Regular Meeting, September 16, 2025'
+  source_kind: document
+  sha256: d3c650d96077ed63b2dd1729928f7dd780f3d2f727f2bbfbe11fb705cac721a1
+  archive_url: null
+  event_date: '2025-09-16'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Approved minutes posted on the district's BoardBook page (https://meetings.boardbook.org/Public/Minutes/844?meeting=708547), with each trustee's vote under "Voting Detail." Martha Castilla is listed as absent. Not yet archived on the Wayback Machine.
+- id: tx/localities/edgewood-isd/elections/2026-11-03/trustee-place-6/candidates/michael-valdez#R-04
+  record_type: vote
+  headline: Voted yes on the 2026-27 district budget and proposed tax rate (June 2026)
+  result: Passed 6-0.
+  statement: As a trustee, voted yes on the consent agenda that included "the adoption of the 2026-2027 District Official Budget and Proposed 2026 Tax Rate" (item D) on June 15, 2026. The minutes record the six trustees present voting yes.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://meetings.boardbook.org/Documents/DownloadPDF/3385351?org=844
+  source_title: 'Edgewood ISD Board of Trustees: Minutes of Regular Meeting, June 15, 2026'
+  source_kind: document
+  sha256: be0ad727d09bd3109ec7c4e1a57602132a9e9d7bfaf1829f667fe036f08a5b22
+  archive_url: null
+  event_date: '2026-06-15'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Approved minutes posted on the district's BoardBook page (https://meetings.boardbook.org/Public/Minutes/844?meeting=747916), with each trustee's vote under "Voting Detail." The budget was one of consent items A through T, approved in one motion. James Hernandez is listed as absent. Not yet archived on the Wayback Machine.
+- id: tx/localities/edgewood-isd/elections/2026-11-03/trustee-place-6/candidates/michael-valdez#R-05
+  record_type: vote
+  headline: Voted yes to end outside-partner agreements for three schools (June 2026)
+  result: Each passed 6-0.
+  statement: 'As a trustee, voted yes on June 15, 2026 on three motions approving mutual termination agreements for the district''s Senate Bill 1882 partnerships: with Texas Council for International Studies for Roy Cisneros Elementary and Las Palmas Elementary, and with Texas A&M-San Antonio Institute for School and Community Partnerships, Inc. for Gus Garcia Middle School. The minutes record the six trustees present voting yes on each.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://meetings.boardbook.org/Documents/DownloadPDF/3385351?org=844
+  source_title: 'Edgewood ISD Board of Trustees: Minutes of Regular Meeting, June 15, 2026'
+  source_kind: document
+  sha256: be0ad727d09bd3109ec7c4e1a57602132a9e9d7bfaf1829f667fe036f08a5b22
+  archive_url: null
+  event_date: '2026-06-15'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Approved minutes posted on the district's BoardBook page (https://meetings.boardbook.org/Public/Minutes/844?meeting=747916), with each trustee's vote under "Voting Detail." SB 1882 (2017) lets a district give an outside partner control of a campus. James Hernandez is listed as absent. Not yet archived on the Wayback Machine.
 funding: []
 endorsements: []
 running_on:
