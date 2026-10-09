@@ -1,9 +1,66 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: grady-prestage
 name: GRADY PRESTAGE
 incumbent: true
 ballot_party: Democratic Party
-records: []
+records:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/commissioner-precinct-2/candidates/grady-prestage#R-01
+  record_type: vote
+  headline: Voted yes on a 2026 county tax rate of $0.407 (Sept. 2026)
+  result: Passed 4-0 (one member absent).
+  statement: As Commissioner, Precinct 2, voted yes on September 10, 2026 on the motion that "the property tax rate be increased by the adoption of a tax rate of $0.289236 for the General Fund, $0.01000 for the Road & Bridge Fund, and $0.107764 for the Interest & Sinking Fund for a total Fort Bend County Tax Rate of $0.407000, which is effectively a 2.78 percent increase in the tax rate." The rate on the agenda had been $0.412000. The minutes record Judge Wong and Commissioners Morales, Prestage and Meyers voting yes and Commissioner McCoy absent.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://agendalink.fortbendcountytx.gov/agenda_publish.cfm?id=&mt=ALL&get_month=9&get_year=2026&dsp=min&seq=4139
+  source_title: 'Fort Bend County Commissioners Court: Minutes, regular meeting of September 10, 2026'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-09-10'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes as published on the county's agenda site (Item 21C, 21H). The September 24, 2026 agenda lists approval of the minutes of the September 10, 2026 regular meeting. The minutes list each member's vote. Not yet archived on the Wayback Machine.
+- id: tx/localities/fort-bend-county/elections/2026-11-03/commissioner-precinct-2/candidates/grady-prestage#R-02
+  record_type: vote
+  headline: Voted no on the county's $827.7 million FY2027 budget (Sept. 2026)
+  result: Passed 3-2.
+  statement: As Commissioner, Precinct 2, voted no on September 10, 2026 on the motion "to adopt the FY2027 Proposed Budget for Fort Bend County as filed on August 31, 2026 in the amount of $827,702,847." The minutes record Judge Wong and Commissioners Morales and Meyers voting yes and Commissioners Prestage and McCoy voting no.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://agendalink.fortbendcountytx.gov/agenda_publish.cfm?id=&mt=ALL&get_month=9&get_year=2026&dsp=min&seq=4139
+  source_title: 'Fort Bend County Commissioners Court: Minutes, regular meeting of September 10, 2026'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-09-10'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes as published on the county's agenda site (Item 21C, 21H). The September 24, 2026 agenda lists approval of the minutes of the September 10, 2026 regular meeting. The minutes list each member's vote. Not yet archived on the Wayback Machine.
+- id: tx/localities/fort-bend-county/elections/2026-11-03/commissioner-precinct-2/candidates/grady-prestage#R-03
+  record_type: vote
+  headline: Voted yes on a budget change to fund associate judges and keep civil legal work in the County Attorney's office (Sept. 2026)
+  result: Failed 2-3.
+  statement: As Commissioner, Precinct 2, voted yes on September 10, 2026 on a motion "to amend the Proposed Budget by fully funding all Associate Judges and related positions through the entirety of FY2027 and that there is no longer a separate Civil Legal Department that is overseen by the Commissioners Court," shifting its resources and positions back to the County Attorney's Office. The minutes record Commissioners Prestage and McCoy voting yes and Judge Wong and Commissioners Morales and Meyers voting no.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://agendalink.fortbendcountytx.gov/agenda_publish.cfm?id=&mt=ALL&get_month=9&get_year=2026&dsp=min&seq=4139
+  source_title: 'Fort Bend County Commissioners Court: Minutes, regular meeting of September 10, 2026'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-09-10'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes as published on the county's agenda site (Item 21C, 21H). The September 24, 2026 agenda lists approval of the minutes of the September 10, 2026 regular meeting. The minutes list each member's vote. Not yet archived on the Wayback Machine.
 funding:
 - id: tx/localities/fort-bend-county/elections/2026-11-03/commissioner-precinct-2/candidates/grady-prestage#M-01
   headline: Raised $247,500 and had $342,585 on hand (Feb 22, 2026 - Jun 30, 2026)
