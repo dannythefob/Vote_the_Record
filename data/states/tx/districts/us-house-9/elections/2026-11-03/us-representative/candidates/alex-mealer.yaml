@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Republican Party
 summary:
 - id: tx/districts/us-house-9/elections/2026-11-03/us-representative/candidates/alex-mealer#B-01
-  headline: West Point graduate, combat veteran, former oil and gas finance executive (per her campaign)
+  headline: West Point graduate, combat veteran, former oil and gas finance executive (per the campaign)
   statement: 'Campaign website: "Alex Mealer is a wife and mother, West Pointer and combat veteran, Harvard JD/MBA and former oil & gas finance executive and current small business owner, who is proud to be raising the next generation of Texans."'
   label: candidate_claim
   claim_status: documented

@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/us-house-9/elections/2026-11-03/us-representative/candidates/leticia-gutierrez#B-01
-  headline: Finance graduate of the University of St. Thomas (per her campaign)
+  headline: Finance graduate of the University of St. Thomas (per the campaign)
   statement: 'Campaign website: "Leticia graduated from Milby High School and earned a degree in finance from the University of St. Thomas."'
   label: candidate_claim
   claim_status: documented

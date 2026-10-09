@@ -2,7 +2,6 @@
 name: State Representative, District 116
 office_type: state-representative
 election_date: '2026-11-03'
-detail: basic
 sources:
 - id: tx/districts/state-house-116/elections/2026-11-03/state-representative/race#S-01
   headline: Candidates as printed on the sample ballot
@@ -21,3 +20,19 @@ sources:
   verified_on: null
   reviewer: null
   notes: Candidate names are from the PDF's text layer. Proposition wording was transcribed from the pages rendered as images and checked against the text layer; it is kept exactly as printed, including the ballot's own typos, with the outer quotation marks left off and only the English choices listed. The ballot prints parties as REP, DEM, LIB, GRN, and IND ("Independent Party" in its legend).
+- id: tx/districts/state-house-116/elections/2026-11-03/state-representative/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official page (Texas House of Representatives: member page, District 116), checked on October 7, 2026, shows that Trey Martinez Fischer, a candidate in this race, currently holds this office. The page lists the name as "Martinez Fischer, Trey". It does not list the other candidates as holding this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://house.texas.gov/members/member-page/?district=116
+  source_title: 'Texas House of Representatives: member page, District 116'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-07'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null

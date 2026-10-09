@@ -1,0 +1,39 @@
+# Basic race page: the office and candidates as printed on the sample ballot. Unverified.
+name: State Representative, District 76
+office_type: state-representative
+election_date: '2026-11-03'
+detail: basic
+sources:
+- id: tx/districts/state-house-76/elections/2026-11-03/state-representative/race#S-01
+  headline: Candidates as printed on the sample ballot
+  statement: 'The Fort Bend County Elections'' sample ballot for the November 3, 2026 general election lists "STATE REPRESENTATIVE DISTRICT 76" on page 1, with these candidates: LINDA HOWELL (Republican Party); SULEMAN LALANI (Democratic Party).'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://sampleballots.fortbendcountytx.gov/Congressional-Election/11032095BS20.pdf
+  source_title: 'Fort Bend County Elections: sample ballot, precinct 2095, ballot style 20 (page 1)'
+  source_kind: document
+  sha256: fbfc33a9449e10fb0a82c599ad9ecd83244da46a25a5c738ab957566fa79f3c9
+  archive_url: null
+  event_date: '2026-11-03'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Fort Bend County posts one sample ballot per ballot style (64 styles across 201 precincts); names and wording are from each PDF's text layer and are kept exactly as printed. The ballots print parties as REP, DEM, LIB, and GRE. This contest appears on 20 of the 64 ballot styles; this fact cites the first style that carries it (style 20, first listed for precinct 2095).
+- id: tx/districts/state-house-76/elections/2026-11-03/state-representative/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official page (Texas House of Representatives: member page, District 76), checked on October 9, 2026, shows that SULEMAN LALANI, a candidate in this race, currently holds this office. The page lists the name as "Lalani, Suleman". It does not list the other candidates as holding this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://house.texas.gov/members/member-page/?district=76
+  source_title: 'Texas House of Representatives: member page, District 76'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-09'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null

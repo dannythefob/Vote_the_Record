@@ -141,6 +141,8 @@ def iter_facts(kind: str, doc: dict):
     elif kind == "voter_essentials":
         for item in doc.get("items") or []:
             yield "items", item
+        for item in doc.get("at_the_polls") or []:
+            yield "at_the_polls", item
     elif kind == "candidate":
         for section in ("summary", "records", "funding", "endorsements"):
             for fact in doc.get(section, []):

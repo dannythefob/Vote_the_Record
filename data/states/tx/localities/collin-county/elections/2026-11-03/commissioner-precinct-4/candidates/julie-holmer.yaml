@@ -1,0 +1,32 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: julie-holmer
+name: Julie Holmer
+incumbent: false
+ballot_party: Democratic Party
+research: pending
+records: []
+funding:
+- id: tx/localities/collin-county/elections/2026-11-03/commissioner-precinct-4/candidates/julie-holmer#M-01
+  headline: Raised $35,225 and had $68,094 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with Collin County Elections: $35,224.80 in total political contributions, $5,722.47 in total political expenditures, $68,094.33 in contributions on hand at the end of the period, and $27,300.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://apps.collincountytx.gov/ElectionContributors/ElectronicFile.aspx?docid=51237&dbid=0&repo=Elections
+  source_title: 'Collin County Elections: campaign finance report, Julie Holmer ("Julie Holmer C OH 30th Day Before Election")'
+  source_kind: document
+  sha256: 9966beb24167908e9c47b10f5e3756313ee4b68f63f7248d4b6d96e1c448c9aa
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-08'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed in Collin County Elections'' public campaign finance archive (https://apps.collincountytx.gov/ElectionContributors/, Elections > Candidate / Officeholder or Judicial Candidate / Officeholder, 2026, Active) as "Julie Holmer C OH 30th Day Before Election", document 51237; matched by name and office. This is the newest report listed for the candidate. The PDF is a scan; the totals were read from the cover-sheet image. Reading note: contributions include 15,181.42 in non-monetary (in-kind) contributions (Schedule A2); the contribution balance is handwritten as 68,094.33 over a struck-through typed figure. Not yet archived on the Wayback Machine.'
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/state-house-135/elections/2026-11-03/state-representative/candidates/odus-e-evbagharu#B-01
-  headline: Small business owner; University of Houston graduate (per his campaign)
+  headline: Small business owner; University of Houston graduate (per the campaign)
   statement: 'Campaign website: "As the son of immigrants, Odus grew up in the Cy-Fair community, attended Cy-Fair public schools, and graduated from the University of Houston. Today, he is also a small business owner."'
   label: candidate_claim
   claim_status: documented

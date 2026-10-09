@@ -1,13 +1,81 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: patrick-von-dohlen
 name: Patrick Von Dohlen
-incumbent: null
+incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/localities/bexar-county/elections/2026-11-03/county-judge/candidates/patrick-von-dohlen#M-01
+  headline: Raised $187,944 and had $5,378 on hand (Jan 1, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1, 2026 - Jun 30, 2026, filed with the Bexar County Elections Department on Jul 16, 2026: $187,944.25 in total political contributions, $13,037.13 in total political expenditures, $5,377.66 in contributions on hand at the end of the period, and $17,580.64 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://edocs.bexar.org/elections/patrickvondohlensemi2026.pdf
+  source_title: 'Bexar County Elections Department: campaign finance report, Patrick Von Dohlen (filed Jul 16, 2026)'
+  source_kind: document
+  sha256: 560900cc4a7322e2f2b0266682a05b6d27c0554c8cfbe3c57db757f9e2792f87
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed on the county''s campaign finance search (https://apps.bexar.org/electionsfinancereport/) as "Contributions and Expenditures - Semi Annual", office "County Judge", filer "Von Dohlen, Patrick R.", filed Jul 16, 2026; matched by first and last name. This is the newest report listed for the candidate. The PDF is a scan; the totals were read from the cover-sheet image. Reading note: contributions include 172,310.10 in non-monetary (in-kind) contributions (Schedule A2). Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/bexar-county/elections/2026-11-03/county-judge/candidates/patrick-von-dohlen#O-01
+    headline: 'County budget: cut non-essential spending and lower taxes'
+    statement: 'Campaign website: "As Judge, I will protect and serve citizens first – that means making cuts to non-essential expenses, working to lower taxes anywhere we can and encouraging economic growth that makes sense for those who live here."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://votepatrick.net/
+    source_title: Patrick Von Dohlen for Bexar County Judge (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/bexar-county/elections/2026-11-03/county-judge/candidates/patrick-von-dohlen#O-02
+    headline: 'Jail: a full audit and an interim mental health facility'
+    statement: 'Campaign website: "As Judge, I will advocate for a full audit to ensure efficiency as well as an interim facility to better accommodate inmates with mental health challenges."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://votepatrick.net/
+    source_title: Patrick Von Dohlen for Bexar County Judge (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/bexar-county/elections/2026-11-03/county-judge/candidates/patrick-von-dohlen#O-03
+    headline: Protect the Edwards Aquifer and private property rights
+    statement: 'Campaign website: "The Edwards Aquifer is our lifeline. We need to protect it while ensuring that private property rights are respected."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://votepatrick.net/
+    source_title: Patrick Von Dohlen for Bexar County Judge (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

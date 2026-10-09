@@ -5,8 +5,8 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/localities/harris-county/elections/2026-11-03/district-clerk/candidates/darrell-jordan-jr#B-01
-  headline: Army veteran, attorney, former Harris County judge (per his campaign)
-  statement: 'His campaign website says: "From growing up in a working-class family to serving in the U.S. Army for more than 24 years, practicing law for nearly two decades, and serving eight years on the bench as a Harris County judge, Darrell has always believed that public service is about people, not politics."'
+  headline: Army veteran, attorney, former Harris County judge (per the campaign)
+  statement: 'The campaign website says: "From growing up in a working-class family to serving in the U.S. Army for more than 24 years, practicing law for nearly two decades, and serving eight years on the bench as a Harris County judge, Darrell has always believed that public service is about people, not politics."'
   label: candidate_claim
   claim_status: documented
   contradicted_by: []

@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/melissa-mcdonough#B-01
-  headline: Real estate broker (per her campaign)
+  headline: Real estate broker (per the campaign)
   statement: 'Campaign website: "She has almost 30 years of experience as a REALTOR© and 20 years of real estate brokerage owner/manager experience with over 45 agents."'
   label: candidate_claim
   claim_status: documented

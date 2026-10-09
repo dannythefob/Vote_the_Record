@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: irvin-lynn-barrett
+name: Irvin Lynn Barrett
+incumbent: false
+ballot_party: Democratic Party
+records: []
+funding:
+- id: tx/localities/collin-county/elections/2026-11-03/jp-precinct-3/candidates/irvin-lynn-barrett#M-01
+  headline: Raised $3,812 and had $3,177 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with Collin County Elections: $3,812.00 in total political contributions, $1,050.43 in total political expenditures, $3,176.76 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://apps.collincountytx.gov/ElectionContributors/ElectronicFile.aspx?docid=51239&dbid=0&repo=Elections
+  source_title: 'Collin County Elections: campaign finance report, Irvin Lynn Barrett ("Irvin Barrett C OH 30th Day Before Election")'
+  source_kind: document
+  sha256: 37090fe079f62dc39b2bc9327c343b71b62c07f4f588556429522ab299a5b493
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-08'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed in Collin County Elections'' public campaign finance archive (https://apps.collincountytx.gov/ElectionContributors/, Elections > Candidate / Officeholder or Judicial Candidate / Officeholder, 2026, Active) as "Irvin Barrett C OH 30th Day Before Election", document 51239; matched by name and office. This is the newest report listed for the candidate. The PDF is a scan; the totals were read from the cover-sheet image. Reading note: total expenditures handwritten as 1,050.43 beside a struck-through 736.50. Not yet archived on the Wayback Machine.'
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

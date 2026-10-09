@@ -1,9 +1,66 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: benjamin-guerrero
 name: Benjamin Guerrero
-incumbent: null
+incumbent: true
 ballot_party: null
-records: []
+records:
+- id: tx/localities/city-of-schertz/elections/2026-11-03/council-place-4/candidates/benjamin-guerrero#R-01
+  record_type: vote
+  headline: Voted yes on the FY 2025-26 city budget, funded at a $0.5118 tax rate (Aug. 2025)
+  result: Passed 5-2.
+  statement: 'As a council member, voted yes on Ordinance 25-T-032 adopting the FY 2025-26 budget "with a 1% COLA and one-time streets and sidewalks funds" on August 19, 2025. The minutes say the mayor polled Council ("2 Councilmembers and Mayor supported no-new revenue rate of 50.64; 2 Councilmembers supported 51.18; 4 Councilmembers supported 51.90") and that members then "came to a consensus to adopt a 51.18 tax rate." Recorded vote: Brown, Watson, Guerrero, Westbrook and Heyward aye; Davis and Macaluso nay.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://public.destinyhosted.com/scherdocs/2025/CC/20250902_866/AGENDApacket__09-02-25_0429_865.pdf
+  source_title: 'City of Schertz: City Council agenda packet, September 2, 2025 (minutes of the August 19, 2025 regular meeting, PDF page 16)'
+  source_kind: document
+  sha256: e32d6c8cf5c6654f8143918ea26c462abfb977f053cfb43c01ed2db364100616
+  archive_url: null
+  event_date: '2025-08-19'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'The packet prints the August 19, 2025 minutes marked "DRAFT"; Council approved them on the consent agenda on September 2, 2025 (minutes of that meeting, in the September 16, 2025 packet: https://public.destinyhosted.com/scherdocs/2025/CC/20250916_867/AGENDApacket__09-16-25_0711_866.pdf). The minutes list each member''s vote (AYE/NAY). The poll numbers are as printed; they add up to more than the seven council members and the mayor. Not yet archived on the Wayback Machine.'
+- id: tx/localities/city-of-schertz/elections/2026-11-03/council-place-4/candidates/benjamin-guerrero#R-02
+  record_type: vote
+  headline: Voted yes to ratify the property tax increase in the 2025-26 budget (Aug. 2025)
+  result: Passed 5-2.
+  statement: 'As a council member, voted yes on Resolution 25-R-110 ratifying the property tax increase in the FY 2025-26 budget on August 19, 2025. The resolution states the budget "will increase more total property taxes than previous year by $1,597,093 or 5.8% increase and of that amount, $1,205,226 is tax to be raised from new property added to the tax roll this year." Recorded vote: Brown, Watson, Guerrero, Westbrook and Heyward aye; Davis and Macaluso nay.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://public.destinyhosted.com/scherdocs/2025/CC/20250902_866/AGENDApacket__09-02-25_0429_865.pdf
+  source_title: 'City of Schertz: City Council agenda packet, September 2, 2025 (minutes of the August 19, 2025 regular meeting, PDF page 16)'
+  source_kind: document
+  sha256: e32d6c8cf5c6654f8143918ea26c462abfb977f053cfb43c01ed2db364100616
+  archive_url: null
+  event_date: '2025-08-19'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'The packet prints the August 19, 2025 minutes marked "DRAFT"; Council approved them on the consent agenda on September 2, 2025 (minutes of that meeting, in the September 16, 2025 packet: https://public.destinyhosted.com/scherdocs/2025/CC/20250916_867/AGENDApacket__09-16-25_0711_866.pdf). The minutes list each member''s vote (AYE/NAY). Not yet archived on the Wayback Machine.'
+- id: tx/localities/city-of-schertz/elections/2026-11-03/council-place-4/candidates/benjamin-guerrero#R-03
+  record_type: vote
+  headline: Voted yes on ending the youth soccer alliance agreement and running the city soccer complex (Aug. 2025)
+  result: Failed 3-4.
+  statement: 'As a council member, voted yes on Resolution 25-R-111, "dissolving the alliance and transition to city operations" of the Schertz Soccer Complex, operated under a license agreement with the Schertz Youth Soccer Alliance, on August 19, 2025. Recorded vote: Macaluso, Guerrero and Heyward aye; Brown, Davis, Watson and Westbrook nay. The motion failed.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://public.destinyhosted.com/scherdocs/2025/CC/20250902_866/AGENDApacket__09-02-25_0429_865.pdf
+  source_title: 'City of Schertz: City Council agenda packet, September 2, 2025 (minutes of the August 19, 2025 regular meeting, PDF page 14)'
+  source_kind: document
+  sha256: e32d6c8cf5c6654f8143918ea26c462abfb977f053cfb43c01ed2db364100616
+  archive_url: null
+  event_date: '2025-08-19'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'The packet prints the August 19, 2025 minutes marked "DRAFT"; Council approved them on the consent agenda on September 2, 2025 (minutes of that meeting, in the September 16, 2025 packet: https://public.destinyhosted.com/scherdocs/2025/CC/20250916_867/AGENDApacket__09-16-25_0711_866.pdf). The minutes list each member''s vote (AYE/NAY). Paul Macaluso made the motion. Not yet archived on the Wayback Machine.'
 funding: []
 endorsements: []
 running_on:

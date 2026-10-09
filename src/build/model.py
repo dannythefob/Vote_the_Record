@@ -182,6 +182,7 @@ def load_site(root: Path, today: str) -> dict:
             "state_name": STATE_NAMES.get(doc["state"], doc["state"]),
             "election_date": doc["election_date"],
             "entries": items,
+            "at_the_polls": doc.get("at_the_polls") or [],
         })
     essentials.sort(key=lambda e: (e["election_date"], e["state"]))
 

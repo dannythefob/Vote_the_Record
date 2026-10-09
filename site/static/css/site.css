@@ -254,6 +254,8 @@ meter { display: block; width: 100%; height: 14px; margin: 4px 0 8px; accent-col
 .decider-list li { margin: 8px 0; }
 .decider-list .item-meta { display: block; }
 .decision p { margin: 6px 0; }
+.poll-rule p { margin: 6px 0; }
+.poll-list { margin: 6px 0; padding-left: 1.2em; }
 .reg-check { margin: 16px 0; }
 .reg-check p { margin: 8px 0 0; }
 a.button-secondary, .button.button-secondary { background: var(--surface); color: var(--accent); border: 1px solid var(--control); }

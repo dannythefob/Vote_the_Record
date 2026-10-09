@@ -22,6 +22,23 @@ funding:
   verified_on: null
   reviewer: null
   notes: Report ID 101060757, form JCOH, TEC report type SEMIJUL; filer ID 00087763 (Kolodoski, Matthew J. (Mr.)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-04; a correction filed later replaces the version it corrects.
+- id: tx/districts/court-of-appeals-5/elections/2026-11-03/place-3/candidates/matthew-kolodoski#M-02
+  headline: Raised $13,471 and had $6,290 on hand (Jul 1 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1 - Sep 24, 2026, filed Oct 5, 2026: $13,470.84 in total political contributions, $32,896.31 in total political expenditures, $6,289.73 in contributions on hand at the end of the period, and $9,906.75 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101069914.PDF
+  source_title: 'Texas Ethics Commission: Kolodoski, Matthew J. (Mr.), campaign finance report 101069914 (filed Oct 5, 2026)'
+  source_kind: document
+  sha256: b8bcc8f2e8dfbc4c93c4b967aef5877d1c38f0a2af160076afecbde41c120dbf
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101069914, form JCOH, TEC report type E30DAYBEF; filer ID 00087763 (Kolodoski, Matthew J. (Mr.)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-07; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

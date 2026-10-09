@@ -1,0 +1,39 @@
+# Basic race page: the office and candidates as printed on the sample ballot. Unverified.
+name: State Representative, District 26
+office_type: state-representative
+election_date: '2026-11-03'
+detail: basic
+sources:
+- id: tx/districts/state-house-26/elections/2026-11-03/state-representative/race#S-01
+  headline: Candidates as printed on the sample ballot
+  statement: 'The Fort Bend County Elections'' sample ballot for the November 3, 2026 general election lists "STATE REPRESENTATIVE DISTRICT 26" on page 1, with these candidates: MATT MORGAN (Republican Party); ELIZABETH "ELIZ" MARKOWITZ (Democratic Party).'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://sampleballots.fortbendcountytx.gov/Congressional-Election/11031004BS3.pdf
+  source_title: 'Fort Bend County Elections: sample ballot, precinct 1004, ballot style 3 (page 1)'
+  source_kind: document
+  sha256: f96c62626090a397cfbeef22fc46fedf33b75af1d09a8047139e360cfd7460b0
+  archive_url: null
+  event_date: '2026-11-03'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Fort Bend County posts one sample ballot per ballot style (64 styles across 201 precincts); names and wording are from each PDF's text layer and are kept exactly as printed. The ballots print parties as REP, DEM, LIB, and GRE. This contest appears on 19 of the 64 ballot styles; this fact cites the first style that carries it (style 3, first listed for precinct 1004).
+- id: tx/districts/state-house-26/elections/2026-11-03/state-representative/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official page (Texas House of Representatives: member page, District 26), checked on October 9, 2026, shows that MATT MORGAN, a candidate in this race, currently holds this office. The page lists the name as "Morgan, Matt". It does not list the other candidates as holding this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://house.texas.gov/members/member-page/?district=26
+  source_title: 'Texas House of Representatives: member page, District 26'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-09'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null

@@ -4,7 +4,24 @@ name: Erika Hizel
 incumbent: null
 ballot_party: null
 records: []
-funding: []
+funding:
+- id: tx/localities/bexar-county/elections/2026-11-03/bcad-place-2/candidates/erika-hizel#M-01
+  headline: Raised $3,718 and had $3,097 on hand (Jul 16, 2026 - Oct 4, 2026)
+  statement: 'Campaign finance report covering Jul 16, 2026 - Oct 4, 2026, filed with the Bexar County Elections Department on Oct 5, 2026: $3,718.13 in total political contributions, $5,076.26 in total political expenditures, and $3,096.73 in contributions on hand at the end of the period.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://edocs.bexar.org/elections/cne10052026erikahizel.pdf
+  source_title: 'Bexar County Elections Department: campaign finance report, Erika Hizel (filed Oct 5, 2026)'
+  source_kind: document
+  sha256: 4eafde840085852001be859b561f86d602973706b47afaee1b9729d79726b32a
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed on the county''s campaign finance search (https://apps.bexar.org/electionsfinancereport/) as "Contributions and Expenditures 30 day", office "Appraisal District Board of Directors", filer "Hizel, Erika", filed Oct 5, 2026; matched by first and last name. This is the newest report listed for the candidate. The PDF is a scan; the totals were read from the cover-sheet image. Reading note: loans written as N/A. Left out: outstanding loans. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

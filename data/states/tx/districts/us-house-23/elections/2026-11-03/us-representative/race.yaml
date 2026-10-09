@@ -2,7 +2,6 @@
 name: U.S. Representative, District 23
 office_type: us-representative
 election_date: '2026-11-03'
-detail: basic
 sources:
 - id: tx/districts/us-house-23/elections/2026-11-03/us-representative/race#S-01
   headline: Candidates as printed on the sample ballot
@@ -21,3 +20,19 @@ sources:
   verified_on: null
   reviewer: null
   notes: Candidate names are from the PDF's text layer. Proposition wording was transcribed from the pages rendered as images and checked against the text layer; it is kept exactly as printed, including the ballot's own typos, with the outer quotation marks left off and only the English choices listed. The ballot prints parties as REP, DEM, LIB, GRN, and IND ("Independent Party" in its legend).
+- id: tx/districts/us-house-23/elections/2026-11-03/us-representative/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (Office of the Clerk, U.S. House of Representatives: Member Data (XML)), checked on October 7, 2026, shows this seat as vacant (no member listed for Texas District 23), so none of the candidates currently holds this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://clerk.house.gov/xml/lists/MemberData.xml
+  source_title: 'Office of the Clerk, U.S. House of Representatives: Member Data (XML)'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-07'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null

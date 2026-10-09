@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: daphne-previti-austin
 name: Daphne Previti Austin
-incumbent: null
+incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/localities/bexar-county/elections/2026-11-03/county-court-at-law-9/candidates/daphne-previti-austin#M-01
+  headline: Raised $5,057 and had $8,896 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Bexar County Elections Department on Oct 5, 2026: $5,056.75 in total political contributions, $3,899.02 in total political expenditures, $8,896.39 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://edocs.bexar.org/elections/ce10052026daphneprevetiaustin.pdf
+  source_title: 'Bexar County Elections Department: campaign finance report, Daphne Previti Austin (filed Oct 5, 2026)'
+  source_kind: document
+  sha256: f950f8b641053bf97e4c78d17f7aa0e95492c70a8b907e680094c78f08a07d30
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Listed on the county's campaign finance search (https://apps.bexar.org/electionsfinancereport/) as "Contributions and Expenditures 30 day", office "County Court 9", filer "Previti Austin, Daphne", filed Oct 5, 2026; matched by first and last name. This is the newest report listed for the candidate. The PDF is a scan; the totals were read from the cover-sheet image. Not yet archived on the Wayback Machine.
 endorsements: []
 running_on:
   policy_proposals: []

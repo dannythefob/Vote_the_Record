@@ -22,6 +22,23 @@ funding:
   verified_on: null
   reviewer: null
   notes: Report ID 101061054, form JCOH, TEC report type SEMIJUL; filer ID 00027075 (Zimmerer, Gerald L. (Mr.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by nickname, middle name, or initial, with office and district; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
+- id: tx/districts/court-of-appeals-15/elections/2026-11-03/chief-justice/candidates/jerry-zimmerer#M-02
+  headline: Raised $4,705 and had $17,019 on hand (Jul 1 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1 - Sep 24, 2026, filed Oct 5, 2026: $4,705.00 in total political contributions, $2,886.99 in total political expenditures, $17,019.24 in contributions on hand at the end of the period, and $129,000.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101069319.PDF
+  source_title: 'Texas Ethics Commission: Zimmerer, Gerald L. (Mr.), campaign finance report 101069319 (filed Oct 5, 2026)'
+  source_kind: document
+  sha256: e09b159e913896985b89d3a02fa2ad011aa5f62893f729d5d4371101f01c819c
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101069319, form JCOH, TEC report type E30DAYBEF; filer ID 00027075 (Zimmerer, Gerald L. (Mr.)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by nickname, middle name, or initial, with office and district; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-07; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/us-house-36/elections/2026-11-03/us-representative/candidates/rhonda-hart#B-01
-  headline: Army veteran; gun-storage law advocate (per her campaign)
+  headline: Army veteran; gun-storage law advocate (per the campaign)
   statement: 'Campaign website: "I am Rhonda Hart, a Texas mom and disabled military veteran."'
   label: candidate_claim
   claim_status: documented

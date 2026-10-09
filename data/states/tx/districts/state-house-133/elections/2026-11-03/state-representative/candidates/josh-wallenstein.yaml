@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/state-house-133/elections/2026-11-03/state-representative/candidates/josh-wallenstein#B-01
-  headline: Attorney (per his campaign)
+  headline: Attorney (per the campaign)
   statement: 'Campaign website: "An anti-corruption attorney and public school advocate, Josh has spent more than two decades fighting fraud, misconduct, and abuse of power and working to hold powerful interests accountable."'
   label: candidate_claim
   claim_status: documented

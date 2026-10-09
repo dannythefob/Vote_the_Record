@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: tyra-mccollum
+name: TYRA MCCOLLUM
+incumbent: true
+ballot_party: Democratic Party
+records: []
+funding:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/county-court-at-law-2/candidates/tyra-mccollum#M-01
+  headline: Raised $1,200 and had $9,629 on hand (Jan 1, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1, 2026 - Jun 30, 2026, filed with Fort Bend County Elections on Jul 15, 2026: $1,200.00 in total political contributions, $4,252.25 in total political expenditures, $9,628.95 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://electionsfinancereport.fortbendcountytx.gov/docs/2026%202026%20Tyra%20McCollum%20CCL2%20071526%20JULY15.pdf
+  source_title: 'Fort Bend County Elections: campaign finance report, Tyra Jones McCollum (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: c4793cc7bd4ce469fc854a01f81f49ad0597dfabecf02da1e96dce3e8405997b
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed on the county''s campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures - Semi Annual", office "County Court at 2", filer "Tyra Jones McCollum", filed Jul 15, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Reading note: zero amounts written as a slashed zero. Not yet archived on the Wayback Machine.'
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

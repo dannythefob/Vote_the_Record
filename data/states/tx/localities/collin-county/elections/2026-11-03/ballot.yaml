@@ -1,0 +1,149 @@
+# Contests on this ballot, in ballot order. complete: false until every contest is added.
+name: Collin County ballot
+election_date: '2026-11-03'
+lookup_url: https://www.collincountytx.gov/elections/sample-ballots
+complete: false
+sources:
+- id: tx/localities/collin-county/elections/2026-11-03/ballot#S-01
+  headline: Every contest on the sample ballot
+  statement: The Collin County Elections's sample ballot for the November 3, 2026 joint general and special election lists every contest on this ballot.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.collincountytx.gov/docs/default-source/elections/sample-ballots/20261103_joint-general-and-special-election_all-race-sample-ballot_final.pdf?sfvrsn=e253de7b_5
+  source_title: 'Collin County Elections: Joint General and Special Election, November 3, 2026, Official Ballot (all-race sample ballot)'
+  source_kind: document
+  sha256: 37a8bd11b4c3aad7bc0d4c0a4bb9091a44f4902a261546a0219d5906c263ba42
+  archive_url: null
+  event_date: '2026-11-03'
+  retrieved: '2026-10-08'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Names and wording are from the PDF's text layer, read column by column; proposition wording is kept exactly as printed, with only the English text and choices listed. The ballot prints parties as Rep, Dem, Lib, and Grn.
+unmapped:
+- collin-college
+- lavon-municipal-development-district
+- the-preserve-mud
+contests:
+- tx/statewide/elections/2026-11-03/us-senate
+- tx/districts/us-house-3/elections/2026-11-03/us-representative
+- tx/districts/us-house-4/elections/2026-11-03/us-representative
+- tx/districts/us-house-32/elections/2026-11-03/us-representative
+- tx/statewide/elections/2026-11-03/governor
+- tx/statewide/elections/2026-11-03/lieutenant-governor
+- tx/statewide/elections/2026-11-03/attorney-general
+- tx/statewide/elections/2026-11-03/comptroller
+- tx/statewide/elections/2026-11-03/land-commissioner
+- tx/statewide/elections/2026-11-03/agriculture-commissioner
+- tx/statewide/elections/2026-11-03/railroad-commissioner
+- tx/statewide/elections/2026-11-03/supreme-court-chief-justice
+- tx/statewide/elections/2026-11-03/supreme-court-place-2
+- tx/statewide/elections/2026-11-03/supreme-court-place-7
+- tx/statewide/elections/2026-11-03/supreme-court-place-8
+- tx/statewide/elections/2026-11-03/cca-place-3
+- tx/statewide/elections/2026-11-03/cca-place-4
+- tx/statewide/elections/2026-11-03/cca-place-9
+- tx/districts/state-senate-2/elections/2026-11-03/state-senator
+- tx/districts/state-house-33/elections/2026-11-03/state-representative
+- tx/districts/state-house-61/elections/2026-11-03/state-representative
+- tx/districts/state-house-66/elections/2026-11-03/state-representative
+- tx/districts/state-house-67/elections/2026-11-03/state-representative
+- tx/districts/state-house-70/elections/2026-11-03/state-representative
+- tx/districts/state-house-89/elections/2026-11-03/state-representative
+- tx/districts/court-of-appeals-15/elections/2026-11-03/chief-justice
+- tx/districts/court-of-appeals-15/elections/2026-11-03/place-2
+- tx/districts/court-of-appeals-15/elections/2026-11-03/place-3
+- tx/districts/court-of-appeals-5/elections/2026-11-03/place-3
+- tx/districts/court-of-appeals-5/elections/2026-11-03/place-6
+- tx/districts/court-of-appeals-5/elections/2026-11-03/place-8
+- tx/localities/collin-county/elections/2026-11-03/district-court-219
+- tx/localities/collin-county/elections/2026-11-03/district-court-296
+- tx/localities/collin-county/elections/2026-11-03/district-court-366
+- tx/localities/collin-county/elections/2026-11-03/district-court-417
+- tx/localities/collin-county/elections/2026-11-03/district-court-429
+- tx/localities/collin-county/elections/2026-11-03/district-court-471
+- tx/localities/collin-county/elections/2026-11-03/district-court-494
+- tx/localities/collin-county/elections/2026-11-03/criminal-district-attorney
+- tx/localities/collin-county/elections/2026-11-03/county-judge
+- tx/localities/collin-county/elections/2026-11-03/county-court-at-law-1
+- tx/localities/collin-county/elections/2026-11-03/county-court-at-law-2
+- tx/localities/collin-county/elections/2026-11-03/county-court-at-law-3
+- tx/localities/collin-county/elections/2026-11-03/county-court-at-law-4
+- tx/localities/collin-county/elections/2026-11-03/county-court-at-law-5
+- tx/localities/collin-county/elections/2026-11-03/county-court-at-law-6
+- tx/localities/collin-county/elections/2026-11-03/county-court-at-law-7
+- tx/localities/collin-county/elections/2026-11-03/probate-court
+- tx/localities/collin-county/elections/2026-11-03/district-clerk
+- tx/localities/collin-county/elections/2026-11-03/county-clerk
+- tx/localities/collin-county/elections/2026-11-03/commissioner-precinct-2
+- tx/localities/collin-county/elections/2026-11-03/commissioner-precinct-4
+- tx/localities/collin-county/elections/2026-11-03/jp-precinct-1
+- tx/localities/collin-county/elections/2026-11-03/jp-precinct-2
+- tx/localities/collin-county/elections/2026-11-03/jp-precinct-3
+- tx/localities/collin-county/elections/2026-11-03/jp-precinct-4
+- tx/localities/collin-county/elections/2026-11-03/proposition-a
+- tx/localities/collin-county/elections/2026-11-03/proposition-b
+- tx/localities/collin-county/elections/2026-11-03/proposition-c
+- tx/localities/collin-county/elections/2026-11-03/proposition-d
+- tx/localities/collin-county/elections/2026-11-03/ccad-place-1
+- tx/localities/collin-county/elections/2026-11-03/ccad-place-2
+- tx/localities/collin-county/elections/2026-11-03/ccad-place-3
+- tx/localities/collin-college/elections/2026-11-03/proposition-a
+- tx/localities/city-of-anna/elections/2026-11-03/proposition-a
+- tx/localities/city-of-dallas/elections/2026-11-03/proposition-a
+- tx/localities/city-of-garland/elections/2026-11-03/proposition-a
+- tx/localities/city-of-josephine/elections/2026-11-03/mayor
+- tx/localities/city-of-josephine/elections/2026-11-03/council-place-3
+- tx/localities/city-of-josephine/elections/2026-11-03/council-place-5
+- tx/localities/city-of-lavon/elections/2026-11-03/council-place-1
+- tx/localities/city-of-lavon/elections/2026-11-03/council-place-3
+- tx/localities/city-of-lavon/elections/2026-11-03/council-place-5
+- tx/localities/lavon-municipal-development-district/elections/2026-11-03/proposition-1
+- tx/localities/city-of-lowry-crossing/elections/2026-11-03/council-ward-1
+- tx/localities/city-of-lowry-crossing/elections/2026-11-03/council-ward-2
+- tx/localities/city-of-lowry-crossing/elections/2026-11-03/council-ward-3
+- tx/localities/city-of-lowry-crossing/elections/2026-11-03/council-ward-4
+- tx/localities/city-of-plano/elections/2026-11-03/proposition-a
+- tx/localities/city-of-princeton/elections/2026-11-03/council-place-6
+- tx/localities/city-of-princeton/elections/2026-11-03/council-place-7
+- tx/localities/city-of-weston/elections/2026-11-03/aldermen
+- tx/localities/city-of-wylie/elections/2026-11-03/proposition-a
+- tx/localities/city-of-wylie/elections/2026-11-03/proposition-b
+- tx/localities/city-of-wylie/elections/2026-11-03/proposition-c
+- tx/localities/city-of-wylie/elections/2026-11-03/proposition-d
+- tx/localities/city-of-wylie/elections/2026-11-03/proposition-e
+- tx/localities/bland-isd/elections/2026-11-03/proposition-a
+- tx/localities/mckinney-isd/elections/2026-11-03/proposition-a
+- tx/localities/mckinney-isd/elections/2026-11-03/proposition-b
+- tx/localities/mckinney-isd/elections/2026-11-03/proposition-c
+- tx/localities/mckinney-isd/elections/2026-11-03/proposition-d
+- tx/localities/mckinney-isd/elections/2026-11-03/proposition-e
+- tx/localities/princeton-isd/elections/2026-11-03/trustees
+- tx/localities/wylie-isd/elections/2026-11-03/trustee-place-1
+- tx/localities/wylie-isd/elections/2026-11-03/trustee-place-2
+- tx/localities/wylie-isd/elections/2026-11-03/trustee-place-5
+- tx/localities/wylie-isd/elections/2026-11-03/trustee-place-6
+- tx/localities/blue-meadow-mud-2/elections/2026-11-03/proposition-a
+- tx/localities/blue-meadow-mud-2/elections/2026-11-03/proposition-b
+- tx/localities/blue-meadow-mud-2/elections/2026-11-03/proposition-c
+- tx/localities/blue-meadow-mud-2/elections/2026-11-03/proposition-d
+- tx/localities/blue-meadow-mud-2/elections/2026-11-03/proposition-e
+- tx/localities/blue-meadow-mud-2/elections/2026-11-03/proposition-f
+- tx/localities/blue-meadow-mud-2/elections/2026-11-03/proposition-g
+- tx/localities/blue-meadow-mud-2/elections/2026-11-03/directors
+- tx/localities/blue-meadow-mud-4/elections/2026-11-03/proposition-a
+- tx/localities/blue-meadow-mud-4/elections/2026-11-03/proposition-b
+- tx/localities/blue-meadow-mud-4/elections/2026-11-03/proposition-c
+- tx/localities/blue-meadow-mud-4/elections/2026-11-03/proposition-d
+- tx/localities/blue-meadow-mud-4/elections/2026-11-03/proposition-e
+- tx/localities/blue-meadow-mud-4/elections/2026-11-03/proposition-f
+- tx/localities/blue-meadow-mud-4/elections/2026-11-03/proposition-g
+- tx/localities/blue-meadow-mud-4/elections/2026-11-03/directors
+- tx/localities/the-preserve-mud/elections/2026-11-03/proposition-a
+- tx/localities/the-preserve-mud/elections/2026-11-03/directors
+- tx/localities/the-preserve-mud/elections/2026-11-03/proposition-b
+- tx/localities/the-preserve-mud/elections/2026-11-03/proposition-c
+- tx/localities/the-preserve-mud/elections/2026-11-03/proposition-d
+- tx/localities/the-preserve-mud/elections/2026-11-03/proposition-e
+- tx/localities/the-preserve-mud/elections/2026-11-03/proposition-f

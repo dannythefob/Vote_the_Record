@@ -426,6 +426,12 @@ function initBallotPage(payload) {
     // away; placeAt then records only the precinct number.
     history.replaceState(null, "", window.location.pathname);
     placeAt(hash.at[0], hash.at[1], "Found your address");
+  } else if (hash.at) {
+    // An address from the home page, but this county has no precinct map: say so and drop the location.
+    history.replaceState(null, "", window.location.pathname);
+    render();
+    status.textContent = "We don't have a precinct map for this county yet. Enter your precinct number " +
+      "(it's on your voter registration card) or your ZIP code to narrow the list.";
   } else if (hash.precinct && pctInput) {
     pctInput.value = hash.precinct;
     applyPrecinct(hash.precinct, false);

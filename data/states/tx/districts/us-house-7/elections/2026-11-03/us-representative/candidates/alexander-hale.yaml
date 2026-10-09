@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Republican Party
 summary:
 - id: tx/districts/us-house-7/elections/2026-11-03/us-representative/candidates/alexander-hale#B-01
-  headline: Energy and chemicals consultant (per his campaign)
+  headline: Energy and chemicals consultant (per the campaign)
   statement: 'Campaign website: "I live in the Heights, and currently work as an Energy and Chemicals Consultant for Alvarez & Marsal here in Houston."'
   label: candidate_claim
   claim_status: documented

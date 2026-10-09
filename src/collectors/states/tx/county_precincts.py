@@ -125,6 +125,59 @@ DALLAS_LOCAL_AREAS = {
     "mesquite-isd": (SCHOOL_LAYER, "4830390"),
 }
 
+BEXAR_ITEM = "https://gis-bexar.opendata.arcgis.com/datasets/bexar-county-voter-precincts"
+BEXAR_LAYER = "https://maps.bexar.org/arcgis/rest/services/EL/VoterPrecincts/MapServer/0"
+BEXAR_COMMISSIONER = "https://maps.bexar.org/arcgis/rest/services/CommissionerPrecincts/MapServer/0"
+BEXAR_JP = "https://maps.bexar.org/arcgis/rest/services/JusticeofthePeace/MapServer/1"
+# Texas Legislative Council plan shapefiles (Capitol Data Portal), used where a county's precinct layer has no
+# district fields: the 2026 congressional plan and the current State House and State Senate plans.
+TLC_C2333 = ("https://data.capitol.texas.gov/dataset/748c952b-e926-4f44-8d01-a738884b3ec8/resource/"
+             "5712ebe1-d777-4d4a-b836-0534e17bca01/download/planc2333.zip")
+TLC_H2316 = ("https://data.capitol.texas.gov/dataset/71af633c-21bf-42cf-ad48-4fe95593a897/resource/"
+             "a4d3230f-47f2-4253-85f3-51a6c3c9ad0a/download/planh2316.zip")
+TLC_S2168 = ("https://data.capitol.texas.gov/dataset/70836384-f10c-423d-a36e-748d7e000872/resource/"
+             "8247dbc6-b942-4a29-813c-1ebc603a7236/download/plans2168.zip")
+BEXAR_LOCAL_AREAS = {
+    "city-of-china-grove": (PLACE_LAYER, "4814716"),
+    "city-of-converse": (PLACE_LAYER, "4816468"),
+    "town-of-hollywood-park": (PLACE_LAYER, "4834628"),
+    "city-of-live-oak": (PLACE_LAYER, "4843096"),
+    "city-of-san-antonio": (PLACE_LAYER, "4865000"),
+    "city-of-sandy-oaks": (PLACE_LAYER, "4865344"),
+    "city-of-schertz": (PLACE_LAYER, "4866128"),
+    "city-of-windcrest": (PLACE_LAYER, "4879672"),
+    "comal-isd": (SCHOOL_LAYER, "4814730"),
+    "east-central-isd": (SCHOOL_LAYER, "4817850"),
+    "edgewood-isd": (SCHOOL_LAYER, "4818150"),
+    "northside-isd": (SCHOOL_LAYER, "4833120"),
+    "san-antonio-isd": (SCHOOL_LAYER, "4838730"),
+    "schertz-cibolo-universal-city-isd": (SCHOOL_LAYER, "4839480"),
+    "somerset-isd": (SCHOOL_LAYER, "4840740"),
+    "south-san-antonio-isd": (SCHOOL_LAYER, "4840680"),
+    "bexar-county-mud-1": (TCEQ_MUD, "1274500"),
+}
+COLLIN_ITEM = "https://www.arcgis.com/home/item.html?id=26cdf0cddc2849e1af691ac234f3340a"
+COLLIN_LAYER = "https://services1.arcgis.com/fdWXd5OobWR1E3er/arcgis/rest/services/Voting_Precincts/FeatureServer/0"
+COLLIN_LOCAL_AREAS = {
+    "city-of-anna": (PLACE_LAYER, "4803300"),
+    "city-of-dallas": (PLACE_LAYER, "4819000"),
+    "city-of-garland": (PLACE_LAYER, "4829000"),
+    "city-of-josephine": (PLACE_LAYER, "4838068"),
+    "city-of-lavon": (PLACE_LAYER, "4841800"),
+    "city-of-lowry-crossing": (PLACE_LAYER, "4844308"),
+    "city-of-plano": (PLACE_LAYER, "4858016"),
+    "city-of-princeton": (PLACE_LAYER, "4859576"),
+    "city-of-weston": (PLACE_LAYER, "4877740"),
+    "city-of-wylie": (PLACE_LAYER, "4880356"),
+    "bland-isd": (SCHOOL_LAYER, "4810350"),
+    "mckinney-isd": (SCHOOL_LAYER, "4829850"),
+    "princeton-isd": (SCHOOL_LAYER, "4835850"),
+    "wylie-isd": (SCHOOL_LAYER, "4846530"),
+    "blue-meadow-mud-2": (TCEQ_MUD, "1546750"),
+    "blue-meadow-mud-4": (TCEQ_MUD, "1546938"),
+}
+OVERLAY_SHARE = 0.95  # a precinct must be at least this much inside one district to be assigned it without a flag
+
 # Per county: precinct layer, its field for each district kind, areas every voter shares, local areas.
 COUNTIES = {
     "harris-county": {
@@ -175,6 +228,59 @@ COUNTIES = {
                     "precincts (Texas Constitution, Article V, Section 18(a))."),
         "field_note": ("The Dallas County layer's item description does not name a congressional plan; its Cong field "
                        "lists districts 5, 6, 24, 30, 32, and 33, the same six districts on the Dallas County sample ballot."),
+    },
+    "bexar-county": {
+        "name": "Bexar County", "item": BEXAR_ITEM, "layer": BEXAR_LAYER, "precinct_field": "NAME",
+        # The Bexar precinct layer has no district fields: each precinct's districts come from overlaying district maps.
+        "fields": {kind: kind for kind in ("us-house", "state-house", "state-senate", "commissioner", "jp")},
+        "overlays": {
+            "us-house": ("shapefile", TLC_C2333, "District", "Texas Legislative Council: PLANC2333 (congressional districts "
+                         "enacted 2025, 89th Legislature, 2nd C.S.)"),
+            "state-house": ("shapefile", TLC_H2316, "District", "Texas Legislative Council: PLANH2316 (State House "
+                            "districts, 2023-2026)"),
+            "state-senate": ("shapefile", TLC_S2168, "District", "Texas Legislative Council: PLANS2168 (State Senate "
+                             "districts)"),
+            "commissioner": ("arcgis", BEXAR_COMMISSIONER, "Comm", "Bexar County GIS: Commissioner Precincts"),
+            "jp": ("arcgis", BEXAR_JP, "Precinct", "Bexar County GIS: Justice of the Peace Precincts"),
+        },
+        "everywhere": ["court-of-appeals-4"],  # Gov't Code 22.201(e)
+        "local_areas": BEXAR_LOCAL_AREAS,
+        "headline": "Bexar County voting precincts (2026)",
+        "statement": ("Bexar County's GIS layer of voting precincts (806 precincts), published by Bexar County "
+                      "Elections, gives each precinct's number and outline."),
+        "title": "Bexar County GIS: Bexar County Voter Precincts",
+        "credits": ("The layer lists only precinct numbers; each precinct's districts were assigned by overlaying the "
+                    "district maps named in precincts#S-05."),
+        "field_note": ("Bexar County's own congressional layer still shows the pre-2025 districts (it includes District 28), "
+                       "so congressional districts come from the Texas Legislative Council's PLANC2333 shapefile instead."),
+    },
+    "collin-county": {
+        "name": "Collin County", "item": COLLIN_ITEM, "layer": COLLIN_LAYER, "precinct_field": "PRECINCT",
+        # The Collin layer's congressional field predates plan C2333, so every district comes from an overlay; the
+        # commissioner and JP precincts come from the layer's own fields (overlaying a layer on itself is exact).
+        "fields": {kind: kind for kind in ("us-house", "state-house", "state-senate", "commissioner", "jp")},
+        "overlays": {
+            "us-house": ("shapefile", TLC_C2333, "District", "Texas Legislative Council: PLANC2333 (congressional districts "
+                         "enacted 2025, 89th Legislature, 2nd C.S.)"),
+            "state-house": ("shapefile", TLC_H2316, "District", "Texas Legislative Council: PLANH2316 (State House "
+                            "districts, 2023-2026)"),
+            "state-senate": ("shapefile", TLC_S2168, "District", "Texas Legislative Council: PLANS2168 (State Senate "
+                             "districts)"),
+            "commissioner": ("arcgis", COLLIN_LAYER, "COMMISH", "Collin County GIS: Voting Precincts (COMMISH field)"),
+            "jp": ("arcgis", COLLIN_LAYER, "JPC", "Collin County GIS: Voting Precincts (JPC field)"),
+        },
+        "everywhere": ["court-of-appeals-5"],  # Gov't Code 22.201(f)
+        "local_areas": COLLIN_LOCAL_AREAS,
+        "headline": "Collin County voting precincts (2026)",
+        "statement": ("Collin County's GIS layer of voting precincts (273 precincts), published by Collin County GIS, gives "
+                      "each precinct's number and outline and its Commissioners Court and justice of the peace precincts; "
+                      "the layer says the precincts were approved by the Commissioners Court on 9/25/2023 (Court Order "
+                      "#2023-915-09-25), effective 1/1/2024."),
+        "title": "Collin County GIS: Voting Precincts",
+        "credits": ("Congressional, State House and State Senate districts were assigned by overlaying the district maps "
+                    "named in precincts#S-05; the layer's own district fields and officeholder names are not used."),
+        "field_note": ("The Collin County layer's precincts took effect 1/1/2024, before the 2025 congressional map, so congressional "
+                       "districts come from the Texas Legislative Council's PLANC2333 shapefile instead."),
     },
 }
 
@@ -251,6 +357,158 @@ def rasterize(features, key, grid, x0, y0, cols, rows):
                     grid[row][col] = value
 
 
+def lcc_inverse(prj: str):
+    """Inverse Lambert Conformal Conic (GRS 1980 ellipsoid, Snyder 1987 eqs. 15-1 to 15-11) for a shapefile .prj."""
+    p = {k: float(v) for k, v in re.findall(r'PARAMETER\["(\w+)",([-\d.]+)\]', prj)}
+    assert "Lambert_Conformal_Conic" in prj and "GRS_1980" in prj and 'UNIT["Meter"' in prj, "unexpected projection"
+    a, f = 6378137.0, 1 / 298.257222101
+    e = math.sqrt(2 * f - f * f)
+    rad = math.radians
+    phi1, phi2, phi0 = rad(p["Standard_Parallel_1"]), rad(p["Standard_Parallel_2"]), rad(p["Latitude_Of_Origin"])
+    lam0, fe, fn = rad(p["Central_Meridian"]), p["False_Easting"], p["False_Northing"]
+
+    def m(phi):
+        return math.cos(phi) / math.sqrt(1 - (e * math.sin(phi)) ** 2)
+
+    def t(phi):
+        s = e * math.sin(phi)
+        return math.tan(math.pi / 4 - phi / 2) / ((1 - s) / (1 + s)) ** (e / 2)
+
+    n = (math.log(m(phi1)) - math.log(m(phi2))) / (math.log(t(phi1)) - math.log(t(phi2)))
+    big_f = m(phi1) / (n * t(phi1) ** n)
+    rho0 = a * big_f * t(phi0) ** n
+
+    def inverse(x, y):
+        dx, dy = x - fe, rho0 - (y - fn)
+        rho = math.copysign(math.hypot(dx, dy), n)
+        tt = (rho / (a * big_f)) ** (1 / n)
+        lam = math.atan2(dx, dy) / n + lam0
+        phi = math.pi / 2 - 2 * math.atan(tt)
+        for _ in range(8):
+            s = e * math.sin(phi)
+            phi = math.pi / 2 - 2 * math.atan(tt * ((1 - s) / (1 + s)) ** (e / 2))
+        return math.degrees(lam), math.degrees(phi)
+    return inverse
+
+
+def read_shapefile(zip_bytes: bytes, field: str, keep=None) -> list[dict]:
+    """Polygons from a zipped shapefile (e.g. a Texas Legislative Council plan), as GeoJSON-like features in
+    longitude/latitude with properties {field: value}. keep(value) -> bool filters features before reprojecting."""
+    import io
+    import struct
+    import zipfile
+    z = zipfile.ZipFile(io.BytesIO(zip_bytes))
+    name = next(n for n in z.namelist() if n.lower().endswith(".shp"))
+    shp, dbf = z.read(name), z.read(name[:-4] + ".dbf")
+    inverse = lcc_inverse(z.read(name[:-4] + ".prj").decode("latin-1"))
+    # dBASE table: header, 32-byte field descriptors, then fixed-width records.
+    nrec, hlen, rlen = struct.unpack("<IHH", dbf[4:12])
+    fields, pos = [], 32
+    while dbf[pos] != 0x0D:
+        fname = dbf[pos:pos + 11].split(b"\0")[0].decode("latin-1")
+        fields.append((fname, dbf[pos + 16]))
+        pos += 32
+    values, off = [], 0
+    for fname, width in fields:
+        if fname == field:
+            values = [dbf[hlen + i * rlen + 1 + off: hlen + i * rlen + 1 + off + width].decode("latin-1").strip()
+                      for i in range(nrec)]
+        off += width
+    assert values, f"field {field} not in {[f for f, _ in fields]}"
+    feats, pos, i = [], 100, 0
+    while pos < len(shp):
+        _, length = struct.unpack(">ii", shp[pos:pos + 8])
+        body = shp[pos + 8: pos + 8 + 2 * length]
+        pos += 8 + 2 * length
+        value = values[i]
+        i += 1
+        if struct.unpack("<i", body[:4])[0] != 5 or (keep and not keep(value)):
+            continue
+        nparts, npoints = struct.unpack("<ii", body[36:44])
+        parts = list(struct.unpack(f"<{nparts}i", body[44:44 + 4 * nparts])) + [npoints]
+        pts = struct.unpack(f"<{2 * npoints}d", body[44 + 4 * nparts: 44 + 4 * nparts + 16 * npoints])
+        ring_list = [[list(inverse(pts[2 * k], pts[2 * k + 1])) for k in range(parts[j], parts[j + 1])]
+                     for j in range(nparts)]
+        feats.append({"type": "Feature", "properties": {field: value},
+                      "geometry": {"type": "Polygon", "coordinates": ring_list}})
+    return feats
+
+
+def download(url: str, cache: Path, name: str) -> bytes:
+    """A whole file (e.g. a zipped shapefile), cached; retried with resume because large downloads get cut off."""
+    path = cache / name
+    if path.exists():
+        return path.read_bytes()
+    data = b""
+    for attempt in range(30):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "vote-the-record", **({"Range": f"bytes={len(data)}-"} if data else {})})
+            with urllib.request.urlopen(req, timeout=300) as r:
+                data += r.read()
+        except Exception as exc:
+            print(f"  retry {attempt + 1} for {name}: {exc}", file=sys.stderr)
+            time.sleep(3)
+        if data.endswith(b"\0\0") or data[-22:-18] == b"PK\x05\x06" or (name.endswith(".zip") and b"PK\x05\x06" in data[-200:]):
+            path.write_bytes(data)
+            return data
+    raise SystemExit(f"could not download {name}")
+
+
+def overlay(pgrid, district_feats: list[dict], field: str, x0, y0, cols, rows) -> dict:
+    """Precinct -> (district value covering most of it, that share), by rasterizing district outlines on the grid."""
+    dgrid = [[None] * cols for _ in range(rows)]
+    rasterize(district_feats, lambda f: f["properties"][field], dgrid, x0, y0, cols, rows)
+    counts: dict = {}
+    for prow, drow in zip(pgrid, dgrid):
+        for p, d in zip(prow, drow):
+            if p:
+                counts.setdefault(p, {}).setdefault(d, 0)
+                counts[p][d] += 1
+    out = {}
+    for p, per in counts.items():
+        best = max((d for d in per if d is not None), key=lambda d: per[d], default=None)
+        out[p] = (best, per.get(best, 0) / sum(per.values()) if best is not None else 0.0, sum(per.values()))
+    return out
+
+
+def point_in(rings_: list, x: float, y: float) -> bool:
+    """Even-odd point-in-polygon test over all rings of a feature."""
+    inside = False
+    for ring in rings_:
+        for (xa, ya), (xb, yb) in zip(ring, ring[1:] + ring[:1]):
+            if (ya > y) != (yb > y) and x < xa + (y - ya) * (xb - xa) / (yb - ya):
+                inside = not inside
+    return inside
+
+
+def fine_assign(precinct: dict, district_feats: list[dict], field: str, n: int = 60, with_votes: bool = False) -> tuple:
+    """(district, share, points) for one precinct from an n x n grid of points over its own outline: used for
+    precincts too small or too split for the shared grid."""
+    prs = rings(precinct["geometry"])
+    xs, ys = [x for r in prs for x, _ in r], [y for r in prs for _, y in r]
+    cands = []
+    for f in district_feats:
+        drs = rings(f["geometry"])
+        dx, dy = [x for r in drs for x, _ in r], [y for r in drs for _, y in r]
+        if min(dx) <= max(xs) and max(dx) >= min(xs) and min(dy) <= max(ys) and max(dy) >= min(ys):
+            cands.append((f["properties"][field], drs))
+    votes: dict = {}
+    total = 0
+    for i in range(n):
+        for j in range(n):
+            x = min(xs) + (i + 0.5) * (max(xs) - min(xs)) / n
+            y = min(ys) + (j + 0.5) * (max(ys) - min(ys)) / n
+            if not point_in(prs, x, y):
+                continue
+            total += 1
+            hit = next((d for d, drs in cands if point_in(drs, x, y)), None)
+            votes[hit] = votes.get(hit, 0) + 1
+    best = max((d for d in votes if d is not None), key=lambda d: votes[d], default=None)
+    if with_votes:
+        return best, (votes.get(best, 0) / total if total else 0.0), total, votes
+    return best, (votes.get(best, 0) / total if total else 0.0), total
+
+
 def simplify(points: list, tol: float) -> list:
     """Douglas-Peucker line simplification (iterative, keeps the first and last point)."""
     if len(points) < 3:
@@ -303,15 +561,11 @@ def pct_order(p) -> tuple[int, str]:
 def areas_for(attrs: dict, on_ballot: set[str], county: str = "harris-county") -> dict[str, str]:
     """District kind -> area slug, for the districts that have a contest on this ballot."""
     fields = COUNTIES[county]["fields"]
-    num = {kind: int(re.sub(r"\D", "", str(attrs[field]))) for kind, field in fields.items()}
-    cand = {
-        "us-house": f"us-house-{num['us-house']}",
-        "state-house": f"state-house-{num['state-house']}",
-        "state-senate": f"state-senate-{num['state-senate']}",
-        "sboe": f"sboe-{num['sboe']}",
-        "commissioner": f"{county}/commissioner-{num['commissioner']}",
-        "jp": f"{county}/jp-{num['jp']}",
-    }
+    num = {kind: int(re.sub(r"\D", "", str(attrs[field]))) for kind, field in fields.items()
+           if attrs.get(field) not in (None, "")}
+    pattern = {"us-house": "us-house-{}", "state-house": "state-house-{}", "state-senate": "state-senate-{}",
+               "sboe": "sboe-{}", "commissioner": county + "/commissioner-{}", "jp": county + "/jp-{}"}
+    cand = {kind: pattern[kind].format(n) for kind, n in num.items()}
     return {k: v for k, v in cand.items() if v in on_ballot}
 
 
@@ -380,7 +634,7 @@ def main(argv=None) -> int:
         on_ballot.add(race.get("area") or default)
 
     print("downloading county precinct layer...", file=sys.stderr)
-    fields = ",".join([pid, *cfg["fields"].values()])
+    fields = pid if cfg.get("overlays") else ",".join([pid, *cfg["fields"].values()])
     pct = paged(cfg["layer"], {"where": "1=1", "outFields": fields, "returnGeometry": "true",
                                "outSR": 4326, "geometryPrecision": 6, "f": "geojson"}, args.cache, "vpct", 200)
     attrs = [f["properties"] for f in pct]
@@ -403,6 +657,41 @@ def main(argv=None) -> int:
     zgrid = [[None] * cols for _ in range(rows)]
     rasterize(pct, lambda f: f["properties"][pid], pgrid, x0, y0, cols, rows)
     rasterize(zcta, lambda f: f["properties"]["ZCTA5"], zgrid, x0, y0, cols, rows)
+
+    # Counties whose precinct layer has no district fields: assign each precinct the district covering most of it.
+    overlay_src, flagged, split_kinds = None, [], {}
+    if cfg.get("overlays"):
+        raw_overlay, used = [], []
+        for kind, (fmt, url, field, title) in cfg["overlays"].items():
+            print(f"overlaying {kind}...", file=sys.stderr)
+            if fmt == "shapefile":
+                data = download(url, args.cache, url.rsplit("/", 1)[1])
+                feats = [f for f in read_shapefile(data, field)
+                         if any(x0 - 0.5 <= x <= x1 + 0.5 and y0 - 0.5 <= y <= y1 + 0.5
+                                for x, y in f["geometry"]["coordinates"][0][::25])]
+            else:
+                feats = paged(url, {"where": "1=1", "outFields": field, "returnGeometry": "true", "outSR": 4326,
+                                    "geometryPrecision": 6, "f": "geojson"}, args.cache, f"ov-{kind}", 200)
+                data = b"".join((args.cache / f).read_bytes() for f in sorted(p.name for p in args.cache.glob(f"ov-{kind}-*.json")))
+            raw_overlay.append(data)
+            used.append(f"{title} ({url})")
+            got = overlay(pgrid, feats, field, x0, y0, cols, rows)
+            for f in pct:
+                p = f["properties"][pid]
+                d, share, n = got.get(p, (None, 0.0, 0))
+                if share < OVERLAY_SHARE or n < 20:
+                    d, share, n = fine_assign(f, feats, field)
+                if d is None or share < OVERLAY_SHARE:
+                    # Split between districts: keep every district covering at least MIN_SHARE, as "depends on address".
+                    _, _, total, votes = fine_assign(f, feats, field, with_votes=True)
+                    parts = sorted((v for v in votes if v is not None and votes[v] / total >= MIN_SHARE), key=str)
+                    flagged.append((p, kind, d, share))
+                    split_kinds.setdefault(p, {})[kind] = parts
+                f["properties"][kind] = d
+        flag_text = ("; ".join(f"precinct {p}: {kind} {d} covers {share:.0%}" for p, kind, d, share in flagged)
+                     if flagged else "none")
+        overlay_src = (used, sha(b"".join(raw_overlay)), flag_text)
+        attrs = [f["properties"] for f in pct]
 
     counts: dict[str, dict[int, int]] = {}
     for prow, zrow in zip(pgrid, zgrid):
@@ -465,7 +754,16 @@ def main(argv=None) -> int:
                 local_zip.setdefault(z, []).append([slug])
 
     by_pct = {a[pid]: areas_for(a, on_ballot, args.county) for a in attrs}
-    precincts = {str(p): sorted(v.values()) + local_pct.get(p, [])
+    for p, kinds in split_kinds.items():  # precincts split between districts (overlay counties only)
+        for kind, parts in kinds.items():
+            areas = [areas_for({kind: v}, on_ballot, args.county).get(kind) for v in parts]
+            areas = sorted({a for a in areas if a})
+            if len(areas) > 1:
+                by_pct[p][kind] = areas
+            elif areas:
+                by_pct[p][kind] = areas[0]
+    precincts = {str(p): sorted(x for x in v.values() if isinstance(x, str)) + [x for x in v.values() if isinstance(x, list)]
+                 + local_pct.get(p, [])
                  for p, v in sorted(by_pct.items(), key=lambda kv: pct_order(kv[0]))}
     zips = {}
     for z, per in sorted(counts.items()):
@@ -476,7 +774,7 @@ def main(argv=None) -> int:
         kinds: dict[str, set[str]] = {}
         for p in kept:
             for kind, area in by_pct[p].items():
-                kinds.setdefault(kind, set()).add(area)
+                kinds.setdefault(kind, set()).update(area if isinstance(area, list) else [area])
         entry = []
         for kind in ("us-house", "state-senate", "state-house", "sboe", "commissioner", "jp"):
             values = sorted(kinds.get(kind, ()))
@@ -536,12 +834,26 @@ def main(argv=None) -> int:
         + ", ".join(f"{slug} (layer {layer.rsplit('/', 1)[1]}, DISTRICT_ID {geoid})" for slug, (layer, geoid) in sorted(tceq_used.items()))
         + ". Same method as the Census boundaries.")
     zip_tceq = dict(tceq_src, id=f"{fid}/zips#S-04")
+    extra_src = []
+    if overlay_src:
+        used, digest, flag_text = overlay_src
+        extra_src.append(source(
+            f"{fid}/precincts#S-05", "District maps used to assign each precinct its districts",
+            f"The {cfg['name']} precinct layer lists precinct numbers only, so each precinct was assigned the district "
+            "that covers most of it on these official maps: " + "; ".join(used) + ".",
+            cfg["overlays"]["us-house"][1], "Texas Legislative Council and county district maps", "page", None,
+            f"Read on {TODAY}; SHA-256 of the downloaded files: {digest}. Each precinct and district was laid on a "
+            f"{STEP}-degree grid (and a finer grid of points inside the precinct for small precincts); a precinct takes "
+            f"the district covering at least {OVERLAY_SHARE:.0%} of it. Checked against Harris and Dallas counties, whose "
+            "precinct layers list districts: the method matched every Harris precinct and all but one Dallas precinct "
+            "(which covered under 95% and would be flagged). Precincts below the threshold are listed as split between "
+            f"the districts covering them (\"depends on your address\"): {flag_text}."))
     if len(local) != len({g for _, g in local.values()}):
         raise SystemExit("two local areas share a GEOID")
 
     write(args.out / "precincts.yaml", f"Each precinct's districts from the {cfg['name']} precinct layer; a nested "
           "list means the precinct is only partly in those areas (city lines).",
-          [county_src, scotus_src] + ([place_src] if local else []) + ([tceq_src] if tceq_used else []), "precincts",
+          [county_src, scotus_src] + ([place_src] if local else []) + ([tceq_src] if tceq_used else []) + extra_src, "precincts",
           precincts, cfg["everywhere"])
     write(args.out / "zips.yaml", "Approximate: a nested list means the ZIP is split between those districts.",
           [zcta_src, zip_county] + ([zip_place] if local else []) + ([zip_tceq] if tceq_used else []), "zips", zips,

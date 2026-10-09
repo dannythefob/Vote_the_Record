@@ -1,0 +1,83 @@
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
+id: shelby-williams
+name: Shelby Williams
+incumbent: false
+ballot_party: Republican Party
+summary:
+- id: tx/localities/collin-county/elections/2026-11-03/commissioner-precinct-4/candidates/shelby-williams#B-01
+  headline: Former Plano City Council member (per the campaign)
+  statement: 'The campaign website says: "I’ve addressed those challenges for six years on Plano City Council and will continue to do so diligently."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://shelbyhwilliams.com/
+  source_title: Shelby Williams (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+records: []
+funding:
+- id: tx/localities/collin-county/elections/2026-11-03/commissioner-precinct-4/candidates/shelby-williams#M-01
+  headline: Raised $25,140 and had $23,269 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with Collin County Elections: $25,139.68 in total political contributions, $30,269.83 in total political expenditures, $23,269.03 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://apps.collincountytx.gov/ElectionContributors/ElectronicFile.aspx?docid=51238&dbid=0&repo=Elections
+  source_title: 'Collin County Elections: campaign finance report, Shelby Williams ("Shelby Williams C OH 30th Day Before Election")'
+  source_kind: document
+  sha256: 7839040c70553f2e9af5c3441b239c22105359cfeae729d147a0cb71038d6491
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-08'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed in Collin County Elections'' public campaign finance archive (https://apps.collincountytx.gov/ElectionContributors/, Elections > Candidate / Officeholder or Judicial Candidate / Officeholder, 2026, Active) as "Shelby Williams C OH 30th Day Before Election", document 51238; matched by name and office. This is the newest report listed for the candidate. The PDF is a scan; the totals were read from the cover-sheet image. Reading note: contributions include 1,691.59 in non-monetary (in-kind) contributions (Schedule A2); loan total written as 0. Not yet archived on the Wayback Machine.'
+endorsements: []
+running_on:
+  policy_proposals:
+  - id: tx/localities/collin-county/elections/2026-11-03/commissioner-precinct-4/candidates/shelby-williams#O-01
+    headline: Water infrastructure to keep up with growth
+    statement: 'Campaign website: "Water is one of the two biggest issues nobody is talking about, and the timeline is shorter than most people realize. We are not building infrastructure fast enough to keep pace with our growth."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://shelbyhwilliams.com/
+    source_title: Shelby Williams (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/collin-county/elections/2026-11-03/commissioner-precinct-4/candidates/shelby-williams#O-02
+    headline: Fiscal responsibility in setting the county budget
+    statement: 'Campaign website: "only the Court sets the county budget — which demands fiscal responsibility and strong working relationships."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://shelbyhwilliams.com/
+    source_title: Shelby Williams (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

@@ -1,0 +1,105 @@
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
+id: chris-hill
+name: Chris Hill
+incumbent: true
+ballot_party: Republican Party
+records:
+- id: tx/localities/collin-county/elections/2026-11-03/county-judge/candidates/chris-hill#R-01
+  record_type: vote
+  headline: Voted no on raising the county tax rate to $0.151414 for 2027 (Sept. 2026)
+  result: Passed 4-1.
+  statement: As County Judge, voted no on September 14, 2026 on the motion "to increase the property tax rate by the adopting of a tax rate of $0.151414, representing an effective 2.44% increase in the tax rate" (Court Order No. 2026-1021-09-14). The minutes record Commissioners Fletcher, Williams, Hale and Webb voting aye and Judge Hill voting nay. He also voted no on the maintenance-and-operations rate ($0.109564) and the debt service rate ($0.041850), each passed 4-1. Before the vote, the minutes record him saying "he would prefer not to increase the tax rate or taxes on County residents for a fifth consecutive year."
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://eagenda.collincountytx.gov/docs/2026/CC/202610285_3245/60980%5FCommissioners%5FCourt%5FMeeting%5FMinutes%5F9%2E14%2E2026%2Epdf
+  source_title: 'Collin County Commissioners Court: Meeting Minutes, September 14, 2026 (page 14 of 19)'
+  source_kind: document
+  sha256: eeb8209fe2126f45bb6936de204146da48691e3de673198f75bac41969e50b67
+  archive_url: null
+  event_date: '2026-09-14'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Draft minutes posted with the Commissioners Court's October 12, 2026 agenda for approval (the order on page 1 reads "2026-xxx-10-12"); they list the mover, seconder and each member's vote. All five members were present. Not yet archived on the Wayback Machine.
+- id: tx/localities/collin-county/elections/2026-11-03/county-judge/candidates/chris-hill#R-02
+  record_type: vote
+  headline: Voted no on the county's 2027 budget (Sept. 2026)
+  result: Passed 4-1.
+  statement: As County Judge, voted no on September 14, 2026 on the motion "to adopt the FY 2027 Budget as presented" (Court Order No. 2026-1024-09-14). The minutes record Commissioners Fletcher, Williams, Hale and Webb voting aye and Judge Hill voting nay.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://eagenda.collincountytx.gov/docs/2026/CC/202610285_3245/60980%5FCommissioners%5FCourt%5FMeeting%5FMinutes%5F9%2E14%2E2026%2Epdf
+  source_title: 'Collin County Commissioners Court: Meeting Minutes, September 14, 2026 (page 15 of 19)'
+  source_kind: document
+  sha256: eeb8209fe2126f45bb6936de204146da48691e3de673198f75bac41969e50b67
+  archive_url: null
+  event_date: '2026-09-14'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Draft minutes posted with the Commissioners Court's October 12, 2026 agenda for approval (the order on page 1 reads "2026-xxx-10-12"); they list the mover, seconder and each member's vote. All five members were present. Not yet archived on the Wayback Machine.
+- id: tx/localities/collin-county/elections/2026-11-03/county-judge/candidates/chris-hill#R-03
+  record_type: sponsored
+  headline: Moved to cut every county department's budget by 2.76%; no one seconded (Sept. 2026)
+  result: Failed for lack of a second.
+  statement: On September 14, 2026, made a motion "to require each department to reduce its budget by 2.76%," which the minutes say would not apply to mandatory spending such as inmate food, indigent health care or indigent defense. The motion failed for lack of a second; the minutes record him saying he had made the motion at two earlier meetings, where it also failed for lack of a second. He then moved to change the county's pay policy from targeting the 75th percentile of comparison counties to the 50th percentile, which also failed for lack of a second.
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://eagenda.collincountytx.gov/docs/2026/CC/202610285_3245/60980%5FCommissioners%5FCourt%5FMeeting%5FMinutes%5F9%2E14%2E2026%2Epdf
+  source_title: 'Collin County Commissioners Court: Meeting Minutes, September 14, 2026 (page 13 of 19)'
+  source_kind: document
+  sha256: eeb8209fe2126f45bb6936de204146da48691e3de673198f75bac41969e50b67
+  archive_url: null
+  event_date: '2026-09-14'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Draft minutes posted with the Commissioners Court's October 12, 2026 agenda for approval (the order on page 1 reads "2026-xxx-10-12"); they list the mover, seconder and each member's vote. All five members were present. Not yet archived on the Wayback Machine.
+funding:
+- id: tx/localities/collin-county/elections/2026-11-03/county-judge/candidates/chris-hill#M-01
+  headline: Raised $500 and had $122,253 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with Collin County Elections: $500.00 in total political contributions, $5,685.13 in total political expenditures, $122,252.76 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://apps.collincountytx.gov/ElectionContributors/ElectronicFile.aspx?docid=51241&dbid=0&repo=Elections
+  source_title: 'Collin County Elections: campaign finance report, Chris Hill ("Chris Hill C OH 30th Day Before Election")'
+  source_kind: document
+  sha256: f385bedb426d1a75bd5659b79c922422853528807f4fd704925b74fec863483c
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-08'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Listed in Collin County Elections' public campaign finance archive (https://apps.collincountytx.gov/ElectionContributors/, Elections > Candidate / Officeholder or Judicial Candidate / Officeholder, 2026, Active) as "Chris Hill C OH 30th Day Before Election", document 51241; matched by name and office. This is the newest report listed for the candidate. The PDF is a scan; the totals were read from the cover-sheet image. Not yet archived on the Wayback Machine.
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings:
+- record: tx/localities/collin-county/elections/2026-11-03/county-judge/candidates/chris-hill#R-03
+  question: county-judge/S-01
+  options:
+  - B
+  rationale: Moved to require every county department to cut its budget by 2.76% instead of raising the tax rate. That matches cutting spending across county departments (B).
+  verification: unverified
+  verified_on: null
+  reviewer: null
+- record: tx/localities/collin-county/elections/2026-11-03/county-judge/candidates/chris-hill#R-01
+  question: county-judge/S-01
+  options:
+  - B
+  - C
+  rationale: Voted against raising the county tax rate. A no vote rules out raising the rate (A) but does not by itself show whether he prefers cuts (B) or reserves (C), so both are listed.
+  verification: unverified
+  verified_on: null
+  reviewer: null
+promise_tracker: []

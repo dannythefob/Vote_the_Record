@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: ken-mathews
+name: KEN MATHEWS
+incumbent: false
+ballot_party: Republican Party
+records: []
+funding:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/commissioner-precinct-4/candidates/ken-mathews#M-01
+  headline: Raised $10,526 and had $1,376 on hand (Feb 24, 2026 - Apr 25, 2026)
+  statement: 'Campaign finance report covering Feb 24, 2026 - Apr 25, 2026, filed with Fort Bend County Elections on May 1, 2026: $10,526.03 in total political contributions, $13,648.00 in total political expenditures, $1,376.00 in contributions on hand at the end of the period, and $16,000.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://electionsfinancereport.fortbendcountytx.gov/docs/2026%202026%20Ken%20Mathews%20Candidate%20Commissioner%204%20050126%2030day_Redacted.pdf
+  source_title: 'Fort Bend County Elections: campaign finance report, Kennith Mathews (filed May 1, 2026)'
+  source_kind: document
+  sha256: dc51c5e190ad4befd025a0fd5e976adda70aaf30aed5568891121446b50c06bb
+  archive_url: null
+  event_date: '2026-04-25'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed on the county''s campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures 30 day", office "County Commissioner Precinct 4", filer "Kennith Mathews", filed May 1, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Reading note: a report for the May 26, 2026 runoff; contributions include 7,700.00 in non-monetary (in-kind) contributions (Schedule A2). Not yet archived on the Wayback Machine.'
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

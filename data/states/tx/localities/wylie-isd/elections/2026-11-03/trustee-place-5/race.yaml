@@ -1,0 +1,39 @@
+# Basic race page: the office and candidates as printed on the sample ballot. Unverified.
+name: Wylie ISD Trustee, Place 5
+office_type: school-trustee
+election_date: '2026-11-03'
+detail: basic
+sources:
+- id: tx/localities/wylie-isd/elections/2026-11-03/trustee-place-5/race#S-01
+  headline: Candidates as printed on the sample ballot
+  statement: 'The Collin County Elections''s sample ballot for the November 3, 2026 joint general and special election lists "Wylie Independent School District, Board of Trustees, Place 5" on page 4, with these candidates: Virdie Montgomery.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.collincountytx.gov/docs/default-source/elections/sample-ballots/20261103_joint-general-and-special-election_all-race-sample-ballot_final.pdf?sfvrsn=e253de7b_5
+  source_title: 'Collin County Elections: Joint General and Special Election, November 3, 2026, Official Ballot (all-race sample ballot) (page 4)'
+  source_kind: document
+  sha256: 37a8bd11b4c3aad7bc0d4c0a4bb9091a44f4902a261546a0219d5906c263ba42
+  archive_url: null
+  event_date: '2026-11-03'
+  retrieved: '2026-10-08'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Names and wording are from the PDF's text layer, read column by column; proposition wording is kept exactly as printed, with only the English text and choices listed. The ballot prints parties as Rep, Dem, Lib, and Grn.
+- id: tx/localities/wylie-isd/elections/2026-11-03/trustee-place-5/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official page (Wylie ISD: Meet the Board), checked on October 8, 2026, shows that Virdie Montgomery, a candidate in this race, currently holds this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.wylieisd.net/our-district/school-board/meet-the-board
+  source_title: 'Wylie ISD: Meet the Board'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-08'
+  retrieved: '2026-10-08'
+  verification: unverified
+  verified_on: null
+  reviewer: null

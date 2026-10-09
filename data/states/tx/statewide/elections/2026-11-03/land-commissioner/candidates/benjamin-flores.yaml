@@ -22,6 +22,23 @@ funding:
   verified_on: null
   reviewer: null
   notes: Report ID 101062076, form COH, TEC report type SEMIJUL; filer ID 00089819 (Flores, Benjamin (Mr.)). Found in TEC's bulk campaign finance data (https://www.ethics.state.tx.us/data/search/cf/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-09-30; a correction filed later replaces the version it corrects.
+- id: tx/statewide/elections/2026-11-03/land-commissioner/candidates/benjamin-flores#M-02
+  headline: Raised $34,626 and had $29,339 on hand (Jul 1 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1 - Sep 24, 2026, filed Oct 5, 2026: $34,626.00 in total political contributions, $19,910.15 in total political expenditures, $29,339.43 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101070174.PDF
+  source_title: 'Texas Ethics Commission: Flores, Benjamin (Mr.), campaign finance report 101070174 (filed Oct 5, 2026)'
+  source_kind: document
+  sha256: 1cb2480364d81e606534d46202baa038edc3f05be780a6fe9e3a8dc7da0d9999
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101070174, form COH, TEC report type E30DAYBEF; filer ID 00089819 (Flores, Benjamin (Mr.)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-07; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

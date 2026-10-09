@@ -21,3 +21,19 @@ sources:
   verified_on: null
   reviewer: null
   notes: Candidate names are from the PDF's text layer. Proposition wording was transcribed from the pages rendered as images and checked against the text layer; it is kept exactly as printed, including the ballot's own typos, with the outer quotation marks left off and only the English choices listed. The ballot prints parties as REP, DEM, LIB, GRN, and IND ("Independent Party" in its legend).
+- id: tx/districts/court-of-appeals-4/elections/2026-11-03/chief-justice/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (Fourth Court of Appeals: Justices), checked on October 7, 2026, does not show any of the candidates in this race as the current holder of this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.txcourts.gov/4thcoa/about-the-court/justices/
+  source_title: 'Fourth Court of Appeals: Justices'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-07'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null

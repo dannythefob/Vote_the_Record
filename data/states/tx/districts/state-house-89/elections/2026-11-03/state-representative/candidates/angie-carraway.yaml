@@ -1,0 +1,32 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: angie-carraway
+name: Angie Carraway
+incumbent: false
+ballot_party: Democratic Party
+research: pending
+records: []
+funding:
+- id: tx/districts/state-house-89/elections/2026-11-03/state-representative/candidates/angie-carraway#M-01
+  headline: Raised $25,338 and had $23,098 on hand (Jul 1 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1 - Sep 24, 2026, filed Oct 5, 2026: $25,338.00 in total political contributions, $12,795.22 in total political expenditures, $23,097.87 in contributions on hand at the end of the period, and $25.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101070139.PDF
+  source_title: 'Texas Ethics Commission: Carraway, Angela Bree (Mrs.), campaign finance report 101070139 (filed Oct 5, 2026)'
+  source_kind: document
+  sha256: fb6edb41dec2609dbeee84b2e059a9f16e32fdcfd65d8fc5740acb4e675e0bc5
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101070139, form COH, TEC report type E30DAYBEF; filer ID 00090315 (Carraway, Angela Bree (Mrs.)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by nickname, middle name, or initial, with office and district; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-07; a correction filed later replaces the version it corrects.
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

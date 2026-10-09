@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: roderick-c-garner-sr
+name: RODERICK C. GARNER, SR
+incumbent: true
+ballot_party: Democratic Party
+records: []
+funding:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/jp-precinct-2-place-1/candidates/roderick-c-garner-sr#M-01
+  headline: Had $0 on hand (Jan 1, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1, 2026 - Jun 30, 2026, filed with Fort Bend County Elections on Jul 15, 2026: $0.00 in total political contributions, and $0.00 in contributions on hand at the end of the period.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://electionsfinancereport.fortbendcountytx.gov/docs/2026%202026%20Roderick%20C%20Garner%20JP%20Pct%202%20PL%201%20%20071526%20JULY15.pdf
+  source_title: 'Fort Bend County Elections: campaign finance report, Roderick C Garner Sr (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: 02da9edfd46db7d20de7f58289c813cea675fcca20f32e861d849f07f8fbb5c4
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed on the county''s campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures - Semi Annual", office "Justice of the Peace, Precinct 2 Place 1", filer "Roderick C Garner Sr", filed Jul 15, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Reading note: total-expenditures and outstanding-loan lines left blank. Left out: total expenditures, outstanding loans. Not yet archived on the Wayback Machine.'
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

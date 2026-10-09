@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/state-house-126/elections/2026-11-03/state-representative/candidates/stefanie-bord#B-01
-  headline: Former science teacher (per her campaign)
+  headline: Former science teacher (per the campaign)
   statement: 'Campaign website: "She went back to work as a high school science teacher, covering Earth and Environmental Science, and a General Science class for the upperclassmen."'
   label: candidate_claim
   claim_status: documented

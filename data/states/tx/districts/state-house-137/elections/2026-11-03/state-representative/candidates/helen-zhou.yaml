@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Republican Party
 summary:
 - id: tx/districts/state-house-137/elections/2026-11-03/state-representative/candidates/helen-zhou#B-01
-  headline: CPA and real estate broker (per her campaign)
+  headline: CPA and real estate broker (per the campaign)
   statement: 'Campaign website: "Licensed Texas Certified Public Accountant and Texas real estate broker"'
   label: candidate_claim
   claim_status: documented

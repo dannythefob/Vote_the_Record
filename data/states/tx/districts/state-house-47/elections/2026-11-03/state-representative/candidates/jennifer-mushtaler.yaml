@@ -5,8 +5,8 @@ incumbent: false
 ballot_party: Republican Party
 summary:
 - id: tx/districts/state-house-47/elections/2026-11-03/state-representative/candidates/jennifer-mushtaler#B-01
-  headline: Obstetrician; former Planning Commissioner (per her campaign)
-  statement: 'Her campaign website says: "I’ve spent my career caring for women and families as an obstetrician" and "As President of our Limited District and a two-term Planning Commissioner, I’ve protected our neighborhoods."'
+  headline: Obstetrician; former Planning Commissioner (per the campaign)
+  statement: 'The campaign website says: "I’ve spent my career caring for women and families as an obstetrician" and "As President of our Limited District and a two-term Planning Commissioner, I’ve protected our neighborhoods."'
   label: candidate_claim
   claim_status: documented
   contradicted_by: []

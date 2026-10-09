@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: mary-lou-alvarez
 name: Mary Lou Alvarez
-incumbent: null
+incumbent: true
 ballot_party: Democratic Party
 records: []
-funding: []
+funding:
+- id: tx/localities/bexar-county/elections/2026-11-03/district-court-45/candidates/mary-lou-alvarez#M-01
+  headline: Raised $69,550 and had $29,948 on hand (Feb 22 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Feb 22 - Jun 30, 2026, filed Jul 15, 2026: $69,550.00 in total political contributions, $76,022.41 in total political expenditures, $29,947.92 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101061804.PDF
+  source_title: 'Texas Ethics Commission: Alvarez, Maria Luisa (The Honorable), campaign finance report 101061804 (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: 4a0667fdf299d8738094a0484df369f2ff65903e82709a892d2eb2ad9ee3defc
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101061804, form JCOH, TEC report type SEMIJUL; filer ID 00081826 (Alvarez, Maria Luisa (The Honorable)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by nickname, middle name, or initial, with office and district; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-07; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

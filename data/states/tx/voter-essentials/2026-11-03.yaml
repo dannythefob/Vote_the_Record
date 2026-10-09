@@ -60,3 +60,135 @@ items:
     verified_on: "2026-09-29"
     reviewer: "D"
     notes: 'Page text: "Tuesday, November 3, 2026 - Uniform Election Date".'
+
+# When you go vote: what to bring and what's allowed. Unverified; written by an AI assistant.
+at_the_polls:
+- id: tx/voter-essentials/2026-11-03#bring-photo-id
+  heading: 'Required: one photo ID'
+  text: To vote in person, show one of these photo IDs. It can be expired up to four years. If you are 70 or older, it can
+    be expired any amount of time.
+  list:
+  - Texas driver's license (from DPS)
+  - Texas Election Identification Certificate (from DPS)
+  - Texas personal ID card (from DPS)
+  - Texas license to carry a handgun (from DPS)
+  - U.S. military ID card with your photo
+  - U.S. citizenship certificate with your photo
+  - U.S. passport (book or card)
+  source_url: https://statutes.capitol.texas.gov/Docs/EL/htm/EL.63.htm
+  source_title: Texas Election Code, chapter 63 (sections 63.001 and 63.0101)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Sections 63.001(b) and 63.0101(a), (c), read 2026-10-06.
+- id: tx/voter-essentials/2026-11-03#no-photo-id
+  heading: No photo ID? You can still vote
+  text: If you don't have one of the photo IDs, show one of these documents with your name and address and sign a declaration
+    at the polls.
+  list:
+  - Your voter registration certificate, or another government document with your name and address
+  - A copy of a current utility bill
+  - A bank statement
+  - A government check
+  - A paycheck
+  - A certified birth certificate
+  source_url: https://statutes.capitol.texas.gov/Docs/EL/htm/EL.63.htm
+  source_title: Texas Election Code, chapter 63 (sections 63.001 and 63.0101)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Sections 63.001(b)(2) and 63.0101(b), read 2026-10-06. The Secretary of State calls the declaration a Reasonable
+    Impediment Declaration (votetexas.gov).
+- id: tx/voter-essentials/2026-11-03#bring-registration-certificate
+  heading: 'Recommended: your voter registration certificate'
+  text: You don't need it to vote, but the Texas Secretary of State "highly recommend[s]" bringing it. In some situations
+    it lets you vote a regular ballot instead of a provisional one.
+  source_url: https://www.votetexas.gov/faq/
+  source_title: 'VoteTexas.gov (Texas Secretary of State): Frequently Asked Questions'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Page text: "While you do not need to bring your voter registration certificate with you to vote, we highly recommend
+    that you have it with you at the polling place. In some situations, having your voter registration certificate will allow
+    you to vote a regular ballot instead of a provisional ballot."'
+- id: tx/voter-essentials/2026-11-03#bring-your-list
+  heading: Yes, you can bring your own list into the booth
+  text: You can bring written notes, like a list of who you plan to vote for or a marked sample ballot, into the voting booth.
+    Bring it on paper, because you can't use your phone (see below). Don't show it to other people within 100 feet of the
+    polling place, because that can count as campaigning, and take it with you when you're done.
+  source_url: https://www.sos.state.tx.us/elections/laws/advisory2024-09.shtml
+  source_title: 'Texas Secretary of State: Election Advisory No. 2024-09, Certain Activities in Vicinity of Polling Places'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Advisory text: "Voters are allowed to bring written materials into voting stations to assist them in casting their
+    ballot. However, it is important to remember that the prohibition on electioneering within 100-feet of the polling place
+    does apply to written materials." Election workers remove written materials left in the polling place (Election Code section
+    61.011).'
+- id: tx/voter-essentials/2026-11-03#no-phones
+  heading: 'Not allowed: phones and other devices'
+  text: You can't use these within 100 feet of the voting booths. Voters with disabilities may be allowed to use a device
+    that helps them vote.
+  list:
+  - Cell phones
+  - Cameras
+  - Tablets and laptops
+  - Sound recorders
+  - Smart watches that can send messages or record sound or images
+  - Any other device that communicates wirelessly or records sound or images
+  source_url: https://www.sos.state.tx.us/elections/laws/advisory2024-09.shtml
+  source_title: 'Texas Secretary of State: Election Advisory No. 2024-09, Certain Activities in Vicinity of Polling Places'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Advisory list of devices that should not be used in the polling place; Election Code section 61.014.
+- id: tx/voter-essentials/2026-11-03#no-campaign-gear
+  heading: 'Not allowed: campaign buttons, badges, and similar items'
+  text: You can't wear a badge, insignia, emblem, or similar item about a candidate, measure, or political party on the ballot
+    inside the polling place or within 100 feet of its entrance.
+  source_url: https://statutes.capitol.texas.gov/Docs/EL/htm/EL.61.htm
+  source_title: Texas Election Code, section 61.010
+  source_kind: page
+  sha256: null
+  archive_url: null
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Section 61.010(a) and (c): wearing one is a Class C misdemeanor. Read 2026-10-06.'
+- id: tx/voter-essentials/2026-11-03#no-election-day-registration
+  heading: You can't register at the polls on Election Day
+  text: Texas has no Election Day registration. You must register by the 30th day before the election. For November 3, 2026,
+    the deadline was October 5, 2026.
+  source_url: https://www.votetexas.gov/register-to-vote/
+  source_title: 'VoteTexas.gov (Texas Secretary of State): Register to Vote'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  retrieved: '2026-10-06'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Page text: "Texas law requires eligible voters to register by the 30th day before Election Day. The voter registration
+    deadline for the November 3, 2026 Uniform Election is October 5, 2026." A registration takes effect 30 days after it is
+    submitted (Election Code section 13.143).'

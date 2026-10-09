@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: celeste-brown
 name: Celeste Brown
-incumbent: null
+incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/localities/bexar-county/elections/2026-11-03/county-court-at-law-8/candidates/celeste-brown#M-01
+  headline: Raised $2,122 and had $121 on hand (Jul 1, 2026 - Aug 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Aug 24, 2026, filed with the Bexar County Elections Department on Oct 5, 2026: $2,121.81 in total political contributions, $1,972.21 in total political expenditures, $120.60 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://edocs.bexar.org/elections/ce10052026celesteabrown.pdf
+  source_title: 'Bexar County Elections Department: campaign finance report, Celeste Brown (filed Oct 5, 2026)'
+  source_kind: document
+  sha256: acafeb92462aa834ec877bb1d1c7b6f871ab4260223129bb9737697c6c7d8612
+  archive_url: null
+  event_date: '2026-08-24'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed on the county''s campaign finance search (https://apps.bexar.org/electionsfinancereport/) as "Contributions and Expenditures 30 day", office "County Court 8", filer "Brown, Celeste", filed Oct 5, 2026; matched by first and last name. This is the newest report listed for the candidate. The PDF is a scan; the totals were read from the cover-sheet image. Reading note: period end written as 08/24/26 on a 30th-day-before-election report; zero amounts written as a slashed zero. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
   policy_proposals: []

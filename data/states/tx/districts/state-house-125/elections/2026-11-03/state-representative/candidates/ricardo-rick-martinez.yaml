@@ -1,10 +1,27 @@
 # Basic race: name and ballot label as printed on the sample ballot. Unverified.
 id: ricardo-rick-martinez
 name: Ricardo "Rick" Martinez
-incumbent: null
+incumbent: false
 ballot_party: Republican Party
 records: []
-funding: []
+funding:
+- id: tx/districts/state-house-125/elections/2026-11-03/state-representative/candidates/ricardo-rick-martinez#M-01
+  headline: Raised $1,925 and had $34 on hand (Jul 1 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1 - Sep 24, 2026, filed Oct 5, 2026: $1,925.00 in total political contributions, $11,163.25 in total political expenditures, $33.91 in contributions on hand at the end of the period, and $8,490.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101069817.PDF
+  source_title: 'Texas Ethics Commission: Martinez, Ricardo (Mr.), campaign finance report 101069817 (filed Oct 5, 2026)'
+  source_kind: document
+  sha256: ca81ceef7ebaf37c26e7eb7e6fde56e4d07c9b6c79960a4d20323c0a24986ea3
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101069817, form COH, TEC report type E30DAYBEF; filer ID 00090162 (Martinez, Ricardo (Mr.)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-07; a correction filed later replaces the version it corrects.
 endorsements: []
 running_on:
   policy_proposals: []

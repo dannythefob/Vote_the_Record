@@ -37,3 +37,38 @@ def test_areas_for_keeps_only_districts_with_a_contest_on_the_ballot():
                  "harris-county/commissioner-2", "harris-county/jp-1"}
     assert h.areas_for(attrs, on_ballot) == {"us-house": "us-house-7", "state-house": "state-house-134",
                                              "sboe": "sboe-4", "jp": "harris-county/jp-1"}
+
+
+TLC_PRJ = ('PROJCS["NAD_1983_Lambert_Conformal_Conic",GEOGCS["GCS_North_American_1983",DATUM["D_North_American_1983",'
+           'SPHEROID["GRS_1980",6378137.0,298.257222101]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],'
+           'PROJECTION["Lambert_Conformal_Conic"],PARAMETER["False_Easting",1000000.0],PARAMETER["False_Northing",1000000.0],'
+           'PARAMETER["Central_Meridian",-100.0],PARAMETER["Standard_Parallel_1",27.41666666666667],'
+           'PARAMETER["Standard_Parallel_2",34.91666666666666],PARAMETER["Latitude_Of_Origin",31.16666666666667],'
+           'UNIT["Meter",1.0]]')
+
+
+def test_lcc_inverse_maps_the_false_origin_to_the_projection_center():
+    inverse = h.lcc_inverse(TLC_PRJ)
+    lon, lat = inverse(1000000.0, 1000000.0)
+    assert abs(lon + 100.0) < 1e-9 and abs(lat - 31.16666666666667) < 1e-9
+
+
+def test_lcc_inverse_moves_east_and_north_with_x_and_y():
+    inverse = h.lcc_inverse(TLC_PRJ)
+    lon, lat = inverse(1100000.0, 1100000.0)  # 100 km east and north of the center
+    assert -99.0 < lon < -98.9 and 32.06 < lat < 32.08
+
+
+def test_overlay_and_fine_assign_pick_the_district_covering_most_of_a_precinct():
+    rows = cols = 10
+    pgrid = [[0] * cols for _ in range(rows)]
+    precinct = square(0.0, 0.0, 0.010, 5)
+    h.rasterize([precinct], lambda f: 5, pgrid, 0.0, 0.0, cols, rows)
+    def rect(xa, xb, value):
+        ring = [[xa, -0.01], [xb, -0.01], [xb, 0.02], [xa, 0.02], [xa, -0.01]]
+        return {"geometry": {"type": "Polygon", "coordinates": [ring]}, "properties": {"v": value}}
+    west, east = rect(-0.01, 0.008, "A"), rect(0.008, 0.02, "B")  # A covers 80% of the precinct, B 20%
+    got = h.overlay(pgrid, [west, east], "v", 0.0, 0.0, cols, rows)
+    assert got[5][0] == "A" and abs(got[5][1] - 0.8) < 0.01
+    d, share, n = h.fine_assign(precinct, [west, east], "v")
+    assert d == "A" and abs(share - 0.8) < 0.02 and n > 100

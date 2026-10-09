@@ -1,0 +1,40 @@
+# Basic race page: the office and candidates as printed on the sample ballot. Unverified.
+name: Justice of the Peace, Precinct 1, Place 1
+office_type: justice-of-the-peace
+election_date: '2026-11-03'
+detail: basic
+area: fort-bend-county/jp-1
+sources:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/jp-precinct-1-place-1/race#S-01
+  headline: Candidates as printed on the sample ballot
+  statement: 'The Fort Bend County Elections'' sample ballot for the November 3, 2026 general election lists "JUSTICE OF THE PEACE PRECINCT 1, PLACE 1" on page 2, with these candidates: KELLY CROW (Republican Party); MARTIN B. SANCHEZ (Democratic Party).'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://sampleballots.fortbendcountytx.gov/Congressional-Election/11031002BS1.pdf
+  source_title: 'Fort Bend County Elections: sample ballot, precinct 1002, ballot style 1 (page 2)'
+  source_kind: document
+  sha256: 71ec919222cf5224eb27c1e66f82883539c29a7205bb432436b22460e91d031a
+  archive_url: null
+  event_date: '2026-11-03'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Fort Bend County posts one sample ballot per ballot style (64 styles across 201 precincts); names and wording are from each PDF's text layer and are kept exactly as printed. The ballots print parties as REP, DEM, LIB, and GRE. This contest appears on 11 of the 64 ballot styles; this fact cites the first style that carries it (style 1, first listed for precinct 1002).
+- id: tx/localities/fort-bend-county/elections/2026-11-03/jp-precinct-1-place-1/race#S-HOLDER
+  headline: Who holds this office now
+  statement: 'The official list (Fort Bend County: Elected Officials), checked on October 9, 2026, shows that KELLY CROW, a candidate in this race, currently holds this office. It does not list the other candidates as holding this office.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.fortbendcountytx.gov/government/governing-body/elected-officials
+  source_title: 'Fort Bend County: Elected Officials'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-09'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null

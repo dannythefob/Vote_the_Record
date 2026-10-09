@@ -5,8 +5,8 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/state-house-49/elections/2026-11-03/state-representative/candidates/montserrat-garibay#B-01
-  headline: Former teacher and union leader; former U.S. Department of Education official (per her campaign)
-  statement: Her campaign website says she began her career in the classroom in Austin ISD, served as Vice President of Education Austin and later Secretary-Treasurer of the Texas AFL-CIO, and worked at the U.S. Department of Education.
+  headline: Former teacher and union leader; former U.S. Department of Education official (per the campaign)
+  statement: The campaign website says the candidate began a career in the classroom in Austin ISD, served as Vice President of Education Austin and later Secretary-Treasurer of the Texas AFL-CIO, and worked at the U.S. Department of Education.
   label: candidate_claim
   claim_status: documented
   contradicted_by: []

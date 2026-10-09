@@ -5,8 +5,8 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/state-house-50/elections/2026-11-03/state-representative/candidates/samantha-lopez-resendez#B-01
-  headline: Chief of staff to State Rep. Donna Howard (per her campaign)
-  statement: Her campaign website says she has served as Chief of Staff to State Representative Donna Howard.
+  headline: Chief of staff to State Rep. Donna Howard (per the campaign)
+  statement: The campaign website says the candidate has served as Chief of Staff to State Representative Donna Howard.
   label: candidate_claim
   claim_status: documented
   contradicted_by: []

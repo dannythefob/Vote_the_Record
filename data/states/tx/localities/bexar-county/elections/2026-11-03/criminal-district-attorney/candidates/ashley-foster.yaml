@@ -1,13 +1,99 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: ashley-foster
 name: Ashley Foster
-incumbent: null
+incumbent: false
 ballot_party: Republican Party
+summary:
+- id: tx/localities/bexar-county/elections/2026-11-03/criminal-district-attorney/candidates/ashley-foster#B-01
+  headline: Former Bexar County assistant district attorney (per the campaign)
+  statement: 'The campaign website says: "In my 11 years as Assistant District Attorney, I prosecuted thousands of felony cases with a success rate of over 99%."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://ashleyfosterforda.com/
+  source_title: Ashley Foster for DA (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records: []
-funding: []
+funding:
+- id: tx/localities/bexar-county/elections/2026-11-03/criminal-district-attorney/candidates/ashley-foster#M-01
+  headline: Raised $50,770 and had $4,453 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with the Bexar County Elections Department on Sep 30, 2026: $50,770.00 in total political contributions, $6,816.71 in total political expenditures, $4,452.60 in contributions on hand at the end of the period, and $80,000.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://edocs.bexar.org/elections/ce09302026ashleyfoster.pdf
+  source_title: 'Bexar County Elections Department: campaign finance report, Ashley Foster (filed Sep 30, 2026)'
+  source_kind: document
+  sha256: 3632416d14b44fcb58d7d7656c591770d69914c8682ecfa5c3dee0d43f15051c
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed on the county''s campaign finance search (https://apps.bexar.org/electionsfinancereport/) as "Contributions and Expenditures 30 day", office "District Attorney", filer "Foster, Ashley C.", filed Sep 30, 2026; matched by first and last name. This is the newest report listed for the candidate. The PDF is a scan; the totals were read from the cover-sheet image. Reading note: contributions include 48,900.00 in non-monetary (in-kind) contributions (Schedule A2). Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/bexar-county/elections/2026-11-03/criminal-district-attorney/candidates/ashley-foster#O-01
+    headline: Faster case processing
+    statement: 'Campaign website: "Ashley will attack the bottlenecks with a streamlined intake process, earlier discovery exchange, and smart triage that routes straightforward cases to rapid resolution while reserving trial teams for complex and violent felonies."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://ashleyfosterforda.com/
+    source_title: Ashley Foster for DA (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/bexar-county/elections/2026-11-03/criminal-district-attorney/candidates/ashley-foster#O-02
+    headline: A single point of contact for crime victims
+    statement: 'Campaign website: "Ashley will put victims and survivors at the center of the process with timely updates, trauma-informed advocacy, and a single point of contact so no one feels lost in the system."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://ashleyfosterforda.com/
+    source_title: Ashley Foster for DA (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/bexar-county/elections/2026-11-03/criminal-district-attorney/candidates/ashley-foster#O-03
+    headline: No donations from defense attorneys who practice before the office
+    statement: 'Campaign website: "I will not accept donations from defense attorneys who practice before the Bexar County District Attorney’s Office."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://ashleyfosterforda.com/
+    source_title: Ashley Foster for DA (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

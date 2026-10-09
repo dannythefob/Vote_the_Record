@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: nireasha-murray
+name: NIREASHA MURRAY
+incumbent: false
+ballot_party: Democratic Party
+records: []
+funding:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/county-court-at-law-1/candidates/nireasha-murray#M-01
+  headline: Raised $2,500 and had $2,060 on hand (Feb 12, 2026 - Jul 14, 2026)
+  statement: 'Campaign finance report covering Feb 12, 2026 - Jul 14, 2026, filed with Fort Bend County Elections on Jul 15, 2026: $2,500.00 in total political contributions, $1,390.66 in total political expenditures, $2,060.31 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://electionsfinancereport.fortbendcountytx.gov/docs/2026%202026%20Nireasha%20G%20Murray%20Candidate%20CCL%20071526%20July15.pdf
+  source_title: 'Fort Bend County Elections: campaign finance report, Nireasha Murray (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: c3f4bc4e400ed3d9de268ac7e5d18d1f8ae24b9e3b7f96e3e400c3926fefa60c
+  archive_url: null
+  event_date: '2026-07-14'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed on the county''s campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures - Semi Annual", office "County Court at 1", filer "Nireasha Murray", filed Jul 15, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Reading note: zero amounts written as a slashed zero. Not yet archived on the Wayback Machine.'
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []
