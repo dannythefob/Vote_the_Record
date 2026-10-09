@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/state-house-138/elections/2026-11-03/state-representative/candidates/tyler-smith#B-01
-  headline: Texas Southern University political science graduate (per his campaign)
+  headline: Texas Southern University political science graduate (per the campaign)
   statement: 'Campaign website: "Born in Houston, Tyler spent part of his childhood in Los Angeles before returning home to attend Texas Southern University, where he earned a degree in Political Science."'
   label: candidate_claim
   claim_status: documented

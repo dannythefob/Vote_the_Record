@@ -5,8 +5,8 @@ incumbent: false
 ballot_party: Republican Party
 summary:
 - id: tx/localities/bexar-county/elections/2026-11-03/commissioner-precinct-2/candidates/david-sherwood-hill#B-01
-  headline: Civil engineer and business owner (per his campaign)
-  statement: His campaign website describes him as "a San Antonian, civil engineer, business leader, entrepreneur, inventor, and family man."
+  headline: Civil engineer and business owner (per the campaign)
+  statement: The campaign website describes the candidate as "a San Antonian, civil engineer, business leader, entrepreneur, inventor, and family man."
   label: candidate_claim
   claim_status: documented
   contradicted_by: []

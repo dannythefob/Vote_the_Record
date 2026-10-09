@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/us-house-2/elections/2026-11-03/us-representative/candidates/shaun-finnie#B-01
-  headline: Energy investment banker and former oil and gas lawyer (per his campaign)
+  headline: Energy investment banker and former oil and gas lawyer (per the campaign)
   statement: 'Campaign website: "He was an oil and gas lawyer for three years, and since then has spent the last 30 years working in investment banking, focusing on energy, primarily oil and gas mergers & acquisitions."'
   label: candidate_claim
   claim_status: documented

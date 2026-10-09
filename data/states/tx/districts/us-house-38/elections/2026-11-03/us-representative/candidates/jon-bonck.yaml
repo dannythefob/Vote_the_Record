@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Republican Party
 summary:
 - id: tx/districts/us-house-38/elections/2026-11-03/us-representative/candidates/jon-bonck#B-01
-  headline: Mortgage and real estate professional (per his campaign)
+  headline: Mortgage and real estate professional (per the campaign)
   statement: 'Campaign website: "Jon Bonck is a Christian, husband, father, and mortgage leader from Greater Houston"'
   label: candidate_claim
   claim_status: documented

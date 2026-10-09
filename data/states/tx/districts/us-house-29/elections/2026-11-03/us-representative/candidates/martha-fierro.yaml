@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Republican Party
 summary:
 - id: tx/districts/us-house-29/elections/2026-11-03/us-representative/candidates/martha-fierro#B-01
-  headline: Former health care worker; ministry director (per her campaign)
+  headline: Former health care worker; ministry director (per the campaign)
   statement: 'Campaign website: "A first-generation college graduate with two degrees from the University of Houston, Martha began working at 19 as a Healthcare worker at the Texas Medical Center."'
   label: candidate_claim
   claim_status: documented

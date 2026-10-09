@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/state-house-127/elections/2026-11-03/state-representative/candidates/michelle-williams#B-01
-  headline: Former Houston ISD teacher (per her campaign)
+  headline: Former Houston ISD teacher (per the campaign)
   statement: 'Campaign website: "Michelle Williams spent 12 years in the classroom, giving her heart to students across the Houston Independent School District."'
   label: candidate_claim
   claim_status: documented

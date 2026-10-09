@@ -5,8 +5,8 @@ incumbent: true
 ballot_party: Democratic Party
 summary:
 - id: tx/localities/harris-county/elections/2026-11-03/county-clerk/candidates/teneshia-hudspeth#B-01
-  headline: Serves as Harris County Clerk (per her campaign)
-  statement: 'Her campaign website says she "serves as the clerk of Harris County" and: "She is also the first African-American woman to serve in this role."'
+  headline: Serves as Harris County Clerk (per the campaign)
+  statement: 'The campaign website says the candidate "serves as the clerk of Harris County" and: "She is also the first African-American woman to serve in this role."'
   label: candidate_claim
   claim_status: documented
   contradicted_by: []

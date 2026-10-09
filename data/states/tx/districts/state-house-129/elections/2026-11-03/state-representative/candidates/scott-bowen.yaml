@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Republican Party
 summary:
 - id: tx/districts/state-house-129/elections/2026-11-03/state-representative/candidates/scott-bowen#B-01
-  headline: Chemical engineer; former Clear Creek ISD trustee (per his campaign)
+  headline: Chemical engineer; former Clear Creek ISD trustee (per the campaign)
   statement: 'Campaign website: "Scott Bowen is product of local schools before graduating from Texas A&M with a degree in Chemical Engineering. Scott served as an at-large member of the Clear Creek ISD Board of Trustees from 2019 to 2025."'
   label: candidate_claim
   claim_status: documented

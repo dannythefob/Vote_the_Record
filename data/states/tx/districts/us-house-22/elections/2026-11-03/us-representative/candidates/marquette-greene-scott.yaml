@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/marquette-greene-scott#B-01
-  headline: Iowa Colony council member; attorney; former math teacher (per her campaign)
+  headline: Iowa Colony council member; attorney; former math teacher (per the campaign)
   statement: 'Campaign website: "currently Mayor Pro Tem of the City of Iowa Colony, Texas, holding Position 3 on the city council."'
   label: candidate_claim
   claim_status: documented

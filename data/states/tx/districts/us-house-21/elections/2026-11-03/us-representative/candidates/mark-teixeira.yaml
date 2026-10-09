@@ -5,8 +5,8 @@ incumbent: false
 ballot_party: Republican Party
 summary:
 - id: tx/districts/us-house-21/elections/2026-11-03/us-representative/candidates/mark-teixeira#B-01
-  headline: Former Major League Baseball player (per his campaign)
-  statement: His campaign website says he "was drafted 5th overall by the Texas Rangers in the 2001 MLB Draft" and "capped his career with a World Series Championship with the New York Yankees in 2009."
+  headline: Former Major League Baseball player (per the campaign)
+  statement: The campaign website says the candidate "was drafted 5th overall by the Texas Rangers in the 2001 MLB Draft" and "capped his career with a World Series Championship with the New York Yankees in 2009."
   label: candidate_claim
   claim_status: documented
   contradicted_by: []

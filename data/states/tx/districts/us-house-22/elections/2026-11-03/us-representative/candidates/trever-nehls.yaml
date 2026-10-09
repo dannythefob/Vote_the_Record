@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Republican Party
 summary:
 - id: tx/districts/us-house-22/elections/2026-11-03/us-representative/candidates/trever-nehls#B-01
-  headline: Retired Army colonel; former Fort Bend County constable (per his campaign)
+  headline: Retired Army colonel; former Fort Bend County constable (per the campaign)
   statement: 'Campaign website: "He later served as Constable for Fort Bend County Precinct 4 from 2013 to 2020"'
   label: candidate_claim
   claim_status: documented

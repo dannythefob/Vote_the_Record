@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/state-senate-18/elections/2026-11-03/state-senator/candidates/erica-gillum#B-01
-  headline: Former Hempstead mayor and council member (per her campaign)
+  headline: Former Hempstead mayor and council member (per the campaign)
   statement: 'Campaign website: "His example inspired me to serve my own community, first on the Hempstead City Council from 2020 to 2022, and then as Mayor from 2022 to 2024."'
   label: candidate_claim
   claim_status: documented

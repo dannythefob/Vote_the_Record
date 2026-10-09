@@ -5,8 +5,8 @@ incumbent: false
 ballot_party: Republican Party
 summary:
 - id: tx/localities/bexar-county/elections/2026-11-03/criminal-district-attorney/candidates/ashley-foster#B-01
-  headline: Former Bexar County assistant district attorney (per her campaign)
-  statement: 'Her campaign website says: "In my 11 years as Assistant District Attorney, I prosecuted thousands of felony cases with a success rate of over 99%."'
+  headline: Former Bexar County assistant district attorney (per the campaign)
+  statement: 'The campaign website says: "In my 11 years as Assistant District Attorney, I prosecuted thousands of felony cases with a success rate of over 99%."'
   label: candidate_claim
   claim_status: documented
   contradicted_by: []

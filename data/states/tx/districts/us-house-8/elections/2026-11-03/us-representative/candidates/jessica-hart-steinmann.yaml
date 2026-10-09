@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Republican Party
 summary:
 - id: tx/districts/us-house-8/elections/2026-11-03/us-representative/candidates/jessica-hart-steinmann#B-01
-  headline: Former U.S. Justice Department official; lawyer (per her campaign)
+  headline: Former U.S. Justice Department official; lawyer (per the campaign)
   statement: 'Campaign website: "She served in President Trump’s Department of Justice, where she led efforts to combat human trafficking and support crime victims as the Director for the Office of Victims of Crime."'
   label: candidate_claim
   claim_status: documented

@@ -156,6 +156,26 @@ BEXAR_LOCAL_AREAS = {
     "south-san-antonio-isd": (SCHOOL_LAYER, "4840680"),
     "bexar-county-mud-1": (TCEQ_MUD, "1274500"),
 }
+COLLIN_ITEM = "https://www.arcgis.com/home/item.html?id=26cdf0cddc2849e1af691ac234f3340a"
+COLLIN_LAYER = "https://services1.arcgis.com/fdWXd5OobWR1E3er/arcgis/rest/services/Voting_Precincts/FeatureServer/0"
+COLLIN_LOCAL_AREAS = {
+    "city-of-anna": (PLACE_LAYER, "4803300"),
+    "city-of-dallas": (PLACE_LAYER, "4819000"),
+    "city-of-garland": (PLACE_LAYER, "4829000"),
+    "city-of-josephine": (PLACE_LAYER, "4838068"),
+    "city-of-lavon": (PLACE_LAYER, "4841800"),
+    "city-of-lowry-crossing": (PLACE_LAYER, "4844308"),
+    "city-of-plano": (PLACE_LAYER, "4858016"),
+    "city-of-princeton": (PLACE_LAYER, "4859576"),
+    "city-of-weston": (PLACE_LAYER, "4877740"),
+    "city-of-wylie": (PLACE_LAYER, "4880356"),
+    "bland-isd": (SCHOOL_LAYER, "4810350"),
+    "mckinney-isd": (SCHOOL_LAYER, "4829850"),
+    "princeton-isd": (SCHOOL_LAYER, "4835850"),
+    "wylie-isd": (SCHOOL_LAYER, "4846530"),
+    "blue-meadow-mud-2": (TCEQ_MUD, "1546750"),
+    "blue-meadow-mud-4": (TCEQ_MUD, "1546938"),
+}
 OVERLAY_SHARE = 0.95  # a precinct must be at least this much inside one district to be assigned it without a flag
 
 # Per county: precinct layer, its field for each district kind, areas every voter shares, local areas.
@@ -233,6 +253,34 @@ COUNTIES = {
                     "district maps named in precincts#S-05."),
         "field_note": ("Bexar County's own congressional layer still shows the pre-2025 districts (it includes District 28), "
                        "so congressional districts come from the Texas Legislative Council's PLANC2333 shapefile instead."),
+    },
+    "collin-county": {
+        "name": "Collin County", "item": COLLIN_ITEM, "layer": COLLIN_LAYER, "precinct_field": "PRECINCT",
+        # The Collin layer's congressional field predates plan C2333, so every district comes from an overlay; the
+        # commissioner and JP precincts come from the layer's own fields (overlaying a layer on itself is exact).
+        "fields": {kind: kind for kind in ("us-house", "state-house", "state-senate", "commissioner", "jp")},
+        "overlays": {
+            "us-house": ("shapefile", TLC_C2333, "District", "Texas Legislative Council: PLANC2333 (congressional districts "
+                         "enacted 2025, 89th Legislature, 2nd C.S.)"),
+            "state-house": ("shapefile", TLC_H2316, "District", "Texas Legislative Council: PLANH2316 (State House "
+                            "districts, 2023-2026)"),
+            "state-senate": ("shapefile", TLC_S2168, "District", "Texas Legislative Council: PLANS2168 (State Senate "
+                             "districts)"),
+            "commissioner": ("arcgis", COLLIN_LAYER, "COMMISH", "Collin County GIS: Voting Precincts (COMMISH field)"),
+            "jp": ("arcgis", COLLIN_LAYER, "JPC", "Collin County GIS: Voting Precincts (JPC field)"),
+        },
+        "everywhere": ["court-of-appeals-5"],  # Gov't Code 22.201(f)
+        "local_areas": COLLIN_LOCAL_AREAS,
+        "headline": "Collin County voting precincts (2026)",
+        "statement": ("Collin County's GIS layer of voting precincts (273 precincts), published by Collin County GIS, gives "
+                      "each precinct's number and outline and its Commissioners Court and justice of the peace precincts; "
+                      "the layer says the precincts were approved by the Commissioners Court on 9/25/2023 (Court Order "
+                      "#2023-915-09-25), effective 1/1/2024."),
+        "title": "Collin County GIS: Voting Precincts",
+        "credits": ("Congressional, State House and State Senate districts were assigned by overlaying the district maps "
+                    "named in precincts#S-05; the layer's own district fields and officeholder names are not used."),
+        "field_note": ("The Collin County layer's precincts took effect 1/1/2024, before the 2025 congressional map, so congressional "
+                       "districts come from the Texas Legislative Council's PLANC2333 shapefile instead."),
     },
 }
 

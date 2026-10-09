@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/state-senate-4/elections/2026-11-03/state-senator/candidates/ron-c-angeletti#B-01
-  headline: Educator and small business owner (per his campaign)
+  headline: Educator and small business owner (per the campaign)
   statement: 'Campaign website: "I am an educator, father, special needs advocate, and small business owner."'
   label: candidate_claim
   claim_status: documented

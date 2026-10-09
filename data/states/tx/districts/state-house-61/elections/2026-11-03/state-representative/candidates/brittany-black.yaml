@@ -1,0 +1,32 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: brittany-black
+name: Brittany Black
+incumbent: false
+ballot_party: Democratic Party
+research: pending
+records: []
+funding:
+- id: tx/districts/state-house-61/elections/2026-11-03/state-representative/candidates/brittany-black#M-01
+  headline: Raised $57,191 and had $82,066 on hand (Jul 1 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1 - Sep 24, 2026, filed Oct 5, 2026: $57,190.52 in total political contributions, $60,259.69 in total political expenditures, $82,066.39 in contributions on hand at the end of the period, and $35,035.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101069425.PDF
+  source_title: 'Texas Ethics Commission: Black, Brittany N. (Mrs.), campaign finance report 101069425 (filed Oct 5, 2026)'
+  source_kind: document
+  sha256: a9004d122c1c14174450fdd8ab11b9a08ee60e23eb7e73f676744ac4f0b69753
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101069425, form COH, TEC report type E30DAYBEF; filer ID 00090364 (Black, Brittany N. (Mrs.)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-07; a correction filed later replaces the version it corrects.
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

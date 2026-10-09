@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/state-house-130/elections/2026-11-03/state-representative/candidates/brett-robinson#B-01
-  headline: University of Houston public administration graduate (per his campaign)
+  headline: University of Houston public administration graduate (per the campaign)
   statement: 'Campaign website: "A proud graduate from the University of Houston Masters of Public Administration program, Brett has been a Cypress resident for 16 years."'
   label: candidate_claim
   claim_status: documented

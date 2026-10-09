@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Republican Party
 summary:
 - id: tx/districts/state-house-148/elections/2026-11-03/state-representative/candidates/amanda-labrie#B-01
-  headline: Oil and gas landman (per her campaign)
+  headline: Oil and gas landman (per the campaign)
   statement: 'Campaign website: "Career: Landman in the oil & gas industry (Energen, Callon, EOG Resources) and co-founder of PetroleumETC/The Energy Think Tank."'
   label: candidate_claim
   claim_status: documented

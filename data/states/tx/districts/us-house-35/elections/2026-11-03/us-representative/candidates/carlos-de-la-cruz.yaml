@@ -5,8 +5,8 @@ incumbent: false
 ballot_party: Republican Party
 summary:
 - id: tx/districts/us-house-35/elections/2026-11-03/us-representative/candidates/carlos-de-la-cruz#B-01
-  headline: U.S. Air Force veteran (per his campaign)
-  statement: 'His campaign website says: "Carlos served 20 years in the U.S. Air Force, deployed to the Middle East, served at Lackland AFB, and stood on the front lines of America''s southern border."'
+  headline: U.S. Air Force veteran (per the campaign)
+  statement: 'The campaign website says: "Carlos served 20 years in the U.S. Air Force, deployed to the Middle East, served at Lackland AFB, and stood on the front lines of America''s southern border."'
   label: candidate_claim
   claim_status: documented
   contradicted_by: []

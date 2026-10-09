@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/state-house-128/elections/2026-11-03/state-representative/candidates/desiree-klaus#B-01
-  headline: Small business owner; Baytown native (per her campaign)
+  headline: Small business owner; Baytown native (per the campaign)
   statement: 'Campaign website: "Desiree learned to pivot by building her own small business."'
   label: candidate_claim
   claim_status: documented

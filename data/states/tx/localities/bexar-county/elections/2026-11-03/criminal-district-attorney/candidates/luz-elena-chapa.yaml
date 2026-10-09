@@ -5,8 +5,8 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/localities/bexar-county/elections/2026-11-03/criminal-district-attorney/candidates/luz-elena-chapa#B-01
-  headline: Former justice on the Fourth Court of Appeals (per her campaign)
-  statement: Her campaign website cites her "12 years of service on the Fourth Court of Appeals from 2013 – 2025" and says "She authored over 1,400 opinions, including nearly 600 in criminal cases."
+  headline: Former justice on the Fourth Court of Appeals (per the campaign)
+  statement: The campaign website cites "12 years of service on the Fourth Court of Appeals from 2013 – 2025" and says "She authored over 1,400 opinions, including nearly 600 in criminal cases."
   label: candidate_claim
   claim_status: documented
   contradicted_by: []

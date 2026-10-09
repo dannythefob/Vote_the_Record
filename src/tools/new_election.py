@@ -81,8 +81,9 @@ def plan(root: Path, spec: dict) -> list[tuple[Path, str, dict]]:
     out: list[tuple[Path, str, dict]] = []
     contests = []
     for c in spec["contests"]:
-        if "existing" in c:  # a race already in the data (e.g. statewide): only listed on this ballot
-            assert (root / "data/states" / c["existing"] / "race.yaml").exists(), c["existing"]
+        if "existing" in c:  # a race or measure already in the data (e.g. statewide): only listed on this ballot
+            folder = root / "data/states" / c["existing"]
+            assert (folder / "race.yaml").exists() or (folder / "measure.yaml").exists(), c["existing"]
             contests.append(c["existing"])
             continue
         path = c.get("race") or c.get("measure")

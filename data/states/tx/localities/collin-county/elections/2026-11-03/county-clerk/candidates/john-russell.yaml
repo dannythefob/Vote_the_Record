@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: john-russell
+name: John Russell
+incumbent: false
+ballot_party: Democratic Party
+records: []
+funding:
+- id: tx/localities/collin-county/elections/2026-11-03/county-clerk/candidates/john-russell#M-01
+  headline: Had $0 on hand (Jul 1, 2026 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1, 2026 - Sep 24, 2026, filed with Collin County Elections: $0.00 in total political contributions, $422.18 in total political expenditures, $0.00 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://apps.collincountytx.gov/ElectionContributors/ElectronicFile.aspx?docid=51240&dbid=0&repo=Elections
+  source_title: 'Collin County Elections: campaign finance report, John Russell ("John Russell C OH 30th Day Before Election")'
+  source_kind: document
+  sha256: 6536a105c9b4215a85a3c52d044068a6055ab28b5919d0d67f4c040cdfba3072
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-08'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Listed in Collin County Elections' public campaign finance archive (https://apps.collincountytx.gov/ElectionContributors/, Elections > Candidate / Officeholder or Judicial Candidate / Officeholder, 2026, Active) as "John Russell C OH 30th Day Before Election", document 51240; matched by name and office. This is the newest report listed for the candidate. The PDF is a scan; the totals were read from the cover-sheet image. Not yet archived on the Wayback Machine.
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

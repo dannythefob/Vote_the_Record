@@ -5,7 +5,7 @@ incumbent: false
 ballot_party: Democratic Party
 summary:
 - id: tx/districts/state-house-132/elections/2026-11-03/state-representative/candidates/sara-mcgee#B-01
-  headline: Hospital radiology director (per her campaign)
+  headline: Hospital radiology director (per the campaign)
   statement: 'Campaign website: "For 22 years, I’ve dedicated my career to healthcare, currently serving as the Director of Radiology at a Houston hospital."'
   label: candidate_claim
   claim_status: documented
