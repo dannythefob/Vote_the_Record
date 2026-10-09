@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: tamecia-glover
+name: TAMECIA GLOVER
+incumbent: false
+ballot_party: Democratic Party
+records: []
+funding:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/district-court-502/candidates/tamecia-glover#M-01
+  headline: Raised $4,628 and had $8,596 on hand (Jul 1 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1 - Sep 24, 2026, filed Oct 5, 2026: $4,627.59 in total political contributions, $5,460.82 in total political expenditures, $8,596.45 in contributions on hand at the end of the period, and $5,500.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101069427.PDF
+  source_title: 'Texas Ethics Commission: Glover, Tamecia S. (Ms.), campaign finance report 101069427 (filed Oct 5, 2026)'
+  source_kind: document
+  sha256: da3135d4eaaccc95616ece69fed4eca73239130d98c8538012a110ec9b241aaa
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101069427, form JCOH, TEC report type E30DAYBEF; filer ID 00089722 (Glover, Tamecia S. (Ms.)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-07; a correction filed later replaces the version it corrects.
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

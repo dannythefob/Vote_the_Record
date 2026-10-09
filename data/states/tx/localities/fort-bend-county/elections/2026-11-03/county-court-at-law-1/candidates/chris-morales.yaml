@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: chris-morales
+name: CHRIS MORALES
+incumbent: true
+ballot_party: Republican Party
+records: []
+funding:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/county-court-at-law-1/candidates/chris-morales#M-01
+  headline: Raised $27,850 and had $66,048 on hand (Jan 1, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1, 2026 - Jun 30, 2026, filed with Fort Bend County Elections on Jul 13, 2026: $27,850.00 in total political contributions, $44,825.76 in total political expenditures, $66,047.97 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://electionsfinancereport.fortbendcountytx.gov/docs/2026%202026%20CCL1%20Christopher%20G%20Chris%20Morales%20071326%20July%2015.pdf
+  source_title: 'Fort Bend County Elections: campaign finance report, Christopher G. "Chris" Morales (filed Jul 13, 2026)'
+  source_kind: document
+  sha256: 28fd8e40ae72eeb88e4812edc2169be4b1920031c5c9fe6008c54d5ea65679fe
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Listed on the county's campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures - Semi Annual", office "County Court at 1", filer "Christopher G. "Chris" Morales", filed Jul 13, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Not yet archived on the Wayback Machine.
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

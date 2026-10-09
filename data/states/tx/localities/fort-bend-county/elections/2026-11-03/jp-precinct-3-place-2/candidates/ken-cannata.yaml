@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: ken-cannata
+name: KEN CANNATA
+incumbent: true
+ballot_party: Republican Party
+records: []
+funding:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/jp-precinct-3-place-2/candidates/ken-cannata#M-01
+  headline: Raised $1,000 and had $2,824 on hand (Jan 1, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1, 2026 - Jun 30, 2026, filed with Fort Bend County Elections on Jul 6, 2026: $1,000.00 in total political contributions, $11,796.38 in total political expenditures, $2,824.41 in contributions on hand at the end of the period, and $13,500.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://electionsfinancereport.fortbendcountytx.gov/docs/2026%202026%20Kenneth%20Cannata%20JP%20Pct%203%20Pl%202%20070626%20July15.pdf
+  source_title: 'Fort Bend County Elections: campaign finance report, Kenneth S Cannata (filed Jul 6, 2026)'
+  source_kind: document
+  sha256: e49b1790583d6784b818872b619e88e048b639cdaecf908498c1e0d8af1f1754
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Listed on the county's campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures - Semi Annual", office "Justice of the Peace, Precinct 3", filer "Kenneth S Cannata", filed Jul 6, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Not yet archived on the Wayback Machine.
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

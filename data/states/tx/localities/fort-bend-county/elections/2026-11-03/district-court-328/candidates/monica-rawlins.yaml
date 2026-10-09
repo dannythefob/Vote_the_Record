@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: monica-rawlins
+name: MONICA RAWLINS
+incumbent: true
+ballot_party: Democratic Party
+records: []
+funding:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/district-court-328/candidates/monica-rawlins#M-01
+  headline: Raised $20,559 and had $3,149 on hand (Jul 1 - Sep 24, 2026)
+  statement: 'Campaign finance report covering Jul 1 - Sep 24, 2026, filed Oct 6, 2026: $20,559.00 in total political contributions, $20,684.85 in total political expenditures, $3,149.00 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://prd.tecprd.ethicsefile.com/public/cf/2026/pdfs/ScrubbedReport_101070251.PDF
+  source_title: 'Texas Ethics Commission: Rawlins, Monica D. (The Honorable), campaign finance report 101070251 (filed Oct 6, 2026)'
+  source_kind: document
+  sha256: 69be64128913d6e30ceb4fad0ab64e47e8d6f6ed77d4893166b07fdc7c6d9e73
+  archive_url: null
+  event_date: '2026-09-24'
+  retrieved: '2026-10-07'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Report ID 101070251, form CORCOH, TEC report type E30DAYBEF; filer ID 00085469 (Rawlins, Monica D. (The Honorable)). Found in TEC's bulk campaign finance data (https://prd.tecprd.ethicsefile.com/public/cf/public/TEC_CF_CSV.zip, cover.csv) and matched by first name; every total in this fact was checked against the PDF. This is the filer's latest report for a period ending by 2026-10-07; a correction filed later replaces the version it corrects.
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

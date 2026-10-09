@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: tamara-mcfarlane
+name: TAMARA MCFARLANE
+incumbent: false
+ballot_party: Republican Party
+records: []
+funding:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/county-clerk/candidates/tamara-mcfarlane#M-01
+  headline: Raised $1,385 and had $0 on hand (Jan 22, 2026 - Feb 25, 2026)
+  statement: 'Campaign finance report covering Jan 22, 2026 - Feb 25, 2026, filed with Fort Bend County Elections on Feb 26, 2026: $1,385.00 in total political contributions, $29,436.30 in total political expenditures, $0.00 in contributions on hand at the end of the period, and $30,000.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://electionsfinancereport.fortbendcountytx.gov/docs/2026%202026%20Tamara%20McFarlane%20Candidate%20%20County%20Clerk%20022626%208DAY.pdf
+  source_title: 'Fort Bend County Elections: campaign finance report, Tamara McFarlane (filed Feb 26, 2026)'
+  source_kind: document
+  sha256: c7e09d6e5f7719dd35978c3727b10be36c28cbe10af1ed0628dd85a7aaad0b4e
+  archive_url: null
+  event_date: '2026-02-25'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed on the county''s campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures 8 day", office "County Clerk", filer "Tamara McFarlane", filed Feb 26, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Reading note: a report for the March 3, 2026 primary. Not yet archived on the Wayback Machine.'
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

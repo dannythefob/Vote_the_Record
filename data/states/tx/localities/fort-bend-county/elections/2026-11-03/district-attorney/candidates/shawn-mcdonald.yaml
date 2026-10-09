@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: shawn-mcdonald
+name: SHAWN MCDONALD
+incumbent: false
+ballot_party: Republican Party
+records: []
+funding:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/district-attorney/candidates/shawn-mcdonald#M-01
+  headline: Raised $42,261 and had $6,475 on hand (Jan 1, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1, 2026 - Jun 30, 2026, filed with Fort Bend County Elections on Jul 15, 2026: $42,261.00 in total political contributions, $35,446.22 in total political expenditures, $6,474.89 in contributions on hand at the end of the period, and $100.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://electionsfinancereport.fortbendcountytx.gov/docs/2026%202026%20Shawn%20M%20McDonald%20Candidate%20DA%20071526.pdf
+  source_title: 'Fort Bend County Elections: campaign finance report, Shawn M McDonald (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: e385a43fd65b3f87eb3427c6a63daf7d8365286fa127b4407c4c9636122eb240
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed on the county''s campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures - Semi Annual", office "District Attorney", filer "Shawn M McDonald", filed Jul 15, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Reading note: contributions include 350.00 in non-monetary (in-kind) contributions (Schedule A2). Not yet archived on the Wayback Machine.'
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

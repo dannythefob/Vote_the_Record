@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: beverley-mcgrew-walker
+name: BEVERLEY MCGREW WALKER
+incumbent: true
+ballot_party: Democratic Party
+records: []
+funding:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/district-clerk/candidates/beverley-mcgrew-walker#M-01
+  headline: Raised $3,305 and had $1,671 on hand (Feb 22, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Feb 22, 2026 - Jun 30, 2026, filed with Fort Bend County Elections on Jul 15, 2026: $3,305.00 in total political contributions, $12,035.38 in total political expenditures, and $1,671.29 in contributions on hand at the end of the period.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://electionsfinancereport.fortbendcountytx.gov/docs/2026%202026%20Beverley%20A%20Walker%20District%20Clerk%20071526%20July15.pdf
+  source_title: 'Fort Bend County Elections: campaign finance report, Beverley A McGrew Walker (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: 79a4012f8b1d0316272a76487fdb0d7d85126fb0b36235d23f166d17f0e36a3f
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed on the county''s campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures - Semi Annual", office "District Clerk", filer "Beverley A McGrew Walker", filed Jul 15, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Reading note: outstanding-loan total left blank. Left out: outstanding loans. Not yet archived on the Wayback Machine.'
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

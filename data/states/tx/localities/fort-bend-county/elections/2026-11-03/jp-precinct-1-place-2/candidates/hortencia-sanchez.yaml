@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: hortencia-sanchez
+name: HORTENCIA SANCHEZ
+incumbent: false
+ballot_party: Democratic Party
+records: []
+funding:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/jp-precinct-1-place-2/candidates/hortencia-sanchez#M-01
+  headline: Raised $120 and had $0 on hand (Feb 1, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Feb 1, 2026 - Jun 30, 2026, filed with Fort Bend County Elections on Jul 15, 2026: $120.00 in total political contributions, $1,252.08 in total political expenditures, $0.00 in contributions on hand at the end of the period, and $0.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://electionsfinancereport.fortbendcountytx.gov/docs/2026%20Hortencia%20Sanchez%20Candidate%20JP%20Pct%201%20Pl%202%20071526%20JULY15.pdf
+  source_title: 'Fort Bend County Elections: campaign finance report, Hortencia B Sanchez (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: 8785d3152a988b340d5c0e33072b27558eeeb2c57b901559765abae7239cbcc5
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Listed on the county's campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures - Semi Annual", office "Justice of the Peace, Precinct 2 Place 1", filer "Hortencia B Sanchez", filed Jul 15, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Not yet archived on the Wayback Machine.
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

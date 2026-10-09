@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: sonya-jones
+name: SONYA JONES
+incumbent: false
+ballot_party: Democratic Party
+records: []
+funding:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/county-clerk/candidates/sonya-jones#M-01
+  headline: Raised $600 and had $1,001 on hand (Jan 1, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Jan 1, 2026 - Jun 30, 2026, filed with Fort Bend County Elections on Jul 16, 2026: $600.00 in total political contributions, $1,000.73 in contributions on hand at the end of the period, and $7,483.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://electionsfinancereport.fortbendcountytx.gov/docs/2026%202026%20Sonya%20C%20Jones%20Candidate%20County%20Clerk%20071626%20JULY15.pdf
+  source_title: 'Fort Bend County Elections: campaign finance report, Sonya Jones (filed Jul 16, 2026)'
+  source_kind: document
+  sha256: 5f36102a09da9cb92de88bf248b999532c1acc8384c51078e2abe2818592783b
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed on the county''s campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures - Semi Annual", office "County Clerk", filer "Sonya Jones", filed Jul 16, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Reading note: the cover sheet''s total expenditures (99.27) do not match the subtotals page (Schedule F1 6,345.96, F4 2,569.45, G 800.00), so expenditures are left out. Left out: total expenditures. Not yet archived on the Wayback Machine.'
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

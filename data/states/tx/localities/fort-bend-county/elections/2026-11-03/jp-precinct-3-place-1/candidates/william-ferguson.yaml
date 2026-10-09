@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: william-ferguson
+name: WILLIAM FERGUSON
+incumbent: false
+ballot_party: Republican Party
+records: []
+funding:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/jp-precinct-3-place-1/candidates/william-ferguson#M-01
+  headline: Raised $18,402 and had $14,490 on hand (Feb 22, 2026 - Jun 30, 2026)
+  statement: 'Campaign finance report covering Feb 22, 2026 - Jun 30, 2026, filed with Fort Bend County Elections on Jul 15, 2026: $18,401.94 in total political contributions, $19,365.40 in total political expenditures, and $14,490.04 in contributions on hand at the end of the period.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://electionsfinancereport.fortbendcountytx.gov/docs/2026%202026%20William%20E%20Ferguson%20Candidate%20JP%203%20%20071526%20July15_Redacted1.pdf
+  source_title: 'Fort Bend County Elections: campaign finance report, William E Ferguson (filed Jul 15, 2026)'
+  source_kind: document
+  sha256: e09ef46faab20eec1573eedcf11e1652821a99014b063177fed53d3121b3dec7
+  archive_url: null
+  event_date: '2026-06-30'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed on the county''s campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures - Semi Annual", office "Justice of the Peace, Precinct 3", filer "William E Ferguson", filed Jul 15, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Reading note: outstanding-loan total left blank. Left out: outstanding loans. Not yet archived on the Wayback Machine.'
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []

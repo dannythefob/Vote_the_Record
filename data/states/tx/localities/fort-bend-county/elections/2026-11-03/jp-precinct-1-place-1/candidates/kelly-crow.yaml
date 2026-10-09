@@ -1,0 +1,31 @@
+# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+id: kelly-crow
+name: KELLY CROW
+incumbent: true
+ballot_party: Republican Party
+records: []
+funding:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/jp-precinct-1-place-1/candidates/kelly-crow#M-01
+  headline: Raised $3,171 and had $3,171 on hand (Jan 15, 2026 - Jul 15, 2026)
+  statement: 'Campaign finance report covering Jan 15, 2026 - Jul 15, 2026, filed with Fort Bend County Elections on Jul 22, 2026: $3,170.61 in total political contributions, $5,299.12 in total political expenditures, $3,170.61 in contributions on hand at the end of the period, and $38,000.00 in outstanding loans.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://electionsfinancereport.fortbendcountytx.gov/docs/2026%202026%20Kelly%20N%20Crow%20JP%201%20Pl1%20072226%20CORRECTION.pdf
+  source_title: 'Fort Bend County Elections: campaign finance report, Kelly N Crow (filed Jul 22, 2026)'
+  source_kind: document
+  sha256: 104ed34b33f936838a488d1974da251ee814b1d5fb81e9743cd524954950d02b
+  archive_url: null
+  event_date: '2026-07-15'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: 'Listed on the county''s campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures - Semi Annual", office "Justice of the Peace, Precinct 1 Place 1", filer "Kelly N Crow", filed Jul 22, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Reading note: the posted file begins with a correction affidavit (July 22, 2026) adding the expenditure amounts left blank in the original July 15 report; period written as 1/15/2026 through 7/15/2026. Not yet archived on the Wayback Machine.'
+endorsements: []
+running_on:
+  policy_proposals: []
+  attack_messaging: []
+  contested_claims: []
+mappings: []
+promise_tracker: []
