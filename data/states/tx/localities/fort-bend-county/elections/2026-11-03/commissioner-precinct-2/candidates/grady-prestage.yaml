@@ -3,6 +3,24 @@ id: grady-prestage
 name: GRADY PRESTAGE
 incumbent: true
 ballot_party: Democratic Party
+summary:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/commissioner-precinct-2/candidates/grady-prestage#B-01
+  headline: Commissioner since 1991 (per the campaign)
+  statement: 'The campaign website says: "Since 1991, he has cut the county tax rate by 37%" and that the candidate "initiated the development of the Fort Bend County Community Development Department, the Fort Bend County Housing Finance Corporation, the Fort Bend Toll Road Authority, and the Fort Bend County Parks and Recreation Department."'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.gradyprestage.com/
+  source_title: Grady Prestage (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records:
 - id: tx/localities/fort-bend-county/elections/2026-11-03/commissioner-precinct-2/candidates/grady-prestage#R-01
   record_type: vote

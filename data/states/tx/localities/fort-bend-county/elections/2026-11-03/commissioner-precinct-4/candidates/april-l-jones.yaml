@@ -1,4 +1,4 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: april-l-jones
 name: APRIL L. JONES
 incumbent: false
@@ -24,7 +24,41 @@ funding:
   notes: 'Listed on the county''s campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures - Semi Annual", office "County Commissioner Precinct 4", filer "April Lynn Jones", filed Jul 15, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Reading note: contributions include 556.73 in non-monetary (in-kind) contributions (Schedule A2). Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/fort-bend-county/elections/2026-11-03/commissioner-precinct-4/candidates/april-l-jones#O-01
+    headline: Roads and congestion
+    statement: 'Campaign website: "Addressing congestion, improving road conditions, and developing smart infrastructure solutions to meet the needs of our growing community."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: http://www.april4fb.com/
+    source_title: April L Jones for Fort Bend Commissioner Precinct 4 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/fort-bend-county/elections/2026-11-03/commissioner-precinct-4/candidates/april-l-jones#O-02
+    headline: Air pollution monitoring and data centers
+    statement: 'Campaign website: "Supporting air pollution monitoring in Fort Bend County. With the rise of AI data centers, promoting environmentally friendly and healthier development while opposing harmful developments."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: http://www.april4fb.com/
+    source_title: April L Jones for Fort Bend Commissioner Precinct 4 (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

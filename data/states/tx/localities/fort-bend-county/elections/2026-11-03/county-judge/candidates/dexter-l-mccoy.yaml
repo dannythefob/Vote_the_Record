@@ -3,6 +3,24 @@ id: dexter-l-mccoy
 name: DEXTER L MCCOY
 incumbent: false
 ballot_party: Democratic Party
+summary:
+- id: tx/localities/fort-bend-county/elections/2026-11-03/county-judge/candidates/dexter-l-mccoy#B-01
+  headline: County commissioner since 2023 (per the campaign)
+  statement: 'The campaign website says: "Since being sworn into office in January 2023, Dexter has continued the fight" and lists "Passed the first-ever paid parental leave policy and nearly doubled paid sick time for county employees".'
+  label: candidate_claim
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://dextermccoy.com/
+  source_title: Dexter McCoy for Fort Bend County Judge (campaign website)
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-10-04'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
 records:
 - id: tx/localities/fort-bend-county/elections/2026-11-03/county-judge/candidates/dexter-l-mccoy#R-01
   record_type: vote
@@ -62,7 +80,41 @@ funding:
   notes: Listed on the county's campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures - Semi Annual", office "County Judge", filer "Dexter Lorance-Navario McCoy", filed Jul 15, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Not yet archived on the Wayback Machine.
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/fort-bend-county/elections/2026-11-03/county-judge/candidates/dexter-l-mccoy#O-01
+    headline: Health clinics in community centers
+    statement: 'Campaign website: "As County Commissioner, Dexter is helping to expand access to healthcare by building clinics in community centers"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://dextermccoy.com/
+    source_title: Dexter McCoy for Fort Bend County Judge (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/fort-bend-county/elections/2026-11-03/county-judge/candidates/dexter-l-mccoy#O-02
+    headline: 'County government tools: Mobility Dashboard and 311'
+    statement: 'Campaign website: "His push for transparency and innovation is bringing results, including the Mobility Dashboard and a countywide 311 system"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://dextermccoy.com/
+    source_title: Dexter McCoy for Fort Bend County Judge (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

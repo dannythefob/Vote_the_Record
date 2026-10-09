@@ -1,9 +1,8 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: tony-aranda
 name: TONY ARANDA
 incumbent: false
 ballot_party: Republican Party
-research: pending
 records: []
 funding:
 - id: tx/localities/fort-bend-county/elections/2026-11-03/commissioner-precinct-2/candidates/tony-aranda#M-01
@@ -25,7 +24,41 @@ funding:
   notes: 'Listed on the county''s campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures - Semi Annual", office "County Commissioner Precinct 2", filer "Antonio E Aranda", filed Jul 15, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Reading note: contributions include 175.00 in non-monetary (in-kind) contributions (Schedule A2); loan total written as -0-. Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/fort-bend-county/elections/2026-11-03/commissioner-precinct-2/candidates/tony-aranda#O-01
+    headline: Avoid county debt
+    statement: 'Campaign website: "We as residents should not be slaves to the lenders. I will ensure your money is used for things we need."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://tonyarandacampaign.com/
+    source_title: Tony Aranda Campaign (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
+  - id: tx/localities/fort-bend-county/elections/2026-11-03/commissioner-precinct-2/candidates/tony-aranda#O-02
+    headline: Plan ahead for growth
+    statement: 'Campaign website: "I believe in being proactive rather than reactive, planning ahead to address challenges before they become problems"'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://tonyarandacampaign.com/
+    source_title: Tony Aranda Campaign (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []

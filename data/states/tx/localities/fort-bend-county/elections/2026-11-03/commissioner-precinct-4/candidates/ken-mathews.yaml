@@ -1,4 +1,4 @@
-# Basic race: name and ballot label as printed on the sample ballot. Unverified.
+# Unverified; written by an AI assistant from official records and the candidate's own statements. Owner review required.
 id: ken-mathews
 name: KEN MATHEWS
 incumbent: false
@@ -24,7 +24,24 @@ funding:
   notes: 'Listed on the county''s campaign finance site (https://electionsfinancereport.fortbendcountytx.gov/) as "Contributions and Expenditures 30 day", office "County Commissioner Precinct 4", filer "Kennith Mathews", filed May 1, 2026; matched by name and office. This is the newest report listed for the candidate. The totals were read from the cover-sheet images. Reading note: a report for the May 26, 2026 runoff; contributions include 7,700.00 in non-monetary (in-kind) contributions (Schedule A2). Not yet archived on the Wayback Machine.'
 endorsements: []
 running_on:
-  policy_proposals: []
+  policy_proposals:
+  - id: tx/localities/fort-bend-county/elections/2026-11-03/commissioner-precinct-4/candidates/ken-mathews#O-01
+    headline: Vote by what residents say
+    statement: 'Campaign website: "When elected as your Fort Bend County Precinct 4 Commissioner, I will cast every vote based on what you—the residents, families, and taxpayers of Precinct 4—have expressed is in our community''s best interest."'
+    label: candidate_claim
+    claim_status: documented
+    contradicted_by: []
+    source_url: https://www.ken4fortbend.com/
+    source_title: Ken Mathews for Fort Bend County Texas Commissioner (campaign website)
+    source_kind: page
+    sha256: null
+    archive_url: null
+    event_date: '2026-10-04'
+    retrieved: '2026-10-04'
+    verification: unverified
+    verified_on: null
+    reviewer: null
+    notes: The campaign's own website, read from the rendered page. event_date is the date the page was read, not the date it was first posted. Not yet archived on the Wayback Machine.
   attack_messaging: []
   contested_claims: []
 mappings: []
