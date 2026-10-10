@@ -1,0 +1,23 @@
+# Basic race page: the office and candidates as printed on the sample ballot. Unverified.
+name: Judge, County Criminal Court at Law No. 1
+office_type: county-criminal-court-judge
+election_date: '2026-11-03'
+detail: basic
+sources:
+- id: tx/localities/denton-county/elections/2026-11-03/county-criminal-court-1/race#S-01
+  headline: Candidates as printed on the sample ballot
+  statement: 'The Denton County Elections''s sample ballot for the November 3, 2026 general and special elections lists "Judge, County Criminal Court at Law No. 1" on page 3, with these candidates: Lauri Ragland (Republican Party).'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.votedenton.gov/wp-content/uploads/2026/09/1126-Active-Contest-List.pdf
+  source_title: 'Denton County Elections: Preview Ballot, General & Special Elections, November 3, 2026, Precinct ALL-ALL (09/09/2026) (page 3)'
+  source_kind: document
+  sha256: d67153c1c5c613947f57b793e517c751fea40b13a172e29b83ffc4d1816b2822
+  archive_url: null
+  event_date: '2026-11-03'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The county's all-precinct preview ballot. Names and wording are from the PDF's text layer, kept exactly as printed, with spaces restored where the text layer drops them between fragments. The ballot prints parties as REP, DEM, LIB, and GRN.

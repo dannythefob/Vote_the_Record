@@ -176,6 +176,25 @@ COLLIN_LOCAL_AREAS = {
     "blue-meadow-mud-2": (TCEQ_MUD, "1546750"),
     "blue-meadow-mud-4": (TCEQ_MUD, "1546938"),
 }
+DENTON_SERVICE = "https://gis.dentoncounty.gov/arcgis/rest/services/PoliticalBoundaries_GC/MapServer"
+DENTON_ITEM = DENTON_SERVICE + "/9"
+DENTON_LAYER = DENTON_SERVICE + "/9"  # Voter Precincts (Effective 1/1/2026)
+DENTON_LOCAL_AREAS = {
+    "town-of-bartonville": (PLACE_LAYER, "4805768"),
+    "city-of-dallas": (PLACE_LAYER, "4819000"),
+    "city-of-denton": (PLACE_LAYER, "4819972"),
+    "town-of-double-oak": (PLACE_LAYER, "4821028"),
+    "town-of-flower-mound": (PLACE_LAYER, "4826232"),
+    "town-of-hickory-creek": (PLACE_LAYER, "4833476"),
+    "city-of-justin": (PLACE_LAYER, "4838332"),
+    "city-of-lake-dallas": (PLACE_LAYER, "4840516"),
+    "city-of-plano": (PLACE_LAYER, "4858016"),
+    "city-of-the-colony": (PLACE_LAYER, "4872530"),
+    "brookfield-wcid": (TCEQ_WCID, "7579300"),
+    "denton-county-mud-7": (TCEQ_MUD, "2722080"),
+    "northlake-fwsd-1": (TCEQ_FWSD, "5987875"),
+    "sanctuary-mud-2": (TCEQ_MUD, "7524625"),
+}
 OVERLAY_SHARE = 0.95  # a precinct must be at least this much inside one district to be assigned it without a flag
 
 # Per county: precinct layer, its field for each district kind, areas every voter shares, local areas.
@@ -281,6 +300,35 @@ COUNTIES = {
                     "named in precincts#S-05; the layer's own district fields and officeholder names are not used."),
         "field_note": ("The Collin County layer's precincts took effect 1/1/2024, before the 2025 congressional map, so congressional "
                        "districts come from the Texas Legislative Council's PLANC2333 shapefile instead."),
+    },
+    "denton-county": {
+        "name": "Denton County", "item": DENTON_ITEM, "layer": DENTON_LAYER, "precinct_field": "FullNum",
+        # The precinct layer lists only precinct numbers: districts come from overlays (state plans for Congress and the
+        # Legislature; the county's own commissioner, JP/constable and State Board of Education layers).
+        "fields": {kind: kind for kind in ("us-house", "state-house", "state-senate", "sboe", "commissioner", "jp")},
+        "overlays": {
+            "us-house": ("shapefile", TLC_C2333, "District", "Texas Legislative Council: PLANC2333 (congressional districts "
+                         "enacted 2025, 89th Legislature, 2nd C.S.)"),
+            "state-house": ("shapefile", TLC_H2316, "District", "Texas Legislative Council: PLANH2316 (State House "
+                            "districts, 2023-2026)"),
+            "state-senate": ("shapefile", TLC_S2168, "District", "Texas Legislative Council: PLANS2168 (State Senate "
+                             "districts)"),
+            "sboe": ("arcgis", DENTON_SERVICE + "/6", "ED_DIST", "Denton County GIS: Texas Educational Districts"),
+            "commissioner": ("arcgis", DENTON_SERVICE + "/4", "COMMISH", "Denton County GIS: Commissioner Precincts"),
+            "jp": ("arcgis", DENTON_SERVICE + "/5", "JP_C", "Denton County GIS: JP / Constable"),
+        },
+        "everywhere": ["court-of-appeals-2"],  # Gov't Code 22.201(c)
+        "local_areas": DENTON_LOCAL_AREAS,
+        "headline": "Denton County voter precincts (2026)",
+        "statement": ("Denton County's GIS layer \"Voter Precincts (Effective 1/1/2026)\" (252 precincts), published by Denton "
+                      "County GIS, gives each precinct's number and outline."),
+        "title": "Denton County GIS: Voter Precincts (Effective 1/1/2026)",
+        "credits": ("The layer lists precinct numbers only; each precinct's districts were assigned by overlaying the district "
+                    "maps named in precincts#S-05. The county server resets long transfers, so its layers were downloaded in "
+                    "small pages; the State Board of Education layer was requested simplified to 0.0005 degrees and the "
+                    "commissioner and JP/constable layers to 0.0001 degrees, finer than the 0.001-degree overlay grid."),
+        "field_note": ("Congressional districts come from the Texas Legislative Council's PLANC2333 shapefile rather than the "
+                       "county's own congressional layer, so the 2025 map is used."),
     },
 }
 
