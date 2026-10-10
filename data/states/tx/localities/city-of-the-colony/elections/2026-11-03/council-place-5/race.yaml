@@ -1,0 +1,23 @@
+# Basic race page: the office and candidates as printed on the sample ballot. Unverified.
+name: City of The Colony Council, Place 5
+office_type: city-council-member
+election_date: '2026-11-03'
+detail: basic
+sources:
+- id: tx/localities/city-of-the-colony/elections/2026-11-03/council-place-5/race#S-01
+  headline: Candidates as printed on the sample ballot
+  statement: 'The Denton County Elections''s sample ballot for the November 3, 2026 general and special elections lists "City of The Colony Place 5" on page 5, with these candidates: Perry Schrag; Matthew Michaelson.'
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://www.votedenton.gov/wp-content/uploads/2026/09/1126-Active-Contest-List.pdf
+  source_title: 'Denton County Elections: Preview Ballot, General & Special Elections, November 3, 2026, Precinct ALL-ALL (09/09/2026) (page 5)'
+  source_kind: document
+  sha256: d67153c1c5c613947f57b793e517c751fea40b13a172e29b83ffc4d1816b2822
+  archive_url: null
+  event_date: '2026-11-03'
+  retrieved: '2026-10-09'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: The county's all-precinct preview ballot. Names and wording are from the PDF's text layer, kept exactly as printed, with spaces restored where the text layer drops them between fragments. The ballot prints parties as REP, DEM, LIB, and GRN.

@@ -2,7 +2,6 @@
 name: Fort Bend County Judge
 office_type: county-judge
 election_date: '2026-11-03'
-detail: basic
 sources:
 - id: tx/localities/fort-bend-county/elections/2026-11-03/county-judge/race#S-01
   headline: Candidates as printed on the sample ballot
@@ -37,3 +36,20 @@ sources:
   verification: unverified
   verified_on: null
   reviewer: null
+- id: tx/localities/fort-bend-county/elections/2026-11-03/county-judge/race#S-HOLDER-2
+  headline: 'Who holds this office: disputed in the September 10, 2026 minutes'
+  statement: The minutes of the September 10, 2026 Commissioners Court meeting record that County Attorney Bridgette Smith-Lawson "stated, KP George is still the County Judge and is suspended without pay. He is still the legal holder of that office," and that Commissioner Prestage stated "let the record reflect that if this is an invalid vote by Daniel Wong, it will make the vote 2-2." Daniel Wong presided and voted as County Judge at that meeting, and the county's elected-officials list shows him as County Judge (see S-HOLDER).
+  label: official_record
+  claim_status: documented
+  contradicted_by: []
+  source_url: https://agendalink.fortbendcountytx.gov/agenda_publish.cfm?id=&mt=ALL&get_month=9&get_year=2026&dsp=min&seq=4139
+  source_title: 'Fort Bend County Commissioners Court: Minutes, regular meeting of September 10, 2026'
+  source_kind: page
+  sha256: null
+  archive_url: null
+  event_date: '2026-09-10'
+  retrieved: '2026-10-04'
+  verification: unverified
+  verified_on: null
+  reviewer: null
+  notes: Minutes as published on the county's agenda site (Item 21C, 21H). The September 24, 2026 agenda lists approval of the minutes of the September 10, 2026 regular meeting. The minutes list each member's vote. Not yet archived on the Wayback Machine. KP George is not a candidate on the November 3, 2026 ballot.
